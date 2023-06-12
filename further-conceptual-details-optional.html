@@ -521,7 +521,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.5.1" data-path="further-conceptual-details-optional.html"><a href="further-conceptual-details-optional.html#a-formal-definition-of-sufficiency"><i class="fa fa-check"></i><b>7.5.1</b> A Formal Definition of Sufficiency</a></li>
 <li class="chapter" data-level="7.5.2" data-path="further-conceptual-details-optional.html"><a href="further-conceptual-details-optional.html#minimal-sufficiency"><i class="fa fa-check"></i><b>7.5.2</b> Minimal Sufficiency</a></li>
 <li class="chapter" data-level="7.5.3" data-path="further-conceptual-details-optional.html"><a href="further-conceptual-details-optional.html#completeness"><i class="fa fa-check"></i><b>7.5.3</b> Completeness</a></li>
-<li class="chapter" data-level="7.5.4" data-path="further-conceptual-details-optional.html"><a href="further-conceptual-details-optional.html#exponential-family-of-distributions"><i class="fa fa-check"></i><b>7.5.4</b> Exponential Family of Distributions</a></li>
+<li class="chapter" data-level="7.5.4" data-path="further-conceptual-details-optional.html"><a href="further-conceptual-details-optional.html#the-rao-blackwell-theorem"><i class="fa fa-check"></i><b>7.5.4</b> The Rao-Blackwell Theorem</a></li>
+<li class="chapter" data-level="7.5.5" data-path="further-conceptual-details-optional.html"><a href="further-conceptual-details-optional.html#exponential-family-of-distributions"><i class="fa fa-check"></i><b>7.5.5</b> Exponential Family of Distributions</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="appendix-a-table-of-symbols.html"><a href="appendix-a-table-of-symbols.html"><i class="fa fa-check"></i>Appendix A: Table of Symbols</a></li>
@@ -745,14 +746,8 @@ If <span class="math inline">\(e(\hat{\theta}_1,\hat{\theta}_2) &gt; 1\)</span>,
 <span class="math inline">\(\hat{\theta}_1\)</span>; otherwise, if <span class="math inline">\(e(\hat{\theta}_1,\hat{\theta}_2) &lt; 1\)</span>,
 we would opt to use <span class="math inline">\(\hat{\theta}_2\)</span>. (We could use either if the
 relative efficiency is exactly one.)</p>
-<!--
----
--->
-<ul>
-<li><em>Example</em>. Let <span class="math inline">\(X_i \sim \mathcal{N}(\mu,\sigma^2)\)</span>, and let <span class="math inline">\(\hat{\mu}_1 = \bar{X}\)</span> and <span class="math inline">\(\hat{\mu}_2 = (X_1+X_2)/2\)</span>. What is the relative efficiency of
-these two estimators?</li>
-</ul>
-<blockquote>
+<p>As an example, let <span class="math inline">\(X_i \sim \mathcal{N}(\mu,\sigma^2)\)</span>, and let <span class="math inline">\(\hat{\mu}_1 = \bar{X}\)</span> and <span class="math inline">\(\hat{\mu}_2 = (X_1+X_2)/2\)</span>. What is the relative efficiency of
+these two estimators?</p>
 <p>We know the general result that <span class="math inline">\(V[\hat{\mu}_1] = V[\bar{X}] = \sigma^2/n\)</span>, and we know
 that <span class="math inline">\(\hat{\mu}_2\)</span> is simply the sample mean of the first two data, so
 <span class="math inline">\(V[\hat{\mu}_2] = V[(X_1+X_2)/2] = \sigma^2/2\)</span>. The relative efficiency
@@ -763,7 +758,6 @@ e(\hat{\mu}_1,\hat{\mu}_2) = \frac{V[\hat{\mu}_2]}{V[\hat{\mu}_1]} = \frac{\sigm
 This value is <span class="math inline">\(&gt; 1\)</span> for all <span class="math inline">\(n &gt; 2\)</span>, and it is never less than 1, so
 we would choose to use <span class="math inline">\(\hat{\mu}_1 = \bar{X}\)</span> as our estimator of the
 population mean.</p>
-</blockquote>
 </div>
 <div id="sufficient-statistics" class="section level2 hasAnchor" number="7.5">
 <h2><span class="header-section-number">7.5</span> Sufficient Statistics<a href="further-conceptual-details-optional.html#sufficient-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -794,11 +788,7 @@ the parameter <span class="math inline">\(\theta\)</span> if the conditional dis
 given <span class="math inline">\(U(\mathbf{X})\)</span> does not depend on <span class="math inline">\(\theta\)</span>, i.e., if
 <span class="math inline">\(P(X_1=x_1,\ldots,X_n=x_n \vert U(\mathbf{X}) = k)\)</span> does not
 depend on <span class="math inline">\(\theta\)</span>.</p>
-<!--
----
--->
-<ul>
-<li><em>Example</em>. Let <span class="math inline">\(\{X_1,\ldots,X_n\} \overset{iid}{\sim}\)</span> Bernoulli(<span class="math inline">\(p\)</span>),
+<p>As an example, let <span class="math inline">\(\{X_1,\ldots,X_n\} \overset{iid}{\sim}\)</span> Bernoulli(<span class="math inline">\(p\)</span>),
 and let us propose <span class="math inline">\(U(\mathbf{X}) = \sum_{i=1}^n X_i\)</span> as a sufficient
 ststistic. To determine if it is, we need to determine if
 <span class="math display">\[
@@ -821,9 +811,7 @@ which means, in the context of Bernoulli random variables, that the numerator is
 \prod_{i=1}^n P(X_i=x_i) = p^k (1-p)^{n-k} \,.
 \]</span>
 (Why <span class="math inline">\(p^k\)</span>, etc.? We are given that <span class="math inline">\(U(\mathbf{X}) = k\)</span>, i.e., that there
-are <span class="math inline">\(k\)</span> observed successes (and <span class="math inline">\(n-k\)</span> observed failures) in the sample.</li>
-</ul>
-<blockquote>
+are <span class="math inline">\(k\)</span> observed successes (and <span class="math inline">\(n-k\)</span> observed failures) in the sample.</p>
 <p>That takes care of the numerator. Now for the denominator:
 <span class="math display">\[
 P(U(\mathbf{X} = k) = \binom{n}{k} p^k (1-p)^{n-k} \,,
@@ -831,19 +819,14 @@ P(U(\mathbf{X} = k) = \binom{n}{k} p^k (1-p)^{n-k} \,,
 because the sum of <span class="math inline">\(n\)</span> Bernoulli-distributed random variables is
 binomially distributed (as you can show yourself using the method of
 moment-generating functions).</p>
-</blockquote>
-<blockquote>
 <p>Thus
 <span class="math display">\[
 P(X_1=x_1,\ldots,X_n=x_n \vert U(\mathbf{X}=k) = \frac{p^k(1-p)^{n-k}}{\binom{n}{k} p^k(1-p)^{n-k}} = \frac{1}{\binom{n}{k}} \,,
 \]</span>
 which does not depend on the parameter <span class="math inline">\(p\)</span>. Thus
 <span class="math inline">\(U(\mathbf{X}) = \sum_{i=1}^n X_i\)</span> is indeed a sufficient statistic for <span class="math inline">\(p\)</span>.</p>
-</blockquote>
-<blockquote>
 <p>(The foregoing clearly illustrates why factorization is a preferred means
 by which to determine sufficient statistics!)</p>
-</blockquote>
 </div>
 <div id="minimal-sufficiency" class="section level3 hasAnchor" number="7.5.2">
 <h3><span class="header-section-number">7.5.2</span> Minimal Sufficiency<a href="further-conceptual-details-optional.html#minimal-sufficiency" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -862,11 +845,7 @@ if the ratio of likelihoods
 \]</span>
 is constant as a function of <span class="math inline">\(\theta\)</span> if and only if <span class="math inline">\(g(x_1,\ldots,x_n) = g(y_1,\ldots,y_n)\)</span> for a function <span class="math inline">\(g(\cdot)\)</span>, then <span class="math inline">\(g(X_1,\ldots,X_n)\)</span> is
 a minimal sufficient statistic for <span class="math inline">\(\theta\)</span>.</p>
-<!--
----
--->
-<ul>
-<li><em>Example</em>. Let <span class="math inline">\(\{X_1,\ldots,X_n\}\)</span> and
+<p>As an example, let <span class="math inline">\(\{X_1,\ldots,X_n\}\)</span> and
 <span class="math inline">\(\{Y_1,\ldots,Y_n\} \overset{iid}{\sim}\)</span> Poisson(<span class="math inline">\(\lambda\)</span>).
 The ratio of likelihoods is
 <span class="math display">\[
@@ -874,11 +853,7 @@ The ratio of likelihoods is
 \]</span>
 This is only constant as a function of <span class="math inline">\(\lambda\)</span> if we can “get rid of”
 <span class="math inline">\(\lambda\)</span>, by setting its exponent to 0…i.e., by setting
-<span class="math inline">\(\sum_{i=1}^n x_i = \sum_{i=1}^n y_i\)</span>. Thus <span class="math inline">\(g(\mathbf{x}) = \sum_{i=1}^n x_i\)</span> is a minimal sufficient statistic for <span class="math inline">\(\lambda\)</span>.</li>
-</ul>
-<!--
----
--->
+<span class="math inline">\(\sum_{i=1}^n x_i = \sum_{i=1}^n y_i\)</span>. Thus <span class="math inline">\(g(\mathbf{x}) = \sum_{i=1}^n x_i\)</span> is a minimal sufficient statistic for <span class="math inline">\(\lambda\)</span>.</p>
 <p>Note that in the context of the present course, any and all sufficient
 statistics that we define via, e.g., factorization are minimal sufficient.</p>
 <p>One might ask “what is an example of a sufficient statistic that is not
@@ -896,37 +871,68 @@ cannot define a function <span class="math inline">\(f\)</span> such that <span 
 <div id="completeness" class="section level3 hasAnchor" number="7.5.3">
 <h3><span class="header-section-number">7.5.3</span> Completeness<a href="further-conceptual-details-optional.html#completeness" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The concept of the completeness of a statistic is a general concept, i.e., it
-is not limited to sufficient statistics. However, we define it here because
-the concept comes up in the context of determining an MVUE: the sufficient
+is not limited to sufficient statistics. One can think of it as the idea that
+each value of <span class="math inline">\(\theta\)</span> in a distribution maps to a distinct pmf or pdf.
+We bring up completeness here because
+the concept appears in the context of determining an MVUE: the sufficient
 statistic that we find via, e.g., factorization technically needs to be both
 minimal and complete.</p>
 <p>Let <span class="math inline">\(f_U(u \vert \theta)\)</span> be the family of pmfs or pdfs for the
 statistic <span class="math inline">\(U(\mathbf{X})\)</span>. <span class="math inline">\(U\)</span> is dubbed a <em>complete</em> statistic if
 <span class="math inline">\(E[g(U)] = 0\)</span> for all <span class="math inline">\(\theta\)</span> implies <span class="math inline">\(P(g(U) = 0) = 1\)</span> for all <span class="math inline">\(\theta\)</span>.</p>
-<!--
----
--->
-<ul>
-<li><em>Example</em>. Let <span class="math inline">\(U \sim\)</span> Binomial(<span class="math inline">\(n,p\)</span>), with <span class="math inline">\(0 &lt; p &lt; 1\)</span>, and let
+<p>As an example, let <span class="math inline">\(U \sim\)</span> Binomial(<span class="math inline">\(n,p\)</span>), with <span class="math inline">\(0 &lt; p &lt; 1\)</span>, and let
 <span class="math inline">\(g(\cdot)\)</span> be a function such that <span class="math inline">\(E[g(U)] = 0\)</span>. Then
 <span class="math display">\[
 0 = E[g(U)] = \sum_{u=0}^n g(u) \binom{n}{u} p^u (1-p)^{n-u} = (1-p)^n \sum_{u=0}^n g(u) \binom{n}{u} \left( \frac{p}{1-p}\right)^u \,.
 \]</span>
 For any choice of <span class="math inline">\(u\)</span> and <span class="math inline">\(n\)</span>, <span class="math inline">\(\binom{n}{u} [p/(1-p)]^u &gt; 0\)</span>. So, in order
 to have <span class="math inline">\(E[g(U)] = 0\)</span> for all <span class="math inline">\(p\)</span>, <span class="math inline">\(g(u) = 0\)</span> for all <span class="math inline">\(u\)</span>, i.e.,
-<span class="math inline">\(P(g(U) = 0) = 1\)</span>. Therefore <span class="math inline">\(U\)</span> is a complete statistic.</li>
-</ul>
-<!--
----
--->
-<!--
-TBD: Add more intuitive explanation of what "complete" means.
--->
+<span class="math inline">\(P(g(U) = 0) = 1\)</span>. Therefore <span class="math inline">\(U\)</span> is a complete statistic.</p>
 <p>Note that a complete statistic is also minimal sufficient, but the converse
 is not necessarily true: a minimal sufficient statistic may not be complete.</p>
 </div>
-<div id="exponential-family-of-distributions" class="section level3 hasAnchor" number="7.5.4">
-<h3><span class="header-section-number">7.5.4</span> Exponential Family of Distributions<a href="further-conceptual-details-optional.html#exponential-family-of-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="the-rao-blackwell-theorem" class="section level3 hasAnchor" number="7.5.4">
+<h3><span class="header-section-number">7.5.4</span> The Rao-Blackwell Theorem<a href="further-conceptual-details-optional.html#the-rao-blackwell-theorem" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The Rao-Blackwell theorem implies that an unbiased estimator
+for <span class="math inline">\(\theta\)</span> with a small variance is, or can be made to be, a
+function of a sufficient statistic:
+if we have an unbiased estimator for <span class="math inline">\(\theta\)</span>, we might be able to improve
+it using the prescription of the theorem. In the end, the theorem provides
+a mathematically more challenging route to defining a minimum variance
+unbiased estimator than what we show in the main text<span class="math inline">\(-\)</span>likelihood factorization
+followed by the “de-biasing” of a sufficient statistic<span class="math inline">\(-\)</span>and hence we
+relegate here, to the chapter of optional material.</p>
+<p>Let <span class="math inline">\(\hat\theta\)</span> be an unbiased estimator for <span class="math inline">\(\theta\)</span> such
+that <span class="math inline">\(V[\hat\theta] &lt; \infty\)</span>. If <span class="math inline">\(U\)</span> is a sufficient
+statistic for <span class="math inline">\(\theta\)</span>, define <span class="math inline">\(\hat\theta^* = E[\hat\theta \vert U]\)</span>.
+Then, for all <span class="math inline">\(\theta\)</span>,
+<span class="math display">\[
+E[\hat\theta^*] = \theta ~~~ \text{and} ~~~ V[\hat\theta^*] \leq V[\hat\theta] \,.
+\]</span></p>
+<p>Let’s suppose we have sampled <span class="math inline">\(n\)</span> iid data from a Binomial distribution with
+number of trials <span class="math inline">\(k\)</span> and proportion <span class="math inline">\(p\)</span>.
+We propose an estimator for <span class="math inline">\(p\)</span>: <span class="math inline">\(X_1/k\)</span>.
+First, is <span class="math inline">\(\hat{p} = X_1/k\)</span> unbiased? We have that
+<span class="math display">\[
+E[\hat{p}-p] = E\left[\frac{X_1}{k}\right] - p = \frac{1}{k}E[X_1] - p = \frac{1}{k}kp - p = 0 \,.
+\]</span>
+So…yes.
+Second, is <span class="math inline">\(V[\hat{p}] &lt; \infty\)</span>? <span class="math inline">\(V[X_1/k] = V[X_1]/k^2 = p(1-p)/k\)</span>…so,
+also yes. We are thus free to use the Rao-Blackwell theorem to improve upon
+<span class="math inline">\(\hat{p} = X_1/k\)</span>:
+<span class="math display">\[
+\hat\theta^* = E[\hat\theta \vert U] = E\left[\frac{X_1}{k} \left| ~ U = \sum_{i=1}^n X_i \right. \right] \,.
+\]</span>
+Since we are given the sum of the data, and since the data are iid, we
+would expect, on average, that <span class="math inline">\(X_1\)</span> has the value <span class="math inline">\(U/n\)</span>, and thus that
+<span class="math inline">\(X_1/k\)</span> has the value <span class="math inline">\(U/(nk)\)</span>. Thus
+<span class="math display">\[
+\hat\theta^* = \frac{\bar{X}}{k}
+\]</span>
+is the MVUE for <span class="math inline">\(p\)</span>.</p>
+</div>
+<div id="exponential-family-of-distributions" class="section level3 hasAnchor" number="7.5.5">
+<h3><span class="header-section-number">7.5.5</span> Exponential Family of Distributions<a href="further-conceptual-details-optional.html#exponential-family-of-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The exponential family is a set of distributions whose probability mass
 or density functions can be expressed as either
 <span class="math display">\[
@@ -955,11 +961,7 @@ The sufficient statistic is thus
 <span class="math display">\[
 U = \sum_{i=1}^n t(X_i) \,.
 \]</span></p>
-<!--
----
--->
-<ul>
-<li><em>Example</em>. What is the sufficient statistic for the mean of an exponential
+<p>As an example, what is the sufficient statistic for the mean of an exponential
 distribution? The exponential pdf is <span class="math inline">\((1/\beta)\exp(-x/\beta)\)</span> for <span class="math inline">\(\beta &gt; 0\)</span>
 and <span class="math inline">\(x \geq 0\)</span>. If we use the first exponential family form above, we can
 read off that
@@ -967,57 +969,7 @@ read off that
 a(\beta) = \frac{1}{\beta} ~~ b(x) = 1 ~~ c(\beta) = -\frac{1}{\beta} ~~ t(x) = x \,.
 \]</span>
 Thus, assuming we have an iid sample of size <span class="math inline">\(n\)</span>, the sufficient statistic
-would be <span class="math inline">\(U = \sum_{i=1}^n t(X_i) = \sum_{i=1}^n X_i\)</span>.</li>
-</ul>
-<!--
-## The Rao-Blackwell Theorem
-
-TBD -- to be written for 36-236.
-
-At this point, there are two different directions that we could go.
-
-The first is to make use of the *Rao-Blackwell theorem*:
-
-Let $\hat\theta$ be an unbiased estimator for $\theta$ such that $V[\hat\theta] < \infty$. If $U$ is a sufficient
-statistic for $\theta$, define $\hat\theta^* = E[\hat\theta \vert U]$. Then, for all $\theta$,
-$$
-E[\hat\theta^*] = \theta ~~~ \text{and} ~~~ V[\hat\theta^*] \leq V[\hat\theta] \,.
-$$
-The Rao-Blackwell theorem implies that an unbiased estimator for $\theta$ with a small
-variance is, or can be made to be, a function of a sufficient statistic:
-if we have an unbiased estimator for $\theta$, we might be able to improve
-it using the prescription of the theorem. (The interested reader can find the proof
-for the theorem in an appendix. The proof utilizes the concepts of conditional expected
-value and variance, which we have yet to cover.)
-
-Let's propose an estimator for $p$: $X_1/k$. Is $\hat{p} = X_1/k$ unbiased?
-
-\smallskip\hrule
-
-**Recall**: *the bias of an estimator is the difference between the average value of the estimates it generates, minus the true parameter value. If $E[\hat{\theta}-\theta] = 0$, then $\hat{\theta}$ is said to be an unbiased estimator.*
-
-\smallskip\hrule
-
-We have that
-$$
-E[\hat{p}-p] = E\left[\frac{X_1}{k}\right] - p = \frac{1}{k}E[X_1] - p = \frac{1}{k}kp - p = 0 \,. \checkmark
-$$
-Is $V[\hat{p}] < \infty$? $V[X_1/k] = V[X_1]/k^2 = p(1-p)/k$...so, yes. $\checkmark$
-
-We are now free to use the Rao-Blackwell theorem to improve upon $\hat{p} = X_1/k$:
-$$
-\hat\theta^* = E[\hat\theta \vert U] = E\left[\frac{X_1}{k} \left| ~ U = \sum_{i=1}^n X_i \right. \right] \,.
-$$
-Since we are given the sum of the data, and since the data are iid, we would expect, on average, that
-$X_1$ has the value $U/n$, and thus that $X_1/k$ has the value $U/(nk)$. Thus
-$$
-\hat\theta^* = \frac{\bar{X}}{k}
-$$
-is the MVUE for $p$.
-
-It is not always easy to evaluate the expected value in the Rao-Blackwell theorem. Thus we will now show
-a second (easier) pathway that one can follow to get to the MVUE. 
--->
+would be <span class="math inline">\(U = \sum_{i=1}^n t(X_i) = \sum_{i=1}^n X_i\)</span>.</p>
 
 <div style="page-break-after: always;"></div>
 </div>
