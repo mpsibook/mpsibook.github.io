@@ -13,7 +13,7 @@ fig:exvx
 fig:xsinx
 fig:pdfcdf
 fig:cdfs
-fig:unnamed-chunk-14
+fig:pmfcdf
 fig:cdfpoly
 fig:cdfcurve
 fig:discon
@@ -77,7 +77,8 @@ fig:ppmf
 fig:poicdf
 fig:xbarpois
 fig:poici
-fig:lrtsim
+fig:lrtsim-1
+fig:lrtsim-2
 fig:gammapdf
 fig:nbmodel
 fig:unifpdf
@@ -92,8 +93,8 @@ fig:covplot1
 fig:covplot2
 fig:mulfig3
 fig:marcond
-fig:unnamed-chunk-123
-fig:unnamed-chunk-124
+fig:unnamed-chunk-129
+fig:unnamed-chunk-130
 fig:sampx
 the-basics-of-probability-and-statistical-inference
 data-and-statistical-populations
@@ -341,4 +342,5 @@ sufficient-statistics
 a-formal-definition-of-sufficiency
 minimal-sufficiency
 completeness
+the-rao-blackwell-theorem
 exponential-family-of-distributions

@@ -170,7 +170,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.8" data-path="the-basics-of-probability-and-statistical-inference.html"><a href="the-basics-of-probability-and-statistical-inference.html#working-with-r-probability-distributions"><i class="fa fa-check"></i><b>1.8</b> Working With R: Probability Distributions</a>
 <ul>
 <li class="chapter" data-level="1.8.1" data-path="the-basics-of-probability-and-statistical-inference.html"><a href="the-basics-of-probability-and-statistical-inference.html#numerical-integration-and-conditional-probability"><i class="fa fa-check"></i><b>1.8.1</b> Numerical Integration and Conditional Probability</a></li>
-<li class="chapter" data-level="1.8.2" data-path="the-basics-of-probability-and-statistical-inference.html"><a href="the-basics-of-probability-and-statistical-inference.html#numerical-integration-and-variance"><i class="fa fa-check"></i><b>1.8.2</b> Numerical Integration and Variance*</a></li>
+<li class="chapter" data-level="1.8.2" data-path="the-basics-of-probability-and-statistical-inference.html"><a href="the-basics-of-probability-and-statistical-inference.html#numerical-integration-and-variance"><i class="fa fa-check"></i><b>1.8.2</b> Numerical Integration and Variance</a></li>
 </ul></li>
 <li class="chapter" data-level="1.9" data-path="the-basics-of-probability-and-statistical-inference.html"><a href="the-basics-of-probability-and-statistical-inference.html#cumulative-distribution-functions"><i class="fa fa-check"></i><b>1.9</b> Cumulative Distribution Functions</a>
 <ul>
@@ -521,7 +521,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.5.1" data-path="further-conceptual-details-optional.html"><a href="further-conceptual-details-optional.html#a-formal-definition-of-sufficiency"><i class="fa fa-check"></i><b>7.5.1</b> A Formal Definition of Sufficiency</a></li>
 <li class="chapter" data-level="7.5.2" data-path="further-conceptual-details-optional.html"><a href="further-conceptual-details-optional.html#minimal-sufficiency"><i class="fa fa-check"></i><b>7.5.2</b> Minimal Sufficiency</a></li>
 <li class="chapter" data-level="7.5.3" data-path="further-conceptual-details-optional.html"><a href="further-conceptual-details-optional.html#completeness"><i class="fa fa-check"></i><b>7.5.3</b> Completeness</a></li>
-<li class="chapter" data-level="7.5.4" data-path="further-conceptual-details-optional.html"><a href="further-conceptual-details-optional.html#exponential-family-of-distributions"><i class="fa fa-check"></i><b>7.5.4</b> Exponential Family of Distributions</a></li>
+<li class="chapter" data-level="7.5.4" data-path="further-conceptual-details-optional.html"><a href="further-conceptual-details-optional.html#the-rao-blackwell-theorem"><i class="fa fa-check"></i><b>7.5.4</b> The Rao-Blackwell Theorem</a></li>
+<li class="chapter" data-level="7.5.5" data-path="further-conceptual-details-optional.html"><a href="further-conceptual-details-optional.html#exponential-family-of-distributions"><i class="fa fa-check"></i><b>7.5.5</b> Exponential Family of Distributions</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="appendix-a-table-of-symbols.html"><a href="appendix-a-table-of-symbols.html"><i class="fa fa-check"></i>Appendix A: Table of Symbols</a></li>
@@ -696,26 +697,26 @@ summation evaluates to 1, and thus <span class="math inline">\(E[X] = kp\)</span
 <caption>Binomial Distribution - <code>R</code> Functions</caption>
 <thead>
 <tr class="header">
-<th>quantity</th>
-<th><code>R</code> function call</th>
+<th align="center">quantity</th>
+<th align="center"><code>R</code> function call</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>PMF</td>
-<td><code>dbinom(x,k,p)</code></td>
+<td align="center">PMF</td>
+<td align="center"><code>dbinom(x,k,p)</code></td>
 </tr>
 <tr class="even">
-<td>CDF</td>
-<td><code>pbinom(x,k,p)</code></td>
+<td align="center">CDF</td>
+<td align="center"><code>pbinom(x,k,p)</code></td>
 </tr>
 <tr class="odd">
-<td>Inverse CDF</td>
-<td><code>qbinom(q,k,p)</code></td>
+<td align="center">Inverse CDF</td>
+<td align="center"><code>qbinom(q,k,p)</code></td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(n\)</span> iid random samples</td>
-<td><code>rbinom(n,k,p)</code></td>
+<td align="center"><span class="math inline">\(n\)</span> iid random samples</td>
+<td align="center"><code>rbinom(n,k,p)</code></td>
 </tr>
 </tbody>
 </table>
@@ -745,26 +746,26 @@ Figure 3.2: Negative binomial probability mass functions for the number of succe
 <caption>Negative Binomial Distribution - <code>R</code> Functions</caption>
 <thead>
 <tr class="header">
-<th>quantity</th>
-<th><code>R</code> function call</th>
+<th align="center">quantity</th>
+<th align="center"><code>R</code> function call</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>PMF</td>
-<td><code>dnbinom(x,s,p)</code></td>
+<td align="center">PMF</td>
+<td align="center"><code>dnbinom(x,s,p)</code></td>
 </tr>
 <tr class="even">
-<td>CDF</td>
-<td><code>pnbinom(x,s,p)</code></td>
+<td align="center">CDF</td>
+<td align="center"><code>pnbinom(x,s,p)</code></td>
 </tr>
 <tr class="odd">
-<td>Inverse CDF</td>
-<td><code>qnbinom(q,s,p)</code></td>
+<td align="center">Inverse CDF</td>
+<td align="center"><code>qnbinom(q,s,p)</code></td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(n\)</span> iid random samples</td>
-<td><code>rnbinom(n,s,p)</code></td>
+<td align="center"><span class="math inline">\(n\)</span> iid random samples</td>
+<td align="center"><code>rnbinom(n,s,p)</code></td>
 </tr>
 </tbody>
 </table>
@@ -908,12 +909,12 @@ in the computation. Thus <span class="math inline">\(P(4 \leq X &lt; 6) = p_X(4)
 \]</span>
 Even computing this is unnecessarily laborious; instead, we call on <code>R</code>:</p>
 </blockquote>
-<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="the-binomial-and-related-distributions.html#cb166-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbinom</span>(<span class="dv">4</span>,<span class="at">size=</span><span class="dv">10</span>,<span class="at">prob=</span><span class="fl">0.6</span>) <span class="sc">+</span> <span class="fu">dbinom</span>(<span class="dv">5</span>,<span class="at">size=</span><span class="dv">10</span>,<span class="at">prob=</span><span class="fl">0.6</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="the-binomial-and-related-distributions.html#cb165-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbinom</span>(<span class="dv">4</span>,<span class="at">size=</span><span class="dv">10</span>,<span class="at">prob=</span><span class="fl">0.6</span>) <span class="sc">+</span> <span class="fu">dbinom</span>(<span class="dv">5</span>,<span class="at">size=</span><span class="dv">10</span>,<span class="at">prob=</span><span class="fl">0.6</span>)</span></code></pre></div>
 <pre><code>## [1] 0.3121349</code></pre>
 <blockquote>
 <p>We can also utilize cdf functions here: <span class="math inline">\(P(4 \leq X &lt; 6) = P(X &lt; 6) - P(X &lt; 4) = P(X \leq 5) - P(X \leq 3) = F_X(5) - F_X(3)\)</span>, which in <code>R</code> is computed via</p>
 </blockquote>
-<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="the-binomial-and-related-distributions.html#cb168-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pbinom</span>(<span class="dv">5</span>,<span class="at">size=</span><span class="dv">10</span>,<span class="at">prob=</span><span class="fl">0.6</span>) <span class="sc">-</span> <span class="fu">pbinom</span>(<span class="dv">3</span>,<span class="at">size=</span><span class="dv">10</span>,<span class="at">prob=</span><span class="fl">0.6</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="the-binomial-and-related-distributions.html#cb167-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pbinom</span>(<span class="dv">5</span>,<span class="at">size=</span><span class="dv">10</span>,<span class="at">prob=</span><span class="fl">0.6</span>) <span class="sc">-</span> <span class="fu">pbinom</span>(<span class="dv">3</span>,<span class="at">size=</span><span class="dv">10</span>,<span class="at">prob=</span><span class="fl">0.6</span>)</span></code></pre></div>
 <pre><code>## [1] 0.3121349</code></pre>
 <blockquote>
 <ol start="2" style="list-style-type: decimal">
@@ -930,7 +931,7 @@ Note that we didn’t do anything differently here than we would have done
 in a continuous distribution setting…and we can proceed directly to
 <code>R</code> because it utilizes the generalized inverse cdf algorithm.</p>
 </blockquote>
-<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="the-binomial-and-related-distributions.html#cb170-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qbinom</span>(<span class="fl">0.9</span>,<span class="at">size=</span><span class="dv">10</span>,<span class="at">prob=</span><span class="fl">0.6</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="the-binomial-and-related-distributions.html#cb169-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qbinom</span>(<span class="fl">0.9</span>,<span class="at">size=</span><span class="dv">10</span>,<span class="at">prob=</span><span class="fl">0.6</span>)</span></code></pre></div>
 <pre><code>## [1] 8</code></pre>
 <hr />
 </div>
@@ -942,21 +943,25 @@ there may be instances when we need to code our own functions for sampling data 
 discrete distributions. The code below shows such a function for an arbitrary probability
 mass function.</p>
 </blockquote>
-<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="the-binomial-and-related-distributions.html#cb172-1" aria-hidden="true" tabindex="-1"></a>x   <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">8</span>)              <span class="co"># domain of x</span></span>
-<span id="cb172-2"><a href="the-binomial-and-related-distributions.html#cb172-2" aria-hidden="true" tabindex="-1"></a>p.x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.2</span>,<span class="fl">0.35</span>,<span class="fl">0.15</span>,<span class="fl">0.3</span>)    <span class="co"># p(x)</span></span>
-<span id="cb172-3"><a href="the-binomial-and-related-distributions.html#cb172-3" aria-hidden="true" tabindex="-1"></a>F.x <span class="ot">&lt;-</span> <span class="fu">cumsum</span>(p.x)             <span class="co"># cumulative sum -&gt; produces F(x)</span></span>
-<span id="cb172-4"><a href="the-binomial-and-related-distributions.html#cb172-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb172-5"><a href="the-binomial-and-related-distributions.html#cb172-5" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">235</span>)</span>
-<span id="cb172-6"><a href="the-binomial-and-related-distributions.html#cb172-6" aria-hidden="true" tabindex="-1"></a>n  <span class="ot">&lt;-</span> <span class="dv">100</span></span>
-<span id="cb172-7"><a href="the-binomial-and-related-distributions.html#cb172-7" aria-hidden="true" tabindex="-1"></a>q  <span class="ot">&lt;-</span> <span class="fu">runif</span>(n)                <span class="co"># we still ultimately need runif!</span></span>
-<span id="cb172-8"><a href="the-binomial-and-related-distributions.html#cb172-8" aria-hidden="true" tabindex="-1"></a>i  <span class="ot">&lt;-</span> <span class="fu">findInterval</span>(q,F.x)<span class="sc">+</span><span class="dv">1</span>   <span class="co"># the output is [0,3] and not [1,4]</span></span>
-<span id="cb172-9"><a href="the-binomial-and-related-distributions.html#cb172-9" aria-hidden="true" tabindex="-1"></a>                              <span class="co"># 0 means q is between Fx[1] and Fx[2], etc.</span></span>
-<span id="cb172-10"><a href="the-binomial-and-related-distributions.html#cb172-10" aria-hidden="true" tabindex="-1"></a>x.sample <span class="ot">&lt;-</span> x[i]</span>
-<span id="cb172-11"><a href="the-binomial-and-related-distributions.html#cb172-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting the output is a bit tricky: we override the default definition of breaks</span></span>
-<span id="cb172-12"><a href="the-binomial-and-related-distributions.html#cb172-12" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(x.sample,<span class="at">main=</span><span class="cn">NULL</span>,<span class="at">prob=</span><span class="cn">TRUE</span>,<span class="at">col=</span><span class="st">&quot;blue&quot;</span>,<span class="at">breaks=</span><span class="fu">seq</span>(<span class="fl">0.5</span>,<span class="fl">8.5</span>,<span class="at">by=</span><span class="dv">1</span>),<span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">9</span>),<span class="at">xlab=</span><span class="st">&quot;x&quot;</span>)</span>
-<span id="cb172-13"><a href="the-binomial-and-related-distributions.html#cb172-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ( ii <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(x) ) {</span>
-<span id="cb172-14"><a href="the-binomial-and-related-distributions.html#cb172-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lines</span>(<span class="fu">c</span>(x[ii]<span class="sc">-</span><span class="fl">0.5</span>,x[ii]<span class="sc">+</span><span class="fl">0.5</span>),<span class="fu">c</span>(p.x[ii],p.x[ii]),<span class="at">lwd=</span><span class="dv">2</span>,<span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span>
-<span id="cb172-15"><a href="the-binomial-and-related-distributions.html#cb172-15" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="the-binomial-and-related-distributions.html#cb171-1" aria-hidden="true" tabindex="-1"></a>x   <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">8</span>)              <span class="co"># domain of x</span></span>
+<span id="cb171-2"><a href="the-binomial-and-related-distributions.html#cb171-2" aria-hidden="true" tabindex="-1"></a>p.x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.2</span>,<span class="fl">0.35</span>,<span class="fl">0.15</span>,<span class="fl">0.3</span>)    <span class="co"># p(x)</span></span>
+<span id="cb171-3"><a href="the-binomial-and-related-distributions.html#cb171-3" aria-hidden="true" tabindex="-1"></a>F.x <span class="ot">&lt;-</span> <span class="fu">cumsum</span>(p.x)             <span class="co"># cumulative sum -&gt; produces F(x)</span></span>
+<span id="cb171-4"><a href="the-binomial-and-related-distributions.html#cb171-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb171-5"><a href="the-binomial-and-related-distributions.html#cb171-5" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">235</span>)</span>
+<span id="cb171-6"><a href="the-binomial-and-related-distributions.html#cb171-6" aria-hidden="true" tabindex="-1"></a>n  <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb171-7"><a href="the-binomial-and-related-distributions.html#cb171-7" aria-hidden="true" tabindex="-1"></a>q  <span class="ot">&lt;-</span> <span class="fu">runif</span>(n)                <span class="co"># we still ultimately need runif!</span></span>
+<span id="cb171-8"><a href="the-binomial-and-related-distributions.html#cb171-8" aria-hidden="true" tabindex="-1"></a>i  <span class="ot">&lt;-</span> <span class="fu">findInterval</span>(q,F.x)<span class="sc">+</span><span class="dv">1</span>   <span class="co"># the output is [0,3] and not [1,4]</span></span>
+<span id="cb171-9"><a href="the-binomial-and-related-distributions.html#cb171-9" aria-hidden="true" tabindex="-1"></a>                              <span class="co"># 0 means q is between Fx[1] and Fx[2], etc.</span></span>
+<span id="cb171-10"><a href="the-binomial-and-related-distributions.html#cb171-10" aria-hidden="true" tabindex="-1"></a>x.sample <span class="ot">&lt;-</span> x[i]</span>
+<span id="cb171-11"><a href="the-binomial-and-related-distributions.html#cb171-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting the output is a bit tricky: we override the default definition of breaks</span></span>
+<span id="cb171-12"><a href="the-binomial-and-related-distributions.html#cb171-12" aria-hidden="true" tabindex="-1"></a>df.sample <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x.sample=</span>x.sample)</span>
+<span id="cb171-13"><a href="the-binomial-and-related-distributions.html#cb171-13" aria-hidden="true" tabindex="-1"></a>df.true   <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x=</span>x<span class="fl">-0.5</span>,<span class="at">xend=</span>x<span class="fl">+0.5</span>,<span class="at">y=</span>p.x,<span class="at">yend=</span>p.x)</span>
+<span id="cb171-14"><a href="the-binomial-and-related-distributions.html#cb171-14" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>df.sample,<span class="fu">aes</span>(<span class="at">x=</span>x.sample,<span class="at">y=</span><span class="fu">after_stat</span>(density))) <span class="sc">+</span></span>
+<span id="cb171-15"><a href="the-binomial-and-related-distributions.html#cb171-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill=</span><span class="st">&quot;blue&quot;</span>,<span class="at">col=</span><span class="st">&quot;black&quot;</span>,<span class="at">breaks=</span><span class="fu">seq</span>(<span class="fl">0.5</span>,<span class="fl">8.5</span>,<span class="at">by=</span><span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb171-16"><a href="the-binomial-and-related-distributions.html#cb171-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">data=</span>df.true,<span class="fu">aes</span>(<span class="at">x=</span>x,<span class="at">xend=</span>xend,<span class="at">y=</span>y,<span class="at">yend=</span>yend),<span class="at">col=</span><span class="st">&quot;red&quot;</span>,<span class="at">lwd=</span><span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb171-17"><a href="the-binomial-and-related-distributions.html#cb171-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;x&quot;</span>) <span class="sc">+</span></span>
+<span id="cb171-18"><a href="the-binomial-and-related-distributions.html#cb171-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">9</span>)) <span class="sc">+</span></span>
+<span id="cb171-19"><a href="the-binomial-and-related-distributions.html#cb171-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">1.25</span>)))</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:pmfsamp"></span>
 <img src="_main_files/figure-html/pmfsamp-1.png" alt="\label{fig:pmfsamp}Histogram of $n = 100$ iid data drawn using an inverse tranform sampler adapted to the discrete distribution setting. The red lines indicate the true density for each value of $x$." width="50%" />
 <p class="caption">
@@ -1101,14 +1106,19 @@ one can just look up when doing calculations.
 (However, we do know that the expected value is <span class="math inline">\(E[\bar{X}] = \mu = kp\)</span>
 and the variance is <span class="math inline">\(V[\bar{X}] = \sigma^2/n = kp(1-p)/n\)</span>.)</p>
 </blockquote>
-<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="the-binomial-and-related-distributions.html#cb173-1" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb173-2"><a href="the-binomial-and-related-distributions.html#cb173-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">10</span>  <span class="co"># we perform n = 10 sets of k = 10 coin flips</span></span>
-<span id="cb173-3"><a href="the-binomial-and-related-distributions.html#cb173-3" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.6</span> <span class="co"># assume the coin is slightly unfair</span></span>
-<span id="cb173-4"><a href="the-binomial-and-related-distributions.html#cb173-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb173-5"><a href="the-binomial-and-related-distributions.html#cb173-5" aria-hidden="true" tabindex="-1"></a>x.bar   <span class="ot">&lt;-</span> <span class="dv">0</span><span class="sc">:</span>(n<span class="sc">*</span>k<span class="sc">+</span><span class="dv">1</span>)<span class="sc">/</span>k</span>
-<span id="cb173-6"><a href="the-binomial-and-related-distributions.html#cb173-6" aria-hidden="true" tabindex="-1"></a>p.x.bar <span class="ot">&lt;-</span> <span class="fu">dbinom</span>(n<span class="sc">*</span>x.bar,<span class="at">size=</span>n<span class="sc">*</span>k,<span class="at">prob=</span>p)</span>
-<span id="cb173-7"><a href="the-binomial-and-related-distributions.html#cb173-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb173-8"><a href="the-binomial-and-related-distributions.html#cb173-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x.bar,p.x.bar,<span class="at">cex=</span><span class="fl">1.5</span>,<span class="at">pch=</span><span class="dv">19</span>,<span class="at">col=</span><span class="st">&quot;blue&quot;</span>,<span class="at">xlab=</span><span class="st">&quot;x.bar&quot;</span>,<span class="at">ylab=</span><span class="fu">expression</span>(p[X]<span class="sc">*</span><span class="st">&quot;(x.bar)&quot;</span>),<span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">8</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="the-binomial-and-related-distributions.html#cb172-1" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb172-2"><a href="the-binomial-and-related-distributions.html#cb172-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">10</span>  <span class="co"># we perform n = 10 sets of k = 10 coin flips</span></span>
+<span id="cb172-3"><a href="the-binomial-and-related-distributions.html#cb172-3" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.6</span> <span class="co"># assume the coin is slightly unfair</span></span>
+<span id="cb172-4"><a href="the-binomial-and-related-distributions.html#cb172-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb172-5"><a href="the-binomial-and-related-distributions.html#cb172-5" aria-hidden="true" tabindex="-1"></a>x.bar   <span class="ot">&lt;-</span> <span class="dv">0</span><span class="sc">:</span>(n<span class="sc">*</span>k<span class="sc">+</span><span class="dv">1</span>)<span class="sc">/</span>k</span>
+<span id="cb172-6"><a href="the-binomial-and-related-distributions.html#cb172-6" aria-hidden="true" tabindex="-1"></a>p.x.bar <span class="ot">&lt;-</span> <span class="fu">dbinom</span>(n<span class="sc">*</span>x.bar,<span class="at">size=</span>n<span class="sc">*</span>k,<span class="at">prob=</span>p)</span>
+<span id="cb172-7"><a href="the-binomial-and-related-distributions.html#cb172-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb172-8"><a href="the-binomial-and-related-distributions.html#cb172-8" aria-hidden="true" tabindex="-1"></a>df      <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x.bar=</span>x.bar,<span class="at">p.x.bar=</span>p.x.bar)</span>
+<span id="cb172-9"><a href="the-binomial-and-related-distributions.html#cb172-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>df,<span class="fu">aes</span>(<span class="at">x=</span>x.bar,<span class="at">y=</span>p.x.bar)) <span class="sc">+</span></span>
+<span id="cb172-10"><a href="the-binomial-and-related-distributions.html#cb172-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">col=</span><span class="st">&quot;blue&quot;</span>,<span class="at">size=</span><span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb172-11"><a href="the-binomial-and-related-distributions.html#cb172-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;x.bar&quot;</span>,<span class="at">y=</span><span class="fu">expression</span>(p[X]<span class="sc">*</span><span class="st">&quot;(x.bar)&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb172-12"><a href="the-binomial-and-related-distributions.html#cb172-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">8</span>)) <span class="sc">+</span></span>
+<span id="cb172-13"><a href="the-binomial-and-related-distributions.html#cb172-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">1.25</span>)))</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:xbarpmf"></span>
 <img src="_main_files/figure-html/xbarpmf-1.png" alt="\label{fig:xbarpmf}Probability mass function for the sample mean of $n = 10$ iid binomial random variables, for $k = 10$ and $p = 0.6$." width="50%" />
 <p class="caption">
@@ -1536,25 +1546,25 @@ For this statistic, <span class="math inline">\(E[Y] = nkp\)</span> increases wi
 <span class="math inline">\(p_{1-\alpha/2}\)</span> maps to the lower bound, while <span class="math inline">\(p_{\alpha/2}\)</span> maps to
 the upper bound.</p>
 </blockquote>
-<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="the-binomial-and-related-distributions.html#cb174-1" aria-hidden="true" tabindex="-1"></a>confint <span class="ot">&lt;-</span> <span class="cf">function</span>(y.obs,nk,<span class="at">alpha=</span><span class="fl">0.05</span>)</span>
-<span id="cb174-2"><a href="the-binomial-and-related-distributions.html#cb174-2" aria-hidden="true" tabindex="-1"></a>{</span>
-<span id="cb174-3"><a href="the-binomial-and-related-distributions.html#cb174-3" aria-hidden="true" tabindex="-1"></a>  f <span class="ot">&lt;-</span> <span class="cf">function</span>(prob,y.obs,nk,q)</span>
-<span id="cb174-4"><a href="the-binomial-and-related-distributions.html#cb174-4" aria-hidden="true" tabindex="-1"></a>  {</span>
-<span id="cb174-5"><a href="the-binomial-and-related-distributions.html#cb174-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pbinom</span>(y.obs,<span class="at">size=</span>nk,<span class="at">prob=</span>prob)<span class="sc">-</span>q</span>
-<span id="cb174-6"><a href="the-binomial-and-related-distributions.html#cb174-6" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb174-7"><a href="the-binomial-and-related-distributions.html#cb174-7" aria-hidden="true" tabindex="-1"></a>  lo <span class="ot">&lt;-</span> <span class="fu">uniroot</span>(f,<span class="at">interval=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),y.obs,nk,<span class="dv">1</span><span class="sc">-</span>alpha<span class="sc">/</span><span class="dv">2</span>)<span class="sc">$</span>root</span>
-<span id="cb174-8"><a href="the-binomial-and-related-distributions.html#cb174-8" aria-hidden="true" tabindex="-1"></a>  hi <span class="ot">&lt;-</span> <span class="fu">uniroot</span>(f,<span class="at">interval=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),y.obs,nk,alpha<span class="sc">/</span><span class="dv">2</span>)<span class="sc">$</span>root</span>
-<span id="cb174-9"><a href="the-binomial-and-related-distributions.html#cb174-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">c</span>(lo,hi))</span>
-<span id="cb174-10"><a href="the-binomial-and-related-distributions.html#cb174-10" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb174-11"><a href="the-binomial-and-related-distributions.html#cb174-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb174-12"><a href="the-binomial-and-related-distributions.html#cb174-12" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
-<span id="cb174-13"><a href="the-binomial-and-related-distributions.html#cb174-13" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">12</span></span>
-<span id="cb174-14"><a href="the-binomial-and-related-distributions.html#cb174-14" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb174-15"><a href="the-binomial-and-related-distributions.html#cb174-15" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.4</span></span>
-<span id="cb174-16"><a href="the-binomial-and-related-distributions.html#cb174-16" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(n,<span class="at">size=</span>k,<span class="at">prob=</span>p)</span>
-<span id="cb174-17"><a href="the-binomial-and-related-distributions.html#cb174-17" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The observed test statistic is&quot;</span>,<span class="fu">sum</span>(X),<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="the-binomial-and-related-distributions.html#cb173-1" aria-hidden="true" tabindex="-1"></a>confint <span class="ot">&lt;-</span> <span class="cf">function</span>(y.obs,nk,<span class="at">alpha=</span><span class="fl">0.05</span>)</span>
+<span id="cb173-2"><a href="the-binomial-and-related-distributions.html#cb173-2" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb173-3"><a href="the-binomial-and-related-distributions.html#cb173-3" aria-hidden="true" tabindex="-1"></a>  f <span class="ot">&lt;-</span> <span class="cf">function</span>(prob,y.obs,nk,q)</span>
+<span id="cb173-4"><a href="the-binomial-and-related-distributions.html#cb173-4" aria-hidden="true" tabindex="-1"></a>  {</span>
+<span id="cb173-5"><a href="the-binomial-and-related-distributions.html#cb173-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pbinom</span>(y.obs,<span class="at">size=</span>nk,<span class="at">prob=</span>prob)<span class="sc">-</span>q</span>
+<span id="cb173-6"><a href="the-binomial-and-related-distributions.html#cb173-6" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb173-7"><a href="the-binomial-and-related-distributions.html#cb173-7" aria-hidden="true" tabindex="-1"></a>  lo <span class="ot">&lt;-</span> <span class="fu">uniroot</span>(f,<span class="at">interval=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),y.obs,nk,<span class="dv">1</span><span class="sc">-</span>alpha<span class="sc">/</span><span class="dv">2</span>)<span class="sc">$</span>root</span>
+<span id="cb173-8"><a href="the-binomial-and-related-distributions.html#cb173-8" aria-hidden="true" tabindex="-1"></a>  hi <span class="ot">&lt;-</span> <span class="fu">uniroot</span>(f,<span class="at">interval=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),y.obs,nk,alpha<span class="sc">/</span><span class="dv">2</span>)<span class="sc">$</span>root</span>
+<span id="cb173-9"><a href="the-binomial-and-related-distributions.html#cb173-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">c</span>(lo,hi))</span>
+<span id="cb173-10"><a href="the-binomial-and-related-distributions.html#cb173-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb173-11"><a href="the-binomial-and-related-distributions.html#cb173-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb173-12"><a href="the-binomial-and-related-distributions.html#cb173-12" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
+<span id="cb173-13"><a href="the-binomial-and-related-distributions.html#cb173-13" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">12</span></span>
+<span id="cb173-14"><a href="the-binomial-and-related-distributions.html#cb173-14" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb173-15"><a href="the-binomial-and-related-distributions.html#cb173-15" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.4</span></span>
+<span id="cb173-16"><a href="the-binomial-and-related-distributions.html#cb173-16" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(n,<span class="at">size=</span>k,<span class="at">prob=</span>p)</span>
+<span id="cb173-17"><a href="the-binomial-and-related-distributions.html#cb173-17" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The observed test statistic is&quot;</span>,<span class="fu">sum</span>(X),<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## The observed test statistic is 22</code></pre>
-<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="the-binomial-and-related-distributions.html#cb176-1" aria-hidden="true" tabindex="-1"></a><span class="fu">confint</span>(<span class="fu">sum</span>(X),n<span class="sc">*</span>k)</span></code></pre></div>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="the-binomial-and-related-distributions.html#cb175-1" aria-hidden="true" tabindex="-1"></a><span class="fu">confint</span>(<span class="fu">sum</span>(X),n<span class="sc">*</span>k)</span></code></pre></div>
 <pre><code>## [1] 0.2607037 0.5010387</code></pre>
 <blockquote>
 <p>We find that the interval is <span class="math inline">\([\hat{p}_L,\hat{p}_H] = [0.261,0.501]\)</span>, which overlaps the true value of 0.4.
@@ -1594,9 +1604,9 @@ lines increases as <span class="math inline">\(n\)</span> increases, i.e., as th
 decreases.</p>
 </blockquote>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:covsim"></span>
-<img src="_main_files/figure-html/covsim-1.png" alt="\label{fig:covsim}Results of simulations (described in the text) for $k = 5$ and $n = 12$ (left), 120 (center), and 1200 (right). The expected proportion of simulation results laying between the two dashed lines is $\approx$ 95 percent; we see that as $n$ increases, i.e., as the effect of sampling distribution discreteness decreases, we achieve that expectation." width="30%" /><img src="_main_files/figure-html/covsim-2.png" alt="\label{fig:covsim}Results of simulations (described in the text) for $k = 5$ and $n = 12$ (left), 120 (center), and 1200 (right). The expected proportion of simulation results laying between the two dashed lines is $\approx$ 95 percent; we see that as $n$ increases, i.e., as the effect of sampling distribution discreteness decreases, we achieve that expectation." width="30%" /><img src="_main_files/figure-html/covsim-3.png" alt="\label{fig:covsim}Results of simulations (described in the text) for $k = 5$ and $n = 12$ (left), 120 (center), and 1200 (right). The expected proportion of simulation results laying between the two dashed lines is $\approx$ 95 percent; we see that as $n$ increases, i.e., as the effect of sampling distribution discreteness decreases, we achieve that expectation." width="30%" />
+<img src="_main_files/figure-html/covsim-1.png" alt="\label{fig:covsim}Results of simulations (described in the text) for $k = 5$ and $n = 12$ (left), 120 (center), and 1200 (right). The expected proportion of simulation results lying between the two dashed lines is $\approx$ 95 percent; we see that as $n$ increases, i.e., as the effect of sampling distribution discreteness decreases, we achieve that expectation." width="30%" /><img src="_main_files/figure-html/covsim-2.png" alt="\label{fig:covsim}Results of simulations (described in the text) for $k = 5$ and $n = 12$ (left), 120 (center), and 1200 (right). The expected proportion of simulation results lying between the two dashed lines is $\approx$ 95 percent; we see that as $n$ increases, i.e., as the effect of sampling distribution discreteness decreases, we achieve that expectation." width="30%" /><img src="_main_files/figure-html/covsim-3.png" alt="\label{fig:covsim}Results of simulations (described in the text) for $k = 5$ and $n = 12$ (left), 120 (center), and 1200 (right). The expected proportion of simulation results lying between the two dashed lines is $\approx$ 95 percent; we see that as $n$ increases, i.e., as the effect of sampling distribution discreteness decreases, we achieve that expectation." width="30%" />
 <p class="caption">
-Figure 3.8: Results of simulations (described in the text) for <span class="math inline">\(k = 5\)</span> and <span class="math inline">\(n = 12\)</span> (left), 120 (center), and 1200 (right). The expected proportion of simulation results laying between the two dashed lines is <span class="math inline">\(\approx\)</span> 95 percent; we see that as <span class="math inline">\(n\)</span> increases, i.e., as the effect of sampling distribution discreteness decreases, we achieve that expectation.
+Figure 3.8: Results of simulations (described in the text) for <span class="math inline">\(k = 5\)</span> and <span class="math inline">\(n = 12\)</span> (left), 120 (center), and 1200 (right). The expected proportion of simulation results lying between the two dashed lines is <span class="math inline">\(\approx\)</span> 95 percent; we see that as <span class="math inline">\(n\)</span> increases, i.e., as the effect of sampling distribution discreteness decreases, we achieve that expectation.
 </p>
 </div>
 <hr />
@@ -1616,24 +1626,24 @@ when we adapt the confidence interval code we use for binomially
 distributed data, we need to switch the mapping of <span class="math inline">\(p_{1-\alpha/2}\)</span> and
 <span class="math inline">\(p_{\alpha/2}\)</span> to point to the <em>upper</em> and <em>lower</em> bounds, respectively.</p>
 </blockquote>
-<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="the-binomial-and-related-distributions.html#cb178-1" aria-hidden="true" tabindex="-1"></a>confint <span class="ot">&lt;-</span> <span class="cf">function</span>(y.obs,ns,<span class="at">alpha=</span><span class="fl">0.05</span>)</span>
-<span id="cb178-2"><a href="the-binomial-and-related-distributions.html#cb178-2" aria-hidden="true" tabindex="-1"></a>{</span>
-<span id="cb178-3"><a href="the-binomial-and-related-distributions.html#cb178-3" aria-hidden="true" tabindex="-1"></a>  f <span class="ot">&lt;-</span> <span class="cf">function</span>(prob,y.obs,ns,q)</span>
-<span id="cb178-4"><a href="the-binomial-and-related-distributions.html#cb178-4" aria-hidden="true" tabindex="-1"></a>  {     </span>
-<span id="cb178-5"><a href="the-binomial-and-related-distributions.html#cb178-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pnbinom</span>(y.obs,<span class="at">size=</span>ns,<span class="at">prob=</span>prob)<span class="sc">-</span>q</span>
-<span id="cb178-6"><a href="the-binomial-and-related-distributions.html#cb178-6" aria-hidden="true" tabindex="-1"></a>  }     </span>
-<span id="cb178-7"><a href="the-binomial-and-related-distributions.html#cb178-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Note the switch in the mapping! hi comes first here.</span></span>
-<span id="cb178-8"><a href="the-binomial-and-related-distributions.html#cb178-8" aria-hidden="true" tabindex="-1"></a>  hi <span class="ot">&lt;-</span> <span class="fu">uniroot</span>(f,<span class="at">interval=</span><span class="fu">c</span>(<span class="fl">0.0001</span>,<span class="dv">1</span>),y.obs,ns,<span class="dv">1</span><span class="sc">-</span>alpha<span class="sc">/</span><span class="dv">2</span>)<span class="sc">$</span>root</span>
-<span id="cb178-9"><a href="the-binomial-and-related-distributions.html#cb178-9" aria-hidden="true" tabindex="-1"></a>  lo <span class="ot">&lt;-</span> <span class="fu">uniroot</span>(f,<span class="at">interval=</span><span class="fu">c</span>(<span class="fl">0.0001</span>,<span class="dv">1</span>),y.obs,ns,alpha<span class="sc">/</span><span class="dv">2</span>)<span class="sc">$</span>root</span>
-<span id="cb178-10"><a href="the-binomial-and-related-distributions.html#cb178-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">c</span>(lo,hi))</span>
-<span id="cb178-11"><a href="the-binomial-and-related-distributions.html#cb178-11" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb178-12"><a href="the-binomial-and-related-distributions.html#cb178-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb178-13"><a href="the-binomial-and-related-distributions.html#cb178-13" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
-<span id="cb178-14"><a href="the-binomial-and-related-distributions.html#cb178-14" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">12</span></span>
-<span id="cb178-15"><a href="the-binomial-and-related-distributions.html#cb178-15" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb178-16"><a href="the-binomial-and-related-distributions.html#cb178-16" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.4</span></span>
-<span id="cb178-17"><a href="the-binomial-and-related-distributions.html#cb178-17" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">rnbinom</span>(n,<span class="at">size=</span>s,<span class="at">prob=</span>p)</span>
-<span id="cb178-18"><a href="the-binomial-and-related-distributions.html#cb178-18" aria-hidden="true" tabindex="-1"></a><span class="fu">confint</span>(<span class="fu">sum</span>(X),n<span class="sc">*</span>s)</span></code></pre></div>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="the-binomial-and-related-distributions.html#cb177-1" aria-hidden="true" tabindex="-1"></a>confint <span class="ot">&lt;-</span> <span class="cf">function</span>(y.obs,ns,<span class="at">alpha=</span><span class="fl">0.05</span>)</span>
+<span id="cb177-2"><a href="the-binomial-and-related-distributions.html#cb177-2" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb177-3"><a href="the-binomial-and-related-distributions.html#cb177-3" aria-hidden="true" tabindex="-1"></a>  f <span class="ot">&lt;-</span> <span class="cf">function</span>(prob,y.obs,ns,q)</span>
+<span id="cb177-4"><a href="the-binomial-and-related-distributions.html#cb177-4" aria-hidden="true" tabindex="-1"></a>  {     </span>
+<span id="cb177-5"><a href="the-binomial-and-related-distributions.html#cb177-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pnbinom</span>(y.obs,<span class="at">size=</span>ns,<span class="at">prob=</span>prob)<span class="sc">-</span>q</span>
+<span id="cb177-6"><a href="the-binomial-and-related-distributions.html#cb177-6" aria-hidden="true" tabindex="-1"></a>  }     </span>
+<span id="cb177-7"><a href="the-binomial-and-related-distributions.html#cb177-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Note the switch in the mapping! hi comes first here.</span></span>
+<span id="cb177-8"><a href="the-binomial-and-related-distributions.html#cb177-8" aria-hidden="true" tabindex="-1"></a>  hi <span class="ot">&lt;-</span> <span class="fu">uniroot</span>(f,<span class="at">interval=</span><span class="fu">c</span>(<span class="fl">0.0001</span>,<span class="dv">1</span>),y.obs,ns,<span class="dv">1</span><span class="sc">-</span>alpha<span class="sc">/</span><span class="dv">2</span>)<span class="sc">$</span>root</span>
+<span id="cb177-9"><a href="the-binomial-and-related-distributions.html#cb177-9" aria-hidden="true" tabindex="-1"></a>  lo <span class="ot">&lt;-</span> <span class="fu">uniroot</span>(f,<span class="at">interval=</span><span class="fu">c</span>(<span class="fl">0.0001</span>,<span class="dv">1</span>),y.obs,ns,alpha<span class="sc">/</span><span class="dv">2</span>)<span class="sc">$</span>root</span>
+<span id="cb177-10"><a href="the-binomial-and-related-distributions.html#cb177-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">c</span>(lo,hi))</span>
+<span id="cb177-11"><a href="the-binomial-and-related-distributions.html#cb177-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb177-12"><a href="the-binomial-and-related-distributions.html#cb177-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb177-13"><a href="the-binomial-and-related-distributions.html#cb177-13" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
+<span id="cb177-14"><a href="the-binomial-and-related-distributions.html#cb177-14" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">12</span></span>
+<span id="cb177-15"><a href="the-binomial-and-related-distributions.html#cb177-15" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb177-16"><a href="the-binomial-and-related-distributions.html#cb177-16" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.4</span></span>
+<span id="cb177-17"><a href="the-binomial-and-related-distributions.html#cb177-17" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">rnbinom</span>(n,<span class="at">size=</span>s,<span class="at">prob=</span>p)</span>
+<span id="cb177-18"><a href="the-binomial-and-related-distributions.html#cb177-18" aria-hidden="true" tabindex="-1"></a><span class="fu">confint</span>(<span class="fu">sum</span>(X),n<span class="sc">*</span>s)</span></code></pre></div>
 <pre><code>## [1] 0.3255305 0.4822869</code></pre>
 <blockquote>
 <p>The confidence interval is <span class="math inline">\([\hat{p}_L,\hat{p}_H] = [0.326,0.482]\)</span>,
@@ -1660,7 +1670,7 @@ When <span class="math inline">\(k\)</span> is sufficiently large, we can assume
 that of a normal distribution, with mean <span class="math inline">\(E[\bar{X}] = kp\)</span> and with
 variance and standard error
 <span class="math display">\[
-V[\bar{X}] = \frac{kp(1-p)}{n} ~~~ \mbox{and} ~~~ se(\bar{X}) = \sqrt{V[\bar{X}]} = \sqrt{\frac{kp(1-p)}{n} \,.
+V[\bar{X}] = \frac{kp(1-p)}{n} ~~~ \mbox{and} ~~~ se(\bar{X}) = \sqrt{V[\bar{X}]} = \sqrt{\frac{kp(1-p)}{n}} \,.
 \]</span>
 Furthermore, we can assume
 that <span class="math inline">\(\hat{p} = \bar{X}/k\)</span> is approximately normally distributed, with
@@ -1772,7 +1782,7 @@ F_U(u_{1-\alpha} \vert p_o) - (1-\alpha) &amp;= 0 \\
 Here, <span class="math inline">\(U\)</span> is binomially distributed, and because we cannot easily work with the
 generalized inverse cdf for the binomial distribution, we go directly to
 code:</p>
-<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="the-binomial-and-related-distributions.html#cb180-1" aria-hidden="true" tabindex="-1"></a>u.hi <span class="ot">&lt;-</span> <span class="fu">qbinom</span>(<span class="dv">1</span><span class="sc">-</span>alpha,<span class="at">size=</span>k,<span class="at">prob=</span>p.o) <span class="co"># it turns out this is incorrect!</span></span></code></pre></div>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="the-binomial-and-related-distributions.html#cb179-1" aria-hidden="true" tabindex="-1"></a>u.hi <span class="ot">&lt;-</span> <span class="fu">qbinom</span>(<span class="dv">1</span><span class="sc">-</span>alpha,<span class="at">size=</span>k,<span class="at">prob=</span>p.o) <span class="co"># it turns out this is incorrect!</span></span></code></pre></div>
 <p>However, we run into an issue that we will run into whether the sampling
 distribution is discrete, one that is best described via an example.
 Let’s suppose we flip a coin that we think is fair <span class="math inline">\(k = 10\)</span> times, and
@@ -1780,15 +1790,15 @@ we wish to test <span class="math inline">\(p_o = 0.5\)</span> versus <span clas
 specify the value of <span class="math inline">\(p_a\)</span> in order to derive the rejection region…at this
 point, it suffices to state that <span class="math inline">\(p_a &gt; p_o\)</span>.) Our proposed rejection
 region, assuming <span class="math inline">\(\alpha = 0.05\)</span>, is</p>
-<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="the-binomial-and-related-distributions.html#cb181-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qbinom</span>(<span class="fl">0.95</span>,<span class="at">size=</span><span class="dv">10</span>,<span class="at">prob=</span><span class="fl">0.5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="the-binomial-and-related-distributions.html#cb180-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qbinom</span>(<span class="fl">0.95</span>,<span class="at">size=</span><span class="dv">10</span>,<span class="at">prob=</span><span class="fl">0.5</span>)</span></code></pre></div>
 <pre><code>## [1] 8</code></pre>
 <p>So we’d reject the null if <span class="math inline">\(U \geq 8\)</span>…but…the probability of sampling
 a value <span class="math inline">\(U \geq 8\)</span> is</p>
-<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="the-binomial-and-related-distributions.html#cb183-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pbinom</span>(<span class="dv">8-1</span>,<span class="at">size=</span><span class="dv">10</span>,<span class="at">prob=</span><span class="fl">0.5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="the-binomial-and-related-distributions.html#cb182-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pbinom</span>(<span class="dv">8-1</span>,<span class="at">size=</span><span class="dv">10</span>,<span class="at">prob=</span><span class="fl">0.5</span>)</span></code></pre></div>
 <pre><code>## [1] 0.0546875</code></pre>
 <p>The probability, 0.055, is <em>greater than</em> <span class="math inline">\(\alpha\)</span>. So we need to make what
 we dub a “discreteness correction”:</p>
-<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="the-binomial-and-related-distributions.html#cb185-1" aria-hidden="true" tabindex="-1"></a>u.hi <span class="ot">&lt;-</span> <span class="fu">qbinom</span>(<span class="dv">1</span><span class="sc">-</span>alpha,<span class="at">size=</span>k,<span class="at">prob=</span>p.o) <span class="sc">+</span> <span class="dv">1</span></span></code></pre></div>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="the-binomial-and-related-distributions.html#cb184-1" aria-hidden="true" tabindex="-1"></a>u.hi <span class="ot">&lt;-</span> <span class="fu">qbinom</span>(<span class="dv">1</span><span class="sc">-</span>alpha,<span class="at">size=</span>k,<span class="at">prob=</span>p.o) <span class="sc">+</span> <span class="dv">1</span></span></code></pre></div>
 <p>We need to make an analogous correction of <span class="math inline">\(-1\)</span> whenever we derive lower bounds.</p>
 <p>Note how the rejection region boundary depends on the value of <span class="math inline">\(p_o\)</span>,
 but <em>not</em> on the value of <span class="math inline">\(p_a\)</span>. This means that the test we define above
@@ -1806,27 +1816,27 @@ the UMP tests for <span class="math inline">\(p_o\)</span> versus <span class="m
 rejection regions of the form</p>
 <table>
 <colgroup>
-<col width="14%" />
-<col width="28%" />
-<col width="57%" />
+<col width="18%" />
+<col width="30%" />
+<col width="51%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th>Alternative</th>
-<th>Rejection Region(s)</th>
-<th><code>R</code> Code for Binomial Distribution</th>
+<th align="center">Alternative</th>
+<th align="center">Rejection Region(s)</th>
+<th align="left"><code>R</code> Code for Binomial Distribution</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(p_a &lt; p_o\)</span></td>
-<td><span class="math inline">\(u_{\rm obs} \leq u_{\alpha}\)</span></td>
-<td><code>u.lo &lt;- qbinom(alpha,size=n*k,prob=p.o) - 1</code></td>
+<td align="center"><span class="math inline">\(p_a &lt; p_o\)</span></td>
+<td align="center"><span class="math inline">\(u_{\rm obs} \leq u_{\alpha}\)</span></td>
+<td align="left"><code>u.lo &lt;- qbinom(alpha,size=n*k,prob=p.o) - 1</code></td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(p_a &gt; p_o\)</span></td>
-<td><span class="math inline">\(u_{\rm obs} \geq u_{1-\alpha}\)</span></td>
-<td><code>u.hi &lt;- qbinom(1-alpha,size=n*k,prob=p.o) + 1</code></td>
+<td align="center"><span class="math inline">\(p_a &gt; p_o\)</span></td>
+<td align="center"><span class="math inline">\(u_{\rm obs} \geq u_{1-\alpha}\)</span></td>
+<td align="left"><code>u.hi &lt;- qbinom(1-alpha,size=n*k,prob=p.o) + 1</code></td>
 </tr>
 </tbody>
 </table>
@@ -1837,54 +1847,54 @@ domain of the NP lemma and thus we cannot make any guarantees about test power.<
 to write down</p>
 <table>
 <colgroup>
-<col width="10%" />
-<col width="21%" />
-<col width="67%" />
+<col width="15%" />
+<col width="24%" />
+<col width="60%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th>Alternative</th>
-<th>Formula</th>
-<th><code>R</code> Code for Binomial Distribution</th>
+<th align="center">Alternative</th>
+<th align="center">Formula</th>
+<th align="left"><code>R</code> Code for Binomial Distribution</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(p_a &lt; p_o\)</span></td>
-<td><span class="math inline">\(F_U(u_{\rm obs} \vert p_o)\)</span></td>
-<td><code>p &lt;- pbinom(u.obs,size=n*k,prob=p.o)</code></td>
+<td align="center"><span class="math inline">\(p_a &lt; p_o\)</span></td>
+<td align="center"><span class="math inline">\(F_U(u_{\rm obs} \vert p_o)\)</span></td>
+<td align="left"><code>p &lt;- pbinom(u.obs,size=n*k,prob=p.o)</code></td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(p_a &gt; p_o\)</span></td>
-<td><span class="math inline">\(1-F_U(u_{\rm obs}-1 \vert p_o)\)</span></td>
-<td><code>p &lt;- 1-pbinom(u.obs-1,size=n*k,prob=p.o)</code></td>
+<td align="center"><span class="math inline">\(p_a &gt; p_o\)</span></td>
+<td align="center"><span class="math inline">\(1-F_U(u_{\rm obs}-1 \vert p_o)\)</span></td>
+<td align="left"><code>p &lt;- 1-pbinom(u.obs-1,size=n*k,prob=p.o)</code></td>
 </tr>
 </tbody>
 </table>
 <p>and</p>
 <table>
 <colgroup>
-<col width="10%" />
-<col width="21%" />
-<col width="67%" />
+<col width="15%" />
+<col width="24%" />
+<col width="60%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th>Alternative</th>
-<th>Formula</th>
-<th><code>R</code> Code for Binomial Distribution</th>
+<th align="center">Alternative</th>
+<th align="center">Formula</th>
+<th align="left"><code>R</code> Code for Binomial Distribution</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(p_a &lt; p_o\)</span></td>
-<td><span class="math inline">\(F_U(u_\alpha \vert p_a)\)</span></td>
-<td><code>power &lt;- pbinom(u.lo,size=k,prob=p.a)</code></td>
+<td align="center"><span class="math inline">\(p_a &lt; p_o\)</span></td>
+<td align="center"><span class="math inline">\(F_U(u_\alpha \vert p_a)\)</span></td>
+<td align="left"><code>power &lt;- pbinom(u.lo,size=k,prob=p.a)</code></td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(p_a &gt; p_o\)</span></td>
-<td><span class="math inline">\(1-F_U(u_{1-\alpha}-1 \vert p_a)\)</span></td>
-<td><code>power &lt;- 1-pbinom(u.hi-1,size=k,prob=p.a)</code></td>
+<td align="center"><span class="math inline">\(p_a &gt; p_o\)</span></td>
+<td align="center"><span class="math inline">\(1-F_U(u_{1-\alpha}-1 \vert p_a)\)</span></td>
+<td align="left"><code>power &lt;- 1-pbinom(u.hi-1,size=k,prob=p.a)</code></td>
 </tr>
 </tbody>
 </table>
@@ -1987,23 +1997,23 @@ towards zero, <span class="math inline">\(u \rightarrow 0\)</span>…so the reje
 <p>We combine this information along with the information in the binomial
 tables above to write the following:</p>
 </blockquote>
-<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="the-binomial-and-related-distributions.html#cb186-1" aria-hidden="true" tabindex="-1"></a>u.lo  <span class="ot">&lt;-</span> <span class="fu">qnbinom</span>(alpha,<span class="at">size=</span>s,<span class="at">prob=</span>p.o) <span class="sc">-</span> <span class="dv">1</span> <span class="co"># rejection region</span></span>
-<span id="cb186-2"><a href="the-binomial-and-related-distributions.html#cb186-2" aria-hidden="true" tabindex="-1"></a>p     <span class="ot">&lt;-</span> <span class="fu">pnbinom</span>(u.obs,<span class="at">size=</span>s,<span class="at">prob=</span>p.o)     <span class="co"># p-value</span></span>
-<span id="cb186-3"><a href="the-binomial-and-related-distributions.html#cb186-3" aria-hidden="true" tabindex="-1"></a>power <span class="ot">&lt;-</span> <span class="fu">pnbinom</span>(u.lo,<span class="at">size=</span>s,<span class="at">prob=</span>p.a)      <span class="co"># power for p = p.a</span></span></code></pre></div>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="the-binomial-and-related-distributions.html#cb185-1" aria-hidden="true" tabindex="-1"></a>u.lo  <span class="ot">&lt;-</span> <span class="fu">qnbinom</span>(alpha,<span class="at">size=</span>s,<span class="at">prob=</span>p.o) <span class="sc">-</span> <span class="dv">1</span> <span class="co"># rejection region</span></span>
+<span id="cb185-2"><a href="the-binomial-and-related-distributions.html#cb185-2" aria-hidden="true" tabindex="-1"></a>p     <span class="ot">&lt;-</span> <span class="fu">pnbinom</span>(u.obs,<span class="at">size=</span>s,<span class="at">prob=</span>p.o)     <span class="co"># p-value</span></span>
+<span id="cb185-3"><a href="the-binomial-and-related-distributions.html#cb185-3" aria-hidden="true" tabindex="-1"></a>power <span class="ot">&lt;-</span> <span class="fu">pnbinom</span>(u.lo,<span class="at">size=</span>s,<span class="at">prob=</span>p.a)      <span class="co"># power for p = p.a</span></span></code></pre></div>
 <blockquote>
 <p>We thus find that</p>
 </blockquote>
-<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="the-binomial-and-related-distributions.html#cb187-1" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.1</span></span>
-<span id="cb187-2"><a href="the-binomial-and-related-distributions.html#cb187-2" aria-hidden="true" tabindex="-1"></a>s     <span class="ot">&lt;-</span> <span class="dv">20</span></span>
-<span id="cb187-3"><a href="the-binomial-and-related-distributions.html#cb187-3" aria-hidden="true" tabindex="-1"></a>u.obs <span class="ot">&lt;-</span> <span class="dv">13</span></span>
-<span id="cb187-4"><a href="the-binomial-and-related-distributions.html#cb187-4" aria-hidden="true" tabindex="-1"></a>p.o   <span class="ot">&lt;-</span> <span class="fl">0.5</span></span>
-<span id="cb187-5"><a href="the-binomial-and-related-distributions.html#cb187-5" aria-hidden="true" tabindex="-1"></a>p.a   <span class="ot">&lt;-</span> <span class="fl">0.6</span></span>
-<span id="cb187-6"><a href="the-binomial-and-related-distributions.html#cb187-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb187-7"><a href="the-binomial-and-related-distributions.html#cb187-7" aria-hidden="true" tabindex="-1"></a>(u.lo  <span class="ot">&lt;-</span> <span class="fu">qnbinom</span>(alpha,<span class="at">size=</span>s,<span class="at">prob=</span>p.o) <span class="sc">-</span> <span class="dv">1</span>) <span class="co"># rejection region</span></span></code></pre></div>
+<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="the-binomial-and-related-distributions.html#cb186-1" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.1</span></span>
+<span id="cb186-2"><a href="the-binomial-and-related-distributions.html#cb186-2" aria-hidden="true" tabindex="-1"></a>s     <span class="ot">&lt;-</span> <span class="dv">20</span></span>
+<span id="cb186-3"><a href="the-binomial-and-related-distributions.html#cb186-3" aria-hidden="true" tabindex="-1"></a>u.obs <span class="ot">&lt;-</span> <span class="dv">13</span></span>
+<span id="cb186-4"><a href="the-binomial-and-related-distributions.html#cb186-4" aria-hidden="true" tabindex="-1"></a>p.o   <span class="ot">&lt;-</span> <span class="fl">0.5</span></span>
+<span id="cb186-5"><a href="the-binomial-and-related-distributions.html#cb186-5" aria-hidden="true" tabindex="-1"></a>p.a   <span class="ot">&lt;-</span> <span class="fl">0.6</span></span>
+<span id="cb186-6"><a href="the-binomial-and-related-distributions.html#cb186-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb186-7"><a href="the-binomial-and-related-distributions.html#cb186-7" aria-hidden="true" tabindex="-1"></a>(u.lo  <span class="ot">&lt;-</span> <span class="fu">qnbinom</span>(alpha,<span class="at">size=</span>s,<span class="at">prob=</span>p.o) <span class="sc">-</span> <span class="dv">1</span>) <span class="co"># rejection region</span></span></code></pre></div>
 <pre><code>## [1] 11</code></pre>
-<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="the-binomial-and-related-distributions.html#cb189-1" aria-hidden="true" tabindex="-1"></a>(p     <span class="ot">&lt;-</span> <span class="fu">pnbinom</span>(u.obs,<span class="at">size=</span>s,<span class="at">prob=</span>p.o))     <span class="co"># p-value</span></span></code></pre></div>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="the-binomial-and-related-distributions.html#cb188-1" aria-hidden="true" tabindex="-1"></a>(p     <span class="ot">&lt;-</span> <span class="fu">pnbinom</span>(u.obs,<span class="at">size=</span>s,<span class="at">prob=</span>p.o))     <span class="co"># p-value</span></span></code></pre></div>
 <pre><code>## [1] 0.1481032</code></pre>
-<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="the-binomial-and-related-distributions.html#cb191-1" aria-hidden="true" tabindex="-1"></a>(power <span class="ot">&lt;-</span> <span class="fu">pnbinom</span>(u.lo,<span class="at">size=</span>s,<span class="at">prob=</span>p.a))      <span class="co"># power for p = p.a</span></span></code></pre></div>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="the-binomial-and-related-distributions.html#cb190-1" aria-hidden="true" tabindex="-1"></a>(power <span class="ot">&lt;-</span> <span class="fu">pnbinom</span>(u.lo,<span class="at">size=</span>s,<span class="at">prob=</span>p.a))      <span class="co"># power for p = p.a</span></span></code></pre></div>
 <pre><code>## [1] 0.375243</code></pre>
 <blockquote>
 <p>The rejection region is <span class="math inline">\(U \leq u_{\alpha} = 11\)</span>, the <span class="math inline">\(p\)</span>-value
@@ -2280,9 +2290,9 @@ into a training set (which we use to learn the model) and a test set
 for how to split data; here we randomly put 70% into the training set,
 with the remainder comprising the test set.</p>
 </blockquote>
-<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="the-binomial-and-related-distributions.html#cb193-1" aria-hidden="true" tabindex="-1"></a><span class="co"># run simple logistic regression on training dataset</span></span>
-<span id="cb193-2"><a href="the-binomial-and-related-distributions.html#cb193-2" aria-hidden="true" tabindex="-1"></a>log.out <span class="ot">&lt;-</span> <span class="fu">glm</span>(class<span class="sc">~</span>col.iz,<span class="at">data=</span>df.train,<span class="at">family=</span>binomial)</span>
-<span id="cb193-3"><a href="the-binomial-and-related-distributions.html#cb193-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(log.out)</span></code></pre></div>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="the-binomial-and-related-distributions.html#cb192-1" aria-hidden="true" tabindex="-1"></a><span class="co"># run simple logistic regression on training dataset</span></span>
+<span id="cb192-2"><a href="the-binomial-and-related-distributions.html#cb192-2" aria-hidden="true" tabindex="-1"></a>log.out <span class="ot">&lt;-</span> <span class="fu">glm</span>(class<span class="sc">~</span>col.iz,<span class="at">data=</span>df.train,<span class="at">family=</span>binomial)</span>
+<span id="cb192-3"><a href="the-binomial-and-related-distributions.html#cb192-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(log.out)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## glm(formula = class ~ col.iz, family = binomial, data = df.train)
@@ -2392,13 +2402,13 @@ the overall quality of the model. Here, we simply show how to compute
 the <em>misclassification rate</em> or <em>MCR</em> for a model trained given class
 balance.</p>
 </blockquote>
-<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="the-binomial-and-related-distributions.html#cb195-1" aria-hidden="true" tabindex="-1"></a><span class="co"># we assume the trained model details contained in log.out from above</span></span>
-<span id="cb195-2"><a href="the-binomial-and-related-distributions.html#cb195-2" aria-hidden="true" tabindex="-1"></a><span class="co"># output Class 1 probabilities for the test dataset</span></span>
-<span id="cb195-3"><a href="the-binomial-and-related-distributions.html#cb195-3" aria-hidden="true" tabindex="-1"></a>log.prob <span class="ot">&lt;-</span> <span class="fu">predict</span>(log.out,<span class="at">newdata=</span>df.test,<span class="at">type=</span><span class="st">&quot;response&quot;</span>)</span>
-<span id="cb195-4"><a href="the-binomial-and-related-distributions.html#cb195-4" aria-hidden="true" tabindex="-1"></a><span class="co"># if the probability is &gt; 0.5, map the datum to Class 1 (STAR), etc.</span></span>
-<span id="cb195-5"><a href="the-binomial-and-related-distributions.html#cb195-5" aria-hidden="true" tabindex="-1"></a>log.pred <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(log.prob<span class="sc">&gt;</span><span class="fl">0.5</span>,<span class="st">&quot;STAR&quot;</span>,<span class="st">&quot;QSO&quot;</span>)     </span>
-<span id="cb195-6"><a href="the-binomial-and-related-distributions.html#cb195-6" aria-hidden="true" tabindex="-1"></a><span class="co"># output &quot;confusion matrix&quot;</span></span>
-<span id="cb195-7"><a href="the-binomial-and-related-distributions.html#cb195-7" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(log.pred,df.test<span class="sc">$</span>class)</span></code></pre></div>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="the-binomial-and-related-distributions.html#cb194-1" aria-hidden="true" tabindex="-1"></a><span class="co"># we assume the trained model details contained in log.out from above</span></span>
+<span id="cb194-2"><a href="the-binomial-and-related-distributions.html#cb194-2" aria-hidden="true" tabindex="-1"></a><span class="co"># output Class 1 probabilities for the test dataset</span></span>
+<span id="cb194-3"><a href="the-binomial-and-related-distributions.html#cb194-3" aria-hidden="true" tabindex="-1"></a>log.prob <span class="ot">&lt;-</span> <span class="fu">predict</span>(log.out,<span class="at">newdata=</span>df.test,<span class="at">type=</span><span class="st">&quot;response&quot;</span>)</span>
+<span id="cb194-4"><a href="the-binomial-and-related-distributions.html#cb194-4" aria-hidden="true" tabindex="-1"></a><span class="co"># if the probability is &gt; 0.5, map the datum to Class 1 (STAR), etc.</span></span>
+<span id="cb194-5"><a href="the-binomial-and-related-distributions.html#cb194-5" aria-hidden="true" tabindex="-1"></a>log.pred <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(log.prob<span class="sc">&gt;</span><span class="fl">0.5</span>,<span class="st">&quot;STAR&quot;</span>,<span class="st">&quot;QSO&quot;</span>)     </span>
+<span id="cb194-6"><a href="the-binomial-and-related-distributions.html#cb194-6" aria-hidden="true" tabindex="-1"></a><span class="co"># output &quot;confusion matrix&quot;</span></span>
+<span id="cb194-7"><a href="the-binomial-and-related-distributions.html#cb194-7" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(log.pred,df.test<span class="sc">$</span>class)</span></code></pre></div>
 <pre><code>##         
 ## log.pred QSO STAR
 ##     QSO  150  146
@@ -2496,46 +2506,46 @@ ultimately generate better results. One never knows…)</p>
 <table>
 <thead>
 <tr class="header">
-<th><span class="math inline">\(x_1\)</span></th>
-<th><span class="math inline">\(x_2\)</span></th>
-<th><span class="math inline">\(Y\)</span></th>
+<th align="center"><span class="math inline">\(x_1\)</span></th>
+<th align="center"><span class="math inline">\(x_2\)</span></th>
+<th align="center"><span class="math inline">\(Y\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Yes</td>
-<td>Chocolate</td>
-<td>True</td>
+<td align="center">Yes</td>
+<td align="center">Chocolate</td>
+<td align="center">True</td>
 </tr>
 <tr class="even">
-<td>Yes</td>
-<td>Chocolate</td>
-<td>False</td>
+<td align="center">Yes</td>
+<td align="center">Chocolate</td>
+<td align="center">False</td>
 </tr>
 <tr class="odd">
-<td>No</td>
-<td>Vanilla</td>
-<td>True</td>
+<td align="center">No</td>
+<td align="center">Vanilla</td>
+<td align="center">True</td>
 </tr>
 <tr class="even">
-<td>No</td>
-<td>Chocolate</td>
-<td>True</td>
+<td align="center">No</td>
+<td align="center">Chocolate</td>
+<td align="center">True</td>
 </tr>
 <tr class="odd">
-<td>Yes</td>
-<td>Vanilla</td>
-<td>False</td>
+<td align="center">Yes</td>
+<td align="center">Vanilla</td>
+<td align="center">False</td>
 </tr>
 <tr class="even">
-<td>No</td>
-<td>Chocolate</td>
-<td>False</td>
+<td align="center">No</td>
+<td align="center">Chocolate</td>
+<td align="center">False</td>
 </tr>
 <tr class="odd">
-<td>No</td>
-<td>Vanilla</td>
-<td>False</td>
+<td align="center">No</td>
+<td align="center">Vanilla</td>
+<td align="center">False</td>
 </tr>
 </tbody>
 </table>
@@ -2631,23 +2641,23 @@ where we can observe immediately that <span class="math inline">\(p(Y) = 3/9 = 1
 To compute, e.g., <span class="math inline">\(p(x \vert Y)\)</span>, we first compute the sample mean
 and sample standard deviation for the observed data for which <span class="math inline">\(Y\)</span> is “Yes”:</p>
 </blockquote>
-<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="the-binomial-and-related-distributions.html#cb197-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">1487.00</span>,<span class="fl">2205.80</span>,<span class="fl">1774.69</span>)</span>
-<span id="cb197-2"><a href="the-binomial-and-related-distributions.html#cb197-2" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">mean</span>(x),<span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="the-binomial-and-related-distributions.html#cb196-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">1487.00</span>,<span class="fl">2205.80</span>,<span class="fl">1774.69</span>)</span>
+<span id="cb196-2"><a href="the-binomial-and-related-distributions.html#cb196-2" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">mean</span>(x),<span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] 1822.5</code></pre>
-<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="the-binomial-and-related-distributions.html#cb199-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">sd</span>(x),<span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="the-binomial-and-related-distributions.html#cb198-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">sd</span>(x),<span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] 361.78</code></pre>
 <blockquote>
 <p>The mean is $1,822.50 and the standard deviation is $361.78,
 so the probability density associated with observing $1,200 is</p>
 </blockquote>
-<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="the-binomial-and-related-distributions.html#cb201-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dnorm</span>(<span class="dv">1200</span>,<span class="at">mean=</span><span class="fu">mean</span>(x),<span class="at">sd=</span><span class="fu">sd</span>(x))</span></code></pre></div>
+<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="the-binomial-and-related-distributions.html#cb200-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dnorm</span>(<span class="dv">1200</span>,<span class="at">mean=</span><span class="fu">mean</span>(x),<span class="at">sd=</span><span class="fu">sd</span>(x))</span></code></pre></div>
 <pre><code>## [1] 0.0002509367</code></pre>
 <blockquote>
 <p>The density is 2.51 <span class="math inline">\(\times\)</span> 10<span class="math inline">\(^{-4}\)</span>. As far as for those data for
 which <span class="math inline">\(Y\)</span> is “No”:</p>
 </blockquote>
-<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="the-binomial-and-related-distributions.html#cb203-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">324.74</span>,<span class="fl">988.21</span>,<span class="fl">836.30</span>,<span class="fl">927.89</span>,<span class="fl">712.28</span>,<span class="fl">706.16</span>)</span>
-<span id="cb203-2"><a href="the-binomial-and-related-distributions.html#cb203-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dnorm</span>(<span class="dv">1200</span>,<span class="at">mean=</span><span class="fu">mean</span>(x),<span class="at">sd=</span><span class="fu">sd</span>(x))</span></code></pre></div>
+<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="the-binomial-and-related-distributions.html#cb202-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">324.74</span>,<span class="fl">988.21</span>,<span class="fl">836.30</span>,<span class="fl">927.89</span>,<span class="fl">712.28</span>,<span class="fl">706.16</span>)</span>
+<span id="cb202-2"><a href="the-binomial-and-related-distributions.html#cb202-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dnorm</span>(<span class="dv">1200</span>,<span class="at">mean=</span><span class="fu">mean</span>(x),<span class="at">sd=</span><span class="fu">sd</span>(x))</span></code></pre></div>
 <pre><code>## [1] 0.0002748351</code></pre>
 <blockquote>
 <p>The density is 2.75 <span class="math inline">\(\times\)</span> 10<span class="math inline">\(^{-4}\)</span>. Thus
@@ -2668,11 +2678,11 @@ displaying the result via a confusion matrix, we can determine the model’s
 misclassification rate. We repeat that exercise here, for the Naive Bayes model,
 using functionality in <code>R</code>’s contributed <code>e1071</code> package.</p>
 </blockquote>
-<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="the-binomial-and-related-distributions.html#cb205-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(e1071)</span>
-<span id="cb205-2"><a href="the-binomial-and-related-distributions.html#cb205-2" aria-hidden="true" tabindex="-1"></a>nb.out  <span class="ot">&lt;-</span> <span class="fu">naiveBayes</span>(class<span class="sc">~</span>.,<span class="at">data=</span>df.train)</span>
-<span id="cb205-3"><a href="the-binomial-and-related-distributions.html#cb205-3" aria-hidden="true" tabindex="-1"></a><span class="co"># map probabilities directly to class predictions</span></span>
-<span id="cb205-4"><a href="the-binomial-and-related-distributions.html#cb205-4" aria-hidden="true" tabindex="-1"></a>nb.pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(nb.out,<span class="at">newdata=</span>df.test,<span class="at">type=</span><span class="st">&quot;class&quot;</span>)</span>
-<span id="cb205-5"><a href="the-binomial-and-related-distributions.html#cb205-5" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nb.pred,df.test<span class="sc">$</span>class)</span></code></pre></div>
+<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="the-binomial-and-related-distributions.html#cb204-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(e1071)</span>
+<span id="cb204-2"><a href="the-binomial-and-related-distributions.html#cb204-2" aria-hidden="true" tabindex="-1"></a>nb.out  <span class="ot">&lt;-</span> <span class="fu">naiveBayes</span>(class<span class="sc">~</span>.,<span class="at">data=</span>df.train)</span>
+<span id="cb204-3"><a href="the-binomial-and-related-distributions.html#cb204-3" aria-hidden="true" tabindex="-1"></a><span class="co"># map probabilities directly to class predictions</span></span>
+<span id="cb204-4"><a href="the-binomial-and-related-distributions.html#cb204-4" aria-hidden="true" tabindex="-1"></a>nb.pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(nb.out,<span class="at">newdata=</span>df.test,<span class="at">type=</span><span class="st">&quot;class&quot;</span>)</span>
+<span id="cb204-5"><a href="the-binomial-and-related-distributions.html#cb204-5" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(nb.pred,df.test<span class="sc">$</span>class)</span></code></pre></div>
 <pre><code>##        
 ## nb.pred QSO STAR
 ##    QSO  144   42
@@ -2757,26 +2767,26 @@ Figure 3.12: Three examples of beta probability density functions: Beta(2,2) (re
 <caption>Beta Distribution - <code>R</code> Functions</caption>
 <thead>
 <tr class="header">
-<th>quantity</th>
-<th><code>R</code> function call</th>
+<th align="center">quantity</th>
+<th align="center"><code>R</code> function call</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>PDF</td>
-<td><code>dbeta(x,shape1,shape2)</code></td>
+<td align="center">PDF</td>
+<td align="center"><code>dbeta(x,shape1,shape2)</code></td>
 </tr>
 <tr class="even">
-<td>CDF</td>
-<td><code>pbeta(x,shape1,shape2)</code></td>
+<td align="center">CDF</td>
+<td align="center"><code>pbeta(x,shape1,shape2)</code></td>
 </tr>
 <tr class="odd">
-<td>Inverse CDF</td>
-<td><code>qbeta(q,shape1,shape2)</code></td>
+<td align="center">Inverse CDF</td>
+<td align="center"><code>qbeta(q,shape1,shape2)</code></td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(n\)</span> iid random samples</td>
-<td><code>rbeta(n,shape1,shape2)</code></td>
+<td align="center"><span class="math inline">\(n\)</span> iid random samples</td>
+<td align="center"><code>rbeta(n,shape1,shape2)</code></td>
 </tr>
 </tbody>
 </table>
@@ -2856,7 +2866,7 @@ drawn from a Uniform(0,1) distribution are beta-distributed random variables!)</
 from a Uniform(<span class="math inline">\(0,\theta\)</span>)
 distribution, and that we wish to test the hypothesis <span class="math inline">\(H_o: \mu = \mu_o = 1/2\)</span> versus <span class="math inline">\(H_a: \mu = \mu_a &gt; \mu_o\)</span> at level <span class="math inline">\(\alpha\)</span>.
 (Let’s also assume that all
-the data we observe lay in the range <span class="math inline">\([0,1]\)</span>…otherwise the null cannot
+the data we observe lie in the range <span class="math inline">\([0,1]\)</span>…otherwise the null cannot
 be correct. We will return to this point in Chapter 5.) It sounds like
 we might use the Neymann-Pearson lemma here, but as we will see in Chapter
 5, that would dictate a different test statistic than what we want to
@@ -2883,23 +2893,23 @@ Hence we cannot work with this cdf by hand. So…what can we do?</p>
 <blockquote>
 <p>Here is the code we need:</p>
 </blockquote>
-<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="the-binomial-and-related-distributions.html#cb207-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This computes the cdf of the sample median at coordinate x</span></span>
-<span id="cb207-2"><a href="the-binomial-and-related-distributions.html#cb207-2" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x,n)</span>
-<span id="cb207-3"><a href="the-binomial-and-related-distributions.html#cb207-3" aria-hidden="true" tabindex="-1"></a>{</span>
-<span id="cb207-4"><a href="the-binomial-and-related-distributions.html#cb207-4" aria-hidden="true" tabindex="-1"></a>  j <span class="ot">&lt;-</span> (n<span class="dv">-1</span>)<span class="sc">/</span><span class="dv">2</span></span>
-<span id="cb207-5"><a href="the-binomial-and-related-distributions.html#cb207-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># lfactorial(a) == log(a!)</span></span>
-<span id="cb207-6"><a href="the-binomial-and-related-distributions.html#cb207-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># exp(lfactorial(a)) == a!</span></span>
-<span id="cb207-7"><a href="the-binomial-and-related-distributions.html#cb207-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">exp</span>(<span class="fu">lfactorial</span>(n)<span class="sc">-</span><span class="dv">2</span><span class="sc">*</span><span class="fu">lfactorial</span>(j))<span class="sc">*</span>x<span class="sc">^</span>j<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>x)<span class="sc">^</span>j</span>
-<span id="cb207-8"><a href="the-binomial-and-related-distributions.html#cb207-8" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb207-9"><a href="the-binomial-and-related-distributions.html#cb207-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb207-10"><a href="the-binomial-and-related-distributions.html#cb207-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Find root of F_Y(y) - (1-alpha)</span></span>
-<span id="cb207-11"><a href="the-binomial-and-related-distributions.html#cb207-11" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="cf">function</span>(y,n,alpha)</span>
-<span id="cb207-12"><a href="the-binomial-and-related-distributions.html#cb207-12" aria-hidden="true" tabindex="-1"></a>{</span>
-<span id="cb207-13"><a href="the-binomial-and-related-distributions.html#cb207-13" aria-hidden="true" tabindex="-1"></a>  F.med <span class="ot">&lt;-</span> <span class="fu">integrate</span>(f,<span class="dv">0</span>,y,<span class="at">n=</span>n)</span>
-<span id="cb207-14"><a href="the-binomial-and-related-distributions.html#cb207-14" aria-hidden="true" tabindex="-1"></a>  F.med<span class="sc">$</span>value <span class="sc">-</span> (<span class="dv">1</span><span class="sc">-</span>alpha)</span>
-<span id="cb207-15"><a href="the-binomial-and-related-distributions.html#cb207-15" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb207-16"><a href="the-binomial-and-related-distributions.html#cb207-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb207-17"><a href="the-binomial-and-related-distributions.html#cb207-17" aria-hidden="true" tabindex="-1"></a><span class="fu">uniroot</span>(g,<span class="at">interval=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="at">n=</span><span class="dv">5</span>,<span class="at">alpha=</span><span class="fl">0.05</span>)<span class="sc">$</span>root</span></code></pre></div>
+<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="the-binomial-and-related-distributions.html#cb206-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This computes the cdf of the sample median at coordinate x</span></span>
+<span id="cb206-2"><a href="the-binomial-and-related-distributions.html#cb206-2" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x,n)</span>
+<span id="cb206-3"><a href="the-binomial-and-related-distributions.html#cb206-3" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb206-4"><a href="the-binomial-and-related-distributions.html#cb206-4" aria-hidden="true" tabindex="-1"></a>  j <span class="ot">&lt;-</span> (n<span class="dv">-1</span>)<span class="sc">/</span><span class="dv">2</span></span>
+<span id="cb206-5"><a href="the-binomial-and-related-distributions.html#cb206-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># lfactorial(a) == log(a!)</span></span>
+<span id="cb206-6"><a href="the-binomial-and-related-distributions.html#cb206-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># exp(lfactorial(a)) == a!</span></span>
+<span id="cb206-7"><a href="the-binomial-and-related-distributions.html#cb206-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">exp</span>(<span class="fu">lfactorial</span>(n)<span class="sc">-</span><span class="dv">2</span><span class="sc">*</span><span class="fu">lfactorial</span>(j))<span class="sc">*</span>x<span class="sc">^</span>j<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>x)<span class="sc">^</span>j</span>
+<span id="cb206-8"><a href="the-binomial-and-related-distributions.html#cb206-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb206-9"><a href="the-binomial-and-related-distributions.html#cb206-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb206-10"><a href="the-binomial-and-related-distributions.html#cb206-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Find root of F_Y(y) - (1-alpha)</span></span>
+<span id="cb206-11"><a href="the-binomial-and-related-distributions.html#cb206-11" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="cf">function</span>(y,n,alpha)</span>
+<span id="cb206-12"><a href="the-binomial-and-related-distributions.html#cb206-12" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb206-13"><a href="the-binomial-and-related-distributions.html#cb206-13" aria-hidden="true" tabindex="-1"></a>  F.med <span class="ot">&lt;-</span> <span class="fu">integrate</span>(f,<span class="dv">0</span>,y,<span class="at">n=</span>n)</span>
+<span id="cb206-14"><a href="the-binomial-and-related-distributions.html#cb206-14" aria-hidden="true" tabindex="-1"></a>  F.med<span class="sc">$</span>value <span class="sc">-</span> (<span class="dv">1</span><span class="sc">-</span>alpha)</span>
+<span id="cb206-15"><a href="the-binomial-and-related-distributions.html#cb206-15" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb206-16"><a href="the-binomial-and-related-distributions.html#cb206-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb206-17"><a href="the-binomial-and-related-distributions.html#cb206-17" aria-hidden="true" tabindex="-1"></a><span class="fu">uniroot</span>(g,<span class="at">interval=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="at">n=</span><span class="dv">5</span>,<span class="at">alpha=</span><span class="fl">0.05</span>)<span class="sc">$</span>root</span></code></pre></div>
 <pre><code>## [1] 0.8107542</code></pre>
 <blockquote>
 <p>In words, the function <code>f</code> above computes <span class="math inline">\(F_{((n+1)/2)}(x)\)</span>, while
@@ -2958,23 +2968,23 @@ we will observe fewer data achieving any given other outcome.</p>
 <table>
 <caption>Multinomial Distribution - <code>R</code> Functions</caption>
 <colgroup>
-<col width="32%" />
-<col width="68%" />
+<col width="34%" />
+<col width="65%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th>quantity</th>
-<th><code>R</code> function call</th>
+<th align="center">quantity</th>
+<th align="center"><code>R</code> function call</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>PMF</td>
-<td><code>dmultinom(x,m,p)</code> (<span class="math inline">\(x\)</span> and <span class="math inline">\(p\)</span> are vectors of length <span class="math inline">\(m\)</span>)</td>
+<td align="center">PMF</td>
+<td align="center"><code>dmultinom(x,m,p)</code> (<span class="math inline">\(x\)</span> and <span class="math inline">\(p\)</span> are vectors of length <span class="math inline">\(m\)</span>)</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(n\)</span> iid random samples</td>
-<td><code>rmultinom(n,m,p)</code> (<span class="math inline">\(p\)</span> is a vector of length <span class="math inline">\(m\)</span>)</td>
+<td align="center"><span class="math inline">\(n\)</span> iid random samples</td>
+<td align="center"><code>rmultinom(n,m,p)</code> (<span class="math inline">\(p\)</span> is a vector of length <span class="math inline">\(m\)</span>)</td>
 </tr>
 </tbody>
 </table>
@@ -2994,28 +3004,28 @@ assume we’ve observed 100 animals and that we record the numbers seen in each 
 four quadrants:</p>
 <table>
 <colgroup>
-<col width="40%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
+<col width="35%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th>angle range</th>
-<th>0<span class="math inline">\(^\circ\)</span>-90<span class="math inline">\(^\circ\)</span></th>
-<th>90<span class="math inline">\(^\circ\)</span>-180<span class="math inline">\(^\circ\)</span></th>
-<th>180<span class="math inline">\(^\circ\)</span>-270<span class="math inline">\(^\circ\)</span></th>
-<th>270<span class="math inline">\(^\circ\)</span>-360<span class="math inline">\(^\circ\)</span></th>
+<th align="center">angle range</th>
+<th align="center">0<span class="math inline">\(^\circ\)</span>-90<span class="math inline">\(^\circ\)</span></th>
+<th align="center">90<span class="math inline">\(^\circ\)</span>-180<span class="math inline">\(^\circ\)</span></th>
+<th align="center">180<span class="math inline">\(^\circ\)</span>-270<span class="math inline">\(^\circ\)</span></th>
+<th align="center">270<span class="math inline">\(^\circ\)</span>-360<span class="math inline">\(^\circ\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>number of animals</td>
-<td>28</td>
-<td>32</td>
-<td>17</td>
-<td>23</td>
+<td align="center">number of animals</td>
+<td align="center">28</td>
+<td align="center">32</td>
+<td align="center">17</td>
+<td align="center">23</td>
 </tr>
 </tbody>
 </table>
@@ -3113,28 +3123,28 @@ chi-square distributed for <span class="math inline">\((r-1)\)</span> times <spa
 </blockquote>
 <table>
 <colgroup>
-<col width="40%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
+<col width="35%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th>angle range</th>
-<th>0<span class="math inline">\(^\circ\)</span>-90<span class="math inline">\(^\circ\)</span></th>
-<th>90<span class="math inline">\(^\circ\)</span>-180<span class="math inline">\(^\circ\)</span></th>
-<th>180<span class="math inline">\(^\circ\)</span>-270<span class="math inline">\(^\circ\)</span></th>
-<th>270<span class="math inline">\(^\circ\)</span>-360<span class="math inline">\(^\circ\)</span></th>
+<th align="center">angle range</th>
+<th align="center">0<span class="math inline">\(^\circ\)</span>-90<span class="math inline">\(^\circ\)</span></th>
+<th align="center">90<span class="math inline">\(^\circ\)</span>-180<span class="math inline">\(^\circ\)</span></th>
+<th align="center">180<span class="math inline">\(^\circ\)</span>-270<span class="math inline">\(^\circ\)</span></th>
+<th align="center">270<span class="math inline">\(^\circ\)</span>-360<span class="math inline">\(^\circ\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>number of animals</td>
-<td>28</td>
-<td>32</td>
-<td>17</td>
-<td>23</td>
+<td align="center">number of animals</td>
+<td align="center">28</td>
+<td align="center">32</td>
+<td align="center">17</td>
+<td align="center">23</td>
 </tr>
 </tbody>
 </table>
@@ -3173,18 +3183,18 @@ we <em>can</em> estimate the <span class="math inline">\(p\)</span>-value for th
 via simulation. Will we achieve a result very different from that above
 ($p = 0.169)?</p>
 </blockquote>
-<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="the-binomial-and-related-distributions.html#cb209-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
-<span id="cb209-2"><a href="the-binomial-and-related-distributions.html#cb209-2" aria-hidden="true" tabindex="-1"></a>O <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">28</span>,<span class="dv">32</span>,<span class="dv">17</span>,<span class="dv">23</span>)</span>
-<span id="cb209-3"><a href="the-binomial-and-related-distributions.html#cb209-3" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>,<span class="dv">4</span>)</span>
-<span id="cb209-4"><a href="the-binomial-and-related-distributions.html#cb209-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb209-5"><a href="the-binomial-and-related-distributions.html#cb209-5" aria-hidden="true" tabindex="-1"></a>num.sim <span class="ot">&lt;-</span> <span class="dv">100000</span></span>
-<span id="cb209-6"><a href="the-binomial-and-related-distributions.html#cb209-6" aria-hidden="true" tabindex="-1"></a>k       <span class="ot">&lt;-</span> <span class="fu">sum</span>(O)</span>
-<span id="cb209-7"><a href="the-binomial-and-related-distributions.html#cb209-7" aria-hidden="true" tabindex="-1"></a>m       <span class="ot">&lt;-</span> <span class="fu">length</span>(O)</span>
-<span id="cb209-8"><a href="the-binomial-and-related-distributions.html#cb209-8" aria-hidden="true" tabindex="-1"></a>pmf.obs <span class="ot">&lt;-</span> <span class="fu">dmultinom</span>(O,<span class="at">prob=</span>p)    <span class="co"># the observed multinomial pmf</span></span>
-<span id="cb209-9"><a href="the-binomial-and-related-distributions.html#cb209-9" aria-hidden="true" tabindex="-1"></a>X       <span class="ot">&lt;-</span> <span class="fu">rmultinom</span>(num.sim,k,p) <span class="co"># generates an m x num.sim matrix</span></span>
-<span id="cb209-10"><a href="the-binomial-and-related-distributions.html#cb209-10" aria-hidden="true" tabindex="-1"></a>                                  <span class="co"># (m determined as the length of p)</span></span>
-<span id="cb209-11"><a href="the-binomial-and-related-distributions.html#cb209-11" aria-hidden="true" tabindex="-1"></a>pmf     <span class="ot">&lt;-</span> <span class="fu">apply</span>(X,<span class="dv">2</span>,<span class="cf">function</span>(x){<span class="fu">dmultinom</span>(x,<span class="at">prob=</span>p)}) <span class="co"># simulated pmf&#39;s</span></span>
-<span id="cb209-12"><a href="the-binomial-and-related-distributions.html#cb209-12" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(pmf<span class="sc">&lt;</span>pmf.obs)<span class="sc">/</span>num.sim </span></code></pre></div>
+<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="the-binomial-and-related-distributions.html#cb208-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
+<span id="cb208-2"><a href="the-binomial-and-related-distributions.html#cb208-2" aria-hidden="true" tabindex="-1"></a>O <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">28</span>,<span class="dv">32</span>,<span class="dv">17</span>,<span class="dv">23</span>)</span>
+<span id="cb208-3"><a href="the-binomial-and-related-distributions.html#cb208-3" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>,<span class="dv">4</span>)</span>
+<span id="cb208-4"><a href="the-binomial-and-related-distributions.html#cb208-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb208-5"><a href="the-binomial-and-related-distributions.html#cb208-5" aria-hidden="true" tabindex="-1"></a>num.sim <span class="ot">&lt;-</span> <span class="dv">100000</span></span>
+<span id="cb208-6"><a href="the-binomial-and-related-distributions.html#cb208-6" aria-hidden="true" tabindex="-1"></a>k       <span class="ot">&lt;-</span> <span class="fu">sum</span>(O)</span>
+<span id="cb208-7"><a href="the-binomial-and-related-distributions.html#cb208-7" aria-hidden="true" tabindex="-1"></a>m       <span class="ot">&lt;-</span> <span class="fu">length</span>(O)</span>
+<span id="cb208-8"><a href="the-binomial-and-related-distributions.html#cb208-8" aria-hidden="true" tabindex="-1"></a>pmf.obs <span class="ot">&lt;-</span> <span class="fu">dmultinom</span>(O,<span class="at">prob=</span>p)    <span class="co"># the observed multinomial pmf</span></span>
+<span id="cb208-9"><a href="the-binomial-and-related-distributions.html#cb208-9" aria-hidden="true" tabindex="-1"></a>X       <span class="ot">&lt;-</span> <span class="fu">rmultinom</span>(num.sim,k,p) <span class="co"># generates an m x num.sim matrix</span></span>
+<span id="cb208-10"><a href="the-binomial-and-related-distributions.html#cb208-10" aria-hidden="true" tabindex="-1"></a>                                  <span class="co"># (m determined as the length of p)</span></span>
+<span id="cb208-11"><a href="the-binomial-and-related-distributions.html#cb208-11" aria-hidden="true" tabindex="-1"></a>pmf     <span class="ot">&lt;-</span> <span class="fu">apply</span>(X,<span class="dv">2</span>,<span class="cf">function</span>(x){<span class="fu">dmultinom</span>(x,<span class="at">prob=</span>p)}) <span class="co"># simulated pmf&#39;s</span></span>
+<span id="cb208-12"><a href="the-binomial-and-related-distributions.html#cb208-12" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(pmf<span class="sc">&lt;</span>pmf.obs)<span class="sc">/</span>num.sim </span></code></pre></div>
 <pre><code>## [1] 0.15974</code></pre>
 <blockquote>
 <p>We observe <span class="math inline">\(p = 0.1597\)</span>. This is close to, but at the same time still
@@ -3274,42 +3284,42 @@ assuming <span class="math inline">\(\alpha = 0.05\)</span>.</p>
 <col width="20%" />
 <col width="20%" />
 <col width="20%" />
-<col width="8%" />
+<col width="11%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th></th>
-<th>0<span class="math inline">\(^\circ\)</span>-90<span class="math inline">\(^\circ\)</span></th>
-<th>90<span class="math inline">\(^\circ\)</span>-180<span class="math inline">\(^\circ\)</span></th>
-<th>180<span class="math inline">\(^\circ\)</span>-270<span class="math inline">\(^\circ\)</span></th>
-<th>270<span class="math inline">\(^\circ\)</span>-360<span class="math inline">\(^\circ\)</span></th>
-<th></th>
+<th align="right"></th>
+<th align="center">0<span class="math inline">\(^\circ\)</span>-90<span class="math inline">\(^\circ\)</span></th>
+<th align="center">90<span class="math inline">\(^\circ\)</span>-180<span class="math inline">\(^\circ\)</span></th>
+<th align="center">180<span class="math inline">\(^\circ\)</span>-270<span class="math inline">\(^\circ\)</span></th>
+<th align="center">270<span class="math inline">\(^\circ\)</span>-360<span class="math inline">\(^\circ\)</span></th>
+<th align="center"></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>black</td>
-<td>57 <span class="math inline">\(\cdot\)</span> 28/100 = 15.96</td>
-<td>57 <span class="math inline">\(\cdot\)</span> 32/100 = 18.24</td>
-<td>57 <span class="math inline">\(\cdot\)</span> 17/100 = 9.69</td>
-<td>57 <span class="math inline">\(\cdot\)</span> 23/100 = 13.11</td>
-<td>57</td>
+<td align="right">black</td>
+<td align="center">57 <span class="math inline">\(\cdot\)</span> 28/100 = 15.96</td>
+<td align="center">57 <span class="math inline">\(\cdot\)</span> 32/100 = 18.24</td>
+<td align="center">57 <span class="math inline">\(\cdot\)</span> 17/100 = 9.69</td>
+<td align="center">57 <span class="math inline">\(\cdot\)</span> 23/100 = 13.11</td>
+<td align="center">57</td>
 </tr>
 <tr class="even">
-<td>red</td>
-<td>43 <span class="math inline">\(\cdot\)</span> 28/100 = 12.04</td>
-<td>43 <span class="math inline">\(\cdot\)</span> 32/100 = 13.76</td>
-<td>43 <span class="math inline">\(\cdot\)</span> 17/100 = 7.31</td>
-<td>43 <span class="math inline">\(\cdot\)</span> 23/100 = 9.89</td>
-<td>43</td>
+<td align="right">red</td>
+<td align="center">43 <span class="math inline">\(\cdot\)</span> 28/100 = 12.04</td>
+<td align="center">43 <span class="math inline">\(\cdot\)</span> 32/100 = 13.76</td>
+<td align="center">43 <span class="math inline">\(\cdot\)</span> 17/100 = 7.31</td>
+<td align="center">43 <span class="math inline">\(\cdot\)</span> 23/100 = 9.89</td>
+<td align="center">43</td>
 </tr>
 <tr class="odd">
-<td></td>
-<td>28</td>
-<td>32</td>
-<td>17</td>
-<td>23</td>
-<td></td>
+<td align="right"></td>
+<td align="center">28</td>
+<td align="center">32</td>
+<td align="center">17</td>
+<td align="center">23</td>
+<td align="center"></td>
 </tr>
 </tbody>
 </table>
@@ -3317,31 +3327,31 @@ assuming <span class="math inline">\(\alpha = 0.05\)</span>.</p>
 <p>We can already see that working with the numbers directly is tedious. Can we make
 a matrix of such numbers using <code>R</code>?</p>
 </blockquote>
-<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="the-binomial-and-related-distributions.html#cb211-1" aria-hidden="true" tabindex="-1"></a>r <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">57</span>,<span class="dv">43</span>)</span>
-<span id="cb211-2"><a href="the-binomial-and-related-distributions.html#cb211-2" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">28</span>,<span class="dv">32</span>,<span class="dv">17</span>,<span class="dv">23</span>)</span>
-<span id="cb211-3"><a href="the-binomial-and-related-distributions.html#cb211-3" aria-hidden="true" tabindex="-1"></a>E <span class="ot">&lt;-</span> (r <span class="sc">%*%</span> <span class="fu">t</span>(c))<span class="sc">/</span><span class="fu">sum</span>(r)  <span class="co"># multiply r and the transpose of c </span></span>
-<span id="cb211-4"><a href="the-binomial-and-related-distributions.html#cb211-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(E)                  <span class="co"># much better</span></span></code></pre></div>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="the-binomial-and-related-distributions.html#cb210-1" aria-hidden="true" tabindex="-1"></a>r <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">57</span>,<span class="dv">43</span>)</span>
+<span id="cb210-2"><a href="the-binomial-and-related-distributions.html#cb210-2" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">28</span>,<span class="dv">32</span>,<span class="dv">17</span>,<span class="dv">23</span>)</span>
+<span id="cb210-3"><a href="the-binomial-and-related-distributions.html#cb210-3" aria-hidden="true" tabindex="-1"></a>E <span class="ot">&lt;-</span> (r <span class="sc">%*%</span> <span class="fu">t</span>(c))<span class="sc">/</span><span class="fu">sum</span>(r)  <span class="co"># multiply r and the transpose of c </span></span>
+<span id="cb210-4"><a href="the-binomial-and-related-distributions.html#cb210-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(E)                  <span class="co"># much better</span></span></code></pre></div>
 <pre><code>##       [,1]  [,2] [,3]  [,4]
 ## [1,] 15.96 18.24 9.69 13.11
 ## [2,] 12.04 13.76 7.31  9.89</code></pre>
 <blockquote>
 <p>If we wish to continue using <code>R</code>, we need to define a matrix of observed data values:</p>
 </blockquote>
-<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="the-binomial-and-related-distributions.html#cb213-1" aria-hidden="true" tabindex="-1"></a>O <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">20</span>,<span class="dv">8</span>,<span class="dv">18</span>,<span class="dv">14</span>,<span class="dv">5</span>,<span class="dv">12</span>,<span class="dv">14</span>,<span class="dv">9</span>),<span class="at">nrow=</span><span class="dv">2</span>) <span class="co"># fills in column-by-column</span></span>
-<span id="cb213-2"><a href="the-binomial-and-related-distributions.html#cb213-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(O)</span></code></pre></div>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="the-binomial-and-related-distributions.html#cb212-1" aria-hidden="true" tabindex="-1"></a>O <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">20</span>,<span class="dv">8</span>,<span class="dv">18</span>,<span class="dv">14</span>,<span class="dv">5</span>,<span class="dv">12</span>,<span class="dv">14</span>,<span class="dv">9</span>),<span class="at">nrow=</span><span class="dv">2</span>) <span class="co"># fills in column-by-column</span></span>
+<span id="cb212-2"><a href="the-binomial-and-related-distributions.html#cb212-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(O)</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4]
 ## [1,]   20   18    5   14
 ## [2,]    8   14   12    9</code></pre>
 <blockquote>
 <p>Now we have what we need. The test statistic is</p>
 </blockquote>
-<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="the-binomial-and-related-distributions.html#cb215-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">sum</span>( (O<span class="sc">-</span>E)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>E ),<span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="the-binomial-and-related-distributions.html#cb214-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">sum</span>( (O<span class="sc">-</span>E)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>E ),<span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## [1] 7.805</code></pre>
 <blockquote>
 <p>and the number of degrees of freedom is <span class="math inline">\((r-1)(c-1) = 1 \cdot 3 = 3\)</span>, so the
 rejection region is</p>
 </blockquote>
-<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="the-binomial-and-related-distributions.html#cb217-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">qchisq</span>(<span class="fl">0.95</span>,<span class="dv">3</span>),<span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="the-binomial-and-related-distributions.html#cb216-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">qchisq</span>(<span class="fl">0.95</span>,<span class="dv">3</span>),<span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## [1] 7.815</code></pre>
 <blockquote>
 <p>We find that if <span class="math inline">\(\alpha = 0.05\)</span>, we <em>cannot</em> reject the null hypothesis. We might be

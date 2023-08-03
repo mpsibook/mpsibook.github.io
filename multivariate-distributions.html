@@ -170,7 +170,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.8" data-path="the-basics-of-probability-and-statistical-inference.html"><a href="the-basics-of-probability-and-statistical-inference.html#working-with-r-probability-distributions"><i class="fa fa-check"></i><b>1.8</b> Working With R: Probability Distributions</a>
 <ul>
 <li class="chapter" data-level="1.8.1" data-path="the-basics-of-probability-and-statistical-inference.html"><a href="the-basics-of-probability-and-statistical-inference.html#numerical-integration-and-conditional-probability"><i class="fa fa-check"></i><b>1.8.1</b> Numerical Integration and Conditional Probability</a></li>
-<li class="chapter" data-level="1.8.2" data-path="the-basics-of-probability-and-statistical-inference.html"><a href="the-basics-of-probability-and-statistical-inference.html#numerical-integration-and-variance"><i class="fa fa-check"></i><b>1.8.2</b> Numerical Integration and Variance*</a></li>
+<li class="chapter" data-level="1.8.2" data-path="the-basics-of-probability-and-statistical-inference.html"><a href="the-basics-of-probability-and-statistical-inference.html#numerical-integration-and-variance"><i class="fa fa-check"></i><b>1.8.2</b> Numerical Integration and Variance</a></li>
 </ul></li>
 <li class="chapter" data-level="1.9" data-path="the-basics-of-probability-and-statistical-inference.html"><a href="the-basics-of-probability-and-statistical-inference.html#cumulative-distribution-functions"><i class="fa fa-check"></i><b>1.9</b> Cumulative Distribution Functions</a>
 <ul>
@@ -521,7 +521,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.5.1" data-path="further-conceptual-details-optional.html"><a href="further-conceptual-details-optional.html#a-formal-definition-of-sufficiency"><i class="fa fa-check"></i><b>7.5.1</b> A Formal Definition of Sufficiency</a></li>
 <li class="chapter" data-level="7.5.2" data-path="further-conceptual-details-optional.html"><a href="further-conceptual-details-optional.html#minimal-sufficiency"><i class="fa fa-check"></i><b>7.5.2</b> Minimal Sufficiency</a></li>
 <li class="chapter" data-level="7.5.3" data-path="further-conceptual-details-optional.html"><a href="further-conceptual-details-optional.html#completeness"><i class="fa fa-check"></i><b>7.5.3</b> Completeness</a></li>
-<li class="chapter" data-level="7.5.4" data-path="further-conceptual-details-optional.html"><a href="further-conceptual-details-optional.html#exponential-family-of-distributions"><i class="fa fa-check"></i><b>7.5.4</b> Exponential Family of Distributions</a></li>
+<li class="chapter" data-level="7.5.4" data-path="further-conceptual-details-optional.html"><a href="further-conceptual-details-optional.html#the-rao-blackwell-theorem"><i class="fa fa-check"></i><b>7.5.4</b> The Rao-Blackwell Theorem</a></li>
+<li class="chapter" data-level="7.5.5" data-path="further-conceptual-details-optional.html"><a href="further-conceptual-details-optional.html#exponential-family-of-distributions"><i class="fa fa-check"></i><b>7.5.5</b> Exponential Family of Distributions</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="appendix-a-table-of-symbols.html"><a href="appendix-a-table-of-symbols.html"><i class="fa fa-check"></i>Appendix A: Table of Symbols</a></li>
@@ -666,7 +667,7 @@ depend only on <span class="math inline">\(x_1\)</span> or only on <span class="
 </div>
 <div id="properties-of-multivariate-distributions" class="section level2 hasAnchor" number="6.2">
 <h2><span class="header-section-number">6.2</span> Properties of Multivariate Distributions<a href="multivariate-distributions.html#properties-of-multivariate-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-As stated in Chapter 1, a probability distribution is a mapping
+<p>As stated in Chapter 1, a probability distribution is a mapping
 <span class="math inline">\(P : \Omega \rightarrow \mathbb{R}^n\)</span>, where <span class="math inline">\(\Omega\)</span> is the sample
 space for an experiment. This mapping describes how probabilities
 are distributed across the values of a random variable. In the first
@@ -674,7 +675,29 @@ five chapters, <span class="math inline">\(n = 1\)</span>, meaning that we focus
 In this chapter, however, <span class="math inline">\(n &gt; 1\)</span>, with the bulk of our discussion focusing
 upon the case <span class="math inline">\(n = 2\)</span>. Nothing changes, fundamentally, when we work with
 multivariate distributions: (a) they are non-negative; and (b) they sum
-or integrate to 1. Assuming <span class="math inline">\(n = 2\)</span>, we can write that
+or integrate to 1. Assuming <span class="math inline">\(n = 2\)</span>, we can write that</p>
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">joint pmf</th>
+<th align="center">joint pdf</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(p_{X_1,X_2}(x_1,x_2) \in [0,1]\)</span></td>
+<td align="center"><span class="math inline">\(f_{X_1,X_2}(x_1,x_2) \in [0,\infty)\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\sum_{x_1} \sum_{x_2} p_{X_1,X_2}(x_1,x_2) = 1\)</span></td>
+<td align="center"><span class="math inline">\(\int_{x_1} \int_{x_2} f_{X_1,X_2}(x_1,x_2) dx_2 dx_1 = 1\)</span></td>
+</tr>
+</tbody>
+</table>
 <p>We will reiterate that the joint pdf <span class="math inline">\(f_{X_1,X_2}(x_1,x_2)\)</span> is not the
 probability of sampling the tuple <span class="math inline">\((x_1,x_2)\)</span>
 but rather is a probability density; to
@@ -723,6 +746,30 @@ are independent, but not generally.</p>
 <p>Let <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> have the following joint probability mass function
 <span class="math inline">\(p_{X_1,X_2}(x_1,x_2)\)</span>:</p>
 </blockquote>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center"><span class="math inline">\(x_2 = 0\)</span></th>
+<th align="center"><span class="math inline">\(x_2 = 1\)</span></th>
+<th align="center"><span class="math inline">\(x_2 = 2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(x_1 = 1\)</span></td>
+<td align="center">0.20</td>
+<td align="center">0.30</td>
+<td align="center">0.00</td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(x_1 = 2\)</span></td>
+<td align="center">0.40</td>
+<td align="center">0.00</td>
+<td align="center">0.10</td>
+</tr>
+</tbody>
+</table>
 <blockquote>
 <p>What is <span class="math inline">\(E[X_1X_2]\)</span>?</p>
 </blockquote>
@@ -983,6 +1030,30 @@ V[Y] &amp;= E\left[ \left(\sum_{i=1}^n a_i(X_i - \mu_i) \right)^2 \right] \\
 <p>Let <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> have the following joint probability mass function
 <span class="math inline">\(p_{X_1,X_2}(x_1,x_2)\)</span>:</p>
 </blockquote>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center"><span class="math inline">\(x_2 = 0\)</span></th>
+<th align="center"><span class="math inline">\(x_2 = 1\)</span></th>
+<th align="center"><span class="math inline">\(x_2 = 2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(x_1 = 1\)</span></td>
+<td align="center">0.20</td>
+<td align="center">0.30</td>
+<td align="center">0.00</td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(x_1 = 2\)</span></td>
+<td align="center">0.40</td>
+<td align="center">0.00</td>
+<td align="center">0.10</td>
+</tr>
+</tbody>
+</table>
 <blockquote>
 <p>What is the correlation between <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span>?</p>
 </blockquote>
@@ -1441,6 +1512,30 @@ to determine if we can factorize it into separate functions of <span class="math
 <p>Let <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> have the following joint probability mass function
 <span class="math inline">\(p_{X_1,X_2}(x_1,x_2)\)</span>:</p>
 </blockquote>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center"><span class="math inline">\(x_2 = 0\)</span></th>
+<th align="center"><span class="math inline">\(x_2 = 1\)</span></th>
+<th align="center"><span class="math inline">\(x_2 = 2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(x_1 = 1\)</span></td>
+<td align="center">0.20</td>
+<td align="center">0.30</td>
+<td align="center">0.00</td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(x_1 = 2\)</span></td>
+<td align="center">0.40</td>
+<td align="center">0.00</td>
+<td align="center">0.10</td>
+</tr>
+</tbody>
+</table>
 <blockquote>
 <p>What is the marginal distribution <span class="math inline">\(p_{X_2}(x_2)\)</span> and the
 conditional distribution <span class="math inline">\(p_{X_1 \vert X_2}(x_1 \vert x_2)\)</span>?</p>
@@ -1454,6 +1549,22 @@ p_{X_2}(x_2) = \sum_{x_1} p_{X_1,X_2}(x_1,x_2) \,.
 For this problem, the summation can be done by inspection, yielding the
 following marginal distribution:</p>
 </blockquote>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(x_2 = 0\)</span></th>
+<th align="center"><span class="math inline">\(x_2 = 1\)</span></th>
+<th align="center"><span class="math inline">\(x_2 = 2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">0.60</td>
+<td align="center">0.30</td>
+<td align="center">0.10</td>
+</tr>
+</tbody>
+</table>
 <blockquote>
 <p>As stated in the text above, a marginal pmf is a pmf, meaning that for
 instance the values sum to 1, and we can compute quantities like
@@ -1469,6 +1580,30 @@ divide each row by the marginal for <span class="math inline">\(x_2\)</span>, if
 or divide each column by the marginal for <span class="math inline">\(x_1\)</span>, if we are conditioning
 on <span class="math inline">\(x_1\)</span>. Here, we condition on <span class="math inline">\(x_2\)</span>, so our result is</p>
 </blockquote>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center"><span class="math inline">\(x_2 = 0\)</span></th>
+<th align="center"><span class="math inline">\(x_2 = 1\)</span></th>
+<th align="center"><span class="math inline">\(x_2 = 2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(x_1 = 1\)</span></td>
+<td align="center">0.20/0.60 = 0.33</td>
+<td align="center">0.30/0.30 = 1.00</td>
+<td align="center">0.00/0.10 = 0.00</td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(x_1 = 2\)</span></td>
+<td align="center">0.40/0.60 = 0.67</td>
+<td align="center">0.00/0.30 = 0.00</td>
+<td align="center">0.10/0.10 = 1.00</td>
+</tr>
+</tbody>
+</table>
 <blockquote>
 <p>In such a table, the values in the individual columns all need to sum to
 one: given some value of <span class="math inline">\(x_2\)</span>, we will with probability 1 sample a value
@@ -1769,26 +1904,26 @@ where
 <caption>Multivariate Normal - <code>R</code> Functions (<code>mvtnorm</code> Package)</caption>
 <thead>
 <tr class="header">
-<th>quantity</th>
-<th><code>R</code> function call</th>
+<th align="center">quantity</th>
+<th align="center"><code>R</code> function call</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>PDF</td>
-<td><code>dmvnorm(x,mu,Sigma)</code></td>
+<td align="center">PDF</td>
+<td align="center"><code>dmvnorm(x,mu,Sigma)</code></td>
 </tr>
 <tr class="even">
-<td>CDF</td>
-<td><code>pmvnorm(x,mu,Sigma)</code></td>
+<td align="center">CDF</td>
+<td align="center"><code>pmvnorm(x,mu,Sigma)</code></td>
 </tr>
 <tr class="odd">
-<td>Inverse CDF</td>
-<td><code>qmvnorm(q,mu,Sigma)</code></td>
+<td align="center">Inverse CDF</td>
+<td align="center"><code>qmvnorm(q,mu,Sigma)</code></td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(n\)</span> iid random samples</td>
-<td><code>rmvnorm(n,mu,Sigma)</code></td>
+<td align="center"><span class="math inline">\(n\)</span> iid random samples</td>
+<td align="center"><code>rmvnorm(n,mu,Sigma)</code></td>
 </tr>
 </tbody>
 </table>
@@ -1825,15 +1960,20 @@ the marginal distribution is a bivariate normal with means
 <span id="cb299-2"><a href="multivariate-distributions.html#cb299-2" aria-hidden="true" tabindex="-1"></a>mu.marg    <span class="ot">&lt;-</span> mu[keep]</span>
 <span id="cb299-3"><a href="multivariate-distributions.html#cb299-3" aria-hidden="true" tabindex="-1"></a>Sigma.marg <span class="ot">&lt;-</span> Sigma[keep,keep]</span>
 <span id="cb299-4"><a href="multivariate-distributions.html#cb299-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb299-5"><a href="multivariate-distributions.html#cb299-5" aria-hidden="true" tabindex="-1"></a>x1.plot <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">1.5</span>,<span class="fl">5.5</span>,<span class="at">by=</span><span class="fl">0.05</span>)</span>
-<span id="cb299-6"><a href="multivariate-distributions.html#cb299-6" aria-hidden="true" tabindex="-1"></a>x2.plot <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">0.5</span>,<span class="fl">7.5</span>,<span class="at">by=</span><span class="fl">0.05</span>)</span>
-<span id="cb299-7"><a href="multivariate-distributions.html#cb299-7" aria-hidden="true" tabindex="-1"></a>x.plot  <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(x1.plot,x2.plot)</span>
-<span id="cb299-8"><a href="multivariate-distributions.html#cb299-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb299-9"><a href="multivariate-distributions.html#cb299-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mvtnorm)</span>
-<span id="cb299-10"><a href="multivariate-distributions.html#cb299-10" aria-hidden="true" tabindex="-1"></a>fx.plot <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">dmvnorm</span>(x.plot,mu.marg,Sigma.marg),<span class="at">nrow=</span><span class="fu">length</span>(x1.plot))</span>
-<span id="cb299-11"><a href="multivariate-distributions.html#cb299-11" aria-hidden="true" tabindex="-1"></a><span class="fu">contour</span>(x1.plot,x2.plot,fx.plot,<span class="at">xlab=</span><span class="fu">expression</span>(x[<span class="dv">1</span>]),<span class="at">ylab=</span><span class="fu">expression</span>(x[<span class="dv">2</span>]),<span class="at">col=</span><span class="st">&quot;turquoise&quot;</span>)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-123"></span>
-<img src="_main_files/figure-html/unnamed-chunk-123-1.png" alt="\label{fig:margnorm}Contour plot indicating the location and orientation of a bivariate normal distribution with mean $\boldsymbol{\mu} = \{2,4\}$ and covariance matrix as given in the example. The numbers along each contour indicate the amplitude of the pdf, whose maximum point is in the center." width="45%" />
+<span id="cb299-5"><a href="multivariate-distributions.html#cb299-5" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TBD</span><span class="co"> - metR library for contour labels</span></span>
+<span id="cb299-6"><a href="multivariate-distributions.html#cb299-6" aria-hidden="true" tabindex="-1"></a>x1.plot   <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">1.5</span>,<span class="fl">5.5</span>,<span class="at">by=</span><span class="fl">0.05</span>)</span>
+<span id="cb299-7"><a href="multivariate-distributions.html#cb299-7" aria-hidden="true" tabindex="-1"></a>x2.plot   <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">0.5</span>,<span class="fl">7.5</span>,<span class="at">by=</span><span class="fl">0.05</span>)</span>
+<span id="cb299-8"><a href="multivariate-distributions.html#cb299-8" aria-hidden="true" tabindex="-1"></a>x.plot    <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="at">x1=</span>x1.plot,<span class="at">x2=</span>x2.plot)</span>
+<span id="cb299-9"><a href="multivariate-distributions.html#cb299-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb299-10"><a href="multivariate-distributions.html#cb299-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mvtnorm)</span>
+<span id="cb299-11"><a href="multivariate-distributions.html#cb299-11" aria-hidden="true" tabindex="-1"></a>x.plot<span class="sc">$</span>fx <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">dmvnorm</span>(x.plot,mu.marg,Sigma.marg),<span class="at">ncol=</span><span class="dv">1</span>)</span>
+<span id="cb299-12"><a href="multivariate-distributions.html#cb299-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>x.plot,<span class="fu">aes</span>(<span class="at">x=</span>x1,<span class="at">y=</span>x2)) <span class="sc">+</span></span>
+<span id="cb299-13"><a href="multivariate-distributions.html#cb299-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_contour</span>(<span class="fu">aes</span>(<span class="at">z=</span>fx),<span class="at">col=</span><span class="st">&quot;turquoise&quot;</span>,<span class="at">breaks=</span><span class="fu">seq</span>(<span class="fl">0.01</span>,<span class="fl">0.08</span>,<span class="at">by=</span><span class="fl">0.01</span>)) <span class="sc">+</span></span>
+<span id="cb299-14"><a href="multivariate-distributions.html#cb299-14" aria-hidden="true" tabindex="-1"></a>  metR<span class="sc">::</span><span class="fu">geom_text_contour</span>(<span class="fu">aes</span>(<span class="at">z=</span>fx),<span class="at">skip=</span><span class="fl">0.75</span>,<span class="at">col=</span><span class="st">&quot;turquoise&quot;</span>,<span class="at">stroke=</span><span class="fl">0.2</span>,<span class="at">stroke.color=</span><span class="st">&quot;azure2&quot;</span>) <span class="sc">+</span></span>
+<span id="cb299-15"><a href="multivariate-distributions.html#cb299-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="fu">expression</span>(x[<span class="dv">1</span>]),<span class="at">y=</span><span class="fu">expression</span>(x[<span class="dv">2</span>])) <span class="sc">+</span></span>
+<span id="cb299-16"><a href="multivariate-distributions.html#cb299-16" aria-hidden="true" tabindex="-1"></a>  base_theme</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-129"></span>
+<img src="_main_files/figure-html/unnamed-chunk-129-1.png" alt="\label{fig:margnorm}Contour plot indicating the location and orientation of a bivariate normal distribution with mean $\boldsymbol{\mu} = \{2,4\}$ and covariance matrix as given in the example. The numbers along each contour indicate the amplitude of the pdf, whose maximum point is in the center." width="45%" />
 <p class="caption">
 Figure 6.8: Contour plot indicating the location and orientation of a bivariate normal distribution with mean <span class="math inline">\(\boldsymbol{\mu} = \{2,4\}\)</span> and covariance matrix as given in the example. The numbers along each contour indicate the amplitude of the pdf, whose maximum point is in the center.
 </p>
@@ -1869,15 +2009,19 @@ in the text above.</p>
 <pre><code>##       [,1] [,2]
 ## [1,] 1.875 0.95
 ## [2,] 0.950 1.50</code></pre>
-<div class="sourceCode" id="cb302"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb302-1"><a href="multivariate-distributions.html#cb302-1" aria-hidden="true" tabindex="-1"></a>x1.plot  <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">1.5</span>,<span class="fl">5.5</span>,<span class="at">by=</span><span class="fl">0.05</span>)</span>
-<span id="cb302-2"><a href="multivariate-distributions.html#cb302-2" aria-hidden="true" tabindex="-1"></a>x2.plot  <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">3</span>,<span class="dv">10</span>,<span class="at">by=</span><span class="fl">0.05</span>)</span>
-<span id="cb302-3"><a href="multivariate-distributions.html#cb302-3" aria-hidden="true" tabindex="-1"></a>x.plot   <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(x1.plot,x2.plot)</span>
+<div class="sourceCode" id="cb302"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb302-1"><a href="multivariate-distributions.html#cb302-1" aria-hidden="true" tabindex="-1"></a>x1.plot   <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">1.5</span>,<span class="fl">5.5</span>,<span class="at">by=</span><span class="fl">0.05</span>)</span>
+<span id="cb302-2"><a href="multivariate-distributions.html#cb302-2" aria-hidden="true" tabindex="-1"></a>x2.plot   <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">3</span>,<span class="dv">10</span>,<span class="at">by=</span><span class="fl">0.05</span>)</span>
+<span id="cb302-3"><a href="multivariate-distributions.html#cb302-3" aria-hidden="true" tabindex="-1"></a>x.plot    <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="at">x1=</span>x1.plot,<span class="at">x2=</span>x2.plot)</span>
 <span id="cb302-4"><a href="multivariate-distributions.html#cb302-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb302-5"><a href="multivariate-distributions.html#cb302-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mvtnorm)</span>
-<span id="cb302-6"><a href="multivariate-distributions.html#cb302-6" aria-hidden="true" tabindex="-1"></a>fx.plot <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">dmvnorm</span>(x.plot,mu.c,Sigma.c),<span class="at">nrow=</span><span class="fu">length</span>(x1.plot))</span>
-<span id="cb302-7"><a href="multivariate-distributions.html#cb302-7" aria-hidden="true" tabindex="-1"></a><span class="fu">contour</span>(x1.plot,x2.plot,fx.plot,<span class="at">xlab=</span><span class="fu">expression</span>(x[<span class="dv">1</span>]),<span class="at">ylab=</span><span class="fu">expression</span>(x[<span class="dv">3</span>]),<span class="at">col=</span><span class="st">&quot;turquoise&quot;</span>)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-124"></span>
-<img src="_main_files/figure-html/unnamed-chunk-124-1.png" alt="\label{fig:condnorm}Contour plot indicating the location and orientation of a bivariate normal distribution with conditional mean $\boldsymbol{\mu} = \{2.25,6.50\}$ and conditional covariance matrix as given in the example. The numbers along each contour indicate the amplitude of the pdf, whose maximum point is in the center." width="45%" />
+<span id="cb302-6"><a href="multivariate-distributions.html#cb302-6" aria-hidden="true" tabindex="-1"></a>x.plot<span class="sc">$</span>fx <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">dmvnorm</span>(x.plot,mu.c,Sigma.c),<span class="at">ncol=</span><span class="dv">1</span>)</span>
+<span id="cb302-7"><a href="multivariate-distributions.html#cb302-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>x.plot,<span class="fu">aes</span>(<span class="at">x=</span>x1,<span class="at">y=</span>x2)) <span class="sc">+</span></span>
+<span id="cb302-8"><a href="multivariate-distributions.html#cb302-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_contour</span>(<span class="fu">aes</span>(<span class="at">z=</span>fx),<span class="at">col=</span><span class="st">&quot;turquoise&quot;</span>,<span class="at">breaks=</span><span class="fu">seq</span>(<span class="fl">0.01</span>,<span class="fl">0.11</span>,<span class="at">by=</span><span class="fl">0.01</span>)) <span class="sc">+</span></span>
+<span id="cb302-9"><a href="multivariate-distributions.html#cb302-9" aria-hidden="true" tabindex="-1"></a>  metR<span class="sc">::</span><span class="fu">geom_text_contour</span>(<span class="fu">aes</span>(<span class="at">z=</span>fx),<span class="at">skip=</span><span class="fl">0.8</span>,<span class="at">col=</span><span class="st">&quot;turquoise&quot;</span>,<span class="at">stroke=</span><span class="fl">0.2</span>,<span class="at">stroke.color=</span><span class="st">&quot;azure2&quot;</span>) <span class="sc">+</span></span>
+<span id="cb302-10"><a href="multivariate-distributions.html#cb302-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="fu">expression</span>(x[<span class="dv">1</span>]),<span class="at">y=</span><span class="fu">expression</span>(x[<span class="dv">3</span>])) <span class="sc">+</span></span>
+<span id="cb302-11"><a href="multivariate-distributions.html#cb302-11" aria-hidden="true" tabindex="-1"></a>  base_theme</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-130"></span>
+<img src="_main_files/figure-html/unnamed-chunk-130-1.png" alt="\label{fig:condnorm}Contour plot indicating the location and orientation of a bivariate normal distribution with conditional mean $\boldsymbol{\mu} = \{2.25,6.50\}$ and conditional covariance matrix as given in the example. The numbers along each contour indicate the amplitude of the pdf, whose maximum point is in the center." width="45%" />
 <p class="caption">
 Figure 6.9: Contour plot indicating the location and orientation of a bivariate normal distribution with conditional mean <span class="math inline">\(\boldsymbol{\mu} = \{2.25,6.50\}\)</span> and conditional covariance matrix as given in the example. The numbers along each contour indicate the amplitude of the pdf, whose maximum point is in the center.
 </p>
@@ -1906,7 +2050,11 @@ would we estimate this matrix?</p>
 ## [1,] 1.798 1.704
 ## [2,] 1.385 1.158
 ## [3,] 2.551 2.707</code></pre>
-<div class="sourceCode" id="cb305"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb305-1"><a href="multivariate-distributions.html#cb305-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(X[,<span class="dv">1</span>],X[,<span class="dv">2</span>],<span class="at">pch=</span><span class="dv">19</span>,<span class="at">cex=</span><span class="fl">1.25</span>,<span class="at">xlab=</span><span class="fu">expression</span>(x[<span class="dv">1</span>]),<span class="at">ylab=</span><span class="fu">expression</span>(x[<span class="dv">2</span>]),<span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb305"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb305-1"><a href="multivariate-distributions.html#cb305-1" aria-hidden="true" tabindex="-1"></a>df    <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x=</span>X[,<span class="dv">1</span>],<span class="at">y=</span>X[,<span class="dv">2</span>])</span>
+<span id="cb305-2"><a href="multivariate-distributions.html#cb305-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>df,<span class="fu">aes</span>(<span class="at">x=</span>x,<span class="at">y=</span>y)) <span class="sc">+</span></span>
+<span id="cb305-3"><a href="multivariate-distributions.html#cb305-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">col=</span><span class="st">&quot;blue&quot;</span>,<span class="at">size=</span><span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb305-4"><a href="multivariate-distributions.html#cb305-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="fu">expression</span>(x[<span class="dv">1</span>]),<span class="at">y=</span><span class="fu">expression</span>(x[<span class="dv">2</span>])) <span class="sc">+</span></span>
+<span id="cb305-5"><a href="multivariate-distributions.html#cb305-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">1.25</span>)))</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:sampx"></span>
 <img src="_main_files/figure-html/sampx-1.png" alt="\label{fig:sampx}Sample of $n = 40$ iid data drawn from a bivariate normal distribution with means $\boldsymbol{\mu} = \{2,1\}$ and covariance matrix $\boldsymbol{\Sigma}$ given in the main body of the text." width="50%" />
 <p class="caption">

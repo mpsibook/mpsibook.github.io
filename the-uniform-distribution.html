@@ -170,7 +170,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.8" data-path="the-basics-of-probability-and-statistical-inference.html"><a href="the-basics-of-probability-and-statistical-inference.html#working-with-r-probability-distributions"><i class="fa fa-check"></i><b>1.8</b> Working With R: Probability Distributions</a>
 <ul>
 <li class="chapter" data-level="1.8.1" data-path="the-basics-of-probability-and-statistical-inference.html"><a href="the-basics-of-probability-and-statistical-inference.html#numerical-integration-and-conditional-probability"><i class="fa fa-check"></i><b>1.8.1</b> Numerical Integration and Conditional Probability</a></li>
-<li class="chapter" data-level="1.8.2" data-path="the-basics-of-probability-and-statistical-inference.html"><a href="the-basics-of-probability-and-statistical-inference.html#numerical-integration-and-variance"><i class="fa fa-check"></i><b>1.8.2</b> Numerical Integration and Variance*</a></li>
+<li class="chapter" data-level="1.8.2" data-path="the-basics-of-probability-and-statistical-inference.html"><a href="the-basics-of-probability-and-statistical-inference.html#numerical-integration-and-variance"><i class="fa fa-check"></i><b>1.8.2</b> Numerical Integration and Variance</a></li>
 </ul></li>
 <li class="chapter" data-level="1.9" data-path="the-basics-of-probability-and-statistical-inference.html"><a href="the-basics-of-probability-and-statistical-inference.html#cumulative-distribution-functions"><i class="fa fa-check"></i><b>1.9</b> Cumulative Distribution Functions</a>
 <ul>
@@ -521,7 +521,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.5.1" data-path="further-conceptual-details-optional.html"><a href="further-conceptual-details-optional.html#a-formal-definition-of-sufficiency"><i class="fa fa-check"></i><b>7.5.1</b> A Formal Definition of Sufficiency</a></li>
 <li class="chapter" data-level="7.5.2" data-path="further-conceptual-details-optional.html"><a href="further-conceptual-details-optional.html#minimal-sufficiency"><i class="fa fa-check"></i><b>7.5.2</b> Minimal Sufficiency</a></li>
 <li class="chapter" data-level="7.5.3" data-path="further-conceptual-details-optional.html"><a href="further-conceptual-details-optional.html#completeness"><i class="fa fa-check"></i><b>7.5.3</b> Completeness</a></li>
-<li class="chapter" data-level="7.5.4" data-path="further-conceptual-details-optional.html"><a href="further-conceptual-details-optional.html#exponential-family-of-distributions"><i class="fa fa-check"></i><b>7.5.4</b> Exponential Family of Distributions</a></li>
+<li class="chapter" data-level="7.5.4" data-path="further-conceptual-details-optional.html"><a href="further-conceptual-details-optional.html#the-rao-blackwell-theorem"><i class="fa fa-check"></i><b>7.5.4</b> The Rao-Blackwell Theorem</a></li>
+<li class="chapter" data-level="7.5.5" data-path="further-conceptual-details-optional.html"><a href="further-conceptual-details-optional.html#exponential-family-of-distributions"><i class="fa fa-check"></i><b>7.5.5</b> Exponential Family of Distributions</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="appendix-a-table-of-symbols.html"><a href="appendix-a-table-of-symbols.html"><i class="fa fa-check"></i>Appendix A: Table of Symbols</a></li>
@@ -578,7 +579,7 @@ If we know the domain of the pdf, we immediately know <span class="math inline">
 if we know
 <span class="math inline">\(f_X(x)\)</span>, we immediately know the width of the domain (but not <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>
 themselves).</p>
-<div class="figure" style="text-align: left"><span style="display:block;" id="fig:unifpdf"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unifpdf"></span>
 <img src="_main_files/figure-html/unifpdf-1.png" alt="\label{fig:unifpdf}Three examples of uniform probability mass functions: Uniform(0,1) (red), Uniform(0.5,2) (blue), and Uniform(-1.5,1.5) (green)." width="50%" />
 <p class="caption">
 Figure 5.1: Three examples of uniform probability mass functions: Uniform(0,1) (red), Uniform(0.5,2) (blue), and Uniform(-1.5,1.5) (green).
@@ -611,26 +612,26 @@ when <span class="math inline">\(q = 0\)</span>, then <span class="math inline">
 <caption>Uniform Distribution - <code>R</code> Functions</caption>
 <thead>
 <tr class="header">
-<th>quantity</th>
-<th><code>R</code> function call</th>
+<th align="center">quantity</th>
+<th align="center"><code>R</code> function call</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>PDF</td>
-<td><code>dunif(x,a,b)</code></td>
+<td align="center">PDF</td>
+<td align="center"><code>dunif(x,a,b)</code></td>
 </tr>
 <tr class="even">
-<td>CDF</td>
-<td><code>punif(x,a,b)</code></td>
+<td align="center">CDF</td>
+<td align="center"><code>punif(x,a,b)</code></td>
 </tr>
 <tr class="odd">
-<td>Inverse CDF</td>
-<td><code>qunif(q,a,b)</code></td>
+<td align="center">Inverse CDF</td>
+<td align="center"><code>qunif(q,a,b)</code></td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(n\)</span> iid random samples</td>
-<td><code>runif(n,a,b)</code></td>
+<td align="center"><span class="math inline">\(n\)</span> iid random samples</td>
+<td align="center"><code>runif(n,a,b)</code></td>
 </tr>
 </tbody>
 </table>
@@ -1314,30 +1315,30 @@ table:</p>
 <table>
 <thead>
 <tr class="header">
-<th></th>
-<th>Null Correct</th>
-<th>Null False</th>
-<th>Total</th>
+<th align="right"></th>
+<th align="center">Null Correct</th>
+<th align="center">Null False</th>
+<th align="center">Total</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Null Rejected</td>
-<td>V</td>
-<td>S</td>
-<td>R</td>
+<td align="right">Null Rejected</td>
+<td align="center">V</td>
+<td align="center">S</td>
+<td align="center">R</td>
 </tr>
 <tr class="even">
-<td>Fail to Reject</td>
-<td>U</td>
-<td>T</td>
-<td>k-R</td>
+<td align="right">Fail to Reject</td>
+<td align="center">U</td>
+<td align="center">T</td>
+<td align="center">k-R</td>
 </tr>
 <tr class="odd">
-<td>Total</td>
-<td>k’</td>
-<td>k-k’</td>
-<td>k</td>
+<td align="right">Total</td>
+<td align="center">k’</td>
+<td align="center">k-k’</td>
+<td align="center">k</td>
 </tr>
 </tbody>
 </table>
@@ -1467,9 +1468,9 @@ that on average, five percent of these 17 [meaning, effectively, 1] is
 an erroneous rejection…here, we reject no correct null hypotheses).</p>
 </blockquote>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:mcs"></span>
-<img src="_main_files/figure-html/mcs-1.png" alt="\label{fig:mcs}An illustration of the difference between the Bonferroni correction and the Benjamini-Hochberg procedure. The blue dots represent sorted $p$-values resulting from a simulation in which 80 of 100 null hypotheses are correct (so that a perfect disambiguation between null and non-null hypotheses would result in 20 rejected nulls, with none falsely rejected. The Bonferroni correction shifts $\alpha = 0.05$ downwards to the green short-dashed line; 9 $p$-values lay below the line, so 9 (true) null hypotheses are rejected in all. The BH procedure looks for the number of $p$-values laying below the red dashed line; that number is 17 (with no false rejections)." width="50%" />
+<img src="_main_files/figure-html/mcs-1.png" alt="\label{fig:mcs}An illustration of the difference between the Bonferroni correction and the Benjamini-Hochberg procedure. The blue dots represent sorted $p$-values resulting from a simulation in which 80 of 100 null hypotheses are correct (so that a perfect disambiguation between null and non-null hypotheses would result in 20 rejected nulls, with none falsely rejected. The Bonferroni correction shifts $\alpha = 0.05$ downwards to the green short-dashed line; 9 $p$-values lie below the line, so 9 (true) null hypotheses are rejected in all. The BH procedure looks for the number of $p$-values lying below the red dashed line; that number is 17 (with no false rejections)." width="50%" />
 <p class="caption">
-Figure 5.5: An illustration of the difference between the Bonferroni correction and the Benjamini-Hochberg procedure. The blue dots represent sorted <span class="math inline">\(p\)</span>-values resulting from a simulation in which 80 of 100 null hypotheses are correct (so that a perfect disambiguation between null and non-null hypotheses would result in 20 rejected nulls, with none falsely rejected. The Bonferroni correction shifts <span class="math inline">\(\alpha = 0.05\)</span> downwards to the green short-dashed line; 9 <span class="math inline">\(p\)</span>-values lay below the line, so 9 (true) null hypotheses are rejected in all. The BH procedure looks for the number of <span class="math inline">\(p\)</span>-values laying below the red dashed line; that number is 17 (with no false rejections).
+Figure 5.5: An illustration of the difference between the Bonferroni correction and the Benjamini-Hochberg procedure. The blue dots represent sorted <span class="math inline">\(p\)</span>-values resulting from a simulation in which 80 of 100 null hypotheses are correct (so that a perfect disambiguation between null and non-null hypotheses would result in 20 rejected nulls, with none falsely rejected. The Bonferroni correction shifts <span class="math inline">\(\alpha = 0.05\)</span> downwards to the green short-dashed line; 9 <span class="math inline">\(p\)</span>-values lie below the line, so 9 (true) null hypotheses are rejected in all. The BH procedure looks for the number of <span class="math inline">\(p\)</span>-values lying below the red dashed line; that number is 17 (with no false rejections).
 </p>
 </div>
 

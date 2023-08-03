@@ -170,7 +170,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.8" data-path="the-basics-of-probability-and-statistical-inference.html"><a href="the-basics-of-probability-and-statistical-inference.html#working-with-r-probability-distributions"><i class="fa fa-check"></i><b>1.8</b> Working With R: Probability Distributions</a>
 <ul>
 <li class="chapter" data-level="1.8.1" data-path="the-basics-of-probability-and-statistical-inference.html"><a href="the-basics-of-probability-and-statistical-inference.html#numerical-integration-and-conditional-probability"><i class="fa fa-check"></i><b>1.8.1</b> Numerical Integration and Conditional Probability</a></li>
-<li class="chapter" data-level="1.8.2" data-path="the-basics-of-probability-and-statistical-inference.html"><a href="the-basics-of-probability-and-statistical-inference.html#numerical-integration-and-variance"><i class="fa fa-check"></i><b>1.8.2</b> Numerical Integration and Variance*</a></li>
+<li class="chapter" data-level="1.8.2" data-path="the-basics-of-probability-and-statistical-inference.html"><a href="the-basics-of-probability-and-statistical-inference.html#numerical-integration-and-variance"><i class="fa fa-check"></i><b>1.8.2</b> Numerical Integration and Variance</a></li>
 </ul></li>
 <li class="chapter" data-level="1.9" data-path="the-basics-of-probability-and-statistical-inference.html"><a href="the-basics-of-probability-and-statistical-inference.html#cumulative-distribution-functions"><i class="fa fa-check"></i><b>1.9</b> Cumulative Distribution Functions</a>
 <ul>
@@ -521,7 +521,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.5.1" data-path="further-conceptual-details-optional.html"><a href="further-conceptual-details-optional.html#a-formal-definition-of-sufficiency"><i class="fa fa-check"></i><b>7.5.1</b> A Formal Definition of Sufficiency</a></li>
 <li class="chapter" data-level="7.5.2" data-path="further-conceptual-details-optional.html"><a href="further-conceptual-details-optional.html#minimal-sufficiency"><i class="fa fa-check"></i><b>7.5.2</b> Minimal Sufficiency</a></li>
 <li class="chapter" data-level="7.5.3" data-path="further-conceptual-details-optional.html"><a href="further-conceptual-details-optional.html#completeness"><i class="fa fa-check"></i><b>7.5.3</b> Completeness</a></li>
-<li class="chapter" data-level="7.5.4" data-path="further-conceptual-details-optional.html"><a href="further-conceptual-details-optional.html#exponential-family-of-distributions"><i class="fa fa-check"></i><b>7.5.4</b> Exponential Family of Distributions</a></li>
+<li class="chapter" data-level="7.5.4" data-path="further-conceptual-details-optional.html"><a href="further-conceptual-details-optional.html#the-rao-blackwell-theorem"><i class="fa fa-check"></i><b>7.5.4</b> The Rao-Blackwell Theorem</a></li>
+<li class="chapter" data-level="7.5.5" data-path="further-conceptual-details-optional.html"><a href="further-conceptual-details-optional.html#exponential-family-of-distributions"><i class="fa fa-check"></i><b>7.5.5</b> Exponential Family of Distributions</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="appendix-a-table-of-symbols.html"><a href="appendix-a-table-of-symbols.html"><i class="fa fa-check"></i>Appendix A: Table of Symbols</a></li>
@@ -651,36 +652,36 @@ as functions of others:</p>
 <table>
 <thead>
 <tr class="header">
-<th>term</th>
-<th>notation</th>
-<th>intuitive terminology</th>
+<th align="left">term</th>
+<th align="center">notation</th>
+<th align="center">intuitive terminology</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>superset</td>
-<td><span class="math inline">\(A \supset B\)</span></td>
-<td>“encompasses”</td>
+<td align="left">superset</td>
+<td align="center"><span class="math inline">\(A \supset B\)</span></td>
+<td align="center">“encompasses”</td>
 </tr>
 <tr class="even">
-<td>subset</td>
-<td><span class="math inline">\(A \subset B\)</span></td>
-<td>“within”</td>
+<td align="left">subset</td>
+<td align="center"><span class="math inline">\(A \subset B\)</span></td>
+<td align="center">“within”</td>
 </tr>
 <tr class="odd">
-<td>union</td>
-<td><span class="math inline">\(A \cup B\)</span></td>
-<td>“or”</td>
+<td align="left">union</td>
+<td align="center"><span class="math inline">\(A \cup B\)</span></td>
+<td align="center">“or”</td>
 </tr>
 <tr class="even">
-<td>intersection</td>
-<td><span class="math inline">\(A \cap B\)</span></td>
-<td>“and”</td>
+<td align="left">intersection</td>
+<td align="center"><span class="math inline">\(A \cap B\)</span></td>
+<td align="center">“and”</td>
 </tr>
 <tr class="odd">
-<td>complement</td>
-<td><span class="math inline">\(\bar{A}\)</span></td>
-<td>“not”</td>
+<td align="left">complement</td>
+<td align="center"><span class="math inline">\(\bar{A}\)</span></td>
+<td align="center">“not”</td>
 </tr>
 </tbody>
 </table>
@@ -778,21 +779,21 @@ and <em>De Morgan’s laws</em>,
 <table>
 <thead>
 <tr class="header">
-<th></th>
-<th><span class="math inline">\(A\)</span></th>
-<th><span class="math inline">\(\bar{A}\)</span></th>
+<th align="right"></th>
+<th align="center"><span class="math inline">\(A\)</span></th>
+<th align="center"><span class="math inline">\(\bar{A}\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(B\)</span></td>
-<td>0.45</td>
-<td>0.12</td>
+<td align="right"><span class="math inline">\(B\)</span></td>
+<td align="center">0.45</td>
+<td align="center">0.12</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\bar{B}\)</span></td>
-<td>0.21</td>
-<td>0.22</td>
+<td align="right"><span class="math inline">\(\bar{B}\)</span></td>
+<td align="center">0.21</td>
+<td align="center">0.22</td>
 </tr>
 </tbody>
 </table>
@@ -906,30 +907,30 @@ section, but with some additional information added:</p>
 <table>
 <thead>
 <tr class="header">
-<th></th>
-<th><span class="math inline">\(A\)</span></th>
-<th><span class="math inline">\(\bar{A}\)</span></th>
-<th></th>
+<th align="right"></th>
+<th align="center"><span class="math inline">\(A\)</span></th>
+<th align="center"><span class="math inline">\(\bar{A}\)</span></th>
+<th align="center"></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(B\)</span></td>
-<td>0.45</td>
-<td>0.12</td>
-<td>0.57</td>
+<td align="right"><span class="math inline">\(B\)</span></td>
+<td align="center">0.45</td>
+<td align="center">0.12</td>
+<td align="center">0.57</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\bar{B}\)</span></td>
-<td>0.21</td>
-<td>0.22</td>
-<td>0.43</td>
+<td align="right"><span class="math inline">\(\bar{B}\)</span></td>
+<td align="center">0.21</td>
+<td align="center">0.22</td>
+<td align="center">0.43</td>
 </tr>
 <tr class="odd">
-<td></td>
-<td>0.67</td>
-<td>0.33</td>
-<td></td>
+<td align="right"></td>
+<td align="center">0.67</td>
+<td align="center">0.33</td>
+<td align="center"></td>
 </tr>
 </tbody>
 </table>
@@ -998,7 +999,7 @@ P(A \cap B) = P(A) P(B \vert A) = P(B) P(A \vert B)
 \]</span>
 We can generalize this law given an arbitrary number of events <span class="math inline">\(k\)</span>:
 <span class="math display">\[
-P(A_1 \cap A_2 \cap \cdots \cap A_k) = P(A_1 \vert A_2 \cap \cdots \cap A_k) P(A_2 \cap \cdots \cap A_k) = \cdots = P(A_k) \prod_{i=1}^{n-1} P(A_i \vert A_{i+1} \cap \cdots \cap A_k) \,,
+P(A_1 \cap A_2 \cap \cdots \cap A_k) = P(A_1 \vert A_2 \cap \cdots \cap A_k) P(A_2 \cap \cdots \cap A_k) = \cdots = P(A_k) \prod_{i=1}^{k-1} P(A_i \vert A_{i+1} \cap \cdots \cap A_k) \,,
 \]</span>
 where <span class="math inline">\(\prod\)</span> is the product symbol, the multiplicative analogue to the summation symbol <span class="math inline">\(\sum\)</span>.</li>
 <li><em>Additive Law</em>. The probability of the union of two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> is
@@ -1279,8 +1280,26 @@ into a single distribution, however. See the example below.)
 Later, we introduce two alternatives to pmfs/pdfs:
 the cumulative distribution function (cdf),
 and the moment-generating function (mgf).</p>
-Probability mass and density functions have two fundamental constraints:
-(a) they are non-negative; and (b) they sum or integrate to 1:
+<p>Probability mass and density functions have two fundamental constraints:
+(a) they are non-negative; and (b) they sum or integrate to 1:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">pmf</th>
+<th align="center">pdf</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(p_X(x) \in [0,1]\)</span></td>
+<td align="center"><span class="math inline">\(f_X(x) \in [0,\infty)\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\sum_x p_X(x) = 1\)</span></td>
+<td align="center"><span class="math inline">\(\int_x f_X(x) dx = 1\)</span></td>
+</tr>
+</tbody>
+</table>
 <p>Before continuing on to discussing properties of distributions,
 we reiterate the point that one cannot interpret
 a pdf <span class="math inline">\(f_X(x)\)</span> as the probability of sampling the value <span class="math inline">\(x\)</span>! It is,
@@ -1406,34 +1425,34 @@ function is</p>
 <table>
 <thead>
 <tr class="header">
-<th><span class="math inline">\(x\)</span></th>
-<th><span class="math inline">\(p_X(x)\)</span></th>
+<th align="center"><span class="math inline">\(x\)</span></th>
+<th align="center"><span class="math inline">\(p_X(x)\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>0</td>
-<td>4/10</td>
+<td align="center">0</td>
+<td align="center">4/10</td>
 </tr>
 <tr class="even">
-<td>1</td>
-<td>1/10</td>
+<td align="center">1</td>
+<td align="center">1/10</td>
 </tr>
 <tr class="odd">
-<td>2</td>
-<td>1/10</td>
+<td align="center">2</td>
+<td align="center">1/10</td>
 </tr>
 <tr class="even">
-<td>3</td>
-<td>4/10</td>
+<td align="center">3</td>
+<td align="center">4/10</td>
 </tr>
 </tbody>
 </table>
 <blockquote>
 <p>We see that this pmf is (a) non-negative and (b) has values <span class="math inline">\(p_X(x)\)</span> that
-lay between 0 and 1. Because we are dealing with masses and not densities,
+lie between 0 and 1. Because we are dealing with masses and not densities,
 probability calculations involve summations (while taking care to note
-whether one or both limits of summation lay at a mass, and if so, whether
+whether one or both limits of summation lie at a mass, and if so, whether
 or not the inequality is, e.g., <span class="math inline">\(&gt;\)</span> or <span class="math inline">\(\geq\)</span>). For instance, what is
 the probability of achieving a score greater than 1 point? <span class="math inline">\(P(X &gt; 1) = p_X(2) + p_X(3) = 1/2\)</span>. What about a score of 3 points, given a score greater
 than 0 points?
@@ -1645,27 +1664,27 @@ V[X] = E[X^2] - (E[X])^2 = \frac{\theta}{\theta+2} - \frac{\theta^2}{(\theta+1)^
 <p>In this section, we introduce <code>R</code> as a tool with which to, e.g.,
 visualize and numerically manipulate probability distributions.</p>
 <p>We start with the concept of the <em>vector</em>:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb3-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Hello, world!&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb4-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Hello, world!&quot;</span>)</span></code></pre></div>
 <p>(The reader should feel free to open <code>R</code> and type in these lines
 at the Console prompt.)
 In this example, we define a vector of character strings which we
 name <code>x</code>; here, <code>x</code> has length 1:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(x)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(x)</span></code></pre></div>
 <pre><code>## [1] 1</code></pre>
 <p><code>c()</code> is an <code>R</code> function whose arguments (e.g., <code>"Hello, world!"</code>) are
 what are to be the constituents of the vector.
 The arrow is an assignment operator; <code>=</code> is equally valid. We can create
 a numeric vector as follows:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb6-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">8</span>)</span>
-<span id="cb6-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb7-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">8</span>)</span>
+<span id="cb7-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x)</span></code></pre></div>
 <pre><code>## [1] 1 2 4 8</code></pre>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(x)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(x)</span></code></pre></div>
 <pre><code>## [1] 4</code></pre>
 <p>but when the numbers follow a (long) sequence, it can be easier to utilize
 <code>seq()</code>:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb10-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,pi,<span class="at">by=</span><span class="fl">0.01</span>)  <span class="co"># 0, 0.01, 0.02, ..., 3.14 (but not 3.15)</span></span>
-<span id="cb10-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb10-2" aria-hidden="true" tabindex="-1"></a>                        <span class="co"># pi and Inf are built-in constants</span></span>
-<span id="cb10-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(x)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb11-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,pi,<span class="at">by=</span><span class="fl">0.01</span>)  <span class="co"># 0, 0.01, 0.02, ..., 3.14 (but not 3.15)</span></span>
+<span id="cb11-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb11-2" aria-hidden="true" tabindex="-1"></a>                        <span class="co"># pi and Inf are built-in constants</span></span>
+<span id="cb11-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(x)</span></code></pre></div>
 <pre><code>## [1] 315</code></pre>
 <p>When it comes to probability distributions, what might we want to do first?</p>
 <p>Let’s suppose that our data are sampled from this pdf:
@@ -1677,9 +1696,9 @@ determined) such that the integral of <span class="math inline">\(f_X(x)\)</span
 Below, we will show how we can determine the value of <span class="math inline">\(c\)</span> using <code>R</code> code.
 But first, we will assume <span class="math inline">\(c = 1\)</span> and
 determine if <span class="math inline">\(f_X(x)\)</span> is non-negative (as it should be!):</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb12-1" aria-hidden="true" tabindex="-1"></a>x   <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,pi,<span class="at">by=</span>pi<span class="sc">/</span><span class="dv">100</span>)</span>
-<span id="cb12-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb12-2" aria-hidden="true" tabindex="-1"></a>f.x <span class="ot">&lt;-</span> x<span class="sc">*</span><span class="fu">sin</span>(x)            </span>
-<span id="cb12-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(f.x)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb13-1" aria-hidden="true" tabindex="-1"></a>x   <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,pi,<span class="at">by=</span>pi<span class="sc">/</span><span class="dv">100</span>)</span>
+<span id="cb13-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb13-2" aria-hidden="true" tabindex="-1"></a>f.x <span class="ot">&lt;-</span> x<span class="sc">*</span><span class="fu">sin</span>(x)            </span>
+<span id="cb13-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(f.x)</span></code></pre></div>
 <pre><code>## [1] 0</code></pre>
 <p>Note how we do not have to use a <code>for</code>-loop here, as one of the hallmarks of
 <code>R</code> is <em>vectorization</em>: if <code>R</code> sees that <code>x</code> is a vector, it will work with
@@ -1688,17 +1707,22 @@ length as <code>x</code> (and with the first element of <code>x</code> correspon
 element of <code>f.x</code>, etc.). We see that the minimum value is 0.</p>
 <p>If we want to go further, we can make a simple plot
 (see Figure <a href="the-basics-of-probability-and-statistical-inference.html#fig:xsinx">1.13</a>):</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb14-1" aria-hidden="true" tabindex="-1"></a>x   <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,pi,<span class="at">by=</span>pi<span class="sc">/</span><span class="dv">100</span>) </span>
-<span id="cb14-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb14-2" aria-hidden="true" tabindex="-1"></a>f.x <span class="ot">&lt;-</span> x<span class="sc">*</span><span class="fu">sin</span>(x)            </span>
-<span id="cb14-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,f.x,<span class="at">typ=</span><span class="st">&quot;l&quot;</span>,<span class="at">lwd=</span><span class="dv">2</span>,<span class="at">col=</span><span class="st">&quot;blue&quot;</span>,<span class="at">ylab=</span><span class="fu">expression</span>(f[X]<span class="sc">*</span><span class="st">&quot;(x)&quot;</span>))</span>
-<span id="cb14-4"><a href="the-basics-of-probability-and-statistical-inference.html#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="dv">0</span>,<span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb15-1" aria-hidden="true" tabindex="-1"></a>x   <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,pi,<span class="at">by=</span>pi<span class="sc">/</span><span class="dv">100</span>)</span>
+<span id="cb15-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb15-2" aria-hidden="true" tabindex="-1"></a>f.x <span class="ot">&lt;-</span> x<span class="sc">*</span><span class="fu">sin</span>(x)</span>
+<span id="cb15-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb15-3" aria-hidden="true" tabindex="-1"></a>df  <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x=</span>x,<span class="at">f.x=</span>f.x)</span>
+<span id="cb15-4"><a href="the-basics-of-probability-and-statistical-inference.html#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>df,<span class="fu">aes</span>(<span class="at">x=</span>x,<span class="at">y=</span>f.x)) <span class="sc">+</span></span>
+<span id="cb15-5"><a href="the-basics-of-probability-and-statistical-inference.html#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">col=</span><span class="st">&quot;blue&quot;</span>,<span class="at">lwd=</span><span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb15-6"><a href="the-basics-of-probability-and-statistical-inference.html#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span><span class="dv">0</span>,<span class="at">col=</span><span class="st">&quot;red&quot;</span>,<span class="at">lwd=</span><span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb15-7"><a href="the-basics-of-probability-and-statistical-inference.html#cb15-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="fu">expression</span>(f[X]<span class="sc">*</span><span class="st">&quot;(x)&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb15-8"><a href="the-basics-of-probability-and-statistical-inference.html#cb15-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">1.25</span>)))</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:xsinx"></span>
 <img src="_main_files/figure-html/xsinx-1.png" alt="\label{fig:xsinx}The function $x \sin x$." width="50%" />
 <p class="caption">
 Figure 1.13: The function <span class="math inline">\(x \sin x\)</span>.
 </p>
 </div>
-<p>The <code>plot()</code> function puts <code>x</code> on the <span class="math inline">\(x\)</span>-axis, <code>f.x</code> on the <span class="math inline">\(y\)</span>-axis,
+<p>#TBD: explain ggplot() instead of plot()
+The <code>plot()</code> function puts <code>x</code> on the <span class="math inline">\(x\)</span>-axis, <code>f.x</code> on the <span class="math inline">\(y\)</span>-axis,
 connects each point with a line (<code>typ="l"</code>), makes the line twice as
 wide as the default width (<code>lwd=2</code>), makes the line blue (<code>col="blue"</code>),
 and changes the default <span class="math inline">\(y\)</span>-axis label to one that includes the subscript “X”.
@@ -1708,10 +1732,10 @@ that we have forgotten integration by parts and thus we are not sure
 how to integrate <span class="math inline">\(f_X(x)\)</span>. We can code numerical integration in <code>R</code> using a
 combination of a function that evaluates <span class="math inline">\(f_X(x)\)</span> and a call to the
 built-in function <code>integrate()</code>, which performs numerical integration:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb15-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb15-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(x<span class="sc">*</span><span class="fu">sin</span>(x))</span>
-<span id="cb15-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb15-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb15-4"><a href="the-basics-of-probability-and-statistical-inference.html#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">integrate</span>(f,<span class="dv">0</span>,pi) <span class="co"># integrate the function f between 0 and pi</span></span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb16-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb16-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(x<span class="sc">*</span><span class="fu">sin</span>(x))</span>
+<span id="cb16-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb16-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb16-4"><a href="the-basics-of-probability-and-statistical-inference.html#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="fu">integrate</span>(f,<span class="dv">0</span>,pi) <span class="co"># integrate the function f between 0 and pi</span></span></code></pre></div>
 <pre><code>## 3.141593 with absolute error &lt; 3.5e-14</code></pre>
 <blockquote>
 <p>We see that the integral is <span class="math inline">\(\pi\)</span>, so to make
@@ -1724,18 +1748,18 @@ f_X(x) = \left\{ \begin{array}{cl} \frac{1}{\pi} x \sin x &amp; 0 \leq x \leq \p
 What is the probability that the next observed datum will
 have a value between 1 and 2? We can use <code>integrate</code> to figure that
 out:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb17-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb17-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(x<span class="sc">*</span><span class="fu">sin</span>(x)<span class="sc">/</span>pi)     <span class="co"># we now include the normalization constant</span></span>
-<span id="cb17-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb17-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb17-4"><a href="the-basics-of-probability-and-statistical-inference.html#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="fu">integrate</span>(f,<span class="dv">1</span>,<span class="dv">2</span>) <span class="co"># integrate the function f between 1 and 2</span></span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb18-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb18-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(x<span class="sc">*</span><span class="fu">sin</span>(x)<span class="sc">/</span>pi)     <span class="co"># we now include the normalization constant</span></span>
+<span id="cb18-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb18-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb18-4"><a href="the-basics-of-probability-and-statistical-inference.html#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="fu">integrate</span>(f,<span class="dv">1</span>,<span class="dv">2</span>) <span class="co"># integrate the function f between 1 and 2</span></span></code></pre></div>
 <pre><code>## 0.4585007 with absolute error &lt; 5.1e-15</code></pre>
 <p>The answer is 0.4585…there is a 45.85% chance that the next datum will have
 a value between 1 and 2.</p>
 <p>What is the expected value, <span class="math inline">\(E[X]\)</span>, of <span class="math inline">\(f_X(x)\)</span>?</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb19-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb19-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(x<span class="sc">^</span><span class="dv">2</span><span class="sc">*</span><span class="fu">sin</span>(x)<span class="sc">/</span>pi)     <span class="co"># add an additional x</span></span>
-<span id="cb19-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb19-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb19-4"><a href="the-basics-of-probability-and-statistical-inference.html#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="fu">integrate</span>(f,<span class="dv">0</span>,pi)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb20-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb20-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(x<span class="sc">^</span><span class="dv">2</span><span class="sc">*</span><span class="fu">sin</span>(x)<span class="sc">/</span>pi)     <span class="co"># add an additional x</span></span>
+<span id="cb20-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb20-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb20-4"><a href="the-basics-of-probability-and-statistical-inference.html#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="fu">integrate</span>(f,<span class="dv">0</span>,pi)</span></code></pre></div>
 <pre><code>## 1.868353 with absolute error &lt; 2.1e-14</code></pre>
 <p>The expected value is 1.868. Given the appearance of the pdf,
 this number makes sense.</p>
@@ -1750,22 +1774,22 @@ P(1 \leq X \leq 2 \vert X &gt; 0.5) = \frac{P(1 \leq X \leq 2 \cap X &gt; 0.5)}{
 At first, it would appear that
 all we have to do is to call <code>integrate()</code> twice</p>
 </blockquote>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb21-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb21-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(x<span class="sc">*</span><span class="fu">sin</span>(x)<span class="sc">/</span>pi)</span>
-<span id="cb21-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb21-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb21-4"><a href="the-basics-of-probability-and-statistical-inference.html#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="fu">integrate</span>(f,<span class="dv">1</span>,<span class="dv">2</span>) <span class="sc">/</span> <span class="fu">integrate</span>(f,<span class="fl">0.5</span>,pi)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb22-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb22-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(x<span class="sc">*</span><span class="fu">sin</span>(x)<span class="sc">/</span>pi)</span>
+<span id="cb22-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb22-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb22-4"><a href="the-basics-of-probability-and-statistical-inference.html#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="fu">integrate</span>(f,<span class="dv">1</span>,<span class="dv">2</span>) <span class="sc">/</span> <span class="fu">integrate</span>(f,<span class="fl">0.5</span>,pi)</span></code></pre></div>
 <blockquote>
 <p>However, this will not work, since <code>integrate()</code> returns a <em>list</em>, not
 a single numerical value. So we have
 to figure out where the value of the integral value is stored:</p>
 </blockquote>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(<span class="fu">integrate</span>(f,<span class="dv">1</span>,<span class="dv">2</span>))  <span class="co"># return the names of each list element</span></span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(<span class="fu">integrate</span>(f,<span class="dv">1</span>,<span class="dv">2</span>))  <span class="co"># return the names of each list element</span></span></code></pre></div>
 <pre><code>## [1] &quot;value&quot;        &quot;abs.error&quot;    &quot;subdivisions&quot; &quot;message&quot;      &quot;call&quot;</code></pre>
 <blockquote>
 <p>What we want is <code>value</code>. To reference the value directly, we use a dollar
 sign, as shown here:</p>
 </blockquote>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">integrate</span>(f,<span class="dv">1</span>,<span class="dv">2</span>)<span class="sc">$</span>value <span class="sc">/</span> <span class="fu">integrate</span>(f,<span class="fl">0.5</span>,pi)<span class="sc">$</span>value</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">integrate</span>(f,<span class="dv">1</span>,<span class="dv">2</span>)<span class="sc">$</span>value <span class="sc">/</span> <span class="fu">integrate</span>(f,<span class="fl">0.5</span>,pi)<span class="sc">$</span>value</span></code></pre></div>
 <pre><code>## [1] 0.3836833</code></pre>
 <blockquote>
 <p>Done. Our conditional probability is 0.4645.</p>
@@ -1773,38 +1797,38 @@ sign, as shown here:</p>
 <hr />
 </div>
 <div id="numerical-integration-and-variance" class="section level3 hasAnchor" number="1.8.2">
-<h3><span class="header-section-number">1.8.2</span> Numerical Integration and Variance*<a href="the-basics-of-probability-and-statistical-inference.html#numerical-integration-and-variance" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<h3><span class="header-section-number">1.8.2</span> Numerical Integration and Variance<a href="the-basics-of-probability-and-statistical-inference.html#numerical-integration-and-variance" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <blockquote>
 <p>Above, we compute the expected value of <span class="math inline">\(f_X(x)\)</span>.
 For the variance, we adapt the same code to compute <span class="math inline">\(E[X^2]\)</span>,
 then utilize the shortcut formula:</p>
 </blockquote>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb26-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb26-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(x<span class="sc">^</span><span class="dv">2</span><span class="sc">*</span><span class="fu">sin</span>(x)<span class="sc">/</span>pi)     <span class="co"># same code as above</span></span>
-<span id="cb26-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb26-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb26-4"><a href="the-basics-of-probability-and-statistical-inference.html#cb26-4" aria-hidden="true" tabindex="-1"></a>E.X <span class="ot">&lt;-</span> <span class="fu">integrate</span>(f,<span class="dv">0</span>,pi)<span class="sc">$</span>value</span>
-<span id="cb26-5"><a href="the-basics-of-probability-and-statistical-inference.html#cb26-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-6"><a href="the-basics-of-probability-and-statistical-inference.html#cb26-6" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb26-7"><a href="the-basics-of-probability-and-statistical-inference.html#cb26-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(x<span class="sc">^</span><span class="dv">3</span><span class="sc">*</span><span class="fu">sin</span>(x)<span class="sc">/</span>pi)     <span class="co"># add one more power of x</span></span>
-<span id="cb26-8"><a href="the-basics-of-probability-and-statistical-inference.html#cb26-8" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb26-9"><a href="the-basics-of-probability-and-statistical-inference.html#cb26-9" aria-hidden="true" tabindex="-1"></a>V.X <span class="ot">&lt;-</span> <span class="fu">integrate</span>(f,<span class="dv">0</span>,pi)<span class="sc">$</span>value <span class="sc">-</span> E.X<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb26-10"><a href="the-basics-of-probability-and-statistical-inference.html#cb26-10" aria-hidden="true" tabindex="-1"></a>V.X </span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb27-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb27-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(x<span class="sc">^</span><span class="dv">2</span><span class="sc">*</span><span class="fu">sin</span>(x)<span class="sc">/</span>pi)     <span class="co"># same code as above</span></span>
+<span id="cb27-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb27-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb27-4"><a href="the-basics-of-probability-and-statistical-inference.html#cb27-4" aria-hidden="true" tabindex="-1"></a>E.X <span class="ot">&lt;-</span> <span class="fu">integrate</span>(f,<span class="dv">0</span>,pi)<span class="sc">$</span>value</span>
+<span id="cb27-5"><a href="the-basics-of-probability-and-statistical-inference.html#cb27-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-6"><a href="the-basics-of-probability-and-statistical-inference.html#cb27-6" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb27-7"><a href="the-basics-of-probability-and-statistical-inference.html#cb27-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(x<span class="sc">^</span><span class="dv">3</span><span class="sc">*</span><span class="fu">sin</span>(x)<span class="sc">/</span>pi)     <span class="co"># add one more power of x</span></span>
+<span id="cb27-8"><a href="the-basics-of-probability-and-statistical-inference.html#cb27-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb27-9"><a href="the-basics-of-probability-and-statistical-inference.html#cb27-9" aria-hidden="true" tabindex="-1"></a>V.X <span class="ot">&lt;-</span> <span class="fu">integrate</span>(f,<span class="dv">0</span>,pi)<span class="sc">$</span>value <span class="sc">-</span> E.X<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb27-10"><a href="the-basics-of-probability-and-statistical-inference.html#cb27-10" aria-hidden="true" tabindex="-1"></a>V.X </span></code></pre></div>
 <pre><code>## [1] 0.3788611</code></pre>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(V.X)</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(V.X)</span></code></pre></div>
 <pre><code>## [1] 0.6155169</code></pre>
 <blockquote>
 <p>The variance is 0.379 and the standard deviation is 0.616. We interpret
-these numbers as saying that the majority of the observed data will lay
+these numbers as saying that the majority of the observed data will lie
 between <span class="math inline">\(1.868 - 0.616 = 1.252\)</span> and <span class="math inline">\(1.868 + 0.616 = 2.484\)</span>. If we recall
 introductory statistics, the proportion
 of values within one standard deviation of the mean for a normal distribution
 (i.e., a bell curve) is 0.683…but that value changes from distribution
 to distribution. What is the value here?</p>
 </blockquote>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb30-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb30-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(x<span class="sc">*</span><span class="fu">sin</span>(x)<span class="sc">/</span>pi)       <span class="co"># back to the original pdf</span></span>
-<span id="cb30-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb30-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb30-4"><a href="the-basics-of-probability-and-statistical-inference.html#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="fu">integrate</span>(f,E.X<span class="sc">-</span><span class="fu">sqrt</span>(V.X),E.X<span class="sc">+</span><span class="fu">sqrt</span>(V.X))<span class="sc">$</span>value</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb31-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb31-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(x<span class="sc">*</span><span class="fu">sin</span>(x)<span class="sc">/</span>pi)       <span class="co"># back to the original pdf</span></span>
+<span id="cb31-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb31-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb31-4"><a href="the-basics-of-probability-and-statistical-inference.html#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="fu">integrate</span>(f,E.X<span class="sc">-</span><span class="fu">sqrt</span>(V.X),E.X<span class="sc">+</span><span class="fu">sqrt</span>(V.X))<span class="sc">$</span>value</span></code></pre></div>
 <pre><code>## [1] 0.642609</code></pre>
 <blockquote>
 <p>We see that the value for our new pdf is similar: 0.643.</p>
@@ -1817,7 +1841,7 @@ to distribution. What is the value here?</p>
 mathematically
 express a probability distribution, which is to say, if we have a cdf, we
 can derive the associated pmf/pdf and vice-versa.
-A cdf is, in the discrete case, a sum of probability masses that lay to
+A cdf is, in the discrete case, a sum of probability masses that lie to
 the left of a chosen coordinate <span class="math inline">\(x\)</span> on the real-number line<span class="math inline">\(-\)</span>
 <span class="math display">\[
 F_X(x) = \sum_{y \leq x} p_Y(y)
@@ -1854,7 +1878,7 @@ Figure 1.15: Examples of the cdfs <span class="math inline">\(F_X(x)\)</span> fo
 </p>
 </div>
 <p>A cdf is useful to have when our goal is to compute the probability of
-that the value of a sampled random variable lays between <span class="math inline">\(x = a\)</span> and <span class="math inline">\(x = b\)</span>.
+that the value of a sampled random variable lies between <span class="math inline">\(x = a\)</span> and <span class="math inline">\(x = b\)</span>.
 For the case of a continuous random variable,
 <span class="math display">\[
 P(a &lt; X &lt; b) = F_X(b) - F_X(a) \,.
@@ -1873,8 +1897,8 @@ P(0 \leq X \leq 1) &amp;= \sum_{x \in [0,1]} p_X(x) = p_X(0) + p_X(1) = F_X(1) \
 P(0 &lt; X \leq 1) &amp;= \sum_{x \in (0,1]} p_X(x) = p_X(1) = F_X(1) - F_X(0) \\
 P(0 &lt; X &lt; 1) &amp;= \sum_{x \in (0,1)} p_X(x) = 0 \,.
 \end{align*}\]</span></p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-14"></span>
-<img src="_main_files/figure-html/unnamed-chunk-14-1.png" alt="\label{fig:pmfcdf}An illustration of the relationship between a cdf and probability. The probability $P(1 &lt; X &lt; 3)$ is given by the distance between the two red lines (i.e., $F_X(3)-F_X(1)$)." width="50%" />
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:pmfcdf"></span>
+<img src="_main_files/figure-html/pmfcdf-1.png" alt="\label{fig:pmfcdf}An illustration of the relationship between a cdf and probability. The probability $P(1 &lt; X &lt; 3)$ is given by the distance between the two red lines (i.e., $F_X(3)-F_X(1)$)." width="50%" />
 <p class="caption">
 Figure 1.16: An illustration of the relationship between a cdf and probability. The probability <span class="math inline">\(P(1 &lt; X &lt; 3)\)</span> is given by the distance between the two red lines (i.e., <span class="math inline">\(F_X(3)-F_X(1)\)</span>).
 </p>
@@ -1969,16 +1993,21 @@ P\left(\frac{1}{4} \leq X \leq \frac{3}{4}\right) = F_X\left(\frac{3}{4} \vert \
 region being integrated over to compute a cdf value, for say <span class="math inline">\(x = 0.6\)</span>,
 we utilize <code>R</code>’s <code>polygon()</code> function. (See Figure <a href="the-basics-of-probability-and-statistical-inference.html#fig:cdfpoly">1.17</a>.)</p>
 </blockquote>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb32-1" aria-hidden="true" tabindex="-1"></a>x       <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="at">by=</span><span class="fl">0.01</span>)</span>
-<span id="cb32-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb32-2" aria-hidden="true" tabindex="-1"></a>f.x     <span class="ot">&lt;-</span> <span class="dv">3</span><span class="sc">*</span>x<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb32-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,f.x,<span class="at">typ=</span><span class="st">&quot;l&quot;</span>,<span class="at">col=</span><span class="st">&quot;blue&quot;</span>,<span class="at">ylab=</span><span class="fu">expression</span>(f[X]<span class="sc">*</span><span class="st">&quot;(x)&quot;</span>),<span class="at">lwd=</span><span class="dv">2</span>)</span>
-<span id="cb32-4"><a href="the-basics-of-probability-and-statistical-inference.html#cb32-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-5"><a href="the-basics-of-probability-and-statistical-inference.html#cb32-5" aria-hidden="true" tabindex="-1"></a>x.o      <span class="ot">&lt;-</span> <span class="fl">0.6</span></span>
-<span id="cb32-6"><a href="the-basics-of-probability-and-statistical-inference.html#cb32-6" aria-hidden="true" tabindex="-1"></a>w        <span class="ot">&lt;-</span> <span class="fu">which</span>(x<span class="sc">&lt;=</span>x.o)</span>
-<span id="cb32-7"><a href="the-basics-of-probability-and-statistical-inference.html#cb32-7" aria-hidden="true" tabindex="-1"></a>x.poly   <span class="ot">&lt;-</span> <span class="fu">c</span>(x[w],<span class="fu">rev</span>(x[w]))</span>
-<span id="cb32-8"><a href="the-basics-of-probability-and-statistical-inference.html#cb32-8" aria-hidden="true" tabindex="-1"></a>f.x.poly <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">0</span>,<span class="fu">length</span>(w)),<span class="fu">rev</span>(f.x[w]))</span>
-<span id="cb32-9"><a href="the-basics-of-probability-and-statistical-inference.html#cb32-9" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(x.poly,f.x.poly,<span class="at">col=</span><span class="st">&quot;green&quot;</span>)</span>
-<span id="cb32-10"><a href="the-basics-of-probability-and-statistical-inference.html#cb32-10" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span>x.o,<span class="at">col=</span><span class="st">&quot;red&quot;</span>,<span class="at">lwd=</span><span class="dv">2</span>)</span></code></pre></div>
+<blockquote>
+<p>TBD - explain geom_area() instead of polygon()</p>
+</blockquote>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb33-1" aria-hidden="true" tabindex="-1"></a>x        <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="at">by=</span><span class="fl">0.01</span>)</span>
+<span id="cb33-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb33-2" aria-hidden="true" tabindex="-1"></a>f.x      <span class="ot">&lt;-</span> <span class="dv">3</span><span class="sc">*</span>x<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb33-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb33-3" aria-hidden="true" tabindex="-1"></a>x.o      <span class="ot">&lt;-</span> <span class="fl">0.6</span></span>
+<span id="cb33-4"><a href="the-basics-of-probability-and-statistical-inference.html#cb33-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-5"><a href="the-basics-of-probability-and-statistical-inference.html#cb33-5" aria-hidden="true" tabindex="-1"></a>df       <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x=</span>x,<span class="at">f.x=</span>f.x)</span>
+<span id="cb33-6"><a href="the-basics-of-probability-and-statistical-inference.html#cb33-6" aria-hidden="true" tabindex="-1"></a>df.shade <span class="ot">&lt;-</span> <span class="fu">subset</span>(df,x<span class="sc">&lt;=</span> x.o)</span>
+<span id="cb33-7"><a href="the-basics-of-probability-and-statistical-inference.html#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>df,<span class="fu">aes</span>(<span class="at">x=</span>x,<span class="at">y=</span>f.x)) <span class="sc">+</span></span>
+<span id="cb33-8"><a href="the-basics-of-probability-and-statistical-inference.html#cb33-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">col=</span><span class="st">&quot;blue&quot;</span>,<span class="at">lwd=</span><span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb33-9"><a href="the-basics-of-probability-and-statistical-inference.html#cb33-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_area</span>(<span class="at">data =</span> df.shade,<span class="fu">aes</span>(x,<span class="at">y=</span>f.x),<span class="at">fill=</span><span class="st">&quot;green&quot;</span>,<span class="at">col=</span><span class="st">&quot;blue&quot;</span>,<span class="at">outline.type=</span><span class="st">&quot;full&quot;</span>) <span class="sc">+</span></span>
+<span id="cb33-10"><a href="the-basics-of-probability-and-statistical-inference.html#cb33-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept=</span>x.o,<span class="at">col=</span><span class="st">&quot;red&quot;</span>,<span class="at">lwd=</span><span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb33-11"><a href="the-basics-of-probability-and-statistical-inference.html#cb33-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="fu">expression</span>(f[X]<span class="sc">*</span><span class="st">&quot;(x)&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb33-12"><a href="the-basics-of-probability-and-statistical-inference.html#cb33-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">1.25</span>)))</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:cdfpoly"></span>
 <img src="_main_files/figure-html/cdfpoly-1.png" alt="\label{fig:cdfpoly}The cdf for $f_X(x) = 3x^2$ at $x = 0.6$ is the area represented in green." width="50%" />
 <p class="caption">
@@ -2005,12 +2034,17 @@ we use the <code>rep()</code> function to repeat the value.</p>
 <p>If we wish to visualize the full cdf, we can do the following.
 (See Figure <a href="the-basics-of-probability-and-statistical-inference.html#fig:cdfcurve">1.18</a>.)</p>
 </blockquote>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb33-1" aria-hidden="true" tabindex="-1"></a>x   <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="at">by=</span><span class="fl">0.01</span>)</span>
-<span id="cb33-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb33-2" aria-hidden="true" tabindex="-1"></a>F.x <span class="ot">&lt;-</span> x<span class="sc">^</span><span class="dv">3</span></span>
-<span id="cb33-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,F.x,<span class="at">typ=</span><span class="st">&quot;l&quot;</span>,<span class="at">col=</span><span class="st">&quot;blue&quot;</span>,<span class="at">ylab=</span><span class="fu">expression</span>(F[X]<span class="sc">*</span><span class="st">&quot;(x)&quot;</span>),<span class="at">lwd=</span><span class="dv">2</span>)</span>
-<span id="cb33-4"><a href="the-basics-of-probability-and-statistical-inference.html#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="at">lty=</span><span class="dv">2</span>,<span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span>
-<span id="cb33-5"><a href="the-basics-of-probability-and-statistical-inference.html#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">0</span>),<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>),<span class="at">col=</span><span class="st">&quot;blue&quot;</span>,<span class="at">lwd=</span><span class="dv">2</span>)</span>
-<span id="cb33-6"><a href="the-basics-of-probability-and-statistical-inference.html#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>),<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>),<span class="at">col=</span><span class="st">&quot;blue&quot;</span>,<span class="at">lwd=</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb34-1" aria-hidden="true" tabindex="-1"></a>x   <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="at">by=</span><span class="fl">0.01</span>)</span>
+<span id="cb34-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb34-2" aria-hidden="true" tabindex="-1"></a>F.x <span class="ot">&lt;-</span> x<span class="sc">^</span><span class="dv">3</span></span>
+<span id="cb34-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb34-3" aria-hidden="true" tabindex="-1"></a>df  <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x=</span>x,<span class="at">F.x=</span>F.x)</span>
+<span id="cb34-4"><a href="the-basics-of-probability-and-statistical-inference.html#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>df,<span class="fu">aes</span>(<span class="at">x=</span>x,<span class="at">y=</span>F.x)) <span class="sc">+</span></span>
+<span id="cb34-5"><a href="the-basics-of-probability-and-statistical-inference.html#cb34-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span><span class="dv">0</span>,<span class="at">lty=</span><span class="dv">2</span>,<span class="at">col=</span><span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
+<span id="cb34-6"><a href="the-basics-of-probability-and-statistical-inference.html#cb34-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span><span class="dv">1</span>,<span class="at">lty=</span><span class="dv">2</span>,<span class="at">col=</span><span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
+<span id="cb34-7"><a href="the-basics-of-probability-and-statistical-inference.html#cb34-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">col=</span><span class="st">&quot;blue&quot;</span>,<span class="at">lwd=</span><span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb34-8"><a href="the-basics-of-probability-and-statistical-inference.html#cb34-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">x=</span><span class="sc">-</span><span class="dv">1</span>,<span class="at">xend=</span><span class="dv">0</span>,<span class="at">y=</span><span class="dv">0</span>,<span class="at">yend=</span><span class="dv">0</span>,<span class="at">col=</span><span class="st">&quot;blue&quot;</span>,<span class="at">lwd=</span><span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb34-9"><a href="the-basics-of-probability-and-statistical-inference.html#cb34-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">x=</span><span class="dv">1</span>,<span class="at">xend=</span><span class="dv">2</span>,<span class="at">y=</span><span class="dv">1</span>,<span class="at">yend=</span><span class="dv">1</span>,<span class="at">col=</span><span class="st">&quot;blue&quot;</span>,<span class="at">lwd=</span><span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb34-10"><a href="the-basics-of-probability-and-statistical-inference.html#cb34-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="fu">expression</span>(F[X]<span class="sc">*</span><span class="st">&quot;(x)&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb34-11"><a href="the-basics-of-probability-and-statistical-inference.html#cb34-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">1.25</span>)))</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:cdfcurve"></span>
 <img src="_main_files/figure-html/cdfcurve-1.png" alt="\label{fig:cdfcurve}The cdf for $f_X(x) = 3x^2$." width="50%" />
 <p class="caption">
@@ -2028,10 +2062,12 @@ f_X(x \vert \theta) = \left\{ \begin{array}{cl} 1/2 &amp; 0 \leq x \leq 1 \\ 2-x
 \]</span>
 which we display in Figure <a href="the-basics-of-probability-and-statistical-inference.html#fig:discon">1.19</a>.</p>
 </blockquote>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb34-1" aria-hidden="true" tabindex="-1"></a>x   <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.25</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="fl">2.25</span>)</span>
-<span id="cb34-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb34-2" aria-hidden="true" tabindex="-1"></a>f.x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.5</span>,<span class="fl">0.5</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>)</span>
-<span id="cb34-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,f.x,<span class="at">typ=</span><span class="st">&quot;l&quot;</span>,<span class="at">col=</span><span class="st">&quot;blue&quot;</span>,<span class="at">ylab=</span><span class="fu">expression</span>(f[X]<span class="sc">*</span><span class="st">&quot;(x)&quot;</span>),<span class="at">lwd=</span><span class="dv">2</span>)</span>
-<span id="cb34-4"><a href="the-basics-of-probability-and-statistical-inference.html#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="dv">0</span>,<span class="at">col=</span><span class="st">&quot;blue&quot;</span>,<span class="at">lty=</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb35-1" aria-hidden="true" tabindex="-1"></a>df  <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x=</span><span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.25</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="fl">2.25</span>),<span class="at">f.x=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.5</span>,<span class="fl">0.5</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>))</span>
+<span id="cb35-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>df,<span class="fu">aes</span>(<span class="at">x=</span>x,<span class="at">y=</span>f.x)) <span class="sc">+</span></span>
+<span id="cb35-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">col=</span><span class="st">&quot;blue&quot;</span>,<span class="at">lwd=</span><span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb35-4"><a href="the-basics-of-probability-and-statistical-inference.html#cb35-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span><span class="dv">0</span>,<span class="at">lty=</span><span class="dv">2</span>,<span class="at">col=</span><span class="st">&quot;blue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb35-5"><a href="the-basics-of-probability-and-statistical-inference.html#cb35-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="fu">expression</span>(f[X]<span class="sc">*</span><span class="st">&quot;(x)&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb35-6"><a href="the-basics-of-probability-and-statistical-inference.html#cb35-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">1.25</span>)))</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:discon"></span>
 <img src="_main_files/figure-html/discon-1.png" alt="\label{fig:discon}A continuous probability density function that is mathematically discontinuous at $x=1$." width="50%" />
 <p class="caption">
@@ -2057,13 +2093,18 @@ we know <span class="math inline">\(F_X(1) = 1/2\)</span> and <span class="math 
 results! Alternatively, we can take the derivative of <span class="math inline">\(F_X(x)\)</span> and see if
 it matches <span class="math inline">\(f_X(x)\)</span>.) We display the cdf in Figure <a href="the-basics-of-probability-and-statistical-inference.html#fig:disconcdf">1.20</a>.</p>
 </blockquote>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb35-1" aria-hidden="true" tabindex="-1"></a>x.seq <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">1.01</span>,<span class="dv">2</span>,<span class="at">by=</span><span class="fl">0.01</span>)</span>
-<span id="cb35-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb35-2" aria-hidden="true" tabindex="-1"></a>x     <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,x.seq)</span>
-<span id="cb35-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb35-3" aria-hidden="true" tabindex="-1"></a>F.x   <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">0.5</span>,<span class="dv">1</span><span class="sc">-</span>(<span class="dv">2</span><span class="sc">-</span>x.seq)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="dv">2</span>)</span>
-<span id="cb35-4"><a href="the-basics-of-probability-and-statistical-inference.html#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,F.x,<span class="at">typ=</span><span class="st">&quot;l&quot;</span>,<span class="at">col=</span><span class="st">&quot;blue&quot;</span>,<span class="at">ylab=</span><span class="fu">expression</span>(F[X]<span class="sc">*</span><span class="st">&quot;(x)&quot;</span>),<span class="at">lwd=</span><span class="dv">2</span>)</span>
-<span id="cb35-5"><a href="the-basics-of-probability-and-statistical-inference.html#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="at">col=</span><span class="st">&quot;red&quot;</span>,<span class="at">lty=</span><span class="dv">2</span>)</span>
-<span id="cb35-6"><a href="the-basics-of-probability-and-statistical-inference.html#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.25</span>,<span class="dv">0</span>),<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>),<span class="at">col=</span><span class="st">&quot;blue&quot;</span>,<span class="at">lwd=</span><span class="dv">2</span>)</span>
-<span id="cb35-7"><a href="the-basics-of-probability-and-statistical-inference.html#cb35-7" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(<span class="fu">c</span>(<span class="dv">2</span>,<span class="fl">2.25</span>),<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>),<span class="at">col=</span><span class="st">&quot;blue&quot;</span>,<span class="at">lwd=</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb36-1" aria-hidden="true" tabindex="-1"></a>x.seq <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">1.01</span>,<span class="dv">2</span>,<span class="at">by=</span><span class="fl">0.01</span>)</span>
+<span id="cb36-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb36-2" aria-hidden="true" tabindex="-1"></a>x     <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,x.seq)</span>
+<span id="cb36-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb36-3" aria-hidden="true" tabindex="-1"></a>F.x   <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">0.5</span>,<span class="dv">1</span><span class="sc">-</span>(<span class="dv">2</span><span class="sc">-</span>x.seq)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="dv">2</span>)</span>
+<span id="cb36-4"><a href="the-basics-of-probability-and-statistical-inference.html#cb36-4" aria-hidden="true" tabindex="-1"></a>df    <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x=</span>x,<span class="at">F.x=</span>F.x)</span>
+<span id="cb36-5"><a href="the-basics-of-probability-and-statistical-inference.html#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>df,<span class="fu">aes</span>(<span class="at">x=</span>x,<span class="at">y=</span>F.x)) <span class="sc">+</span></span>
+<span id="cb36-6"><a href="the-basics-of-probability-and-statistical-inference.html#cb36-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span><span class="dv">0</span>,<span class="at">lty=</span><span class="dv">2</span>,<span class="at">col=</span><span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
+<span id="cb36-7"><a href="the-basics-of-probability-and-statistical-inference.html#cb36-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span><span class="dv">1</span>,<span class="at">lty=</span><span class="dv">2</span>,<span class="at">col=</span><span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
+<span id="cb36-8"><a href="the-basics-of-probability-and-statistical-inference.html#cb36-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">col=</span><span class="st">&quot;blue&quot;</span>,<span class="at">lwd=</span><span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb36-9"><a href="the-basics-of-probability-and-statistical-inference.html#cb36-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">x=</span><span class="sc">-</span><span class="dv">1</span>,<span class="at">xend=</span><span class="dv">0</span>,<span class="at">y=</span><span class="dv">0</span>,<span class="at">yend=</span><span class="dv">0</span>,<span class="at">col=</span><span class="st">&quot;blue&quot;</span>,<span class="at">lwd=</span><span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb36-10"><a href="the-basics-of-probability-and-statistical-inference.html#cb36-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">x=</span><span class="dv">2</span>,<span class="at">xend=</span><span class="dv">3</span>,<span class="at">y=</span><span class="dv">1</span>,<span class="at">yend=</span><span class="dv">1</span>,<span class="at">col=</span><span class="st">&quot;blue&quot;</span>,<span class="at">lwd=</span><span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb36-11"><a href="the-basics-of-probability-and-statistical-inference.html#cb36-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="fu">expression</span>(F[X]<span class="sc">*</span><span class="st">&quot;(x)&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb36-12"><a href="the-basics-of-probability-and-statistical-inference.html#cb36-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">1.25</span>)))</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:disconcdf"></span>
 <img src="_main_files/figure-html/disconcdf-1.png" alt="\label{fig:disconcdf}The cdf for our mathematically discontinuous pdf." width="50%" />
 <p class="caption">
@@ -2118,18 +2159,18 @@ mass function for <span class="math inline">\(Y\)</span> is</p>
 <table>
 <thead>
 <tr class="header">
-<th><span class="math inline">\(y\)</span></th>
-<th><span class="math inline">\(p_Y(y)\)</span></th>
+<th align="center"><span class="math inline">\(y\)</span></th>
+<th align="center"><span class="math inline">\(p_Y(y)\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>0</td>
-<td>2/3</td>
+<td align="center">0</td>
+<td align="center">2/3</td>
 </tr>
 <tr class="even">
-<td>1</td>
-<td>1/3</td>
+<td align="center">1</td>
+<td align="center">1/3</td>
 </tr>
 </tbody>
 </table>
@@ -2139,18 +2180,18 @@ mass function for <span class="math inline">\(Y\)</span> is</p>
 <table>
 <thead>
 <tr class="header">
-<th><span class="math inline">\(x \vert y=0\)</span></th>
-<th><span class="math inline">\(p_{X \vert Y}(x \vert y=0)\)</span></th>
+<th align="center"><span class="math inline">\(x \vert y=0\)</span></th>
+<th align="center"><span class="math inline">\(p_{X \vert Y}(x \vert y=0)\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>0</td>
-<td>4/5</td>
+<td align="center">0</td>
+<td align="center">4/5</td>
 </tr>
 <tr class="even">
-<td>1</td>
-<td>1/5</td>
+<td align="center">1</td>
+<td align="center">1/5</td>
 </tr>
 </tbody>
 </table>
@@ -2160,18 +2201,18 @@ mass function for <span class="math inline">\(Y\)</span> is</p>
 <table>
 <thead>
 <tr class="header">
-<th><span class="math inline">\(x \vert y=1\)</span></th>
-<th><span class="math inline">\(p_{X \vert Y}(x \vert y=1)\)</span></th>
+<th align="center"><span class="math inline">\(x \vert y=1\)</span></th>
+<th align="center"><span class="math inline">\(p_{X \vert Y}(x \vert y=1)\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>0</td>
-<td>3/5</td>
+<td align="center">0</td>
+<td align="center">3/5</td>
 </tr>
 <tr class="even">
-<td>1</td>
-<td>2/5</td>
+<td align="center">1</td>
+<td align="center">2/5</td>
 </tr>
 </tbody>
 </table>
@@ -2193,18 +2234,18 @@ The pmf is thus</p>
 <table>
 <thead>
 <tr class="header">
-<th><span class="math inline">\(x\)</span></th>
-<th><span class="math inline">\(p_X(x)\)</span></th>
+<th align="center"><span class="math inline">\(x\)</span></th>
+<th align="center"><span class="math inline">\(p_X(x)\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>0</td>
-<td>11/15</td>
+<td align="center">0</td>
+<td align="center">11/15</td>
 </tr>
 <tr class="even">
-<td>1</td>
-<td>4/15</td>
+<td align="center">1</td>
+<td align="center">4/15</td>
 </tr>
 </tbody>
 </table>
@@ -2292,7 +2333,8 @@ is that
 <span class="math display">\[
 \Gamma(x) = \int_0^\infty u^{x-1} \exp(-u) du \,.
 \]</span>
-This is the gamma function. One of the properties that makes
+This is the gamma function. (The symbol <span class="math inline">\(\Gamma\)</span> represents a capital gamma.)
+One of the properties that makes
 this function useful is that when <span class="math inline">\(x\)</span> is a non-negative integer,
 the gamma function is related to the factorial function:
 <span class="math inline">\(\Gamma(x) = (x-1)! = (x-1) (x-2) \cdots 1\)</span>. But the reason why the
@@ -2374,11 +2416,11 @@ calculation, as the derivative of <span class="math inline">\(f_X(x)\)</span> is
 We can solve for the root using, e.g., <code>R</code>’s
 <code>uniroot()</code> function:</li>
 </ol>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb36-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x)</span>
-<span id="cb36-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb36-2" aria-hidden="true" tabindex="-1"></a>{</span>
-<span id="cb36-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb36-3" aria-hidden="true" tabindex="-1"></a>  (<span class="fu">sin</span>(x) <span class="sc">+</span> x<span class="sc">*</span><span class="fu">cos</span>(x))<span class="sc">/</span>pi</span>
-<span id="cb36-4"><a href="the-basics-of-probability-and-statistical-inference.html#cb36-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb36-5"><a href="the-basics-of-probability-and-statistical-inference.html#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="fu">uniroot</span>(f,<span class="at">interval=</span><span class="fu">c</span>(<span class="fl">0.01</span>,pi))<span class="sc">$</span>root</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb37-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x)</span>
+<span id="cb37-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb37-2" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb37-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb37-3" aria-hidden="true" tabindex="-1"></a>  (<span class="fu">sin</span>(x) <span class="sc">+</span> x<span class="sc">*</span><span class="fu">cos</span>(x))<span class="sc">/</span>pi</span>
+<span id="cb37-4"><a href="the-basics-of-probability-and-statistical-inference.html#cb37-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb37-5"><a href="the-basics-of-probability-and-statistical-inference.html#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="fu">uniroot</span>(f,<span class="at">interval=</span><span class="fu">c</span>(<span class="fl">0.01</span>,pi))<span class="sc">$</span>root</span></code></pre></div>
 <pre><code>## [1] 2.028758</code></pre>
 <p>This looks for the root of the given function within the stated interval;
 since there is a root at 0, corresponding to a functional <em>minimum</em>, we
@@ -2420,27 +2462,33 @@ we want to be <em>reproducible</em>.
 If we leave out <code>set.seed()</code>, then every time we run the subsequent code, we
 get a different data sample. The number that we pass to <code>set.seed()</code>
 can be anything…we adopt 101 here, but it can any real number.)</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
-<span id="cb38-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb38-2" aria-hidden="true" tabindex="-1"></a>n        <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
-<span id="cb38-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb38-3" aria-hidden="true" tabindex="-1"></a>x.lo     <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb38-4"><a href="the-basics-of-probability-and-statistical-inference.html#cb38-4" aria-hidden="true" tabindex="-1"></a>x.hi     <span class="ot">&lt;-</span> pi</span>
-<span id="cb38-5"><a href="the-basics-of-probability-and-statistical-inference.html#cb38-5" aria-hidden="true" tabindex="-1"></a>f.x.hi   <span class="ot">&lt;-</span> <span class="fl">0.58</span> <span class="co"># rounding up is OK, it just decreases algorithm efficiency</span></span>
-<span id="cb38-6"><a href="the-basics-of-probability-and-statistical-inference.html#cb38-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-7"><a href="the-basics-of-probability-and-statistical-inference.html#cb38-7" aria-hidden="true" tabindex="-1"></a>X.sample <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>,n)                <span class="co"># rejection sampling</span></span>
-<span id="cb38-8"><a href="the-basics-of-probability-and-statistical-inference.html#cb38-8" aria-hidden="true" tabindex="-1"></a>ii       <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb38-9"><a href="the-basics-of-probability-and-statistical-inference.html#cb38-9" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> ( ii <span class="sc">&lt;</span> n ) {</span>
-<span id="cb38-10"><a href="the-basics-of-probability-and-statistical-inference.html#cb38-10" aria-hidden="true" tabindex="-1"></a>  u <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">1</span>,<span class="at">min=</span>x.lo,<span class="at">max=</span>x.hi)</span>
-<span id="cb38-11"><a href="the-basics-of-probability-and-statistical-inference.html#cb38-11" aria-hidden="true" tabindex="-1"></a>  v <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">1</span>,<span class="at">min=</span><span class="dv">0</span>,<span class="at">max=</span>f.x.hi)</span>
-<span id="cb38-12"><a href="the-basics-of-probability-and-statistical-inference.html#cb38-12" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> ( v <span class="sc">&lt;</span> u<span class="sc">*</span><span class="fu">sin</span>(u)<span class="sc">/</span>pi ) {</span>
-<span id="cb38-13"><a href="the-basics-of-probability-and-statistical-inference.html#cb38-13" aria-hidden="true" tabindex="-1"></a>    ii           <span class="ot">&lt;-</span> ii<span class="sc">+</span><span class="dv">1</span></span>
-<span id="cb38-14"><a href="the-basics-of-probability-and-statistical-inference.html#cb38-14" aria-hidden="true" tabindex="-1"></a>    X.sample[ii] <span class="ot">&lt;-</span> u</span>
-<span id="cb38-15"><a href="the-basics-of-probability-and-statistical-inference.html#cb38-15" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb38-16"><a href="the-basics-of-probability-and-statistical-inference.html#cb38-16" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb38-17"><a href="the-basics-of-probability-and-statistical-inference.html#cb38-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-18"><a href="the-basics-of-probability-and-statistical-inference.html#cb38-18" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(X.sample,<span class="at">prob=</span><span class="cn">TRUE</span>,<span class="at">col=</span><span class="st">&quot;blue&quot;</span>,<span class="at">main=</span><span class="cn">NULL</span>,<span class="at">xlab=</span><span class="st">&quot;x&quot;</span>)</span>
-<span id="cb38-19"><a href="the-basics-of-probability-and-statistical-inference.html#cb38-19" aria-hidden="true" tabindex="-1"></a>x   <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,pi,<span class="at">by=</span><span class="fl">0.01</span>)</span>
-<span id="cb38-20"><a href="the-basics-of-probability-and-statistical-inference.html#cb38-20" aria-hidden="true" tabindex="-1"></a>f.x <span class="ot">&lt;-</span> x<span class="sc">*</span><span class="fu">sin</span>(x)<span class="sc">/</span>pi</span>
-<span id="cb38-21"><a href="the-basics-of-probability-and-statistical-inference.html#cb38-21" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x,f.x,<span class="at">col=</span><span class="st">&quot;red&quot;</span>,<span class="at">lwd=</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
+<span id="cb39-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb39-2" aria-hidden="true" tabindex="-1"></a>n        <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb39-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb39-3" aria-hidden="true" tabindex="-1"></a>x.lo     <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb39-4"><a href="the-basics-of-probability-and-statistical-inference.html#cb39-4" aria-hidden="true" tabindex="-1"></a>x.hi     <span class="ot">&lt;-</span> pi</span>
+<span id="cb39-5"><a href="the-basics-of-probability-and-statistical-inference.html#cb39-5" aria-hidden="true" tabindex="-1"></a>f.x.hi   <span class="ot">&lt;-</span> <span class="fl">0.58</span> <span class="co"># rounding up is OK, it just decreases algorithm efficiency</span></span>
+<span id="cb39-6"><a href="the-basics-of-probability-and-statistical-inference.html#cb39-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-7"><a href="the-basics-of-probability-and-statistical-inference.html#cb39-7" aria-hidden="true" tabindex="-1"></a>X.sample <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>,n)                <span class="co"># rejection sampling</span></span>
+<span id="cb39-8"><a href="the-basics-of-probability-and-statistical-inference.html#cb39-8" aria-hidden="true" tabindex="-1"></a>ii       <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb39-9"><a href="the-basics-of-probability-and-statistical-inference.html#cb39-9" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> ( ii <span class="sc">&lt;</span> n ) {</span>
+<span id="cb39-10"><a href="the-basics-of-probability-and-statistical-inference.html#cb39-10" aria-hidden="true" tabindex="-1"></a>  u <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">1</span>,<span class="at">min=</span>x.lo,<span class="at">max=</span>x.hi)</span>
+<span id="cb39-11"><a href="the-basics-of-probability-and-statistical-inference.html#cb39-11" aria-hidden="true" tabindex="-1"></a>  v <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">1</span>,<span class="at">min=</span><span class="dv">0</span>,<span class="at">max=</span>f.x.hi)</span>
+<span id="cb39-12"><a href="the-basics-of-probability-and-statistical-inference.html#cb39-12" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> ( v <span class="sc">&lt;</span> u<span class="sc">*</span><span class="fu">sin</span>(u)<span class="sc">/</span>pi ) {</span>
+<span id="cb39-13"><a href="the-basics-of-probability-and-statistical-inference.html#cb39-13" aria-hidden="true" tabindex="-1"></a>    ii           <span class="ot">&lt;-</span> ii<span class="sc">+</span><span class="dv">1</span></span>
+<span id="cb39-14"><a href="the-basics-of-probability-and-statistical-inference.html#cb39-14" aria-hidden="true" tabindex="-1"></a>    X.sample[ii] <span class="ot">&lt;-</span> u</span>
+<span id="cb39-15"><a href="the-basics-of-probability-and-statistical-inference.html#cb39-15" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb39-16"><a href="the-basics-of-probability-and-statistical-inference.html#cb39-16" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb39-17"><a href="the-basics-of-probability-and-statistical-inference.html#cb39-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-18"><a href="the-basics-of-probability-and-statistical-inference.html#cb39-18" aria-hidden="true" tabindex="-1"></a>empirical.dist <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">X.sample=</span>X.sample)</span>
+<span id="cb39-19"><a href="the-basics-of-probability-and-statistical-inference.html#cb39-19" aria-hidden="true" tabindex="-1"></a>x              <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,pi,<span class="at">by=</span><span class="fl">0.01</span>)</span>
+<span id="cb39-20"><a href="the-basics-of-probability-and-statistical-inference.html#cb39-20" aria-hidden="true" tabindex="-1"></a>f.x            <span class="ot">&lt;-</span> x<span class="sc">*</span><span class="fu">sin</span>(x)<span class="sc">/</span>pi</span>
+<span id="cb39-21"><a href="the-basics-of-probability-and-statistical-inference.html#cb39-21" aria-hidden="true" tabindex="-1"></a>true.dist      <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x=</span>x,<span class="at">f.x=</span>f.x)</span>
+<span id="cb39-22"><a href="the-basics-of-probability-and-statistical-inference.html#cb39-22" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>empirical.dist,<span class="fu">aes</span>(<span class="at">x=</span>X.sample)) <span class="sc">+</span></span>
+<span id="cb39-23"><a href="the-basics-of-probability-and-statistical-inference.html#cb39-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y=</span><span class="fu">after_stat</span>(density)),<span class="at">col=</span><span class="st">&quot;black&quot;</span>,<span class="at">fill=</span><span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb39-24"><a href="the-basics-of-probability-and-statistical-inference.html#cb39-24" aria-hidden="true" tabindex="-1"></a>                 <span class="at">breaks=</span><span class="fu">seq</span>(<span class="dv">0</span>,<span class="fl">3.2</span>,<span class="at">by=</span><span class="fl">0.2</span>)) <span class="sc">+</span></span>
+<span id="cb39-25"><a href="the-basics-of-probability-and-statistical-inference.html#cb39-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data=</span>true.dist,<span class="fu">aes</span>(<span class="at">x=</span>x,<span class="at">y=</span>f.x),<span class="at">col=</span><span class="st">&quot;red&quot;</span>,<span class="at">lwd=</span><span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb39-26"><a href="the-basics-of-probability-and-statistical-inference.html#cb39-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;x&quot;</span>) <span class="sc">+</span></span>
+<span id="cb39-27"><a href="the-basics-of-probability-and-statistical-inference.html#cb39-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">1.25</span>)))</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:rejsamp"></span>
 <img src="_main_files/figure-html/rejsamp-1.png" alt="\label{fig:rejsamp}$n = 1000$ data sampled from the distribution $f_X(x) = (x \sin x)/\pi$ via the rejection sampling algorithm. We observe that our empirical distribution follows the true distribution well." width="50%" />
 <p class="caption">
@@ -2470,16 +2518,23 @@ inverse-transform sampling code as well as the empirical distribution of
 <span class="math inline">\(n = 1000\)</span> data sampled from our distribution (assuming <span class="math inline">\(\theta = 3\)</span>). We
 note that the code to generate our sample is <em>much</em> simpler than the
 code needed to perform rejection sampling!</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
-<span id="cb39-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb39-2" aria-hidden="true" tabindex="-1"></a>theta    <span class="ot">&lt;-</span> <span class="dv">3</span></span>
-<span id="cb39-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb39-3" aria-hidden="true" tabindex="-1"></a>n        <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
-<span id="cb39-4"><a href="the-basics-of-probability-and-statistical-inference.html#cb39-4" aria-hidden="true" tabindex="-1"></a>q        <span class="ot">&lt;-</span> <span class="fu">runif</span>(n,<span class="at">min=</span><span class="dv">0</span>,<span class="at">max=</span><span class="dv">1</span>)</span>
-<span id="cb39-5"><a href="the-basics-of-probability-and-statistical-inference.html#cb39-5" aria-hidden="true" tabindex="-1"></a>X.sample <span class="ot">&lt;-</span> q<span class="sc">^</span>(<span class="dv">1</span><span class="sc">/</span>theta)</span>
-<span id="cb39-6"><a href="the-basics-of-probability-and-statistical-inference.html#cb39-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-7"><a href="the-basics-of-probability-and-statistical-inference.html#cb39-7" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(X.sample,<span class="at">prob=</span><span class="cn">TRUE</span>,<span class="at">col=</span><span class="st">&quot;blue&quot;</span>,<span class="at">main=</span><span class="cn">NULL</span>,<span class="at">xlab=</span><span class="st">&quot;x&quot;</span>)</span>
-<span id="cb39-8"><a href="the-basics-of-probability-and-statistical-inference.html#cb39-8" aria-hidden="true" tabindex="-1"></a>x   <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="at">by=</span><span class="fl">0.01</span>)</span>
-<span id="cb39-9"><a href="the-basics-of-probability-and-statistical-inference.html#cb39-9" aria-hidden="true" tabindex="-1"></a>f.x <span class="ot">&lt;-</span> theta<span class="sc">*</span>x<span class="sc">^</span>(theta<span class="dv">-1</span>)</span>
-<span id="cb39-10"><a href="the-basics-of-probability-and-statistical-inference.html#cb39-10" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x,f.x,<span class="at">col=</span><span class="st">&quot;red&quot;</span>,<span class="at">lwd=</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
+<span id="cb40-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb40-2" aria-hidden="true" tabindex="-1"></a>theta    <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb40-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb40-3" aria-hidden="true" tabindex="-1"></a>n        <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb40-4"><a href="the-basics-of-probability-and-statistical-inference.html#cb40-4" aria-hidden="true" tabindex="-1"></a>q        <span class="ot">&lt;-</span> <span class="fu">runif</span>(n,<span class="at">min=</span><span class="dv">0</span>,<span class="at">max=</span><span class="dv">1</span>)</span>
+<span id="cb40-5"><a href="the-basics-of-probability-and-statistical-inference.html#cb40-5" aria-hidden="true" tabindex="-1"></a>X.sample <span class="ot">&lt;-</span> q<span class="sc">^</span>(<span class="dv">1</span><span class="sc">/</span>theta)</span>
+<span id="cb40-6"><a href="the-basics-of-probability-and-statistical-inference.html#cb40-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-7"><a href="the-basics-of-probability-and-statistical-inference.html#cb40-7" aria-hidden="true" tabindex="-1"></a><span class="co">#TBD - </span><span class="al">NOTE</span><span class="co"> DIFFERENCE IN DENSITY LINE</span></span>
+<span id="cb40-8"><a href="the-basics-of-probability-and-statistical-inference.html#cb40-8" aria-hidden="true" tabindex="-1"></a>empirical.dist <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">X.sample=</span>X.sample)</span>
+<span id="cb40-9"><a href="the-basics-of-probability-and-statistical-inference.html#cb40-9" aria-hidden="true" tabindex="-1"></a>x              <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="at">by=</span><span class="fl">0.01</span>)</span>
+<span id="cb40-10"><a href="the-basics-of-probability-and-statistical-inference.html#cb40-10" aria-hidden="true" tabindex="-1"></a>f.x            <span class="ot">&lt;-</span> theta<span class="sc">*</span>x<span class="sc">^</span>(theta<span class="dv">-1</span>)</span>
+<span id="cb40-11"><a href="the-basics-of-probability-and-statistical-inference.html#cb40-11" aria-hidden="true" tabindex="-1"></a>true.dist      <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x=</span>x,<span class="at">f.x=</span>f.x)</span>
+<span id="cb40-12"><a href="the-basics-of-probability-and-statistical-inference.html#cb40-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>empirical.dist,<span class="fu">aes</span>(<span class="at">x=</span>X.sample)) <span class="sc">+</span></span>
+<span id="cb40-13"><a href="the-basics-of-probability-and-statistical-inference.html#cb40-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y=</span><span class="fu">after_stat</span>(density)),<span class="at">col=</span><span class="st">&quot;black&quot;</span>,<span class="at">fill=</span><span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb40-14"><a href="the-basics-of-probability-and-statistical-inference.html#cb40-14" aria-hidden="true" tabindex="-1"></a>                 <span class="at">breaks=</span><span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="at">by=</span><span class="fl">0.1</span>)) <span class="sc">+</span></span>
+<span id="cb40-15"><a href="the-basics-of-probability-and-statistical-inference.html#cb40-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data=</span>true.dist,<span class="fu">aes</span>(<span class="at">x=</span>x,<span class="at">y=</span>f.x),<span class="at">col=</span><span class="st">&quot;red&quot;</span>,<span class="at">lwd=</span><span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb40-16"><a href="the-basics-of-probability-and-statistical-inference.html#cb40-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;x&quot;</span>) <span class="sc">+</span></span>
+<span id="cb40-17"><a href="the-basics-of-probability-and-statistical-inference.html#cb40-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">1.25</span>)))</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:invsamp"></span>
 <img src="_main_files/figure-html/invsamp-1.png" alt="\label{fig:invsamp}$n = 1000$ data sampled from the distribution $f_X(x) = 3x^2$ via the inverse transform sampling algorithm. We observe that our empirical distribution follows the true distribution well." width="50%" />
 <p class="caption">
@@ -2510,15 +2565,21 @@ To check for the correctness of our inversion, we utilize a code like
 the one in the main body of the section above and compare our sampled
 data against the pdf. See Figure <a href="the-basics-of-probability-and-statistical-inference.html#fig:invsamp2">1.23</a>.</p>
 </blockquote>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
-<span id="cb40-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb40-2" aria-hidden="true" tabindex="-1"></a>n        <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
-<span id="cb40-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb40-3" aria-hidden="true" tabindex="-1"></a>q        <span class="ot">&lt;-</span> <span class="fu">runif</span>(n,<span class="at">min=</span><span class="dv">0</span>,<span class="at">max=</span><span class="dv">1</span>)</span>
-<span id="cb40-4"><a href="the-basics-of-probability-and-statistical-inference.html#cb40-4" aria-hidden="true" tabindex="-1"></a>X.sample <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">sqrt</span>(<span class="dv">1</span><span class="sc">-</span>q)</span>
-<span id="cb40-5"><a href="the-basics-of-probability-and-statistical-inference.html#cb40-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-6"><a href="the-basics-of-probability-and-statistical-inference.html#cb40-6" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(X.sample,<span class="at">prob=</span><span class="cn">TRUE</span>,<span class="at">col=</span><span class="st">&quot;blue&quot;</span>,<span class="at">main=</span><span class="cn">NULL</span>,<span class="at">xlab=</span><span class="st">&quot;x&quot;</span>)</span>
-<span id="cb40-7"><a href="the-basics-of-probability-and-statistical-inference.html#cb40-7" aria-hidden="true" tabindex="-1"></a>x   <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="at">by=</span><span class="fl">0.01</span>)</span>
-<span id="cb40-8"><a href="the-basics-of-probability-and-statistical-inference.html#cb40-8" aria-hidden="true" tabindex="-1"></a>f.x <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>x)</span>
-<span id="cb40-9"><a href="the-basics-of-probability-and-statistical-inference.html#cb40-9" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x,f.x,<span class="at">col=</span><span class="st">&quot;red&quot;</span>,<span class="at">lwd=</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
+<span id="cb41-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb41-2" aria-hidden="true" tabindex="-1"></a>n        <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb41-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb41-3" aria-hidden="true" tabindex="-1"></a>q        <span class="ot">&lt;-</span> <span class="fu">runif</span>(n,<span class="at">min=</span><span class="dv">0</span>,<span class="at">max=</span><span class="dv">1</span>)</span>
+<span id="cb41-4"><a href="the-basics-of-probability-and-statistical-inference.html#cb41-4" aria-hidden="true" tabindex="-1"></a>X.sample <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">sqrt</span>(<span class="dv">1</span><span class="sc">-</span>q)</span>
+<span id="cb41-5"><a href="the-basics-of-probability-and-statistical-inference.html#cb41-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-6"><a href="the-basics-of-probability-and-statistical-inference.html#cb41-6" aria-hidden="true" tabindex="-1"></a>empirical.dist <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">X.sample=</span>X.sample)</span>
+<span id="cb41-7"><a href="the-basics-of-probability-and-statistical-inference.html#cb41-7" aria-hidden="true" tabindex="-1"></a>x              <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="at">by=</span><span class="fl">0.01</span>)</span>
+<span id="cb41-8"><a href="the-basics-of-probability-and-statistical-inference.html#cb41-8" aria-hidden="true" tabindex="-1"></a>f.x            <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>x)</span>
+<span id="cb41-9"><a href="the-basics-of-probability-and-statistical-inference.html#cb41-9" aria-hidden="true" tabindex="-1"></a>true.dist      <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x=</span>x,<span class="at">f.x=</span>f.x)</span>
+<span id="cb41-10"><a href="the-basics-of-probability-and-statistical-inference.html#cb41-10" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>empirical.dist,<span class="fu">aes</span>(<span class="at">x=</span>X.sample)) <span class="sc">+</span></span>
+<span id="cb41-11"><a href="the-basics-of-probability-and-statistical-inference.html#cb41-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y=</span><span class="fu">after_stat</span>(density)),<span class="at">col=</span><span class="st">&quot;black&quot;</span>,<span class="at">fill=</span><span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb41-12"><a href="the-basics-of-probability-and-statistical-inference.html#cb41-12" aria-hidden="true" tabindex="-1"></a>                 <span class="at">breaks=</span><span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="at">by=</span><span class="fl">0.1</span>)) <span class="sc">+</span></span>
+<span id="cb41-13"><a href="the-basics-of-probability-and-statistical-inference.html#cb41-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data=</span>true.dist,<span class="fu">aes</span>(<span class="at">x=</span>x,<span class="at">y=</span>f.x),<span class="at">col=</span><span class="st">&quot;red&quot;</span>,<span class="at">lwd=</span><span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb41-14"><a href="the-basics-of-probability-and-statistical-inference.html#cb41-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;x&quot;</span>) <span class="sc">+</span></span>
+<span id="cb41-15"><a href="the-basics-of-probability-and-statistical-inference.html#cb41-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">1.25</span>)))</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:invsamp2"></span>
 <img src="_main_files/figure-html/invsamp2-1.png" alt="\label{fig:invsamp2}$n = 1000$ data sampled from the distribution $f_X(x) = 2(1-x)$ via the inverse transform sampling algorithm. We observe that our empirical distribution follows the true distribution well." width="50%" />
 <p class="caption">
@@ -2633,7 +2694,7 @@ about the normal distribution, we will think of it as stating that nearly
 all statistics should be observed as laying within three standard errors
 of their population means. For instance, as we show below in an example,
 <span class="math inline">\(E[\bar{X}] = \mu\)</span>, so virtually all values of <span class="math inline">\(\bar{X}\)</span>, as observed over
-repetitions of an experiment, should lay in the range
+repetitions of an experiment, should lie in the range
 <span class="math inline">\([\mu - 3 \cdot se(\bar{X}),\mu + 3 \cdot se(\bar{X})]\)</span>, a range that
 gets smaller and smaller as the sample size <span class="math inline">\(n\)</span> goes to infinity.)</p>
 <p>There are, however, two paths that one could follow that allow us
@@ -2690,24 +2751,30 @@ the sample mean of <span class="math inline">\(n = 10\)</span> data drawn from t
 that some of the material below foreshadows that which we cover in the
 last section of this chapter, when we discuss numerical simulation.</p>
 </blockquote>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
-<span id="cb41-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb41-2" aria-hidden="true" tabindex="-1"></a>n        <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb41-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb41-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-4"><a href="the-basics-of-probability-and-statistical-inference.html#cb41-4" aria-hidden="true" tabindex="-1"></a>num.sim  <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
-<span id="cb41-5"><a href="the-basics-of-probability-and-statistical-inference.html#cb41-5" aria-hidden="true" tabindex="-1"></a>X.bar    <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>,num.sim) <span class="co"># set aside storage for X.bar</span></span>
-<span id="cb41-6"><a href="the-basics-of-probability-and-statistical-inference.html#cb41-6" aria-hidden="true" tabindex="-1"></a>                            <span class="co"># NA == Not Available - this is overwritten</span></span>
-<span id="cb41-7"><a href="the-basics-of-probability-and-statistical-inference.html#cb41-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ( ii <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>num.sim ) {</span>
-<span id="cb41-8"><a href="the-basics-of-probability-and-statistical-inference.html#cb41-8" aria-hidden="true" tabindex="-1"></a>  q         <span class="ot">&lt;-</span> <span class="fu">runif</span>(n,<span class="at">min=</span><span class="dv">0</span>,<span class="at">max=</span><span class="dv">1</span>)</span>
-<span id="cb41-9"><a href="the-basics-of-probability-and-statistical-inference.html#cb41-9" aria-hidden="true" tabindex="-1"></a>  X.sample  <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">sqrt</span>(<span class="dv">1</span><span class="sc">-</span>q)</span>
-<span id="cb41-10"><a href="the-basics-of-probability-and-statistical-inference.html#cb41-10" aria-hidden="true" tabindex="-1"></a>  X.bar[ii] <span class="ot">&lt;-</span> <span class="fu">mean</span>(X.sample)</span>
-<span id="cb41-11"><a href="the-basics-of-probability-and-statistical-inference.html#cb41-11" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb41-12"><a href="the-basics-of-probability-and-statistical-inference.html#cb41-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-13"><a href="the-basics-of-probability-and-statistical-inference.html#cb41-13" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(X.bar,<span class="at">prob=</span><span class="cn">TRUE</span>,<span class="at">col=</span><span class="st">&quot;blue&quot;</span>,<span class="at">main=</span><span class="cn">NULL</span>,<span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="at">xlab=</span><span class="st">&quot;x&quot;</span>)</span>
-<span id="cb41-14"><a href="the-basics-of-probability-and-statistical-inference.html#cb41-14" aria-hidden="true" tabindex="-1"></a>x   <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="at">by=</span><span class="fl">0.01</span>)</span>
-<span id="cb41-15"><a href="the-basics-of-probability-and-statistical-inference.html#cb41-15" aria-hidden="true" tabindex="-1"></a>f.x <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>x)</span>
-<span id="cb41-16"><a href="the-basics-of-probability-and-statistical-inference.html#cb41-16" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x,f.x,<span class="at">col=</span><span class="st">&quot;red&quot;</span>,<span class="at">lwd=</span><span class="dv">2</span>)</span>
-<span id="cb41-17"><a href="the-basics-of-probability-and-statistical-inference.html#cb41-17" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>,<span class="at">col=</span><span class="st">&quot;green&quot;</span>,<span class="at">lwd=</span><span class="dv">2</span>)</span>
-<span id="cb41-18"><a href="the-basics-of-probability-and-statistical-inference.html#cb41-18" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">3</span><span class="fl">-0.0745</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">3</span><span class="fl">+0.0745</span>),<span class="fu">c</span>(<span class="fl">2.5</span>,<span class="fl">2.5</span>),<span class="at">col=</span><span class="st">&quot;green&quot;</span>,<span class="at">lwd=</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
+<span id="cb42-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb42-2" aria-hidden="true" tabindex="-1"></a>n        <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb42-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb42-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-4"><a href="the-basics-of-probability-and-statistical-inference.html#cb42-4" aria-hidden="true" tabindex="-1"></a>num.sim  <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb42-5"><a href="the-basics-of-probability-and-statistical-inference.html#cb42-5" aria-hidden="true" tabindex="-1"></a>X.bar    <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>,num.sim) <span class="co"># set aside storage for X.bar</span></span>
+<span id="cb42-6"><a href="the-basics-of-probability-and-statistical-inference.html#cb42-6" aria-hidden="true" tabindex="-1"></a>                            <span class="co"># NA == Not Available - this is overwritten</span></span>
+<span id="cb42-7"><a href="the-basics-of-probability-and-statistical-inference.html#cb42-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ( ii <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>num.sim ) {</span>
+<span id="cb42-8"><a href="the-basics-of-probability-and-statistical-inference.html#cb42-8" aria-hidden="true" tabindex="-1"></a>  q         <span class="ot">&lt;-</span> <span class="fu">runif</span>(n,<span class="at">min=</span><span class="dv">0</span>,<span class="at">max=</span><span class="dv">1</span>)</span>
+<span id="cb42-9"><a href="the-basics-of-probability-and-statistical-inference.html#cb42-9" aria-hidden="true" tabindex="-1"></a>  X.sample  <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">sqrt</span>(<span class="dv">1</span><span class="sc">-</span>q)</span>
+<span id="cb42-10"><a href="the-basics-of-probability-and-statistical-inference.html#cb42-10" aria-hidden="true" tabindex="-1"></a>  X.bar[ii] <span class="ot">&lt;-</span> <span class="fu">mean</span>(X.sample)</span>
+<span id="cb42-11"><a href="the-basics-of-probability-and-statistical-inference.html#cb42-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb42-12"><a href="the-basics-of-probability-and-statistical-inference.html#cb42-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-13"><a href="the-basics-of-probability-and-statistical-inference.html#cb42-13" aria-hidden="true" tabindex="-1"></a>empirical.mean <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">X.bar=</span>X.bar)</span>
+<span id="cb42-14"><a href="the-basics-of-probability-and-statistical-inference.html#cb42-14" aria-hidden="true" tabindex="-1"></a>x              <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="at">by=</span><span class="fl">0.01</span>)</span>
+<span id="cb42-15"><a href="the-basics-of-probability-and-statistical-inference.html#cb42-15" aria-hidden="true" tabindex="-1"></a>f.x            <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>x)</span>
+<span id="cb42-16"><a href="the-basics-of-probability-and-statistical-inference.html#cb42-16" aria-hidden="true" tabindex="-1"></a>pdf            <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x=</span>x,<span class="at">f.x=</span>f.x)</span>
+<span id="cb42-17"><a href="the-basics-of-probability-and-statistical-inference.html#cb42-17" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>empirical.mean,<span class="fu">aes</span>(<span class="at">x=</span>X.bar)) <span class="sc">+</span></span>
+<span id="cb42-18"><a href="the-basics-of-probability-and-statistical-inference.html#cb42-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y=</span><span class="fu">after_stat</span>(density)),<span class="at">col=</span><span class="st">&quot;black&quot;</span>,<span class="at">fill=</span><span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb42-19"><a href="the-basics-of-probability-and-statistical-inference.html#cb42-19" aria-hidden="true" tabindex="-1"></a>                 <span class="at">breaks=</span><span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="at">by=</span><span class="fl">0.05</span>)) <span class="sc">+</span></span>
+<span id="cb42-20"><a href="the-basics-of-probability-and-statistical-inference.html#cb42-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data=</span>pdf,<span class="fu">aes</span>(<span class="at">x=</span>x,<span class="at">y=</span>f.x),<span class="at">col=</span><span class="st">&quot;red&quot;</span>,<span class="at">lwd=</span><span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb42-21"><a href="the-basics-of-probability-and-statistical-inference.html#cb42-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept=</span><span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>,<span class="at">col=</span><span class="st">&quot;green&quot;</span>,<span class="at">lwd=</span><span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb42-22"><a href="the-basics-of-probability-and-statistical-inference.html#cb42-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">x=</span><span class="dv">1</span><span class="sc">/</span><span class="dv">3</span><span class="fl">-0.0745</span>,<span class="at">xend=</span><span class="dv">1</span><span class="sc">/</span><span class="dv">3</span><span class="fl">+0.0745</span>,<span class="at">y=</span><span class="fl">2.5</span>,<span class="at">yend=</span><span class="fl">2.5</span>,<span class="at">col=</span><span class="st">&quot;green&quot;</span>,<span class="at">lwd=</span><span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb42-23"><a href="the-basics-of-probability-and-statistical-inference.html#cb42-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;x&quot;</span>) <span class="sc">+</span></span>
+<span id="cb42-24"><a href="the-basics-of-probability-and-statistical-inference.html#cb42-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">1.25</span>)))</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:sampmean"></span>
 <img src="_main_files/figure-html/sampmean-1.png" alt="\label{fig:sampmean} The empirical distribution of the sample mean of $n = 10$ data sampled from the distribution $f_X(x) = 2(1-x)$ for $x \in [0,1]$. The red line indicates $f_X(x)$, while the vertical and horizontal green lines indicate $E[\bar{X}] = \mu = 1/3$ and the range $[\mu-se(\bar{X}),\mu+se(\bar{X})] = [0.2588,0.4078]$. The shape of the empirical distribution is approaching that of a normal distribution, a result that we will discuss in Chapter 2 when introducing the Central Limit Theorem." width="50%" />
 <p class="caption">
@@ -2910,13 +2977,13 @@ For cdf values <span class="math inline">\(q &lt; 1/(2\theta)\)</span>, the inve
 <span class="math inline">\(x = \sqrt{2 \theta q}\)</span>.
 We thus code the inverse transform sampler as follows…</p>
 </blockquote>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
-<span id="cb42-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb42-2" aria-hidden="true" tabindex="-1"></a>n           <span class="ot">&lt;-</span> <span class="dv">100</span></span>
-<span id="cb42-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb42-3" aria-hidden="true" tabindex="-1"></a>theta       <span class="ot">&lt;-</span> <span class="fl">1.5</span></span>
-<span id="cb42-4"><a href="the-basics-of-probability-and-statistical-inference.html#cb42-4" aria-hidden="true" tabindex="-1"></a>q           <span class="ot">&lt;-</span> <span class="fu">runif</span>(n,<span class="at">min=</span><span class="dv">0</span>,<span class="at">max=</span><span class="dv">1</span>)</span>
-<span id="cb42-5"><a href="the-basics-of-probability-and-statistical-inference.html#cb42-5" aria-hidden="true" tabindex="-1"></a>w           <span class="ot">&lt;-</span> <span class="fu">which</span>(q <span class="sc">&lt;</span> <span class="dv">1</span><span class="sc">/</span>(<span class="dv">2</span><span class="sc">*</span>theta))</span>
-<span id="cb42-6"><a href="the-basics-of-probability-and-statistical-inference.html#cb42-6" aria-hidden="true" tabindex="-1"></a>X.sample    <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">2</span>,n)</span>
-<span id="cb42-7"><a href="the-basics-of-probability-and-statistical-inference.html#cb42-7" aria-hidden="true" tabindex="-1"></a>X.sample[w] <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="dv">2</span><span class="sc">*</span>theta<span class="sc">*</span>q[w])</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
+<span id="cb43-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb43-2" aria-hidden="true" tabindex="-1"></a>n           <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb43-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb43-3" aria-hidden="true" tabindex="-1"></a>theta       <span class="ot">&lt;-</span> <span class="fl">1.5</span></span>
+<span id="cb43-4"><a href="the-basics-of-probability-and-statistical-inference.html#cb43-4" aria-hidden="true" tabindex="-1"></a>q           <span class="ot">&lt;-</span> <span class="fu">runif</span>(n,<span class="at">min=</span><span class="dv">0</span>,<span class="at">max=</span><span class="dv">1</span>)</span>
+<span id="cb43-5"><a href="the-basics-of-probability-and-statistical-inference.html#cb43-5" aria-hidden="true" tabindex="-1"></a>w           <span class="ot">&lt;-</span> <span class="fu">which</span>(q <span class="sc">&lt;</span> <span class="dv">1</span><span class="sc">/</span>(<span class="dv">2</span><span class="sc">*</span>theta))</span>
+<span id="cb43-6"><a href="the-basics-of-probability-and-statistical-inference.html#cb43-6" aria-hidden="true" tabindex="-1"></a>X.sample    <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">2</span>,n)</span>
+<span id="cb43-7"><a href="the-basics-of-probability-and-statistical-inference.html#cb43-7" aria-hidden="true" tabindex="-1"></a>X.sample[w] <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="dv">2</span><span class="sc">*</span>theta<span class="sc">*</span>q[w])</span></code></pre></div>
 <blockquote>
 <p>Given our dataset, we can compute and visualize the likelihood
 function <span class="math inline">\(\mathcal{L}(\theta \vert \mathbf{x})\)</span>…but…this will
@@ -2930,23 +2997,25 @@ function <span class="math inline">\(\ell(\theta \vert \mathbf{x}) = \log \mathc
 We do this below in Figure <a href="the-basics-of-probability-and-statistical-inference.html#fig:samplike">1.28</a>. (We will leave the
 derivation of the log-likelihood as an exercise to the reader.)</p>
 </blockquote>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb43-1" aria-hidden="true" tabindex="-1"></a>loglike <span class="ot">&lt;-</span> <span class="cf">function</span>(theta,x)</span>
-<span id="cb43-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb43-2" aria-hidden="true" tabindex="-1"></a>{</span>
-<span id="cb43-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb43-3" aria-hidden="true" tabindex="-1"></a>  w <span class="ot">&lt;-</span> <span class="fu">which</span>(x <span class="sc">&lt;</span> <span class="dv">1</span>)</span>
-<span id="cb43-4"><a href="the-basics-of-probability-and-statistical-inference.html#cb43-4" aria-hidden="true" tabindex="-1"></a>  n <span class="ot">&lt;-</span> <span class="fu">length</span>(x)</span>
-<span id="cb43-5"><a href="the-basics-of-probability-and-statistical-inference.html#cb43-5" aria-hidden="true" tabindex="-1"></a>  l <span class="ot">&lt;-</span> <span class="fu">length</span>(w)</span>
-<span id="cb43-6"><a href="the-basics-of-probability-and-statistical-inference.html#cb43-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">log</span>(<span class="fu">prod</span>(x[w])) <span class="sc">-</span> l<span class="sc">*</span><span class="fu">log</span>(theta) <span class="sc">+</span> (n<span class="sc">-</span>l)<span class="sc">*</span><span class="fu">log</span>(<span class="dv">1-1</span><span class="sc">/</span><span class="dv">2</span><span class="sc">/</span>theta))</span>
-<span id="cb43-7"><a href="the-basics-of-probability-and-statistical-inference.html#cb43-7" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb43-8"><a href="the-basics-of-probability-and-statistical-inference.html#cb43-8" aria-hidden="true" tabindex="-1"></a>theta <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">0.51</span>,<span class="fl">10.0</span>,<span class="at">by=</span><span class="fl">0.01</span>)</span>
-<span id="cb43-9"><a href="the-basics-of-probability-and-statistical-inference.html#cb43-9" aria-hidden="true" tabindex="-1"></a>llike <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>,<span class="fu">length</span>(theta))</span>
-<span id="cb43-10"><a href="the-basics-of-probability-and-statistical-inference.html#cb43-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ( ii <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(theta) ) {</span>
-<span id="cb43-11"><a href="the-basics-of-probability-and-statistical-inference.html#cb43-11" aria-hidden="true" tabindex="-1"></a>  llike[ii] <span class="ot">&lt;-</span> <span class="fu">loglike</span>(theta[ii],X.sample)</span>
-<span id="cb43-12"><a href="the-basics-of-probability-and-statistical-inference.html#cb43-12" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb43-13"><a href="the-basics-of-probability-and-statistical-inference.html#cb43-13" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(theta,llike,<span class="at">typ=</span><span class="st">&quot;l&quot;</span>,<span class="at">col=</span><span class="st">&quot;blue&quot;</span>,<span class="at">lwd=</span><span class="dv">2</span>,<span class="at">xlab=</span><span class="fu">expression</span>(theta),<span class="at">ylab=</span><span class="st">&quot;Log-Likelihood&quot;</span>)</span>
-<span id="cb43-14"><a href="the-basics-of-probability-and-statistical-inference.html#cb43-14" aria-hidden="true" tabindex="-1"></a>w <span class="ot">&lt;-</span> <span class="fu">which.max</span>(llike)</span>
-<span id="cb43-15"><a href="the-basics-of-probability-and-statistical-inference.html#cb43-15" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The likelihood function is maximized at theta = &quot;</span>,theta[w],<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
-<pre><code>## The likelihood function is maximized at theta =  1.56</code></pre>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span>theta[w],<span class="at">col=</span><span class="st">&quot;red&quot;</span>,<span class="at">lwd=</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb44-1" aria-hidden="true" tabindex="-1"></a>loglike <span class="ot">&lt;-</span> <span class="cf">function</span>(theta,x)</span>
+<span id="cb44-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb44-2" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb44-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb44-3" aria-hidden="true" tabindex="-1"></a>  w <span class="ot">&lt;-</span> <span class="fu">which</span>(x <span class="sc">&lt;</span> <span class="dv">1</span>)</span>
+<span id="cb44-4"><a href="the-basics-of-probability-and-statistical-inference.html#cb44-4" aria-hidden="true" tabindex="-1"></a>  n <span class="ot">&lt;-</span> <span class="fu">length</span>(x)</span>
+<span id="cb44-5"><a href="the-basics-of-probability-and-statistical-inference.html#cb44-5" aria-hidden="true" tabindex="-1"></a>  l <span class="ot">&lt;-</span> <span class="fu">length</span>(w)</span>
+<span id="cb44-6"><a href="the-basics-of-probability-and-statistical-inference.html#cb44-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">log</span>(<span class="fu">prod</span>(x[w])) <span class="sc">-</span> l<span class="sc">*</span><span class="fu">log</span>(theta) <span class="sc">+</span> (n<span class="sc">-</span>l)<span class="sc">*</span><span class="fu">log</span>(<span class="dv">1-1</span><span class="sc">/</span><span class="dv">2</span><span class="sc">/</span>theta))</span>
+<span id="cb44-7"><a href="the-basics-of-probability-and-statistical-inference.html#cb44-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb44-8"><a href="the-basics-of-probability-and-statistical-inference.html#cb44-8" aria-hidden="true" tabindex="-1"></a>theta <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">0.51</span>,<span class="fl">10.0</span>,<span class="at">by=</span><span class="fl">0.01</span>)</span>
+<span id="cb44-9"><a href="the-basics-of-probability-and-statistical-inference.html#cb44-9" aria-hidden="true" tabindex="-1"></a>llike <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>,<span class="fu">length</span>(theta))</span>
+<span id="cb44-10"><a href="the-basics-of-probability-and-statistical-inference.html#cb44-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ( ii <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(theta) ) {</span>
+<span id="cb44-11"><a href="the-basics-of-probability-and-statistical-inference.html#cb44-11" aria-hidden="true" tabindex="-1"></a>  llike[ii] <span class="ot">&lt;-</span> <span class="fu">loglike</span>(theta[ii],X.sample)</span>
+<span id="cb44-12"><a href="the-basics-of-probability-and-statistical-inference.html#cb44-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb44-13"><a href="the-basics-of-probability-and-statistical-inference.html#cb44-13" aria-hidden="true" tabindex="-1"></a>w     <span class="ot">&lt;-</span> <span class="fu">which.max</span>(llike)</span>
+<span id="cb44-14"><a href="the-basics-of-probability-and-statistical-inference.html#cb44-14" aria-hidden="true" tabindex="-1"></a>df    <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">theta=</span>theta,<span class="at">llike=</span>llike)</span>
+<span id="cb44-15"><a href="the-basics-of-probability-and-statistical-inference.html#cb44-15" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>df,<span class="fu">aes</span>(<span class="at">x=</span>theta,<span class="at">y=</span>llike)) <span class="sc">+</span></span>
+<span id="cb44-16"><a href="the-basics-of-probability-and-statistical-inference.html#cb44-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">col=</span><span class="st">&quot;blue&quot;</span>,<span class="at">lwd=</span><span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb44-17"><a href="the-basics-of-probability-and-statistical-inference.html#cb44-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept=</span>theta[w],<span class="at">col=</span><span class="st">&quot;red&quot;</span>,<span class="at">lwd=</span><span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb44-18"><a href="the-basics-of-probability-and-statistical-inference.html#cb44-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="fu">expression</span>(theta),<span class="at">y=</span><span class="st">&quot;Log-Likelihood&quot;</span>) <span class="sc">+</span></span>
+<span id="cb44-19"><a href="the-basics-of-probability-and-statistical-inference.html#cb44-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">1.25</span>)))</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:samplike"></span>
 <img src="_main_files/figure-html/samplike-1.png" alt="\label{fig:samplike}The log-likelihood function $\ell(\theta \vert \mathbf{x})$ for the pdf $h_X(x \vert \theta)$ defined in the text. The red line indicates the value of $\theta$ (1.56) for which $\ell(\theta \vert \mathbf{x})$ is maximized." width="50%" />
 <p class="caption">
@@ -3221,7 +3290,7 @@ We can alter the shape and/or location of the sampling distribution
 by change the value(s) of <span class="math inline">\(\theta\)</span>. To illustrate this, let’s make
 up a sampling distribution pdf:
 <span class="math display">\[
-f_Y(y) = \frac{1}{2} ~~~ y \in [\theta-1,\theta+1]
+f_Y(y \vert \theta) = \frac{1}{2} ~~~ y \in [\theta-1,\theta+1]
 \]</span>
 In Figure <a href="the-basics-of-probability-and-statistical-inference.html#fig:samppdf">1.30</a>, we show how the pdf moves with <span class="math inline">\(\theta\)</span>;
 as <span class="math inline">\(\theta\)</span> changes from 2.8 to 5.2, the pdf shifts (smoothly) from the
@@ -3376,7 +3445,7 @@ statistic <span class="math inline">\(Y\)</span> that we adopt to construct the 
 <span class="math inline">\(\theta\)</span> increases. What that means here is that, e.g., <span class="math inline">\(\theta_{\alpha/2}\)</span>
 might represent an upper bound on <span class="math inline">\(\theta\)</span>, and it will if
 <span class="math inline">\(Y\)</span> increases as <span class="math inline">\(\theta\)</span> increases…but it might represent a lower
-bound, if it turns out that <span class="math inline">\(Y\)</span> actually decreases as <span class="math inline">\(\theta\)</span> increases.)
+bound, if it turns out that <span class="math inline">\(Y\)</span> actually decreases as <span class="math inline">\(\theta\)</span> increases.
 This is not particularly worrisome if we are constructing
 a two-sided interval; if we
 find that <span class="math inline">\(\theta_{\alpha/2} &gt; \theta_{1-\alpha/2}\)</span>, we can
@@ -3396,55 +3465,55 @@ are <span class="math inline">\((-\infty,\theta_{1-\alpha}]\)</span> (upper boun
 <p>We summarize these results below:</p>
 <table>
 <colgroup>
-<col width="28%" />
-<col width="28%" />
-<col width="21%" />
-<col width="21%" />
+<col width="26%" />
+<col width="26%" />
+<col width="23%" />
+<col width="23%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th>type</th>
-<th><span class="math inline">\(E[Y]\)</span> increases with <span class="math inline">\(\theta\)</span>?</th>
-<th><span class="math inline">\(\hat{\theta}_L\)</span></th>
-<th><span class="math inline">\(\hat{\theta}_H\)</span></th>
+<th align="right">type</th>
+<th align="right"><span class="math inline">\(E[Y]\)</span> increases with <span class="math inline">\(\theta\)</span>?</th>
+<th align="center"><span class="math inline">\(\hat{\theta}_L\)</span></th>
+<th align="center"><span class="math inline">\(\hat{\theta}_H\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>two-sided</td>
-<td>yes</td>
-<td><span class="math inline">\(\hat{\theta}_{1-\alpha/2}\)</span></td>
-<td><span class="math inline">\(\hat{\theta}_{\alpha/2}\)</span></td>
+<td align="right">two-sided</td>
+<td align="right">yes</td>
+<td align="center"><span class="math inline">\(\hat{\theta}_{1-\alpha/2}\)</span></td>
+<td align="center"><span class="math inline">\(\hat{\theta}_{\alpha/2}\)</span></td>
 </tr>
 <tr class="even">
-<td></td>
-<td>no</td>
-<td><span class="math inline">\(\hat{\theta}_{\alpha/2}\)</span></td>
-<td><span class="math inline">\(\hat{\theta}_{1-\alpha/2}\)</span></td>
+<td align="right"></td>
+<td align="right">no</td>
+<td align="center"><span class="math inline">\(\hat{\theta}_{\alpha/2}\)</span></td>
+<td align="center"><span class="math inline">\(\hat{\theta}_{1-\alpha/2}\)</span></td>
 </tr>
 <tr class="odd">
-<td>one-sided</td>
-<td>yes</td>
-<td><span class="math inline">\(\hat{\theta}_{1-\alpha}\)</span></td>
-<td><span class="math inline">\(\infty\)</span></td>
+<td align="right">one-sided</td>
+<td align="right">yes</td>
+<td align="center"><span class="math inline">\(\hat{\theta}_{1-\alpha}\)</span></td>
+<td align="center"><span class="math inline">\(\infty\)</span></td>
 </tr>
 <tr class="even">
-<td>lower bound</td>
-<td>no</td>
-<td><span class="math inline">\(\hat{\theta}_{\alpha}\)</span></td>
-<td><span class="math inline">\(\infty\)</span></td>
+<td align="right">lower bound</td>
+<td align="right">no</td>
+<td align="center"><span class="math inline">\(\hat{\theta}_{\alpha}\)</span></td>
+<td align="center"><span class="math inline">\(\infty\)</span></td>
 </tr>
 <tr class="odd">
-<td>one-sided</td>
-<td>yes</td>
-<td><span class="math inline">\(-\infty\)</span></td>
-<td><span class="math inline">\(\hat{\theta}_{\alpha}\)</span></td>
+<td align="right">one-sided</td>
+<td align="right">yes</td>
+<td align="center"><span class="math inline">\(-\infty\)</span></td>
+<td align="center"><span class="math inline">\(\hat{\theta}_{\alpha}\)</span></td>
 </tr>
 <tr class="even">
-<td>upper bound</td>
-<td>no</td>
-<td><span class="math inline">\(-\infty\)</span></td>
-<td><span class="math inline">\(\hat{\theta}_{1-\alpha}\)</span></td>
+<td align="right">upper bound</td>
+<td align="right">no</td>
+<td align="center"><span class="math inline">\(-\infty\)</span></td>
+<td align="center"><span class="math inline">\(\hat{\theta}_{1-\alpha}\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -3713,45 +3782,45 @@ in the table below.</p>
 <colgroup>
 <col width="28%" />
 <col width="28%" />
-<col width="42%" />
+<col width="43%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th>Type</th>
-<th><span class="math inline">\(E[Y]\)</span> increases with <span class="math inline">\(\theta\)</span>?</th>
-<th>Rejection Region(s)</th>
+<th align="right">Type</th>
+<th align="right"><span class="math inline">\(E[Y]\)</span> increases with <span class="math inline">\(\theta\)</span>?</th>
+<th align="center">Rejection Region(s)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>two-tail</td>
-<td>yes</td>
-<td><span class="math inline">\(y_{\rm obs} \leq y_{\alpha/2}\)</span> and <span class="math inline">\(y_{\rm obs} \geq y_{1-\alpha/2}\)</span></td>
+<td align="right">two-tail</td>
+<td align="right">yes</td>
+<td align="center"><span class="math inline">\(y_{\rm obs} \leq y_{\alpha/2}\)</span> and <span class="math inline">\(y_{\rm obs} \geq y_{1-\alpha/2}\)</span></td>
 </tr>
 <tr class="even">
-<td></td>
-<td>no</td>
-<td><span class="math inline">\(y_{\rm obs} \leq y_{1-\alpha/2}\)</span> and <span class="math inline">\(y_{\rm obs} \geq y_{\alpha/2}\)</span></td>
+<td align="right"></td>
+<td align="right">no</td>
+<td align="center"><span class="math inline">\(y_{\rm obs} \leq y_{1-\alpha/2}\)</span> and <span class="math inline">\(y_{\rm obs} \geq y_{\alpha/2}\)</span></td>
 </tr>
 <tr class="odd">
-<td>lower-tail</td>
-<td>yes</td>
-<td><span class="math inline">\(y_{\rm obs} \leq y_{\alpha}\)</span></td>
+<td align="right">lower-tail</td>
+<td align="right">yes</td>
+<td align="center"><span class="math inline">\(y_{\rm obs} \leq y_{\alpha}\)</span></td>
 </tr>
 <tr class="even">
-<td></td>
-<td>no</td>
-<td><span class="math inline">\(y_{\rm obs} \geq y_{1-\alpha}\)</span></td>
+<td align="right"></td>
+<td align="right">no</td>
+<td align="center"><span class="math inline">\(y_{\rm obs} \geq y_{1-\alpha}\)</span></td>
 </tr>
 <tr class="odd">
-<td>upper-tail</td>
-<td>yes</td>
-<td><span class="math inline">\(y_{\rm obs} \geq y_{1-\alpha}\)</span></td>
+<td align="right">upper-tail</td>
+<td align="right">yes</td>
+<td align="center"><span class="math inline">\(y_{\rm obs} \geq y_{1-\alpha}\)</span></td>
 </tr>
 <tr class="even">
-<td></td>
-<td>no</td>
-<td><span class="math inline">\(y_{\rm obs} \leq y_{\alpha}\)</span></td>
+<td align="right"></td>
+<td align="right">no</td>
+<td align="center"><span class="math inline">\(y_{\rm obs} \leq y_{\alpha}\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -3858,19 +3927,19 @@ or the mean-squared error;</li>
 </ul>
 <p>All of these examples utilize the same basic algorithm, which we render in
 pseudocode as</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-1" aria-hidden="true" tabindex="-1"></a>set random number seed</span>
-<span id="cb46-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-3" aria-hidden="true" tabindex="-1"></a>initialize <span class="fu">vector</span>(s) <span class="cf">for</span> storing <span class="fu">result</span>(s)</span>
-<span id="cb46-4"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-5"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-5" aria-hidden="true" tabindex="-1"></a>begin <span class="cf">for</span><span class="sc">-</span>loop</span>
-<span id="cb46-6"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-6" aria-hidden="true" tabindex="-1"></a>  sample dataset</span>
-<span id="cb46-7"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-7" aria-hidden="true" tabindex="-1"></a>  compute statistic</span>
-<span id="cb46-8"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-8" aria-hidden="true" tabindex="-1"></a>  compute and store result</span>
-<span id="cb46-9"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-9" aria-hidden="true" tabindex="-1"></a>end <span class="cf">for</span><span class="sc">-</span>loop</span>
-<span id="cb46-10"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-11"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-11" aria-hidden="true" tabindex="-1"></a>optional<span class="sc">:</span> process result vector </span>
-<span id="cb46-12"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-13"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-13" aria-hidden="true" tabindex="-1"></a>display result</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb45-1" aria-hidden="true" tabindex="-1"></a>set random number seed</span>
+<span id="cb45-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb45-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb45-3" aria-hidden="true" tabindex="-1"></a>initialize <span class="fu">vector</span>(s) <span class="cf">for</span> storing <span class="fu">result</span>(s)</span>
+<span id="cb45-4"><a href="the-basics-of-probability-and-statistical-inference.html#cb45-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-5"><a href="the-basics-of-probability-and-statistical-inference.html#cb45-5" aria-hidden="true" tabindex="-1"></a>begin <span class="cf">for</span><span class="sc">-</span>loop</span>
+<span id="cb45-6"><a href="the-basics-of-probability-and-statistical-inference.html#cb45-6" aria-hidden="true" tabindex="-1"></a>  sample dataset</span>
+<span id="cb45-7"><a href="the-basics-of-probability-and-statistical-inference.html#cb45-7" aria-hidden="true" tabindex="-1"></a>  compute statistic</span>
+<span id="cb45-8"><a href="the-basics-of-probability-and-statistical-inference.html#cb45-8" aria-hidden="true" tabindex="-1"></a>  compute and store result</span>
+<span id="cb45-9"><a href="the-basics-of-probability-and-statistical-inference.html#cb45-9" aria-hidden="true" tabindex="-1"></a>end <span class="cf">for</span><span class="sc">-</span>loop</span>
+<span id="cb45-10"><a href="the-basics-of-probability-and-statistical-inference.html#cb45-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-11"><a href="the-basics-of-probability-and-statistical-inference.html#cb45-11" aria-hidden="true" tabindex="-1"></a>optional<span class="sc">:</span> process result vector </span>
+<span id="cb45-12"><a href="the-basics-of-probability-and-statistical-inference.html#cb45-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-13"><a href="the-basics-of-probability-and-statistical-inference.html#cb45-13" aria-hidden="true" tabindex="-1"></a>display result</span></code></pre></div>
 <p>This builds upon the last “Working With <code>R</code>” section, which describes
 dataset sampling. Note that we don’t always need
 to follow this pseudocoded algorithm to the letter, as <code>R</code>’s vectorization
@@ -3902,50 +3971,53 @@ each. In the code chunk below, we show the estimated mean and standard
 error for our distribution, while in Figure <a href="the-basics-of-probability-and-statistical-inference.html#fig:sampmed">1.34</a> we show
 the empirical distribution of the median values.</p>
 </blockquote>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
-<span id="cb47-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb47-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Let&#39;s put the rejection sampling code inside a function.</span></span>
-<span id="cb47-4"><a href="the-basics-of-probability-and-statistical-inference.html#cb47-4" aria-hidden="true" tabindex="-1"></a>sample_data <span class="ot">&lt;-</span> <span class="cf">function</span>(n,x.lo,x.hi,f.x.hi)</span>
-<span id="cb47-5"><a href="the-basics-of-probability-and-statistical-inference.html#cb47-5" aria-hidden="true" tabindex="-1"></a>{</span>
-<span id="cb47-6"><a href="the-basics-of-probability-and-statistical-inference.html#cb47-6" aria-hidden="true" tabindex="-1"></a>  X   <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>,n)</span>
-<span id="cb47-7"><a href="the-basics-of-probability-and-statistical-inference.html#cb47-7" aria-hidden="true" tabindex="-1"></a>  ii  <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb47-8"><a href="the-basics-of-probability-and-statistical-inference.html#cb47-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span> ( ii <span class="sc">&lt;</span> n ) {</span>
-<span id="cb47-9"><a href="the-basics-of-probability-and-statistical-inference.html#cb47-9" aria-hidden="true" tabindex="-1"></a>    u <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">1</span>,<span class="at">min=</span>x.lo,<span class="at">max=</span>x.hi)</span>
-<span id="cb47-10"><a href="the-basics-of-probability-and-statistical-inference.html#cb47-10" aria-hidden="true" tabindex="-1"></a>    v <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">1</span>,<span class="at">min=</span><span class="dv">0</span>,<span class="at">max=</span>f.x.hi)</span>
-<span id="cb47-11"><a href="the-basics-of-probability-and-statistical-inference.html#cb47-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> ( v <span class="sc">&lt;</span> u<span class="sc">*</span><span class="fu">sin</span>(u)<span class="sc">/</span>pi ) {</span>
-<span id="cb47-12"><a href="the-basics-of-probability-and-statistical-inference.html#cb47-12" aria-hidden="true" tabindex="-1"></a>      ii    <span class="ot">&lt;-</span> ii<span class="sc">+</span><span class="dv">1</span></span>
-<span id="cb47-13"><a href="the-basics-of-probability-and-statistical-inference.html#cb47-13" aria-hidden="true" tabindex="-1"></a>      X[ii] <span class="ot">&lt;-</span> u</span>
-<span id="cb47-14"><a href="the-basics-of-probability-and-statistical-inference.html#cb47-14" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb47-15"><a href="the-basics-of-probability-and-statistical-inference.html#cb47-15" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb47-16"><a href="the-basics-of-probability-and-statistical-inference.html#cb47-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(X)</span>
-<span id="cb47-17"><a href="the-basics-of-probability-and-statistical-inference.html#cb47-17" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb47-18"><a href="the-basics-of-probability-and-statistical-inference.html#cb47-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-19"><a href="the-basics-of-probability-and-statistical-inference.html#cb47-19" aria-hidden="true" tabindex="-1"></a>num.sim  <span class="ot">&lt;-</span> <span class="dv">10000</span>      <span class="co"># number of medians to record</span></span>
-<span id="cb47-20"><a href="the-basics-of-probability-and-statistical-inference.html#cb47-20" aria-hidden="true" tabindex="-1"></a>n        <span class="ot">&lt;-</span> <span class="dv">11</span></span>
-<span id="cb47-21"><a href="the-basics-of-probability-and-statistical-inference.html#cb47-21" aria-hidden="true" tabindex="-1"></a>x.lo     <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb47-22"><a href="the-basics-of-probability-and-statistical-inference.html#cb47-22" aria-hidden="true" tabindex="-1"></a>x.hi     <span class="ot">&lt;-</span> pi</span>
-<span id="cb47-23"><a href="the-basics-of-probability-and-statistical-inference.html#cb47-23" aria-hidden="true" tabindex="-1"></a>f.x.hi   <span class="ot">&lt;-</span> <span class="fl">0.58</span></span>
-<span id="cb47-24"><a href="the-basics-of-probability-and-statistical-inference.html#cb47-24" aria-hidden="true" tabindex="-1"></a>X.median <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>,num.sim) <span class="co"># initialize vector to store result</span></span>
-<span id="cb47-25"><a href="the-basics-of-probability-and-statistical-inference.html#cb47-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-26"><a href="the-basics-of-probability-and-statistical-inference.html#cb47-26" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ( ii <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>num.sim ) {</span>
-<span id="cb47-27"><a href="the-basics-of-probability-and-statistical-inference.html#cb47-27" aria-hidden="true" tabindex="-1"></a>  X            <span class="ot">&lt;-</span> <span class="fu">sample_data</span>(n,x.lo,x.hi,f.x.hi)</span>
-<span id="cb47-28"><a href="the-basics-of-probability-and-statistical-inference.html#cb47-28" aria-hidden="true" tabindex="-1"></a>  X.median[ii] <span class="ot">&lt;-</span> <span class="fu">median</span>(X)</span>
-<span id="cb47-29"><a href="the-basics-of-probability-and-statistical-inference.html#cb47-29" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb47-30"><a href="the-basics-of-probability-and-statistical-inference.html#cb47-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-31"><a href="the-basics-of-probability-and-statistical-inference.html#cb47-31" aria-hidden="true" tabindex="-1"></a><span class="co"># What do we want to do with the result? Here...</span></span>
-<span id="cb47-32"><a href="the-basics-of-probability-and-statistical-inference.html#cb47-32" aria-hidden="true" tabindex="-1"></a><span class="co">#   - we visualize the empirical distribution of medians with a histogram</span></span>
-<span id="cb47-33"><a href="the-basics-of-probability-and-statistical-inference.html#cb47-33" aria-hidden="true" tabindex="-1"></a><span class="co">#   - we process the median vector to estimate the mean and standard error</span></span>
-<span id="cb47-34"><a href="the-basics-of-probability-and-statistical-inference.html#cb47-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-35"><a href="the-basics-of-probability-and-statistical-inference.html#cb47-35" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(X.median,<span class="at">col=</span><span class="st">&quot;blue&quot;</span>,<span class="at">prob=</span><span class="cn">TRUE</span>,<span class="at">main=</span><span class="cn">NULL</span>,<span class="at">xlab=</span><span class="st">&quot;x&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
+<span id="cb46-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Let&#39;s put the rejection sampling code inside a function.</span></span>
+<span id="cb46-4"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-4" aria-hidden="true" tabindex="-1"></a>sample_data <span class="ot">&lt;-</span> <span class="cf">function</span>(n,x.lo,x.hi,f.x.hi)</span>
+<span id="cb46-5"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-5" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb46-6"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-6" aria-hidden="true" tabindex="-1"></a>  X   <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>,n)</span>
+<span id="cb46-7"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-7" aria-hidden="true" tabindex="-1"></a>  ii  <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb46-8"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span> ( ii <span class="sc">&lt;</span> n ) {</span>
+<span id="cb46-9"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-9" aria-hidden="true" tabindex="-1"></a>    u <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">1</span>,<span class="at">min=</span>x.lo,<span class="at">max=</span>x.hi)</span>
+<span id="cb46-10"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-10" aria-hidden="true" tabindex="-1"></a>    v <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">1</span>,<span class="at">min=</span><span class="dv">0</span>,<span class="at">max=</span>f.x.hi)</span>
+<span id="cb46-11"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> ( v <span class="sc">&lt;</span> u<span class="sc">*</span><span class="fu">sin</span>(u)<span class="sc">/</span>pi ) {</span>
+<span id="cb46-12"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-12" aria-hidden="true" tabindex="-1"></a>      ii    <span class="ot">&lt;-</span> ii<span class="sc">+</span><span class="dv">1</span></span>
+<span id="cb46-13"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-13" aria-hidden="true" tabindex="-1"></a>      X[ii] <span class="ot">&lt;-</span> u</span>
+<span id="cb46-14"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-14" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb46-15"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-15" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb46-16"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(X)</span>
+<span id="cb46-17"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-17" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb46-18"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-19"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-19" aria-hidden="true" tabindex="-1"></a>num.sim  <span class="ot">&lt;-</span> <span class="dv">10000</span>      <span class="co"># number of medians to record</span></span>
+<span id="cb46-20"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-20" aria-hidden="true" tabindex="-1"></a>n        <span class="ot">&lt;-</span> <span class="dv">11</span></span>
+<span id="cb46-21"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-21" aria-hidden="true" tabindex="-1"></a>x.lo     <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb46-22"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-22" aria-hidden="true" tabindex="-1"></a>x.hi     <span class="ot">&lt;-</span> pi</span>
+<span id="cb46-23"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-23" aria-hidden="true" tabindex="-1"></a>f.x.hi   <span class="ot">&lt;-</span> <span class="fl">0.58</span></span>
+<span id="cb46-24"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-24" aria-hidden="true" tabindex="-1"></a>X.median <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>,num.sim) <span class="co"># initialize vector to store result</span></span>
+<span id="cb46-25"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-26"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-26" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ( ii <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>num.sim ) {</span>
+<span id="cb46-27"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-27" aria-hidden="true" tabindex="-1"></a>  X            <span class="ot">&lt;-</span> <span class="fu">sample_data</span>(n,x.lo,x.hi,f.x.hi)</span>
+<span id="cb46-28"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-28" aria-hidden="true" tabindex="-1"></a>  X.median[ii] <span class="ot">&lt;-</span> <span class="fu">median</span>(X)</span>
+<span id="cb46-29"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-29" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb46-30"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-31"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-31" aria-hidden="true" tabindex="-1"></a><span class="co"># What do we want to do with the result? Here...</span></span>
+<span id="cb46-32"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-32" aria-hidden="true" tabindex="-1"></a><span class="co">#   - we visualize the empirical distribution of medians with a histogram</span></span>
+<span id="cb46-33"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-33" aria-hidden="true" tabindex="-1"></a><span class="co">#   - we process the median vector to estimate the mean and standard error</span></span>
+<span id="cb46-34"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-35"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-35" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span><span class="fu">data.frame</span>(<span class="at">X.median=</span>X.median),<span class="fu">aes</span>(<span class="at">x=</span>X.median,<span class="at">y=</span><span class="fu">after_stat</span>(density))) <span class="sc">+</span></span>
+<span id="cb46-36"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill=</span><span class="st">&quot;blue&quot;</span>,<span class="at">col=</span><span class="st">&quot;black&quot;</span>,<span class="at">breaks=</span><span class="fu">seq</span>(<span class="dv">1</span>,<span class="fl">2.7</span>,<span class="at">by=</span><span class="fl">0.1</span>)) <span class="sc">+</span></span>
+<span id="cb46-37"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;x&quot;</span>) <span class="sc">+</span></span>
+<span id="cb46-38"><a href="the-basics-of-probability-and-statistical-inference.html#cb46-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">1.25</span>)))</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:sampmed"></span>
 <img src="_main_files/figure-html/sampmed-1.png" alt="\label{fig:sampmed}The empirical distribution of the sample median for the pdf $f_X(x) = (x \sin x)/\pi$, assuming a sample size of $n = 11$." width="50%" />
 <p class="caption">
 Figure 1.34: The empirical distribution of the sample median for the pdf <span class="math inline">\(f_X(x) = (x \sin x)/\pi\)</span>, assuming a sample size of <span class="math inline">\(n = 11\)</span>.
 </p>
 </div>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The empirical mean is           &quot;</span>,<span class="fu">round</span>(<span class="fu">mean</span>(X.median),<span class="dv">3</span>),<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The empirical mean is           &quot;</span>,<span class="fu">round</span>(<span class="fu">mean</span>(X.median),<span class="dv">3</span>),<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## The empirical mean is            1.907</code></pre>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The empirical standard error is &quot;</span>,<span class="fu">round</span>(<span class="fu">sd</span>(X.median),<span class="dv">3</span>),<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The empirical standard error is &quot;</span>,<span class="fu">round</span>(<span class="fu">sd</span>(X.median),<span class="dv">3</span>),<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## The empirical standard error is  0.255</code></pre>
 <hr />
 </div>
@@ -3974,49 +4046,52 @@ is right-skewed. (As we will see in Chapter 2, as
 <span class="math inline">\(n \rightarrow \infty\)</span>, the empirical distribution will tend more and more
 to a bell-curve-like shape.)</p>
 </blockquote>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
-<span id="cb52-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb52-2" aria-hidden="true" tabindex="-1"></a>theta  <span class="ot">&lt;-</span> <span class="fl">2.25</span></span>
-<span id="cb52-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb52-3" aria-hidden="true" tabindex="-1"></a>n      <span class="ot">&lt;-</span> <span class="dv">40</span></span>
-<span id="cb52-4"><a href="the-basics-of-probability-and-statistical-inference.html#cb52-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-5"><a href="the-basics-of-probability-and-statistical-inference.html#cb52-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Here, we show an alternative means by which to sample data.</span></span>
-<span id="cb52-6"><a href="the-basics-of-probability-and-statistical-inference.html#cb52-6" aria-hidden="true" tabindex="-1"></a><span class="co"># (This assumes that there is a data-sampling code that we can easily call.)</span></span>
-<span id="cb52-7"><a href="the-basics-of-probability-and-statistical-inference.html#cb52-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-8"><a href="the-basics-of-probability-and-statistical-inference.html#cb52-8" aria-hidden="true" tabindex="-1"></a>sample_data <span class="ot">&lt;-</span> <span class="cf">function</span>(n,theta)</span>
-<span id="cb52-9"><a href="the-basics-of-probability-and-statistical-inference.html#cb52-9" aria-hidden="true" tabindex="-1"></a>{</span>
-<span id="cb52-10"><a href="the-basics-of-probability-and-statistical-inference.html#cb52-10" aria-hidden="true" tabindex="-1"></a>  q <span class="ot">&lt;-</span> <span class="fu">runif</span>(n,<span class="at">min=</span><span class="dv">0</span>,<span class="at">max=</span><span class="dv">1</span>)</span>
-<span id="cb52-11"><a href="the-basics-of-probability-and-statistical-inference.html#cb52-11" aria-hidden="true" tabindex="-1"></a>  X <span class="ot">&lt;-</span> q<span class="sc">^</span>(<span class="dv">1</span><span class="sc">/</span>theta)</span>
-<span id="cb52-12"><a href="the-basics-of-probability-and-statistical-inference.html#cb52-12" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb52-13"><a href="the-basics-of-probability-and-statistical-inference.html#cb52-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-14"><a href="the-basics-of-probability-and-statistical-inference.html#cb52-14" aria-hidden="true" tabindex="-1"></a>num.sim <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
-<span id="cb52-15"><a href="the-basics-of-probability-and-statistical-inference.html#cb52-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-16"><a href="the-basics-of-probability-and-statistical-inference.html#cb52-16" aria-hidden="true" tabindex="-1"></a><span class="co"># first: create one long vector of data, of length num.sim * n</span></span>
-<span id="cb52-17"><a href="the-basics-of-probability-and-statistical-inference.html#cb52-17" aria-hidden="true" tabindex="-1"></a>X.all   <span class="ot">&lt;-</span> <span class="fu">sample_data</span>(n<span class="sc">*</span>num.sim,theta)</span>
-<span id="cb52-18"><a href="the-basics-of-probability-and-statistical-inference.html#cb52-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-19"><a href="the-basics-of-probability-and-statistical-inference.html#cb52-19" aria-hidden="true" tabindex="-1"></a><span class="co"># second: &quot;fold&quot; the vector into a matrix with num.sim rows and n columns</span></span>
-<span id="cb52-20"><a href="the-basics-of-probability-and-statistical-inference.html#cb52-20" aria-hidden="true" tabindex="-1"></a><span class="co">#         every row of X is thus a separate independent dataset</span></span>
-<span id="cb52-21"><a href="the-basics-of-probability-and-statistical-inference.html#cb52-21" aria-hidden="true" tabindex="-1"></a>X       <span class="ot">&lt;-</span> <span class="fu">matrix</span>(X.all,<span class="at">nrow=</span>num.sim)</span>
-<span id="cb52-22"><a href="the-basics-of-probability-and-statistical-inference.html#cb52-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-23"><a href="the-basics-of-probability-and-statistical-inference.html#cb52-23" aria-hidden="true" tabindex="-1"></a><span class="co"># third: use R&#39;s apply() function to compute MLE for each row/dataset</span></span>
-<span id="cb52-24"><a href="the-basics-of-probability-and-statistical-inference.html#cb52-24" aria-hidden="true" tabindex="-1"></a><span class="co">#        the argument 1 means &quot;apply the following function to each row&quot;</span></span>
-<span id="cb52-25"><a href="the-basics-of-probability-and-statistical-inference.html#cb52-25" aria-hidden="true" tabindex="-1"></a><span class="co">#        x in the third argument is the data row; the function returns the mle</span></span>
-<span id="cb52-26"><a href="the-basics-of-probability-and-statistical-inference.html#cb52-26" aria-hidden="true" tabindex="-1"></a><span class="co">#        mle is thus a vector of maximum-likelihood estimates</span></span>
-<span id="cb52-27"><a href="the-basics-of-probability-and-statistical-inference.html#cb52-27" aria-hidden="true" tabindex="-1"></a>mle     <span class="ot">&lt;-</span> <span class="fu">apply</span>(X,<span class="dv">1</span>,<span class="cf">function</span>(x){<span class="sc">-</span>n<span class="sc">/</span><span class="fu">sum</span>(<span class="fu">log</span>(x))})</span>
-<span id="cb52-28"><a href="the-basics-of-probability-and-statistical-inference.html#cb52-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-29"><a href="the-basics-of-probability-and-statistical-inference.html#cb52-29" aria-hidden="true" tabindex="-1"></a><span class="co"># What do we want to do with the result? Here...</span></span>
-<span id="cb52-30"><a href="the-basics-of-probability-and-statistical-inference.html#cb52-30" aria-hidden="true" tabindex="-1"></a><span class="co">#   - we visualize the empirical distribution of medians with a histogram</span></span>
-<span id="cb52-31"><a href="the-basics-of-probability-and-statistical-inference.html#cb52-31" aria-hidden="true" tabindex="-1"></a><span class="co">#   - we process the median vector to estimate the mean and standard error</span></span>
-<span id="cb52-32"><a href="the-basics-of-probability-and-statistical-inference.html#cb52-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-33"><a href="the-basics-of-probability-and-statistical-inference.html#cb52-33" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(mle,<span class="at">col=</span><span class="st">&quot;blue&quot;</span>,<span class="at">prob=</span><span class="cn">TRUE</span>,<span class="at">main=</span><span class="cn">NULL</span>,<span class="at">xlab=</span><span class="fu">expression</span>(theta))</span>
-<span id="cb52-34"><a href="the-basics-of-probability-and-statistical-inference.html#cb52-34" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="fl">2.25</span>,<span class="at">col=</span><span class="st">&quot;red&quot;</span>,<span class="at">lwd=</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
+<span id="cb51-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb51-2" aria-hidden="true" tabindex="-1"></a>theta  <span class="ot">&lt;-</span> <span class="fl">2.25</span></span>
+<span id="cb51-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb51-3" aria-hidden="true" tabindex="-1"></a>n      <span class="ot">&lt;-</span> <span class="dv">40</span></span>
+<span id="cb51-4"><a href="the-basics-of-probability-and-statistical-inference.html#cb51-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-5"><a href="the-basics-of-probability-and-statistical-inference.html#cb51-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Here, we show an alternative means by which to sample data.</span></span>
+<span id="cb51-6"><a href="the-basics-of-probability-and-statistical-inference.html#cb51-6" aria-hidden="true" tabindex="-1"></a><span class="co"># (This assumes that there is a data-sampling code that we can easily call.)</span></span>
+<span id="cb51-7"><a href="the-basics-of-probability-and-statistical-inference.html#cb51-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-8"><a href="the-basics-of-probability-and-statistical-inference.html#cb51-8" aria-hidden="true" tabindex="-1"></a>sample_data <span class="ot">&lt;-</span> <span class="cf">function</span>(n,theta)</span>
+<span id="cb51-9"><a href="the-basics-of-probability-and-statistical-inference.html#cb51-9" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb51-10"><a href="the-basics-of-probability-and-statistical-inference.html#cb51-10" aria-hidden="true" tabindex="-1"></a>  q <span class="ot">&lt;-</span> <span class="fu">runif</span>(n,<span class="at">min=</span><span class="dv">0</span>,<span class="at">max=</span><span class="dv">1</span>)</span>
+<span id="cb51-11"><a href="the-basics-of-probability-and-statistical-inference.html#cb51-11" aria-hidden="true" tabindex="-1"></a>  X <span class="ot">&lt;-</span> q<span class="sc">^</span>(<span class="dv">1</span><span class="sc">/</span>theta)</span>
+<span id="cb51-12"><a href="the-basics-of-probability-and-statistical-inference.html#cb51-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb51-13"><a href="the-basics-of-probability-and-statistical-inference.html#cb51-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-14"><a href="the-basics-of-probability-and-statistical-inference.html#cb51-14" aria-hidden="true" tabindex="-1"></a>num.sim <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb51-15"><a href="the-basics-of-probability-and-statistical-inference.html#cb51-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-16"><a href="the-basics-of-probability-and-statistical-inference.html#cb51-16" aria-hidden="true" tabindex="-1"></a><span class="co"># first: create one long vector of data, of length num.sim * n</span></span>
+<span id="cb51-17"><a href="the-basics-of-probability-and-statistical-inference.html#cb51-17" aria-hidden="true" tabindex="-1"></a>X.all   <span class="ot">&lt;-</span> <span class="fu">sample_data</span>(n<span class="sc">*</span>num.sim,theta)</span>
+<span id="cb51-18"><a href="the-basics-of-probability-and-statistical-inference.html#cb51-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-19"><a href="the-basics-of-probability-and-statistical-inference.html#cb51-19" aria-hidden="true" tabindex="-1"></a><span class="co"># second: &quot;fold&quot; the vector into a matrix with num.sim rows and n columns</span></span>
+<span id="cb51-20"><a href="the-basics-of-probability-and-statistical-inference.html#cb51-20" aria-hidden="true" tabindex="-1"></a><span class="co">#         every row of X is thus a separate independent dataset</span></span>
+<span id="cb51-21"><a href="the-basics-of-probability-and-statistical-inference.html#cb51-21" aria-hidden="true" tabindex="-1"></a>X       <span class="ot">&lt;-</span> <span class="fu">matrix</span>(X.all,<span class="at">nrow=</span>num.sim)</span>
+<span id="cb51-22"><a href="the-basics-of-probability-and-statistical-inference.html#cb51-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-23"><a href="the-basics-of-probability-and-statistical-inference.html#cb51-23" aria-hidden="true" tabindex="-1"></a><span class="co"># third: use R&#39;s apply() function to compute MLE for each row/dataset</span></span>
+<span id="cb51-24"><a href="the-basics-of-probability-and-statistical-inference.html#cb51-24" aria-hidden="true" tabindex="-1"></a><span class="co">#        the argument 1 means &quot;apply the following function to each row&quot;</span></span>
+<span id="cb51-25"><a href="the-basics-of-probability-and-statistical-inference.html#cb51-25" aria-hidden="true" tabindex="-1"></a><span class="co">#        x in the third argument is the data row; the function returns the mle</span></span>
+<span id="cb51-26"><a href="the-basics-of-probability-and-statistical-inference.html#cb51-26" aria-hidden="true" tabindex="-1"></a><span class="co">#        mle is thus a vector of maximum-likelihood estimates</span></span>
+<span id="cb51-27"><a href="the-basics-of-probability-and-statistical-inference.html#cb51-27" aria-hidden="true" tabindex="-1"></a>mle     <span class="ot">&lt;-</span> <span class="fu">apply</span>(X,<span class="dv">1</span>,<span class="cf">function</span>(x){<span class="sc">-</span>n<span class="sc">/</span><span class="fu">sum</span>(<span class="fu">log</span>(x))})</span>
+<span id="cb51-28"><a href="the-basics-of-probability-and-statistical-inference.html#cb51-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-29"><a href="the-basics-of-probability-and-statistical-inference.html#cb51-29" aria-hidden="true" tabindex="-1"></a><span class="co"># What do we want to do with the result? Here...</span></span>
+<span id="cb51-30"><a href="the-basics-of-probability-and-statistical-inference.html#cb51-30" aria-hidden="true" tabindex="-1"></a><span class="co">#   - we visualize the empirical distribution of medians with a histogram</span></span>
+<span id="cb51-31"><a href="the-basics-of-probability-and-statistical-inference.html#cb51-31" aria-hidden="true" tabindex="-1"></a><span class="co">#   - we process the median vector to estimate the mean and standard error</span></span>
+<span id="cb51-32"><a href="the-basics-of-probability-and-statistical-inference.html#cb51-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-33"><a href="the-basics-of-probability-and-statistical-inference.html#cb51-33" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span><span class="fu">data.frame</span>(<span class="at">mle=</span>mle),<span class="fu">aes</span>(<span class="at">x=</span>mle,<span class="at">y=</span><span class="fu">after_stat</span>(density))) <span class="sc">+</span></span>
+<span id="cb51-34"><a href="the-basics-of-probability-and-statistical-inference.html#cb51-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill=</span><span class="st">&quot;blue&quot;</span>,<span class="at">col=</span><span class="st">&quot;black&quot;</span>,<span class="at">breaks=</span><span class="fu">seq</span>(<span class="fl">1.2</span>,<span class="fl">4.2</span>,<span class="at">by=</span><span class="fl">0.2</span>)) <span class="sc">+</span></span>
+<span id="cb51-35"><a href="the-basics-of-probability-and-statistical-inference.html#cb51-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept=</span><span class="fl">2.25</span>,<span class="at">col=</span><span class="st">&quot;red&quot;</span>,<span class="at">lwd=</span><span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb51-36"><a href="the-basics-of-probability-and-statistical-inference.html#cb51-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="fu">expression</span>(theta)) <span class="sc">+</span></span>
+<span id="cb51-37"><a href="the-basics-of-probability-and-statistical-inference.html#cb51-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">1.25</span>)))</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:empmle"></span>
 <img src="_main_files/figure-html/empmle-1.png" alt="\label{fig:empmle}The empirical distribution of maximum likelihood estimates for $\theta$ for the distribution $f_X(x) = \theta x^{\theta-1}$ ($x \in [0,1]$) with $\theta = 2.25$ (red line) and $n = 40$." width="50%" />
 <p class="caption">
 Figure 1.35: The empirical distribution of maximum likelihood estimates for <span class="math inline">\(\theta\)</span> for the distribution <span class="math inline">\(f_X(x) = \theta x^{\theta-1}\)</span> (<span class="math inline">\(x \in [0,1]\)</span>) with <span class="math inline">\(\theta = 2.25\)</span> (red line) and <span class="math inline">\(n = 40\)</span>.
 </p>
 </div>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The empirical mean is               &quot;</span>,<span class="fu">round</span>(<span class="fu">mean</span>(mle),<span class="dv">3</span>),<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The empirical mean is               &quot;</span>,<span class="fu">round</span>(<span class="fu">mean</span>(mle),<span class="dv">3</span>),<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## The empirical mean is                2.317</code></pre>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The empirical standard deviation is &quot;</span>,<span class="fu">round</span>(<span class="fu">sd</span>(mle),<span class="dv">3</span>),<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The empirical standard deviation is &quot;</span>,<span class="fu">round</span>(<span class="fu">sd</span>(mle),<span class="dv">3</span>),<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## The empirical standard deviation is  0.377</code></pre>
 <hr />
 </div>
@@ -4044,13 +4119,13 @@ officially introduce in Chapter 3. (This allows us to utilize the
 <code>R</code> random variable sampling function <code>rbeta()</code> rather than having to
 create our own inverse-transform data sampler.)</p>
 </blockquote>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
-<span id="cb57-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb57-2" aria-hidden="true" tabindex="-1"></a>num.sim     <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
-<span id="cb57-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb57-3" aria-hidden="true" tabindex="-1"></a>theta       <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb57-4"><a href="the-basics-of-probability-and-statistical-inference.html#cb57-4" aria-hidden="true" tabindex="-1"></a>y.obs       <span class="ot">&lt;-</span> <span class="fu">rbeta</span>(num.sim,theta,<span class="dv">1</span>) <span class="co"># R can do the sampling for us here</span></span>
-<span id="cb57-5"><a href="the-basics-of-probability-and-statistical-inference.html#cb57-5" aria-hidden="true" tabindex="-1"></a>hat.theta.L <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fl">0.0253</span><span class="sc">/</span><span class="fu">log</span>(y.obs)</span>
-<span id="cb57-6"><a href="the-basics-of-probability-and-statistical-inference.html#cb57-6" aria-hidden="true" tabindex="-1"></a>hat.theta.U <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fl">3.689</span><span class="sc">/</span><span class="fu">log</span>(y.obs)</span>
-<span id="cb57-7"><a href="the-basics-of-probability-and-statistical-inference.html#cb57-7" aria-hidden="true" tabindex="-1"></a>(coverage   <span class="ot">&lt;-</span> <span class="fu">sum</span>(theta<span class="sc">&gt;=</span>hat.theta.L <span class="sc">&amp;</span> theta<span class="sc">&lt;=</span>hat.theta.U)<span class="sc">/</span>num.sim)</span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
+<span id="cb56-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb56-2" aria-hidden="true" tabindex="-1"></a>num.sim     <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
+<span id="cb56-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb56-3" aria-hidden="true" tabindex="-1"></a>theta       <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb56-4"><a href="the-basics-of-probability-and-statistical-inference.html#cb56-4" aria-hidden="true" tabindex="-1"></a>y.obs       <span class="ot">&lt;-</span> <span class="fu">rbeta</span>(num.sim,theta,<span class="dv">1</span>) <span class="co"># R can do the sampling for us here</span></span>
+<span id="cb56-5"><a href="the-basics-of-probability-and-statistical-inference.html#cb56-5" aria-hidden="true" tabindex="-1"></a>hat.theta.L <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fl">0.0253</span><span class="sc">/</span><span class="fu">log</span>(y.obs)</span>
+<span id="cb56-6"><a href="the-basics-of-probability-and-statistical-inference.html#cb56-6" aria-hidden="true" tabindex="-1"></a>hat.theta.U <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fl">3.689</span><span class="sc">/</span><span class="fu">log</span>(y.obs)</span>
+<span id="cb56-7"><a href="the-basics-of-probability-and-statistical-inference.html#cb56-7" aria-hidden="true" tabindex="-1"></a>(coverage   <span class="ot">&lt;-</span> <span class="fu">sum</span>(theta<span class="sc">&gt;=</span>hat.theta.L <span class="sc">&amp;</span> theta<span class="sc">&lt;=</span>hat.theta.U)<span class="sc">/</span>num.sim)</span></code></pre></div>
 <pre><code>## [1] 0.9523</code></pre>
 <blockquote>
 <p>Before discussing the result, let’s talk about what is happening
@@ -4103,11 +4178,11 @@ beta family of distributions, which we
 officially introduce in Chapter 3; thus we can utilize <code>rbeta()</code> like
 we do in the last example above.</p>
 </blockquote>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
-<span id="cb59-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb59-2" aria-hidden="true" tabindex="-1"></a>theta       <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb59-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb59-3" aria-hidden="true" tabindex="-1"></a>num.sim     <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
-<span id="cb59-4"><a href="the-basics-of-probability-and-statistical-inference.html#cb59-4" aria-hidden="true" tabindex="-1"></a>y.obs       <span class="ot">&lt;-</span> <span class="fu">rbeta</span>(num.sim,<span class="dv">1</span>,theta)</span>
-<span id="cb59-5"><a href="the-basics-of-probability-and-statistical-inference.html#cb59-5" aria-hidden="true" tabindex="-1"></a>(typeIerror <span class="ot">&lt;-</span> <span class="fu">sum</span>(y.obs<span class="sc">&gt;=</span>(<span class="dv">1</span><span class="sc">-</span><span class="fu">sqrt</span>(<span class="fl">0.05</span>)))<span class="sc">/</span>num.sim)</span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
+<span id="cb58-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb58-2" aria-hidden="true" tabindex="-1"></a>theta       <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb58-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb58-3" aria-hidden="true" tabindex="-1"></a>num.sim     <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
+<span id="cb58-4"><a href="the-basics-of-probability-and-statistical-inference.html#cb58-4" aria-hidden="true" tabindex="-1"></a>y.obs       <span class="ot">&lt;-</span> <span class="fu">rbeta</span>(num.sim,<span class="dv">1</span>,theta)</span>
+<span id="cb58-5"><a href="the-basics-of-probability-and-statistical-inference.html#cb58-5" aria-hidden="true" tabindex="-1"></a>(typeIerror <span class="ot">&lt;-</span> <span class="fu">sum</span>(y.obs<span class="sc">&gt;=</span>(<span class="dv">1</span><span class="sc">-</span><span class="fu">sqrt</span>(<span class="fl">0.05</span>)))<span class="sc">/</span>num.sim)</span></code></pre></div>
 <pre><code>## [1] 0.0508</code></pre>
 <blockquote>
 <p>We find that we make Type I errors 508 times, or that the empirical
