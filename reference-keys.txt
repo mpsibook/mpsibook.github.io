@@ -41,7 +41,6 @@ fig:normcdf2
 fig:normviz
 fig:chi2
 fig:t
-fig:simind
 fig:fisher
 fig:sigma2hatmle
 fig:mukvarci
@@ -77,8 +76,7 @@ fig:ppmf
 fig:poicdf
 fig:xbarpois
 fig:poici
-fig:lrtsim-1
-fig:lrtsim-2
+fig:lrtsim
 fig:gammapdf
 fig:nbmodel
 fig:unifpdf
@@ -93,8 +91,8 @@ fig:covplot1
 fig:covplot2
 fig:mulfig3
 fig:marcond
-fig:unnamed-chunk-129
-fig:unnamed-chunk-130
+fig:mvmarg
+fig:mvcond
 fig:sampx
 the-basics-of-probability-and-statistical-inference
 data-and-statistical-populations
@@ -179,7 +177,6 @@ sample-variance-of-normal-random-variables
 computing-probabilities-4
 expected-value-of-the-sample-variance-and-standard-deviation
 standardizing-a-normal-random-variable-with-unknown-variance
-the-sample-mean-and-standard-deviation-are-independent-random-variables
 computing-probabilities-5
 point-estimation-1
 maximum-likelihood-estimation-for-normal-variance

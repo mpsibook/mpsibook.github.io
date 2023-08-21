@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Appendix B: Root-Finding Algorithm for Confidence Intervals | Modern Probability and Statistical Inference</title>
-  <meta name="description" content="Appendix B: Root-Finding Algorithm for Confidence Intervals | Modern Probability and Statistical Inference" />
+  <title>Acknowledgements | Modern Probability and Statistical Inference</title>
+  <meta name="description" content="Acknowledgements | Modern Probability and Statistical Inference" />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Appendix B: Root-Finding Algorithm for Confidence Intervals | Modern Probability and Statistical Inference" />
+  <meta property="og:title" content="Acknowledgements | Modern Probability and Statistical Inference" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Appendix B: Root-Finding Algorithm for Confidence Intervals | Modern Probability and Statistical Inference" />
+  <meta name="twitter:title" content="Acknowledgements | Modern Probability and Statistical Inference" />
   
   
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="appendix-a-table-of-symbols.html"/>
-<link rel="next" href="bibliography.html"/>
+<link rel="prev" href="preface.html"/>
+<link rel="next" href="the-basics-of-probability-and-statistical-inference.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -545,66 +545,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="appendix-b-root-finding-algorithm-for-confidence-intervals" class="section level1 unnumbered hasAnchor">
-<h1>Appendix B: Root-Finding Algorithm for Confidence Intervals<a href="appendix-b-root-finding-algorithm-for-confidence-intervals.html#appendix-b-root-finding-algorithm-for-confidence-intervals" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<pre><code>confint &lt;- function(FUN,param,stat,lpb=-1.e+4,upb=1.e+4,
-                    bound=&quot;two-sided&quot;,alpha=0.05,tolb=1.e-6,tol=1.e-6,...)
-{
-  f &lt;- function(x,FUN,param,stat,c,...)
-  {
-    pars &lt;- function(...) { list(...) }
-    args &lt;- pars(...)
-    args &lt;- append(args,stat)
-    names(args)[length(args)] &lt;- &quot;q&quot;
-    if ( is.null(param) == FALSE ) {
-      args &lt;- append(args,x)
-      names(args)[length(args)] &lt;- param
-    }
-    do.call(FUN,args) - c
-  }
-  
-  findRoot &lt;- function(f,lpb,upb,tolb,FUN,param,stat,q,tol,...)
-  {
-    tryCatch(
-      {uniroot(f,interval=c(lpb+tolb,upb-tolb),tol=tol,FUN,param,stat,q,...)$root},
-      warning = function(w) { cat(&quot;The interval bounds are invalid.\n&quot;); return(NULL); },
-      error = function(e) { cat(&quot;Root not computable.\n&quot;); return(NULL) }
-    )
-  }
-
-  if ( bound == &quot;two-sided&quot; ) {
-    lo &lt;- findRoot(f,lpb,upb,tolb,FUN,param,stat,1-alpha/2,tol,...)
-    if ( is.null(lo) ) { return(NULL) }
-    hi &lt;- findRoot(f,lpb,upb,tolb,FUN,param,stat,alpha/2,tol,...)
-    if ( hi &lt; lo ) { tmp = hi; hi = lo; lo = tmp; }
-    return(c(lo,hi))
-  } else if ( bound == &quot;lower&quot; ) {
-    lo.inc &lt;- findRoot(f,lpb,upb,tolb,FUN,param,stat,1-alpha,tol,...)
-    if ( is.null(lo.inc) ) { return(NULL) }
-    lo.dec &lt;- findRoot(f,lpb,upb,tolb,FUN,param,stat,alpha,tol,...)
-    lo &lt;- min(c(lo.inc,lo.dec))
-    return(lo)
-  } else if ( bound == &quot;upper&quot; ) {
-    hi.inc &lt;- findRoot(f,lpb,upb,tolb,FUN,param,stat,alpha,tol,...)
-    if ( is.null(hi.inc) ) { return(NULL) }
-    hi.dec &lt;- findRoot(f,lpb,upb,tolb,FUN,param,stat,1-alpha,tol,...)
-    hi &lt;- max(c(hi.inc,hi.dec))
-    return(hi)
-  } else {
-    stop(&quot;invalid choice for bound&quot;)
-  }
-  return(NULL)
-}</code></pre>
+<div id="acknowledgements" class="section level1 unnumbered hasAnchor">
+<h1>Acknowledgements<a href="acknowledgements.html#acknowledgements" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>I would like to thank Eileen Xiao, who converted the original base-<code>R</code>
+graphics in the book to <code>ggplot()</code>-based graphics during the summer of 2023.</p>
 
 <div style="page-break-after: always;"></div>
+<!--
+\mainmatter
+-->
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="appendix-a-table-of-symbols.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="bibliography.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="preface.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="the-basics-of-probability-and-statistical-inference.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -29,7 +29,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="preface.html"/>
+<link rel="prev" href="acknowledgements.html"/>
 <link rel="next" href="the-normal-and-related-distributions.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -91,7 +91,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -104,7 +104,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -133,6 +133,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <ul class="summary">
 <li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i>Acknowledgements</a></li>
 <li class="chapter" data-level="1" data-path="the-basics-of-probability-and-statistical-inference.html"><a href="the-basics-of-probability-and-statistical-inference.html"><i class="fa fa-check"></i><b>1</b> The Basics of Probability and Statistical Inference</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="the-basics-of-probability-and-statistical-inference.html"><a href="the-basics-of-probability-and-statistical-inference.html#data-and-statistical-populations"><i class="fa fa-check"></i><b>1.1</b> Data and Statistical Populations</a></li>
@@ -266,8 +267,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="2.10" data-path="the-normal-and-related-distributions.html"><a href="the-normal-and-related-distributions.html#standardizing-a-normal-random-variable-with-unknown-variance"><i class="fa fa-check"></i><b>2.10</b> Standardizing a Normal Random Variable with Unknown Variance</a>
 <ul>
-<li class="chapter" data-level="2.10.1" data-path="the-normal-and-related-distributions.html"><a href="the-normal-and-related-distributions.html#the-sample-mean-and-standard-deviation-are-independent-random-variables"><i class="fa fa-check"></i><b>2.10.1</b> The Sample Mean and Standard Deviation Are Independent Random Variables</a></li>
-<li class="chapter" data-level="2.10.2" data-path="the-normal-and-related-distributions.html"><a href="the-normal-and-related-distributions.html#computing-probabilities-5"><i class="fa fa-check"></i><b>2.10.2</b> Computing Probabilities</a></li>
+<li class="chapter" data-level="2.10.1" data-path="the-normal-and-related-distributions.html"><a href="the-normal-and-related-distributions.html#computing-probabilities-5"><i class="fa fa-check"></i><b>2.10.1</b> Computing Probabilities</a></li>
 </ul></li>
 <li class="chapter" data-level="2.11" data-path="the-normal-and-related-distributions.html"><a href="the-normal-and-related-distributions.html#point-estimation-1"><i class="fa fa-check"></i><b>2.11</b> Point Estimation</a>
 <ul>
@@ -1721,12 +1721,13 @@ element of <code>f.x</code>, etc.). We see that the minimum value is 0.</p>
 Figure 1.13: The function <span class="math inline">\(x \sin x\)</span>.
 </p>
 </div>
-<p>#TBD: explain ggplot() instead of plot()
-The <code>plot()</code> function puts <code>x</code> on the <span class="math inline">\(x\)</span>-axis, <code>f.x</code> on the <span class="math inline">\(y\)</span>-axis,
-connects each point with a line (<code>typ="l"</code>), makes the line twice as
-wide as the default width (<code>lwd=2</code>), makes the line blue (<code>col="blue"</code>),
-and changes the default <span class="math inline">\(y\)</span>-axis label to one that includes the subscript “X”.
-We then overlay a horizontal red line at <span class="math inline">\(y = 0\)</span> (<code>abline</code>, with <code>h=0</code>).</p>
+<p>The <code>ggplot()</code> function puts <code>x</code> on the <span class="math inline">\(x\)</span>-axis and <code>f.x</code> on the <span class="math inline">\(y\)</span>-axis.
+We then connect each point with a line (<code>geom_line()</code>),
+make the line blue (<code>col="blue"</code>),
+overlay a horizontal red line at <span class="math inline">\(y = 0\)</span> (<code>geom_hline()</code>,
+with <code>yintercept=0</code>),
+and change the default <span class="math inline">\(y\)</span>-axis label to one that includes the subscript “X”
+(<code>labs()</code>).</p>
 <p>The next step is to determine the normalization constant. Let’s suppose
 that we have forgotten integration by parts and thus we are not sure
 how to integrate <span class="math inline">\(f_X(x)\)</span>. We can code numerical integration in <code>R</code> using a
@@ -1993,15 +1994,12 @@ P\left(\frac{1}{4} \leq X \leq \frac{3}{4}\right) = F_X\left(\frac{3}{4} \vert \
 region being integrated over to compute a cdf value, for say <span class="math inline">\(x = 0.6\)</span>,
 we utilize <code>R</code>’s <code>polygon()</code> function. (See Figure <a href="the-basics-of-probability-and-statistical-inference.html#fig:cdfpoly">1.17</a>.)</p>
 </blockquote>
-<blockquote>
-<p>TBD - explain geom_area() instead of polygon()</p>
-</blockquote>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb33-1" aria-hidden="true" tabindex="-1"></a>x        <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="at">by=</span><span class="fl">0.01</span>)</span>
 <span id="cb33-2"><a href="the-basics-of-probability-and-statistical-inference.html#cb33-2" aria-hidden="true" tabindex="-1"></a>f.x      <span class="ot">&lt;-</span> <span class="dv">3</span><span class="sc">*</span>x<span class="sc">^</span><span class="dv">2</span></span>
 <span id="cb33-3"><a href="the-basics-of-probability-and-statistical-inference.html#cb33-3" aria-hidden="true" tabindex="-1"></a>x.o      <span class="ot">&lt;-</span> <span class="fl">0.6</span></span>
 <span id="cb33-4"><a href="the-basics-of-probability-and-statistical-inference.html#cb33-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb33-5"><a href="the-basics-of-probability-and-statistical-inference.html#cb33-5" aria-hidden="true" tabindex="-1"></a>df       <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x=</span>x,<span class="at">f.x=</span>f.x)</span>
-<span id="cb33-6"><a href="the-basics-of-probability-and-statistical-inference.html#cb33-6" aria-hidden="true" tabindex="-1"></a>df.shade <span class="ot">&lt;-</span> <span class="fu">subset</span>(df,x<span class="sc">&lt;=</span> x.o)</span>
+<span id="cb33-6"><a href="the-basics-of-probability-and-statistical-inference.html#cb33-6" aria-hidden="true" tabindex="-1"></a>df.shade <span class="ot">&lt;-</span> <span class="fu">subset</span>(df,x<span class="sc">&lt;=</span>x.o)</span>
 <span id="cb33-7"><a href="the-basics-of-probability-and-statistical-inference.html#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>df,<span class="fu">aes</span>(<span class="at">x=</span>x,<span class="at">y=</span>f.x)) <span class="sc">+</span></span>
 <span id="cb33-8"><a href="the-basics-of-probability-and-statistical-inference.html#cb33-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">col=</span><span class="st">&quot;blue&quot;</span>,<span class="at">lwd=</span><span class="dv">1</span>) <span class="sc">+</span></span>
 <span id="cb33-9"><a href="the-basics-of-probability-and-statistical-inference.html#cb33-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_area</span>(<span class="at">data =</span> df.shade,<span class="fu">aes</span>(x,<span class="at">y=</span>f.x),<span class="at">fill=</span><span class="st">&quot;green&quot;</span>,<span class="at">col=</span><span class="st">&quot;blue&quot;</span>,<span class="at">outline.type=</span><span class="st">&quot;full&quot;</span>) <span class="sc">+</span></span>
@@ -2017,18 +2015,11 @@ Figure 1.17: The cdf for <span class="math inline">\(f_X(x) = 3x^2\)</span> at <
 <blockquote>
 <p>What is happening in this code chunk? We first define a sequence of
 values for <code>x</code> (via <code>seq()</code>), then compute the pdf for each <code>x</code> value
-(<code>f.x</code>). We then determine which indices of the <code>x</code> vector correspond
-to values of <code>x</code> that are less than or equal to 0.6 (via <code>which()</code>).
-<code>which()</code> returns a list of indices (stored as <code>w</code>) such that, e.g.,
-<code>x[w]</code> contains only those value of <code>x</code> that are less than or equal
-to 0.6. (We note that <code>x[-w]</code> would contain only those values of <code>x</code>
-that are greater than 0.6.) To create the polygon, we define a series
-of points along its border, in order around the border (meaning that
-<code>x[w]</code>, which counts upwards, is followed by <code>rev(x[w])</code>, which takes
-the same coordinates but counts downwards). As we count upwards in
-<code>x</code>, the border value has a <span class="math inline">\(y\)</span>-coordinate of 0 (representing the
-lower edge of the polygon), and rather than writing <code>0</code> many times,
-we use the <code>rep()</code> function to repeat the value.</p>
+(<code>f.x</code>). We then define a data frame with <code>x</code> and <code>f.x</code> as columns,
+and determine which rows correspond
+to values of <code>x</code> that are less than or equal to 0.6 (via <code>subset()</code>).
+To create the polygon, we pass the subset data frame <code>df.shade</code> to
+the function <code>geom_area()</code>.</p>
 </blockquote>
 <blockquote>
 <p>If we wish to visualize the full cdf, we can do the following.
@@ -2331,7 +2322,7 @@ to confirm that <span class="math inline">\(f_X(x)\)</span> is a valid pdf that 
 quite true. A handy result that we will utilize as the book goes on
 is that
 <span class="math display">\[
-\Gamma(x) = \int_0^\infty u^{x-1} \exp(-u) du \,.
+\Gamma(t) = \int_0^\infty u^{t-1} \exp(-u) du \,.
 \]</span>
 This is the gamma function. (The symbol <span class="math inline">\(\Gamma\)</span> represents a capital gamma.)
 One of the properties that makes
@@ -4204,7 +4195,7 @@ turn this evidence into something more quantitative!)</p>
           </div>
         </div>
       </div>
-<a href="preface.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="acknowledgements.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="the-normal-and-related-distributions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>

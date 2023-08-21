@@ -91,7 +91,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -104,7 +104,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -133,6 +133,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <ul class="summary">
 <li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i>Acknowledgements</a></li>
 <li class="chapter" data-level="1" data-path="the-basics-of-probability-and-statistical-inference.html"><a href="the-basics-of-probability-and-statistical-inference.html"><i class="fa fa-check"></i><b>1</b> The Basics of Probability and Statistical Inference</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="the-basics-of-probability-and-statistical-inference.html"><a href="the-basics-of-probability-and-statistical-inference.html#data-and-statistical-populations"><i class="fa fa-check"></i><b>1.1</b> Data and Statistical Populations</a></li>
@@ -266,8 +267,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="2.10" data-path="the-normal-and-related-distributions.html"><a href="the-normal-and-related-distributions.html#standardizing-a-normal-random-variable-with-unknown-variance"><i class="fa fa-check"></i><b>2.10</b> Standardizing a Normal Random Variable with Unknown Variance</a>
 <ul>
-<li class="chapter" data-level="2.10.1" data-path="the-normal-and-related-distributions.html"><a href="the-normal-and-related-distributions.html#the-sample-mean-and-standard-deviation-are-independent-random-variables"><i class="fa fa-check"></i><b>2.10.1</b> The Sample Mean and Standard Deviation Are Independent Random Variables</a></li>
-<li class="chapter" data-level="2.10.2" data-path="the-normal-and-related-distributions.html"><a href="the-normal-and-related-distributions.html#computing-probabilities-5"><i class="fa fa-check"></i><b>2.10.2</b> Computing Probabilities</a></li>
+<li class="chapter" data-level="2.10.1" data-path="the-normal-and-related-distributions.html"><a href="the-normal-and-related-distributions.html#computing-probabilities-5"><i class="fa fa-check"></i><b>2.10.1</b> Computing Probabilities</a></li>
 </ul></li>
 <li class="chapter" data-level="2.11" data-path="the-normal-and-related-distributions.html"><a href="the-normal-and-related-distributions.html#point-estimation-1"><i class="fa fa-check"></i><b>2.11</b> Point Estimation</a>
 <ul>
@@ -583,7 +583,7 @@ f_X(x) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\ri
 The first thing we notice about this pdf is that it is symmetric around <span class="math inline">\(\mu\)</span>.
 The second thing that we notice is that the integral under this curve
 approaches 1 over the range <span class="math inline">\(\mu - 3\sigma \leq x \leq \mu + 3\sigma\)</span>.
-(The value of the integral of <span class="math inline">\(f(x)\)</span> over this range is 0.9973. This gives
+(The value of the integral of <span class="math inline">\(f_X(x)\)</span> over this range is 0.9973. This gives
 rise to one aspect of the so-called <em>empirical rule</em>: if data are approximately
 normally distributed, we expect all of the data to lie with three standard
 deviations of the sample mean, with rare exceptions.) See Figure <a href="the-normal-and-related-distributions.html#fig:normpdf">2.1</a>.</p>
@@ -1022,19 +1022,16 @@ is <span class="math inline">\(x = 2\)</span> to <span class="math inline">\(x =
 <p>The third step is to code. The result of our coding is shown in
 Figure <a href="the-normal-and-related-distributions.html#fig:normviz">2.6</a>.</p>
 </blockquote>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="the-normal-and-related-distributions.html#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TBD</span><span class="co">, edit annotations if necessary</span></span>
-<span id="cb70-2"><a href="the-normal-and-related-distributions.html#cb70-2" aria-hidden="true" tabindex="-1"></a>x         <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">2</span>,<span class="dv">18</span>,<span class="at">by=</span><span class="fl">0.05</span>)      <span class="co"># vector with x = {2,2.05,2.1,...,18}</span></span>
-<span id="cb70-3"><a href="the-normal-and-related-distributions.html#cb70-3" aria-hidden="true" tabindex="-1"></a>fx        <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x,<span class="at">mean=</span><span class="dv">10</span>,<span class="at">sd=</span><span class="dv">2</span>)  <span class="co"># compute f(x) for all x</span></span>
-<span id="cb70-4"><a href="the-normal-and-related-distributions.html#cb70-4" aria-hidden="true" tabindex="-1"></a>df        <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x=</span>x,<span class="at">fx=</span>fx)  <span class="co"># define a dataframe with above data</span></span>
-<span id="cb70-5"><a href="the-normal-and-related-distributions.html#cb70-5" aria-hidden="true" tabindex="-1"></a>df.shaded <span class="ot">&lt;-</span> <span class="fu">subset</span>(df,x<span class="sc">&lt;=</span><span class="dv">9</span>)        <span class="co"># get subset of data with x values &lt;= 9</span></span>
-<span id="cb70-6"><a href="the-normal-and-related-distributions.html#cb70-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb70-7"><a href="the-normal-and-related-distributions.html#cb70-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>df,<span class="fu">aes</span>(<span class="at">x=</span>x,<span class="at">y=</span>fx)) <span class="sc">+</span></span>
-<span id="cb70-8"><a href="the-normal-and-related-distributions.html#cb70-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">col=</span><span class="st">&quot;blue&quot;</span>,<span class="at">lwd=</span><span class="dv">1</span>) <span class="sc">+</span>     <span class="co"># plot the pdf</span></span>
-<span id="cb70-9"><a href="the-normal-and-related-distributions.html#cb70-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_area</span>(<span class="at">data=</span>df.shaded,         <span class="co"># add area underneath subset of data</span></span>
-<span id="cb70-10"><a href="the-normal-and-related-distributions.html#cb70-10" aria-hidden="true" tabindex="-1"></a>            <span class="at">fill=</span><span class="st">&quot;red&quot;</span>,<span class="at">col=</span><span class="st">&quot;blue&quot;</span>,</span>
-<span id="cb70-11"><a href="the-normal-and-related-distributions.html#cb70-11" aria-hidden="true" tabindex="-1"></a>            <span class="at">outline.type=</span><span class="st">&quot;full&quot;</span>) <span class="sc">+</span></span>
-<span id="cb70-12"><a href="the-normal-and-related-distributions.html#cb70-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y=</span><span class="st">&quot;f(x)&quot;</span>) <span class="sc">+</span></span>
-<span id="cb70-13"><a href="the-normal-and-related-distributions.html#cb70-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">1.25</span>)))</span></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="the-normal-and-related-distributions.html#cb70-1" aria-hidden="true" tabindex="-1"></a>x         <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">2</span>,<span class="dv">18</span>,<span class="at">by=</span><span class="fl">0.05</span>)       <span class="co"># vector with x = {2,2.05,2.1,...,18}</span></span>
+<span id="cb70-2"><a href="the-normal-and-related-distributions.html#cb70-2" aria-hidden="true" tabindex="-1"></a>f.x       <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x,<span class="at">mean=</span><span class="dv">10</span>,<span class="at">sd=</span><span class="dv">2</span>)   <span class="co"># compute f(x) for all x</span></span>
+<span id="cb70-3"><a href="the-normal-and-related-distributions.html#cb70-3" aria-hidden="true" tabindex="-1"></a>df        <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x=</span>x,<span class="at">f.x=</span>f.x) <span class="co"># define a dataframe with above data</span></span>
+<span id="cb70-4"><a href="the-normal-and-related-distributions.html#cb70-4" aria-hidden="true" tabindex="-1"></a>df.shaded <span class="ot">&lt;-</span> <span class="fu">subset</span>(df,x<span class="sc">&lt;=</span><span class="dv">9</span>)         <span class="co"># get subset of data with x values &lt;= 9</span></span>
+<span id="cb70-5"><a href="the-normal-and-related-distributions.html#cb70-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-6"><a href="the-normal-and-related-distributions.html#cb70-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>df,<span class="fu">aes</span>(<span class="at">x=</span>x,<span class="at">y=</span>f.x)) <span class="sc">+</span></span>
+<span id="cb70-7"><a href="the-normal-and-related-distributions.html#cb70-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">col=</span><span class="st">&quot;blue&quot;</span>,<span class="at">lwd=</span><span class="dv">1</span>) <span class="sc">+</span>     </span>
+<span id="cb70-8"><a href="the-normal-and-related-distributions.html#cb70-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_area</span>(<span class="at">data=</span>df.shaded,<span class="at">fill=</span><span class="st">&quot;red&quot;</span>,<span class="at">col=</span><span class="st">&quot;blue&quot;</span>,<span class="at">outline.type=</span><span class="st">&quot;full&quot;</span>) <span class="sc">+</span></span>
+<span id="cb70-9"><a href="the-normal-and-related-distributions.html#cb70-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="fu">expression</span>(f[X]<span class="sc">*</span><span class="st">&quot;(x)&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb70-10"><a href="the-normal-and-related-distributions.html#cb70-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">1.25</span>)))</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:normviz"></span>
 <img src="_main_files/figure-html/normviz-1.png" alt="\label{fig:normviz}The cumulative distribution function is the area of the red-shaded region." width="50%" />
 <p class="caption">
@@ -1662,26 +1659,25 @@ E[X] &amp;= \int_0^\infty x f_X(x) dx \\
 To find the value of this integral, we are going to utilize the
 gamma function
 <span class="math display">\[
-\Gamma(u) = \int_0^\infty x^{u-1} \exp(-x) dx
+\Gamma(t) = \int_0^\infty u^{t-1} \exp(-u) du \,,
 \]</span>
-(TBD: this is defined “backwards” in terms of u and x from Chapter 1.)
 which we first introduced in an example in Chapter 1.
-(Note that <span class="math inline">\(u &gt; 0\)</span>.) Recall that if <span class="math inline">\(u\)</span> is an integer, then
-<span class="math inline">\(\Gamma(u) = (u-1)! = (u-1) \times (u-2) \times \cdots \times 1\)</span>, with
-the exclamation point representing the factorial function. If <span class="math inline">\(u\)</span> is
-a half-integer and small, one can look up the value of <span class="math inline">\(\Gamma(u)\)</span> online.</p>
+(Note that <span class="math inline">\(t &gt; 0\)</span>.) Recall that if <span class="math inline">\(t\)</span> is an integer, then
+<span class="math inline">\(\Gamma(t) = (t-1)! = (t-1) \times (t-2) \times \cdots \times 1\)</span>, with
+the exclamation point representing the factorial function. If <span class="math inline">\(t\)</span> is
+a half-integer and small, one can look up the value of <span class="math inline">\(\Gamma(t)\)</span> online.</p>
 </blockquote>
 <blockquote>
 <p>The integral we are trying to compute doesn’t quite match the form
 of the gamma function integral…but as you should recognize by now, we
-can attempt a variable substitution to change <span class="math inline">\(e^{-x/2}\)</span> to <span class="math inline">\(e^{-y}\)</span>:
+can attempt a variable substitution to change <span class="math inline">\(e^{-x/2}\)</span> to <span class="math inline">\(e^{-u}\)</span>:
 <span class="math display">\[
-y = x/2 ~,~ dy = dx/2 ~,~ x = 0 \implies y = 0 ~,~ x = \infty \implies y = \infty
+u = x/2 ~,~ du = dx/2 ~,~ x = 0 \implies u = 0 ~,~ x = \infty \implies u = \infty
 \]</span>
 We thus rewrite our expected value as
 <span class="math display">\[\begin{align*}
-E[X] &amp;= \int_0^\infty \frac{\sqrt{2}y^{1/2}}{\sqrt{2\pi}} \exp(-y) (2 dy) \\
-&amp;= \frac{2}{\sqrt{\pi}} \int_0^\infty y^{1/2} \exp(-y) dy \\
+E[X] &amp;= \int_0^\infty \frac{\sqrt{2}u^{1/2}}{\sqrt{2\pi}} \exp(-u) (2 du) \\
+&amp;= \frac{2}{\sqrt{\pi}} \int_0^\infty u^{1/2} \exp(-u) du \\
 &amp;= \frac{2}{\sqrt{\pi}} \Gamma\left(\frac{3}{2}\right) \\
 &amp;= \frac{2}{\sqrt{\pi}} \frac{\sqrt{\pi}}{2} = 1
 \end{align*}\]</span>
@@ -1984,9 +1980,10 @@ undefined. Appealing to intuition, we can form a (symmetric)
 <span class="math inline">\(t\)</span> distribution by taking
 a standard normal <span class="math inline">\(\mathcal{N}(0,1)\)</span> and “pushing down” in the center, the
 act of which transfers probability density equally to both the lower and
-upper tails. In Figure <a href="the-normal-and-related-distributions.html#fig:t">2.8</a>, we see that the smaller the number of degrees of
-freedom, the more density is transferred to the tails, and that as <span class="math inline">\(n\)</span> increases,
-the more and more <span class="math inline">\(f_{T(n-1)}(t)\)</span> becomes indistinguishable from a standard normal.
+upper tails. In Figure <a href="the-normal-and-related-distributions.html#fig:t">2.8</a>, we see that the smaller the
+number of degrees of freedom, the more density is transferred to the tails,
+and that as <span class="math inline">\(n\)</span> increases, the more and more <span class="math inline">\(f_{T(n-1)}(t)\)</span> becomes
+indistinguishable from a standard normal.
 (A more technical way of stating this is that the random variable <span class="math inline">\(T\)</span>
 converges in distribution to a standard normal random variable
 as <span class="math inline">\(n \rightarrow \infty\)</span>.)</p>
@@ -1996,6 +1993,23 @@ as <span class="math inline">\(n \rightarrow \infty\)</span>.)</p>
 Figure 2.8: The natural logarithm of the pdf for the standard normal (black) and for <span class="math inline">\(t\)</span> distributions with 3 (red), 6 (green), and 12 (blue) degrees of freedom. We observe that as <span class="math inline">\(n\)</span> decreases, there is more probability density in the lower and upper tails of the distributions.
 </p>
 </div>
+<pre><code>## List of 1
+##  $ axis.title:List of 11
+##   ..$ family       : NULL
+##   ..$ face         : NULL
+##   ..$ colour       : NULL
+##   ..$ size         : &#39;rel&#39; num 1.25
+##   ..$ hjust        : NULL
+##   ..$ vjust        : NULL
+##   ..$ angle        : NULL
+##   ..$ lineheight   : NULL
+##   ..$ margin       : NULL
+##   ..$ debug        : NULL
+##   ..$ inherit.blank: logi FALSE
+##   ..- attr(*, &quot;class&quot;)= chr [1:2] &quot;element_text&quot; &quot;element&quot;
+##  - attr(*, &quot;class&quot;)= chr [1:2] &quot;theme&quot; &quot;gg&quot;
+##  - attr(*, &quot;complete&quot;)= logi FALSE
+##  - attr(*, &quot;validate&quot;)= logi TRUE</code></pre>
 <table>
 <caption><span class="math inline">\(t\)</span> Distribution - <code>R</code> Functions</caption>
 <thead>
@@ -2024,76 +2038,8 @@ Figure 2.8: The natural logarithm of the pdf for the standard normal (black) and
 </tbody>
 </table>
 <hr />
-<div id="the-sample-mean-and-standard-deviation-are-independent-random-variables" class="section level3 hasAnchor" number="2.10.1">
-<h3><span class="header-section-number">2.10.1</span> The Sample Mean and Standard Deviation Are Independent Random Variables<a href="the-normal-and-related-distributions.html#the-sample-mean-and-standard-deviation-are-independent-random-variables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<blockquote>
-<p>TBD – didn’t I intend to get rid of this example?</p>
-</blockquote>
-<blockquote>
-<p>We state above that the sample mean, <span class="math inline">\(\bar{X}\)</span>, and the sample standard
-deviation, <span class="math inline">\(S\)</span>, are independent random variables, and that the proof is
-beyond the scope of this book. Here, we show a means by which one
-can visually demonstrate independence, using a simulation.</p>
-</blockquote>
-<blockquote>
-<p>The overarching idea in the simulation is to demonstrate that, e.g.,
-<span class="math inline">\(f_{\bar{X}}(\bar{X} \vert S) = f_{\bar{X}}(\bar{X})\)</span>. We do this
-by sampling values of <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span>, generating a dataset
-<span class="math inline">\(\{X_1,\ldots,X_n\} \sim \mathcal{N}(\mu,\sigma^2)\)</span>, and
-recording <span class="math inline">\(\bar{X}\)</span> and <span class="math inline">\(S\)</span>, repeating this process <span class="math inline">\(m\)</span> times.
-We then overlay the observed distribution of all <span class="math inline">\(\bar{X}\)</span> values with
-the distribution of, e.g., <span class="math inline">\(\bar{X} \vert 5 &lt; S &lt; 6\)</span>. (This is an
-arbitrary choice.)</p>
-</blockquote>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="the-normal-and-related-distributions.html#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
-<span id="cb87-2"><a href="the-normal-and-related-distributions.html#cb87-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb87-3"><a href="the-normal-and-related-distributions.html#cb87-3" aria-hidden="true" tabindex="-1"></a>m     <span class="ot">&lt;-</span> <span class="dv">100000</span></span>
-<span id="cb87-4"><a href="the-normal-and-related-distributions.html#cb87-4" aria-hidden="true" tabindex="-1"></a>sigma <span class="ot">&lt;-</span> <span class="fu">runif</span>(m,<span class="at">min=</span><span class="dv">0</span>,<span class="at">max=</span><span class="dv">10</span>)</span>
-<span id="cb87-5"><a href="the-normal-and-related-distributions.html#cb87-5" aria-hidden="true" tabindex="-1"></a>mu    <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(m,<span class="at">mean=</span><span class="dv">0</span>,<span class="at">sd=</span><span class="dv">1</span>)</span>
-<span id="cb87-6"><a href="the-normal-and-related-distributions.html#cb87-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb87-7"><a href="the-normal-and-related-distributions.html#cb87-7" aria-hidden="true" tabindex="-1"></a>Xbar  <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>,m)</span>
-<span id="cb87-8"><a href="the-normal-and-related-distributions.html#cb87-8" aria-hidden="true" tabindex="-1"></a>S     <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>,m)</span>
-<span id="cb87-9"><a href="the-normal-and-related-distributions.html#cb87-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb87-10"><a href="the-normal-and-related-distributions.html#cb87-10" aria-hidden="true" tabindex="-1"></a>n     <span class="ot">&lt;-</span> <span class="dv">100</span></span>
-<span id="cb87-11"><a href="the-normal-and-related-distributions.html#cb87-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ( ii <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>m ) {</span>
-<span id="cb87-12"><a href="the-normal-and-related-distributions.html#cb87-12" aria-hidden="true" tabindex="-1"></a>  x        <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n,<span class="at">mean=</span>mu[ii],<span class="at">sd=</span>sigma[ii])</span>
-<span id="cb87-13"><a href="the-normal-and-related-distributions.html#cb87-13" aria-hidden="true" tabindex="-1"></a>  Xbar[ii] <span class="ot">&lt;-</span> <span class="fu">mean</span>(x)</span>
-<span id="cb87-14"><a href="the-normal-and-related-distributions.html#cb87-14" aria-hidden="true" tabindex="-1"></a>  S[ii]    <span class="ot">&lt;-</span> <span class="fu">sd</span>(x)</span>
-<span id="cb87-15"><a href="the-normal-and-related-distributions.html#cb87-15" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb87-16"><a href="the-normal-and-related-distributions.html#cb87-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb87-17"><a href="the-normal-and-related-distributions.html#cb87-17" aria-hidden="true" tabindex="-1"></a>df        <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Xbar=</span>Xbar,<span class="at">S=</span>S)</span>
-<span id="cb87-18"><a href="the-normal-and-related-distributions.html#cb87-18" aria-hidden="true" tabindex="-1"></a>df.subset <span class="ot">&lt;-</span> <span class="fu">subset</span>(df,S<span class="sc">&gt;</span><span class="dv">5</span> <span class="sc">&amp;</span> S<span class="sc">&lt;</span><span class="dv">6</span>)</span>
-<span id="cb87-19"><a href="the-normal-and-related-distributions.html#cb87-19" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>df,<span class="fu">aes</span>(<span class="at">x=</span>Xbar,<span class="at">y=</span><span class="fu">after_stat</span>(density))) <span class="sc">+</span></span>
-<span id="cb87-20"><a href="the-normal-and-related-distributions.html#cb87-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill=</span><span class="fu">rgb</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="at">alpha=</span><span class="fl">0.3</span>),<span class="at">col=</span><span class="st">&quot;black&quot;</span>,<span class="at">breaks=</span><span class="fu">seq</span>(<span class="sc">-</span><span class="dv">4</span>,<span class="dv">4</span>,<span class="at">by=</span><span class="fl">0.5</span>)) <span class="sc">+</span></span>
-<span id="cb87-21"><a href="the-normal-and-related-distributions.html#cb87-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">data=</span>df.subset,<span class="fu">aes</span>(<span class="at">x=</span>Xbar,<span class="at">y=</span><span class="fu">after_stat</span>(density)),</span>
-<span id="cb87-22"><a href="the-normal-and-related-distributions.html#cb87-22" aria-hidden="true" tabindex="-1"></a>                 <span class="at">fill=</span><span class="fu">rgb</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="at">alpha=</span><span class="fl">0.3</span>),<span class="at">col=</span><span class="st">&quot;black&quot;</span>,<span class="at">breaks=</span><span class="fu">seq</span>(<span class="sc">-</span><span class="dv">4</span>,<span class="dv">4</span>,<span class="at">by=</span><span class="fl">0.5</span>)) <span class="sc">+</span></span>
-<span id="cb87-23"><a href="the-normal-and-related-distributions.html#cb87-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Sample Mean&quot;</span>) <span class="sc">+</span></span>
-<span id="cb87-24"><a href="the-normal-and-related-distributions.html#cb87-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">0.4</span>)) <span class="sc">+</span></span>
-<span id="cb87-25"><a href="the-normal-and-related-distributions.html#cb87-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">1.25</span>)))</span></code></pre></div>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:simind"></span>
-<img src="_main_files/figure-html/simind-1.png" alt="\label{fig:simind}Two histograms, one showing the empirical distribution of all values of the sample mean $\bar{X}$, and the other showing $\bar{X}$ only for those data with sample standard deviations between 5 and 6. The striking similarity of the two histograms indicates that $\bar{X}$ is independent of $S$, with the caveat that visual evidence does not constitute quantitative proof." width="50%" />
-<p class="caption">
-Figure 2.9: Two histograms, one showing the empirical distribution of all values of the sample mean <span class="math inline">\(\bar{X}\)</span>, and the other showing <span class="math inline">\(\bar{X}\)</span> only for those data with sample standard deviations between 5 and 6. The striking similarity of the two histograms indicates that <span class="math inline">\(\bar{X}\)</span> is independent of <span class="math inline">\(S\)</span>, with the caveat that visual evidence does not constitute quantitative proof.
-</p>
-</div>
-<blockquote>
-<p>The result indicates
-that the distributions are highly similar, indicating independence.
-Note that because of the arbitrary construction of this simulation
-(our choices as to how <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span> values are sampled, the
-range of <span class="math inline">\(S\)</span> values examined, etc.), it is ultimately no substitute
-for a rigorous mathematical proof of independence. But it is useful
-for building intuition. We also note that it is less than optimal that
-we reach our conclusion of apparent independence visually: what we
-are missing is a hypothesis test that allows us to test the idea that
-both, e.g., <span class="math inline">\(\bar{X}\)</span> and <span class="math inline">\(\bar{X} \vert S \in (5,6)\)</span> arise from the
-same underlying distribution. We return to this point when we
-discuss hypothesis tests of normality below.</p>
-</blockquote>
-<hr />
-</div>
-<div id="computing-probabilities-5" class="section level3 hasAnchor" number="2.10.2">
-<h3><span class="header-section-number">2.10.2</span> Computing Probabilities<a href="the-normal-and-related-distributions.html#computing-probabilities-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="computing-probabilities-5" class="section level3 hasAnchor" number="2.10.1">
+<h3><span class="header-section-number">2.10.1</span> Computing Probabilities<a href="the-normal-and-related-distributions.html#computing-probabilities-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <blockquote>
 <p>In a study, the diameters of 8 widgets are measured. It is known from
 previous work that the widget diamaters are normally distributed, with
@@ -2256,12 +2202,12 @@ On the other hand, if the pdf is highly peaked, then the average slope
 of the pdf is larger and…<span class="math inline">\(I(\theta)\)</span> is relatively large.
 A sampled datum contains more information
 by which to constrain <span class="math inline">\(\theta\)</span>.
-(See Figure <a href="the-normal-and-related-distributions.html#fig:fisher">2.10</a>, in which the pdf to the left
+(See Figure <a href="the-normal-and-related-distributions.html#fig:fisher">2.9</a>, in which the pdf to the left
 has less Fisher information content about <span class="math inline">\(\mu\)</span> than the pdf to the right.)</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:fisher"></span>
 <img src="_main_files/figure-html/fisher-1.png" alt="\label{fig:fisher}An illustration of Fisher information. For the pdf to the left, the slope changes slowly, and thus the rate of change of the slope is smaller than for the pdf to the right. Thus the pdf to the left contains less information about the population mean, i.e., its Fisher information value $I(\mu)$ is smaller." width="45%" /><img src="_main_files/figure-html/fisher-2.png" alt="\label{fig:fisher}An illustration of Fisher information. For the pdf to the left, the slope changes slowly, and thus the rate of change of the slope is smaller than for the pdf to the right. Thus the pdf to the left contains less information about the population mean, i.e., its Fisher information value $I(\mu)$ is smaller." width="45%" />
 <p class="caption">
-Figure 2.10: An illustration of Fisher information. For the pdf to the left, the slope changes slowly, and thus the rate of change of the slope is smaller than for the pdf to the right. Thus the pdf to the left contains less information about the population mean, i.e., its Fisher information value <span class="math inline">\(I(\mu)\)</span> is smaller.
+Figure 2.9: An illustration of Fisher information. For the pdf to the left, the slope changes slowly, and thus the rate of change of the slope is smaller than for the pdf to the right. Thus the pdf to the left contains less information about the population mean, i.e., its Fisher information value <span class="math inline">\(I(\mu)\)</span> is smaller.
 </p>
 </div>
 <p>For the normal,
@@ -2378,7 +2324,7 @@ substantially from the asymptotic expectation, but we cannot know by how
 much unless we run simulations.</p>
 <p>Below, we show how we might run a simulation if we assume that we
 have <span class="math inline">\(n = 15\)</span> data drawn from a <span class="math inline">\(\mathcal{N}(0,4)\)</span> distribution. See
-Figure <a href="the-normal-and-related-distributions.html#fig:sigma2hatmle">2.11</a>.</p>
+Figure <a href="the-normal-and-related-distributions.html#fig:sigma2hatmle">2.10</a>.</p>
 </blockquote>
 <div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="the-normal-and-related-distributions.html#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
 <span id="cb90-2"><a href="the-normal-and-related-distributions.html#cb90-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">15</span></span>
@@ -2404,7 +2350,7 @@ Figure <a href="the-normal-and-related-distributions.html#fig:sigma2hatmle">2.11
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:sigma2hatmle"></span>
 <img src="_main_files/figure-html/sigma2hatmle-1.png" alt="\label{fig:sigma2hatmle}The empirical pdf for $\hat{\sigma^2}_{MLE}$ given $n = 15$ and true variance $\sigma^2=4$. We overlay the asymptotic pdf in red." width="50%" />
 <p class="caption">
-Figure 2.11: The empirical pdf for <span class="math inline">\(\hat{\sigma^2}_{MLE}\)</span> given <span class="math inline">\(n = 15\)</span> and true variance <span class="math inline">\(\sigma^2=4\)</span>. We overlay the asymptotic pdf in red.
+Figure 2.10: The empirical pdf for <span class="math inline">\(\hat{\sigma^2}_{MLE}\)</span> given <span class="math inline">\(n = 15\)</span> and true variance <span class="math inline">\(\sigma^2=4\)</span>. We overlay the asymptotic pdf in red.
 </p>
 </div>
 <blockquote>
@@ -2729,12 +2675,12 @@ We test the code by sampling <span class="math inline">\(n = 25\)</span> data fr
 distribution <span class="math inline">\(\mathcal{N}(0,1)\)</span>, and passing the statistic
 <span class="math inline">\(y_{\rm obs} = \bar{x}_{\rm obs}\)</span> to the <code>confint()</code> function.
 We find that the interval is <span class="math inline">\([\hat{\theta}_L,\hat{\theta}_H] = [-0.488,0.296]\)</span>, which overlaps the true value. (See Figure
-<a href="the-normal-and-related-distributions.html#fig:mukvarci">2.12</a>.)</p>
+<a href="the-normal-and-related-distributions.html#fig:mukvarci">2.11</a>.)</p>
 </blockquote>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:mukvarci"></span>
 <img src="_main_files/figure-html/mukvarci-1.png" alt="\label{fig:mukvarci}Sampling distributions for $Y = \bar{X} = \sum_{i=1}^n X_i$, where $n = 25$ and $X_i \sim \mathcal{N}(\mu,1)$, and where (left) $\mu=-0.488$ and (right) $\mu=0.296$. We observe $y_{\rm obs} = -0.096$ and we want to construct a 95\% confidence interval. $\mu=-0.488$ is the smallest value of $\mu$ such that $F_Y^{-1}(0.975) = -0.096$, while $\mu=0.296$ is the largest value of $\mu$ such that $F_Y^{-1}(0.025) = -0.096$." width="45%" /><img src="_main_files/figure-html/mukvarci-2.png" alt="\label{fig:mukvarci}Sampling distributions for $Y = \bar{X} = \sum_{i=1}^n X_i$, where $n = 25$ and $X_i \sim \mathcal{N}(\mu,1)$, and where (left) $\mu=-0.488$ and (right) $\mu=0.296$. We observe $y_{\rm obs} = -0.096$ and we want to construct a 95\% confidence interval. $\mu=-0.488$ is the smallest value of $\mu$ such that $F_Y^{-1}(0.975) = -0.096$, while $\mu=0.296$ is the largest value of $\mu$ such that $F_Y^{-1}(0.025) = -0.096$." width="45%" />
 <p class="caption">
-Figure 2.12: Sampling distributions for <span class="math inline">\(Y = \bar{X} = \sum_{i=1}^n X_i\)</span>, where <span class="math inline">\(n = 25\)</span> and <span class="math inline">\(X_i \sim \mathcal{N}(\mu,1)\)</span>, and where (left) <span class="math inline">\(\mu=-0.488\)</span> and (right) <span class="math inline">\(\mu=0.296\)</span>. We observe <span class="math inline">\(y_{\rm obs} = -0.096\)</span> and we want to construct a 95% confidence interval. <span class="math inline">\(\mu=-0.488\)</span> is the smallest value of <span class="math inline">\(\mu\)</span> such that <span class="math inline">\(F_Y^{-1}(0.975) = -0.096\)</span>, while <span class="math inline">\(\mu=0.296\)</span> is the largest value of <span class="math inline">\(\mu\)</span> such that <span class="math inline">\(F_Y^{-1}(0.025) = -0.096\)</span>.
+Figure 2.11: Sampling distributions for <span class="math inline">\(Y = \bar{X} = \sum_{i=1}^n X_i\)</span>, where <span class="math inline">\(n = 25\)</span> and <span class="math inline">\(X_i \sim \mathcal{N}(\mu,1)\)</span>, and where (left) <span class="math inline">\(\mu=-0.488\)</span> and (right) <span class="math inline">\(\mu=0.296\)</span>. We observe <span class="math inline">\(y_{\rm obs} = -0.096\)</span> and we want to construct a 95% confidence interval. <span class="math inline">\(\mu=-0.488\)</span> is the smallest value of <span class="math inline">\(\mu\)</span> such that <span class="math inline">\(F_Y^{-1}(0.975) = -0.096\)</span>, while <span class="math inline">\(\mu=0.296\)</span> is the largest value of <span class="math inline">\(\mu\)</span> such that <span class="math inline">\(F_Y^{-1}(0.025) = -0.096\)</span>.
 </p>
 </div>
 <blockquote>
@@ -2810,12 +2756,12 @@ and replacing the known value of <span class="math inline">\(\sigma^2\)</span> (
 example) with <span class="math inline">\(s_{\rm obs}^2\)</span> (<code>s2</code>).
 We find that the interval is <span class="math inline">\([\hat{\theta}_L,\hat{\theta}_H] = [-0.448,0.257]\)</span>, which is similar to the interval derived in the last
 example and which still overlaps the true value. (See
-Figure <a href="the-normal-and-related-distributions.html#fig:muuvarci">2.13</a>.)</p>
+Figure <a href="the-normal-and-related-distributions.html#fig:muuvarci">2.12</a>.)</p>
 </blockquote>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:muuvarci"></span>
 <img src="_main_files/figure-html/muuvarci-1.png" alt="\label{fig:muuvarci}Sampling distributions for $Y = \bar{X} = \sum_{i=1}^n X_i$, where $n = 25$ and $X_i \sim \mathcal{N}(\mu,\sigma^2)$, and where (left) $\mu=-0.448$ and (right) $\mu=0.257$. We observe $y_{\rm obs} = -0.096$ and $s_{\rm obs}^2 = 0.855$ and we want to construct a 95\% confidence interval. $\mu=-0.448$ is the smallest value of $\mu$ such that $F_Y^{-1}(0.975) = -0.096$, while $\mu=0.257$ is the largest value of $\mu$ such that $F_Y^{-1}(0.025) = -0.096$." width="45%" /><img src="_main_files/figure-html/muuvarci-2.png" alt="\label{fig:muuvarci}Sampling distributions for $Y = \bar{X} = \sum_{i=1}^n X_i$, where $n = 25$ and $X_i \sim \mathcal{N}(\mu,\sigma^2)$, and where (left) $\mu=-0.448$ and (right) $\mu=0.257$. We observe $y_{\rm obs} = -0.096$ and $s_{\rm obs}^2 = 0.855$ and we want to construct a 95\% confidence interval. $\mu=-0.448$ is the smallest value of $\mu$ such that $F_Y^{-1}(0.975) = -0.096$, while $\mu=0.257$ is the largest value of $\mu$ such that $F_Y^{-1}(0.025) = -0.096$." width="45%" />
 <p class="caption">
-Figure 2.13: Sampling distributions for <span class="math inline">\(Y = \bar{X} = \sum_{i=1}^n X_i\)</span>, where <span class="math inline">\(n = 25\)</span> and <span class="math inline">\(X_i \sim \mathcal{N}(\mu,\sigma^2)\)</span>, and where (left) <span class="math inline">\(\mu=-0.448\)</span> and (right) <span class="math inline">\(\mu=0.257\)</span>. We observe <span class="math inline">\(y_{\rm obs} = -0.096\)</span> and <span class="math inline">\(s_{\rm obs}^2 = 0.855\)</span> and we want to construct a 95% confidence interval. <span class="math inline">\(\mu=-0.448\)</span> is the smallest value of <span class="math inline">\(\mu\)</span> such that <span class="math inline">\(F_Y^{-1}(0.975) = -0.096\)</span>, while <span class="math inline">\(\mu=0.257\)</span> is the largest value of <span class="math inline">\(\mu\)</span> such that <span class="math inline">\(F_Y^{-1}(0.025) = -0.096\)</span>.
+Figure 2.12: Sampling distributions for <span class="math inline">\(Y = \bar{X} = \sum_{i=1}^n X_i\)</span>, where <span class="math inline">\(n = 25\)</span> and <span class="math inline">\(X_i \sim \mathcal{N}(\mu,\sigma^2)\)</span>, and where (left) <span class="math inline">\(\mu=-0.448\)</span> and (right) <span class="math inline">\(\mu=0.257\)</span>. We observe <span class="math inline">\(y_{\rm obs} = -0.096\)</span> and <span class="math inline">\(s_{\rm obs}^2 = 0.855\)</span> and we want to construct a 95% confidence interval. <span class="math inline">\(\mu=-0.448\)</span> is the smallest value of <span class="math inline">\(\mu\)</span> such that <span class="math inline">\(F_Y^{-1}(0.975) = -0.096\)</span>, while <span class="math inline">\(\mu=0.257\)</span> is the largest value of <span class="math inline">\(\mu\)</span> such that <span class="math inline">\(F_Y^{-1}(0.025) = -0.096\)</span>.
 </p>
 </div>
 <hr />
@@ -2848,12 +2794,12 @@ the variable <code>mean</code>, removing the variable <code>s2</code> (as <code>
 <span class="math inline">\(s_{\rm obs}^2\)</span>), and adjusting the lower bound on the interval (since
 <span class="math inline">\(\sigma^2 &gt; 0\)</span>).
 We find that the interval is <span class="math inline">\([\widehat{\sigma}_L^2,\widehat{\sigma}_H^2] = [0.445,1.414]\)</span>, which overlaps the true value. (See Figure
-<a href="the-normal-and-related-distributions.html#fig:sigma2ci">2.14</a>.)</p>
+<a href="the-normal-and-related-distributions.html#fig:sigma2ci">2.13</a>.)</p>
 </blockquote>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:sigma2ci"></span>
 <img src="_main_files/figure-html/sigma2ci-1.png" alt="\label{fig:sigma2ci}Sampling distributions for $Y = S^2$, where $n = 25$ and $X_i \sim \mathcal{N}(\mu,\sigma^2)$, and where (left) $\sigma^2=0.445$ and (right) $\sigma^2=1.414$. We observe $y_{\rm obs} = s_{\rm obs}^2 = 0.731$ and we want to construct a 95\% confidence interval. $\sigma^2=0.445$ is the smallest value of $\sigma^2$ such that $F_Y^{-1}(0.975) = 0.731$, while $\mu=1.414$ is the largest value of $\sigma^2$ such that $F_Y^{-1}(0.025) = 0.731$." width="45%" /><img src="_main_files/figure-html/sigma2ci-2.png" alt="\label{fig:sigma2ci}Sampling distributions for $Y = S^2$, where $n = 25$ and $X_i \sim \mathcal{N}(\mu,\sigma^2)$, and where (left) $\sigma^2=0.445$ and (right) $\sigma^2=1.414$. We observe $y_{\rm obs} = s_{\rm obs}^2 = 0.731$ and we want to construct a 95\% confidence interval. $\sigma^2=0.445$ is the smallest value of $\sigma^2$ such that $F_Y^{-1}(0.975) = 0.731$, while $\mu=1.414$ is the largest value of $\sigma^2$ such that $F_Y^{-1}(0.025) = 0.731$." width="45%" />
 <p class="caption">
-Figure 2.14: Sampling distributions for <span class="math inline">\(Y = S^2\)</span>, where <span class="math inline">\(n = 25\)</span> and <span class="math inline">\(X_i \sim \mathcal{N}(\mu,\sigma^2)\)</span>, and where (left) <span class="math inline">\(\sigma^2=0.445\)</span> and (right) <span class="math inline">\(\sigma^2=1.414\)</span>. We observe <span class="math inline">\(y_{\rm obs} = s_{\rm obs}^2 = 0.731\)</span> and we want to construct a 95% confidence interval. <span class="math inline">\(\sigma^2=0.445\)</span> is the smallest value of <span class="math inline">\(\sigma^2\)</span> such that <span class="math inline">\(F_Y^{-1}(0.975) = 0.731\)</span>, while <span class="math inline">\(\mu=1.414\)</span> is the largest value of <span class="math inline">\(\sigma^2\)</span> such that <span class="math inline">\(F_Y^{-1}(0.025) = 0.731\)</span>.
+Figure 2.13: Sampling distributions for <span class="math inline">\(Y = S^2\)</span>, where <span class="math inline">\(n = 25\)</span> and <span class="math inline">\(X_i \sim \mathcal{N}(\mu,\sigma^2)\)</span>, and where (left) <span class="math inline">\(\sigma^2=0.445\)</span> and (right) <span class="math inline">\(\sigma^2=1.414\)</span>. We observe <span class="math inline">\(y_{\rm obs} = s_{\rm obs}^2 = 0.731\)</span> and we want to construct a 95% confidence interval. <span class="math inline">\(\sigma^2=0.445\)</span> is the smallest value of <span class="math inline">\(\sigma^2\)</span> such that <span class="math inline">\(F_Y^{-1}(0.975) = 0.731\)</span>, while <span class="math inline">\(\mu=1.414\)</span> is the largest value of <span class="math inline">\(\sigma^2\)</span> such that <span class="math inline">\(F_Y^{-1}(0.025) = 0.731\)</span>.
 </p>
 </div>
 <hr />
@@ -3114,28 +3060,28 @@ that the individual data are normally distributed.</p>
 <h3><span class="header-section-number">2.14.1</span> Example of the KS Test in R<a href="the-normal-and-related-distributions.html#example-of-the-ks-test-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <blockquote>
 <p>Let’s suppose you are given a dataset that has the
-empirical distribution given in Figure <a href="the-normal-and-related-distributions.html#fig:ksex">2.15</a>.</p>
+empirical distribution given in Figure <a href="the-normal-and-related-distributions.html#fig:ksex">2.14</a>.</p>
 </blockquote>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:ksex"></span>
 <img src="_main_files/figure-html/ksex-1.png" alt="\label{fig:ksex} Histogram of a dataset with sample size $n = 30$. Is it plausible that these data are normally distributed?" width="50%" />
 <p class="caption">
-Figure 2.15:  Histogram of a dataset with sample size <span class="math inline">\(n = 30\)</span>. Is it plausible that these data are normally distributed?
+Figure 2.14:  Histogram of a dataset with sample size <span class="math inline">\(n = 30\)</span>. Is it plausible that these data are normally distributed?
 </p>
 </div>
 <blockquote>
 <p>The sample statistics for these data are <span class="math inline">\(\bar{X} = 100.6\)</span> and
-<span class="math inline">\(S = 29.8\)</span>. In Figure <a href="the-normal-and-related-distributions.html#fig:ksecdf">2.16</a>, we plot the empirical cdf for
+<span class="math inline">\(S = 29.8\)</span>. In Figure <a href="the-normal-and-related-distributions.html#fig:ksecdf">2.15</a>, we plot the empirical cdf for
 these data, overlaying the cdf for a <span class="math inline">\(\mathcal{N}(100.6,29.8^2)\)</span> distribution.</p>
 </blockquote>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:ksecdf"></span>
 <img src="_main_files/figure-html/ksecdf-1.png" alt="\label{fig:ksecdf} Empirical cumulative distribution function of our dataset with the cdf for a $\mathcal{N}(100.6,29.8^2)$ overlaid as the red dashed line." width="50%" />
 <p class="caption">
-Figure 2.16:  Empirical cumulative distribution function of our dataset with the cdf for a <span class="math inline">\(\mathcal{N}(100.6,29.8^2)\)</span> overlaid as the red dashed line.
+Figure 2.15:  Empirical cumulative distribution function of our dataset with the cdf for a <span class="math inline">\(\mathcal{N}(100.6,29.8^2)\)</span> overlaid as the red dashed line.
 </p>
 </div>
 <blockquote>
 <p>The largest difference between the empirical cdf and the overlaid normal cdf
-in Figure <a href="the-normal-and-related-distributions.html#fig:ksecdf">2.16</a> occurs at <span class="math inline">\(x \approx 93\)</span>. Is this difference
+in Figure <a href="the-normal-and-related-distributions.html#fig:ksecdf">2.15</a> occurs at <span class="math inline">\(x \approx 93\)</span>. Is this difference
 large enough for us to decide the data are not normally distributed with
 the inferred parameters <span class="math inline">\(\mu = 100.6\)</span> and <span class="math inline">\(\sigma = 29.8\)</span>?</p>
 </blockquote>
@@ -3234,7 +3180,7 @@ which means that for instance,
 y_{\alpha/2} = \mu_o + \frac{s_{\rm obs}}{\sqrt{n}} F_{T(n-1)}^{-1}\left(\frac{\alpha}{2}\right) \,,
 \]</span>
 which can be numerically evaluated using the <code>R</code> function <code>qt()</code>.
-(See Figure <a href="the-normal-and-related-distributions.html#fig:normrr">2.17</a>.)
+(See Figure <a href="the-normal-and-related-distributions.html#fig:normrr">2.16</a>.)
 We summarize the evaluation of rejection region boundaries for population
 mean tests in the table below, but will note here that these boundaries
 are <em>completely equivalent to the boundaries given in the so-called
@@ -3280,7 +3226,7 @@ in introductory statistics settings</em>.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:normrr"></span>
 <img src="_main_files/figure-html/normrr-1.png" alt="\label{fig:normrr}Illustration of rejection regions (shaded in red) for two-tail (left), lower-tail (center), and upper-tail (right) population mean tests (with $\mu_o = 0$ and $s_{\rm obs}^2 = 1$), assuming $\alpha = 0.05$ and $n-1 = 5$ degrees of freedom." width="30%" /><img src="_main_files/figure-html/normrr-2.png" alt="\label{fig:normrr}Illustration of rejection regions (shaded in red) for two-tail (left), lower-tail (center), and upper-tail (right) population mean tests (with $\mu_o = 0$ and $s_{\rm obs}^2 = 1$), assuming $\alpha = 0.05$ and $n-1 = 5$ degrees of freedom." width="30%" /><img src="_main_files/figure-html/normrr-3.png" alt="\label{fig:normrr}Illustration of rejection regions (shaded in red) for two-tail (left), lower-tail (center), and upper-tail (right) population mean tests (with $\mu_o = 0$ and $s_{\rm obs}^2 = 1$), assuming $\alpha = 0.05$ and $n-1 = 5$ degrees of freedom." width="30%" />
 <p class="caption">
-Figure 2.17: Illustration of rejection regions (shaded in red) for two-tail (left), lower-tail (center), and upper-tail (right) population mean tests (with <span class="math inline">\(\mu_o = 0\)</span> and <span class="math inline">\(s_{\rm obs}^2 = 1\)</span>), assuming <span class="math inline">\(\alpha = 0.05\)</span> and <span class="math inline">\(n-1 = 5\)</span> degrees of freedom.
+Figure 2.16: Illustration of rejection regions (shaded in red) for two-tail (left), lower-tail (center), and upper-tail (right) population mean tests (with <span class="math inline">\(\mu_o = 0\)</span> and <span class="math inline">\(s_{\rm obs}^2 = 1\)</span>), assuming <span class="math inline">\(\alpha = 0.05\)</span> and <span class="math inline">\(n-1 = 5\)</span> degrees of freedom.
 </p>
 </div>
 <p>There are two new hypothesis-test-related
@@ -3479,7 +3425,7 @@ for which the <code>R</code> function calls are</p>
 <p>The rejection region boundaries are thus 1.608 and 2.392 (values that
 we note lie symmetrically around <span class="math inline">\(\mu_o = 2\)</span>; we also note that the placement
 of these boundaries does <em>not</em> depend on the observed statistic
-value <span class="math inline">\(y_{\rm obs} = 1.404\)</span>). Thus we reject the null if <span class="math inline">\(y_{\rm obs} \leq 1.608\)</span> or <span class="math inline">\(y_{\rm obs} \geq 2.392\)</span>. See Figure <a href="the-normal-and-related-distributions.html#fig:normex1">2.18</a>, where
+value <span class="math inline">\(y_{\rm obs} = 1.404\)</span>). Thus we reject the null if <span class="math inline">\(y_{\rm obs} \leq 1.608\)</span> or <span class="math inline">\(y_{\rm obs} \geq 2.392\)</span>. See Figure <a href="the-normal-and-related-distributions.html#fig:normex1">2.17</a>, where
 the rejection regions are displayed in red.</p>
 </blockquote>
 <blockquote>
@@ -3534,7 +3480,7 @@ that is greater than or equal to 2.392.</p>
 <img src="_main_files/figure-html/normex1-1.png" alt="\label{fig:normex1}The sampling distribution $f_Y(y)$ (blue curve), rejection regions (red polygons), and observed statistic value $y_{
 m obs}$ (vertical green line) for $Y = \bar{X}$ given $n = 25$ iid data that are assumed to be sampled from a $\mathcal{N}(2,1)$ distribution under the null hypothesis. We perform a two-tailed test, with $\alpha = 0.05$, and the variance $\sigma^2 = 1$ is assumed known. The value we observe is in the rejection region, thus we reject the null hypothesis and conclude that $\mu \neq 2$." width="50%" />
 <p class="caption">
-Figure 2.18: The sampling distribution <span class="math inline">\(f_Y(y)\)</span> (blue curve), rejection regions (red polygons), and observed statistic value <span class="math inline">\(y_{ m obs}\)</span> (vertical green line) for <span class="math inline">\(Y = \bar{X}\)</span> given <span class="math inline">\(n = 25\)</span> iid data that are assumed to be sampled from a <span class="math inline">\(\mathcal{N}(2,1)\)</span> distribution under the null hypothesis. We perform a two-tailed test, with <span class="math inline">\(\alpha = 0.05\)</span>, and the variance <span class="math inline">\(\sigma^2 = 1\)</span> is assumed known. The value we observe is in the rejection region, thus we reject the null hypothesis and conclude that <span class="math inline">\(\mu \neq 2\)</span>.
+Figure 2.17: The sampling distribution <span class="math inline">\(f_Y(y)\)</span> (blue curve), rejection regions (red polygons), and observed statistic value <span class="math inline">\(y_{ m obs}\)</span> (vertical green line) for <span class="math inline">\(Y = \bar{X}\)</span> given <span class="math inline">\(n = 25\)</span> iid data that are assumed to be sampled from a <span class="math inline">\(\mathcal{N}(2,1)\)</span> distribution under the null hypothesis. We perform a two-tailed test, with <span class="math inline">\(\alpha = 0.05\)</span>, and the variance <span class="math inline">\(\sigma^2 = 1\)</span> is assumed known. The value we observe is in the rejection region, thus we reject the null hypothesis and conclude that <span class="math inline">\(\mu \neq 2\)</span>.
 </p>
 </div>
 <hr />
@@ -3569,7 +3515,7 @@ for which the <code>R</code> function call is</p>
 <blockquote>
 <p>The rejection region boundary is thus 4.787;
 we reject the null if <span class="math inline">\(y_{\rm obs} = \bar{x}_{\rm obs} \geq 4.787\)</span>.
-See Figure <a href="the-normal-and-related-distributions.html#fig:varex">2.19</a>, in which the rejection region is displayed
+See Figure <a href="the-normal-and-related-distributions.html#fig:varex">2.18</a>, in which the rejection region is displayed
 in red.</p>
 </blockquote>
 <blockquote>
@@ -3607,19 +3553,19 @@ is</p>
 <p>The test power is 0.159: <em>if</em> <span class="math inline">\(\mu\)</span> is equal to 4.5, then 15.9 percent of
 the time we would sample a value of our hypothesis test statistic that lies
 in the rejection region. The farther <span class="math inline">\(\mu\)</span> is from <span class="math inline">\(\mu_o\)</span> (in the positive
-direction), the higher this percentage gets. See Figure <a href="the-normal-and-related-distributions.html#fig:varpowcurve">2.20</a>.</p>
+direction), the higher this percentage gets. See Figure <a href="the-normal-and-related-distributions.html#fig:varpowcurve">2.19</a>.</p>
 </blockquote>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:varex"></span>
 <img src="_main_files/figure-html/varex-1.png" alt="\label{fig:varex}The sampling distribution $f_Y(y)$ (blue curve), rejection region (red polygon), and observed statistic value $y_{
 m obs}$ (vertical green line) for $Y = \bar{X}$ given $n = 15$ iid data that are assumed to be sampled from a normal distribution with mean $\mu_o = 4$ and variance unknown under the null hypothesis. We perform an upper-tailed test, with $\alpha = 0.05$. The value we observe is *not* in the rejection region, thus we fail to reject the null hypothesis and conclude that $\mu = 4$ is a plausible value." width="50%" />
 <p class="caption">
-Figure 2.19: The sampling distribution <span class="math inline">\(f_Y(y)\)</span> (blue curve), rejection region (red polygon), and observed statistic value <span class="math inline">\(y_{ m obs}\)</span> (vertical green line) for <span class="math inline">\(Y = \bar{X}\)</span> given <span class="math inline">\(n = 15\)</span> iid data that are assumed to be sampled from a normal distribution with mean <span class="math inline">\(\mu_o = 4\)</span> and variance unknown under the null hypothesis. We perform an upper-tailed test, with <span class="math inline">\(\alpha = 0.05\)</span>. The value we observe is <em>not</em> in the rejection region, thus we fail to reject the null hypothesis and conclude that <span class="math inline">\(\mu = 4\)</span> is a plausible value.
+Figure 2.18: The sampling distribution <span class="math inline">\(f_Y(y)\)</span> (blue curve), rejection region (red polygon), and observed statistic value <span class="math inline">\(y_{ m obs}\)</span> (vertical green line) for <span class="math inline">\(Y = \bar{X}\)</span> given <span class="math inline">\(n = 15\)</span> iid data that are assumed to be sampled from a normal distribution with mean <span class="math inline">\(\mu_o = 4\)</span> and variance unknown under the null hypothesis. We perform an upper-tailed test, with <span class="math inline">\(\alpha = 0.05\)</span>. The value we observe is <em>not</em> in the rejection region, thus we fail to reject the null hypothesis and conclude that <span class="math inline">\(\mu = 4\)</span> is a plausible value.
 </p>
 </div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:varpowcurve"></span>
 <img src="_main_files/figure-html/varpowcurve-1.png" alt="\label{fig:varpowcurve}The power curve for the upper-tail test $H_o : \mu = \mu_o = 4$ versus $H_a : \mu &gt; \mu_o$. The red dot at $\mu = 4$ indicates the test power under the null: the power is $\alpha$, as it should be given the definition of test power. We see that $n = 15$ is a sufficient amount of data to clearly disambiguate between $\mu_o = 4$ and, e.g., $\mu \gtrsim 5$. We note that if the alternative hypothesis is $\mu &lt; \mu_o$, the curve would be reversed$-$it would rise towards the left$-$and if the alternative hypothesis is $\mu \neq \mu_o$, the power curve would have a U shape, with the minimum power being $\alpha$ at $\mu = \mu_o$." width="50%" />
 <p class="caption">
-Figure 2.20: The power curve for the upper-tail test <span class="math inline">\(H_o : \mu = \mu_o = 4\)</span> versus <span class="math inline">\(H_a : \mu &gt; \mu_o\)</span>. The red dot at <span class="math inline">\(\mu = 4\)</span> indicates the test power under the null: the power is <span class="math inline">\(\alpha\)</span>, as it should be given the definition of test power. We see that <span class="math inline">\(n = 15\)</span> is a sufficient amount of data to clearly disambiguate between <span class="math inline">\(\mu_o = 4\)</span> and, e.g., <span class="math inline">\(\mu \gtrsim 5\)</span>. We note that if the alternative hypothesis is <span class="math inline">\(\mu &lt; \mu_o\)</span>, the curve would be reversed<span class="math inline">\(-\)</span>it would rise towards the left<span class="math inline">\(-\)</span>and if the alternative hypothesis is <span class="math inline">\(\mu \neq \mu_o\)</span>, the power curve would have a U shape, with the minimum power being <span class="math inline">\(\alpha\)</span> at <span class="math inline">\(\mu = \mu_o\)</span>.
+Figure 2.19: The power curve for the upper-tail test <span class="math inline">\(H_o : \mu = \mu_o = 4\)</span> versus <span class="math inline">\(H_a : \mu &gt; \mu_o\)</span>. The red dot at <span class="math inline">\(\mu = 4\)</span> indicates the test power under the null: the power is <span class="math inline">\(\alpha\)</span>, as it should be given the definition of test power. We see that <span class="math inline">\(n = 15\)</span> is a sufficient amount of data to clearly disambiguate between <span class="math inline">\(\mu_o = 4\)</span> and, e.g., <span class="math inline">\(\mu \gtrsim 5\)</span>. We note that if the alternative hypothesis is <span class="math inline">\(\mu &lt; \mu_o\)</span>, the curve would be reversed<span class="math inline">\(-\)</span>it would rise towards the left<span class="math inline">\(-\)</span>and if the alternative hypothesis is <span class="math inline">\(\mu \neq \mu_o\)</span>, the power curve would have a U shape, with the minimum power being <span class="math inline">\(\alpha\)</span> at <span class="math inline">\(\mu = \mu_o\)</span>.
 </p>
 </div>
 <hr />
@@ -3802,7 +3748,7 @@ etc. This makes sense: the probability that <span class="math inline">\(p &lt; \
 the Type I error rate. If we set <span class="math inline">\(\alpha\)</span> to 0.05, then when the null
 is true, <span class="math inline">\(p\)</span> will be less than <span class="math inline">\(\alpha\)</span> 5% of the time, i.e., we will
 wrongly make the decision to reject a true null on average one time
-in every 20 hypothesis tests we perform. (See Figure <a href="the-normal-and-related-distributions.html#fig:pval">2.21</a>.)</p>
+in every 20 hypothesis tests we perform. (See Figure <a href="the-normal-and-related-distributions.html#fig:pval">2.20</a>.)</p>
 </blockquote>
 <div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="the-normal-and-related-distributions.html#cb140-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
 <span id="cb140-2"><a href="the-normal-and-related-distributions.html#cb140-2" aria-hidden="true" tabindex="-1"></a>n      <span class="ot">&lt;-</span> <span class="dv">20</span></span>
@@ -3815,13 +3761,13 @@ in every 20 hypothesis tests we perform. (See Figure <a href="the-normal-and-rel
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:pval"></span>
 <img src="_main_files/figure-html/pval-1.png" alt="\label{fig:pval}The empirical distribution of $p$-values under the null hypothesis, for a lower-tail test with $n = 20$, $\mu_o = 3$, and $\sigma^2 = 1$. We can see that the $p$-values are uniformly distributed between 0 and 1, meaning that when the null is true, the probability of sampling a $p$-value less than $\alpha$ is exactly $\alpha$." width="50%" />
 <p class="caption">
-Figure 2.21: The empirical distribution of <span class="math inline">\(p\)</span>-values under the null hypothesis, for a lower-tail test with <span class="math inline">\(n = 20\)</span>, <span class="math inline">\(\mu_o = 3\)</span>, and <span class="math inline">\(\sigma^2 = 1\)</span>. We can see that the <span class="math inline">\(p\)</span>-values are uniformly distributed between 0 and 1, meaning that when the null is true, the probability of sampling a <span class="math inline">\(p\)</span>-value less than <span class="math inline">\(\alpha\)</span> is exactly <span class="math inline">\(\alpha\)</span>.
+Figure 2.20: The empirical distribution of <span class="math inline">\(p\)</span>-values under the null hypothesis, for a lower-tail test with <span class="math inline">\(n = 20\)</span>, <span class="math inline">\(\mu_o = 3\)</span>, and <span class="math inline">\(\sigma^2 = 1\)</span>. We can see that the <span class="math inline">\(p\)</span>-values are uniformly distributed between 0 and 1, meaning that when the null is true, the probability of sampling a <span class="math inline">\(p\)</span>-value less than <span class="math inline">\(\alpha\)</span> is exactly <span class="math inline">\(\alpha\)</span>.
 </p>
 </div>
 <blockquote>
 <p>Because we are performing a simulation, the number of observations falling
 into each histogram bin is a random variable. Because of this, we observe
-some amount of “noise” in Figure <a href="the-normal-and-related-distributions.html#fig:pval">2.21</a> (i.e., some amount of
+some amount of “noise” in Figure <a href="the-normal-and-related-distributions.html#fig:pval">2.20</a> (i.e., some amount of
 variation around the dashed red line)…but nevertheless we can visually
 infer that the sampling distribution for <span class="math inline">\(p\)</span> is uniform (i.e., flat).
 (For completeness, the number
@@ -3839,7 +3785,7 @@ hypothesized mean, then the <span class="math inline">\(p\)</span>-values will s
 likely to reject the null when its value is closer to the tail of interest
 than the true value is.
 If the true mean is smaller than the hypothesized mean, the <span class="math inline">\(p\)</span>-values will
-skew towards 0. See Figure <a href="the-normal-and-related-distributions.html#fig:pvalskew">2.22</a> for a demonstration of the
+skew towards 0. See Figure <a href="the-normal-and-related-distributions.html#fig:pvalskew">2.21</a> for a demonstration of the
 latter point.</p>
 </blockquote>
 <div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="the-normal-and-related-distributions.html#cb141-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
@@ -3858,13 +3804,13 @@ latter point.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:pvalskew"></span>
 <img src="_main_files/figure-html/pvalskew-1.png" alt="\label{fig:pvalskew}The empirical distribution of $p$-values when the stated alternative hypothesis is consistent with the truth. We can see that the $p$-values towards 0, meaning that when the alternative hypothesis is true, the probability of sampling a $p$-value less than $\alpha$ can be $\gg \alpha$." width="50%" />
 <p class="caption">
-Figure 2.22: The empirical distribution of <span class="math inline">\(p\)</span>-values when the stated alternative hypothesis is consistent with the truth. We can see that the <span class="math inline">\(p\)</span>-values towards 0, meaning that when the alternative hypothesis is true, the probability of sampling a <span class="math inline">\(p\)</span>-value less than <span class="math inline">\(\alpha\)</span> can be <span class="math inline">\(\gg \alpha\)</span>.
+Figure 2.21: The empirical distribution of <span class="math inline">\(p\)</span>-values when the stated alternative hypothesis is consistent with the truth. We can see that the <span class="math inline">\(p\)</span>-values towards 0, meaning that when the alternative hypothesis is true, the probability of sampling a <span class="math inline">\(p\)</span>-value less than <span class="math inline">\(\alpha\)</span> can be <span class="math inline">\(\gg \alpha\)</span>.
 </p>
 </div>
 <div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="the-normal-and-related-distributions.html#cb142-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The proportion of p-values &lt; 0.05 is &quot;</span>,<span class="fu">sum</span>(p.val<span class="sc">&lt;</span><span class="fl">0.05</span>)<span class="sc">/</span><span class="dv">10000</span>,<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## The proportion of p-values &lt; 0.05 is  0.2946</code></pre>
 <blockquote>
-<p>In Figure <a href="the-normal-and-related-distributions.html#fig:pvalskew">2.22</a>, 29.46% of the counts are observed as having
+<p>In Figure <a href="the-normal-and-related-distributions.html#fig:pvalskew">2.21</a>, 29.46% of the counts are observed as having
 value less than <span class="math inline">\(\alpha = 0.05\)</span>…so the test power is 0.2946. As the
 true mean gets smaller and smaller than <span class="math inline">\(\mu_o = 3\)</span>,
 the number of counts in the first bin
@@ -4025,7 +3971,7 @@ y_{1-\alpha/2} = \frac{\sigma_o^2}{n-1}F_{W(n-1)}^{-1}\left(1-\frac{\alpha}{2}\r
 \]</span>
 As is also the case for the population mean, here we do not work with
 the cdfs by hand. The following summarizes
-the evaluation of rejection region boundaries (see Figure <a href="the-normal-and-related-distributions.html#fig:varrr">2.23</a>):</p>
+the evaluation of rejection region boundaries (see Figure <a href="the-normal-and-related-distributions.html#fig:varrr">2.22</a>):</p>
 <table>
 <colgroup>
 <col width="15%" />
@@ -4141,7 +4087,7 @@ the evaluation of rejection region boundaries (see Figure <a href="the-normal-an
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:varrr"></span>
 <img src="_main_files/figure-html/varrr-1.png" alt="\label{fig:varrr}Illustration of rejection regions (shaded in red) for two-tail (left), lower-tail (center), and upper-tail (right) tests of population variance, assuming $\alpha = 0.1$ and $n-1 = 3$ degrees of freedom." width="30%" /><img src="_main_files/figure-html/varrr-2.png" alt="\label{fig:varrr}Illustration of rejection regions (shaded in red) for two-tail (left), lower-tail (center), and upper-tail (right) tests of population variance, assuming $\alpha = 0.1$ and $n-1 = 3$ degrees of freedom." width="30%" /><img src="_main_files/figure-html/varrr-3.png" alt="\label{fig:varrr}Illustration of rejection regions (shaded in red) for two-tail (left), lower-tail (center), and upper-tail (right) tests of population variance, assuming $\alpha = 0.1$ and $n-1 = 3$ degrees of freedom." width="30%" />
 <p class="caption">
-Figure 2.23: Illustration of rejection regions (shaded in red) for two-tail (left), lower-tail (center), and upper-tail (right) tests of population variance, assuming <span class="math inline">\(\alpha = 0.1\)</span> and <span class="math inline">\(n-1 = 3\)</span> degrees of freedom.
+Figure 2.22: Illustration of rejection regions (shaded in red) for two-tail (left), lower-tail (center), and upper-tail (right) tests of population variance, assuming <span class="math inline">\(\alpha = 0.1\)</span> and <span class="math inline">\(n-1 = 3\)</span> degrees of freedom.
 </p>
 </div>
 <hr />
@@ -4213,7 +4159,7 @@ we simply need to loop over calls to <code>qchisq()</code> and <code>pchisq()</c
 note that we don’t actually “loop,” as <code>R</code>’s vectorization capabilities
 allow us to simply pass vectors of sample-size values into the
 function calls, with vectors of results being returned.) See Figure
-<a href="the-normal-and-related-distributions.html#fig:varpow">2.24</a>.</p>
+<a href="the-normal-and-related-distributions.html#fig:varpow">2.23</a>.</p>
 </blockquote>
 <div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="the-normal-and-related-distributions.html#cb155-1" aria-hidden="true" tabindex="-1"></a>alpha    <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
 <span id="cb155-2"><a href="the-normal-and-related-distributions.html#cb155-2" aria-hidden="true" tabindex="-1"></a>sigma2.o <span class="ot">&lt;-</span> <span class="dv">4</span></span>
@@ -4234,7 +4180,7 @@ function calls, with vectors of results being returned.) See Figure
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:varpow"></span>
 <img src="_main_files/figure-html/varpow-1.png" alt="\label{fig:varpow}The test power as a function of sample size $n$ assuming $\sigma_o^2 = 4$, $\sigma^2 = 8$, and $\alpha = 0.05$. The red dot indicates the test power for $n = 14$, which as shown in the text is 0.596." width="50%" />
 <p class="caption">
-Figure 2.24: The test power as a function of sample size <span class="math inline">\(n\)</span> assuming <span class="math inline">\(\sigma_o^2 = 4\)</span>, <span class="math inline">\(\sigma^2 = 8\)</span>, and <span class="math inline">\(\alpha = 0.05\)</span>. The red dot indicates the test power for <span class="math inline">\(n = 14\)</span>, which as shown in the text is 0.596.
+Figure 2.23: The test power as a function of sample size <span class="math inline">\(n\)</span> assuming <span class="math inline">\(\sigma_o^2 = 4\)</span>, <span class="math inline">\(\sigma^2 = 8\)</span>, and <span class="math inline">\(\alpha = 0.05\)</span>. The red dot indicates the test power for <span class="math inline">\(n = 14\)</span>, which as shown in the text is 0.596.
 </p>
 </div>
 <hr />
@@ -4309,7 +4255,7 @@ given a sample of data <span class="math inline">\(\{X_1,\ldots,X_n\} \stackrel{
 independent of each other. Here we will move beyond this assumption to the
 case where our data consists of tuples <span class="math inline">\(\{(x_1,Y_1),\ldots,(x_n,Y_n)\}\)</span> and
 where we want to determine (or <em>learn</em>) the association between the variables
-<span class="math inline">\(x_i\)</span> and <span class="math inline">\(Y_i\)</span>. (If there is one! See Figure <a href="the-normal-and-related-distributions.html#fig:linreg">2.25</a>. Also,
+<span class="math inline">\(x_i\)</span> and <span class="math inline">\(Y_i\)</span>. (If there is one! See Figure <a href="the-normal-and-related-distributions.html#fig:linreg">2.24</a>. Also,
 note the use of the term “association”: a relationship might exist, but
 it is not necessarily the case that <span class="math inline">\(x\)</span> “causes” <span class="math inline">\(Y\)</span>; to determine
 causation, one would utilize methods of <em>causal inference</em>, which are
@@ -4333,7 +4279,7 @@ In other words, we want to <em>regress</em> <span class="math inline">\(\mathbf{
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:linreg"></span>
 <img src="_main_files/figure-html/linreg-1.png" alt="\label{fig:linreg}Illustration of the setting for simple linear regression. The data $Y \vert x$ (blue points) are randomly distributed around the true regression line $y \vert x = 4 + x/2$ (red dashed line), with the error term $\epsilon_i \sim \mathcal{N}(y \vert x,1)$." width="50%" />
 <p class="caption">
-Figure 2.25: Illustration of the setting for simple linear regression. The data <span class="math inline">\(Y \vert x\)</span> (blue points) are randomly distributed around the true regression line <span class="math inline">\(y \vert x = 4 + x/2\)</span> (red dashed line), with the error term <span class="math inline">\(\epsilon_i \sim \mathcal{N}(y \vert x,1)\)</span>.
+Figure 2.24: Illustration of the setting for simple linear regression. The data <span class="math inline">\(Y \vert x\)</span> (blue points) are randomly distributed around the true regression line <span class="math inline">\(y \vert x = 4 + x/2\)</span> (red dashed line), with the error term <span class="math inline">\(\epsilon_i \sim \mathcal{N}(y \vert x,1)\)</span>.
 </p>
 </div>
 <p>If the relationship between <span class="math inline">\(\mathbf{x}\)</span> and <span class="math inline">\(\mathbf{Y}\)</span> is <em>deterministic</em>,
@@ -4450,12 +4396,12 @@ S_{xx} &amp;= \sum_{i=1}^n (x_i-\bar{x})^2 = \left(\sum_{i=1}^n x_i^2\right) - n
 S_{xY} &amp;= \sum_{i=1}^n (x_i-\bar{x})(Y_i-\bar{Y}) = \left(\sum_{i=1}^n x_iY_i\right) - n\bar{x}\bar{Y} \\
 S_{YY} &amp;= \sum_{i=1}^n (Y_i-\bar{Y})^2 = \left(\sum_{i=1}^n Y_i^2\right) - n\bar{Y}^2 \,.
 \end{align*}\]</span></p>
-<p>In Figure <a href="the-normal-and-related-distributions.html#fig:linregest">2.26</a>, we display the estimated regression
-line for the data shown above in Figure <a href="the-normal-and-related-distributions.html#fig:linreg">2.25</a>.</p>
+<p>In Figure <a href="the-normal-and-related-distributions.html#fig:linregest">2.25</a>, we display the estimated regression
+line for the data shown above in Figure <a href="the-normal-and-related-distributions.html#fig:linreg">2.24</a>.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:linregest"></span>
 <img src="_main_files/figure-html/linregest-1.png" alt="\label{fig:linregest}Same as the previous figure, with the estimated regression line $\hat{y} = 4.52 + 0.46 x$ overlaid (solid red line)." width="50%" />
 <p class="caption">
-Figure 2.26: Same as the previous figure, with the estimated regression line <span class="math inline">\(\hat{y} = 4.52 + 0.46 x\)</span> overlaid (solid red line).
+Figure 2.25: Same as the previous figure, with the estimated regression line <span class="math inline">\(\hat{y} = 4.52 + 0.46 x\)</span> overlaid (solid red line).
 </p>
 </div>
 <p>Ultimately, we are interested in determining if there is a statistically
@@ -4626,7 +4572,7 @@ Thus <span class="math inline">\(SSE/(n-2)\)</span> is an unbiased estimator of 
 <h3><span class="header-section-number">2.17.3</span> Linear Regression in R<a href="the-normal-and-related-distributions.html#linear-regression-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <blockquote>
 <p>Below, we show the results of running a linear regression using <code>R</code>. The
-data are the same as used to produce Figure <a href="the-normal-and-related-distributions.html#fig:linregest">2.26</a>, with
+data are the same as used to produce Figure <a href="the-normal-and-related-distributions.html#fig:linregest">2.25</a>, with
 the parameter estimates output by <code>lm()</code> mapping directly to the solid
 red line in that figure.</p>
 </blockquote>
@@ -4721,11 +4667,11 @@ what if we redo the experiment but add strawberry ice cream? When the
 number of groups is greater than two, we move from the two-sample <span class="math inline">\(t\)</span> test
 to <em>one-way analysis of variance</em> (or one-way <em>ANOVA</em>; the “one-way”
 indicates that there is a single independent variable,
-which in our example is ice cream flavor). See Figure <a href="the-normal-and-related-distributions.html#fig:anova">2.27</a>.</p>
+which in our example is ice cream flavor). See Figure <a href="the-normal-and-related-distributions.html#fig:anova">2.26</a>.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:anova"></span>
 <img src="_main_files/figure-html/anova-1.png" alt="\label{fig:anova}Illustration of the setting for a one-way analysis of variance. To the left, the spread of the data within each group is large compared to the differences in means between each group, so an ANOVA is less likely to reject the null hypothesis that $\mu_0 = \mu_1 = \mu_2$. To the right, the spread of data within groups is small relative to the differences in means between groups, so an ANOVA is more likely to reject the null hypothesis." width="45%" /><img src="_main_files/figure-html/anova-2.png" alt="\label{fig:anova}Illustration of the setting for a one-way analysis of variance. To the left, the spread of the data within each group is large compared to the differences in means between each group, so an ANOVA is less likely to reject the null hypothesis that $\mu_0 = \mu_1 = \mu_2$. To the right, the spread of data within groups is small relative to the differences in means between groups, so an ANOVA is more likely to reject the null hypothesis." width="45%" />
 <p class="caption">
-Figure 2.27: Illustration of the setting for a one-way analysis of variance. To the left, the spread of the data within each group is large compared to the differences in means between each group, so an ANOVA is less likely to reject the null hypothesis that <span class="math inline">\(\mu_0 = \mu_1 = \mu_2\)</span>. To the right, the spread of data within groups is small relative to the differences in means between groups, so an ANOVA is more likely to reject the null hypothesis.
+Figure 2.26: Illustration of the setting for a one-way analysis of variance. To the left, the spread of the data within each group is large compared to the differences in means between each group, so an ANOVA is less likely to reject the null hypothesis that <span class="math inline">\(\mu_0 = \mu_1 = \mu_2\)</span>. To the right, the spread of data within groups is small relative to the differences in means between groups, so an ANOVA is more likely to reject the null hypothesis.
 </p>
 </div>
 <p>Let the index <span class="math inline">\(i\)</span> denote a particular group (chocolate ice-cream eaters, etc.)
