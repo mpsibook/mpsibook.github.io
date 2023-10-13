@@ -4629,10 +4629,13 @@ this simulation, <span class="math inline">\(\sigma^2 = 1\)</span>.</li>
 the correlation example. In words, approximately 60% of the variation
 exhibited by the data is accounted for with the linear model.</li>
 <li>Last, the line with the phrase <code>F-statistic</code> shows the result of
-a hypothesis test in which the null is that <span class="math inline">\(\beta_0 = \beta_1 = 0\)</span> and
-the alternative is that at least one of the coefficients is truly non-zero.
-The numbers shown will only truly make sense after we cover one-way
-analysis of variance in the next section.</li>
+a hypothesis test in which (in general) the null is that all the
+<span class="math inline">\(\beta_i\)</span>’s (except <span class="math inline">\(\beta_0\)</span>) are zero and
+the alternative is that at least one of the <span class="math inline">\(\beta_i\)</span>’s
+is non-zero. Here, since there is only one non-intercept coefficient,
+the <span class="math inline">\(p\)</span>-value is equivalent to the one printed under
+<code>Coefficients</code>. We will discuss where the <code>F-statistic</code> and <code>DF</code> numbers
+come from below in the next section.</li>
 </ol>
 </blockquote>
 </div>

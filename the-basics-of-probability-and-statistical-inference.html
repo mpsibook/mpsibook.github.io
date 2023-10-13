@@ -998,9 +998,10 @@ why this would be true…)</p>
 P(A \cap B) = P(A) P(B \vert A) = P(B) P(A \vert B)
 \]</span>
 We can generalize this law given an arbitrary number of events <span class="math inline">\(k\)</span>:
-<span class="math display">\[
-P(A_1 \cap A_2 \cap \cdots \cap A_k) = P(A_1 \vert A_2 \cap \cdots \cap A_k) P(A_2 \cap \cdots \cap A_k) = \cdots = P(A_k) \prod_{i=1}^{k-1} P(A_i \vert A_{i+1} \cap \cdots \cap A_k) \,,
-\]</span>
+<span class="math display">\[\begin{align*}
+P(A_1 \cap A_2 \cap \cdots \cap A_k) &amp;= P(A_1 \vert A_2 \cap \cdots \cap A_k) P(A_2 \cap \cdots \cap A_k) = \cdots \\
+&amp;= P(A_k) \prod_{i=1}^{k-1} P(A_i \vert A_{i+1} \cap \cdots \cap A_k) \,,
+\end{align*}\]</span>
 where <span class="math inline">\(\prod\)</span> is the product symbol, the multiplicative analogue to the summation symbol <span class="math inline">\(\sum\)</span>.</li>
 <li><em>Additive Law</em>. The probability of the union of two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> is
 <span class="math display">\[
@@ -2276,7 +2277,7 @@ E[X] = \frac{1}{5} \cdot \frac{2}{3} + \frac{2}{5} \cdot \frac{1}{3} = \frac{4}{
 that
 <span class="math display">\[\begin{align*}
 f_{X \vert \Theta}(x \vert \theta) &amp;= \theta \exp(-\theta x) \\
-f_{Theta}(\theta) &amp;= \exp(-\theta) \,,
+f_{\Theta}(\theta) &amp;= \exp(-\theta) \,,
 \end{align*}\]</span>
 for <span class="math inline">\(x \in [0,\infty)\)</span> and <span class="math inline">\(\theta &gt; 0\)</span>. What is <span class="math inline">\(f_X(x)\)</span>?</p>
 </blockquote>
@@ -2285,7 +2286,7 @@ for <span class="math inline">\(x \in [0,\infty)\)</span> and <span class="math 
 integrate over all possible values of <span class="math inline">\(\theta\)</span>, rather than sum, so the
 LoTP looks like this:
 <span class="math display">\[
-f_X(x) = \int_0^\infty f_{X \vert \Theta}(x \vert \theta) f_{Theta}(\theta) d\theta \,.
+f_X(x) = \int_0^\infty f_{X \vert \Theta}(x \vert \theta) f_{\Theta}(\theta) d\theta \,.
 \]</span>
 Now that we’ve established this equation, the rest is math…except
 as we’ll see, we need to use integration by parts.
