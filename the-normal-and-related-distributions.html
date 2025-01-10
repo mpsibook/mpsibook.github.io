@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>2 The Normal (and Related) Distributions | Modern Probability and Statistical Inference</title>
   <meta name="description" content="2 The Normal (and Related) Distributions | Modern Probability and Statistical Inference" />
-  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
   <meta property="og:title" content="2 The Normal (and Related) Distributions | Modern Probability and Statistical Inference" />
   <meta property="og:type" content="book" />
@@ -55,7 +55,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -757,7 +757,7 @@ the area of the red-shaded region in Figure <a href="the-normal-and-related-dist
 Figure 2.2: The probability <span class="math inline">\(P(8 \leq X \leq 13.5)\)</span> is the area of the red-shaded region, i.e., the integral of the normal probability density function from 8 to 13.5, assuming <span class="math inline">\(\mu = 10\)</span> and <span class="math inline">\(\sigma^2 = 4\)</span>.
 </p>
 </div>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="the-normal-and-related-distributions.html#cb60-1" tabindex="-1"></a>integrand <span class="ot">=</span> <span class="cf">function</span>(x,mu,sigma2) {</span>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="the-normal-and-related-distributions.html#cb60-1" tabindex="-1"></a>integrand <span class="ot">&lt;-</span> <span class="cf">function</span>(x,mu,sigma2) {</span>
 <span id="cb60-2"><a href="the-normal-and-related-distributions.html#cb60-2" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">exp</span>(<span class="sc">-</span>(x<span class="sc">-</span>mu)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="dv">2</span><span class="sc">/</span>sigma2)<span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">2</span><span class="sc">*</span>pi<span class="sc">*</span>sigma2))</span>
 <span id="cb60-3"><a href="the-normal-and-related-distributions.html#cb60-3" tabindex="-1"></a>}</span>
 <span id="cb60-4"><a href="the-normal-and-related-distributions.html#cb60-4" tabindex="-1"></a><span class="fu">integrate</span>(integrand,<span class="dv">8</span>,<span class="fl">13.5</span>,<span class="at">mu=</span><span class="dv">10</span>,<span class="at">sigma2=</span><span class="dv">4</span>)<span class="sc">$</span>value</span></code></pre></div>
@@ -1482,7 +1482,7 @@ for <span class="math inline">\(u \in [2,2e]\)</span>. Hint: if we want to see i
 distribution is correct, we can code the pdf in <code>R</code> and
 integrate over the inferred domain.</p>
 </blockquote>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="the-normal-and-related-distributions.html#cb75-1" tabindex="-1"></a>integrand <span class="ot">=</span> <span class="cf">function</span>(u) {</span>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="the-normal-and-related-distributions.html#cb75-1" tabindex="-1"></a>integrand <span class="ot">&lt;-</span> <span class="cf">function</span>(u) {</span>
 <span id="cb75-2"><a href="the-normal-and-related-distributions.html#cb75-2" tabindex="-1"></a>  <span class="fu">return</span>(<span class="dv">3</span><span class="sc">*</span>(<span class="fu">log</span>(u<span class="sc">/</span><span class="dv">2</span>))<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>u)</span>
 <span id="cb75-3"><a href="the-normal-and-related-distributions.html#cb75-3" tabindex="-1"></a>}</span>
 <span id="cb75-4"><a href="the-normal-and-related-distributions.html#cb75-4" tabindex="-1"></a><span class="fu">integrate</span>(integrand,<span class="dv">2</span>,<span class="dv">2</span><span class="sc">*</span><span class="fu">exp</span>(<span class="dv">1</span>))<span class="sc">$</span>value</span></code></pre></div>
@@ -1632,7 +1632,8 @@ This is not easily computed by hand, so we utilize <code>R</code>:</p>
 we can see why this was going to
 be the value all along: we know that <span class="math inline">\(P(-1 \leq Z \leq 1) = 0.6827\)</span>, and
 thus <span class="math inline">\(P(\vert Z \vert &gt; 1) = 1-0.6827 = 0.3173\)</span>. If we square both sides
-in this last probability statement, we see that <span class="math inline">\(P(\vert Z \vert &gt; 1) = P(Z^2 &gt; 1)\)</span>.</p>
+in this last probability statement, we see that <span class="math inline">\(P(\vert Z \vert &gt; 1) =
+P(Z^2 &gt; 1)\)</span>.</p>
 </blockquote>
 <blockquote>
 <ol start="2" style="list-style-type: decimal">
@@ -1883,29 +1884,38 @@ we have
 \]</span>
 This last expression contains <em>two</em> random variables, one in the
 numerator and one in the denominator, and each is independent of the other.
-(We state this without proof.) How would we determine the distribution
-of the ratio above?</p>
+(We state this without proof…but we will appeal to intuition. For many
+distributions, the expected value and variance are <em>both</em> functions of one
+or more parameters <span class="math inline">\(\theta\)</span> [e.g., the exponential, binomial, and Poisson
+distributions, etc., etc.]. However, for a normal distribution, the
+expected value only depends on <span class="math inline">\(\mu\)</span> and the variance only depends on
+<span class="math inline">\(\sigma^2\)</span>.) How would we determine the distribution of the ratio above?</p>
 <p>There is no unique way by which to approach the derivation of the
 distribution: we simply illustrate one way of doing so. First, we rewrite
 the ratio above as
 <span class="math display">\[
 T = \frac{\bar{X}-\mu}{S/\sqrt{n}} = \frac{\bar{X}-\mu}{\sigma/\sqrt{n}} / \frac{S}{\sigma} = \frac{\bar{X}-\mu}{\sigma/\sqrt{n}} / \sqrt{\frac{S^2}{\sigma^2}} = \frac{\bar{X}-\mu}{\sigma/\sqrt{n}} / \left( \sqrt{\frac{\nu S^2}{\sigma^2}} \frac{1}{\sqrt{\nu}} \right) = Z / \left(\sqrt{\frac{W_{\nu}}{\nu}}\right) \,,
 \]</span>
-where <span class="math inline">\(Z \sim \mathcal{N}(0,1)\)</span> and <span class="math inline">\(W_{\nu}\)</span> is the chi-square distribution
-for <span class="math inline">\(\nu\)</span> degrees of freedom. Our next step is to determine the distribution
-of <span class="math inline">\(\sqrt{W_{\nu}/\nu}\)</span>. Given that <span class="math inline">\(W_{\nu}\)</span> is sampled from a chi-square
-distribution, we know that <span class="math inline">\(V = \sqrt{W_{\nu}}\)</span> is sampled from a
-<em>chi distribution</em> (note: no square!), whose pdf can be derived from
-<span class="math inline">\(f_S(s)\)</span> but can also simply be looked up:
+where <span class="math inline">\(Z \sim \mathcal{N}(0,1)\)</span> and <span class="math inline">\(W_{\nu}\)</span> is sampled from
+a chi-square distribution with <span class="math inline">\(\nu = n-1\)</span> degrees of freedom.
+Our next step is to determine the distribution
+of the random variable <span class="math inline">\(U = \sqrt{W_{\nu}/\nu}\)</span>.
+We identify that <span class="math inline">\(V = \sqrt{W_{\nu}}\)</span> is sampled from a
+<em>chi distribution</em> (note: no square!), whose pdf may be derived via
+a general transformation (since <span class="math inline">\(V = \sqrt{\nu}S/\sigma\)</span> and since we have
+written down <span class="math inline">\(f_S(s)\)</span> above), but can also simply be looked up:
 <span class="math display">\[
 f_V(v) = \frac{v^{\nu-1} \exp(-v^2/2)}{2^{\nu/2-1}\Gamma(\nu/2)} \,,
 \]</span>
-for <span class="math inline">\(c \geq 0\)</span> and <span class="math inline">\(\nu &gt; 0\)</span>. However, the random variable in the
-denominator is <span class="math inline">\(U = V/\sqrt{\nu}\)</span>; following the chain of reasoning for
-a general transformation, we determine that
+for <span class="math inline">\(v \geq 0\)</span> and <span class="math inline">\(\nu &gt; 0\)</span>. However, we <em>do</em> still have to apply a
+general transformation to determine the pdf for <span class="math inline">\(U = V/\sqrt{\nu}\)</span>.
+Doing so, we find that
 <span class="math display">\[
 f_U(u) = f_V(\sqrt{\nu}u) \sqrt{\nu} = \frac{\sqrt{\nu} (\sqrt{\nu}u)^{\nu-1} \exp(-(\sqrt{\nu}u)^2/2)}{2^{\nu/2-1}\Gamma(\nu/2)} \,.
-\]</span></p>
+\]</span>
+(So, yes, we could have derived <span class="math inline">\(f_U(u)\)</span> directly from <span class="math inline">\(f_S(s)\)</span> via a general
+transformation…but here we at least indicate to the reader that there is
+such a thing as the chi distribution.)</p>
 <p>At this point, we know the distributions for both the numerator and the denominator.
 Now we write down a general result dubbed the <em>ratio distribution</em>.
 For <span class="math inline">\(T = Z/U\)</span>, where <span class="math inline">\(Z\)</span> and <span class="math inline">\(U\)</span> are independent variables, that distribution is
@@ -2528,7 +2538,7 @@ this equation has also been applied in situations where we have
 sampled iid normal data but the variance is unknown,
 if <span class="math inline">\(n \gtrsim 30\)</span>. This context generally falls under the textbook
 heading of “large-sample confidence intervals.”
-{} The <em>only</em> reason this
+<em>This is just simply wrong!</em> The <em>only</em> reason this
 is done is because textbook writers have not wanted to
 include <span class="math inline">\(t\)</span> tables in their books that go beyond <span class="math inline">\(n = 30\)</span>.)
 We would argue that such equations obscure the reality what is actually
@@ -2571,7 +2581,8 @@ helps ensure that the root will not lie outside the specified interval.)
 We test the code by sampling <span class="math inline">\(n = 25\)</span> data from a standard normal
 distribution <span class="math inline">\(\mathcal{N}(0,1)\)</span>, and passing the statistic
 <span class="math inline">\(y_{\rm obs} = \bar{x}_{\rm obs}\)</span> to <code>uniroot()</code>.
-We find that the interval is <span class="math inline">\([\hat{\theta}_L,\hat{\theta}_U] = [-0.488,0.296]\)</span>, which overlaps the true value. (See Figure
+We find that the interval is <span class="math inline">\([\hat{\theta}_L,\hat{\theta}_U] =
+[-0.488,0.296]\)</span>, which overlaps the true value. (See Figure
 <a href="the-normal-and-related-distributions.html#fig:mukvarci">2.11</a>.)</p>
 </blockquote>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:mukvarci"></span>
@@ -2652,7 +2663,8 @@ with the only changes being swapping in the call to <code>pt()</code> (and
 altering the argument in that call) in place of the call to <code>pnorm()</code>,
 and replacing the known value of <span class="math inline">\(\sigma^2\)</span> (<code>sigma2</code> in the previous
 example) with <span class="math inline">\(s_{\rm obs}^2\)</span> (<code>s2</code>).
-We find that the interval is <span class="math inline">\([\hat{\theta}_L,\hat{\theta}_U] = [-0.448,0.257]\)</span>, which is similar to the interval derived in the last
+We find that the interval is <span class="math inline">\([\hat{\theta}_L,\hat{\theta}_U] =
+[-0.448,0.257]\)</span>, which is similar to the interval derived in the last
 example and which still overlaps the true value. (See
 Figure <a href="the-normal-and-related-distributions.html#fig:muuvarci">2.12</a>.)</p>
 </blockquote>
@@ -2687,7 +2699,8 @@ estimating an interval for the variance <span class="math inline">\(\sigma^2\)</
 the variable <code>mean</code>, removing the variable <code>s2</code> (as <code>y.obs</code> itself is now
 <span class="math inline">\(s_{\rm obs}^2\)</span>), and adjusting the lower bound on the interval (since
 <span class="math inline">\(\sigma^2 &gt; 0\)</span>).
-We find that the interval is <span class="math inline">\([\widehat{\sigma}_L^2,\widehat{\sigma}_U^2] = [0.445,1.414]\)</span>, which overlaps the true value. (See Figure
+We find that the interval is <span class="math inline">\([\widehat{\sigma}_L^2,\widehat{\sigma}_U^2] =
+[0.445,1.414]\)</span>, which overlaps the true value. (See Figure
 <a href="the-normal-and-related-distributions.html#fig:sigma2ci">2.13</a>.)</p>
 </blockquote>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:sigma2ci"></span>
@@ -3284,10 +3297,9 @@ in the rejection region. The farther <span class="math inline">\(\mu\)</span> is
 the power gets.</p>
 </blockquote>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:normex1"></span>
-<img src="_main_files/figure-html/normex1-1.png" alt="\label{fig:normex1}The sampling distribution $f_Y(y)$ (blue curve), rejection regions (red polygons), and observed statistic value $y_{
-m obs}$ (vertical green line) for $Y = \bar{X}$ given $n = 25$ iid data that are assumed to be sampled from a $\mathcal{N}(2,1)$ distribution under the null hypothesis. We perform a two-tailed test, with $\alpha = 0.05$, and the variance $\sigma^2 = 1$ is assumed known. The value we observe is in the rejection region, thus we reject the null hypothesis and conclude that $\mu \neq 2$." width="50%" />
+<img src="_main_files/figure-html/normex1-1.png" alt="\label{fig:normex1}The sampling distribution $f_Y(y)$ (blue curve), rejection regions (red polygons), and observed statistic value $y_{m obs}$ (vertical green line) for $Y = \bar{X}$ given $n = 25$ iid data that are assumed to be sampled from a $\mathcal{N}(2,1)$ distribution under the null hypothesis. We perform a two-tailed test, with $\alpha = 0.05$, and the variance $\sigma^2 = 1$ is assumed known. The value we observe is in the rejection region, thus we reject the null hypothesis and conclude that $\mu \neq 2$." width="50%" />
 <p class="caption">
-Figure 2.17: The sampling distribution <span class="math inline">\(f_Y(y)\)</span> (blue curve), rejection regions (red polygons), and observed statistic value <span class="math inline">\(y_{ m obs}\)</span> (vertical green line) for <span class="math inline">\(Y = \bar{X}\)</span> given <span class="math inline">\(n = 25\)</span> iid data that are assumed to be sampled from a <span class="math inline">\(\mathcal{N}(2,1)\)</span> distribution under the null hypothesis. We perform a two-tailed test, with <span class="math inline">\(\alpha = 0.05\)</span>, and the variance <span class="math inline">\(\sigma^2 = 1\)</span> is assumed known. The value we observe is in the rejection region, thus we reject the null hypothesis and conclude that <span class="math inline">\(\mu \neq 2\)</span>.
+Figure 2.17: The sampling distribution <span class="math inline">\(f_Y(y)\)</span> (blue curve), rejection regions (red polygons), and observed statistic value <span class="math inline">\(y_{m obs}\)</span> (vertical green line) for <span class="math inline">\(Y = \bar{X}\)</span> given <span class="math inline">\(n = 25\)</span> iid data that are assumed to be sampled from a <span class="math inline">\(\mathcal{N}(2,1)\)</span> distribution under the null hypothesis. We perform a two-tailed test, with <span class="math inline">\(\alpha = 0.05\)</span>, and the variance <span class="math inline">\(\sigma^2 = 1\)</span> is assumed known. The value we observe is in the rejection region, thus we reject the null hypothesis and conclude that <span class="math inline">\(\mu \neq 2\)</span>.
 </p>
 </div>
 <hr />
@@ -3382,10 +3394,9 @@ in the rejection region. The farther <span class="math inline">\(\mu\)</span> is
 direction), the higher this percentage gets. See Figure <a href="the-normal-and-related-distributions.html#fig:varpowcurve">2.19</a>.</p>
 </blockquote>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:varex"></span>
-<img src="_main_files/figure-html/varex-1.png" alt="\label{fig:varex}The sampling distribution $f_Y(y)$ (blue curve), rejection region (red polygon), and observed statistic value $y_{
-m obs}$ (vertical green line) for $Y = \bar{X}$ given $n = 15$ iid data that are assumed to be sampled from a normal distribution with mean $\mu_o = 4$ and variance unknown under the null hypothesis. We perform an upper-tailed test, with $\alpha = 0.05$. The value we observe is *not* in the rejection region, thus we fail to reject the null hypothesis and conclude that $\mu = 4$ is a plausible value." width="50%" />
+<img src="_main_files/figure-html/varex-1.png" alt="\label{fig:varex}The sampling distribution $f_Y(y)$ (blue curve), rejection region (red polygon), and observed statistic value $y_{m obs}$ (vertical green line) for $Y = \bar{X}$ given $n = 15$ iid data that are assumed to be sampled from a normal distribution with mean $\mu_o = 4$ and variance unknown under the null hypothesis. We perform an upper-tailed test, with $\alpha = 0.05$. The value we observe is *not* in the rejection region, thus we fail to reject the null hypothesis and conclude that $\mu = 4$ is a plausible value." width="50%" />
 <p class="caption">
-Figure 2.18: The sampling distribution <span class="math inline">\(f_Y(y)\)</span> (blue curve), rejection region (red polygon), and observed statistic value <span class="math inline">\(y_{ m obs}\)</span> (vertical green line) for <span class="math inline">\(Y = \bar{X}\)</span> given <span class="math inline">\(n = 15\)</span> iid data that are assumed to be sampled from a normal distribution with mean <span class="math inline">\(\mu_o = 4\)</span> and variance unknown under the null hypothesis. We perform an upper-tailed test, with <span class="math inline">\(\alpha = 0.05\)</span>. The value we observe is <em>not</em> in the rejection region, thus we fail to reject the null hypothesis and conclude that <span class="math inline">\(\mu = 4\)</span> is a plausible value.
+Figure 2.18: The sampling distribution <span class="math inline">\(f_Y(y)\)</span> (blue curve), rejection region (red polygon), and observed statistic value <span class="math inline">\(y_{m obs}\)</span> (vertical green line) for <span class="math inline">\(Y = \bar{X}\)</span> given <span class="math inline">\(n = 15\)</span> iid data that are assumed to be sampled from a normal distribution with mean <span class="math inline">\(\mu_o = 4\)</span> and variance unknown under the null hypothesis. We perform an upper-tailed test, with <span class="math inline">\(\alpha = 0.05\)</span>. The value we observe is <em>not</em> in the rejection region, thus we fail to reject the null hypothesis and conclude that <span class="math inline">\(\mu = 4\)</span> is a plausible value.
 </p>
 </div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:varpowcurve"></span>
@@ -3927,7 +3938,8 @@ derive appropriate expressions for one-tail tests.</p>
 <div id="simple-linear-regression" class="section level2 hasAnchor" number="2.17">
 <h2><span class="header-section-number">2.17</span> Simple Linear Regression<a href="the-normal-and-related-distributions.html#simple-linear-regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Thus far in this chapter, we have assumed that we have been
-given a sample of iid data <span class="math inline">\(\{X_1,\ldots,X_n\} \sim \mathcal{N}(\mu,\sigma^2)\)</span>, or, sometimes, two samples that are
+given a sample of iid data <span class="math inline">\(\{X_1,\ldots,X_n\} \sim
+\mathcal{N}(\mu,\sigma^2)\)</span>, or, sometimes, two samples that are
 independent of one another. Here we will move beyond this assumption to the
 case where our data consists of tuples <span class="math inline">\(\{(x_1,Y_1),\ldots,(x_n,Y_n)\}\)</span> and
 where we want to determine (or <em>learn</em>) the association between the variables
@@ -4183,7 +4195,8 @@ linear regression).</p>
 <blockquote>
 <p>Here we show that <span class="math inline">\(SSE/(n-2)\)</span> is an unbiased estimator of <span class="math inline">\(\sigma^2\)</span>. This
 is a non-trivial algebraic exercise, and thus we will leave the
-calculation of <span class="math inline">\(V[\hat{\sigma^2}] = V[SSE/(n-2)] = 2\sigma^4/(n-2)\)</span> as an exercise to the (masochistic) reader.</p>
+calculation of <span class="math inline">\(V[\hat{\sigma^2}] = V[SSE/(n-2)] =
+2\sigma^4/(n-2)\)</span> as an exercise to the (masochistic) reader.</p>
 </blockquote>
 <blockquote>
 <p>We start by writing that

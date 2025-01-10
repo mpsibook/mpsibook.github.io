@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4 The Poisson (and Related) Distributions | Modern Probability and Statistical Inference</title>
   <meta name="description" content="4 The Poisson (and Related) Distributions | Modern Probability and Statistical Inference" />
-  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4 The Poisson (and Related) Distributions | Modern Probability and Statistical Inference" />
   <meta property="og:type" content="book" />
@@ -55,7 +55,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -767,7 +767,8 @@ by writing</p>
 <p>This approach is far more convenient than writing out a string of
 calls to <code>dpois()</code>, particularly when the number of values of
 <span class="math inline">\(x\)</span> to sum over becomes large.
-We can also utilize cdf functions here: <span class="math inline">\(P(4 \leq X &lt; 6) = P(X &lt; 6) - P(X &lt; 4) = P(X \leq 5) - P(X \leq 3) = F_X(5) - F_X(3)\)</span>, which in <code>R</code> is computed as
+We can also utilize cdf functions here: <span class="math inline">\(P(4 \leq X &lt; 6) = P(X &lt; 6) - P(X &lt; 4)
+= P(X \leq 5) - P(X \leq 3) = F_X(5) - F_X(3)\)</span>, which in <code>R</code> is computed as
 follows:</p>
 </blockquote>
 <div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="the-poisson-and-related-distributions.html#cb243-1" tabindex="-1"></a><span class="fu">ppois</span>(<span class="dv">5</span>,<span class="at">lambda=</span><span class="dv">5</span>) <span class="sc">-</span> <span class="fu">ppois</span>(<span class="dv">3</span>,<span class="at">lambda=</span><span class="dv">5</span>)</span></code></pre></div>
@@ -1083,7 +1084,8 @@ f_X(x) = \frac{x^{\alpha-1}}{\beta^{\alpha}} \frac{\exp(-x/\beta)}{\Gamma(\alpha
 \]</span>
 for <span class="math inline">\(x \geq 0\)</span> and <span class="math inline">\(\alpha,\beta &gt; 0\)</span>.
 The expected value is <span class="math inline">\(E[X] = \alpha \beta\)</span> while the variance
-is <span class="math inline">\(V[X] = \alpha \beta^2\)</span> (and thus <span class="math inline">\(E[X^2] = \alpha \beta^2 + \alpha^2 \beta^2\)</span>).</p>
+is <span class="math inline">\(V[X] = \alpha \beta^2\)</span> (and thus <span class="math inline">\(E[X^2] = \alpha \beta^2 +
+\alpha^2 \beta^2\)</span>).</p>
 </blockquote>
 <blockquote>
 <p>Let’s assume we have <span class="math inline">\(n\)</span> iid gamma-distributed random variables.
@@ -1168,7 +1170,8 @@ Our observed test statistic is <span class="math inline">\(y_{\rm obs} = \sum_{i
 <p>Note the division by <span class="math inline">\(n\)</span> after the calls to <code>uniroot()</code>: this
 converts the interval bounds from being bounds on <span class="math inline">\(n\lambda\)</span> to
 being bounds on <span class="math inline">\(\lambda\)</span> itself.
-The interval is <span class="math inline">\([\hat{\lambda}_L,\hat{\lambda}_U] = [5.81,9.18]\)</span>, which overlaps the true value of 8. (See
+The interval is <span class="math inline">\([\hat{\lambda}_L,\hat{\lambda}_U] =
+[5.81,9.18]\)</span>, which overlaps the true value of 8. (See
 Figure <a href="the-poisson-and-related-distributions.html#fig:poici">4.3</a>.)
 Note that the interval over which we
 search for the root is [0.001,10000], which is
@@ -1417,7 +1420,8 @@ difficult to work with directly. Thus we fall back upon <em>Wilks’ theorem</em
 denote the number of free parameters in
 <span class="math inline">\(\theta \in \Theta = \Theta_o \cup \Theta_a\)</span>.
 (To reiterate, <span class="math inline">\(\Theta\)</span> must include <em>all possible values of the parameters</em>.
-For instance, if <span class="math inline">\(H_o\)</span> is <span class="math inline">\(\theta = \theta_o\)</span>, then <span class="math inline">\(H_a\)</span> must be <span class="math inline">\(\theta \neq \theta_o\)</span> and not <span class="math inline">\(\theta &lt; \theta_o\)</span> or <span class="math inline">\(\theta &gt; \theta_o\)</span>.)
+For instance, if <span class="math inline">\(H_o\)</span> is <span class="math inline">\(\theta = \theta_o\)</span>, then <span class="math inline">\(H_a\)</span> must be <span class="math inline">\(\theta \neq
+\theta_o\)</span> and not <span class="math inline">\(\theta &lt; \theta_o\)</span> or <span class="math inline">\(\theta &gt; \theta_o\)</span>.)
 For large <span class="math inline">\(n\)</span>,
 <span class="math display">\[
 -2\log \lambda_{LR} \stackrel{d}{\rightarrow} W \sim \chi_{r-r_o}^2 \,,
@@ -1462,9 +1466,8 @@ and <span class="math inline">\(y_{\rm RR} = 17\)</span>, we reject the null hyp
 We can further write down that the
 <span class="math inline">\(p\)</span>-value is <code>ppois(y.obs,lambda=n*lambda.o)</code>, which is 0.038.
 (Note that since this is a lower-tail/yes test, we need not make a
-discreteness correction when computing either the <span class="math inline">\(p\)</span>-value or the
-test power, i.e., we do not need to subtract 1 from <code>y.obs</code> in the
-function call above.)
+discreteness correction when computing the <span class="math inline">\(p\)</span>-value, i.e.,
+we do not need to subtract 1 from <code>y.obs</code> in the function call above.)
 Since the rejection region does not depend on
 <span class="math inline">\(\lambda_a\)</span>, we have defined the uniformly most powerful test of
 <span class="math inline">\(\lambda_o\)</span> versus <span class="math inline">\(\lambda_a\)</span>.</p>
@@ -1476,10 +1479,12 @@ lower-tail test.
 We will now use this value to determine the power of the test.
 The power is the probability of rejecting the null hypothesis given
 a specific value of <span class="math inline">\(\lambda\)</span>, i.e., <span class="math inline">\(P(Y &lt; y_{\rm RR} \vert \lambda_a)\)</span>.
-Here, that value is given by <code>ppois(y.lo,n*lambda.a)</code>, which
+Here, that value is given by <code>ppois(y.rr-1,n*lambda.a)</code>; since this
+is a lower-tail/yes test, we <em>do</em> need to make a discreteness correction
+when computing the test power. The power
 is 0.664: if <span class="math inline">\(\lambda\)</span> is truly equal to 3,
 we would reject the null hypothesis that <span class="math inline">\(\lambda_o = 5\)</span> after collecting
-five data about two-thirds of the time.</p>
+five data some two-thirds of the time.</p>
 </blockquote>
 <hr />
 </div>
@@ -1496,7 +1501,7 @@ statistic <span class="math inline">\(Y = \sum_{i=1}^n X_i\)</span> in the Poiss
 with parameter <span class="math inline">\(n\lambda\)</span>, we can directly
 derive each of the two rejection region boundaries, which are
 <span class="math display">\[\begin{align*}
-y_{\rm RR,lo} &amp;= F_Y^{-1}(\alpha/2 \vert n\lambda_o)/n
+y_{\rm RR,lo} &amp;= F_Y^{-1}(\alpha/2 \vert n\lambda_o)/n \\
 y_{\rm RR,hi} &amp;= F_Y^{-1}(1-\alpha/2 \vert n\lambda_o)/n \,.
 \end{align*}\]</span>
 In <code>R</code>, we determine the boundaries as
@@ -1526,7 +1531,8 @@ the hypothesis <span class="math inline">\(H_a: \mu \neq \mu_o\)</span> using th
 \Theta_o &amp;= \{ \mu,\sigma^2 : \mu = \mu_o, \sigma^2 &gt; 0 \} \\
 \Theta_a &amp;= \{ \mu,\sigma^2 : \mu \neq \mu_o, \sigma^2 &gt; 0 \} \,,
 \end{align*}\]</span>
-and so <span class="math inline">\(\Theta = \Theta_o \cup \Theta_a = \{ \mu,\sigma^2 : \mu \in (-\infty,\infty), \sigma^2 &gt; 0 \}\)</span>, with
+and so <span class="math inline">\(\Theta = \Theta_o \cup \Theta_a = \{ \mu,\sigma^2 :
+\mu \in (-\infty,\infty), \sigma^2 &gt; 0 \}\)</span>, with
 <span class="math inline">\(r_o = 1\)</span> (<span class="math inline">\(\sigma^2\)</span>) and <span class="math inline">\(r = 2\)</span> (<span class="math inline">\(\mu,\sigma^2\)</span>).</p>
 </blockquote>
 <blockquote>

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>1 The Basics of Probability and Statistical Inference | Modern Probability and Statistical Inference</title>
   <meta name="description" content="1 The Basics of Probability and Statistical Inference | Modern Probability and Statistical Inference" />
-  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
   <meta property="og:title" content="1 The Basics of Probability and Statistical Inference | Modern Probability and Statistical Inference" />
   <meta property="og:type" content="book" />
@@ -55,7 +55,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -811,7 +811,8 @@ event do not change from experiment to experiment.</p>
 <blockquote>
 <ol style="list-style-type: decimal">
 <li>What is <span class="math inline">\(P(A)\)</span>? We can determine this by summing down the <span class="math inline">\(A\)</span> column:
-<span class="math inline">\(P(A) = P[A \cap \Omega] = P[A \cap (B \cup \bar{B})] = P[(A \cap B) \cup (A \cap \bar{B})]\)</span>; since <span class="math inline">\(A \cap B\)</span> and <span class="math inline">\(A \cap \bar{B}\)</span>
+<span class="math inline">\(P(A) = P[A \cap \Omega] = P[A \cap (B \cup \bar{B})] =
+P[(A \cap B) \cup (A \cap \bar{B})]\)</span>; since <span class="math inline">\(A \cap B\)</span> and <span class="math inline">\(A \cap \bar{B}\)</span>
 are disjoint, we can view the <span class="math inline">\(\cup\)</span> as addition, and so
 <span class="math inline">\(P(A) = P(A \cap B) + P(A \cap \bar{B}) = 0.45 + 0.21 = 0.66\)</span>.</li>
 <li>What is <span class="math inline">\(P(A \cup B)\)</span>? Utilizing De Morgan’s laws, this would be
@@ -1459,7 +1460,8 @@ lie between 0 and 1. Because we are dealing with masses and not densities,
 probability calculations involve summations (while taking care to note
 whether one or both limits of summation lie at a mass, and if so, whether
 or not the inequality is, e.g., <span class="math inline">\(&gt;\)</span> or <span class="math inline">\(\geq\)</span>). For instance, what is
-the probability of achieving a score greater than 1 point? <span class="math inline">\(P(X &gt; 1) = p_X(2) + p_X(3) = 1/2\)</span>. What about a score of 3 points, given a score greater
+the probability of achieving a score greater than 1 point? <span class="math inline">\(P(X &gt; 1) =
+p_X(2) + p_X(3) = 1/2\)</span>. What about a score of 3 points, given a score greater
 than 0 points?
 <span class="math display">\[
 P(X = 3 \vert X &gt; 0) = \frac{P(X = 3 \cap X &gt; 0)}{P(X &gt; 0)} = \frac{P(X = 3)}{P(X &gt; 0)} = \frac{p_X(3)}{p_X(1)+p_X(2)+p_X(3)} = \frac{4}{1+1+4} = \frac{2}{3} \,.
@@ -2824,7 +2826,8 @@ that the same definition holds for discrete distributions, with the
 notational change <span class="math inline">\(f \rightarrow p\)</span>.
 Additionally, recall that <span class="math inline">\(\prod\)</span> is the product symbol,
 the multiplicative analogue
-of the summation symbol <span class="math inline">\(\sum\)</span>: <span class="math inline">\(\prod_{i=1}^n f_X(x_i \vert \theta) = f_X(x_1 \vert \theta) \cdot f_X(x_2 \vert \theta) \cdot \cdots \cdot f_X(x_n \vert \theta)\)</span>. As a last comment, we will find that we often work not
+of the summation symbol <span class="math inline">\(\sum\)</span>: <span class="math inline">\(\prod_{i=1}^n f_X(x_i \vert \theta) =
+f_X(x_1 \vert \theta) \cdot f_X(x_2 \vert \theta) \cdot \cdots \cdot f_X(x_n \vert \theta)\)</span>. As a last comment, we will find that we often work not
 with the likelihood function itself, but with the <em>log-likelihood</em>
 function <span class="math inline">\(\ell(\theta \vert \mathbf{x})\)</span>; given iid data, the log-likelihood is
 <span class="math display">\[
@@ -2832,7 +2835,8 @@ function <span class="math inline">\(\ell(\theta \vert \mathbf{x})\)</span>; giv
 \]</span></p>
 <p>Let’s step back for an instant here, and assume our sample size is <span class="math inline">\(n = 1\)</span>.
 At first blush, it would appear that a likelihood is the same as a probability
-density function, because, after all, <span class="math inline">\(\mathcal{L}(\theta \vert x) = f_X(x \vert \theta)\)</span>. But note what is
+density function, because, after all, <span class="math inline">\(\mathcal{L}(\theta \vert x) =
+f_X(x \vert \theta)\)</span>. But note what is
 being conditioned upon in both functions: for the likelihood, we
 consider that the datum is fixed to its
 observed value (i.e., <span class="math inline">\(X = x\)</span>) and that we are free to vary the value of
@@ -2984,7 +2988,8 @@ its values will be (a) tiny, and (b) spread over a large dynamic range.
 have a value too small to be recordable as a floating-point number on
 a computer!)
 Thus in practice it is often best to visualize the log-likelihood
-function <span class="math inline">\(\ell(\theta \vert \mathbf{x}) = \log \mathcal{L}(\theta \vert \mathbf{x})\)</span> as a function of <span class="math inline">\(\theta\)</span>.
+function <span class="math inline">\(\ell(\theta \vert \mathbf{x}) =
+\log \mathcal{L}(\theta \vert \mathbf{x})\)</span> as a function of <span class="math inline">\(\theta\)</span>.
 We do this below in Figure <a href="the-basics-of-probability-and-statistical-inference.html#fig:samplike">1.28</a>. (We will leave the
 derivation of the log-likelihood as an exercise to the reader.)</p>
 </blockquote>
@@ -3044,7 +3049,8 @@ from a sampling distribution with some mean and some variance.)</p>
 <ol style="list-style-type: decimal">
 <li>Bias: does the
 estimator yield the true value, <em>on average</em>? In other words, is
-<span class="math inline">\(B[\hat{\theta}] = E[\hat{\theta}-\theta] = E[\hat{\theta}] - \theta = 0\)</span>? If so, we say that our estimator is <em>unbiased</em>. Here,
+<span class="math inline">\(B[\hat{\theta}] = E[\hat{\theta}-\theta] = E[\hat{\theta}] - \theta =
+0\)</span>? If so, we say that our estimator is <em>unbiased</em>. Here,
 both estimators are unbiased: <span class="math inline">\(E[X_1-\mu] = E[X_1]-\mu = \mu-\mu = 0\)</span>,
 and <span class="math inline">\(E[\bar{X}-\mu] = E[\bar{X}] - \mu = \mu-\mu = 0\)</span>.</li>
 <li>Variance: is the spread of values that the estimator generates from
@@ -3124,7 +3130,8 @@ we are given <span class="math inline">\(n\)</span> iid data sampled from the fo
 f_X(x) = \frac{1}{\theta}
 \]</span>
 for <span class="math inline">\(0 \leq x \leq \theta\)</span>, with <span class="math inline">\(\theta\)</span> unknown. The expected value and
-variance of this distribution are <span class="math inline">\(\mu = E[X] = \theta/2\)</span> and <span class="math inline">\(\sigma^2 = V[X] = \theta^2/12\)</span>, respectively. We propose two estimators
+variance of this distribution are <span class="math inline">\(\mu = E[X] = \theta/2\)</span> and <span class="math inline">\(\sigma^2 = V[X] =
+\theta^2/12\)</span>, respectively. We propose two estimators
 for <span class="math inline">\(\theta\)</span>: <span class="math inline">\(2\bar{X}\)</span>, and <span class="math inline">\(X_1+X_2\)</span>. Which is
 better? Intuitively, we know the answer, but can we quantify it, i.e.,
 can we determine which of the two
@@ -3221,7 +3228,8 @@ thus we have detected a maximum of the likelihood function.)</p>
 </blockquote>
 <blockquote>
 <p>Now, is this estimate biased? We know from results shown above that
-<span class="math inline">\(E[\bar{X}] = \theta\)</span>, thus <span class="math inline">\(B[\hat{\theta}_{MLE}] = E[\hat{\theta}_{MLE}] - \theta = \theta - \theta = 0\)</span> and thus the estimator is unbiased. We also
+<span class="math inline">\(E[\bar{X}] = \theta\)</span>, thus <span class="math inline">\(B[\hat{\theta}_{MLE}] = E[\hat{\theta}_{MLE}] - \theta
+= \theta - \theta = 0\)</span> and thus the estimator is unbiased. We also
 know that <span class="math inline">\(V[\bar{X}] = \sigma^2/n = \theta^2/n\)</span>. The question, to be answered
 in a future chapter, is whether we can possibly find an estimator with a
 lower variance via some other estimation approach…or if this indeed the
@@ -3317,7 +3325,8 @@ it may <em>always</em> overlap the observed value! (Albeit perhaps with
 and ask the following questions for a two-sided interval:</p>
 <ul>
 <li>for what value of <span class="math inline">\(\theta\)</span> is <span class="math inline">\(\int_{-\infty}^{y_{\rm obs}} f_Y(y \vert \theta) = \alpha/2\)</span>
-(in other words, for what value of <span class="math inline">\(\theta\)</span> is <span class="math inline">\(F_Y(y_{\rm obs} \vert \theta) = \alpha/2\)</span>); and</li>
+(in other words, for what value of <span class="math inline">\(\theta\)</span> is <span class="math inline">\(F_Y(y_{\rm obs} \vert \theta) =
+\alpha/2\)</span>); and</li>
 <li>for what value of <span class="math inline">\(\theta\)</span> is <span class="math inline">\(\int_{y_{\rm obs}}^\infty f_Y(y \vert \theta) = \alpha/2\)</span>
 (or is <span class="math inline">\(F_Y(y_{\rm obs} \vert \theta) = 1 - \alpha/2\)</span>)?</li>
 </ul>
@@ -3938,7 +3947,8 @@ F_Y(y_{1-\alpha} \vert \theta_o) - (1-\alpha) &amp;= 0 \\
 \Rightarrow ~~~ (1-y_{1-\alpha})^{\theta_o} &amp;= \alpha \\
 \Rightarrow ~~~ y_{1-\alpha} &amp;= 1 - \alpha^{1/\theta_o} = 1 - \alpha^{1/2} \,.
 \end{align*}\]</span>
-Thus if we observe <span class="math inline">\(y_{\rm obs} = x &gt; 1 - \alpha^{1/2} = 1 - 0.05^{1/2} = 0.776\)</span>, we reject the null hypothesis.</p>
+Thus if we observe <span class="math inline">\(y_{\rm obs} = x &gt; 1 - \alpha^{1/2} =
+1 - 0.05^{1/2} = 0.776\)</span>, we reject the null hypothesis.</p>
 </blockquote>
 </div>
 </div>

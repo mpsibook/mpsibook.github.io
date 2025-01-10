@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>5 The Uniform Distribution | Modern Probability and Statistical Inference</title>
   <meta name="description" content="5 The Uniform Distribution | Modern Probability and Statistical Inference" />
-  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
   <meta property="og:title" content="5 The Uniform Distribution | Modern Probability and Statistical Inference" />
   <meta property="og:type" content="book" />
@@ -55,7 +55,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -1293,7 +1293,8 @@ hypotheses that are actually correct. (“We reject the null 20 times. Assuming
 times, and that we’d be mistaken once.”)
 This is different from the FWER setting,
 where <span class="math inline">\(\alpha\)</span> represents the probability of erroneously rejecting one or
-more null hypotheses. (“We perform 100 independent tests. Assuming <span class="math inline">\(\alpha = 0.05\)</span>, we expect to erroneously reject the null five percent of the time when
+more null hypotheses. (“We perform 100 independent tests. Assuming <span class="math inline">\(\alpha =
+0.05\)</span>, we expect to erroneously reject the null five percent of the time when
 the null is correct…but we can say nothing about how often we correctly
 reject the null.”) We can further illustrate this point with the following
 table:</p>
@@ -1388,6 +1389,8 @@ the power is thus 1.
 We plot out the power curve for <span class="math inline">\(\theta_o = 1\)</span> and <span class="math inline">\(n = 10\)</span>
 in Figure <a href="the-uniform-distribution.html#fig:uhyppow">5.4</a>.</p>
 </blockquote>
+<pre><code>## Warning in geom_point(aes(x = theta.o, y = alpha), size = 4, col = &quot;red&quot;): All aesthetics have length 1, but the data has 101 rows.
+## ℹ Please consider using `annotate()` or provide this layer with data containing a single row.</code></pre>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:uhyppow"></span>
 <img src="_main_files/figure-html/uhyppow-1.png" alt="\label{fig:uhyppow}The power curve for the test of $H_o : \theta = \theta_o = 1$ versus $H_a : \theta \neq \theta_o$. The curve displays three discrete segments whose functional forms are given in the body of the text, and it achieves its minimum value, $\alpha$, at $\theta = 1$." width="50%" />
 <p class="caption">
@@ -1405,41 +1408,41 @@ size <span class="math inline">\(n = 40\)</span>; for <span class="math inline">
 to one. For each dataset, we test the hypotheses <span class="math inline">\(H_o : \mu = 0\)</span>
 versus <span class="math inline">\(H_a : \mu &gt; 0\)</span>.</p>
 </blockquote>
-<div class="sourceCode" id="cb287"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb287-1"><a href="the-uniform-distribution.html#cb287-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
-<span id="cb287-2"><a href="the-uniform-distribution.html#cb287-2" tabindex="-1"></a></span>
-<span id="cb287-3"><a href="the-uniform-distribution.html#cb287-3" tabindex="-1"></a>n      <span class="ot">&lt;-</span> <span class="dv">40</span></span>
-<span id="cb287-4"><a href="the-uniform-distribution.html#cb287-4" tabindex="-1"></a>k      <span class="ot">&lt;-</span> <span class="dv">100</span></span>
-<span id="cb287-5"><a href="the-uniform-distribution.html#cb287-5" tabindex="-1"></a>k.p    <span class="ot">&lt;-</span> <span class="dv">80</span></span>
-<span id="cb287-6"><a href="the-uniform-distribution.html#cb287-6" tabindex="-1"></a>mu     <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">0</span>,k.p),<span class="fu">rep</span>(<span class="fl">0.5</span>,k<span class="sc">-</span>k.p))</span>
-<span id="cb287-7"><a href="the-uniform-distribution.html#cb287-7" tabindex="-1"></a>mu.o   <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb287-8"><a href="the-uniform-distribution.html#cb287-8" tabindex="-1"></a>sigma2 <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb287-9"><a href="the-uniform-distribution.html#cb287-9" tabindex="-1"></a></span>
-<span id="cb287-10"><a href="the-uniform-distribution.html#cb287-10" tabindex="-1"></a>p      <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>,k)</span>
-<span id="cb287-11"><a href="the-uniform-distribution.html#cb287-11" tabindex="-1"></a><span class="cf">for</span> ( ii <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>k ) {</span>
-<span id="cb287-12"><a href="the-uniform-distribution.html#cb287-12" tabindex="-1"></a>  X     <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n,<span class="at">mean=</span>mu[ii],<span class="at">sd=</span>sigma2)</span>
-<span id="cb287-13"><a href="the-uniform-distribution.html#cb287-13" tabindex="-1"></a>  p[ii] <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="fu">mean</span>(X),<span class="at">mean=</span>mu.o,<span class="at">sd=</span><span class="fu">sqrt</span>(sigma2<span class="sc">/</span>n))</span>
-<span id="cb287-14"><a href="the-uniform-distribution.html#cb287-14" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb288"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb288-1"><a href="the-uniform-distribution.html#cb288-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
+<span id="cb288-2"><a href="the-uniform-distribution.html#cb288-2" tabindex="-1"></a></span>
+<span id="cb288-3"><a href="the-uniform-distribution.html#cb288-3" tabindex="-1"></a>n      <span class="ot">&lt;-</span> <span class="dv">40</span></span>
+<span id="cb288-4"><a href="the-uniform-distribution.html#cb288-4" tabindex="-1"></a>k      <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb288-5"><a href="the-uniform-distribution.html#cb288-5" tabindex="-1"></a>k.p    <span class="ot">&lt;-</span> <span class="dv">80</span></span>
+<span id="cb288-6"><a href="the-uniform-distribution.html#cb288-6" tabindex="-1"></a>mu     <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">0</span>,k.p),<span class="fu">rep</span>(<span class="fl">0.5</span>,k<span class="sc">-</span>k.p))</span>
+<span id="cb288-7"><a href="the-uniform-distribution.html#cb288-7" tabindex="-1"></a>mu.o   <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb288-8"><a href="the-uniform-distribution.html#cb288-8" tabindex="-1"></a>sigma2 <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb288-9"><a href="the-uniform-distribution.html#cb288-9" tabindex="-1"></a></span>
+<span id="cb288-10"><a href="the-uniform-distribution.html#cb288-10" tabindex="-1"></a>p      <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>,k)</span>
+<span id="cb288-11"><a href="the-uniform-distribution.html#cb288-11" tabindex="-1"></a><span class="cf">for</span> ( ii <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>k ) {</span>
+<span id="cb288-12"><a href="the-uniform-distribution.html#cb288-12" tabindex="-1"></a>  X     <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n,<span class="at">mean=</span>mu[ii],<span class="at">sd=</span>sigma2)</span>
+<span id="cb288-13"><a href="the-uniform-distribution.html#cb288-13" tabindex="-1"></a>  p[ii] <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="fu">mean</span>(X),<span class="at">mean=</span>mu.o,<span class="at">sd=</span><span class="fu">sqrt</span>(sigma2<span class="sc">/</span>n))</span>
+<span id="cb288-14"><a href="the-uniform-distribution.html#cb288-14" tabindex="-1"></a>}</span></code></pre></div>
 <blockquote>
 <p>Below, we try two separate corrections for multiple comparisons: the
 Bonferroni correction (controlling FWER), and the Benjamini-Hochberg
 procedure (controlling FDR).</p>
 </blockquote>
-<div class="sourceCode" id="cb288"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb288-1"><a href="the-uniform-distribution.html#cb288-1" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
-<span id="cb288-2"><a href="the-uniform-distribution.html#cb288-2" tabindex="-1"></a></span>
-<span id="cb288-3"><a href="the-uniform-distribution.html#cb288-3" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The number of rejected null hypotheses for Bonferroni: &quot;</span>,</span>
-<span id="cb288-4"><a href="the-uniform-distribution.html#cb288-4" tabindex="-1"></a>    <span class="fu">sum</span>(p <span class="sc">&lt;</span> alpha<span class="sc">/</span>k),<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb289"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb289-1"><a href="the-uniform-distribution.html#cb289-1" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb289-2"><a href="the-uniform-distribution.html#cb289-2" tabindex="-1"></a></span>
+<span id="cb289-3"><a href="the-uniform-distribution.html#cb289-3" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The number of rejected null hypotheses for Bonferroni: &quot;</span>,</span>
+<span id="cb289-4"><a href="the-uniform-distribution.html#cb289-4" tabindex="-1"></a>    <span class="fu">sum</span>(p <span class="sc">&lt;</span> alpha<span class="sc">/</span>k),<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## The number of rejected null hypotheses for Bonferroni:  9</code></pre>
-<div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb290-1"><a href="the-uniform-distribution.html#cb290-1" tabindex="-1"></a>w <span class="ot">&lt;-</span> <span class="fu">which</span>(p <span class="sc">&lt;</span> alpha<span class="sc">/</span>k)</span>
-<span id="cb290-2"><a href="the-uniform-distribution.html#cb290-2" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The number of falsely rejected null hypotheses is:     &quot;</span>,<span class="fu">sum</span>(w<span class="sc">&lt;=</span>k.p),<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb291"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb291-1"><a href="the-uniform-distribution.html#cb291-1" tabindex="-1"></a>w <span class="ot">&lt;-</span> <span class="fu">which</span>(p <span class="sc">&lt;</span> alpha<span class="sc">/</span>k)</span>
+<span id="cb291-2"><a href="the-uniform-distribution.html#cb291-2" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The number of falsely rejected null hypotheses is:     &quot;</span>,<span class="fu">sum</span>(w<span class="sc">&lt;=</span>k.p),<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## The number of falsely rejected null hypotheses is:      0</code></pre>
-<div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb292-1"><a href="the-uniform-distribution.html#cb292-1" tabindex="-1"></a>p.sort <span class="ot">&lt;-</span> <span class="fu">sort</span>(p)</span>
-<span id="cb292-2"><a href="the-uniform-distribution.html#cb292-2" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The number of rejected null hypotheses for FDR:        &quot;</span>,</span>
-<span id="cb292-3"><a href="the-uniform-distribution.html#cb292-3" tabindex="-1"></a>    <span class="fu">sum</span>(p.sort <span class="sc">&lt;</span> (<span class="dv">1</span><span class="sc">:</span>k)<span class="sc">*</span>alpha<span class="sc">/</span>k),<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb293"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb293-1"><a href="the-uniform-distribution.html#cb293-1" tabindex="-1"></a>p.sort <span class="ot">&lt;-</span> <span class="fu">sort</span>(p)</span>
+<span id="cb293-2"><a href="the-uniform-distribution.html#cb293-2" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The number of rejected null hypotheses for FDR:        &quot;</span>,</span>
+<span id="cb293-3"><a href="the-uniform-distribution.html#cb293-3" tabindex="-1"></a>    <span class="fu">sum</span>(p.sort <span class="sc">&lt;</span> (<span class="dv">1</span><span class="sc">:</span>k)<span class="sc">*</span>alpha<span class="sc">/</span>k),<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## The number of rejected null hypotheses for FDR:         17</code></pre>
-<div class="sourceCode" id="cb294"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb294-1"><a href="the-uniform-distribution.html#cb294-1" tabindex="-1"></a>p.rej <span class="ot">&lt;-</span> p.sort[p.sort<span class="sc">&lt;</span>(<span class="dv">1</span><span class="sc">:</span>k)<span class="sc">*</span>alpha<span class="sc">/</span>k]</span>
-<span id="cb294-2"><a href="the-uniform-distribution.html#cb294-2" tabindex="-1"></a>w <span class="ot">&lt;-</span> p <span class="sc">%in%</span> p.rej</span>
-<span id="cb294-3"><a href="the-uniform-distribution.html#cb294-3" tabindex="-1"></a>w <span class="ot">&lt;-</span> <span class="fu">which</span>(w<span class="sc">==</span><span class="cn">TRUE</span>)</span>
-<span id="cb294-4"><a href="the-uniform-distribution.html#cb294-4" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The number of falsely rejected null hypotheses is:     &quot;</span>,<span class="fu">sum</span>(w<span class="sc">&lt;=</span>k.p),<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb295"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb295-1"><a href="the-uniform-distribution.html#cb295-1" tabindex="-1"></a>p.rej <span class="ot">&lt;-</span> p.sort[p.sort<span class="sc">&lt;</span>(<span class="dv">1</span><span class="sc">:</span>k)<span class="sc">*</span>alpha<span class="sc">/</span>k]</span>
+<span id="cb295-2"><a href="the-uniform-distribution.html#cb295-2" tabindex="-1"></a>w <span class="ot">&lt;-</span> p <span class="sc">%in%</span> p.rej</span>
+<span id="cb295-3"><a href="the-uniform-distribution.html#cb295-3" tabindex="-1"></a>w <span class="ot">&lt;-</span> <span class="fu">which</span>(w<span class="sc">==</span><span class="cn">TRUE</span>)</span>
+<span id="cb295-4"><a href="the-uniform-distribution.html#cb295-4" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The number of falsely rejected null hypotheses is:     &quot;</span>,<span class="fu">sum</span>(w<span class="sc">&lt;=</span>k.p),<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## The number of falsely rejected null hypotheses is:      0</code></pre>
 <blockquote>
 <p>With the Bonferroni correction, we reject nine null hypotheses (with the

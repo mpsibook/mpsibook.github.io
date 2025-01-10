@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>7 Further Conceptual Details (Optional) | Modern Probability and Statistical Inference</title>
   <meta name="description" content="7 Further Conceptual Details (Optional) | Modern Probability and Statistical Inference" />
-  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
   <meta property="og:title" content="7 Further Conceptual Details (Optional) | Modern Probability and Statistical Inference" />
   <meta property="og:type" content="book" />
@@ -55,7 +55,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -676,7 +676,8 @@ central limit theorem.</p>
 <p>We start with the log-likelihood function <span class="math inline">\(\ell(\theta \vert \mathbf{x})\)</span>.
 (However, to simplify the notation in what follows, we will drop the
 <span class="math inline">\(\mathbf{x}\)</span> for now.) By definition,
-the MLE for <span class="math inline">\(\theta\)</span> is that value for which <span class="math inline">\(\ell&#39;(\theta) = \ell&#39;(\hat{\theta}_{MLE}) = 0\)</span>. The Taylor expansion of <span class="math inline">\(\ell&#39;(\theta)\)</span>
+the MLE for <span class="math inline">\(\theta\)</span> is that value for which <span class="math inline">\(\ell&#39;(\theta) =
+\ell&#39;(\hat{\theta}_{MLE}) = 0\)</span>. The Taylor expansion of <span class="math inline">\(\ell&#39;(\theta)\)</span>
 around <span class="math inline">\(\hat{\theta}_{MLE}\)</span> is
 <span class="math display">\[
 \ell&#39;(\theta) \approx \ell&#39;(\hat{\theta}_{MLE}) + (\theta - \hat{\theta}_{MLE})\ell&#39;&#39;(\theta) + \cdots = (\theta - \hat{\theta}_{MLE})\ell&#39;&#39;(\theta) + \cdots \,.
@@ -747,9 +748,11 @@ If <span class="math inline">\(e(\hat{\theta}_1,\hat{\theta}_2) &gt; 1\)</span>,
 <span class="math inline">\(\hat{\theta}_1\)</span>; otherwise, if <span class="math inline">\(e(\hat{\theta}_1,\hat{\theta}_2) &lt; 1\)</span>,
 we would opt to use <span class="math inline">\(\hat{\theta}_2\)</span>. (We could use either if the
 relative efficiency is exactly one.)</p>
-<p>As an example, let <span class="math inline">\(X_i \sim \mathcal{N}(\mu,\sigma^2)\)</span>, and let <span class="math inline">\(\hat{\mu}_1 = \bar{X}\)</span> and <span class="math inline">\(\hat{\mu}_2 = (X_1+X_2)/2\)</span>. What is the relative efficiency of
+<p>As an example, let <span class="math inline">\(X_i \sim \mathcal{N}(\mu,\sigma^2)\)</span>, and let <span class="math inline">\(\hat{\mu}_1 =
+\bar{X}\)</span> and <span class="math inline">\(\hat{\mu}_2 = (X_1+X_2)/2\)</span>. What is the relative efficiency of
 these two estimators?</p>
-<p>We know the general result that <span class="math inline">\(V[\hat{\mu}_1] = V[\bar{X}] = \sigma^2/n\)</span>, and we know
+<p>We know the general result that <span class="math inline">\(V[\hat{\mu}_1] =
+V[\bar{X}] = \sigma^2/n\)</span>, and we know
 that <span class="math inline">\(\hat{\mu}_2\)</span> is simply the sample mean of the first two data, so
 <span class="math inline">\(V[\hat{\mu}_2] = V[(X_1+X_2)/2] = \sigma^2/2\)</span>. The relative efficiency
 is thus
@@ -844,7 +847,8 @@ if the ratio of likelihoods
 <span class="math display">\[
 \frac{\mathcal{L}(x_1,\ldots,x_n \vert \theta)}{\mathcal{L}(y_1,\ldots,y_n \vert \theta)}
 \]</span>
-is constant as a function of <span class="math inline">\(\theta\)</span> if and only if <span class="math inline">\(g(x_1,\ldots,x_n) = g(y_1,\ldots,y_n)\)</span> for a function <span class="math inline">\(g(\cdot)\)</span>, then <span class="math inline">\(g(X_1,\ldots,X_n)\)</span> is
+is constant as a function of <span class="math inline">\(\theta\)</span> if and only if <span class="math inline">\(g(x_1,\ldots,x_n) =
+g(y_1,\ldots,y_n)\)</span> for a function <span class="math inline">\(g(\cdot)\)</span>, then <span class="math inline">\(g(X_1,\ldots,X_n)\)</span> is
 a minimal sufficient statistic for <span class="math inline">\(\theta\)</span>.</p>
 <p>As an example, let <span class="math inline">\(\{X_1,\ldots,X_n\}\)</span> and
 <span class="math inline">\(\{Y_1,\ldots,Y_n\} \overset{iid}{\sim}\)</span> Poisson(<span class="math inline">\(\lambda\)</span>).
@@ -854,7 +858,8 @@ The ratio of likelihoods is
 \]</span>
 This is only constant as a function of <span class="math inline">\(\lambda\)</span> if we can “get rid of”
 <span class="math inline">\(\lambda\)</span>, by setting its exponent to 0…i.e., by setting
-<span class="math inline">\(\sum_{i=1}^n x_i = \sum_{i=1}^n y_i\)</span>. Thus <span class="math inline">\(g(\mathbf{x}) = \sum_{i=1}^n x_i\)</span> is a minimal sufficient statistic for <span class="math inline">\(\lambda\)</span>.</p>
+<span class="math inline">\(\sum_{i=1}^n x_i = \sum_{i=1}^n y_i\)</span>. Thus <span class="math inline">\(g(\mathbf{x}) =
+\sum_{i=1}^n x_i\)</span> is a minimal sufficient statistic for <span class="math inline">\(\lambda\)</span>.</p>
 <p>Note that in the context of the present course, any and all sufficient
 statistics that we define via, e.g., factorization are minimal sufficient.</p>
 <p>One might ask “what is an example of a sufficient statistic that is not

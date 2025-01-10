@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>3 The Binomial (and Related) Distributions | Modern Probability and Statistical Inference</title>
   <meta name="description" content="3 The Binomial (and Related) Distributions | Modern Probability and Statistical Inference" />
-  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
   <meta property="og:title" content="3 The Binomial (and Related) Distributions | Modern Probability and Statistical Inference" />
   <meta property="og:type" content="book" />
@@ -55,7 +55,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -936,7 +936,8 @@ Even computing this is unnecessarily laborious; instead, we call on <code>R</cod
 <blockquote>
 <p>(This utilizes <code>R</code>’s vectorization feature: we need not explicitly define
 a <code>for</code>-loop to evaluate <code>dbinom()</code> for <span class="math inline">\(x=4\)</span> and then at <span class="math inline">\(x=5\)</span>.)
-We can also utilize cdf functions here: <span class="math inline">\(P(4 \leq X &lt; 6) = P(X &lt; 6) - P(X &lt; 4) = P(X \leq 5) - P(X \leq 3) = F_X(5) - F_X(3)\)</span>, which in <code>R</code> is computed via</p>
+We can also utilize cdf functions here: <span class="math inline">\(P(4 \leq X &lt; 6) = P(X &lt; 6) - P(X &lt; 4)
+= P(X \leq 5) - P(X \leq 3) = F_X(5) - F_X(3)\)</span>, which in <code>R</code> is computed via</p>
 </blockquote>
 <div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="the-binomial-and-related-distributions.html#cb172-1" tabindex="-1"></a><span class="fu">pbinom</span>(<span class="dv">5</span>,<span class="at">size=</span><span class="dv">10</span>,<span class="at">prob=</span><span class="fl">0.6</span>) <span class="sc">-</span> <span class="fu">pbinom</span>(<span class="dv">3</span>,<span class="at">size=</span><span class="dv">10</span>,<span class="at">prob=</span><span class="fl">0.6</span>)</span></code></pre></div>
 <pre><code>## [1] 0.3121349</code></pre>
@@ -1625,7 +1626,8 @@ a number of algorithms have been developed through the years for
 constructing confidence intervals for binomial probabilities.
 (See, e.g., <a href="https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval">this Wikipedia page</a>.)
 It is our opinion that there is no particular reason to utilize <em>any</em> of
-these algorithms when one can compute exact intervals.
+these algorithms when one can compute exact intervals. (Albeit ones
+with coverages that are not exactly <span class="math inline">\(100(1-\alpha)\)</span> percent!)
 However, for completeness, we illustrate how one would construct
 the most commonly seen approximating interval, the <em>Wald interval</em>,
 in an example below.</p>
@@ -1657,7 +1659,8 @@ the upper bound.</p>
 <div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="the-binomial-and-related-distributions.html#cb181-1" tabindex="-1"></a><span class="fu">uniroot</span>(f,<span class="at">interval=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="at">y.obs=</span><span class="fu">sum</span>(X),n,k,alpha<span class="sc">/</span><span class="dv">2</span>)<span class="sc">$</span>root</span></code></pre></div>
 <pre><code>## [1] 0.5010387</code></pre>
 <blockquote>
-<p>We find that the interval is <span class="math inline">\([\hat{p}_L,\hat{p}_U] = [0.261,0.501]\)</span>, which overlaps the true value of 0.4.
+<p>We find that the interval is <span class="math inline">\([\hat{p}_L,\hat{p}_U] =
+[0.261,0.501]\)</span>, which overlaps the true value of 0.4.
 (See Figure <a href="the-binomial-and-related-distributions.html#fig:binci">3.9</a>.)
 Note that, unlike in Chapter 2, the interval over which we
 search for the root is [0,1], which is the range of possible
@@ -1870,7 +1873,8 @@ f_X(x) = \frac{1}{\theta} e^{-x/\theta} \,,
 \]</span>
 for <span class="math inline">\(x \geq 0\)</span> and <span class="math inline">\(\theta &gt; 0\)</span>, and we wish to define the most powerful
 test of the simple hypotheses <span class="math inline">\(H_o : \theta_o = 2\)</span> and
-<span class="math inline">\(H_a : \theta_a = 1\)</span>. We observe the values <span class="math inline">\(\mathbf{x}_{\rm obs} = \{0.215,1.131,2.064\}\)</span>, and we assume <span class="math inline">\(\alpha = 0.05\)</span>.</p>
+<span class="math inline">\(H_a : \theta_a = 1\)</span>. We observe the values <span class="math inline">\(\mathbf{x}_{\rm obs} =
+\{0.215,1.131,2.064\}\)</span>, and we assume <span class="math inline">\(\alpha = 0.05\)</span>.</p>
 </blockquote>
 <blockquote>
 <p>We begin by determining a sufficient statistic:
@@ -2050,7 +2054,7 @@ at <code>y.obs</code>.) The <span class="math inline">\(p\)</span>-value is thus
 is unchanged.</p>
 </blockquote>
 <blockquote>
-<p><strong>So: if our data are drawn from a discrete distribution, and we are computing a <span class="math inline">\(p\)</span>-value for an upper-tail/yes test, or a lower-tail/no test (as is the case here), we need to subtract 1 from the observed statistic value when passing it into a cdf function.</strong> (The same rule applies to power calculations as well.)</p>
+<p><strong>So: if our data are drawn from a discrete distribution, and we are computing a <span class="math inline">\(p\)</span>-value for an upper-tail/yes test, or a lower-tail/no test (as is the case here), we need to subtract 1 from the observed statistic value when passing it into a cdf function. (And similarly, if we are computing the test power for an upper-tail/no test, or a lower-tail/yes test (as is not the case here), we need to subtract 1 from the rejection-region-boundary value.)</strong></p>
 </blockquote>
 <blockquote>
 <p>The test power is
@@ -2060,11 +2064,11 @@ is unchanged.</p>
 which in code is</p>
 </blockquote>
 <div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="the-binomial-and-related-distributions.html#cb212-1" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.3</span></span>
-<span id="cb212-2"><a href="the-binomial-and-related-distributions.html#cb212-2" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnbinom</span>(y.rr<span class="dv">-1</span>,<span class="at">size=</span><span class="dv">3</span><span class="sc">*</span>n,<span class="at">prob=</span>p)</span></code></pre></div>
-<pre><code>## [1] 0.8364752</code></pre>
+<span id="cb212-2"><a href="the-binomial-and-related-distributions.html#cb212-2" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnbinom</span>(y.rr,<span class="at">size=</span><span class="dv">3</span><span class="sc">*</span>n,<span class="at">prob=</span>p)</span></code></pre></div>
+<pre><code>## [1] 0.8074482</code></pre>
 <blockquote>
-<p>(Note how we subtract 1 from <code>y.rr</code>.) We find that
-the power is 0.836…83.6% of the time will we reject the null hypothesis
+<p>We find that
+the power is 0.807…80.7% of the time will we reject the null hypothesis
 <span class="math inline">\(p = 0.5\)</span> when <span class="math inline">\(p\)</span> is actually 0.3 (and when <span class="math inline">\(n = 5\)</span> and <span class="math inline">\(s = 3\)</span>).</p>
 </blockquote>
 <hr />
@@ -2164,24 +2168,27 @@ of these hypotheses?</p>
 <p>To try to do this, we utilize the NP lemma. However, there is an immediate
 issue that arises: here, there are <em>two</em> sufficient statistics that are
 identified via factorization (<span class="math inline">\(\sum_{i=1}^n X_i\)</span> and <span class="math inline">\(\sum_{i=1}^n X_i^2\)</span>),
-but just one parameter (<span class="math inline">\(\theta\)</span>). So we cannot circumvent working directly
+but just one parameter (<span class="math inline">\(\mu\)</span>). So we cannot circumvent working directly
 with the likelihood ratio:
 <span class="math display">\[\begin{align*}
-\frac{\mathcal{L}(\theta_o \vert \mathbf{x})}{\mathcal{L}(\theta_o \vert \mathbf{x})} = \frac{f_X(x \vert \theta_o)}{f_X(x \vert \theta_a)} = \mu_a^2 \exp\left(-\frac{x^2}{2}+\frac{(x-\mu_a)^2}{2\mu_a^2}\right) \,.
+\frac{\mathcal{L}(\theta_o \vert \mathbf{x})}{\mathcal{L}(\theta_a \vert \mathbf{x})} = \frac{f_X(x \vert \theta_o)}{f_X(x \vert \theta_a)} = \mu_a \exp\left(-\frac{(x-1)^2}{2}+\frac{(x-\mu_a)^2}{2\mu_a^2}\right) \,.
 \end{align*}\]</span>
 To reject the null hypothesis, the ratio must be less than some constant
 <span class="math inline">\(c(\alpha)\)</span>. First, we can divide both sides of the inequality by
-<span class="math inline">\(\mu_a^2\)</span> (which is a set constant), so that now we reject the null if
+<span class="math inline">\(\mu_a\)</span> (which is a set constant), so that now we reject the null if
 <span class="math display">\[\begin{align*}
-\exp\left(-\frac{x^2}{2}+\frac{(x-\mu_a)^2}{2\mu_a^2}\right) &lt; c&#39;(\alpha) \,.
+\exp\left(-\frac{(x-1)^2}{2}+\frac{(x-\mu_a)^2}{2\mu_a^2}\right) &lt; c&#39;(\alpha) \,.
 \end{align*}\]</span>
 We then take the natural logarithm of each side; we would reject the null if
 <span class="math display">\[\begin{align*}
--\frac{x^2}{2}+\frac{(x-\mu_a)^2}{2\mu_a^2} &lt; c&#39;&#39;(\alpha) \,.
+-\frac{(x-1)^2}{2}+\frac{(x-\mu_a)^2}{2\mu_a^2} &lt; c&#39;&#39;(\alpha) \,.
 \end{align*}\]</span>
-For the test to be uniformly most powerful, we would have to perform
-further manipulations to put <span class="math inline">\(x\)</span> alone on the left-hand side of the
-inequality, without it appearing on the right-hand side. Here,
+It turns out that for
+the test to be uniformly most powerful, we would have to perform
+further manipulations so as to isolate <span class="math inline">\(x\)</span> on the left-hand side of the
+inequality, with only constants appearing on the right-hand side
+(i.e., we would need to simplify this expression such that it achieves
+the form <span class="math inline">\(x &lt; k\)</span> or <span class="math inline">\(x &gt; k\)</span>). Here,
 that is impossible to do, meaning that the value of the
 rejection region boundary changes as <span class="math inline">\(\mu_a\)</span> changes. Thus while we can
 define the most powerful test of <span class="math inline">\(H_o : \mu = \mu_o = 1\)</span>
@@ -2967,7 +2974,7 @@ F_{((n+1)/2)}(x) &= \int_0^x f_{((n+1)/2)}(v) dv = \ldots \,.
 
 > Here is the code we need:
 
-```r
+``` r
 # This computes the cdf of the sample median at coordinate x
 f <- function(x,n)
 {
