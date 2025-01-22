@@ -66,10 +66,11 @@ fig:bincdf
 fig:pmfsamp
 fig:xbarpmf
 fig:order
-fig:normcdfci
-fig:bincdfci
+fig:contcdfci
+fig:disccicover
 fig:binci
 fig:nbinci
+fig:cisim
 fig:logexp
 fig:glmpred
 fig:nbplot
@@ -243,6 +244,7 @@ ump-test-exponential-distribution
 ump-test-negative-binomial-distribution
 defining-a-ump-test-for-the-normal-population-mean
 defining-a-test-that-is-not-uniformly-most-powerful
+estimating-a-p-value-via-simulation
 large-sample-tests-of-the-binomial-success-probability
 logistic-regression
 logistic-regression-in-r
@@ -258,6 +260,7 @@ chi-square-based-hypothesis-testing
 chi-square-goodness-of-fit-test
 simulating-an-exact-multinomial-test
 chi-square-test-of-independence
+exercises
 the-poisson-and-related-distributions
 motivation-2
 probability-mass-function-1

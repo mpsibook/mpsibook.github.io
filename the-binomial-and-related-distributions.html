@@ -366,7 +366,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.8.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#ump-test-negative-binomial-distribution"><i class="fa fa-check"></i><b>3.8.2</b> UMP Test: Negative Binomial Distribution</a></li>
 <li class="chapter" data-level="3.8.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#defining-a-ump-test-for-the-normal-population-mean"><i class="fa fa-check"></i><b>3.8.3</b> Defining a UMP Test for the Normal Population Mean</a></li>
 <li class="chapter" data-level="3.8.4" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#defining-a-test-that-is-not-uniformly-most-powerful"><i class="fa fa-check"></i><b>3.8.4</b> Defining a Test That is Not Uniformly Most Powerful</a></li>
-<li class="chapter" data-level="3.8.5" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#large-sample-tests-of-the-binomial-success-probability"><i class="fa fa-check"></i><b>3.8.5</b> Large-Sample Tests of the Binomial Success Probability</a></li>
+<li class="chapter" data-level="3.8.5" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#estimating-a-p-value-via-simulation"><i class="fa fa-check"></i><b>3.8.5</b> Estimating a <span class="math inline">\(p\)</span>-Value via Simulation</a></li>
+<li class="chapter" data-level="3.8.6" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#large-sample-tests-of-the-binomial-success-probability"><i class="fa fa-check"></i><b>3.8.6</b> Large-Sample Tests of the Binomial Success Probability</a></li>
 </ul></li>
 <li class="chapter" data-level="3.9" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#logistic-regression"><i class="fa fa-check"></i><b>3.9</b> Logistic Regression</a>
 <ul>
@@ -390,6 +391,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.13.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#simulating-an-exact-multinomial-test"><i class="fa fa-check"></i><b>3.13.2</b> Simulating an Exact Multinomial Test</a></li>
 <li class="chapter" data-level="3.13.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#chi-square-test-of-independence"><i class="fa fa-check"></i><b>3.13.3</b> Chi-Square Test of Independence</a></li>
 </ul></li>
+<li class="chapter" data-level="3.14" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#exercises"><i class="fa fa-check"></i><b>3.14</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html"><i class="fa fa-check"></i><b>4</b> The Poisson (and Related) Distributions</a>
 <ul>
@@ -532,6 +534,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="appendix-a-table-of-symbols.html"><a href="appendix-a-table-of-symbols.html"><i class="fa fa-check"></i>Appendix A: Table of Symbols</a></li>
 <li class="chapter" data-level="" data-path="appendix-b-root-finding-algorithm-for-confidence-intervals.html"><a href="appendix-b-root-finding-algorithm-for-confidence-intervals.html"><i class="fa fa-check"></i>Appendix B: Root-Finding Algorithm for Confidence Intervals</a></li>
 <li class="chapter" data-level="" data-path="bibliography.html"><a href="bibliography.html"><i class="fa fa-check"></i>Bibliography</a></li>
+<li class="chapter" data-level="" data-path="chapter-exercises-solutions.html"><a href="chapter-exercises-solutions.html"><i class="fa fa-check"></i>Chapter Exercises: Solutions</a>
+<ul>
+<li class="chapter" data-level="" data-path="chapter-exercises-solutions.html"><a href="chapter-exercises-solutions.html#chapter-3"><i class="fa fa-check"></i>Chapter 3</a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -1009,7 +1015,7 @@ m_X(t) = E[e^{tX}] &amp;= \sum_{x=0}^k e^{tx} \binom{k}{x} p^x (1-p)^{k-x} \\
 \end{align*}\]</span>
 We utilize the binomial theorem
 <span class="math display">\[
-(x+y)^k = \sum_{i=0}^k \binom{k}{x} x^i y^{k-i}
+(x+y)^k = \sum_{i=0}^k \binom{k}{i} x^i y^{k-i}
 \]</span>
 to re-express <span class="math inline">\(m_X(t)\)</span>:
 <span class="math display">\[
@@ -1547,89 +1553,93 @@ the statistic <span class="math inline">\(Y\)</span>, <span class="math inline">
 and <span class="math inline">\(q\)</span> is an appropriate quantile value that is determined using
 the confidence interval reference table introduced in
 section 16 of Chapter 1.</em></p>
-<p>The only new element to consider here regarding the construction of
-confidence intervals is that now the sampling distribution for our
-adopted statistic (<span class="math inline">\(Y = \sum_{i=1}^n X_i\)</span>, where the <span class="math inline">\(X_i\)</span>’s are
-iid samples from a binomial distribution) is a <em>discrete</em> distribution
-as opposed to begin a continuous distribution.
-As it turns out, this does not impact our use of
-<code>uniroot()</code>: even though <span class="math inline">\(F_Y(y_{\rm obs})\)</span> is discrete, the success
-probability <span class="math inline">\(p\)</span> is still a continuously valued quantity,
-and we can tune its value so that
-<span class="math inline">\(F_Y(y_{\rm obs} \vert p)\)</span> will match, e.g., <span class="math inline">\(\alpha/2\)</span> or <span class="math inline">\(1-\alpha/2\)</span> with
-arbitrary precision.
-<em>What the discreteness of the sampling distribution does impact is the coverage, or the fraction of intervals that overlap the true value.</em></p>
-<p>In Figure <a href="the-binomial-and-related-distributions.html#fig:normcdfci">3.7</a>, we display a continuous sampling distribution
-for a statistic <span class="math inline">\(Y\)</span>, given a specific (unknown to us!) true value <span class="math inline">\(\theta\)</span>.
-(Here, without
-loss of generality, we use a normal distribution, with <span class="math inline">\(\theta = \mu = 0\)</span>.
-We also assume that <span class="math inline">\(E[Y]\)</span> increases with <span class="math inline">\(\theta\)</span>.)
-When running an experiment, if we sample a value of <span class="math inline">\(y_{\rm obs}\)</span> in the red
-polygon, then turn around to derive a one-sided upper bound, that upper bound
-will <em>not</em> overlap the true value of <span class="math inline">\(\theta\)</span>; otherwise, if we sample a
-value not in the red polygon, the upper bound will overlap the true value.
-Since the probability of sampling a value in the red polygon is exactly
-<span class="math inline">\(\alpha\)</span>, then the probability that the interval will not overlap the true
-value is also exactly <span class="math inline">\(\alpha\)</span>…meaning that the interval coverage is
-exactly <span class="math inline">\(100(1-\alpha)\)</span> percent.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:normcdfci"></span>
-<img src="_main_files/figure-html/normcdfci-1.png" alt="\label{fig:normcdfci}An example of a continuous sampling distribution for a statistic $Y$. If we sample $y_{\rm obs}$ in the region of the red polygon (which has area $\alpha$), then the one-sided upper bound that we would compute would not overlap with the true value $\theta$. In this situation, the interval coverage is exactly $100(1-\alpha)$ percent." width="50%" />
+<p>A concept that we have not explicitly
+discussed up until now is the “duality” between
+confidence intervals and hypothesis tests: as they are mathematically
+related, one can, in theory, “invert” hypothesis tests to derive confidence
+intervals and vice-versa. We illustrate this duality
+in Figure <a href="the-binomial-and-related-distributions.html#fig:contcdfci">3.7</a>, in which we assume that the distribution from
+which we are to sample data is
+a normal distribution with mean <span class="math inline">\(\mu\)</span> and <em>known</em> variance <span class="math inline">\(\sigma^2\)</span>. The
+parallel green lines in the figure represent lower and upper rejection
+region boundaries as a function of (the null hypothesis value) <span class="math inline">\(\mu\)</span>.
+Let’s say that we pick a specific value of <span class="math inline">\(\mu\)</span>,
+say <span class="math inline">\(\mu = \mu_o = 1\)</span>, and draw a vertical line at that coordinate.
+The part of that line that lies between the parallel green lines
+(indicated in solid red) indicates the range of observed statistic
+values <span class="math inline">\(y_{\rm obs}\)</span> for which we would <em>fail to reject</em> the null, and the
+parts above and below the parallel lines (shown in dashed red)
+would indicate <span class="math inline">\(y_{\rm obs}\)</span> values for which we would <em>reject</em> the null.
+(These are the acceptance and rejection regions, respectively; “acceptance
+region” is a term that we have not used up until now, but it simply denotes
+the range of statistic values for which we would <em>fail</em> to reject a null
+hypothesis, when it is indeed correct.)
+Confidence intervals, on the other hand, are ranges of values of <span class="math inline">\(\mu\)</span>
+for which a given value of <span class="math inline">\(y_{\rm obs}\)</span> lies in the acceptance region.
+(For instance, the dashed horizontal blue line in the figure
+shows the range of values associated with
+a two-sided confidence interval for <span class="math inline">\(\mu\)</span> given <span class="math inline">\(y_{\rm obs} = 0.5\)</span>.)
+We can see that for a given value of <span class="math inline">\(\mu\)</span>, if we were to sample
+a value of <span class="math inline">\(y_{\rm obs}\)</span> between the two green lines (with probability
+<span class="math inline">\(1-\alpha\)</span>), then the associated confidence
+interval will overlap <span class="math inline">\(\mu\)</span>, and if we sample a value of <span class="math inline">\(y_{\rm obs}\)</span> outside
+the green lines (with probability
+<span class="math inline">\(\alpha\)</span>), the confidence interval will <em>not</em> overlap <span class="math inline">\(\mu\)</span>. The confidence
+interval coverage is thus exactly <span class="math inline">\(100(1-\alpha)\)</span> percent.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:contcdfci"></span>
+<img src="_main_files/figure-html/contcdfci-1.png" alt="\label{fig:contcdfci}An illustration of the relationship between hypothesis testing and confidence interval estimation for a continuous sampling distribution (here, a normal distribution with known variance). The two parallel green lines define rejection-region boundaries for a two-sided test with null hypothesis parameter value $\mu$. Assume $\mu = 1$: the dashed red lines indicate the values of $y_{\rm obs}$ in the rejection region, while the solid red line indicates the values of $y_{\rm obs}$ in the acceptance region (where we fail to reject the null). The horizontal dashed blue line shows the confidence interval constructed for a given value of $y_{\rm obs}$. Given $\mu$, the probability of sampling a statistic in the acceptance region is exactly $1-\alpha$, and thus the coverage of confidence intervals will also be exactly $1-\alpha$." width="50%" />
 <p class="caption">
-Figure 3.7: An example of a continuous sampling distribution for a statistic <span class="math inline">\(Y\)</span>. If we sample <span class="math inline">\(y_{\rm obs}\)</span> in the region of the red polygon (which has area <span class="math inline">\(\alpha\)</span>), then the one-sided upper bound that we would compute would not overlap with the true value <span class="math inline">\(\theta\)</span>. In this situation, the interval coverage is exactly <span class="math inline">\(100(1-\alpha)\)</span> percent.
+Figure 3.7: An illustration of the relationship between hypothesis testing and confidence interval estimation for a continuous sampling distribution (here, a normal distribution with known variance). The two parallel green lines define rejection-region boundaries for a two-sided test with null hypothesis parameter value <span class="math inline">\(\mu\)</span>. Assume <span class="math inline">\(\mu = 1\)</span>: the dashed red lines indicate the values of <span class="math inline">\(y_{\rm obs}\)</span> in the rejection region, while the solid red line indicates the values of <span class="math inline">\(y_{\rm obs}\)</span> in the acceptance region (where we fail to reject the null). The horizontal dashed blue line shows the confidence interval constructed for a given value of <span class="math inline">\(y_{\rm obs}\)</span>. Given <span class="math inline">\(\mu\)</span>, the probability of sampling a statistic in the acceptance region is exactly <span class="math inline">\(1-\alpha\)</span>, and thus the coverage of confidence intervals will also be exactly <span class="math inline">\(1-\alpha\)</span>.
 </p>
 </div>
-<p>In Figure <a href="the-binomial-and-related-distributions.html#fig:bincdfci">3.8</a>, we display a discrete sampling distribution
-for a statistic <span class="math inline">\(Y\)</span>, given a specific (and still unknown to us!) true value
-<span class="math inline">\(\theta\)</span>. (This distribution is specifically a binomial distribution with
-<span class="math inline">\(k = 12\)</span> and <span class="math inline">\(p = 0.5\)</span>.) The three points that are colored red are the ones with
-cdf values less than <span class="math inline">\(\alpha\)</span>. (Given an arbitrary value of <span class="math inline">\(\theta\)</span>, we will
-never observe a cdf value for any value of <span class="math inline">\(y\)</span> that is <em>exactly</em> <span class="math inline">\(\alpha\)</span>
-due to the discreteness of the sampling distribution,
-unless we have an
-infinite number of data. For instance, in this figure the cdf for <span class="math inline">\(y = 2\)</span> is
-0.019, whereas the cdf for <span class="math inline">\(y = 3\)</span> is 0.073. Neither value matches
-<span class="math inline">\(\alpha = 0.05\)</span>.) Above, we indicated that for a
-continuous distribution, sampling a datum <span class="math inline">\(y_{\rm obs}\)</span> with a cdf value less
-than <span class="math inline">\(\alpha\)</span> leads to the computation of a one-sided upper bound that does
-not cover the true value. The same situation holds here: sampling
-either <span class="math inline">\(y_{\rm obs} = 0\)</span>, 1, or 2, data for whom the cdf values are
-less than <span class="math inline">\(\alpha\)</span>, will lead to the computation of upper bounds
-that do not overlap <span class="math inline">\(\theta\)</span>. But what is different here is that the
-probability of sampling one of these values is no longer <span class="math inline">\(\alpha\)</span>, but
-some quantity less than <span class="math inline">\(\alpha\)</span>…let’s call this quantity <span class="math inline">\(\alpha&#39;\)</span>.
-The probability that our one-sided upper bounds do not cover <span class="math inline">\(\theta\)</span> is
-thus <span class="math inline">\(\alpha&#39;\)</span>…which means that our coverage is actually going to
-be <span class="math inline">\(100(1-\alpha&#39;)\)</span> percent, which is <em>greater than</em>
-<span class="math inline">\(100(1-\alpha)\)</span> percent. For one-sided lower bounds, we
-can apply a similar set of arguments:
-we would identify all values of <span class="math inline">\(y\)</span> with cdf values less than <span class="math inline">\(1 - \alpha\)</span>,
-with <span class="math inline">\(\alpha&#39; &gt; \alpha\)</span> being the sum of the
-masses for the remaining values of <span class="math inline">\(y\)</span>. Since <span class="math inline">\(\alpha&#39; &gt; \alpha\)</span>,
-the coverage, which is <span class="math inline">\(100(1-\alpha&#39;)\)</span> percent, would be <em>less than</em>
-<span class="math inline">\(100(1-\alpha)\)</span> percent.
-(For two-sided intervals, we would compute <span class="math inline">\(\alpha_{\rm lo}&#39;/2\)</span>, the sum
-of all masses associated with values of <span class="math inline">\(y\)</span> with cdf values less than
-<span class="math inline">\(\alpha/2\)</span>, and <span class="math inline">\(\alpha_{\rm hi}&#39;/2\)</span>, the sum of all masses associated with
-values of <span class="math inline">\(y\)</span> that do <em>not</em> have cdf values less than <span class="math inline">\(1-\alpha/2\)</span>. The
-coverage would then be <span class="math inline">\(100(1-\alpha_{\rm lo}&#39;/2-\alpha_{\rm hi}&#39;/2)\)</span> percent,
-which can be less than or greater than <span class="math inline">\(100(1-\alpha)\)</span> percent.)</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:bincdfci"></span>
-<img src="_main_files/figure-html/bincdfci-1.png" alt="\label{fig:bincdfci}An example of a discrete sampling distribution for a statistic $Y$. If we sample $y_{\rm obs} = 0$, 1, or 2 (which have cdf values $&lt; \alpha$), then the one-sided upper bound that we would compute would not overlap with the true value $\theta$. In this situation, the interval coverage is greater than $100(1-\alpha)$ percent." width="50%" />
+<p>When we work with discrete sampling distributions, the overall picture is
+similar, but we sometimes need to make what we will dub “discreteness
+corrections” so that the codes we use generate the correct results.
+Figure <a href="the-binomial-and-related-distributions.html#fig:disccicover">3.8</a> is an analogue to Figure <a href="the-binomial-and-related-distributions.html#fig:contcdfci">3.7</a>
+in which we illustrate the relationship between confidence
+intervals and hypothesis tests for a situation in which we conduct
+<span class="math inline">\(k = 10\)</span> binomial trials. Because the statistic is discretely valued, the
+acceptance-region boundaries are step functions, but this is not the
+only change introduced with discrete distributions:</p>
+<ol style="list-style-type: decimal">
+<li><p>In the continuous case, the probability of sampling a datum that lies
+within the acceptance region for a given value of <span class="math inline">\(\theta\)</span>
+is exactly <span class="math inline">\(1 - \alpha\)</span>. In the discrete case,
+that probability is generally <span class="math inline">\(&gt; 1 - \alpha\)</span> (as it is rarely, if ever, the
+case that the probability masses within the acceptance region will sum to
+exactly <span class="math inline">\(1 - \alpha\)</span>…although that sum will trend towards <span class="math inline">\(1 - \alpha\)</span> as
+the sample size and/or the number of trials increases).</p></li>
+<li><p>Because the probability of sampling a datum in the acceptance region is
+equal to the confidence interval coverage, the coverage will also generally
+be <span class="math inline">\(&gt; 1 - \alpha\)</span>.</p></li>
+</ol>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:disccicover"></span>
+<img src="_main_files/figure-html/disccicover-1.png" alt="\label{fig:disccicover}An illustration of the relationship between hypothesis testing and confidence interval estimation for a discrete sampling distribution (here, a binomial distribution with $k=10$). The two green lines define rejection-region boundaries for a two-sided test with null hypothesis parameter value $p$. Assume $p = 0.45$: the red dots indicates the values of $y_{\rm obs}$ in the acceptance region (where we fail to reject the null). The horizontal dashed blue line shows the confidence interval constructed for a given value of $y_{\rm obs}$. Given $p$, the probability of sampling a statistic in the acceptance region is generally greater than $1-\alpha$, and thus the coverage of confidence intervals, which has the same value, will also be generally greater than $1-\alpha$." width="50%" />
 <p class="caption">
-Figure 3.8: An example of a discrete sampling distribution for a statistic <span class="math inline">\(Y\)</span>. If we sample <span class="math inline">\(y_{\rm obs} = 0\)</span>, 1, or 2 (which have cdf values <span class="math inline">\(&lt; \alpha\)</span>), then the one-sided upper bound that we would compute would not overlap with the true value <span class="math inline">\(\theta\)</span>. In this situation, the interval coverage is greater than <span class="math inline">\(100(1-\alpha)\)</span> percent.
+Figure 3.8: An illustration of the relationship between hypothesis testing and confidence interval estimation for a discrete sampling distribution (here, a binomial distribution with <span class="math inline">\(k=10\)</span>). The two green lines define rejection-region boundaries for a two-sided test with null hypothesis parameter value <span class="math inline">\(p\)</span>. Assume <span class="math inline">\(p = 0.45\)</span>: the red dots indicates the values of <span class="math inline">\(y_{\rm obs}\)</span> in the acceptance region (where we fail to reject the null). The horizontal dashed blue line shows the confidence interval constructed for a given value of <span class="math inline">\(y_{\rm obs}\)</span>. Given <span class="math inline">\(p\)</span>, the probability of sampling a statistic in the acceptance region is generally greater than <span class="math inline">\(1-\alpha\)</span>, and thus the coverage of confidence intervals, which has the same value, will also be generally greater than <span class="math inline">\(1-\alpha\)</span>.
 </p>
 </div>
-<hr />
-<p>Discrete distributions like the binomial have historically been
-difficult to work with analytically. Because of this,
+<p>The blue dashed line in Figure <a href="the-binomial-and-related-distributions.html#fig:disccicover">3.8</a> is an example of
+a confidence interval (specifically for <span class="math inline">\(y_{\rm obs} = 4\)</span>). In order to
+construct an interval like this, we would use a <code>uniroot()</code>-style code
+as we have before, but with the following changes.</p>
+<ul>
+<li>If we are determining a <em>lower</em> bound <span class="math inline">\(\hat{\theta}_L\)</span> in a situation where <span class="math inline">\(E[Y]\)</span> <em>increases</em> with <span class="math inline">\(\theta\)</span>, we need to replace <span class="math inline">\(y_{\rm obs}\)</span> in the input to <code>uniroot()</code> with the next smaller value in the distribution’s domain (e.g., <span class="math inline">\(y_{\rm obs} - 1\)</span> for a binomially distributed statistic).</li>
+<li>If we are determining an <em>upper</em> bound <span class="math inline">\(\hat{\theta}_U\)</span> in a situation where <span class="math inline">\(E[Y]\)</span> <em>decreases</em> with <span class="math inline">\(\theta\)</span>, we need to replace <span class="math inline">\(y_{\rm obs}\)</span> in the input to <code>uniroot()</code> with the next smaller value in the distribution’s domain (e.g., <span class="math inline">\(y_{\rm obs} - 1\)</span> for a negative binomially distributed statistic).</li>
+</ul>
+<p>We note that
+for the specific case of the binomial distribution, the confidence intervals
+that we construct are dubbed <em>exact</em>, or <em>Clopper-Pearson</em>, intervals.
+Because binomial distributions have
+historically been difficult to work with analytically,
 a number of algorithms have been developed through the years for
-constructing confidence intervals for binomial probabilities.
-(See, e.g., <a href="https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval">this Wikipedia page</a>.)
-It is our opinion that there is no particular reason to utilize <em>any</em> of
-these algorithms when one can compute exact intervals. (Albeit ones
-with coverages that are not exactly <span class="math inline">\(100(1-\alpha)\)</span> percent!)
+constructing approximate confidence intervals for binomial probabilities.
+(See, e.g., <a href="https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval">this Wikipedia page</a> for examples.)
+It is our opinion that there is no reason to utilize <em>any</em> of
+these algorithms when one can compute exact intervals, particularly since
+the coverages of exact intervals are easily derived for any given value <span class="math inline">\(p\)</span>.
 However, for completeness, we illustrate how one would construct
-the most commonly seen approximating interval, the <em>Wald interval</em>,
+the most-commonly used approximating interval, the <em>Wald interval</em>,
 in an example below.</p>
 <hr />
 <div id="confidence-interval-for-the-binomial-success-probability" class="section level3 hasAnchor" number="3.7.1">
@@ -1654,13 +1664,13 @@ the upper bound.</p>
 <span id="cb179-9"><a href="the-binomial-and-related-distributions.html#cb179-9" tabindex="-1"></a>{</span>
 <span id="cb179-10"><a href="the-binomial-and-related-distributions.html#cb179-10" tabindex="-1"></a>  <span class="fu">pbinom</span>(y.obs,<span class="at">size=</span>n<span class="sc">*</span>k,<span class="at">prob=</span>p)<span class="sc">-</span>q</span>
 <span id="cb179-11"><a href="the-binomial-and-related-distributions.html#cb179-11" tabindex="-1"></a>}</span>
-<span id="cb179-12"><a href="the-binomial-and-related-distributions.html#cb179-12" tabindex="-1"></a><span class="fu">uniroot</span>(f,<span class="at">interval=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="at">y.obs=</span><span class="fu">sum</span>(X),n,k,<span class="dv">1</span><span class="sc">-</span>alpha<span class="sc">/</span><span class="dv">2</span>)<span class="sc">$</span>root</span></code></pre></div>
-<pre><code>## [1] 0.2607037</code></pre>
+<span id="cb179-12"><a href="the-binomial-and-related-distributions.html#cb179-12" tabindex="-1"></a><span class="fu">uniroot</span>(f,<span class="at">interval=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="at">y.obs=</span><span class="fu">sum</span>(X)<span class="sc">-</span><span class="dv">1</span>,n,k,<span class="dv">1</span><span class="sc">-</span>alpha<span class="sc">/</span><span class="dv">2</span>)<span class="sc">$</span>root <span class="co"># note correction</span></span></code></pre></div>
+<pre><code>## [1] 0.2459379</code></pre>
 <div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="the-binomial-and-related-distributions.html#cb181-1" tabindex="-1"></a><span class="fu">uniroot</span>(f,<span class="at">interval=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="at">y.obs=</span><span class="fu">sum</span>(X),n,k,alpha<span class="sc">/</span><span class="dv">2</span>)<span class="sc">$</span>root</span></code></pre></div>
 <pre><code>## [1] 0.5010387</code></pre>
 <blockquote>
 <p>We find that the interval is <span class="math inline">\([\hat{p}_L,\hat{p}_U] =
-[0.261,0.501]\)</span>, which overlaps the true value of 0.4.
+[0.246,0.501]\)</span>, which overlaps the true value of 0.4.
 (See Figure <a href="the-binomial-and-related-distributions.html#fig:binci">3.9</a>.)
 Note that, unlike in Chapter 2, the interval over which we
 search for the root is [0,1], which is the range of possible
@@ -1670,20 +1680,19 @@ values for <span class="math inline">\(p\)</span>.</p>
 <p>We can compute the coverage of this interval following the
 prescription given above:</p>
 </blockquote>
-<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="the-binomial-and-related-distributions.html#cb183-1" tabindex="-1"></a>w.lo <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">pbinom</span>(<span class="dv">0</span><span class="sc">:</span>(n<span class="sc">*</span>k),<span class="at">size=</span>n<span class="sc">*</span>k,<span class="at">prob=</span>p) <span class="sc">&lt;</span> alpha<span class="sc">/</span><span class="dv">2</span>)</span>
-<span id="cb183-2"><a href="the-binomial-and-related-distributions.html#cb183-2" tabindex="-1"></a>alpha_over_2.lo.prime <span class="ot">&lt;-</span> <span class="fu">pbinom</span>(<span class="dv">0</span><span class="sc">:</span>(n<span class="sc">*</span>k),<span class="at">size=</span>n<span class="sc">*</span>k,<span class="at">prob=</span>p)[w.lo]</span>
-<span id="cb183-3"><a href="the-binomial-and-related-distributions.html#cb183-3" tabindex="-1"></a>w.hi <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">pbinom</span>(<span class="dv">0</span><span class="sc">:</span>(n<span class="sc">*</span>k),<span class="at">size=</span>n<span class="sc">*</span>k,<span class="at">prob=</span>p) <span class="sc">&lt;</span> <span class="dv">1</span><span class="sc">-</span>alpha<span class="sc">/</span><span class="dv">2</span>)</span>
-<span id="cb183-4"><a href="the-binomial-and-related-distributions.html#cb183-4" tabindex="-1"></a>alpha_over_2.hi.prime <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">-</span><span class="fu">pbinom</span>(<span class="dv">0</span><span class="sc">:</span>(n<span class="sc">*</span>k),<span class="at">size=</span>n<span class="sc">*</span>k,<span class="at">prob=</span>p)[w.hi]</span>
-<span id="cb183-5"><a href="the-binomial-and-related-distributions.html#cb183-5" tabindex="-1"></a><span class="fu">round</span>(<span class="dv">100</span><span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>alpha_over_2.lo.prime<span class="sc">-</span>alpha_over_2.hi.prime),<span class="dv">2</span>)</span></code></pre></div>
-<pre><code>## [1] 95.29</code></pre>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="the-binomial-and-related-distributions.html#cb183-1" tabindex="-1"></a>y.rr.lo <span class="ot">&lt;-</span> <span class="fu">qbinom</span>(alpha<span class="sc">/</span><span class="dv">2</span>,n<span class="sc">*</span>k,p)</span>
+<span id="cb183-2"><a href="the-binomial-and-related-distributions.html#cb183-2" tabindex="-1"></a>y.rr.hi <span class="ot">&lt;-</span> <span class="fu">qbinom</span>(<span class="dv">1</span><span class="sc">-</span>alpha<span class="sc">/</span><span class="dv">2</span>,n<span class="sc">*</span>k,p)</span>
+<span id="cb183-3"><a href="the-binomial-and-related-distributions.html#cb183-3" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">dbinom</span>(y.rr.lo<span class="sc">:</span>y.rr.hi,n<span class="sc">*</span>k,p))</span></code></pre></div>
+<pre><code>## [1] 0.9646363</code></pre>
 <blockquote>
 <p>Due to the discreteness of the binomial distribution, the true coverage
-of our two-sided intervals is 95.29%, not 95%.</p>
+of our two-sided intervals, in this particular circumstance,
+is 96.5%, not 95%.</p>
 </blockquote>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:binci"></span>
-<img src="_main_files/figure-html/binci-1.png" alt="\label{fig:binci}Probability mass functions for binomial distributions for which $n \cdot k= 12 \cdot 5 = 60$ and (left) $p=0.261$ and (right) $p=0.501$. We observe $y_{\rm obs} = \sum_{i=1}^n x_i = 22$ successes and we want to construct a 95\% confidence interval. $p=0.261$ is the smallest value of $p$ such that $F_Y^{-1}(0.975) = 22$, while $p=0.501$ is the largest value of $p$ such that $F_Y^{-1}(0.025) = 22$." width="45%" /><img src="_main_files/figure-html/binci-2.png" alt="\label{fig:binci}Probability mass functions for binomial distributions for which $n \cdot k= 12 \cdot 5 = 60$ and (left) $p=0.261$ and (right) $p=0.501$. We observe $y_{\rm obs} = \sum_{i=1}^n x_i = 22$ successes and we want to construct a 95\% confidence interval. $p=0.261$ is the smallest value of $p$ such that $F_Y^{-1}(0.975) = 22$, while $p=0.501$ is the largest value of $p$ such that $F_Y^{-1}(0.025) = 22$." width="45%" />
+<img src="_main_files/figure-html/binci-1.png" alt="\label{fig:binci}Probability mass functions for binomial distributions for which $n \cdot k= 12 \cdot 5 = 60$ and (left) $p=0.246$ and (right) $p=0.501$. We observe $y_{\rm obs} = \sum_{i=1}^n x_i = 22$ successes and we want to construct a 95\% confidence interval. $p=0.246$ is the smallest value of $p$ such that $F_Y^{-1}(0.975) = 22$, while $p=0.501$ is the largest value of $p$ such that $F_Y^{-1}(0.025) = 22$." width="45%" /><img src="_main_files/figure-html/binci-2.png" alt="\label{fig:binci}Probability mass functions for binomial distributions for which $n \cdot k= 12 \cdot 5 = 60$ and (left) $p=0.246$ and (right) $p=0.501$. We observe $y_{\rm obs} = \sum_{i=1}^n x_i = 22$ successes and we want to construct a 95\% confidence interval. $p=0.246$ is the smallest value of $p$ such that $F_Y^{-1}(0.975) = 22$, while $p=0.501$ is the largest value of $p$ such that $F_Y^{-1}(0.025) = 22$." width="45%" />
 <p class="caption">
-Figure 3.9: Probability mass functions for binomial distributions for which <span class="math inline">\(n \cdot k= 12 \cdot 5 = 60\)</span> and (left) <span class="math inline">\(p=0.261\)</span> and (right) <span class="math inline">\(p=0.501\)</span>. We observe <span class="math inline">\(y_{\rm obs} = \sum_{i=1}^n x_i = 22\)</span> successes and we want to construct a 95% confidence interval. <span class="math inline">\(p=0.261\)</span> is the smallest value of <span class="math inline">\(p\)</span> such that <span class="math inline">\(F_Y^{-1}(0.975) = 22\)</span>, while <span class="math inline">\(p=0.501\)</span> is the largest value of <span class="math inline">\(p\)</span> such that <span class="math inline">\(F_Y^{-1}(0.025) = 22\)</span>.
+Figure 3.9: Probability mass functions for binomial distributions for which <span class="math inline">\(n \cdot k= 12 \cdot 5 = 60\)</span> and (left) <span class="math inline">\(p=0.246\)</span> and (right) <span class="math inline">\(p=0.501\)</span>. We observe <span class="math inline">\(y_{\rm obs} = \sum_{i=1}^n x_i = 22\)</span> successes and we want to construct a 95% confidence interval. <span class="math inline">\(p=0.246\)</span> is the smallest value of <span class="math inline">\(p\)</span> such that <span class="math inline">\(F_Y^{-1}(0.975) = 22\)</span>, while <span class="math inline">\(p=0.501\)</span> is the largest value of <span class="math inline">\(p\)</span> such that <span class="math inline">\(F_Y^{-1}(0.025) = 22\)</span>.
 </p>
 </div>
 <hr />
@@ -1716,10 +1725,10 @@ distributed data, we need to switch the mapping of <span class="math inline">\(q
 <span id="cb185-11"><a href="the-binomial-and-related-distributions.html#cb185-11" tabindex="-1"></a>}     </span>
 <span id="cb185-12"><a href="the-binomial-and-related-distributions.html#cb185-12" tabindex="-1"></a><span class="fu">uniroot</span>(f,<span class="at">interval=</span><span class="fu">c</span>(<span class="fl">0.0001</span>,<span class="dv">1</span>),<span class="at">y.obs=</span><span class="fu">sum</span>(X),n,s,alpha<span class="sc">/</span><span class="dv">2</span>)<span class="sc">$</span>root</span></code></pre></div>
 <pre><code>## [1] 0.3255305</code></pre>
-<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="the-binomial-and-related-distributions.html#cb187-1" tabindex="-1"></a><span class="fu">uniroot</span>(f,<span class="at">interval=</span><span class="fu">c</span>(<span class="fl">0.0001</span>,<span class="dv">1</span>),<span class="at">y.obs=</span><span class="fu">sum</span>(X),n,s,<span class="dv">1</span><span class="sc">-</span>alpha<span class="sc">/</span><span class="dv">2</span>)<span class="sc">$</span>root</span></code></pre></div>
-<pre><code>## [1] 0.4822869</code></pre>
+<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="the-binomial-and-related-distributions.html#cb187-1" tabindex="-1"></a><span class="fu">uniroot</span>(f,<span class="at">interval=</span><span class="fu">c</span>(<span class="fl">0.0001</span>,<span class="dv">1</span>),<span class="at">y.obs=</span><span class="fu">sum</span>(X)<span class="sc">-</span><span class="dv">1</span>,n,s,<span class="dv">1</span><span class="sc">-</span>alpha<span class="sc">/</span><span class="dv">2</span>)<span class="sc">$</span>root <span class="co"># note correction</span></span></code></pre></div>
+<pre><code>## [1] 0.4853274</code></pre>
 <blockquote>
-<p>The confidence interval is <span class="math inline">\([\hat{p}_L,\hat{p}_U] = [0.326,0.482]\)</span>,
+<p>The confidence interval is <span class="math inline">\([\hat{p}_L,\hat{p}_U] = [0.326,0.485]\)</span>,
 which overlaps the true value 0.4. We note that in the code, we change
 the lower bound on the interval from 0 (in the binomial case) to
 0.0001 (something suitably small but non-zero): a probability of success
@@ -1729,21 +1738,18 @@ of 0 maps to an infinite number of failures, which <code>R</code> cannot tolerat
 <p>We can compute the coverage of this interval following the
 prescription given above:</p>
 </blockquote>
-<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="the-binomial-and-related-distributions.html#cb189-1" tabindex="-1"></a>large <span class="ot">&lt;-</span> <span class="dv">200</span></span>
-<span id="cb189-2"><a href="the-binomial-and-related-distributions.html#cb189-2" tabindex="-1"></a>w.lo <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">pnbinom</span>(<span class="dv">0</span><span class="sc">:</span>large,<span class="at">size=</span>n<span class="sc">*</span>s,<span class="at">prob=</span>p) <span class="sc">&lt;</span> alpha<span class="sc">/</span><span class="dv">2</span>)</span>
-<span id="cb189-3"><a href="the-binomial-and-related-distributions.html#cb189-3" tabindex="-1"></a>alpha_over_2.lo.prime <span class="ot">&lt;-</span> <span class="fu">pnbinom</span>(<span class="dv">0</span><span class="sc">:</span>large,<span class="at">size=</span>n<span class="sc">*</span>s,<span class="at">prob=</span>p)[w.lo]</span>
-<span id="cb189-4"><a href="the-binomial-and-related-distributions.html#cb189-4" tabindex="-1"></a>w.hi <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">pnbinom</span>(<span class="dv">0</span><span class="sc">:</span>large,<span class="at">size=</span>n<span class="sc">*</span>s,<span class="at">prob=</span>p) <span class="sc">&lt;</span> <span class="dv">1</span><span class="sc">-</span>alpha<span class="sc">/</span><span class="dv">2</span>)</span>
-<span id="cb189-5"><a href="the-binomial-and-related-distributions.html#cb189-5" tabindex="-1"></a>alpha_over_2.hi.prime <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">-</span><span class="fu">pnbinom</span>(<span class="dv">0</span><span class="sc">:</span>large,<span class="at">size=</span>n<span class="sc">*</span>s,<span class="at">prob=</span>p)[w.hi]</span>
-<span id="cb189-6"><a href="the-binomial-and-related-distributions.html#cb189-6" tabindex="-1"></a><span class="fu">round</span>(<span class="dv">100</span><span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>alpha_over_2.lo.prime<span class="sc">-</span>alpha_over_2.hi.prime),<span class="dv">2</span>)</span></code></pre></div>
-<pre><code>## [1] 94.77</code></pre>
+<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="the-binomial-and-related-distributions.html#cb189-1" tabindex="-1"></a>y.rr.lo <span class="ot">&lt;-</span> <span class="fu">qnbinom</span>(<span class="dv">1</span><span class="sc">-</span>alpha<span class="sc">/</span><span class="dv">2</span>,n<span class="sc">*</span>s,p)</span>
+<span id="cb189-2"><a href="the-binomial-and-related-distributions.html#cb189-2" tabindex="-1"></a>y.rr.hi <span class="ot">&lt;-</span> <span class="fu">qnbinom</span>(alpha<span class="sc">/</span><span class="dv">2</span>,n<span class="sc">*</span>s,p)</span>
+<span id="cb189-3"><a href="the-binomial-and-related-distributions.html#cb189-3" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">dnbinom</span>(y.rr.lo<span class="sc">:</span>y.rr.hi,n<span class="sc">*</span>s,p))</span></code></pre></div>
+<pre><code>## [1] 0.9510741</code></pre>
 <blockquote>
 <p>Due to the discreteness of the binomial distribution, the true coverage
-of our two-sided intervals is 94.77%, not 95%.</p>
+of our two-sided intervals is 95.1%, not 95%.</p>
 </blockquote>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:nbinci"></span>
-<img src="_main_files/figure-html/nbinci-1.png" alt="\label{fig:nbinci}Probability mass functions for negative binomial distributions for which $n \cdot s = 12 \cdot 5 = 60$ and (left) $p=0.326$ and (right) $p=0.482$. We observe $y_{\rm obs} = \sum_{i=1}^n x_i = 88$ failures and we want to construct a 95\% confidence interval. $p=0.326$ is the smallest value of $p$ such that $F_Y^{-1}(0.025) = 88$, while $p=0.482$ is the largest value of $p$ such that $F_Y^{-1}(0.975) = 88$." width="45%" /><img src="_main_files/figure-html/nbinci-2.png" alt="\label{fig:nbinci}Probability mass functions for negative binomial distributions for which $n \cdot s = 12 \cdot 5 = 60$ and (left) $p=0.326$ and (right) $p=0.482$. We observe $y_{\rm obs} = \sum_{i=1}^n x_i = 88$ failures and we want to construct a 95\% confidence interval. $p=0.326$ is the smallest value of $p$ such that $F_Y^{-1}(0.025) = 88$, while $p=0.482$ is the largest value of $p$ such that $F_Y^{-1}(0.975) = 88$." width="45%" />
+<img src="_main_files/figure-html/nbinci-1.png" alt="\label{fig:nbinci}Probability mass functions for negative binomial distributions for which $n \cdot s = 12 \cdot 5 = 60$ and (left) $p=0.326$ and (right) $p=0.485$. We observe $y_{\rm obs} = \sum_{i=1}^n x_i = 88$ failures and we want to construct a 95\% confidence interval. $p=0.326$ is the smallest value of $p$ such that $F_Y^{-1}(0.025) = 88$, while $p=0.485$ is the largest value of $p$ such that $F_Y^{-1}(0.975) = 88$." width="45%" /><img src="_main_files/figure-html/nbinci-2.png" alt="\label{fig:nbinci}Probability mass functions for negative binomial distributions for which $n \cdot s = 12 \cdot 5 = 60$ and (left) $p=0.326$ and (right) $p=0.485$. We observe $y_{\rm obs} = \sum_{i=1}^n x_i = 88$ failures and we want to construct a 95\% confidence interval. $p=0.326$ is the smallest value of $p$ such that $F_Y^{-1}(0.025) = 88$, while $p=0.485$ is the largest value of $p$ such that $F_Y^{-1}(0.975) = 88$." width="45%" />
 <p class="caption">
-Figure 3.10: Probability mass functions for negative binomial distributions for which <span class="math inline">\(n \cdot s = 12 \cdot 5 = 60\)</span> and (left) <span class="math inline">\(p=0.326\)</span> and (right) <span class="math inline">\(p=0.482\)</span>. We observe <span class="math inline">\(y_{\rm obs} = \sum_{i=1}^n x_i = 88\)</span> failures and we want to construct a 95% confidence interval. <span class="math inline">\(p=0.326\)</span> is the smallest value of <span class="math inline">\(p\)</span> such that <span class="math inline">\(F_Y^{-1}(0.025) = 88\)</span>, while <span class="math inline">\(p=0.482\)</span> is the largest value of <span class="math inline">\(p\)</span> such that <span class="math inline">\(F_Y^{-1}(0.975) = 88\)</span>.
+Figure 3.10: Probability mass functions for negative binomial distributions for which <span class="math inline">\(n \cdot s = 12 \cdot 5 = 60\)</span> and (left) <span class="math inline">\(p=0.326\)</span> and (right) <span class="math inline">\(p=0.485\)</span>. We observe <span class="math inline">\(y_{\rm obs} = \sum_{i=1}^n x_i = 88\)</span> failures and we want to construct a 95% confidence interval. <span class="math inline">\(p=0.326\)</span> is the smallest value of <span class="math inline">\(p\)</span> such that <span class="math inline">\(F_Y^{-1}(0.025) = 88\)</span>, while <span class="math inline">\(p=0.485\)</span> is the largest value of <span class="math inline">\(p\)</span> such that <span class="math inline">\(F_Y^{-1}(0.975) = 88\)</span>.
 </p>
 </div>
 <hr />
@@ -1782,6 +1788,31 @@ although it is typically provided assuming <span class="math inline">\(n = 1\)</
 \left[ \hat{p} - 1.96 \sqrt{\frac{\hat{p}(1-\hat{p})}{k}} \, , \, \hat{p} + 1.96 \sqrt{\frac{\hat{p}(1-\hat{p})}{k}} \right] \,,
 \]</span>
 where in this case <span class="math inline">\(\hat{p} = X/k\)</span>.</p>
+</blockquote>
+<blockquote>
+<p>What is the Wald interval for the situation provided in the first example
+above?</p>
+</blockquote>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="the-binomial-and-related-distributions.html#cb191-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
+<span id="cb191-2"><a href="the-binomial-and-related-distributions.html#cb191-2" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb191-3"><a href="the-binomial-and-related-distributions.html#cb191-3" tabindex="-1"></a>n     <span class="ot">&lt;-</span> <span class="dv">12</span></span>
+<span id="cb191-4"><a href="the-binomial-and-related-distributions.html#cb191-4" tabindex="-1"></a>k     <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb191-5"><a href="the-binomial-and-related-distributions.html#cb191-5" tabindex="-1"></a>p     <span class="ot">&lt;-</span> <span class="fl">0.4</span></span>
+<span id="cb191-6"><a href="the-binomial-and-related-distributions.html#cb191-6" tabindex="-1"></a>X     <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(n,<span class="at">size=</span>k,<span class="at">prob=</span>p)</span>
+<span id="cb191-7"><a href="the-binomial-and-related-distributions.html#cb191-7" tabindex="-1"></a></span>
+<span id="cb191-8"><a href="the-binomial-and-related-distributions.html#cb191-8" tabindex="-1"></a>z     <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(<span class="dv">1</span><span class="sc">-</span>alpha<span class="sc">/</span><span class="dv">2</span>)</span>
+<span id="cb191-9"><a href="the-binomial-and-related-distributions.html#cb191-9" tabindex="-1"></a>p.hat <span class="ot">&lt;-</span> <span class="fu">sum</span>(X)<span class="sc">/</span>(n<span class="sc">*</span>k)</span>
+<span id="cb191-10"><a href="the-binomial-and-related-distributions.html#cb191-10" tabindex="-1"></a></span>
+<span id="cb191-11"><a href="the-binomial-and-related-distributions.html#cb191-11" tabindex="-1"></a>p.hat <span class="sc">-</span> z<span class="sc">*</span><span class="fu">sqrt</span>(p.hat<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p.hat)<span class="sc">/</span>(n<span class="sc">*</span>k))</span></code></pre></div>
+<pre><code>## [1] 0.2447328</code></pre>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="the-binomial-and-related-distributions.html#cb193-1" tabindex="-1"></a>p.hat <span class="sc">+</span> z<span class="sc">*</span><span class="fu">sqrt</span>(p.hat<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p.hat)<span class="sc">/</span>(n<span class="sc">*</span>k))</span></code></pre></div>
+<pre><code>## [1] 0.4886005</code></pre>
+<blockquote>
+<p>We can compare these values to those generated in
+the first example: <span class="math inline">\([0.236,0.501]\)</span>. Here, the interval is smaller
+relative to the Clopper-Pearson interval, and thus the coverage for
+<span class="math inline">\(p = 0.4\)</span> (which we would have to estimate via simulation)
+will be smaller as well.</p>
 </blockquote>
 </div>
 </div>
@@ -1846,7 +1877,7 @@ not be a good situation to find ourselves in.)</p>
 a lower-tail test <span class="math inline">\(H_o : p = p_o\)</span> versus <span class="math inline">\(H_a : p = p_a &lt; p_o\)</span>.
 Since <span class="math inline">\(E[U] = nkp\)</span> increases with <span class="math inline">\(p\)</span>, we can go to the hypothesis test
 reference tables and write (in code) that</p>
-<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="the-binomial-and-related-distributions.html#cb191-1" tabindex="-1"></a>u.rr <span class="ot">&lt;-</span> <span class="fu">qbinom</span>(<span class="dv">1</span><span class="sc">-</span>alpha,<span class="at">size=</span>k,<span class="at">prob=</span>p.o)</span></code></pre></div>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="the-binomial-and-related-distributions.html#cb195-1" tabindex="-1"></a>u.rr <span class="ot">&lt;-</span> <span class="fu">qbinom</span>(<span class="dv">1</span><span class="sc">-</span>alpha,<span class="at">size=</span>k,<span class="at">prob=</span>p.o)</span></code></pre></div>
 <p>We see that our rejection region boundary depends on the value of <span class="math inline">\(p_o\)</span>,
 but <em>not</em> on the value of <span class="math inline">\(p_a\)</span>. This means that the test we define above
 is the most-powerful test regardless of the value <span class="math inline">\(p_a &lt; p_o\)</span>. We have
@@ -1863,6 +1894,33 @@ we could put <span class="math inline">\(\alpha/10\)</span> on “one side” an
 etc., and in general we cannot guarantee that any
 one way of splitting <span class="math inline">\(\alpha\)</span> will yield a more powerful test in a given
 situation than any other possible split.</p>
+<hr />
+<p>We conclude our present discussion of hypothesis tests with an overview of
+how working with a discrete sampling distribution affects the computation of
+<span class="math inline">\(p\)</span>-values and test power.</p>
+<p>In the last section, we introduced the idea of a “discreteness correction”;
+for confidence interval calculations, this involved changing the
+observed statistic value to the next lower value in the domain of the
+sampling distribution when estimating a lower interval bound (with
+<span class="math inline">\(E[Y]\)</span> increasing with <span class="math inline">\(\theta\)</span>) or when estimating an upper interval bound
+(with <span class="math inline">\(E[Y]\)</span> decreasing with <span class="math inline">\(\theta\)</span>). (For the binomial and negative
+binomial distributions, this means changing <span class="math inline">\(y_{\rm obs}\)</span> to <span class="math inline">\(y_{\rm obs}-1\)</span>.)
+What are the discreteness corrections that we need to make when performing
+hypothesis tests? First, there are none when computing rejection-region
+boundaries. Second, when computing <span class="math inline">\(p\)</span>-values, we change the
+observed statistic value to the next lower value in the domain of the
+sampling distribution when performing</p>
+<ul>
+<li>upper-tail tests where <span class="math inline">\(E[Y]\)</span> increases with <span class="math inline">\(\theta\)</span> and</li>
+<li>lower-tail tests where <span class="math inline">\(E[Y]\)</span> decreases with <span class="math inline">\(\theta\)</span>.</li>
+</ul>
+<p>Last, when computing test power, we change the derived rejection-region
+boundary to the next lower value in the domain of the
+sampling distribution when performing</p>
+<ul>
+<li>upper-tail tests where <span class="math inline">\(E[Y]\)</span> decreases with <span class="math inline">\(\theta\)</span> and</li>
+<li>lower-tail tests where <span class="math inline">\(E[Y]\)</span> increases with <span class="math inline">\(\theta\)</span>.</li>
+</ul>
 <hr />
 <div id="ump-test-exponential-distribution" class="section level3 hasAnchor" number="3.8.1">
 <h3><span class="header-section-number">3.8.1</span> UMP Test: Exponential Distribution<a href="the-binomial-and-related-distributions.html#ump-test-exponential-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1909,12 +1967,12 @@ y_{\rm RR} = F_Y^{-1}(\alpha \vert \theta_o) \,,
 \]</span>
 which in code is</p>
 </blockquote>
-<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="the-binomial-and-related-distributions.html#cb192-1" tabindex="-1"></a>x.obs   <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.215</span>,<span class="fl">1.131</span>,<span class="fl">2.064</span>)</span>
-<span id="cb192-2"><a href="the-binomial-and-related-distributions.html#cb192-2" tabindex="-1"></a>(y.obs  <span class="ot">&lt;-</span> <span class="fu">sum</span>(x.obs))</span></code></pre></div>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="the-binomial-and-related-distributions.html#cb196-1" tabindex="-1"></a>x.obs   <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.215</span>,<span class="fl">1.131</span>,<span class="fl">2.064</span>)</span>
+<span id="cb196-2"><a href="the-binomial-and-related-distributions.html#cb196-2" tabindex="-1"></a>(y.obs  <span class="ot">&lt;-</span> <span class="fu">sum</span>(x.obs))</span></code></pre></div>
 <pre><code>## [1] 3.41</code></pre>
-<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="the-binomial-and-related-distributions.html#cb194-1" tabindex="-1"></a>alpha   <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
-<span id="cb194-2"><a href="the-binomial-and-related-distributions.html#cb194-2" tabindex="-1"></a>theta.o <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb194-3"><a href="the-binomial-and-related-distributions.html#cb194-3" tabindex="-1"></a>(y.rr <span class="ot">&lt;-</span> <span class="fu">qgamma</span>(alpha,<span class="at">shape=</span><span class="dv">3</span>,<span class="at">scale=</span>theta.o))</span></code></pre></div>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="the-binomial-and-related-distributions.html#cb198-1" tabindex="-1"></a>alpha   <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb198-2"><a href="the-binomial-and-related-distributions.html#cb198-2" tabindex="-1"></a>theta.o <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb198-3"><a href="the-binomial-and-related-distributions.html#cb198-3" tabindex="-1"></a>(y.rr <span class="ot">&lt;-</span> <span class="fu">qgamma</span>(alpha,<span class="at">shape=</span><span class="dv">3</span>,<span class="at">scale=</span>theta.o))</span></code></pre></div>
 <pre><code>## [1] 1.635383</code></pre>
 <blockquote>
 <p>Our observed statistic is <span class="math inline">\(y_{\rm obs} = 3.410\)</span> and the rejection-region
@@ -1937,7 +1995,7 @@ p = F_Y(y_{\rm obs} \vert \theta_o) \,,
 \]</span>
 which in code is</p>
 </blockquote>
-<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="the-binomial-and-related-distributions.html#cb196-1" tabindex="-1"></a><span class="fu">pgamma</span>(y.obs,<span class="at">shape=</span><span class="dv">3</span>,<span class="at">scale=</span>theta.o)</span></code></pre></div>
+<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="the-binomial-and-related-distributions.html#cb200-1" tabindex="-1"></a><span class="fu">pgamma</span>(y.obs,<span class="at">shape=</span><span class="dv">3</span>,<span class="at">scale=</span>theta.o)</span></code></pre></div>
 <pre><code>## [1] 0.2440973</code></pre>
 <blockquote>
 <p>The <span class="math inline">\(p\)</span>-value is 0.244, which is greater than <span class="math inline">\(\alpha\)</span>, as we expect.</p>
@@ -1949,8 +2007,8 @@ which in code is</p>
 \]</span>
 which in code is</p>
 </blockquote>
-<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="the-binomial-and-related-distributions.html#cb198-1" tabindex="-1"></a>theta <span class="ot">&lt;-</span> <span class="fl">1.5</span></span>
-<span id="cb198-2"><a href="the-binomial-and-related-distributions.html#cb198-2" tabindex="-1"></a><span class="fu">pgamma</span>(y.rr,<span class="at">shape=</span><span class="dv">3</span>,<span class="at">scale=</span>theta)</span></code></pre></div>
+<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="the-binomial-and-related-distributions.html#cb202-1" tabindex="-1"></a>theta <span class="ot">&lt;-</span> <span class="fl">1.5</span></span>
+<span id="cb202-2"><a href="the-binomial-and-related-distributions.html#cb202-2" tabindex="-1"></a><span class="fu">pgamma</span>(y.rr,<span class="at">shape=</span><span class="dv">3</span>,<span class="at">scale=</span>theta)</span></code></pre></div>
 <pre><code>## [1] 0.09762911</code></pre>
 <blockquote>
 <p>The power is 0.097…only 9.7% of the time will we reject the null hypothesis
@@ -1998,13 +2056,13 @@ y_{\rm RR} = F_Y^{-1}(1-\alpha \vert p_o) \,,
 \]</span>
 which in code is</p>
 </blockquote>
-<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="the-binomial-and-related-distributions.html#cb200-1" tabindex="-1"></a>x.obs  <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">10</span>,<span class="dv">12</span>,<span class="dv">4</span>)</span>
-<span id="cb200-2"><a href="the-binomial-and-related-distributions.html#cb200-2" tabindex="-1"></a>n      <span class="ot">&lt;-</span> <span class="fu">length</span>(x.obs)</span>
-<span id="cb200-3"><a href="the-binomial-and-related-distributions.html#cb200-3" tabindex="-1"></a>(y.obs <span class="ot">&lt;-</span> <span class="fu">sum</span>(x.obs))</span></code></pre></div>
+<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="the-binomial-and-related-distributions.html#cb204-1" tabindex="-1"></a>x.obs  <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">10</span>,<span class="dv">12</span>,<span class="dv">4</span>)</span>
+<span id="cb204-2"><a href="the-binomial-and-related-distributions.html#cb204-2" tabindex="-1"></a>n      <span class="ot">&lt;-</span> <span class="fu">length</span>(x.obs)</span>
+<span id="cb204-3"><a href="the-binomial-and-related-distributions.html#cb204-3" tabindex="-1"></a>(y.obs <span class="ot">&lt;-</span> <span class="fu">sum</span>(x.obs))</span></code></pre></div>
 <pre><code>## [1] 34</code></pre>
-<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="the-binomial-and-related-distributions.html#cb202-1" tabindex="-1"></a>alpha  <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
-<span id="cb202-2"><a href="the-binomial-and-related-distributions.html#cb202-2" tabindex="-1"></a>p.o    <span class="ot">&lt;-</span> <span class="fl">0.5</span></span>
-<span id="cb202-3"><a href="the-binomial-and-related-distributions.html#cb202-3" tabindex="-1"></a>(y.rr  <span class="ot">&lt;-</span> <span class="fu">qnbinom</span>(<span class="dv">1</span><span class="sc">-</span>alpha,<span class="at">size=</span><span class="dv">3</span><span class="sc">*</span>n,<span class="at">prob=</span>p.o))</span></code></pre></div>
+<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="the-binomial-and-related-distributions.html#cb206-1" tabindex="-1"></a>alpha  <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb206-2"><a href="the-binomial-and-related-distributions.html#cb206-2" tabindex="-1"></a>p.o    <span class="ot">&lt;-</span> <span class="fl">0.5</span></span>
+<span id="cb206-3"><a href="the-binomial-and-related-distributions.html#cb206-3" tabindex="-1"></a>(y.rr  <span class="ot">&lt;-</span> <span class="fu">qnbinom</span>(<span class="dv">1</span><span class="sc">-</span>alpha,<span class="at">size=</span><span class="dv">3</span><span class="sc">*</span>n,<span class="at">prob=</span>p.o))</span></code></pre></div>
 <pre><code>## [1] 25</code></pre>
 <blockquote>
 <p>Our observed statistic is <span class="math inline">\(y_{\rm obs} = 34\)</span> and the rejection-region
@@ -2020,51 +2078,29 @@ uniformly most powerful test for all alternative hypotheses <span class="math in
 <p>What is the <span class="math inline">\(p\)</span>-value, and what is the power of the test if <span class="math inline">\(p = 0.3\)</span>?</p>
 </blockquote>
 <blockquote>
-<p>According to the hypothesis test reference tables, the <span class="math inline">\(p\)</span>-value is
+<p>According to the hypothesis test reference tables (and the description
+of discreteness corrections given above), the <span class="math inline">\(p\)</span>-value is
 <span class="math display">\[
-p = 1 - F_Y(y_{\rm obs} \vert p_o) \,,
+p = 1 - F_Y(y_{\rm obs}-1 \vert p_o) \,,
 \]</span>
 which in code is</p>
 </blockquote>
-<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="the-binomial-and-related-distributions.html#cb204-1" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnbinom</span>(y.obs,<span class="at">size=</span><span class="dv">3</span><span class="sc">*</span>n,<span class="at">prob=</span>p.o)</span></code></pre></div>
-<pre><code>## [1] 0.001900827</code></pre>
-<blockquote>
-<p>Our <span class="math inline">\(p\)</span>-value is supposedly 0.0019, which is less than <span class="math inline">\(\alpha\)</span>, as we expect.
-<em>However,</em> there is a problem here! The function call
-<code>1 - pnbinom(y.obs,size=3*n,prob=p.o)</code> is equivalent to the function
-call</p>
-</blockquote>
-<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="the-binomial-and-related-distributions.html#cb206-1" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">dnbinom</span>((y.obs<span class="sc">+</span><span class="dv">1</span>)<span class="sc">:</span><span class="dv">100</span>,<span class="at">size=</span><span class="dv">3</span><span class="sc">*</span>n,<span class="at">prob=</span>p.o))</span></code></pre></div>
-<pre><code>## [1] 0.001900827</code></pre>
-<blockquote>
-<p>where we use the number 100 as a stand-in for infinity. However, a
-<span class="math inline">\(p\)</span>-value calculation should include the observed statistic value, and
-the above call does not. (It begins the calculation at <code>y.obs+1</code>, and not
-at <code>y.obs</code>.) The <span class="math inline">\(p\)</span>-value is thus actually</p>
-</blockquote>
-<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="the-binomial-and-related-distributions.html#cb208-1" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">dnbinom</span>(y.obs<span class="sc">:</span><span class="dv">100</span>,<span class="at">size=</span><span class="dv">3</span><span class="sc">*</span>n,<span class="at">prob=</span>p.o))</span></code></pre></div>
+<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="the-binomial-and-related-distributions.html#cb208-1" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnbinom</span>(y.obs<span class="dv">-1</span>,<span class="at">size=</span><span class="dv">3</span><span class="sc">*</span>n,<span class="at">prob=</span>p.o)</span></code></pre></div>
 <pre><code>## [1] 0.002757601</code></pre>
 <blockquote>
-<p>or</p>
-</blockquote>
-<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="the-binomial-and-related-distributions.html#cb210-1" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnbinom</span>(y.obs<span class="dv">-1</span>,<span class="at">size=</span><span class="dv">3</span><span class="sc">*</span>n,<span class="at">prob=</span>p.o)</span></code></pre></div>
-<pre><code>## [1] 0.002757601</code></pre>
-<blockquote>
-<p>The value 0.0028 is still less than <span class="math inline">\(\alpha\)</span>, so our qualitative conclusion
-is unchanged.</p>
+<p>The <span class="math inline">\(p\)</span>-value is 0.0028, which is less than <span class="math inline">\(\alpha\)</span>: we would decide to
+reject the null hypothesis.</p>
 </blockquote>
 <blockquote>
-<p><strong>So: if our data are drawn from a discrete distribution, and we are computing a <span class="math inline">\(p\)</span>-value for an upper-tail/yes test, or a lower-tail/no test (as is the case here), we need to subtract 1 from the observed statistic value when passing it into a cdf function. (And similarly, if we are computing the test power for an upper-tail/no test, or a lower-tail/yes test (as is not the case here), we need to subtract 1 from the rejection-region-boundary value.)</strong></p>
-</blockquote>
-<blockquote>
-<p>The test power is
+<p>The test power (a calculation that in this instance does not require
+a discreteness correction) is
 <span class="math display">\[
 {\rm power}(\theta) = 1 - F_Y(y_{\rm RR} \vert p) \,,
 \]</span>
 which in code is</p>
 </blockquote>
-<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="the-binomial-and-related-distributions.html#cb212-1" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.3</span></span>
-<span id="cb212-2"><a href="the-binomial-and-related-distributions.html#cb212-2" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnbinom</span>(y.rr,<span class="at">size=</span><span class="dv">3</span><span class="sc">*</span>n,<span class="at">prob=</span>p)</span></code></pre></div>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="the-binomial-and-related-distributions.html#cb210-1" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.3</span></span>
+<span id="cb210-2"><a href="the-binomial-and-related-distributions.html#cb210-2" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnbinom</span>(y.rr,<span class="at">size=</span><span class="dv">3</span><span class="sc">*</span>n,<span class="at">prob=</span>p)</span></code></pre></div>
 <pre><code>## [1] 0.8074482</code></pre>
 <blockquote>
 <p>We find that
@@ -2196,8 +2232,105 @@ versus <span class="math inline">\(H_a : \mu = \mu_a\)</span>, that test is <em>
 </blockquote>
 <hr />
 </div>
-<div id="large-sample-tests-of-the-binomial-success-probability" class="section level3 hasAnchor" number="3.8.5">
-<h3><span class="header-section-number">3.8.5</span> Large-Sample Tests of the Binomial Success Probability<a href="the-binomial-and-related-distributions.html#large-sample-tests-of-the-binomial-success-probability" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="estimating-a-p-value-via-simulation" class="section level3 hasAnchor" number="3.8.5">
+<h3><span class="header-section-number">3.8.5</span> Estimating a <span class="math inline">\(p\)</span>-Value via Simulation<a href="the-binomial-and-related-distributions.html#estimating-a-p-value-via-simulation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<blockquote>
+<p>Let’s assume that we sample <span class="math inline">\(n\)</span> iid data from a distribution whose
+probability density function is
+<span class="math display">\[\begin{align*}
+f_X(x \vert \theta) = \theta x^{\theta-1} \,,
+\end{align*}\]</span>
+where <span class="math inline">\(x \in [0,1]\)</span> and <span class="math inline">\(\theta &gt; 0\)</span>. Furthermore,
+let’s assume we wish to test <span class="math inline">\(H_o : \theta = \theta_o = 1\)</span> versus
+<span class="math inline">\(H_a : \theta = \theta_a = 2\)</span>.</p>
+</blockquote>
+<blockquote>
+<p>The Neyman-Pearson lemma tells us that a sufficient statistic will provide
+the basis for the most powerful test. Likelihood factorization indicates
+that one such statistic is
+<span class="math display">\[\begin{align*}
+Y = \prod_{i=1}^n X_i \,,
+\end{align*}\]</span>
+but, since functions of sufficient statistics are themselves sufficient, we
+could also utilize
+<span class="math display">\[\begin{align*}
+Y = \log \prod_{i=1}^n X_i = \sum_{i=1}^n \log X_i \,.
+\end{align*}\]</span>
+We will choose to utilize <span class="math inline">\(Y&#39;\)</span> because in general, summations are
+computationally easier to work with than products.
+However…we do not know the sampling distribution for <span class="math inline">\(Y\)</span>. So we simulate.
+In a simulation, we do the following:</p>
+</blockquote>
+<ol style="list-style-type: decimal">
+<li>we sample data from the original distribution given the null;</li>
+<li>we form the statistic and store its value;</li>
+<li>we repeat steps 1 and 2 a large number of times; and</li>
+<li>we see how often the simulated statistic value is (in this case) greater
+than the observed value…that proportion is our estimated <span class="math inline">\(p\)</span>-value.</li>
+</ol>
+<blockquote>
+<p>Below we carry out a simulation of 100,000 datasets where the true
+value of <span class="math inline">\(\theta\)</span> is set (arbitrarily) to 1.75.</p>
+</blockquote>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="the-binomial-and-related-distributions.html#cb214-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">236</span>)</span>
+<span id="cb214-2"><a href="the-binomial-and-related-distributions.html#cb214-2" tabindex="-1"></a>num.sim <span class="ot">&lt;-</span> <span class="dv">100000</span></span>
+<span id="cb214-3"><a href="the-binomial-and-related-distributions.html#cb214-3" tabindex="-1"></a>n       <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb214-4"><a href="the-binomial-and-related-distributions.html#cb214-4" tabindex="-1"></a>theta   <span class="ot">&lt;-</span> <span class="fl">1.75</span>                                <span class="co"># arbitrarily chosen true value</span></span>
+<span id="cb214-5"><a href="the-binomial-and-related-distributions.html#cb214-5" tabindex="-1"></a>X.obs   <span class="ot">&lt;-</span> <span class="fu">rbeta</span>(n,<span class="at">shape1=</span>theta<span class="sc">+</span><span class="dv">1</span>,<span class="at">shape2=</span><span class="dv">1</span>)</span>
+<span id="cb214-6"><a href="the-binomial-and-related-distributions.html#cb214-6" tabindex="-1"></a>y.obs   <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">log</span>(X.obs))</span>
+<span id="cb214-7"><a href="the-binomial-and-related-distributions.html#cb214-7" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The observed statistic is &quot;</span>,y.obs,<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## The observed statistic is  -4.758327</code></pre>
+<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="the-binomial-and-related-distributions.html#cb216-1" tabindex="-1"></a>X       <span class="ot">&lt;-</span> <span class="fu">runif</span>(n<span class="sc">*</span>num.sim)                    <span class="co"># the null is equivalent to Uniform(0,1)</span></span>
+<span id="cb216-2"><a href="the-binomial-and-related-distributions.html#cb216-2" tabindex="-1"></a>X       <span class="ot">&lt;-</span> <span class="fu">matrix</span>(X,<span class="at">nrow=</span>num.sim)              <span class="co"># each row a dataset of size n</span></span>
+<span id="cb216-3"><a href="the-binomial-and-related-distributions.html#cb216-3" tabindex="-1"></a>Y       <span class="ot">&lt;-</span> <span class="fu">apply</span>(X,<span class="dv">1</span>,<span class="cf">function</span>(x){<span class="fu">sum</span>(<span class="fu">log</span>(x))}) <span class="co"># the simulated statistics</span></span>
+<span id="cb216-4"><a href="the-binomial-and-related-distributions.html#cb216-4" tabindex="-1"></a>p       <span class="ot">&lt;-</span> <span class="fu">sum</span>(Y<span class="sc">&gt;=</span>y.obs)<span class="sc">/</span>num.sim               <span class="co"># the p-value</span></span>
+<span id="cb216-5"><a href="the-binomial-and-related-distributions.html#cb216-5" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The estimated p-value is &quot;</span>,p,<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## The estimated p-value is  0.02413</code></pre>
+<blockquote>
+<p>We can visualize the empirical sampling distribution using a histogram.
+See Figure <a href="the-binomial-and-related-distributions.html#fig:cisim">3.11</a>, in which the <span class="math inline">\(p\)</span>-value is the “area under the
+curve” to the right of the observed statistic value (the vertical
+red line). To ensure that the <span class="math inline">\(p\)</span>-value estimate is
+as precise as possible, we should run as many simulations as our
+computer and our time will allow!</p>
+</blockquote>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:cisim"></span>
+<img src="_main_files/figure-html/cisim-1.png" alt="\label{fig:cisim}The empirical sampling distribution for the statistic $Y = \sum_{i=1}^n \log X_i$, determined by simulating 100,000 datasets drawn from the distribution $f_X(x \vert \theta) = \theta x^{\theta-1}$. Here, $n = 10$ and $\theta = 1.75$. The observed statistic value, $y_{\rm obs}$, is indicated by the vertical red line, and the estimated $p$-value is the proportion of simulation statistic values falling to the right of the line." width="50%" />
+<p class="caption">
+Figure 3.11: The empirical sampling distribution for the statistic <span class="math inline">\(Y = \sum_{i=1}^n \log X_i\)</span>, determined by simulating 100,000 datasets drawn from the distribution <span class="math inline">\(f_X(x \vert \theta) = \theta x^{\theta-1}\)</span>. Here, <span class="math inline">\(n = 10\)</span> and <span class="math inline">\(\theta = 1.75\)</span>. The observed statistic value, <span class="math inline">\(y_{\rm obs}\)</span>, is indicated by the vertical red line, and the estimated <span class="math inline">\(p\)</span>-value is the proportion of simulation statistic values falling to the right of the line.
+</p>
+</div>
+<blockquote>
+<p>The estimated <span class="math inline">\(p\)</span>-value is a point estimate. We can add to this estimate
+by constructing a confidence interval on the unknown true <span class="math inline">\(p\)</span>-value.
+We can do this because our simulation is like a binomial experiment, in which</p>
+</blockquote>
+<ol style="list-style-type: decimal">
+<li>the number of trials <span class="math inline">\(k\)</span> is the number of simulations (<code>num.sim</code>); and</li>
+<li>the probability of success <span class="math inline">\(p\)</span> is the probability of sampling a value of <span class="math inline">\(Y \geq y_{\rm obs}\)</span> (given that this is an upper-tail test with <span class="math inline">\(E[Y]\)</span> increasing with <span class="math inline">\(\theta\)</span>).</li>
+</ol>
+<blockquote>
+<p>In the code below, we denote the observed statistic (here, the number of
+times we observe <span class="math inline">\(Y \geq y_{\rm obs}\)</span>) as <code>u.obs</code>.</p>
+</blockquote>
+<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="the-binomial-and-related-distributions.html#cb218-1" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(p,k,u.obs,q)</span>
+<span id="cb218-2"><a href="the-binomial-and-related-distributions.html#cb218-2" tabindex="-1"></a>{</span>
+<span id="cb218-3"><a href="the-binomial-and-related-distributions.html#cb218-3" tabindex="-1"></a>  <span class="fu">pbinom</span>(u.obs,<span class="at">size=</span>k,<span class="at">prob=</span>p) <span class="sc">-</span> q</span>
+<span id="cb218-4"><a href="the-binomial-and-related-distributions.html#cb218-4" tabindex="-1"></a>}</span>
+<span id="cb218-5"><a href="the-binomial-and-related-distributions.html#cb218-5" tabindex="-1"></a><span class="fu">uniroot</span>(f,<span class="at">interval=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="at">k=</span>num.sim,<span class="at">u.obs=</span><span class="fu">sum</span>(Y<span class="sc">&gt;=</span>y.obs)<span class="sc">-</span><span class="dv">1</span>,<span class="at">q=</span><span class="fl">0.975</span>)<span class="sc">$</span>root</span></code></pre></div>
+<pre><code>## [1] 0.02320476</code></pre>
+<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="the-binomial-and-related-distributions.html#cb220-1" tabindex="-1"></a><span class="fu">uniroot</span>(f,<span class="at">interval=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="at">k=</span>num.sim,<span class="at">u.obs=</span><span class="fu">sum</span>(Y<span class="sc">&gt;=</span>y.obs),<span class="at">q=</span><span class="fl">0.025</span>)<span class="sc">$</span>root</span></code></pre></div>
+<pre><code>## [1] 0.02511073</code></pre>
+<blockquote>
+<p>(Note how we apply a discreteness correction when computing the lower bound.)
+Our estimated 95% confidence interval for the true <span class="math inline">\(p\)</span>-value is
+[0.0232,0.0251]; we can feel “confident” when we decide, in this situation,
+to reject the null hypothesis that <span class="math inline">\(\theta = \theta_o = 1\)</span>.</p>
+</blockquote>
+<hr />
+</div>
+<div id="large-sample-tests-of-the-binomial-success-probability" class="section level3 hasAnchor" number="3.8.6">
+<h3><span class="header-section-number">3.8.6</span> Large-Sample Tests of the Binomial Success Probability<a href="the-binomial-and-related-distributions.html#large-sample-tests-of-the-binomial-success-probability" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <blockquote>
 <p>Earlier in the chapter, we saw that if
 <span class="math display">\[
@@ -2275,11 +2408,11 @@ is the <em>logit</em> function:
 <span class="math display">\[
 g(p \vert x) = \log\left[\frac{p \vert x}{1-p \vert x}\right] = \beta_0 + \beta_1 x ~\implies~ p \vert x = \frac{\exp\left(\beta_0+\beta_1x\right)}{1+\exp\left(\beta_0+\beta_1x\right)} \,.
 \]</span>
-Using the logit function to model dichotomous data is dubbed <em>logistic regression</em>. See Figure <a href="the-binomial-and-related-distributions.html#fig:logexp">3.11</a>.</p>
+Using the logit function to model dichotomous data is dubbed <em>logistic regression</em>. See Figure <a href="the-binomial-and-related-distributions.html#fig:logexp">3.12</a>.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:logexp"></span>
 <img src="_main_files/figure-html/logexp-1.png" alt="\label{fig:logexp}An example of an estimated logistic regression line. The blue line is a sigmoid function; it represents the probability that we would sample a datum of Class 1 as a function of $x$. The red points are the observed data." width="50%" />
 <p class="caption">
-Figure 3.11: An example of an estimated logistic regression line. The blue line is a sigmoid function; it represents the probability that we would sample a datum of Class 1 as a function of <span class="math inline">\(x\)</span>. The red points are the observed data.
+Figure 3.12: An example of an estimated logistic regression line. The blue line is a sigmoid function; it represents the probability that we would sample a datum of Class 1 as a function of <span class="math inline">\(x\)</span>. The red points are the observed data.
 </p>
 </div>
 <p>How do we learn a logistic regression model? In linear regression, we
@@ -2374,8 +2507,8 @@ One can always override this default behavior.)</p>
 <code>family=binomial</code>, which means “do logistic regression.”
 (We can add additional arguments to, e.g., change the link function.)</p>
 </blockquote>
-<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="the-binomial-and-related-distributions.html#cb216-1" tabindex="-1"></a>glm.out <span class="ot">&lt;-</span> <span class="fu">glm</span>(class<span class="sc">~</span>r,<span class="at">data=</span>df,<span class="at">family=</span>binomial)</span>
-<span id="cb216-2"><a href="the-binomial-and-related-distributions.html#cb216-2" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">summary</span>(glm.out),<span class="at">show.residuals=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="the-binomial-and-related-distributions.html#cb222-1" tabindex="-1"></a>glm.out <span class="ot">&lt;-</span> <span class="fu">glm</span>(class<span class="sc">~</span>r,<span class="at">data=</span>df,<span class="at">family=</span>binomial)</span>
+<span id="cb222-2"><a href="the-binomial-and-related-distributions.html#cb222-2" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">summary</span>(glm.out),<span class="at">show.residuals=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## glm(formula = class ~ r, family = binomial, data = df)
@@ -2495,14 +2628,14 @@ classes at the same time.”)
 If there is class imbalance, then we will almost certainly have to change
 0.5 to some other value for optimal classification.
 In the current example, the classes <em>are</em> balanced, and so putting the
-“dividing line” at 0.5, as we do in Figure <a href="the-binomial-and-related-distributions.html#fig:glmpred">3.12</a>, is
+“dividing line” at 0.5, as we do in Figure <a href="the-binomial-and-related-distributions.html#fig:glmpred">3.13</a>, is
 an optimal choice.</p>
 </blockquote>
-<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="the-binomial-and-related-distributions.html#cb218-1" tabindex="-1"></a>glm.predictions <span class="ot">&lt;-</span> <span class="fu">predict.glm</span>(glm.out,<span class="at">type=</span><span class="st">&quot;response&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="the-binomial-and-related-distributions.html#cb224-1" tabindex="-1"></a>glm.predictions <span class="ot">&lt;-</span> <span class="fu">predict.glm</span>(glm.out,<span class="at">type=</span><span class="st">&quot;response&quot;</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:glmpred"></span>
 <img src="_main_files/figure-html/glmpred-1.png" alt="\label{fig:glmpred}Boxplots showing the estimated probability that a datum is a star, as a function of the object type (quasar or star). To convert estimated probabilities to predicted classes, one would &quot;draw&quot; a dividing line between the two boxes: all objects with probabilities below the line would be predicted to be quasars and all others would be predicted to be stars. The line would be placed to, e.g., minimize the number of misclassifications." width="50%" />
 <p class="caption">
-Figure 3.12: Boxplots showing the estimated probability that a datum is a star, as a function of the object type (quasar or star). To convert estimated probabilities to predicted classes, one would “draw” a dividing line between the two boxes: all objects with probabilities below the line would be predicted to be quasars and all others would be predicted to be stars. The line would be placed to, e.g., minimize the number of misclassifications.
+Figure 3.13: Boxplots showing the estimated probability that a datum is a star, as a function of the object type (quasar or star). To convert estimated probabilities to predicted classes, one would “draw” a dividing line between the two boxes: all objects with probabilities below the line would be predicted to be quasars and all others would be predicted to be stars. The line would be placed to, e.g., minimize the number of misclassifications.
 </p>
 </div>
 </div>
@@ -2727,23 +2860,23 @@ where we can observe immediately that <span class="math inline">\(p(Y) = 3/9 = 1
 To compute, e.g., <span class="math inline">\(p(x \vert Y)\)</span>, we first compute the sample mean
 and sample standard deviation for the observed data for which <span class="math inline">\(Y\)</span> is “Yes”:</p>
 </blockquote>
-<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="the-binomial-and-related-distributions.html#cb219-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">1487.00</span>,<span class="fl">2205.80</span>,<span class="fl">1774.69</span>)</span>
-<span id="cb219-2"><a href="the-binomial-and-related-distributions.html#cb219-2" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">mean</span>(x),<span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="the-binomial-and-related-distributions.html#cb225-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">1487.00</span>,<span class="fl">2205.80</span>,<span class="fl">1774.69</span>)</span>
+<span id="cb225-2"><a href="the-binomial-and-related-distributions.html#cb225-2" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">mean</span>(x),<span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] 1822.5</code></pre>
-<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="the-binomial-and-related-distributions.html#cb221-1" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">sd</span>(x),<span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb227-1"><a href="the-binomial-and-related-distributions.html#cb227-1" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">sd</span>(x),<span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] 361.78</code></pre>
 <blockquote>
 <p>The mean is $1,822.50 and the standard deviation is $361.78,
 so the probability density associated with observing $1,200 is</p>
 </blockquote>
-<div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb223-1"><a href="the-binomial-and-related-distributions.html#cb223-1" tabindex="-1"></a><span class="fu">dnorm</span>(<span class="dv">1200</span>,<span class="at">mean=</span><span class="fu">mean</span>(x),<span class="at">sd=</span><span class="fu">sd</span>(x))</span></code></pre></div>
+<div class="sourceCode" id="cb229"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb229-1"><a href="the-binomial-and-related-distributions.html#cb229-1" tabindex="-1"></a><span class="fu">dnorm</span>(<span class="dv">1200</span>,<span class="at">mean=</span><span class="fu">mean</span>(x),<span class="at">sd=</span><span class="fu">sd</span>(x))</span></code></pre></div>
 <pre><code>## [1] 0.0002509367</code></pre>
 <blockquote>
 <p>The density is 2.51 <span class="math inline">\(\times\)</span> 10<span class="math inline">\(^{-4}\)</span>. As far as for those data for
 which <span class="math inline">\(Y\)</span> is “No”:</p>
 </blockquote>
-<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="the-binomial-and-related-distributions.html#cb225-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">324.74</span>,<span class="fl">988.21</span>,<span class="fl">836.30</span>,<span class="fl">927.89</span>,<span class="fl">712.28</span>,<span class="fl">706.16</span>)</span>
-<span id="cb225-2"><a href="the-binomial-and-related-distributions.html#cb225-2" tabindex="-1"></a><span class="fu">dnorm</span>(<span class="dv">1200</span>,<span class="at">mean=</span><span class="fu">mean</span>(x),<span class="at">sd=</span><span class="fu">sd</span>(x))</span></code></pre></div>
+<div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb231-1"><a href="the-binomial-and-related-distributions.html#cb231-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">324.74</span>,<span class="fl">988.21</span>,<span class="fl">836.30</span>,<span class="fl">927.89</span>,<span class="fl">712.28</span>,<span class="fl">706.16</span>)</span>
+<span id="cb231-2"><a href="the-binomial-and-related-distributions.html#cb231-2" tabindex="-1"></a><span class="fu">dnorm</span>(<span class="dv">1200</span>,<span class="at">mean=</span><span class="fu">mean</span>(x),<span class="at">sd=</span><span class="fu">sd</span>(x))</span></code></pre></div>
 <pre><code>## [1] 0.0002748351</code></pre>
 <blockquote>
 <p>The density is 2.75 <span class="math inline">\(\times\)</span> 10<span class="math inline">\(^{-4}\)</span>. Thus
@@ -2762,8 +2895,8 @@ $1,200 will default on their debt.</p>
 <p>Here, we learn a Naive Bayes model that we can use to differentiate between
 stars and quasars, utilizing functions from <code>R</code>’s <code>e1071</code> package.</p>
 </blockquote>
-<div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb227-1"><a href="the-binomial-and-related-distributions.html#cb227-1" tabindex="-1"></a><span class="fu">library</span>(e1071)</span>
-<span id="cb227-2"><a href="the-binomial-and-related-distributions.html#cb227-2" tabindex="-1"></a><span class="fu">naiveBayes</span>(class<span class="sc">~</span>r,<span class="at">data=</span>df)</span></code></pre></div>
+<div class="sourceCode" id="cb233"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb233-1"><a href="the-binomial-and-related-distributions.html#cb233-1" tabindex="-1"></a><span class="fu">library</span>(e1071)</span>
+<span id="cb233-2"><a href="the-binomial-and-related-distributions.html#cb233-2" tabindex="-1"></a><span class="fu">naiveBayes</span>(class<span class="sc">~</span>r,<span class="at">data=</span>df)</span></code></pre></div>
 <pre><code>## 
 ## Naive Bayes Classifier for Discrete Predictors
 ## 
@@ -2786,12 +2919,12 @@ stars and quasars, utilizing functions from <code>R</code>’s <code>e1071</code
 It then shows the estimated distributions of <code>r</code> values
 for quasars (a normal with estimated mean 19.358 and standard
 deviation 0.828) and stars (mean 17.964 and standard deviation 1.365).
-See Figure <a href="the-binomial-and-related-distributions.html#fig:nbplot">3.13</a>.</p>
+See Figure <a href="the-binomial-and-related-distributions.html#fig:nbplot">3.14</a>.</p>
 </blockquote>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:nbplot"></span>
 <img src="_main_files/figure-html/nbplot-1.png" alt="\label{fig:nbplot}An illustration of the Naive Bayes regression model, as applied to the star-quasar dataset. The red curve is the estimated normal probability density function for stars, while the green curve is the estimated pdf for quasars. Because the two classes in this example are balanced, we can state that where the amplitude of the red curve is higher, the predicted class would be STAR; otherwise, it would be QUASAR." width="50%" />
 <p class="caption">
-Figure 3.13: An illustration of the Naive Bayes regression model, as applied to the star-quasar dataset. The red curve is the estimated normal probability density function for stars, while the green curve is the estimated pdf for quasars. Because the two classes in this example are balanced, we can state that where the amplitude of the red curve is higher, the predicted class would be STAR; otherwise, it would be QUASAR.
+Figure 3.14: An illustration of the Naive Bayes regression model, as applied to the star-quasar dataset. The red curve is the estimated normal probability density function for stars, while the green curve is the estimated pdf for quasars. Because the two classes in this example are balanced, we can state that where the amplitude of the red curve is higher, the predicted class would be STAR; otherwise, it would be QUASAR.
 </p>
 </div>
 </div>
@@ -2808,7 +2941,7 @@ where <span class="math inline">\(x \in [0,1]\)</span>, <span class="math inline
 <span class="math display">\[
 B(\alpha,\beta) = \int_0^1 x^{\alpha-1}(1-x)^{\beta-1} dx = \frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha+\beta)} \,.
 \]</span>
-(See Figure <a href="the-binomial-and-related-distributions.html#fig:betapdf">3.14</a>.)
+(See Figure <a href="the-binomial-and-related-distributions.html#fig:betapdf">3.15</a>.)
 We have seen the gamma function, <span class="math inline">\(\Gamma(\alpha)\)</span>, before; it is defined as
 <span class="math display">\[
 \Gamma(\alpha) = \int_0^\infty x^{\alpha-1} e^{-x} dx \,.
@@ -2862,7 +2995,7 @@ then the likelihood function <span class="math inline">\(\mathcal{L}(p \vert k,x
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:betapdf"></span>
 <img src="_main_files/figure-html/betapdf-1.png" alt="\label{fig:betapdf}Three examples of beta probability density functions: Beta(2,2) (solid red line), Beta(4,2) (dashed green line), and Beta(2,3) (dotted blue line)." width="50%" />
 <p class="caption">
-Figure 3.14: Three examples of beta probability density functions: Beta(2,2) (solid red line), Beta(4,2) (dashed green line), and Beta(2,3) (dotted blue line).
+Figure 3.15: Three examples of beta probability density functions: Beta(2,2) (solid red line), Beta(4,2) (dashed green line), and Beta(2,3) (dotted blue line).
 </p>
 </div>
 <hr />
@@ -2931,12 +3064,12 @@ so <span class="math inline">\(\tilde{X} \sim\)</span> Beta<span class="math inl
 <p>(In fact, we can go further and state a more general result:
 <span class="math inline">\(X_{(j)} \sim\)</span> Beta(<span class="math inline">\(j,n-j+1\)</span>): <em>all</em> the order statistics for data
 drawn from a Uniform(0,1) distribution are beta-distributed random variables!
-See Figure <a href="the-binomial-and-related-distributions.html#fig:betaunif">3.15</a>.)</p>
+See Figure <a href="the-binomial-and-related-distributions.html#fig:betaunif">3.16</a>.)</p>
 </blockquote>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:betaunif"></span>
 <img src="_main_files/figure-html/betaunif-1.png" alt="\label{fig:betaunif}The order statistic probability density functions $f_{(j)}(x)$ for, from left to right, $j = 1$ through $j = 5$, for the situation in which $n = 5$ iid data are drawn from a Uniform(0,1) distribution (overlaid in red). Each pdf is itself a beta distribution, with parameter values $j$ and $n-j+1$." width="50%" />
 <p class="caption">
-Figure 3.15: The order statistic probability density functions <span class="math inline">\(f_{(j)}(x)\)</span> for, from left to right, <span class="math inline">\(j = 1\)</span> through <span class="math inline">\(j = 5\)</span>, for the situation in which <span class="math inline">\(n = 5\)</span> iid data are drawn from a Uniform(0,1) distribution (overlaid in red). Each pdf is itself a beta distribution, with parameter values <span class="math inline">\(j\)</span> and <span class="math inline">\(n-j+1\)</span>.
+Figure 3.16: The order statistic probability density functions <span class="math inline">\(f_{(j)}(x)\)</span> for, from left to right, <span class="math inline">\(j = 1\)</span> through <span class="math inline">\(j = 5\)</span>, for the situation in which <span class="math inline">\(n = 5\)</span> iid data are drawn from a Uniform(0,1) distribution (overlaid in red). Each pdf is itself a beta distribution, with parameter values <span class="math inline">\(j\)</span> and <span class="math inline">\(n-j+1\)</span>.
 </p>
 </div>
 <!--
@@ -3218,12 +3351,12 @@ The number of degrees of freedom is <span class="math inline">\(m-1 = 3\)</span>
 is $F_{W(3)}^{-1}(1-) = $ <code>qchisq(0.95,3)</code> = 7.815. Since 5.04 <span class="math inline">\(&lt;\)</span> 7.815, we
 fail to reject the null hypothesis that the animals are distributed uniformly as
 a function of azimuthal angle. (The <span class="math inline">\(p\)</span>-value is <code>1-pchisq(5.04,3)</code> = 0.169.)
-See Figure <a href="the-binomial-and-related-distributions.html#fig:chi2gof">3.16</a>.</p>
+See Figure <a href="the-binomial-and-related-distributions.html#fig:chi2gof">3.17</a>.</p>
 </blockquote>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:chi2gof"></span>
 <img src="_main_files/figure-html/chi2gof-1.png" alt="\label{fig:chi2gof}An illustration of the sampling distribution and rejection region for the chi-square goodness-of-fit test. Here, the number of degrees of freedom is 3, so the rejection region are values of chi-square above 7.815. The observed test statistic is 5.04, which lies outside the rejection region, hence we fail to reject the null hypothesis." width="50%" />
 <p class="caption">
-Figure 3.16: An illustration of the sampling distribution and rejection region for the chi-square goodness-of-fit test. Here, the number of degrees of freedom is 3, so the rejection region are values of chi-square above 7.815. The observed test statistic is 5.04, which lies outside the rejection region, hence we fail to reject the null hypothesis.
+Figure 3.17: An illustration of the sampling distribution and rejection region for the chi-square goodness-of-fit test. Here, the number of degrees of freedom is 3, so the rejection region are values of chi-square above 7.815. The observed test statistic is 5.04, which lies outside the rejection region, hence we fail to reject the null hypothesis.
 </p>
 </div>
 <hr />
@@ -3240,18 +3373,18 @@ we <em>can</em> estimate the <span class="math inline">\(p\)</span>-value for th
 via simulation. Will we achieve a result very different from that above,
 <span class="math inline">\(p = 0.169\)</span>?</p>
 </blockquote>
-<div class="sourceCode" id="cb229"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb229-1"><a href="the-binomial-and-related-distributions.html#cb229-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
-<span id="cb229-2"><a href="the-binomial-and-related-distributions.html#cb229-2" tabindex="-1"></a>O <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">28</span>,<span class="dv">32</span>,<span class="dv">17</span>,<span class="dv">23</span>)</span>
-<span id="cb229-3"><a href="the-binomial-and-related-distributions.html#cb229-3" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>,<span class="dv">4</span>)</span>
-<span id="cb229-4"><a href="the-binomial-and-related-distributions.html#cb229-4" tabindex="-1"></a></span>
-<span id="cb229-5"><a href="the-binomial-and-related-distributions.html#cb229-5" tabindex="-1"></a>num.sim <span class="ot">&lt;-</span> <span class="dv">100000</span></span>
-<span id="cb229-6"><a href="the-binomial-and-related-distributions.html#cb229-6" tabindex="-1"></a>k       <span class="ot">&lt;-</span> <span class="fu">sum</span>(O)</span>
-<span id="cb229-7"><a href="the-binomial-and-related-distributions.html#cb229-7" tabindex="-1"></a>m       <span class="ot">&lt;-</span> <span class="fu">length</span>(O)</span>
-<span id="cb229-8"><a href="the-binomial-and-related-distributions.html#cb229-8" tabindex="-1"></a>pmf.obs <span class="ot">&lt;-</span> <span class="fu">dmultinom</span>(O,<span class="at">prob=</span>p)    <span class="co"># the observed multinomial pmf</span></span>
-<span id="cb229-9"><a href="the-binomial-and-related-distributions.html#cb229-9" tabindex="-1"></a>X       <span class="ot">&lt;-</span> <span class="fu">rmultinom</span>(num.sim,k,p) <span class="co"># generates an m x num.sim matrix</span></span>
-<span id="cb229-10"><a href="the-binomial-and-related-distributions.html#cb229-10" tabindex="-1"></a>                                  <span class="co"># (m determined as the length of p)</span></span>
-<span id="cb229-11"><a href="the-binomial-and-related-distributions.html#cb229-11" tabindex="-1"></a>pmf     <span class="ot">&lt;-</span> <span class="fu">apply</span>(X,<span class="dv">2</span>,<span class="cf">function</span>(x){<span class="fu">dmultinom</span>(x,<span class="at">prob=</span>p)}) <span class="co"># simulated pmf&#39;s</span></span>
-<span id="cb229-12"><a href="the-binomial-and-related-distributions.html#cb229-12" tabindex="-1"></a><span class="fu">sum</span>(pmf<span class="sc">&lt;</span>pmf.obs)<span class="sc">/</span>num.sim </span></code></pre></div>
+<div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb235-1"><a href="the-binomial-and-related-distributions.html#cb235-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
+<span id="cb235-2"><a href="the-binomial-and-related-distributions.html#cb235-2" tabindex="-1"></a>O <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">28</span>,<span class="dv">32</span>,<span class="dv">17</span>,<span class="dv">23</span>)</span>
+<span id="cb235-3"><a href="the-binomial-and-related-distributions.html#cb235-3" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>,<span class="dv">4</span>)</span>
+<span id="cb235-4"><a href="the-binomial-and-related-distributions.html#cb235-4" tabindex="-1"></a></span>
+<span id="cb235-5"><a href="the-binomial-and-related-distributions.html#cb235-5" tabindex="-1"></a>num.sim <span class="ot">&lt;-</span> <span class="dv">100000</span></span>
+<span id="cb235-6"><a href="the-binomial-and-related-distributions.html#cb235-6" tabindex="-1"></a>k       <span class="ot">&lt;-</span> <span class="fu">sum</span>(O)</span>
+<span id="cb235-7"><a href="the-binomial-and-related-distributions.html#cb235-7" tabindex="-1"></a>m       <span class="ot">&lt;-</span> <span class="fu">length</span>(O)</span>
+<span id="cb235-8"><a href="the-binomial-and-related-distributions.html#cb235-8" tabindex="-1"></a>pmf.obs <span class="ot">&lt;-</span> <span class="fu">dmultinom</span>(O,<span class="at">prob=</span>p)    <span class="co"># the observed multinomial pmf</span></span>
+<span id="cb235-9"><a href="the-binomial-and-related-distributions.html#cb235-9" tabindex="-1"></a>X       <span class="ot">&lt;-</span> <span class="fu">rmultinom</span>(num.sim,k,p) <span class="co"># generates an m x num.sim matrix</span></span>
+<span id="cb235-10"><a href="the-binomial-and-related-distributions.html#cb235-10" tabindex="-1"></a>                                  <span class="co"># (m determined as the length of p)</span></span>
+<span id="cb235-11"><a href="the-binomial-and-related-distributions.html#cb235-11" tabindex="-1"></a>pmf     <span class="ot">&lt;-</span> <span class="fu">apply</span>(X,<span class="dv">2</span>,<span class="cf">function</span>(x){<span class="fu">dmultinom</span>(x,<span class="at">prob=</span>p)}) <span class="co"># simulated pmf&#39;s</span></span>
+<span id="cb235-12"><a href="the-binomial-and-related-distributions.html#cb235-12" tabindex="-1"></a><span class="fu">sum</span>(pmf<span class="sc">&lt;</span>pmf.obs)<span class="sc">/</span>num.sim </span></code></pre></div>
 <pre><code>## [1] 0.15974</code></pre>
 <blockquote>
 <p>What does <code>apply()</code> do? It applies the function given as
@@ -3395,31 +3528,31 @@ assuming <span class="math inline">\(\alpha = 0.05\)</span>.</p>
 <p>We can already see that working with the numbers directly is tedious. Can we make
 a matrix of such numbers using <code>R</code>?</p>
 </blockquote>
-<div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb231-1"><a href="the-binomial-and-related-distributions.html#cb231-1" tabindex="-1"></a>r <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">57</span>,<span class="dv">43</span>)</span>
-<span id="cb231-2"><a href="the-binomial-and-related-distributions.html#cb231-2" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">28</span>,<span class="dv">32</span>,<span class="dv">17</span>,<span class="dv">23</span>)</span>
-<span id="cb231-3"><a href="the-binomial-and-related-distributions.html#cb231-3" tabindex="-1"></a>E <span class="ot">&lt;-</span> (r <span class="sc">%*%</span> <span class="fu">t</span>(c))<span class="sc">/</span><span class="fu">sum</span>(r)  <span class="co"># multiply r and the transpose of c </span></span>
-<span id="cb231-4"><a href="the-binomial-and-related-distributions.html#cb231-4" tabindex="-1"></a><span class="fu">print</span>(E)                  <span class="co"># much better</span></span></code></pre></div>
+<div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb237-1"><a href="the-binomial-and-related-distributions.html#cb237-1" tabindex="-1"></a>r <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">57</span>,<span class="dv">43</span>)</span>
+<span id="cb237-2"><a href="the-binomial-and-related-distributions.html#cb237-2" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">28</span>,<span class="dv">32</span>,<span class="dv">17</span>,<span class="dv">23</span>)</span>
+<span id="cb237-3"><a href="the-binomial-and-related-distributions.html#cb237-3" tabindex="-1"></a>E <span class="ot">&lt;-</span> (r <span class="sc">%*%</span> <span class="fu">t</span>(c))<span class="sc">/</span><span class="fu">sum</span>(r)  <span class="co"># multiply r and the transpose of c </span></span>
+<span id="cb237-4"><a href="the-binomial-and-related-distributions.html#cb237-4" tabindex="-1"></a><span class="fu">print</span>(E)                  <span class="co"># much better</span></span></code></pre></div>
 <pre><code>##       [,1]  [,2] [,3]  [,4]
 ## [1,] 15.96 18.24 9.69 13.11
 ## [2,] 12.04 13.76 7.31  9.89</code></pre>
 <blockquote>
 <p>If we wish to continue using <code>R</code>, we need to define a matrix of observed data values:</p>
 </blockquote>
-<div class="sourceCode" id="cb233"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb233-1"><a href="the-binomial-and-related-distributions.html#cb233-1" tabindex="-1"></a>O <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">20</span>,<span class="dv">8</span>,<span class="dv">18</span>,<span class="dv">14</span>,<span class="dv">5</span>,<span class="dv">12</span>,<span class="dv">14</span>,<span class="dv">9</span>),<span class="at">nrow=</span><span class="dv">2</span>) <span class="co"># fills in column-by-column</span></span>
-<span id="cb233-2"><a href="the-binomial-and-related-distributions.html#cb233-2" tabindex="-1"></a><span class="fu">print</span>(O)</span></code></pre></div>
+<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="the-binomial-and-related-distributions.html#cb239-1" tabindex="-1"></a>O <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">20</span>,<span class="dv">8</span>,<span class="dv">18</span>,<span class="dv">14</span>,<span class="dv">5</span>,<span class="dv">12</span>,<span class="dv">14</span>,<span class="dv">9</span>),<span class="at">nrow=</span><span class="dv">2</span>) <span class="co"># fills in column-by-column</span></span>
+<span id="cb239-2"><a href="the-binomial-and-related-distributions.html#cb239-2" tabindex="-1"></a><span class="fu">print</span>(O)</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4]
 ## [1,]   20   18    5   14
 ## [2,]    8   14   12    9</code></pre>
 <blockquote>
 <p>Now we have what we need. The test statistic is</p>
 </blockquote>
-<div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb235-1"><a href="the-binomial-and-related-distributions.html#cb235-1" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">sum</span>( (O<span class="sc">-</span>E)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>E ),<span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="the-binomial-and-related-distributions.html#cb241-1" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">sum</span>( (O<span class="sc">-</span>E)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>E ),<span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## [1] 7.805</code></pre>
 <blockquote>
 <p>and the number of degrees of freedom is <span class="math inline">\((r-1)(c-1) = 1 \cdot 3 = 3\)</span>, so the
 rejection region boundary is</p>
 </blockquote>
-<div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb237-1"><a href="the-binomial-and-related-distributions.html#cb237-1" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">qchisq</span>(<span class="fl">0.95</span>,<span class="dv">3</span>),<span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="the-binomial-and-related-distributions.html#cb243-1" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">qchisq</span>(<span class="fl">0.95</span>,<span class="dv">3</span>),<span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## [1] 7.815</code></pre>
 <blockquote>
 <p>We find that if <span class="math inline">\(\alpha = 0.05\)</span>, we <em>cannot</em> reject the null hypothesis. We might be
@@ -3431,9 +3564,156 @@ are…that way, we <em>might</em> be able to actually reject the null.
 But really, at the end of the day, such a result should simply motivate
 us to gather more data!</p>
 </blockquote>
+</div>
+</div>
+<div id="exercises" class="section level2 hasAnchor" number="3.14">
+<h2><span class="header-section-number">3.14</span> Exercises<a href="the-binomial-and-related-distributions.html#exercises" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li><p>Let <span class="math inline">\(X_1,...,X_n\)</span> be <span class="math inline">\(n\)</span> data drawn from a <span class="math inline">\(\mathcal{N}(2,4)\)</span> distribution. Write down the probability that exactly <span class="math inline">\(m\)</span> of the <span class="math inline">\(n\)</span> data have values <span class="math inline">\(&gt; 2\)</span>.</p></li>
+<li><p>You are a habitual buyer of raffle tickets. Each ticket costs $1, and each time you buy a ticket, you have a 40% chance of having a winning ticket, for which you will receive $3. You decide to keep buying tickets until you win for the first time. Let the random variable <span class="math inline">\(F\)</span> denote the total number of <em>losing</em> tickets that you buy, and let <span class="math inline">\(W\)</span> denote the total amount of money you win (or lose!). (a) <span class="math inline">\(F\)</span> is sampled from what distribution that has what parameter value(s)? (b) What is the probability that you will end up making money, i.e., what is <span class="math inline">\(P(W &gt; 0)\)</span>? (c) Let’s say instead of buying until you win, you decide you will buy exactly two tickets, then stop. What is the probability of buying a winning ticket exactly once, given that you buy at least one winning ticket?</p></li>
+<li><p>Suppose 50% of licensed drivers in a state are insured. If three licensed drivers are selected at random, what is the expected number of insured drivers given that the number of insured drivers is odd? (Assume the state’s population is effectively infinite, so that the probability of selecting an insured driver stays constant from trial to trial.)</p></li>
+<li><p>In an experiment, you take shots at a target until you hit that target twice. On any given shot, you have a 50% change of hitting the target. (a) What is the probability that you hit the target for the second time on your fourth shot overall? (b) You run your experiment twice. What is the probability of needing to take two shots during the first experiment to hit the target twice, and three shots during the second experiment to hit the target twice? Assume the results are independent (and of course identically distributed). (c) Let’s suppose you do not actually know the success probability <span class="math inline">\(p\)</span>, and you wish to determine a one-sided 90% upper bound on <span class="math inline">\(p\)</span>. As you are dealing with a discrete distribution, you need to build a <code>uniroot()</code>-style interval estimator. In your code, what value would you adopt for <span class="math inline">\(q\)</span>?</p></li>
+<li><p>You collect <span class="math inline">\(n=4\)</span> iid samples from the following distribution:
+<span class="math display">\[\begin{eqnarray*}
+f_X(x) = \left\{ \begin{array}{cc} 3x^2 &amp; 0 \leq x \leq 1 \\ 0 &amp; \mbox{otherwise} \end{array} \right. \,.
+\end{eqnarray*}\]</span>
+(a) Write down the sampling distribution for the minimum observed value, <span class="math inline">\(X_{(1)}\)</span>. (b) The sampling distribution for the maximum observed value is <span class="math inline">\(g_{(4)}(x) = 12x^{11}\)</span>. What is <span class="math inline">\(E[X_4]\)</span>?</p></li>
+<li><p>You are to sample <span class="math inline">\(n = 3\)</span> data from the following distribution:
+<span class="math display">\[\begin{eqnarray*}
+f_X(x) = \left\{ \begin{array}{cc} x &amp; 0 \leq x \leq \sqrt{2} \\ 0 &amp; \mbox{otherwise} \end{array} \right. \,.
+\end{eqnarray*}\]</span>
+(a) Specify the distribution from which <span class="math inline">\(X_{(3)}\)</span> is to be sampled. (b) Specify the variance of the distribution you derived in part (a).</p></li>
+<li><p>If we sample 3 iid data from a Uniform(0,1) distribution, what is the probability that the median value lies between 1/3 and 2/3?</p></li>
+<li><p>You sample three data from a Exp(1) distribution. What is
+the expected value for the median datum, i.e., the second ordered datum?</p></li>
+<li><p>Let the cdf for a given distribution be <span class="math inline">\(F_X(x) = x^3\)</span> for <span class="math inline">\(x \in [0,1]\)</span>, and let’s assume that you have sampled <span class="math inline">\(n\)</span> iid data from this distribution. (a) What is the pdf within the domain <span class="math inline">\(x \in [0,1]\)</span>? (b) What is the pdf for <span class="math inline">\(X_{(n)}\)</span> within the domain <span class="math inline">\(x \in [0,1]\)</span>? (c) What is the cdf for <span class="math inline">\(X_{(n)}\)</span> within the domain <span class="math inline">\(x \in [0,1]\)</span>? (d) What is <span class="math inline">\(E[X_{(n)}]\)</span>?</p></li>
+<li><p>You sample <span class="math inline">\(n = 2\)</span> iid random variables from a distribution with pdf
+<span class="math display">\[\begin{eqnarray*}
+f_X(x) = \frac12 x \,,
+\end{eqnarray*}\]</span>
+for <span class="math inline">\(x \in [0,2]\)</span>. (a) What is <span class="math inline">\(F_X(x)\)</span> within the domain <span class="math inline">\([0,2]\)</span>? (b) What is <span class="math inline">\(f_{(2)}(x)\)</span>? (c) What is <span class="math inline">\(E[X_{(2)}]\)</span>? (d) Are <span class="math inline">\(X_{(1)}\)</span> and <span class="math inline">\(X_{(2)}\)</span> independent random variables?</p></li>
+<li><p>Find the asymptotic distribution of the MLE of <span class="math inline">\(n\)</span> i.i.d. samples from the Bernoulli distribution with parameter <span class="math inline">\(p\)</span>. (<span class="math inline">\(p_X(x) = p^x(1-p)^{1-x}\)</span> for <span class="math inline">\(x = \{0,1\}\)</span> and for <span class="math inline">\(p \in (0,1)\)</span>.)</p></li>
+<li><p>You are given <span class="math inline">\(n\)</span> iid data that are sampled from the following pmf:
+<span class="math display">\[\begin{equation*}
+p_X(x) = (1-p)^{x-1}p \,,
+\end{equation*}\]</span>
+with <span class="math inline">\(0 &lt; p &lt; 1\)</span> and <span class="math inline">\(x = \{1,2,3,\ldots\}\)</span>. For this distribution, <span class="math inline">\(E[X] = 1/p\)</span> and <span class="math inline">\(V[X] = (1-p)/p^2\)</span>. (a) What is the maximum likelihood estimator for <span class="math inline">\(1/p\)</span>? Note: you are not required to confirm that the derivative of the score function is negative at <span class="math inline">\(1/p = \widehat{1/p}_{MLE}\)</span>. Also note: a property of MLEs may help you here. (b) Write down <span class="math inline">\(V[\widehat{1/p}_{MLE}]\)</span>, i.e., the variance of the MLE for <span class="math inline">\(1/p\)</span>.</p></li>
+<li><p>The probability mass function for the logarithmic distribution is
+<span class="math display">\[\begin{eqnarray*}
+p_X(x) = -\frac{1}{\log(1-p)} \frac{p^x}{x} \,,
+\end{eqnarray*}\]</span>
+where <span class="math inline">\(x \in \{1,2,3,...\}\)</span>. You sample <span class="math inline">\(n\)</span> iid data from this distribution. Write down a sufficient statistic for <span class="math inline">\(p\)</span>.</p></li>
+<li><p>You are given the following probability density function:
+<span class="math display">\[\begin{equation*}
+f_X(x) = a b x^{a-1} (1-x^a)^{b-1} \,,
+\end{equation*}\]</span>
+defined over the domain <span class="math inline">\(0 &lt; x &lt; 1\)</span>. <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are the parameters of the distribution, and both are positive and real-valued. Let <span class="math inline">\(\mathbf{X} = \{X_1,\cdots,X_n\}\)</span> be <span class="math inline">\(n\)</span> i.i.d.~samples from this distribution. (a) If you are able to define joint sufficient statistics for <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, write them down; otherwise, explain why you cannot. (b) Now, let <span class="math inline">\(a=1\)</span>. What is the sufficient statistic for <span class="math inline">\(b\)</span>?</p></li>
+<li><p>You sample <span class="math inline">\(n\)</span> iid data from the following distribution:
+<span class="math display">\[\begin{eqnarray*}
+f_X(x) = \frac{x}{\beta^2} e^{-x/\beta} \,,
+\end{eqnarray*}\]</span>
+where <span class="math inline">\(x \geq 0\)</span> and <span class="math inline">\(\beta &gt; 0\)</span>, and where <span class="math inline">\(E[X] = 2\beta\)</span> and <span class="math inline">\(V[X] = 2\beta^2\)</span>. (a) Write down the sufficient statistic for <span class="math inline">\(\beta\)</span> that arises directly from likelihood factorization. (b) Using your answer from part (a), determine the MVUE for <span class="math inline">\(\beta\)</span>. (c) Compute the variance of the MVUE for <span class="math inline">\(\beta\)</span>. (d) Compute the Cramer-Rao Lower Bound for the MVUE for <span class="math inline">\(\beta\)</span>.</p></li>
+<li><p>Let <span class="math inline">\(X_1,\ldots, X_n\)</span> be <span class="math inline">\(n\)</span> iid samples from the following distribution, where <span class="math inline">\(\theta &gt; 0\)</span>,
+<span class="math display">\[\begin{eqnarray*}
+f_X(x) = \frac{1}{\theta} \exp\left(x-\frac{1}{\theta} e^x\right) \,.
+\end{eqnarray*}\]</span>
+Note that <span class="math inline">\(e^X \sim \text{Exp}(\theta)\)</span> (= Gamma(1,<span class="math inline">\(\theta\)</span>)) and <span class="math inline">\(Y = \sum_{i=1}^n e^{X_i} \sim \text{Gamma}(n,\theta)\)</span> (with <span class="math inline">\(E[Y] = n\theta\)</span> and <span class="math inline">\(V[Y] = n\theta^2\)</span>). (a) Find a sufficient statistic for <span class="math inline">\(\theta\)</span> using the factorization criterion. (b) Find the MVUE for <span class="math inline">\(\theta\)</span>. (c) Find the MVUE for <span class="math inline">\(\theta^2\)</span>.</p></li>
+<li><p>Let’s assume that we have sampled <span class="math inline">\(n\)</span> iid data, <span class="math inline">\(\{X_1,\ldots,X_n\}\)</span>, from a Maxwell-Boltzmann distribution with pdf
+<span class="math display">\[\begin{eqnarray*}
+f_X(x) = \sqrt{\frac{2}{\pi}} \frac{x^2}{a^3} e^{-x^2/(2a^2)} \,,
+\end{eqnarray*}\]</span>
+where <span class="math inline">\(x &gt; 0\)</span> and <span class="math inline">\(a &gt; 0\)</span>. The expected value and variance for an MB-distributed random variable are
+<span class="math display">\[\begin{eqnarray*}
+E[X] = 2 a \sqrt{\frac{2}{\pi}} ~~~ \mbox{and} ~~~ V[X] = a^2 \frac{(3 \pi - 8)}{\pi}
+\end{eqnarray*}\]</span>
+respectively. (a) Identify a sufficient statistic for <span class="math inline">\(a^2\)</span>. (b) Derive <span class="math inline">\(E[X^2]\)</span>. (Hint: there is no need for integration here.) (c) Determine the MVUE for <span class="math inline">\(a^2\)</span>. (d) Can we use an invariance principle to state that the MVUE for <span class="math inline">\(a\)</span> is <span class="math inline">\((\widehat{a^2}_{MVUE})^{1/2}\)</span>?</p></li>
+<li><p>You sample a single datum <span class="math inline">\(X\)</span> from the following pdf:
+<span class="math display">\[\begin{eqnarray*}
+f_X(x) = \frac{\theta}{2^\theta} x^{\theta-1} \,,
+\end{eqnarray*}\]</span>
+where <span class="math inline">\(x \in [0,2]\)</span> and <span class="math inline">\(\theta &gt; 0\)</span>. You wish to construct the most powerful test of the simple hypotheses <span class="math inline">\(H_o: \theta = \theta_o\)</span> versus <span class="math inline">\(H_a: \theta = \theta_a\)</span>, assuming <span class="math inline">\(\theta_a &gt; \theta_o\)</span>. (a) Derive the functional form of the cdf <span class="math inline">\(F_X(x)\)</span> for <span class="math inline">\(x \in [0,2]\)</span>. (b) A sufficient statistic for this problem is, trivially, <span class="math inline">\(Y = X\)</span>. What is the form of the rejection region for <span class="math inline">\(Y\)</span>? Simply write <span class="math inline">\(Y \leq y_{RR}\)</span> or <span class="math inline">\(Y \geq y_{RR}\)</span>. But do show your reasoning! (c) Derive <span class="math inline">\(y_{RR}\)</span>, assuming a Type I error rate of <span class="math inline">\(\alpha\)</span>. Your final answer will include <span class="math inline">\(\alpha\)</span> as well as <span class="math inline">\(\theta_o\)</span> and/or <span class="math inline">\(\theta_a\)</span>. (d) Write down an expression for the test power for <span class="math inline">\(\theta = \theta_a\)</span>. Leave your final answer in terms of <span class="math inline">\(y_{RR}\)</span> and note that any integral should be evaluated. (Hint: utilize your cdf from part (a).) In addition to <span class="math inline">\(y_{RR}\)</span>, your final answer will include <span class="math inline">\(\theta_o\)</span> and/or <span class="math inline">\(\theta_a\)</span>. (e) Is your hypothesis test a uniformly most powerful hypothesis test for <span class="math inline">\(H_o: \theta = \theta_o\)</span> versus <span class="math inline">\(H_a: \theta = \theta_a &gt; \theta_o\)</span>?</p></li>
+<li><p>A common distribution used for the lengths of life of physical systems is the Weibull. Let <span class="math inline">\(X\)</span> be a single datum sampled from this distribution:
+<span class="math display">\[\begin{eqnarray*}
+f_X(x) = \frac{\theta}{\beta} \hspace{1mm} x^{\theta-1} \hspace{1mm} \exp\left(-\frac{x^\theta}{\beta}\right) \hspace{5mm} x,\beta, \theta &gt;0
+\end{eqnarray*}\]</span>
+For the Weibull, <span class="math inline">\(E[X^k] = \Gamma(\frac{k}{\theta} + 1) \beta^{\frac{k}{\theta}}\)</span>. (Recall that for integer values <span class="math inline">\(x\)</span>, <span class="math inline">\(\Gamma(x) = (x-1)!\)</span>.) For this problem, we will assume that <span class="math inline">\(\theta\)</span> is known, <span class="math inline">\(\beta\)</span> is unknown. (a) We are interested in finding the most powerful test for <span class="math inline">\(H_o: \beta = \beta_o\)</span>, <span class="math inline">\(H_a: \beta = \beta_a\)</span> \where <span class="math inline">\(\beta_a &gt; \beta_o\)</span>. Find the rejection region for the most powerful test for <span class="math inline">\(H_o: \beta_o = 2\)</span>, <span class="math inline">\(H_a: \beta_a = 4\)</span> \for a Type I error rate of <span class="math inline">\(\alpha = 0.05\)</span>. You may use the fact that <span class="math inline">\(X^\theta \sim \text{Exponential}(\beta)\)</span>, where to be clear the pdf is of the form <span class="math inline">\(f_X(x) = (1/\beta)e^{-x/\beta}\)</span>. (b) What is the power of the test in part (a) for the given alternative <span class="math inline">\(\beta_a = 4\)</span>?</p></li>
+<li><p>Let <span class="math inline">\(X\)</span> be a {} observation from the following distribution:
+<span class="math display">\[\begin{eqnarray*}
+f_{X}(x;\theta) = \left\{ \begin {array}{ll} \frac{1}{\theta}\exp\left(-\frac{1}{\theta}(x-5)\right) &amp; x &gt; 5, \theta &gt; 0 \\ 0&amp;\mbox{otherwise} \end{array} \right. \,.
+\end{eqnarray*}\]</span>
+Find a most powerful test of size <span class="math inline">\(\alpha=0.05\)</span> for testing <span class="math inline">\(H_o:\theta=2\)</span>
+vs. <span class="math inline">\(H_a:\theta=1\)</span>.</p></li>
+<li><p>In an experiment, you sample <span class="math inline">\(n\)</span> data from the distribution:
+<span class="math display">\[\begin{eqnarray*}
+f_X(x) = \theta e^{-\theta x} \,,
+\end{eqnarray*}\]</span>
+where <span class="math inline">\(x \geq 0\)</span>, <span class="math inline">\(\theta &gt; 0\)</span>, and <span class="math inline">\(E[X] = 1/\theta\)</span>. You wish to test the null hypothesis <span class="math inline">\(H_o : \theta_o = 4\)</span> versus <span class="math inline">\(H_a : \theta_a = 2\)</span>. (a) Define the most powerful hypothesis test. By “define,” we mean write down a rejection region of the form <span class="math inline">\(Y \leq y_{\rm RR}\)</span> or <span class="math inline">\(Y \geq y_{\rm RR}\)</span>, where you plug in a specific statistic for <span class="math inline">\(Y\)</span>. (You cannot evaluate <span class="math inline">\(y_{\rm RR}\)</span> given the information you have here…that can stay as is.) (b) The cdf of the sampling distribution for the appropriate statistic in part (a) is <span class="math inline">\(\gamma(n,\theta y)/(n-1)!\)</span>, where <span class="math inline">\(\gamma(\cdot,\cdot)\)</span> is the lower incomplete gamma function. Given this information, and given what you would have to do to define the rejection region boundary, can you conclude that we are defining a uniformly most powerful test?</p></li>
+<li><p>Let’s assume that we have sampled <span class="math inline">\(n\)</span> iid data from a Binom(<span class="math inline">\(k,p\)</span>) distribution, and that we wish to test <span class="math inline">\(H_o: p = p_o\)</span> versus <span class="math inline">\(H_a: p &gt; p_o\)</span>. For our statistic, we will use <span class="math inline">\(Y = \sum_{i=1}^n X_i\)</span>. (a) What is the sampling distribution for <span class="math inline">\(Y\)</span>? Provide the name and the value(s) of the parameters. (b) You code elements of the test in <code>R</code>. Assume you have the initialized variables <code>alpha</code>, <code>n</code>, <code>k</code>, <code>y.obs</code>, <code>p.o</code>, and <code>p.a</code> at your disposal. Write out the (one-line!) function call you’d use to compute the rejection region boundary. Include any necessary “discreteness correction” factor that ensures that the empirical <span class="math inline">\(\alpha\)</span>, i.e., the observed rate at which you reject the null when it is correct, is less
+than the stated <span class="math inline">\(\alpha\)</span>. (c) Now provide code of the <span class="math inline">\(p\)</span>-value. Again, include any necessary discreteness correction factor.</p></li>
+<li><p>The negative inverse link function is <span class="math inline">\(-(Y \vert x)^{-1}\)</span>. Assume that we are in a simple setting (i.e., that there is one predictor variable), and write the regression line formula <span class="math inline">\(Y \vert x\)</span> as a function of <span class="math inline">\(\beta_0\)</span>, <span class="math inline">\(\beta_1\)</span>, and <span class="math inline">\(x\)</span>.</p></li>
+<li><p>You use <code>R</code> to learn a logistic regression model, and you observe the output shown below: (a) What is the sample size <span class="math inline">\(n\)</span>? (Hint: take into account how many parameter values are being estimated to convert a number shown in the output to the sample size.) (b) What is the value of <span class="math inline">\(-2\log\mathcal{L}_{max}\)</span> for the model in which <span class="math inline">\(\beta_1\)</span> is set to zero? (c) What is the value of <span class="math inline">\(O(x)\)</span> for <span class="math inline">\(x = 0\)</span>? You may leave your answer in the form <span class="math inline">\(e^a\)</span> or <span class="math inline">\(\log(a)\)</span> or <span class="math inline">\(\sqrt{a}\)</span>, etc., while being sure to fill in the value of the constant <span class="math inline">\(a\)</span>. (d) Do the odds <em>increase</em> as <span class="math inline">\(x\)</span> increases, or do the odds <em>decrease</em> as <span class="math inline">\(x\)</span> increases?
+<img src="figures/logreg.png" width="60%" style="display: block; margin: auto;" /></p></li>
+<li><p>Below is the observed output from <code>R</code>’s <code>glm()</code> function when learning a logistic regression model. For these data, Class 0 is <code>No</code> (not a student) and Class 1 is <code>Yes</code> (is a student). (a) If the balance is $589, then the predicted probability that the datum belongs to the <code>Yes</code> class is 0.1. What is the odds ratio for $589 dollars? (b) What is the odds ratio if the balance is $689? (c) For the first datum, the observed response is <code>No</code> and the predicted probability that the datum is of the <code>Yes</code> class is 0.07. Compute the deviance for this datum. (d) Whoops…the null deviance value got expunged from the output. Would this value be higher or lower than the observed residual deviance value?</p></li>
+</ol>
+<pre><code>Deviance Residuals:
+    Min       1Q   Median       3Q      Max
+-1.1243  -0.5539  -0.4409  -0.3460   2.4901
+
+Coefficients:
+              Estimate Std. Error z value Pr(&gt;|z|)
+(Intercept) -3.0616324  0.3936314  -7.778 7.37e-15 ***
+Balance      0.0014684  0.0004124   3.561  0.00037 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual deviance: 221.47  on 308  degrees of freedom 
+AIC: 225.47 </code></pre>
+<ol start="26" style="list-style-type: decimal">
+<li><p>Refer to the displayed data below. Here, <code>x1</code> and <code>x2</code> are the two predictor variables, and <span class="math inline">\(Y\)</span> is the response variable. Use these data to learn a Naive Bayes model and use that model to compute <span class="math inline">\(p(0 \vert \mbox{Yes},\mbox{False}) = p(0 \vert \mbox{Y},\mbox{F})\)</span>. Leave your answer as a fraction. Assume that <span class="math inline">\(p(C_k) = n_k/n\)</span>, and that you would estimate <span class="math inline">\(p(x \vert C_k)\)</span> as the proportion of times you observe a particular datum value <span class="math inline">\(x\)</span> (e.g., True) given <span class="math inline">\(C_k\)</span>.
+<img src="figures/nb.png" width="35%" style="display: block; margin: auto;" /></p></li>
+<li><p>You are given the following pdf:
+<span class="math display">\[\begin{eqnarray*}
+f_X(x) = \left\{ \begin{array}{cc} 2(1-x) &amp; 0 \leq x \leq 1 \\ 0 &amp; \mbox{otherwise} \end{array} \right. \,.
+\end{eqnarray*}\]</span>
+An associated cost is <span class="math inline">\(C = 10X\)</span>. (a) Identify the “named” distribution for <span class="math inline">\(X\)</span> and state its parameters. (b) Given your answer for (a), determine <span class="math inline">\(E[X]\)</span> and <span class="math inline">\(E[X^2]\)</span>. (c) Now determine <span class="math inline">\(E[C]\)</span> and <span class="math inline">\(V[C]\)</span>.</p></li>
+<li><p>You are given the following cdf:
+<span class="math display">\[\begin{eqnarray*}
+F_X(x) = \left\{ \begin{array}{cc} 0 &amp; x &lt; 0 \\ 6x^2 - 8x^3 + 3x^4 &amp; 0 \leq x \leq 1 \\ 1 &amp; x &gt; 1 \end{array} \right. \,.
+\end{eqnarray*}\]</span>
+(a) <span class="math inline">\(F_X(x)\)</span> is the cdf for what “named” distribution? (b) What is the expected value of <span class="math inline">\(X\)</span>?</p></li>
+<li><p>You are given <span class="math inline">\(X \sim\)</span> Beta(2,3). What is <span class="math inline">\(E[X^2]\)</span>?</p></li>
+<li><p>You sample 3 data from a Beta(3,1) distribution. (a) Write down the pdf for the median of the sampled data. (b) Compute the expected value for the median of the sampled data.</p></li>
+<li><p>You are given the following distribution:
+<span class="math display">\[\begin{eqnarray*}
+f_X(x) = c x (1-x) \,,
+\end{eqnarray*}\]</span>
+where <span class="math inline">\(x \in [0,1]\)</span> and <span class="math inline">\(c\)</span> is a constant. (a) Identify this distribution by name and provide the value(s) of its parameter(s). (b) Determine the numerical value of the constant <span class="math inline">\(c\)</span>. (c) Is the distribution symmetric about its mean value or it is a skewed distribution? (d) Compute <span class="math inline">\(P(X \leq 1/4 \vert X \leq 1/2)\)</span>. Leave your answer as a fraction.</p></li>
+<li><p>Twenty-one (21) students enter a hallway off of which are three rooms. A researcher expects each student to randomly choose a room to enter (and to stay in!). That researcher observes that 10 students choose Room A, 5 students choose Room B, and 6 students choose Room C, and she decides to use these data to perform a test of the null hypothesis <span class="math inline">\(p_1 = p_2 = p_3\)</span> at the level <span class="math inline">\(\alpha = 0.1\)</span>. (a) Choose an appropriate hypothesis test and evaluate the test statistic. To be clear, your final answer should be a number. (b) What is the number of degrees of freedom associated with the test statistic? (c) The rejection region boundary value is 4.61. Do we reject the null hypothesis?</p></li>
+<li><p>A political scientist has developed four pamphlets with different types of information about climate change – one focused on environmental impact, one on economic impact, one on socio-cultural impact, and one about the origins of climate change. She prints 100 of each and randomly gives them out, asks people to read them, and records their answer to the question: how much money should the government spend on counteracting climate change? The answer options are: [a] more than, [b] as much as, and [c] less than they currently do. She plans to do a chi-square test to check whether willingness to spend government funding is related to which pamphlet the respondent read. (Note that she does not segment the respondents into groups.) (a) What kind of chi-square test is conducted here (goodness-of-fit, independence, or homogeneity)? (b) The observed test statistic turns out to be <span class="math inline">\(w_{\rm obs} = 24.3\)</span>. How many terms did the researcher have to sum over to compute this statistic? (c) The test statistic follows a chi-square distribution with <span class="math inline">\(m\)</span> degrees of freedom. What is the value of <span class="math inline">\(m\)</span>? (d) Which of the following expressions corresponds to the <span class="math inline">\(p\)</span>-value associated with the test carried out in part (a): (i) <span class="math inline">\(P(W \geq W_{obs})\)</span>, (ii) <span class="math inline">\(P(W \leq W_{obs})\)</span>, (iii) <span class="math inline">\(P(\frac{(n-1) W }{ \sigma^2} \geq W_{obs})\)</span>, or (iv) <span class="math inline">\(P(\frac{(n-1) W}{\sigma^2} \leq W_{obs})\)</span>? (<span class="math inline">\(W\)</span> is the random variable, chi-square-distributed for <span class="math inline">\(m\)</span> degrees of freedom; <span class="math inline">\(n\)</span> is the sample size; and <span class="math inline">\(\sigma^2\)</span> is the population variance.)</p></li>
+<li><p>You are recording the amount of time that elapses between when one person walks through a particular door until the next person walks through that same door. You have a weird stopwatch that changes from 0 to 1 after one minute, and from 1 to 2 after two minutes. That’s it. You take 100 measurements, and your data are given below. You wish to test the null hypothesis that each elapsed time is sampled from an exponential distribution with mean <span class="math inline">\(\beta\)</span> = 1 minute. (a) Under this null hypothesis, the probability that someone ends up in the category “1-2 minutes” is <span class="math inline">\(\int_1^2 e^{-x} dx\)</span>. Explain why this is and calculate the probability. (b) Carry out an appropriate test to test the null hypothesis, provide either the rejection region or the <span class="math inline">\(p\)</span>-value, and state your conclusion. Assume <span class="math inline">\(\alpha = 0.05\)</span>. (c) A friend of yours decides they will repeat the experiment you’ve done, including the statistical analysis, but he is in a hurry and decides that he will only take 10 measurements overall. Explain to your friend why his experimental “design” is flawed.</p></li>
+</ol>
+<table>
+<thead>
+<tr class="header">
+<th align="center">0-1 min</th>
+<th align="center">1-2 min</th>
+<th align="center">&gt;2 min</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">52</td>
+<td align="center">23</td>
+<td align="center">25</td>
+</tr>
+</tbody>
+</table>
+<ol start="35" style="list-style-type: decimal">
+<li>You play a (long) game in which you shoot 180 shots at a 3-by-3 square target, inside of which is a 1-by-1 square bullseye. Of your shots, 30 hit the bullseye while the remainder all hit the target, but hit outside the bullseye. You wish to test the null hypothesis that your shots hit the target at random locations. (a) Specify the number of shots that are expected to hit outside of, and inside of, the bullseye if the null hypothesis is correct. (b) Compute the value of an appropriate statistic for this test. (c) Specify the sampling distribution for this statistic (if the null hypothesis is correct); give the name and the values of any distribution parameters. (d) The rejection region boundary for this test is 3.841. State a conclusion regarding the null hypothesis: “reject” or
+“fail to reject.”</li>
+</ol>
 
 <div style="page-break-after: always;"></div>
-</div>
 </div>
 </div>
             </section>
