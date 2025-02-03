@@ -275,6 +275,7 @@ revisiting-the-death-by-horse-kick-example
 the-crlb-on-the-variance-of-lambda-estimators
 minimum-variance-unbiased-estimation-and-the-invariance-property
 method-of-moments-estimation-for-the-gamma-distribution
+maximum-likelihood-estimation-via-numerical-optimization
 confidence-intervals-3
 confidence-interval-for-the-poisson-parameter-lambda
 revisiting-the-death-by-horse-kick-example-1

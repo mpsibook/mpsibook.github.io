@@ -415,6 +415,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.5.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#the-crlb-on-the-variance-of-lambda-estimators"><i class="fa fa-check"></i><b>4.5.2</b> The CRLB on the Variance of <span class="math inline">\(\lambda\)</span> Estimators</a></li>
 <li class="chapter" data-level="4.5.3" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#minimum-variance-unbiased-estimation-and-the-invariance-property"><i class="fa fa-check"></i><b>4.5.3</b> Minimum Variance Unbiased Estimation and the Invariance Property</a></li>
 <li class="chapter" data-level="4.5.4" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#method-of-moments-estimation-for-the-gamma-distribution"><i class="fa fa-check"></i><b>4.5.4</b> Method of Moments Estimation for the Gamma Distribution</a></li>
+<li class="chapter" data-level="4.5.5" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#maximum-likelihood-estimation-via-numerical-optimization"><i class="fa fa-check"></i><b>4.5.5</b> Maximum Likelihood Estimation via Numerical Optimization</a></li>
 </ul></li>
 <li class="chapter" data-level="4.6" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#confidence-intervals-3"><i class="fa fa-check"></i><b>4.6</b> Confidence Intervals</a>
 <ul>
@@ -565,9 +566,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The median of a <span class="math inline">\(\mathcal{N}(2,4)\)</span> is <span class="math inline">\(\tilde{\mu} = 2\)</span>,
 thus <span class="math inline">\(P(X_i &gt; 2) = 0.5\)</span> by inspection. Now, let <span class="math inline">\(Y\)</span> be the number of
 values <span class="math inline">\(&gt; 2\)</span>. Then
-<span class="math display">\[\begin{eqnarray*}
+<span class="math display">\[\begin{align*}
 P(Y=m) = \binom{n}{m} \left(\frac12\right)^m \left(\frac12\right)^{n-m} = \binom{n}{m} \left(\frac12\right)^n \,.
-\end{eqnarray*}\]</span></p>
+\end{align*}\]</span></p>
 <hr />
 <ul>
 <li>Problem 2</li>
@@ -579,45 +580,45 @@ the one that allows us to win the raffle. There are two correct answers here:
 the geometric distribution, with <span class="math inline">\(p=0.4\)</span>, or from the negative binomial
 distribution, with <span class="math inline">\(s=1\)</span> and <span class="math inline">\(p=0.4\)</span>.</p>
 <p>(b) We have that <span class="math inline">\(W = 2-F\)</span>, so
-<span class="math display">\[\begin{eqnarray*}
-P(W &gt; 0) = P(2-F &gt; 0) &amp;=&amp; P(F &lt; 2) = p_X(0) + p_X(1) \\
-&amp;=&amp; (0.4)^1(1-0.4)^0 + (0.4)^1(1-0.4)^1 = 0.4 + 0.24 = 0.64 \,.
-\end{eqnarray*}\]</span></p>
+<span class="math display">\[\begin{align*}
+P(W &gt; 0) = P(2-F &gt; 0) &amp;= P(F &lt; 2) = p_X(0) + p_X(1) \\
+&amp;= (0.4)^1(1-0.4)^0 + (0.4)^1(1-0.4)^1 = 0.4 + 0.24 = 0.64 \,.
+\end{align*}\]</span></p>
 <p>(c) Let <span class="math inline">\(X\)</span> be the number of winning tickets. Then
-<span class="math display">\[\begin{eqnarray*}
-P(X = 1 \vert X \geq 1) &amp;=&amp; \frac{P(X = 1 \cap X \geq 1)}{P(X \geq 1)} = \frac{P(X=1)}{1-P(X=0)} \\
-&amp;=&amp; \frac{\binom{2}{1}(0.4)^1(0.6)^1}{1 - \binom{2}{0}(0.4)^0(0.6)^2} = \frac{2 \cdot 0.24}{1 - 0.36} = 0.48/0.64 = 0.75 \,.
-\end{eqnarray*}\]</span></p>
+<span class="math display">\[\begin{align*}
+P(X = 1 \vert X \geq 1) &amp;= \frac{P(X = 1 \cap X \geq 1)}{P(X \geq 1)} = \frac{P(X=1)}{1-P(X=0)} \\
+&amp;= \frac{\binom{2}{1}(0.4)^1(0.6)^1}{1 - \binom{2}{0}(0.4)^0(0.6)^2} = \frac{2 \cdot 0.24}{1 - 0.36} = 0.48/0.64 = 0.75 \,.
+\end{align*}\]</span></p>
 <hr />
 <ul>
 <li>Problem 3</li>
 </ul>
 <p>The first step is to write down the probability mass function for the
 number of insured drivers, given that the number of insured drivers is odd:
-<span class="math display">\[\begin{eqnarray*}
-P(X=1 \vert X=1 \cup X=3) &amp;=&amp; \frac{p_X(1)}{p_X(1)+p_X(3)} = \frac{\binom{3}{1}(1/2)^1(1/2)^2}{\binom{3}{1}(1/2)^1(1/2)^2 + \binom{3}{3}(1/2)^3(1/2)^0} \\
-&amp;=&amp; \frac{3}{3 + 1} = \frac34 \\
-P(X=3 \vert X=1 \cup X=3) &amp;=&amp; 1 - P(X=1 \vert X=1 \cup X=3) = \frac14 \,.
-\end{eqnarray*}\]</span>
+<span class="math display">\[\begin{align*}
+P(X=1 \vert X=1 \cup X=3) &amp;= \frac{p_X(1)}{p_X(1)+p_X(3)} = \frac{\binom{3}{1}(1/2)^1(1/2)^2}{\binom{3}{1}(1/2)^1(1/2)^2 + \binom{3}{3}(1/2)^3(1/2)^0} \\
+&amp;= \frac{3}{3 + 1} = \frac34 \\
+P(X=3 \vert X=1 \cup X=3) &amp;= 1 - P(X=1 \vert X=1 \cup X=3) = \frac14 \,.
+\end{align*}\]</span>
 So the expected value is
-<span class="math display">\[\begin{eqnarray*}
+<span class="math display">\[\begin{align*}
 E[X \vert X=1 \cup X=3] = \sum_{1,3} x p_X(x \vert x=1 \cup x=3) = 1 \cdot 3/4 + 3 \cdot 1/4 = 3/2 \,.
-\end{eqnarray*}\]</span></p>
+\end{align*}\]</span></p>
 <hr />
 <ul>
 <li>Problem 4</li>
 </ul>
 <p>(a) We are conducting a negative binomial experiment with <span class="math inline">\(s = 2\)</span>.
 The random variable is the number of failures…here, <span class="math inline">\(X = 2\)</span>. So:
-<span class="math display">\[\begin{eqnarray*}
+<span class="math display">\[\begin{align*}
 p_X(2) = \binom{2+2-1}{2} \left(\frac{1}{2}\right)^2 \left(\frac{1}{2}\right)^2 = \frac{3!}{1!2!} \frac{1}{16} = \frac{3}{16} \,.
-\end{eqnarray*}\]</span></p>
+\end{align*}\]</span></p>
 <p>(b) The sum of the data is negatively binomially distributed for
 <span class="math inline">\(s=4\)</span> successes and probability of success <span class="math inline">\(p=1/2\)</span>.
 The overall number of failures here is <span class="math inline">\(X = 1\)</span>. So
-<span class="math display">\[\begin{eqnarray*}
+<span class="math display">\[\begin{align*}
 p_X(1) = \binom{1+4-1}{1} \left(\frac{1}{2}\right)^4 \left(\frac{1}{2}\right)^1 = \frac{4!}{1!3!} \frac{1}{32} = \frac{4}{32} = \frac18 \,.
-\end{eqnarray*}\]</span></p>
+\end{align*}\]</span></p>
 <p>(c) This is a negative binomial experiment, so
 <span class="math inline">\(E[X] = s(1-p)/p\)</span>, which decreases as <span class="math inline">\(p\)</span> increases. Referring to the
 confidence interval reference table, we see that <span class="math inline">\(q = 1-\alpha = 0.9\)</span>.</p>
@@ -627,112 +628,626 @@ confidence interval reference table, we see that <span class="math inline">\(q =
 </ul>
 <p>(a) We have that <span class="math inline">\(f_X(x) = 3x^2\)</span> and thus that <span class="math inline">\(F_X(x) = x^3\)</span>. Plugging
 these into the formula for <span class="math inline">\(f_{(j)}(x)\)</span> (along with <span class="math inline">\(j=1\)</span>) yields
-<span class="math display">\[\begin{eqnarray*}
+<span class="math display">\[\begin{align*}
 f_{(1)}(x) = \frac{4!}{3!0!}(1-x^3)^3 3 x^2 = 12(1-x^3)^3x^2 \,,
-\end{eqnarray*}\]</span>
+\end{align*}\]</span>
 for <span class="math inline">\(x \in [0,1]\)</span>.</p>
 <p>(b) We have that
-<span class="math display">\[\begin{eqnarray*}
+<span class="math display">\[\begin{align*}
 E[X_{(4)}] = \int_0^1 x 12x^{11} = \int_0^1 12x^{12} = \left.\frac{12}{13}x^{13}\right|_0^1 = \frac{12}{13} \,.
-\end{eqnarray*}\]</span></p>
+\end{align*}\]</span></p>
 <hr />
 <ul>
 <li>Problem 6</li>
 </ul>
 <p>(a) The cdf is <span class="math inline">\(F_X(x) =  \int_0^x y dy = \frac{x^2}{2}\)</span>. Thus
-<span class="math display">\[\begin{eqnarray*}
+<span class="math display">\[\begin{align*}
 f_{(3)} = 3x\left[F_X(x)\right]^{2} = 3x\frac{x^4}{4} = \frac{3}{4} x^5
-\end{eqnarray*}\]</span>
+\end{align*}\]</span>
 for <span class="math inline">\(x \in [0,\sqrt{2}]\)</span>.</p>
 <p>(b) The variance is <span class="math inline">\(V[X_{(3)}] = E[X_{(3)}^2] - (E[X_{(3)}])^2\)</span>, where
-<span class="math display">\[\begin{eqnarray*}
+<span class="math display">\[\begin{align*}
 E[X_{(3)}] &amp;= \int_0^{\sqrt{2}} x \left(\frac{3}{4} x^5\right)dx =\frac{3}{4} \frac{x^7}{7}\bigg|_0^{\sqrt{2}} = \frac{3\cdot 2^3}{28} \sqrt{2} = \frac{6}{7}\sqrt{2} = 1.212 \,,
-\end{eqnarray*}\]</span>
+\end{align*}\]</span>
 and
-<span class="math display">\[\begin{eqnarray*}
+<span class="math display">\[\begin{align*}
 E[X_{(3)}^2] &amp;= \int_0^{\sqrt{2}} x^2 \left(\frac{3}{4} x^5\right)dx =\frac{3}{4} \frac{x^8}{8}\bigg|_0^{\sqrt{2}} = \frac{3\cdot2^4}{32} = \frac{3}{2} \,.
-\end{eqnarray*}\]</span>
+\end{align*}\]</span>
 Thus
-<span class="math display">\[\begin{eqnarray*}
+<span class="math display">\[\begin{align*}
 V[X_{(3)}] = \frac{3}{2} - \frac{36\cdot 2}{49} = \frac{147 - 144}{98} = \frac{3}{98} = 0.031 \,.
-\end{eqnarray*}\]</span></p>
+\end{align*}\]</span></p>
 <hr />
 <ul>
 <li>Problem 7</li>
 </ul>
 <p>We have that <span class="math inline">\(f_X(x) = 1\)</span>, <span class="math inline">\(F_X(x) = x\)</span>, and <span class="math inline">\(j = \frac{n+1}{2} = 2\)</span>, so
-<span class="math display">\[\begin{eqnarray*}
+<span class="math display">\[\begin{align*}
 f_{(2)}(x) = \frac{3!}{1!1!}x^1(1-x)^1(1) = 6x(1-x)
-\end{eqnarray*}\]</span>
+\end{align*}\]</span>
 for <span class="math inline">\(x \in [0,1]\)</span>. Therefore
-<span class="math display">\[\begin{eqnarray*}
-P\left(\frac{1}{3} \leq X_{(2)} \leq \frac{2}{3}\right) &amp;=&amp; \int_{1/3}^{2/3} 6x(1-x) dx = 6\left[ \frac{x^2}{2}\bigg|_{1/3}^{2/3} - \frac{x^3}{3}\bigg|_{1/3}^{2/3}\right]\\
-&amp;=&amp; 6\left[ \frac{1}{2} \left( \frac{4}{9} - \frac{1}{9}\right) - \frac{1}{3} \left( \frac{8}{27} - \frac{1}{27}\right)  \right]\\
-&amp;=&amp; 6\left[ \frac{3}{18} - \frac{7}{81}  \right] = 6\left[ \frac{27}{162} - \frac{14}{162}  \right] = \frac{13}{27} = 0.481 \,.
-\end{eqnarray*}\]</span></p>
+<span class="math display">\[\begin{align*}
+P\left(\frac{1}{3} \leq X_{(2)} \leq \frac{2}{3}\right) &amp;= \int_{1/3}^{2/3} 6x(1-x) dx = 6\left[ \frac{x^2}{2}\bigg|_{1/3}^{2/3} - \frac{x^3}{3}\bigg|_{1/3}^{2/3}\right]\\
+&amp;= 6\left[ \frac{1}{2} \left( \frac{4}{9} - \frac{1}{9}\right) - \frac{1}{3} \left( \frac{8}{27} - \frac{1}{27}\right)  \right]\\
+&amp;= 6\left[ \frac{3}{18} - \frac{7}{81}  \right] = 6\left[ \frac{27}{162} - \frac{14}{162}  \right] = \frac{13}{27} = 0.481 \,.
+\end{align*}\]</span></p>
 <hr />
 <ul>
 <li>Problem 8</li>
 </ul>
 <p>We have that <span class="math inline">\(f_X(x) = e^{-x}\)</span> for <span class="math inline">\(x \geq 0\)</span> and thus that
 <span class="math inline">\(F_X(x) = 1-e^{-x}\)</span> over the same domain. Thus
-<span class="math display">\[\begin{eqnarray*}
-f_{(2)}(x) &amp;=&amp; \frac{3!}{1!1!}(1 - e^{-x})^1\left[1 - (1- e^{-x}) \right]^1 e^{-x} = 6(1 - e^{-x})e^{-x}e^{-x} \\
-&amp;=&amp; 6(1 - e^{-x})e^{-2x} = 6e^{-2x}  - 6e^{-3x} \,,
-\end{eqnarray*}\]</span>
+<span class="math display">\[\begin{align*}
+f_{(2)}(x) &amp;= \frac{3!}{1!1!}(1 - e^{-x})^1\left[1 - (1- e^{-x}) \right]^1 e^{-x} = 6(1 - e^{-x})e^{-x}e^{-x} \\
+&amp;= 6(1 - e^{-x})e^{-2x} = 6e^{-2x}  - 6e^{-3x} \,,
+\end{align*}\]</span>
 and
-<span class="math display">\[\begin{eqnarray*}
-E[X_{(2)}] &amp;=&amp; \underbrace{\int_0^{\infty} 6xe^{-2x} dx}_{\text{by } y=2x, \, dy/2 = dx} - \underbrace{\int_0^{\infty} 6xe^{-3x} dx}_{\text{by } y=3x, \, dy/3 = dx} \\
-&amp;=&amp; \int_0^{\infty}  \frac{3}{2}y e^{-y} dy - \int_0^{\infty}  \frac{2}{3}y e^{-y} dy\\
-&amp;=&amp; \frac{3}{2} \Gamma(2) - \frac{2}{3}\Gamma(2) = \frac{3}{2} - \frac{2}{3} =\frac{5}{6} \,.
-\end{eqnarray*}\]</span></p>
+<span class="math display">\[\begin{align*}
+E[X_{(2)}] &amp;= \underbrace{\int_0^{\infty} 6xe^{-2x} dx}_{\text{by } y=2x, \, dy/2 = dx} - \underbrace{\int_0^{\infty} 6xe^{-3x} dx}_{\text{by } y=3x, \, dy/3 = dx} \\
+&amp;= \int_0^{\infty}  \frac{3}{2}y e^{-y} dy - \int_0^{\infty}  \frac{2}{3}y e^{-y} dy\\
+&amp;= \frac{3}{2} \Gamma(2) - \frac{2}{3}\Gamma(2) = \frac{3}{2} - \frac{2}{3} =\frac{5}{6} \,.
+\end{align*}\]</span></p>
 <hr />
 <ul>
 <li>Problem 9</li>
 </ul>
 <p>(a) A probability density function is the derivative of its associated
 cumulative distribution function, so
-<span class="math display">\[\begin{eqnarray*}
+<span class="math display">\[\begin{align*}
 f_X(x) = \frac{d}{dx} x^3 = 3x^2 \,.
-\end{eqnarray*}\]</span></p>
+\end{align*}\]</span></p>
 <p>(b) The maximum order statistic has pdf
-<span class="math display">\[\begin{eqnarray*}
-f_{(n)}(x) &amp;=&amp; n f_X(x) [F_X(x)]^{n-1} \\
-&amp;=&amp; n (3x^2) [x^3]^{n-1} = 3n x^2 x^{3n-3} = 3n x^{3n-1} \,.
-\end{eqnarray*}\]</span></p>
+<span class="math display">\[\begin{align*}
+f_{(n)}(x) &amp;= n f_X(x) [F_X(x)]^{n-1} \\
+&amp;= n (3x^2) [x^3]^{n-1} = 3n x^2 x^{3n-3} = 3n x^{3n-1} \,.
+\end{align*}\]</span></p>
 <p>(c) We have that
-<span class="math display">\[\begin{eqnarray*}
+<span class="math display">\[\begin{align*}
 F_{(n)}(x) = [F_X(x)]^n ~~ \Rightarrow ~~ F_{(n)}(x) = x^{3n} \,.
-\end{eqnarray*}\]</span>
+\end{align*}\]</span>
 We can also show this via integration:
-<span class="math display">\[\begin{eqnarray*}
+<span class="math display">\[\begin{align*}
 F_{(n)}(x) = \int_0^x f_{(n)}(y) dy = \int_0^x 3n y^{3n-1} dy = \left. y^{3n}\right|_0^x = x^{3n} \,.
-\end{eqnarray*}\]</span></p>
+\end{align*}\]</span></p>
 <p>(d) The expected value is
-<span class="math display">\[\begin{eqnarray*}
+<span class="math display">\[\begin{align*}
 E[X_{(n)}] = \int_0^1 x f_{(n)}(x) dx = \int_0^1 3n x^{3n} dx = \left. \frac{3n}{3n+1} x^{3n+1} \right|_0^1 = \frac{3n}{3n+1} \,.
-\end{eqnarray*}\]</span></p>
+\end{align*}\]</span></p>
 <hr />
 <ul>
 <li>Problem 10</li>
 </ul>
 <p>(a) The cdf within the domain is
-<span class="math display">\[\begin{eqnarray*}
+<span class="math display">\[\begin{align*}
 F_X(x) = \int_0^x \frac12 y dy = \left. \frac14 y^2 \right|_0^x = \frac{x^2}{4} \,.
-\end{eqnarray*}\]</span></p>
+\end{align*}\]</span></p>
 <p>(b) We plug <span class="math inline">\(n\)</span>, <span class="math inline">\(f_X(x)\)</span>, and <span class="math inline">\(F_X(x)\)</span> into the order statistic
 pdf equation (where <span class="math inline">\(j = n = 2\)</span>):
-<span class="math display">\[\begin{eqnarray*}
+<span class="math display">\[\begin{align*}
 f_{(2)}(x) = 2 f_X(x) \left[ F_X(x) \right]^{2-1} \left[ 1 - F_X(x) \right]^{2-2} = 2 \left( \frac12 \right) x \left( \frac14 \right) x^2 = \frac14 x^3 \,.
-\end{eqnarray*}\]</span></p>
+\end{align*}\]</span></p>
 <p>(c) The expected value is
-<span class="math display">\[\begin{eqnarray*}
+<span class="math display">\[\begin{align*}
 E[X_{(2)}] = \int_0^2 x f_{(2)}(x) dx = \int_0^2 \frac14 x^4 dx = \frac{1}{20} \left. x^5 \right|_0^2 = \frac{32}{20} = \frac85 = 1.6 \,.
-\end{eqnarray*}\]</span></p>
+\end{align*}\]</span></p>
 <p>(d) They cannot be independent: given the value of one, the other
 has to be either smaller (<span class="math inline">\(X_{(1)}\)</span>) or larger (<span class="math inline">\(X_{(2)}\)</span>).</p>
 <hr />
-<p>11-35: to be added</p>
+<ul>
+<li>Problem 11</li>
+</ul>
+<p>Let <span class="math inline">\(X_1, \ldots, X_n\)</span> denote the samples from the Bernoulli distribution.
+The log-likelihood is
+<span class="math display">\[\begin{align*}
+\ell(X_1, \ldots, X_n | p) = \sum_{i = 1}^n [X_i \log(p) + (1 - X_i) \log (1-p)] \,.
+\end{align*}\]</span>
+The first two derivatives are
+<span class="math display">\[\begin{align*}
+\frac{d}{dp} \ell(X_1, \ldots, X_n | p) &amp;= \sum_{i = 1}^n\bigg[ \frac{X_i}{p}  - \frac{(1 - X_i)}{1-p}\bigg] \\
+\frac{d^2}{dp^2} \ell(X_1,\ldots, X_n | p ) &amp;= \sum_{i = 1}^n \bigg[-\frac{X_i}{p^2}- \frac{(1- X_i)}{(1-p)^2}\bigg] \,.
+\end{align*}\]</span>
+The Fisher information is thus
+<span class="math display">\[\begin{align*}
+I_n(p) = E\bigg[-\frac{d^2}{dp^2} \ell(X_1,\ldots, X_n | p )\bigg] &amp;= \sum_{i=1}^n \bigg[\frac{E[X_i]}{p^2} + \frac{E[(1- X_i)]}{(1-p)^2}\bigg] \\
+&amp;= \sum_{i=1}^n \bigg[\frac{p}{p^2} + \frac{1-p}{(1-p)^2}\bigg] \\
+&amp;= \sum_{i=1}^n \bigg[\frac{1}{p} + \frac{1}{1-p}\bigg] \\
+&amp;= \sum_{i=1}^n \bigg[\frac{1-p}{p(1-p)} + \frac{p}{p(1-p)}\bigg] \\
+&amp;= \frac{n}{p(1-p)} \,,
+\end{align*}\]</span>
+and the asymptotic distribution of the MLE is <span class="math inline">\(N(p,\frac{p(1-p)}{n})\)</span>.</p>
+<hr />
+<ul>
+<li>Problem 12</li>
+</ul>
+<p>(a) The log-likelihood and its derivative are
+<span class="math display">\[\begin{align*}
+\ell(p \vert \mathbf{x}) &amp;= \log (1-p) \sum_{i=1}^n (x_i - 1)  + n \log p\\
+\ell&#39;(p \vert \mathbf{x}) &amp;= -\frac{\sum_{i=1}^n x_i - n}{1 - p} + \frac{n}{p} \,.
+\end{align*}\]</span>
+Setting the derivative to zero, we find that
+<span class="math display">\[\begin{align*}
+\frac{\sum_{i=1}^n x_i - n}{1 - p} &amp;= \frac{n}{p} \\
+\Rightarrow ~~~ \left(\sum_{i=1}^n x_i - n\right) p &amp;= n (1 - p) \\
+\Rightarrow ~~~ p \,\sum_{i=1}^n x_i &amp;= n \\
+\Rightarrow ~~~ \hat{p} &amp;= \frac{1}{\bar{X}} \,.
+\end{align*}\]</span>
+Using the invariance property of the MLE, we find that
+<span class="math inline">\(\widehat{1/p}_{MLE} = \bar{X}\)</span>.</p>
+<p>(b) The variance of this estimator is
+<span class="math display">\[\begin{align*}
+V\left[\widehat{1/p}_{MLE}\right] = V \left[ \frac{\sum_{i=1}^n X_i}{n} \right] = \frac{V (X_1)}{n} = \frac{1 - p}{np^2} \,.
+\end{align*}\]</span></p>
+<hr />
+<ul>
+<li>Problem 13</li>
+</ul>
+<p>The likelihood for <span class="math inline">\(p\)</span> is
+<span class="math display">\[\begin{align*}               
+\mathcal{L}(p \vert \mathbf{x}) = \prod_{i=1}^n p_X(x_i \vert p) = \prod_{i=1}^n -\frac{1}{\log(1-p)} \frac{p^{x_i}}{x_i} = \underbrace{- \prod_{i=1}^n \frac{1}{x_i}}_{h(\mathbf{x})} \times \underbrace{\frac{1}{[\log(1-p)]^n} p^{\sum_{i=1}^n x_i}}_{g(p,\mathbf{x})} \,.
+\end{align*}\]</span><br />
+Given the expression for <span class="math inline">\(g(\cdot)\)</span>, we can see that a sufficient statistic
+for <span class="math inline">\(p\)</span> is <span class="math inline">\(Y = \sum_{i=1}^n X_i\)</span>.</p>
+<hr />
+<ul>
+<li>Problem 14</li>
+</ul>
+<p>(a) The likelihood is
+<span class="math display">\[\begin{align*}           
+\mathcal{L}(a,b \vert \mathbf{x}) &amp;= \prod_{i=1}^n a b x_i^{a-1} (1-x_i^a)^{b-1}\\
+&amp;= a^n b^n \left(\prod_{i=1}^n  x_i\right)^{a-1} \left(\prod_{i=1}^n (1-x_i^a)\right)^{b-1}
+\end{align*}\]</span>
+At first glance, it seems that we can take
+<span class="math display">\[\begin{align*}
+\mathbf{Y} = \left\{ \prod_{i=1}^n x_i, \prod_{i=1}^n (1-x_i^a) \right\}
+\end{align*}\]</span>
+as the joint sufficient statistics. However, note that the parameter <span class="math inline">\(a\)</span>
+occurs in the second statistic. Because this second statistic
+includes a parameter value, it cannot be a sufficient statistic…and
+thus we conclude that we cannot identify joint sufficient statistics for <span class="math inline">\(a\)</span>
+and <span class="math inline">\(b\)</span>.</p>
+<p>(b) With <span class="math inline">\(a=1\)</span> the density function becomes <span class="math inline">\(f_X(x) = b \cdot (1-x)^{b-1}\)</span>,
+with resulting likelihood
+<span class="math display">\[\begin{align*}
+\mathcal{L}(b \vert \mathbf{x}) &amp;= \prod_{i=1}^n  b \cdot (1-x_i)^{b-1}\\
+&amp;=  b^n \left(\prod_{i=1}^n (1-x_i)\right)^{b-1}\\
+&amp;=  h(\mathbf{x}) g(b,\mathbf{x}) \,.
+\end{align*}\]</span>
+Hence, a sufficient statistic for <span class="math inline">\(b\)</span> is <span class="math inline">\(Y = \prod_{i=1}^n (1-X_i)\)</span>.</p>
+<hr />
+<ul>
+<li>Problem 15</li>
+</ul>
+<p>(a) The likelihood is
+<span class="math display">\[\begin{align*}
+\mathcal{L}(\beta \vert \mathbf{x}) = \prod_{i=1}^n f_X(x_i \vert \beta) &amp;= \prod_{i=1}^n \frac{x_i}{\beta^2} \exp\left(-\frac{x}{\beta}\right) \\
+&amp;= \underbrace{\prod_{i=1}^n x_i}_{h(\mathbf{x})} \times \underbrace{\frac{1}{\beta^{2n}} \exp\left(-\frac{1}{\beta}\sum_{i=1}^n x_i\right)}_{g(\beta,\mathbf{x})} \,.
+\end{align*}\]</span>
+We can examine <span class="math inline">\(g(\cdot)\)</span> and immediately identify that a sufficient statistic
+for <span class="math inline">\(\beta\)</span> is <span class="math inline">\(Y = \sum_{i=1}^n X_i\)</span>.</p>
+<p>(b) We have that
+<span class="math display">\[\begin{align*}
+E[Y] = E[\sum_{i=1}^n X_i] = \sum_{i=1}^n E[X_i] = \sum_{i=1}^n 2\beta = 2n\beta \,.
+\end{align*}\]</span>
+Hence
+<span class="math display">\[\begin{align*}
+E\left[\frac{Y}{2n}\right] = \beta
+\end{align*}\]</span>
+and <span class="math inline">\(\hat{\beta}_{MVUE} = Y/2n = \bar{X}/2\)</span>.</p>
+<p>(c) Utilizing the general rule from 235:
+<span class="math display">\[\begin{align*}
+V[\hat{\beta}_{MVUE}] = V\left[\frac{\bar{X}}{2}\right] = \frac{V[\bar{X}]}{4} = \frac{V[X]}{4n} = \frac{2\beta^2}{4n} = \frac{\beta^2}{2n} \,.
+\end{align*}\]</span></p>
+<p>(d) The first step is to write down the log-likelihood for one datum:
+<span class="math display">\[\begin{align*}
+\ell(\beta \vert x) = \log f_X(x \vert \beta) = \log x - \frac{x}{\beta} - 2\log\beta \,.
+\end{align*}\]</span>
+We take the first two derivatives:
+<span class="math display">\[\begin{align*}
+\frac{d\ell}{d\beta} &amp;= \frac{x}{\beta^2} - \frac{2}{\beta} \\
+\frac{d^2\ell}{d\beta^2} &amp;= -\frac{2x}{\beta^3} + \frac{2}{\beta^2} \,,
+\end{align*}\]</span>
+and then compute the expected value:
+<span class="math display">\[\begin{align*}
+I(\beta) = E\left[ \frac{2X}{\beta^3} - \frac{2}{\beta^2} \right] = \frac{2}{\beta^3}E[X] - \frac{2}{\beta^2} = \frac{2}{\beta^3}(2\beta) - \frac{2}{\beta^2} = \frac{2}{\beta^2} \,.
+\end{align*}\]</span>
+Thus <span class="math inline">\(I_n(\beta) = (2n)/\beta^2\)</span> and the CRLB is <span class="math inline">\(1/I_n(\beta) = \beta^2/(2n)\)</span>.
+The MVUE achieves the CRLB.</p>
+<hr />
+<ul>
+<li>Problem 16</li>
+</ul>
+<p>(a) We can factorize the likelihood as follows:
+<span class="math display">\[\begin{align*}
+\mathcal{L}(\theta \vert \mathbf{x}) = \prod_{i=1}^n \frac{1}{\theta} e^{x_i} e^{-e^{x_i}/\theta} = e^{\sum_{i=1}^n x_i} \theta^{-n} e^{-(\sum_{i=1}^n e^{x_i})/\theta} \,.
+\end{align*}\]</span>
+The first term does not contain <span class="math inline">\(\theta\)</span> and thus can be ignored. Thus
+we identify <span class="math inline">\(Y = \sum_{i=1}^n e^{X_i}\)</span> as a sufficient statistic.</p>
+<p>(b) We can determine <span class="math inline">\(E[Y]\)</span> by noticing that <span class="math inline">\(Y \sim\)</span> Gamma<span class="math inline">\((n,\theta)\)</span>, as stated in the question…so <span class="math inline">\(E[Y] = n\theta\)</span> and <span class="math inline">\(E[Y/n] = \theta\)</span>. Thus the MVUE for <span class="math inline">\(\theta\)</span> is <span class="math inline">\((\sum_{i=1}^n e^{X_i})/n\)</span>.</p>
+<p>(c) The MVUE will be a function of the sufficient statistic for <span class="math inline">\(\theta\)</span>, so let’s try <span class="math inline">\((\sum_{i=1}^n e^{X_i})^2\)</span>:
+<span class="math display">\[\begin{align*}
+E\left[\left(\sum_{i=1}^n e^{X_i}\right)^2\right] = V\left[\left(\sum_{i=1}^n e^{X_i}\right)\right] + E\left[\sum_{i=1}^n e^{X_i}\right]^2 = n \theta^2 + (n\theta)^2 = n(n+1)\theta^2 \,.
+\end{align*}\]</span>
+Therefore <span class="math inline">\((\sum_{i=1}^n e^{X_i})^2/(n(n+1))\)</span> is the MVUE for <span class="math inline">\(\theta^2\)</span>.</p>
+<hr />
+<ul>
+<li>Problem 17</li>
+</ul>
+<p>(a) We factorize the likelihood:
+<span class="math display">\[\begin{align*}
+\mathcal{L}(a \vert \mathbf{x}) = \prod_{i=1}^n \sqrt{\frac{2}{\pi}} \frac{x_i^2}{a^3} e^{-x_i^2/(2a^2)} = \left[ \left(\frac{2}{\pi}\right)^{n/2} \left( \prod_{i=1}^n x_i^2 \right) \right] \times \left[ \frac{1}{a^{3n}} e^{-(\sum_{i=1}^n x_i^2)/(2a^2)} \right] = h(\mathbf{x}) \times g(a,\mathbf{x}) \,.
+\end{align*}\]</span>
+We can read off from the <span class="math inline">\(g(\cdot)\)</span> function term that
+<span class="math inline">\(Y = \sum_{i=1}^n X_i^2\)</span>. (Including the minus sign, for instance,
+is fine because a function of a
+sufficient statistic is itself sufficent and we will get to the same
+MVUE in the end.)</p>
+<p>(b) We utilize the shortcut formula:
+<span class="math display">\[\begin{align*}
+E[X^2] = V[X] + (E[X])^2 = a^2 \frac{(3 \pi - 8)}{\pi} + (2a)^2 \frac{2}{\pi} = 3 a^2 + \frac{8 a^2}{\pi} - \frac{8 a^2}{\pi} = 3 a^2 \,.
+\end{align*}\]</span></p>
+<p>(c) We compute the expected value for <span class="math inline">\(Y\)</span>:
+<span class="math display">\[\begin{align*}
+E[Y] = E\left[\sum_{i=1}^n X_i^2\right] = \sum_{i=1}^n E[X_i^2] = n E[X^2] = 3 n a^2 \,.
+\end{align*}\]</span>
+Thus the expected value for <span class="math inline">\(Y/(3n)\)</span> is <span class="math inline">\(a^2\)</span>:
+<span class="math display">\[\begin{align*}
+\widehat{a^2}_{MVUE} = \frac{1}{3n} \sum_{i=1}^n X_i^2 \,.
+\end{align*}\]</span></p>
+<p>(d) There is no invariance principle for the MVUE. Maybe
+the desired result holds and maybe it doesn’t, but we cannot simply
+state that it does.</p>
+<hr />
+<ul>
+<li>Problem 18</li>
+</ul>
+<p>We are constructing an upper-tail test where the test statistic is
+trivially <span class="math inline">\(Y = X\)</span>. (So the NP Lemma does not <em>really</em> come into play here,
+given the lack of choices for the test statistic.)
+The expected value of <span class="math inline">\(Y\)</span> is
+<span class="math display">\[\begin{align*}
+E[Y] = \int_0^2 y f_Y(y) dy = \int_0^2 \frac{\theta}{2^\theta} y^{\theta} dy = \left. \frac{\theta}{2^\theta} \frac{y^{\theta+1}}{\theta+1} \right|_0^2 = \frac{2\theta}{\theta+1} \,.
+\end{align*}\]</span>
+<span class="math inline">\(E[Y]\)</span> increases as <span class="math inline">\(\theta\)</span> increases, so we will be on the “yes” line of
+the hypothesis test reference table. Hence the rejection region will be of
+the form
+<span class="math display">\[\begin{align*}
+y_{\rm obs} &gt; F_Y^{-1}(1-\alpha \vert \theta_o) \,.
+\end{align*}\]</span>
+The cdf <span class="math inline">\(F_Y(y)\)</span> is
+<span class="math display">\[\begin{align*}
+F_Y(y) = \int_0^y \frac{\theta}{2^\theta} u^{\theta-1} du = \left. \frac{u^\theta}{2^\theta}\right|_0^y = \left(\frac{y}{2}\right)^\theta \,,
+\end{align*}\]</span>
+and the inverse cdf <span class="math inline">\(F_Y^{-1}(q)\)</span> is <span class="math inline">\(y = 2q^{1/\theta}\)</span>.
+Hence the test we seek rejects the null hypothesis if
+<span class="math display">\[\begin{align*}
+y_{\rm obs} &gt; 2(1-\alpha)^{1/\theta_o} \,.
+\end{align*}\]</span>
+The rejection-region boundary does not
+depend on <span class="math inline">\(\theta_a\)</span>, so we know that the test is the most powerful one
+for all alternative values <span class="math inline">\(\theta_a &gt; \theta_o\)</span>…thus it is a
+uniformly most powerful test.</p>
+<hr />
+<ul>
+<li>Problem 19</li>
+</ul>
+<p>(a) The likelihood is
+<span class="math display">\[\begin{align*}
+\mathcal{L}(\beta \vert \mathbf{x}) = \prod_{i=1}^n \frac{\theta}{\beta}x_i^{\theta-1}\exp\left(-\frac{x_i^\theta}{\beta}\right) = \left[ \theta x_i^{\theta-1} \right] \times \left[ \frac{1}{\beta} \exp\left(-\frac{1}{\beta} x_i^\theta \right) \right] = h(\mathbf{x}) \times g(\beta,\mathbf{x}) \,,
+\end{align*}\]</span>
+thus a sufficient statistic for <span class="math inline">\(\beta\)</span> is <span class="math inline">\(Y = \sum_{i=1}^n X_i^\theta\)</span>.</p>
+<p>(b) We are given that <span class="math inline">\(X^\theta \sim\)</span> Exp(<span class="math inline">\(\beta\)</span>). The mgf for an
+exponential distribution is
+<span class="math display">\[\begin{align*}
+m_X(t) = (1 - \theta t)^{-1} \,,
+\end{align*}\]</span>
+and hence the mgf for <span class="math inline">\(Y = \sum_{i=1}^n X_i\)</span> will be
+<span class="math display">\[\begin{align*}
+m_Y(t) = \prod_{i=1}^n (1 - \theta t)^{-1} = \left[ (1 - \theta t)^{-1} \right]^n = (1 - \theta t)^{-n} \,.
+\end{align*}\]</span>
+Following the hint given in the question, we find that <span class="math inline">\(Y\)</span> is a
+gamma-distributed random variable with “shape” parameter <span class="math inline">\(n\)</span> and
+“scale” parameter <span class="math inline">\(\theta\)</span>. (There are two common parameterizations of
+the gamma distribution<span class="math inline">\(-\)</span>shape/scale and shape/rate<span class="math inline">\(-\)</span>and it is imperative
+to determine the correct one! This will impact the answer to part (c).)</p>
+<p>(c) The statistic <span class="math inline">\(Y\)</span> has expected value <span class="math inline">\(E[Y] = n\theta\)</span>, which increases
+with <span class="math inline">\(\theta\)</span>. Hence we utilize the upper-tail/yes line of the hypothesis
+test reference table: <span class="math inline">\(y_{\rm RR} = F_Y^{-1}(1 - \alpha \vert \theta_o)\)</span>,
+or, in code,</p>
+<pre><code>y.rr &lt;- qgamma(1-alpha,shape=n,scale=theta)</code></pre>
+<hr />
+<ul>
+<li>Problem 20</li>
+</ul>
+<p>(a) The moment-generating function for the random variable <span class="math inline">\(X\)</span> is
+<span class="math display">\[\begin{align*}
+m_X(t) = E\left[e^{tX}\right] &amp;= \int_b^\infty e^{tx} \frac{1}{\theta} e^{-(x-b)/\theta} dx \\
+&amp;= e^{b/\theta} \frac{1}{\theta} \int_b^\infty e^{-x(1/theta - t)} dx \\
+&amp;= e^{b/\theta} \frac{1}{\theta} \frac{e^{-b(1/theta - t)}}{(1/theta-t)} \\
+&amp;= e^{bt} (1-t\theta)^{-1} \,.
+\end{align*}\]</span>
+This is the final answer, but
+recall that when <span class="math inline">\(X = U+b\)</span>, <span class="math inline">\(m_X(t) = e^{bt} m_U(t)\)</span>. Since we recognize
+that <span class="math inline">\((1-t\theta)^{-1}\)</span> is the mgf for an exponential distribution,
+we can state that <span class="math inline">\(U = X-b\)</span> is an exponentially distributed random variable.</p>
+<p>(b) The mgf for <span class="math inline">\(Y = \sum_{i=1}^n X_i\)</span> is
+<span class="math display">\[\begin{align*}
+m_Y(t) = \prod_{i=1}^n e^{bt} (1-t\theta)^{-1} = \left[ e^{bt} (1-t\theta)^{-1} \right]^n = e^{nbt} (1-t\theta)^{-n} \,.
+\end{align*}\]</span></p>
+<p>(c) Going back to our answer for (a) (and our answer for the previous
+problem), we recognize that the mgf for <span class="math inline">\(\sum_{i=1}^n U_i\)</span> is
+<span class="math inline">\((1-t\theta)^{-n}\)</span>, which is the mgf for a gamma distribution with
+shape parameter <span class="math inline">\(n\)</span> and scale parameter <span class="math inline">\(\theta\)</span>. Hence
+<span class="math inline">\(Y&#39; = Y - nb \sim \text{Gamma}(n,\theta)\)</span>.</p>
+<p>(d) We are on the lower-tail/yes line of the hypothesis test reference
+table: <span class="math inline">\(y_{\rm RR}&#39; = F_Y^{-1}(\alpha \vert \theta_o)\)</span>, or, in code,</p>
+<pre><code>y.rr.prime &lt;- qgamma(alpha,shape=n,scale=theta)</code></pre>
+<p>We would reject the null hypothesis if <span class="math inline">\(y_{\rm obs} - nb &lt; y_{\rm RR}&#39;\)</span>.
+Because this test is constructed using a sufficient statistic and because
+no value of the alternative hypothesis appears in the definition of the
+rejection region, we indeed have defined a uniformly most powerful test
+of <span class="math inline">\(H_o : \theta = \theta_o\)</span> versus <span class="math inline">\(H_a : \theta &lt; \theta_o\)</span>.</p>
+<hr />
+<ul>
+<li>Problem 21</li>
+</ul>
+<p>(a) Let’s first find a sufficient statistic:
+<span class="math display">\[\begin{align*}
+\mathcal{L}(\theta \vert \mathbf{x}) = \prod_{i=1}^n \theta e^{-\theta x_i} = \theta^n e^{-\theta \sum_{i=1}^n x_i} \,.
+\end{align*}\]</span>
+A sufficient statistic is <span class="math inline">\(Y = \sum_{i=1}^n X_i\)</span>.
+We are conducting a lower-tail test, and
+since <span class="math inline">\(E[X] = 1/\theta\)</span> decreases as <span class="math inline">\(\theta\)</span> increases,
+we are on the “no” line of the reference table.
+We reject the null if <span class="math inline">\(y_{\rm obs} = \sum_{i=1}^n x_i &gt; y_{\rm RR}\)</span>.</p>
+<p>(b) <span class="math inline">\(\theta_o\)</span> is plugged in to compute the rejection-region boundary, but
+<span class="math inline">\(\theta_a\)</span> does not appear at all. Hence the defined test is uniformly
+most powerful, since it is most powerful for any value of <span class="math inline">\(\theta_a &lt; \theta_o\)</span>.</p>
+<hr />
+<ul>
+<li>Problem 22</li>
+</ul>
+<p>(a) The sampling distribution is Binom(<span class="math inline">\(nk,p\)</span>). We can determine this
+using the method of moment-generating functions, if necessary.</p>
+<p>(b) <span class="math inline">\(E[Y] = nkp\)</span> increases with <span class="math inline">\(p\)</span>, so we are on the upper-tail/“yes” line
+of the hypothesis test reference tables. The rejection-region
+boundary is given by <span class="math inline">\(F_Y^{-1}(1-\alpha \vert \theta_o)\)</span>, or, in
+code, with <span class="math inline">\(p_o\)</span> in place of <span class="math inline">\(\theta_o\)</span>,</p>
+<pre><code>qbinom(1-alpha,n*k,p.o)</code></pre>
+<p>(c) For an upper-tail/yes test, the <span class="math inline">\(p\)</span>-value is
+<span class="math inline">\(1 - F_Y(y_{\rm obs} \vert \theta_o)\)</span>. In code, with <span class="math inline">\(p_o\)</span> in
+place of <span class="math inline">\(\theta_o\)</span>, the <span class="math inline">\(p\)</span>-value is</p>
+<pre><code>1 - pbinom(y.obs,n*k,p.o)</code></pre>
+<p>However, we have to apply a discreteness correction, because otherwise
+we will not be summing over the correct range of <span class="math inline">\(y\)</span> values, i.e., our
+<span class="math inline">\(p\)</span>-value will be wrong. Here, that factor is <span class="math inline">\(-1\)</span>, applied to the input.
+So…</p>
+<pre><code>1 - pbinom(y.obs-1,n*k,p.o)</code></pre>
+<p>is the final answer.</p>
+<hr />
+<ul>
+<li>Problem 23</li>
+</ul>
+<p>This is straightforward <em>if</em> we remember to set the link
+function to the equation for the line:
+<span class="math display">\[\begin{align*}
+-(Y \vert x)^{-1} = \beta_0 + \beta_1 x ~~~ \Rightarrow ~~~ (Y \vert x)^{-1} = -\beta_0 - \beta_1 x ~~~ \Rightarrow ~~~ Y \vert x = (-\beta_0 - \beta_1 x)^{-1} \,.
+\end{align*}\]</span></p>
+<hr />
+<ul>
+<li>Problem 24</li>
+</ul>
+<p>(a) The degrees of freedom for the residual deviance
+is <span class="math inline">\(n-p\)</span>, where <span class="math inline">\(p\)</span> is the number of parameters (here, two: <span class="math inline">\(\beta_0\)</span> and
+<span class="math inline">\(\beta_1\)</span>). Hence <span class="math inline">\(n = 32\)</span>.</p>
+<p>(b) <span class="math inline">\(\beta_1\)</span> is set to zero to compute the null deviance.
+So <span class="math inline">\(-2\log\mathcal{L}_{\rm max} = 43.230\)</span>.</p>
+<p>(c) The odds are <span class="math inline">\(O(x) = \exp(\hat{\beta}_0 + \hat{\beta}_1 x)\)</span> or
+just <span class="math inline">\(\exp(\hat{\beta}_0)\)</span> for <span class="math inline">\(x = 0\)</span>, meaning thet <span class="math inline">\(O(x=0) = \exp(12.040)\)</span>.</p>
+<p>(d) The estimated slope <span class="math inline">\(\hat{\beta}_1\)</span> is negative, and we
+know that <span class="math inline">\(O(x+1) = O(x) \exp(\hat{\beta}_1)\)</span>, so we know that
+<span class="math inline">\(O(x+1) &lt; O(x)\)</span>…the odds <em>decrease</em> as <span class="math inline">\(x\)</span> increases.</p>
+<hr />
+<ul>
+<li>Problem 25</li>
+</ul>
+<p>(a) We have that
+<span class="math display">\[\begin{align*}
+O(x) = \frac{p \vert x}{1 - p \vert x} = \frac{0.1}{1-0.1} = \frac19 = 0.111 \,.
+\end{align*}\]</span></p>
+<p>(b) The new odds are
+<span class="math display">\[\begin{align*}
+O(589+100) = \exp(\hat{\beta}_0 + \hat{\beta_1}(589+100)) = O(589) \exp(100\hat{\beta}_1) = \frac19 \exp(0.14684) = 0.129 \,.
+\end{align*}\]</span></p>
+<p>(c) We have that <span class="math inline">\(Y_1 = 0\)</span> and <span class="math inline">\(\hat{Y}_i = 0.07\)</span>, so
+<span class="math display">\[\begin{align*}
+d_1 &amp;= \mbox{sign}(Y_1-\hat{Y}_1)\sqrt{-2[Y_1\log\hat{Y}_1+(1-Y_1)\log(1-\hat{Y}_1)]} = \mbox{sign}(-0.07) \sqrt{-2\log(0.93)} \\
+&amp;= -\sqrt{-2\log(0.93)} = 0.381 \,.
+\end{align*}\]</span></p>
+<p>(d) The null deviance is computed assuming <span class="math inline">\(\beta_1 = 0\)</span>. This
+model lies “farther” from the observed data than the model with
+<span class="math inline">\(\hat{\beta}_1 = 0.00147\)</span>, meaning it deviates more from the data, meaning
+that the deviance would be higher.</p>
+<hr />
+<ul>
+<li>Problem 26</li>
+</ul>
+<p>Let’s start by collecting the basic pieces of information that
+we would combine in a Naive Bayes regression model:
+<span class="math display">\[\begin{align*}
+p(0) = 3/5 ~~\mbox{and}~~ p(1) = 2/5 \,,
+\end{align*}\]</span>
+where <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span> are the two response (i.e., <span class="math inline">\(Y\)</span>) values.
+Next up, the conditionals:
+<span class="math display">\[\begin{align*}
+p(x1 = N \vert 0) = 2/3 ~~ &amp;\mbox{and}&amp; ~~ p(x1 = Y \vert 0) = 1/3 \\
+p(N \vert 1) = 1/2 ~~ &amp;\mbox{and}&amp; ~~ P(Y \vert 1) = 1/2 \\
+\\
+p(x2 = T \vert 0) = 2/3 ~~ &amp;\mbox{and}&amp; ~~ p(x2 = F \vert 0) = 1/3 \\
+p(T \vert 1) = 1/2 ~~ &amp;\mbox{and}&amp; ~~ P(F \vert 1) = 1/2 \,.
+\end{align*}\]</span>
+The estimated probability of observing a datum of Class 0 given <code>Y</code> and <code>F</code> is
+thus
+<span class="math display">\[\begin{align*}
+p(0 \vert Y,F) &amp;= \frac{p(Y \vert 0) p(F \vert 0) p(0)}{p(Y \vert 0) p(F \vert 0) p(0) + p(Y \vert 1) p(F \vert 1) p(1)} \\
+&amp;= \frac{1/3 \times 1/3 \times 3/5}{1/3 \times 1/3 \times 3/5 + 1/2 \times 1/2 \times 2/5} \\
+&amp;= \frac{1/15}{1/15 + 1/10} = \frac{2/30}{2/30+3/30} = \frac{2}{5} \,.
+\end{align*}\]</span></p>
+<hr />
+<ul>
+<li>Problem 27</li>
+</ul>
+<p>(a) The pdf is of the form
+<span class="math display">\[\begin{align*}
+k x^{\alpha-1} (1-x)^{\beta-1} \,,
+\end{align*}\]</span>
+with <span class="math inline">\(0 \leq x \leq 1\)</span>, so what we have is a beta distribution:
+<span class="math inline">\(X \sim\)</span> Beta<span class="math inline">\((1,2)\)</span>.</p>
+<p>(b) We have that
+<span class="math display">\[\begin{align*}
+E[X] = \frac{\alpha}{\alpha+\beta} = \frac{1}{3}
+\end{align*}\]</span>
+and
+<span class="math display">\[\begin{align*}
+E[X^2] = V[X] + (E[X])^2 = \frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)} + \left(\frac{1}{3}\right)^2 = \frac{2}{36} + \frac{4}{36} = \frac{1}{6} \,.
+\end{align*}\]</span></p>
+<p>(c) These expressions are straightforward to evaluate:
+<span class="math display">\[\begin{align*}
+E[C] = E[10X] = 10E[X] = \frac{10}{3} = 3.333
+\end{align*}\]</span>
+and
+<span class="math display">\[\begin{align*}
+V[C] = E[C^2] - (E[C])^2 = E[100X^2] - \frac{100}{9} = 100E[X^2] - \frac{100}{9} = \frac{150}{9} - \frac{100}{9} = \frac{50}{9} = 5.556 \,.
+\end{align*}\]</span></p>
+<hr />
+<ul>
+<li>Problem 28</li>
+</ul>
+<p>(a) <span class="math inline">\(f_X(x) = 12x - 24x^2 + 12x^3 = 12x(1-x)^2\)</span> for <span class="math inline">\(x \in [0,1]\)</span>…so this is
+a Beta(2,3) distribution.</p>
+<p>(b) <span class="math inline">\(X \sim {\rm Beta}(2,3) \Rightarrow E[X] = \alpha/(\alpha+\beta) = 2/(2+3) = 2/5 = 0.4\)</span> ,.</p>
+<hr />
+<ul>
+<li>Problem 29</li>
+</ul>
+<p>One way to solve this problem is to utilize the shortcut formula:
+<span class="math inline">\(E[X^2] = V[X] + E[X]^2\)</span>. With this in hand:
+<span class="math display">\[\begin{align*}
+V[X] = \frac{\alpha \beta}{(\alpha + \beta)^2(\alpha + \beta + 1)} = \frac{6}{25 \cdot 6} = \frac{1}{25}
+\end{align*}\]</span>
+and
+<span class="math display">\[\begin{align*}
+E[X] = \left(\frac{\alpha}{\alpha + \beta}\right)^2 = \left(\frac{2}{5}\right)^2 = \frac{4}{25} \,.
+\end{align*}\]</span>
+Therefore,
+<span class="math display">\[\begin{align*}
+E[X^2] = \frac{1}{25} +  \frac{4}{25} = \frac{1}{5} \,.
+\end{align*}\]</span>
+A second way to solve this problem is by brute-force integration:
+<span class="math display">\[\begin{align*}
+E[X^2] &amp;= \int_0^1 x^2 \frac{x(1-x)^2}{B(2,3)}dx = \int_0^1 \frac{x^3(1-x)^2}{B(2,3)}dx = \int_0^1 \frac{x^3(1-x)^2}{B(2,3)} \frac{B(4,3)}{B(4,3)}dx \\
+&amp;= \frac{B(4,3)}{B(2,3)}\underbrace{\int_0^1 \frac{x^3(1-x)^2}{B(4,3)}dx}_{=1} \\
+&amp;= \frac{B(4,3)}{B(2,3)} = \frac{\Gamma(4) \Gamma(3)}{\Gamma(7)}\frac{\Gamma(5)}{\Gamma(2)\Gamma(3)}\ =  \frac{\Gamma(4) \Gamma(5)}{\Gamma(2)\Gamma(7)} = \frac{3! 4!}{1!6!} = \frac{1}{5} \,.
+\end{align*}\]</span></p>
+<hr />
+<ul>
+<li>Problem 30</li>
+</ul>
+<p>(a) The median is the second sampled datum. The pdf for <span class="math inline">\(X\)</span> is
+<span class="math inline">\(f_X(x) = 3x^2\)</span> and <span class="math inline">\(F_X(x) = x^3\)</span>, both for <span class="math inline">\(x \in [0,1]\)</span>. Thus
+<span class="math display">\[\begin{align*}
+f_{(2)}(x) = \frac{3!}{1!1!} [x^3]^1 [1 - x^3]^1 3x^2 = 18 x^5 (1 - x^3) \,,
+\end{align*}\]</span>
+for <span class="math inline">\(x \in [0,1]\)</span>, and
+<span class="math display">\[\begin{align*}
+E[X_{(2)}] &amp;= \int_0^1 x 18 x^5 (1-x^3) dx = 18 \int_0^1 (x^6 - x^9) dx \\
+&amp;= 18 \left( \left.\frac{x^7}{7}\right|_0^1 - \left.\frac{x^{10}}{10}\right|_0^1 \right) = 18 \left( \frac{1}{7}-\frac{1}{10} \right) = \frac{18 \cdot 3}{70} = \frac{27}{35} \,.
+\end{align*}\]</span></p>
+<hr />
+<ul>
+<li>Problem 31</li>
+</ul>
+<p>(a) This is a Beta(2,2) distribution.</p>
+<p>(b) We can determine <span class="math inline">\(c\)</span> via brute-force integration:
+<span class="math display">\[\begin{align*}
+c \int_0^1 x(1-x) dx = c\left[ \int_0^1 x dx - \int_0^1 x^2 dx \right] &amp;= c \left[ \left.\frac{x^2}{2}\right|_0^1 - \left.\frac{x^3}{3}\right|_0^1 \right] \\
+&amp;= c \left[ \frac{1}{2} - \frac{1}{3} \right] \\
+&amp;= c \frac{1}{6} = 1 ~~\Rightarrow~~ c = 6 \,.
+\end{align*}\]</span>
+Alternatively, we can recognize that
+<span class="math display">\[\begin{align*}
+c &amp;= \frac{1}{B(2,2)} = \frac{\Gamma(4)}{\Gamma(2) \Gamma(2)} = \frac{3!}{1! 1!} = 6 \,.
+\end{align*}\]</span></p>
+<p>(c) Since <span class="math inline">\(\alpha = \beta\)</span>, the distribution is symmetric around
+<span class="math inline">\(x = 1/2\)</span>, which is its mean value.</p>
+<p>(d) We have that
+<span class="math display">\[\begin{align*}
+P(X \leq 1/4 \vert X \leq 1/2) &amp;= \frac{P(X \leq 1/4 \cap X \leq 1/2)}{P(X \leq 1/2)} = \frac{P(X \leq 1/4)}{P(X \leq 1/2)} = \frac{P(X \leq 1/4)}{1/2} \\
+&amp;= 2P(X \leq 1/4) = 2 \int_0^{1/4} 6 x (1-x) dx = 12 \int_0^{1/4} x (1-x) dx \\
+&amp;= 12 \left[ \left.\frac{x^2}{2}\right|_0^{1/4} - \left.\frac{x^3}{3}\right|_0^{1/4} \right] = 12 \left[ \frac{1}{32} - \frac{1}{192} \right] = 12 \frac{5}{192} = \frac{60}{192} = \frac{30}{96} = \frac{5}{16} \,.
+\end{align*}\]</span></p>
+<hr />
+<ul>
+<li>Problem 32</li>
+</ul>
+<p>(a) We carry out a chi-square goodness-of-fit test:
+<span class="math display">\[\begin{align*}
+W = \sum_{i=1}^n \frac{(X_i - kp_i)^2}{kp_i} = \frac{1}{7}[(10-7)^2+(5-7)^2+(6-7)^2] = 2 \,.
+\end{align*}\]</span></p>
+<p>(b) There are <span class="math inline">\(m=3\)</span> outcomes, but we lose one degree of freedom
+because of the constraint that
+<span class="math inline">\(\sum_{i=1}^m X_i = 21\)</span>, so the number of degrees of freedom is 2.</p>
+<p>(c) We are given that <span class="math inline">\(\alpha = 0.1\)</span>, so we want
+<span class="math inline">\(F_W^{-1}(0.9) = 4.61\)</span>.</p>
+<hr />
+<ul>
+<li>Problem 33</li>
+</ul>
+<p>(a) The correct answer is <em>homogeneity</em>, since the researcher is splitting the respondents into groups by giving them the different types of leaflets to read, and the goal is to determine the willingness to spend government funding is homogenous across the type of pamphlets.</p>
+<p>(b) Since chi-square statistics involving summing squared differences over all combinations of leaflets and spending opinions, there are <span class="math inline">\(12 = 3 \times 4\)</span> terms.</p>
+<p>(c) Since the all the information but one for each factor is sufficent, the test statistics will follow a chi-square distribution with <span class="math inline">\(6 = (3-1) \times (4-1)\)</span> degrees of freedom.</p>
+<p>(d) The correct answer is (i) since <span class="math inline">\(p\)</span>-value is defined as a probability of events at least as extreme as the what actually observed under the null hypothesis, and larger values of the test statistic here correspond to larger differences between what we would expect under the null and what we observe.</p>
+<hr />
+<ul>
+<li>Problem 34</li>
+</ul>
+<p>(a) The exponential distribution with mean 1 is <span class="math inline">\(e^{-x}\)</span>, for <span class="math inline">\(x \geq 0\)</span>. Therefore, the probabilities for arriving between 1 and 2 minutes after the previous person is given by
+<span class="math display">\[\begin{equation*}
+\int_1^2 e^{-x} dx =  -\left.e^{-x}\right|_1^2 = 0.233 \,.
+\end{equation*}\]</span></p>
+<p>(b) The probabilities for the other two “bins” are
+<span class="math display">\[\begin{align*}
+\int_0^1 e^{-x} dx &amp;= -\left.e^{-x}\right|_0^1 = 0.632 \\
+\int_2^\infty e^{-x} dx &amp;= 1 - 0.632 - 0.233 = 0.135 \,.
+\end{align*}\]</span>
+We can now carry out a chi-square goodness-of-fit test:
+<span class="math display">\[\begin{equation*}
+W = \frac{(52-63.2)^2}{63.2} + \frac{(23-23.3)^2}{23.3} + \frac{(25-13.5)^2}{13.5} = 1.985 + 0.004 + 9.796 = 11.785 \,,
+\end{equation*}\]</span>
+and <span class="math inline">\(W \sim \chi_2^2\)</span>. The rejection region is <span class="math inline">\(W &gt; w_{\rm RR} = 5.991\)</span>
+(i.e., <code>qchisq(0.95,2)</code>), and
+the <span class="math inline">\(p\)</span>-value is 0.0028 (i.e., <code>1-pchisq(11.785,2)</code>).
+We have sufficient evidence to reject
+the null hypothesis and conclude that the time elapsed between people walking
+through a particular door is <em>not</em> exponentially distributed with mean 1.</p>
+<p>(c) If <span class="math inline">\(n = 10\)</span> and there are 3 bins, then there is no way that
+<span class="math inline">\(np_i \geq 5\)</span> for all bins. Thus the chi-square goodness-of-fit test should
+not be applied.</p>
+<hr />
+<ul>
+<li>Problem 35</li>
+</ul>
+<p>(a) We have that <span class="math inline">\(p_{\rm out} = 8/9\)</span> and <span class="math inline">\(p_{\rm in} = 1/9\)</span>,
+so <span class="math inline">\(kp_{\rm out} = 180 (8/9) = 160\)</span> and <span class="math inline">\(kp_{\rm in} = 180 (1/9)
+= 20\)</span>.</p>
+<p>(b) We perform a chi-square goodness-of-fit test:
+<span class="math display">\[\begin{align*}
+W = \frac{(150-160)^2}{160} + \frac{(30-20)^2}{20} = \frac{100}{160} + \frac{100}{20} = \frac58 + 5 = 5.625~(\mbox{or}~5~5/8) \,.
+\end{align*}\]</span></p>
+<p>(c) <span class="math inline">\(W\)</span> is sampled from a chi-square distribution for <span class="math inline">\(2-1 = 1\)</span>
+degree of freedom.</p>
+<p>(d) The rejection region for a chi-square GoF test is
+<span class="math inline">\(W &gt; w_{\rm RR}\)</span>, so, since 5.625 is greater than 3.841, we would
+reject the null hypothesis.</p>
 
 </div>
 </div>

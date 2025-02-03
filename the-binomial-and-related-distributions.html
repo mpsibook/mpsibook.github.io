@@ -415,6 +415,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.5.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#the-crlb-on-the-variance-of-lambda-estimators"><i class="fa fa-check"></i><b>4.5.2</b> The CRLB on the Variance of <span class="math inline">\(\lambda\)</span> Estimators</a></li>
 <li class="chapter" data-level="4.5.3" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#minimum-variance-unbiased-estimation-and-the-invariance-property"><i class="fa fa-check"></i><b>4.5.3</b> Minimum Variance Unbiased Estimation and the Invariance Property</a></li>
 <li class="chapter" data-level="4.5.4" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#method-of-moments-estimation-for-the-gamma-distribution"><i class="fa fa-check"></i><b>4.5.4</b> Method of Moments Estimation for the Gamma Distribution</a></li>
+<li class="chapter" data-level="4.5.5" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#maximum-likelihood-estimation-via-numerical-optimization"><i class="fa fa-check"></i><b>4.5.5</b> Maximum Likelihood Estimation via Numerical Optimization</a></li>
 </ul></li>
 <li class="chapter" data-level="4.6" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#confidence-intervals-3"><i class="fa fa-check"></i><b>4.6</b> Confidence Intervals</a>
 <ul>
@@ -1314,14 +1315,14 @@ statistic as our initial estimator.</li>
 </ol>
 <p>A sufficient statistic for a parameter <span class="math inline">\(\theta\)</span>
 captures all information about <span class="math inline">\(\theta\)</span> contained in the sample.
-In other words, any additional statistic, beyond the sufficient statistic,
+In other words, any additional statistic, beyond a sufficient statistic,
 will not provide any additional information about <span class="math inline">\(\theta\)</span>.
 This does not mean that a sufficient statistic is necessarily unique, as
 <em>any function of a sufficient statistic is also a
 sufficient statistic</em>. For instance, if <span class="math inline">\(\sum_{i=1}^n X_i\)</span> is a sufficient
 statistic, so is <span class="math inline">\(\bar{X}\)</span>.
 It just means that any additional statistic that is
-<em>not</em> a function of the sufficient statistic will not help us when we try
+<em>not</em> a function of a sufficient statistic will not help us when we try
 to estimate <span class="math inline">\(\theta\)</span>. For instance, if <span class="math inline">\(\bar{X}\)</span> is a sufficient statistic
 for <span class="math inline">\(\theta\)</span>,
 then using <span class="math inline">\(\bar{X}\)</span> and the sample median to infer <span class="math inline">\(\theta\)</span>
@@ -1345,7 +1346,7 @@ The following is the factorized likelihood:
 \mathcal{L}(p \vert \mathbf{x}) = \prod_{i=1}^n \binom{k}{x_i} p^{x_i} (1-p)^{k-x_i} = \underbrace{\left[ \prod_{i=1}^n \binom{k}{x_i} \right]}_{h(\mathbf{x})} \underbrace{p^{\sum_{i=1}^n x_i} (1-p)^{nk-\sum_{i=1}^n x_i}}_{g(\sum_{i=1}^n x_i,p)} \,.
 \]</span>
 By inspecting the function <span class="math inline">\(g(\mathbf{x},\theta)\)</span>, we determine that
-a sufficient statistic is <span class="math inline">\(U = \sum_{i=1}^n X_i\)</span>.</p>
+a sufficient statistic is <span class="math inline">\(Y = \sum_{i=1}^n X_i\)</span>.</p>
 <p>(The next step, in general, is to demonstrate whether the identified statistic is both
 minimally sufficient and complete; it needs to be both so that we can use it to determine the MVUE.
 It suffices to say here that the factorization criterion typically identifies statistics
@@ -1355,14 +1356,14 @@ See Chapter 7 for more details on how to determine if a sufficient
 statistic is a minimally sufficient statistic and if it is complete. Note that complete statistics
 are always minimally sufficient, but not necessarily vice-versa, so we
 would always check for completeness first!)</p>
-<p>If <span class="math inline">\(U\)</span> is a minimally sufficient and complete statistic, and there is a function <span class="math inline">\(h(U)\)</span> that is an
-unbiased estimator for <span class="math inline">\(\theta\)</span> and that depends on the data only through <span class="math inline">\(U\)</span>, then <span class="math inline">\(h(U)\)</span> is the MVUE for
-<span class="math inline">\(\theta\)</span>. Here, given <span class="math inline">\(U = \sum_{i=1}^n X_i\)</span>, we need to find a function
-<span class="math inline">\(h(\cdot)\)</span> such that <span class="math inline">\(E[h(U)] = p\)</span>. Earlier in this chapter, we determined that the
+<p>If <span class="math inline">\(Y\)</span> is a minimally sufficient and complete statistic, and there is a function <span class="math inline">\(h(Y)\)</span> that is an
+unbiased estimator for <span class="math inline">\(\theta\)</span> and that depends on the data only through <span class="math inline">\(Y\)</span>, then <span class="math inline">\(h(Y)\)</span> is the MVUE for
+<span class="math inline">\(\theta\)</span>. Here, given <span class="math inline">\(Y = \sum_{i=1}^n X_i\)</span>, we need to find a function
+<span class="math inline">\(h(\cdot)\)</span> such that <span class="math inline">\(E[h(Y)] = p\)</span>. Earlier in this chapter, we determined that the
 distribution for the sum of iid binomial random variables is Binomial(<span class="math inline">\(nk\)</span>,<span class="math inline">\(p\)</span>), and thus we
 know that this distribution has expected value <span class="math inline">\(nkp\)</span>. Thus
 <span class="math display">\[
-E\left[U\right] = nkp ~\implies~ E\left[\frac{U}{nk}\right] = p ~\implies~ h(U) = \frac{U}{nk} = \frac{\bar{X}}{k} ~\mbox{is the MVUE for}~p \,.
+E\left[Y\right] = nkp ~\implies~ E\left[\frac{Y}{nk}\right] = p ~\implies~ h(Y) = \frac{Y}{nk} = \frac{\bar{X}}{k} ~\mbox{is the MVUE for}~p \,.
 \]</span></p>
 <p>The variance of <span class="math inline">\(\hat{p}\)</span> is
 <span class="math display">\[
@@ -1440,10 +1441,10 @@ unknown variance <span class="math inline">\(\sigma^2\)</span>, then the factori
 Here, we identify <span class="math inline">\(\sum x_i^2\)</span> and <span class="math inline">\(\sum x_i\)</span> as <em>joint</em> sufficient statistics: we
 need two pieces of information to jointly estimate <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma^2\)</span>. (To be
 clear: it is not necessarily the case that one of the parameters matches up to
-one of the sufficient statistics…rather, the two statistics are jointly
+one of the statistics…rather, the two statistics are jointly
 sufficient for estimation.) We thus cannot proceed further to define an MVUE for
 <span class="math inline">\(\mu\)</span> or for <span class="math inline">\(\sigma^2\)</span>, without knowing the joint bivariate probability
-density function for <span class="math inline">\(U_1 = \sum_{i=1}^n X_i^2\)</span> and <span class="math inline">\(U_2 = \sum_{i=1}^n X_i\)</span>.</p>
+density function for <span class="math inline">\(Y_1 = \sum_{i=1}^n X_i^2\)</span> and <span class="math inline">\(Y_2 = \sum_{i=1}^n X_i\)</span>.</p>
 </blockquote>
 <blockquote>
 <p>(Note that we <em>can</em> proceed if we happen to know either <span class="math inline">\(\mu\)</span> or <span class="math inline">\(\sigma^2\)</span>;
@@ -1470,24 +1471,24 @@ Can we define the MVUE for <span class="math inline">\(\theta\)</span>? For <spa
 \mathcal{L}(\theta \vert \mathbf{x}) = \prod_{i=1}^n f_X(x_i \vert \theta) = \frac{1}{\theta^n}\exp\left(-\frac{1}{\theta}\sum_{i=1}^n x_i \right) = h(\mathbf{x}) \cdot g(\theta,\mathbf{x}) \,.
 \]</span>
 Here, there are no terms that are functions of only the data, so <span class="math inline">\(h(\mathbf{x}) = 1\)</span> and
-a sufficient statistic is <span class="math inline">\(U = \sum_{i=1}^n X_i\)</span>. We compute the expected value
-of <span class="math inline">\(U\)</span>:
+a sufficient statistic is <span class="math inline">\(Y = \sum_{i=1}^n X_i\)</span>. We compute the expected value
+of <span class="math inline">\(Y\)</span>:
 <span class="math display">\[
-E[U] = E\left[\sum_{i=1}^n X_i\right] = \sum_{i=1}^n E[X_i] = \sum_{i=1}^n \theta = n\theta \,.
+E[Y] = E\left[\sum_{i=1}^n X_i\right] = \sum_{i=1}^n E[X_i] = \sum_{i=1}^n \theta = n\theta \,.
 \]</span>
-The expected value of <span class="math inline">\(U\)</span> is not <span class="math inline">\(\theta\)</span>, so <span class="math inline">\(U\)</span> is not unbiased…but we can see
-immediately that <span class="math inline">\(E[U/n] = \theta\)</span>, so that <span class="math inline">\(U/n\)</span> is unbiased. Thus the MVUE for <span class="math inline">\(\theta\)</span>
-is thus <span class="math inline">\(\hat{\theta}_{MVUE} = U/n = \bar{X}\)</span>.</p>
+The expected value of <span class="math inline">\(Y\)</span> is not <span class="math inline">\(\theta\)</span>, so <span class="math inline">\(Y\)</span> is not unbiased…but we can see
+immediately that <span class="math inline">\(E[Y/n] = \theta\)</span>, so that <span class="math inline">\(Y/n\)</span> is unbiased. Thus the MVUE for <span class="math inline">\(\theta\)</span>
+is thus <span class="math inline">\(\hat{\theta}_{MVUE} = Y/n = \bar{X}\)</span>.</p>
 </blockquote>
 <blockquote>
 <p>Note that the MVUE does not possess the invariance property…it is not necessarily the
 case that <span class="math inline">\(\hat{\theta^2}_{MVUE} = \bar{X}^2\)</span>.</p>
 </blockquote>
 <blockquote>
-<p>Let’s propose a function of <span class="math inline">\(U\)</span> and see if we can use that to define <span class="math inline">\(\hat{\theta^2}_{MVUE}\)</span>:
-<span class="math inline">\(h(U) = U^2/n^2 = \bar{X}^2\)</span>. (To be clear, we are simply proposing a function and seeing if
+<p>Let’s propose a function of <span class="math inline">\(Y\)</span> and see if we can use that to define <span class="math inline">\(\hat{\theta^2}_{MVUE}\)</span>:
+<span class="math inline">\(h(Y) = Y^2/n^2 = \bar{X}^2\)</span>. (To be clear, we are simply proposing a function and seeing if
 it helps us define what we are looking for. It might not. If not, we can try again with
-another function of <span class="math inline">\(U\)</span>.) Utilizing what we know about the sample mean, we can write down that
+another function of <span class="math inline">\(Y\)</span>.) Utilizing what we know about the sample mean, we can write down that
 <span class="math display">\[
 E[\bar{X}^2] = V[\bar{X}] + (E[\bar{X}])^2 = \frac{V[X]}{n} + (E[X])^2 = \frac{\theta^2}{n}+\theta^2 = \theta^2\left(\frac{1}{n} + 1\right) \,.
 \]</span>
@@ -1516,20 +1517,20 @@ Can we define the MVUE for <span class="math inline">\(p\)</span>? For <span cla
 <span class="math display">\[\begin{align*}
 \mathcal{L}(p \vert \mathbf{x}) = \prod_{i=1}^n p_X(x_i \vert p) = p^n (1-p)^{\sum_{i=1}^n x_i} = 1 \cdot g(p,\mathbf{x}) \,.
 \end{align*}\]</span>
-We identify a sufficient statistic as <span class="math inline">\(U = \sum_{i=1}^n X_i\)</span>; the expected
-value of <span class="math inline">\(U\)</span> is
+We identify a sufficient statistic as <span class="math inline">\(Y = \sum_{i=1}^n X_i\)</span>; the expected
+value of <span class="math inline">\(Y\)</span> is
 <span class="math display">\[\begin{align*}
-E[U] = E\left[\sum_{i=1}^n X_i\right] = \sum_{i=1}^n E[X_i] = \sum_{i=1}^n \frac{1-p}{p} = n\left(\frac{1}{p}-1\right) \,.
+E[Y] = E\left[\sum_{i=1}^n X_i\right] = \sum_{i=1}^n E[X_i] = \sum_{i=1}^n \frac{1-p}{p} = n\left(\frac{1}{p}-1\right) \,.
 \end{align*}\]</span>
 We cannot “debias” this expression to find the MVUE for <span class="math inline">\(p\)</span>:
 <span class="math display">\[\begin{align*}
-E\left[\frac{U}{n}+1\right] = \frac{1}{p} \,.
+E\left[\frac{Y}{n}+1\right] = \frac{1}{p} \,.
 \end{align*}\]</span>
 Specifically,
 <span class="math display">\[\begin{align*}
-E\left[\frac{1}{U/n+1}\right] \neq 1/E\left[\frac{U}{n}+1\right] = p \,.
+E\left[\frac{1}{Y/n+1}\right] \neq 1/E\left[\frac{Y}{n}+1\right] = p \,.
 \end{align*}\]</span>
-However, we did determine the MVUE for <span class="math inline">\(1/p\)</span>: <span class="math inline">\(U/n+1 = \bar{X}+1\)</span>.
+However, we did determine the MVUE for <span class="math inline">\(1/p\)</span>: <span class="math inline">\(Y/n+1 = \bar{X}+1\)</span>.
 But as there is no invariance property for the MVUE, we cannot use this
 expression to write down an MVUE for <span class="math inline">\(p\)</span>.</p>
 </blockquote>
@@ -1605,13 +1606,17 @@ only change introduced with discrete distributions:</p>
 <li><p>In the continuous case, the probability of sampling a datum that lies
 within the acceptance region for a given value of <span class="math inline">\(\theta\)</span>
 is exactly <span class="math inline">\(1 - \alpha\)</span>. In the discrete case,
-that probability is generally <span class="math inline">\(&gt; 1 - \alpha\)</span> (as it is rarely, if ever, the
+that probability is <span class="math inline">\(\geq 1 - \alpha\)</span>. (And it will rarely, if ever, be the
 case that the probability masses within the acceptance region will sum to
 exactly <span class="math inline">\(1 - \alpha\)</span>…although that sum will trend towards <span class="math inline">\(1 - \alpha\)</span> as
-the sample size and/or the number of trials increases).</p></li>
+the sample size and/or the number of trials increases. This motivates
+our use of the word “level,” as in “we conduct a level-<span class="math inline">\(\alpha\)</span> test,”
+rather than “size.” For a size-<span class="math inline">\(\alpha\)</span> test, the probability of
+sampling a statistic value in the acceptance region is, by definition,
+exactly <span class="math inline">\(1-\alpha\)</span>, while for a level-<span class="math inline">\(\alpha\)</span> test, it is <span class="math inline">\(\geq 1 - \alpha\)</span>.)</p></li>
 <li><p>Because the probability of sampling a datum in the acceptance region is
-equal to the confidence interval coverage, the coverage will also generally
-be <span class="math inline">\(&gt; 1 - \alpha\)</span>.</p></li>
+equal to the confidence interval coverage, the coverage will also be
+<span class="math inline">\(\geq 1 - \alpha\)</span>.</p></li>
 </ol>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:disccicover"></span>
 <img src="_main_files/figure-html/disccicover-1.png" alt="\label{fig:disccicover}An illustration of the relationship between hypothesis testing and confidence interval estimation for a discrete sampling distribution (here, a binomial distribution with $k=10$). The two green lines define rejection-region boundaries for a two-sided test with null hypothesis parameter value $p$. Assume $p = 0.45$: the red dots indicates the values of $y_{\rm obs}$ in the acceptance region (where we fail to reject the null). The horizontal dashed blue line shows the confidence interval constructed for a given value of $y_{\rm obs}$. Given $p$, the probability of sampling a statistic in the acceptance region is generally greater than $1-\alpha$, and thus the coverage of confidence intervals, which has the same value, will also be generally greater than $1-\alpha$." width="50%" />
@@ -1866,16 +1871,16 @@ test via the procedure we laid out in previous chapters. Full stop.</p>
 the sufficient statistic <span class="math inline">\(\sum_{i=1}^n X_i\)</span> has a known and easily
 utilized sampling distribution<span class="math inline">\(-\)</span>namely, Binom(<span class="math inline">\(nk,p\)</span>)<span class="math inline">\(-\)</span>while
 <span class="math inline">\(\bar{X} = (\sum_{i=1}^n X_i)/n\)</span> does not. So we would utilize
-<span class="math inline">\(U = \sum_{i=1}^n X_i\)</span>. (Note that it ultimately doesn’t matter which
+<span class="math inline">\(Y = \sum_{i=1}^n X_i\)</span>. (Note that it ultimately doesn’t matter which
 function of a sufficient statistic we use: if we can carry out the math,
 we will end up with tests that have the same power and result in
 the same <span class="math inline">\(p\)</span>-values. It would be <em>very</em> problematic if this wasn’t
 the case: we’d have to “fish around” to determine which function of
 a sufficient statistic would give us the best test, which clearly would
 not be a good situation to find ourselves in.)</p>
-<p>Let’s assume that we use <span class="math inline">\(U = \sum_{i=1}^n X_i\)</span> to define, e.g.,
+<p>Let’s assume that we use <span class="math inline">\(Y = \sum_{i=1}^n X_i\)</span> to define, e.g.,
 a lower-tail test <span class="math inline">\(H_o : p = p_o\)</span> versus <span class="math inline">\(H_a : p = p_a &lt; p_o\)</span>.
-Since <span class="math inline">\(E[U] = nkp\)</span> increases with <span class="math inline">\(p\)</span>, we can go to the hypothesis test
+Since <span class="math inline">\(E[Y] = nkp\)</span> increases with <span class="math inline">\(p\)</span>, we can go to the hypothesis test
 reference tables and write (in code) that</p>
 <div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="the-binomial-and-related-distributions.html#cb195-1" tabindex="-1"></a>u.rr <span class="ot">&lt;-</span> <span class="fu">qbinom</span>(<span class="dv">1</span><span class="sc">-</span>alpha,<span class="at">size=</span>k,<span class="at">prob=</span>p.o)</span></code></pre></div>
 <p>We see that our rejection region boundary depends on the value of <span class="math inline">\(p_o\)</span>,
@@ -1885,7 +1890,10 @@ thus constructed a <em>uniformly most powerful</em> (or <em>UMP</em>) test for
 disambiguating the simple hypotheses <span class="math inline">\(H_o : p = p_o\)</span> and <span class="math inline">\(H_a : p = p_a &lt; p_o\)</span>.
 It is typically the case that when we use the NP lemma to define a most
 powerful test for <span class="math inline">\(\theta_o\)</span> versus <span class="math inline">\(\theta_a\)</span>, we end up defining a
-UMP test as well.</p>
+UMP test as well. (That is because the families of distributions that we
+work with typically exhibit so-called <em>monotone likelihood ratios</em> [or MLRs].
+For more information on MLRs and UMPs, the interested reader should
+look at the Karlin-Rubin theorem.)</p>
 <p>We note that we cannot use the NP lemma to construct most powerful
 <em>two-tail</em> hypothesis tests. When we construct a two-tail test, it is
 convention to define one rejection region boundary assuming <span class="math inline">\(q = \alpha/2\)</span>
@@ -2546,7 +2554,7 @@ where
 \hat{Y}_i = \hat{p}_i \vert x_i = \frac{\exp(\hat{\beta}_0+\hat{\beta}_1 x_i)}{1 + \exp(\hat{\beta}_0+\hat{\beta}_1 x_i)} \,.
 \]</span>
 The sum of the squared deviance residuals is equal to
-<span class="math inline">\(-2 \log \mathcal{L}_{max}\)</span>, where <span class="math inline">\(\mathcal{L}_{max}\)</span> is the maximum
+<span class="math inline">\(-2 \log \mathcal{L}_{\rm max}\)</span>, where <span class="math inline">\(\mathcal{L}_{\rm max}\)</span> is the maximum
 value of the joint likelihood
 of <span class="math inline">\(\hat{\beta}_0\)</span> and <span class="math inline">\(\hat{\beta}_1\)</span>, given <span class="math inline">\(\mathbf{x}\)</span>.
 Here, we observe that the deviance residuals are seemingly well-balanced
@@ -2580,7 +2588,7 @@ reject the null hypothesis that the intercept is 0
 <p>The null deviance is <span class="math inline">\(-2 \log \mathcal{L}_{max,o}\)</span>, where
 <span class="math inline">\(\mathcal{L}_{max,o}\)</span> is the maximum likelihood
 when <span class="math inline">\(\beta_1\)</span> is set to zero. The residual deviance is
-<span class="math inline">\(-2 \log \mathcal{L}_{max}\)</span>. The difference between these values
+<span class="math inline">\(-2 \log \mathcal{L}_{\rm max}\)</span>. The difference between these values
 (here, 1386.3-1040.9 = 345.4), under the null hypothesis that
 <span class="math inline">\(\beta_1 = 0\)</span>, is assumed to be sampled from a chi-square distribution for
 999-998 = 1 degree of freedom. The <span class="math inline">\(p\)</span>-value is thus
@@ -3607,12 +3615,12 @@ where <span class="math inline">\(x \in \{1,2,3,...\}\)</span>. You sample <span
 <span class="math display">\[\begin{equation*}
 f_X(x) = a b x^{a-1} (1-x^a)^{b-1} \,,
 \end{equation*}\]</span>
-defined over the domain <span class="math inline">\(0 &lt; x &lt; 1\)</span>. <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are the parameters of the distribution, and both are positive and real-valued. Let <span class="math inline">\(\mathbf{X} = \{X_1,\cdots,X_n\}\)</span> be <span class="math inline">\(n\)</span> i.i.d.~samples from this distribution. (a) If you are able to define joint sufficient statistics for <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, write them down; otherwise, explain why you cannot. (b) Now, let <span class="math inline">\(a=1\)</span>. What is the sufficient statistic for <span class="math inline">\(b\)</span>?</p></li>
+defined over the domain <span class="math inline">\(0 &lt; x &lt; 1\)</span>. <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are the parameters of the distribution, and both are positive and real-valued. Let <span class="math inline">\(\mathbf{X} = \{X_1,\cdots,X_n\}\)</span> be <span class="math inline">\(n\)</span> i.i.d.~samples from this distribution. (a) If you are able to define joint sufficient statistics for <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, write them down; otherwise, explain why you cannot. (b) Now, let <span class="math inline">\(a=1\)</span>. What is a sufficient statistic for <span class="math inline">\(b\)</span>?</p></li>
 <li><p>You sample <span class="math inline">\(n\)</span> iid data from the following distribution:
 <span class="math display">\[\begin{eqnarray*}
 f_X(x) = \frac{x}{\beta^2} e^{-x/\beta} \,,
 \end{eqnarray*}\]</span>
-where <span class="math inline">\(x \geq 0\)</span> and <span class="math inline">\(\beta &gt; 0\)</span>, and where <span class="math inline">\(E[X] = 2\beta\)</span> and <span class="math inline">\(V[X] = 2\beta^2\)</span>. (a) Write down the sufficient statistic for <span class="math inline">\(\beta\)</span> that arises directly from likelihood factorization. (b) Using your answer from part (a), determine the MVUE for <span class="math inline">\(\beta\)</span>. (c) Compute the variance of the MVUE for <span class="math inline">\(\beta\)</span>. (d) Compute the Cramer-Rao Lower Bound for the MVUE for <span class="math inline">\(\beta\)</span>.</p></li>
+where <span class="math inline">\(x \geq 0\)</span> and <span class="math inline">\(\beta &gt; 0\)</span>, and where <span class="math inline">\(E[X] = 2\beta\)</span> and <span class="math inline">\(V[X] = 2\beta^2\)</span>. (a) Write down a sufficient statistic for <span class="math inline">\(\beta\)</span> that arises directly from likelihood factorization. (b) Using your answer from part (a), determine the MVUE for <span class="math inline">\(\beta\)</span>. (c) Compute the variance of the MVUE for <span class="math inline">\(\beta\)</span>. (d) Compute the Cramer-Rao Lower Bound for the MVUE for <span class="math inline">\(\beta\)</span>.</p></li>
 <li><p>Let <span class="math inline">\(X_1,\ldots, X_n\)</span> be <span class="math inline">\(n\)</span> iid samples from the following distribution, where <span class="math inline">\(\theta &gt; 0\)</span>,
 <span class="math display">\[\begin{eqnarray*}
 f_X(x) = \frac{1}{\theta} \exp\left(x-\frac{1}{\theta} e^x\right) \,.
@@ -3631,27 +3639,50 @@ respectively. (a) Identify a sufficient statistic for <span class="math inline">
 <span class="math display">\[\begin{eqnarray*}
 f_X(x) = \frac{\theta}{2^\theta} x^{\theta-1} \,,
 \end{eqnarray*}\]</span>
-where <span class="math inline">\(x \in [0,2]\)</span> and <span class="math inline">\(\theta &gt; 0\)</span>. You wish to construct the most powerful test of the simple hypotheses <span class="math inline">\(H_o: \theta = \theta_o\)</span> versus <span class="math inline">\(H_a: \theta = \theta_a\)</span>, assuming <span class="math inline">\(\theta_a &gt; \theta_o\)</span>. (a) Derive the functional form of the cdf <span class="math inline">\(F_X(x)\)</span> for <span class="math inline">\(x \in [0,2]\)</span>. (b) A sufficient statistic for this problem is, trivially, <span class="math inline">\(Y = X\)</span>. What is the form of the rejection region for <span class="math inline">\(Y\)</span>? Simply write <span class="math inline">\(Y \leq y_{RR}\)</span> or <span class="math inline">\(Y \geq y_{RR}\)</span>. But do show your reasoning! (c) Derive <span class="math inline">\(y_{RR}\)</span>, assuming a Type I error rate of <span class="math inline">\(\alpha\)</span>. Your final answer will include <span class="math inline">\(\alpha\)</span> as well as <span class="math inline">\(\theta_o\)</span> and/or <span class="math inline">\(\theta_a\)</span>. (d) Write down an expression for the test power for <span class="math inline">\(\theta = \theta_a\)</span>. Leave your final answer in terms of <span class="math inline">\(y_{RR}\)</span> and note that any integral should be evaluated. (Hint: utilize your cdf from part (a).) In addition to <span class="math inline">\(y_{RR}\)</span>, your final answer will include <span class="math inline">\(\theta_o\)</span> and/or <span class="math inline">\(\theta_a\)</span>. (e) Is your hypothesis test a uniformly most powerful hypothesis test for <span class="math inline">\(H_o: \theta = \theta_o\)</span> versus <span class="math inline">\(H_a: \theta = \theta_a &gt; \theta_o\)</span>?</p></li>
-<li><p>A common distribution used for the lengths of life of physical systems is the Weibull. Let <span class="math inline">\(X\)</span> be a single datum sampled from this distribution:
+where <span class="math inline">\(x \in [0,2]\)</span> and <span class="math inline">\(\theta &gt; 0\)</span>. Construct the most powerful level-<span class="math inline">\(\alpha\)</span> test of <span class="math inline">\(H_o: \theta = \theta_o\)</span> versus <span class="math inline">\(H_a: \theta = \theta_a\)</span>, where <span class="math inline">\(\theta_a &gt; \theta_o\)</span>. Is your hypothesis test a uniformly most powerful hypothesis test?</p></li>
+<li><p>A common distribution used for the lengths of life of physical systems is the Weibull. Let <span class="math inline">\(\{X_1,\ldots,X_n\}\)</span> be <span class="math inline">\(n\)</span> iid data sampled from this distribution:
 <span class="math display">\[\begin{eqnarray*}
 f_X(x) = \frac{\theta}{\beta} \hspace{1mm} x^{\theta-1} \hspace{1mm} \exp\left(-\frac{x^\theta}{\beta}\right) \hspace{5mm} x,\beta, \theta &gt;0
 \end{eqnarray*}\]</span>
-For the Weibull, <span class="math inline">\(E[X^k] = \Gamma(\frac{k}{\theta} + 1) \beta^{\frac{k}{\theta}}\)</span>. (Recall that for integer values <span class="math inline">\(x\)</span>, <span class="math inline">\(\Gamma(x) = (x-1)!\)</span>.) For this problem, we will assume that <span class="math inline">\(\theta\)</span> is known, <span class="math inline">\(\beta\)</span> is unknown. (a) We are interested in finding the most powerful test for <span class="math inline">\(H_o: \beta = \beta_o\)</span>, <span class="math inline">\(H_a: \beta = \beta_a\)</span> \where <span class="math inline">\(\beta_a &gt; \beta_o\)</span>. Find the rejection region for the most powerful test for <span class="math inline">\(H_o: \beta_o = 2\)</span>, <span class="math inline">\(H_a: \beta_a = 4\)</span> \for a Type I error rate of <span class="math inline">\(\alpha = 0.05\)</span>. You may use the fact that <span class="math inline">\(X^\theta \sim \text{Exponential}(\beta)\)</span>, where to be clear the pdf is of the form <span class="math inline">\(f_X(x) = (1/\beta)e^{-x/\beta}\)</span>. (b) What is the power of the test in part (a) for the given alternative <span class="math inline">\(\beta_a = 4\)</span>?</p></li>
-<li><p>Let <span class="math inline">\(X\)</span> be a {} observation from the following distribution:
+Assume that <span class="math inline">\(\theta\)</span> is known and that <span class="math inline">\(\beta\)</span> is freely varying, and that we are interested in finding the most powerful test of <span class="math inline">\(H_o: \beta = \beta_o\)</span> versus <span class="math inline">\(H_a: \beta = \beta_a\)</span>, where <span class="math inline">\(\beta_a &gt; \beta_o\)</span>, at the level <span class="math inline">\(\alpha\)</span>.</p></li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li>What is a sufficient statistic for <span class="math inline">\(\beta\)</span>? (Do not include a minus sign.)</li>
+<li>Working with the Weibull directly is difficult; however, it turns out that
+<span class="math inline">\(X^\theta \sim \text{Exp}(\beta)\)</span>. What is the distribution of the sufficient
+statistic found in part (a), and what are the parameter values?
+(This will require examining the gamma distribution and its properties.)</li>
+<li>Write, in <code>R</code> code, the rejection-region boundary for the test.</li>
+</ol>
+<ol start="20" style="list-style-type: decimal">
+<li>Let <span class="math inline">\(\{X_1,\ldots,X_n\}\)</span> be <span class="math inline">\(n\)</span> iid data sampled from the following distribution:
 <span class="math display">\[\begin{eqnarray*}
-f_{X}(x;\theta) = \left\{ \begin {array}{ll} \frac{1}{\theta}\exp\left(-\frac{1}{\theta}(x-5)\right) &amp; x &gt; 5, \theta &gt; 0 \\ 0&amp;\mbox{otherwise} \end{array} \right. \,.
-\end{eqnarray*}\]</span>
-Find a most powerful test of size <span class="math inline">\(\alpha=0.05\)</span> for testing <span class="math inline">\(H_o:\theta=2\)</span>
-vs. <span class="math inline">\(H_a:\theta=1\)</span>.</p></li>
+f_{X}(x) = \left\{ \begin {array}{ll} \frac{1}{\theta}\exp\left(-\frac{1}{\theta}(x-b)\right) &amp; x &gt; b, \theta &gt; 0 \\ 0&amp;\mbox{otherwise} \end{array} \right. \,.
+\end{eqnarray*}\]</span></li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li>Derive the moment-generating function for <span class="math inline">\(X\)</span>.</li>
+<li>Now derive the mgf for <span class="math inline">\(\sum_{i=1}^n X_i\)</span>.</li>
+<li>The answer for (b) contains the term <span class="math inline">\(e^{nbt}\)</span>. Going
+back to our original discussion of the method of moment-generating functions,
+this means that we can write that <span class="math inline">\(\sum_{i=1}^n X_i = nb + \sum_{i=1}^n U_i\)</span>.
+What distribution is <span class="math inline">\(\sum_{i=1}^n U_i\)</span> sampled from? (Hint: look at the
+the rest of the mgf for <span class="math inline">\(\sum_{i=1}^n X_i\)</span> and, if necessary, refer back
+to the previous problem.)</li>
+<li>Write, in <code>R</code> code, the rejection-region boundary for the <span class="math inline">\(\alpha\)</span>-level
+test of
+<span class="math inline">\(H_o : \theta = \theta_o\)</span> versus <span class="math inline">\(H_a : \theta &lt; \theta_o\)</span>. Is this a
+uniformly most powerful test of these hypotheses?</li>
+</ol>
+<ol start="21" style="list-style-type: decimal">
 <li><p>In an experiment, you sample <span class="math inline">\(n\)</span> data from the distribution:
 <span class="math display">\[\begin{eqnarray*}
 f_X(x) = \theta e^{-\theta x} \,,
 \end{eqnarray*}\]</span>
-where <span class="math inline">\(x \geq 0\)</span>, <span class="math inline">\(\theta &gt; 0\)</span>, and <span class="math inline">\(E[X] = 1/\theta\)</span>. You wish to test the null hypothesis <span class="math inline">\(H_o : \theta_o = 4\)</span> versus <span class="math inline">\(H_a : \theta_a = 2\)</span>. (a) Define the most powerful hypothesis test. By “define,” we mean write down a rejection region of the form <span class="math inline">\(Y \leq y_{\rm RR}\)</span> or <span class="math inline">\(Y \geq y_{\rm RR}\)</span>, where you plug in a specific statistic for <span class="math inline">\(Y\)</span>. (You cannot evaluate <span class="math inline">\(y_{\rm RR}\)</span> given the information you have here…that can stay as is.) (b) The cdf of the sampling distribution for the appropriate statistic in part (a) is <span class="math inline">\(\gamma(n,\theta y)/(n-1)!\)</span>, where <span class="math inline">\(\gamma(\cdot,\cdot)\)</span> is the lower incomplete gamma function. Given this information, and given what you would have to do to define the rejection region boundary, can you conclude that we are defining a uniformly most powerful test?</p></li>
-<li><p>Let’s assume that we have sampled <span class="math inline">\(n\)</span> iid data from a Binom(<span class="math inline">\(k,p\)</span>) distribution, and that we wish to test <span class="math inline">\(H_o: p = p_o\)</span> versus <span class="math inline">\(H_a: p &gt; p_o\)</span>. For our statistic, we will use <span class="math inline">\(Y = \sum_{i=1}^n X_i\)</span>. (a) What is the sampling distribution for <span class="math inline">\(Y\)</span>? Provide the name and the value(s) of the parameters. (b) You code elements of the test in <code>R</code>. Assume you have the initialized variables <code>alpha</code>, <code>n</code>, <code>k</code>, <code>y.obs</code>, <code>p.o</code>, and <code>p.a</code> at your disposal. Write out the (one-line!) function call you’d use to compute the rejection region boundary. Include any necessary “discreteness correction” factor that ensures that the empirical <span class="math inline">\(\alpha\)</span>, i.e., the observed rate at which you reject the null when it is correct, is less
-than the stated <span class="math inline">\(\alpha\)</span>. (c) Now provide code of the <span class="math inline">\(p\)</span>-value. Again, include any necessary discreteness correction factor.</p></li>
+where <span class="math inline">\(x \geq 0\)</span>, <span class="math inline">\(\theta &gt; 0\)</span>, and <span class="math inline">\(E[X] = 1/\theta\)</span>. You wish to test the null hypothesis <span class="math inline">\(H_o : \theta_o = 4\)</span> versus <span class="math inline">\(H_a : \theta_a = 2\)</span>. (a) Define the most powerful hypothesis test. By “define,” we mean write down a rejection region of the form <span class="math inline">\(Y &lt; y_{\rm RR}\)</span> or <span class="math inline">\(Y &gt; y_{\rm RR}\)</span>, where you plug in a specific statistic for <span class="math inline">\(Y\)</span>. (You cannot evaluate <span class="math inline">\(y_{\rm RR}\)</span> given the information you have here…that can stay as is.) (b) The cdf of the sampling distribution for the appropriate statistic in part (a) is <span class="math inline">\(\gamma(n,\theta y)/(n-1)!\)</span>, where <span class="math inline">\(\gamma(\cdot,\cdot)\)</span> is the lower incomplete gamma function. Given this information, and given what you would have to do to define the rejection region boundary, can you conclude that we are defining a uniformly most powerful test?</p></li>
+<li><p>Let’s assume that we have sampled <span class="math inline">\(n\)</span> iid data from a Binom(<span class="math inline">\(k,p\)</span>) distribution, and that we wish to test <span class="math inline">\(H_o: p = p_o\)</span> versus <span class="math inline">\(H_a: p &gt; p_o\)</span>. For our statistic, we will use <span class="math inline">\(Y = \sum_{i=1}^n X_i\)</span>. (a) What is the sampling distribution for <span class="math inline">\(Y\)</span>? Provide the name and the value(s) of the parameters. (b) You code elements of the test in <code>R</code>. Assume you have the initialized variables <code>alpha</code>, <code>n</code>, <code>k</code>, <code>y.obs</code>, <code>p.o</code>, and <code>p.a</code> at your disposal. Write out the (one-line!) function call you’d use to compute the rejection region boundary. (c) Now provide code of the <span class="math inline">\(p\)</span>-value. Include a discreteness correction factor if it is needed.</p></li>
 <li><p>The negative inverse link function is <span class="math inline">\(-(Y \vert x)^{-1}\)</span>. Assume that we are in a simple setting (i.e., that there is one predictor variable), and write the regression line formula <span class="math inline">\(Y \vert x\)</span> as a function of <span class="math inline">\(\beta_0\)</span>, <span class="math inline">\(\beta_1\)</span>, and <span class="math inline">\(x\)</span>.</p></li>
-<li><p>You use <code>R</code> to learn a logistic regression model, and you observe the output shown below: (a) What is the sample size <span class="math inline">\(n\)</span>? (Hint: take into account how many parameter values are being estimated to convert a number shown in the output to the sample size.) (b) What is the value of <span class="math inline">\(-2\log\mathcal{L}_{max}\)</span> for the model in which <span class="math inline">\(\beta_1\)</span> is set to zero? (c) What is the value of <span class="math inline">\(O(x)\)</span> for <span class="math inline">\(x = 0\)</span>? You may leave your answer in the form <span class="math inline">\(e^a\)</span> or <span class="math inline">\(\log(a)\)</span> or <span class="math inline">\(\sqrt{a}\)</span>, etc., while being sure to fill in the value of the constant <span class="math inline">\(a\)</span>. (d) Do the odds <em>increase</em> as <span class="math inline">\(x\)</span> increases, or do the odds <em>decrease</em> as <span class="math inline">\(x\)</span> increases?
+<li><p>You use <code>R</code> to learn a logistic regression model, and you observe the output shown below: (a) What is the sample size <span class="math inline">\(n\)</span>? (Hint: take into account how many parameter values are being estimated to convert a number shown in the output to the sample size.) (b) What is the value of <span class="math inline">\(-2\log\mathcal{L}_{\rm max}\)</span> for the model in which <span class="math inline">\(\beta_1\)</span> is set to zero? (c) What is the value of <span class="math inline">\(O(x)\)</span> for <span class="math inline">\(x = 0\)</span>? You may leave your answer in the form <span class="math inline">\(e^a\)</span> or <span class="math inline">\(\log(a)\)</span> or <span class="math inline">\(\sqrt{a}\)</span>, etc., while being sure to fill in the value of the constant <span class="math inline">\(a\)</span>. (d) Do the odds <em>increase</em> as <span class="math inline">\(x\)</span> increases, or do the odds <em>decrease</em> as <span class="math inline">\(x\)</span> increases?
 <img src="figures/logreg.png" width="60%" style="display: block; margin: auto;" /></p></li>
 <li><p>Below is the observed output from <code>R</code>’s <code>glm()</code> function when learning a logistic regression model. For these data, Class 0 is <code>No</code> (not a student) and Class 1 is <code>Yes</code> (is a student). (a) If the balance is $589, then the predicted probability that the datum belongs to the <code>Yes</code> class is 0.1. What is the odds ratio for $589 dollars? (b) What is the odds ratio if the balance is $689? (c) For the first datum, the observed response is <code>No</code> and the predicted probability that the datum is of the <code>Yes</code> class is 0.07. Compute the deviance for this datum. (d) Whoops…the null deviance value got expunged from the output. Would this value be higher or lower than the observed residual deviance value?</p></li>
 </ol>
@@ -3689,7 +3720,7 @@ f_X(x) = c x (1-x) \,,
 \end{eqnarray*}\]</span>
 where <span class="math inline">\(x \in [0,1]\)</span> and <span class="math inline">\(c\)</span> is a constant. (a) Identify this distribution by name and provide the value(s) of its parameter(s). (b) Determine the numerical value of the constant <span class="math inline">\(c\)</span>. (c) Is the distribution symmetric about its mean value or it is a skewed distribution? (d) Compute <span class="math inline">\(P(X \leq 1/4 \vert X \leq 1/2)\)</span>. Leave your answer as a fraction.</p></li>
 <li><p>Twenty-one (21) students enter a hallway off of which are three rooms. A researcher expects each student to randomly choose a room to enter (and to stay in!). That researcher observes that 10 students choose Room A, 5 students choose Room B, and 6 students choose Room C, and she decides to use these data to perform a test of the null hypothesis <span class="math inline">\(p_1 = p_2 = p_3\)</span> at the level <span class="math inline">\(\alpha = 0.1\)</span>. (a) Choose an appropriate hypothesis test and evaluate the test statistic. To be clear, your final answer should be a number. (b) What is the number of degrees of freedom associated with the test statistic? (c) The rejection region boundary value is 4.61. Do we reject the null hypothesis?</p></li>
-<li><p>A political scientist has developed four pamphlets with different types of information about climate change – one focused on environmental impact, one on economic impact, one on socio-cultural impact, and one about the origins of climate change. She prints 100 of each and randomly gives them out, asks people to read them, and records their answer to the question: how much money should the government spend on counteracting climate change? The answer options are: [a] more than, [b] as much as, and [c] less than they currently do. She plans to do a chi-square test to check whether willingness to spend government funding is related to which pamphlet the respondent read. (Note that she does not segment the respondents into groups.) (a) What kind of chi-square test is conducted here (goodness-of-fit, independence, or homogeneity)? (b) The observed test statistic turns out to be <span class="math inline">\(w_{\rm obs} = 24.3\)</span>. How many terms did the researcher have to sum over to compute this statistic? (c) The test statistic follows a chi-square distribution with <span class="math inline">\(m\)</span> degrees of freedom. What is the value of <span class="math inline">\(m\)</span>? (d) Which of the following expressions corresponds to the <span class="math inline">\(p\)</span>-value associated with the test carried out in part (a): (i) <span class="math inline">\(P(W \geq W_{obs})\)</span>, (ii) <span class="math inline">\(P(W \leq W_{obs})\)</span>, (iii) <span class="math inline">\(P(\frac{(n-1) W }{ \sigma^2} \geq W_{obs})\)</span>, or (iv) <span class="math inline">\(P(\frac{(n-1) W}{\sigma^2} \leq W_{obs})\)</span>? (<span class="math inline">\(W\)</span> is the random variable, chi-square-distributed for <span class="math inline">\(m\)</span> degrees of freedom; <span class="math inline">\(n\)</span> is the sample size; and <span class="math inline">\(\sigma^2\)</span> is the population variance.)</p></li>
+<li><p>A political scientist has developed four pamphlets with different types of information about climate change – one focused on environmental impact, one on economic impact, one on socio-cultural impact, and one about the origins of climate change. She prints 100 of each and randomly gives them out, asks people to read them, and records their answer to the question: how much money should the government spend on counteracting climate change? The answer options are: [a] more than, [b] as much as, and [c] less than they currently do. She plans to do a chi-square test to check whether willingness to spend government funding is related to which pamphlet the respondent read. (Note that she does not segment the respondents into groups.) (a) What kind of chi-square test is conducted here (goodness-of-fit, independence, or homogeneity)? (b) The observed test statistic turns out to be <span class="math inline">\(w_{\rm obs} = 24.3\)</span>. How many terms did the researcher have to sum over to compute this statistic? (c) The test statistic follows a chi-square distribution with <span class="math inline">\(m\)</span> degrees of freedom. What is the value of <span class="math inline">\(m\)</span>? (d) Which of the following expressions corresponds to the <span class="math inline">\(p\)</span>-value associated with the test carried out in part (a): (i) <span class="math inline">\(P(W \geq w_{\rm obs})\)</span>, (ii) <span class="math inline">\(P(W \leq w_{\rm obs})\)</span>, (iii) <span class="math inline">\(P(\frac{(n-1) W }{ \sigma^2} \geq w_{\rm obs})\)</span>, or (iv) <span class="math inline">\(P(\frac{(n-1) W}{\sigma^2} \leq w_{\rm obs})\)</span>? (<span class="math inline">\(W\)</span> is the random variable, chi-square-distributed for <span class="math inline">\(m\)</span> degrees of freedom; <span class="math inline">\(n\)</span> is the sample size; and <span class="math inline">\(\sigma^2\)</span> is the population variance.)</p></li>
 <li><p>You are recording the amount of time that elapses between when one person walks through a particular door until the next person walks through that same door. You have a weird stopwatch that changes from 0 to 1 after one minute, and from 1 to 2 after two minutes. That’s it. You take 100 measurements, and your data are given below. You wish to test the null hypothesis that each elapsed time is sampled from an exponential distribution with mean <span class="math inline">\(\beta\)</span> = 1 minute. (a) Under this null hypothesis, the probability that someone ends up in the category “1-2 minutes” is <span class="math inline">\(\int_1^2 e^{-x} dx\)</span>. Explain why this is and calculate the probability. (b) Carry out an appropriate test to test the null hypothesis, provide either the rejection region or the <span class="math inline">\(p\)</span>-value, and state your conclusion. Assume <span class="math inline">\(\alpha = 0.05\)</span>. (c) A friend of yours decides they will repeat the experiment you’ve done, including the statistical analysis, but he is in a hurry and decides that he will only take 10 measurements overall. Explain to your friend why his experimental “design” is flawed.</p></li>
 </ol>
 <table>

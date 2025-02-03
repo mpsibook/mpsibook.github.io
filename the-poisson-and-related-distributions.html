@@ -415,6 +415,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.5.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#the-crlb-on-the-variance-of-lambda-estimators"><i class="fa fa-check"></i><b>4.5.2</b> The CRLB on the Variance of <span class="math inline">\(\lambda\)</span> Estimators</a></li>
 <li class="chapter" data-level="4.5.3" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#minimum-variance-unbiased-estimation-and-the-invariance-property"><i class="fa fa-check"></i><b>4.5.3</b> Minimum Variance Unbiased Estimation and the Invariance Property</a></li>
 <li class="chapter" data-level="4.5.4" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#method-of-moments-estimation-for-the-gamma-distribution"><i class="fa fa-check"></i><b>4.5.4</b> Method of Moments Estimation for the Gamma Distribution</a></li>
+<li class="chapter" data-level="4.5.5" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#maximum-likelihood-estimation-via-numerical-optimization"><i class="fa fa-check"></i><b>4.5.5</b> Maximum Likelihood Estimation via Numerical Optimization</a></li>
 </ul></li>
 <li class="chapter" data-level="4.6" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#confidence-intervals-3"><i class="fa fa-check"></i><b>4.6</b> Confidence Intervals</a>
 <ul>
@@ -1111,6 +1112,101 @@ and thus
 \hat{\beta}_{MoM} = \frac{\bar{X}}{\hat{\alpha}_{MoM}} = \frac{\overline{X^2} - (\bar{X})^2}{\bar{X}} \,.
 \]</span></p>
 </blockquote>
+<hr />
+</div>
+<div id="maximum-likelihood-estimation-via-numerical-optimization" class="section level3 hasAnchor" number="4.5.5">
+<h3><span class="header-section-number">4.5.5</span> Maximum Likelihood Estimation via Numerical Optimization<a href="the-poisson-and-related-distributions.html#maximum-likelihood-estimation-via-numerical-optimization" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<blockquote>
+<p>As noted above, a historical reason for using the method of moments to
+make point estimates is that it will “work” in those situations
+where we cannot derive the MVUE or the MLE. For instance, let’s suppose
+that we draw <span class="math inline">\(n\)</span> iid data from a beta distribution, which has the following
+probability density function:
+<span class="math display">\[\begin{align*}
+f_X(x) = \frac{x^{\alpha-1} (1-x)^{\beta-1}}{B(\alpha,\beta)} \,,
+\end{align*}\]</span>
+where <span class="math inline">\(x \in [0,1]\)</span> and <span class="math inline">\(\alpha,\beta &gt; 0\)</span>. If <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> are
+both freely varying, then we are in a situation in which we have joint
+sufficient statistics…and thus we are not able to compute the MVUEs.
+We then fall back on trying to compute the MLEs…but what is the
+partial derivative of <span class="math inline">\(n \log B(\alpha,\beta)\)</span> with respect to, e.g.,
+<span class="math inline">\(\alpha\)</span>?</p>
+</blockquote>
+<blockquote>
+<p>With computers, we can circumvent this last issue by attempting to maximize
+the value of the likelihood, as a function of <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span>, using
+a numerical optimizer.</p>
+</blockquote>
+<blockquote>
+<p>The subject of numerical optimization is far too vast for us to be able
+to cover all the important details here. It suffices to say that our goal
+is to (a) define an <em>objective function</em> (here, the log-likelihood), and
+(b) pass that function into an optimizer that explores the space of
+free parameters (here, <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span>) and returns the parameter
+values that optimize the objective function’s value (here, the ones that
+maximize the log-likelihood).</p>
+</blockquote>
+<blockquote>
+<p>Let’s start with the objective function. <em>If</em> the pdf or pmf of our
+random variables is already coded in <code>R</code>, we can use the coded function
+rather than write out the function mathematically. Recall
+that when we have sampled iid (continuously valued) data,
+<span class="math display">\[\begin{align*}
+\ell(\theta \vert \mathbf{x}) = \sum_{i=1}^n \log f_X(x_i \vert \theta)
+\end{align*}\]</span>
+For the specific case of the beta distribution, we can convert this
+statement into code:</p>
+</blockquote>
+<pre><code>sum(log(dbeta(x,shape1=alpha,shape2=beta)))</code></pre>
+<blockquote>
+<p>where <code>dbeta()</code> is the beta pdf function.
+This <em>is</em> the objective function, except for one tweak that we will make:
+because <code>R</code>’s
+<code>optim()</code> function <em>minimizes</em> the objective function value by default,
+and we want to <em>maximize</em> the log-likelihood value,
+we will use</p>
+</blockquote>
+<pre><code>-sum(log(dbeta(x,shape1=alpha,shape2=beta)))</code></pre>
+<blockquote>
+<p>instead. So let’s now write down the full function:</p>
+</blockquote>
+<pre><code>f &lt;- function(par,x)
+{
+  -sum(log(dbeta(x,shape1=par[1],shape2=par[2])))
+}</code></pre>
+<blockquote>
+<p>Note how <code>R</code> expects the parameter values to be contained within a single
+vector, which here we call <code>par</code>.</p>
+</blockquote>
+<blockquote>
+<p>The rest of the coding is straightforward: (a) we initialize the vector
+<code>par</code> with initial (good!) guesses for the values of the parameters,
+(b) pass <code>par</code> and the observed data into <code>optim()</code>, and (c) access
+the <code>par</code> element of the list output by <code>optim()</code>.</p>
+</blockquote>
+<div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb257-1"><a href="the-poisson-and-related-distributions.html#cb257-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">236</span>)</span>
+<span id="cb257-2"><a href="the-poisson-and-related-distributions.html#cb257-2" tabindex="-1"></a></span>
+<span id="cb257-3"><a href="the-poisson-and-related-distributions.html#cb257-3" tabindex="-1"></a><span class="co"># generate observed data</span></span>
+<span id="cb257-4"><a href="the-poisson-and-related-distributions.html#cb257-4" tabindex="-1"></a>n     <span class="ot">&lt;-</span> <span class="dv">40</span></span>
+<span id="cb257-5"><a href="the-poisson-and-related-distributions.html#cb257-5" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">2.44</span>  <span class="co"># arbitrarily chosen true values</span></span>
+<span id="cb257-6"><a href="the-poisson-and-related-distributions.html#cb257-6" tabindex="-1"></a>beta  <span class="ot">&lt;-</span> <span class="fl">5.39</span></span>
+<span id="cb257-7"><a href="the-poisson-and-related-distributions.html#cb257-7" tabindex="-1"></a>X     <span class="ot">&lt;-</span> <span class="fu">rbeta</span>(n,<span class="at">shape1=</span>alpha,<span class="at">shape2=</span>beta)</span>
+<span id="cb257-8"><a href="the-poisson-and-related-distributions.html#cb257-8" tabindex="-1"></a></span>
+<span id="cb257-9"><a href="the-poisson-and-related-distributions.html#cb257-9" tabindex="-1"></a><span class="co"># compute MLEs via optimization</span></span>
+<span id="cb257-10"><a href="the-poisson-and-related-distributions.html#cb257-10" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(par,x)</span>
+<span id="cb257-11"><a href="the-poisson-and-related-distributions.html#cb257-11" tabindex="-1"></a>{</span>
+<span id="cb257-12"><a href="the-poisson-and-related-distributions.html#cb257-12" tabindex="-1"></a>  <span class="sc">-</span><span class="fu">sum</span>(<span class="fu">log</span>(<span class="fu">dbeta</span>(x,<span class="at">shape1=</span>par[<span class="dv">1</span>],<span class="at">shape2=</span>par[<span class="dv">2</span>])))</span>
+<span id="cb257-13"><a href="the-poisson-and-related-distributions.html#cb257-13" tabindex="-1"></a>}</span>
+<span id="cb257-14"><a href="the-poisson-and-related-distributions.html#cb257-14" tabindex="-1"></a>par   <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">3</span>)</span>
+<span id="cb257-15"><a href="the-poisson-and-related-distributions.html#cb257-15" tabindex="-1"></a>opt   <span class="ot">&lt;-</span> <span class="fu">optim</span>(par,f,<span class="at">x=</span>X) <span class="co"># need to specify x via an extra argument</span></span>
+<span id="cb257-16"><a href="the-poisson-and-related-distributions.html#cb257-16" tabindex="-1"></a>opt<span class="sc">$</span>par</span></code></pre></div>
+<pre><code>## [1] 2.510399 5.168113</code></pre>
+<blockquote>
+<p>We thus find that <span class="math inline">\(\hat{\alpha}_{\rm MLE} = 2.510\)</span> and
+<span class="math inline">\(\hat{\beta}_{\rm MLE} = 5.168\)</span>. These values are close to, but not equal
+to, the true values; because these are MLEs, we know that our estimates
+will get closer and closer to the true values as <span class="math inline">\(n \rightarrow \infty\)</span>.</p>
+</blockquote>
 </div>
 </div>
 <div id="confidence-intervals-3" class="section level2 hasAnchor" number="4.6">
@@ -1158,19 +1254,20 @@ we know that we will utilize the “yes” lines of the confidence
 interval reference table.
 Our observed test statistic is <span class="math inline">\(y_{\rm obs} = \sum_{i=1}^n x_i\)</span>.</p>
 </blockquote>
-<div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb254-1"><a href="the-poisson-and-related-distributions.html#cb254-1" tabindex="-1"></a><span class="co"># Let&#39;s assume we observe ten years of data in a Poisson process</span></span>
-<span id="cb254-2"><a href="the-poisson-and-related-distributions.html#cb254-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
-<span id="cb254-3"><a href="the-poisson-and-related-distributions.html#cb254-3" tabindex="-1"></a>n      <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb254-4"><a href="the-poisson-and-related-distributions.html#cb254-4" tabindex="-1"></a>lambda <span class="ot">&lt;-</span> <span class="dv">8</span></span>
-<span id="cb254-5"><a href="the-poisson-and-related-distributions.html#cb254-5" tabindex="-1"></a>X      <span class="ot">&lt;-</span> <span class="fu">rpois</span>(n,<span class="at">lambda=</span>lambda)</span>
-<span id="cb254-6"><a href="the-poisson-and-related-distributions.html#cb254-6" tabindex="-1"></a></span>
-<span id="cb254-7"><a href="the-poisson-and-related-distributions.html#cb254-7" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(nlambda,y.obs,q)</span>
-<span id="cb254-8"><a href="the-poisson-and-related-distributions.html#cb254-8" tabindex="-1"></a>{</span>
-<span id="cb254-9"><a href="the-poisson-and-related-distributions.html#cb254-9" tabindex="-1"></a>  <span class="fu">ppois</span>(y.obs,<span class="at">lambda=</span>nlambda)<span class="sc">-</span>q</span>
-<span id="cb254-10"><a href="the-poisson-and-related-distributions.html#cb254-10" tabindex="-1"></a>}</span>
-<span id="cb254-11"><a href="the-poisson-and-related-distributions.html#cb254-11" tabindex="-1"></a><span class="fu">uniroot</span>(f,<span class="at">interval=</span><span class="fu">c</span>(<span class="fl">0.001</span>,<span class="dv">10000</span>),<span class="at">y.obs=</span><span class="fu">sum</span>(X)<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span><span class="sc">-</span>alpha<span class="sc">/</span><span class="dv">2</span>)<span class="sc">$</span>root<span class="sc">/</span>n</span></code></pre></div>
+<div class="sourceCode" id="cb259"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb259-1"><a href="the-poisson-and-related-distributions.html#cb259-1" tabindex="-1"></a><span class="co"># Let&#39;s assume we observe ten years of data in a Poisson process</span></span>
+<span id="cb259-2"><a href="the-poisson-and-related-distributions.html#cb259-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
+<span id="cb259-3"><a href="the-poisson-and-related-distributions.html#cb259-3" tabindex="-1"></a>alpha  <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb259-4"><a href="the-poisson-and-related-distributions.html#cb259-4" tabindex="-1"></a>n      <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb259-5"><a href="the-poisson-and-related-distributions.html#cb259-5" tabindex="-1"></a>lambda <span class="ot">&lt;-</span> <span class="dv">8</span></span>
+<span id="cb259-6"><a href="the-poisson-and-related-distributions.html#cb259-6" tabindex="-1"></a>X      <span class="ot">&lt;-</span> <span class="fu">rpois</span>(n,<span class="at">lambda=</span>lambda)</span>
+<span id="cb259-7"><a href="the-poisson-and-related-distributions.html#cb259-7" tabindex="-1"></a></span>
+<span id="cb259-8"><a href="the-poisson-and-related-distributions.html#cb259-8" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(nlambda,y.obs,q)</span>
+<span id="cb259-9"><a href="the-poisson-and-related-distributions.html#cb259-9" tabindex="-1"></a>{</span>
+<span id="cb259-10"><a href="the-poisson-and-related-distributions.html#cb259-10" tabindex="-1"></a>  <span class="fu">ppois</span>(y.obs,<span class="at">lambda=</span>nlambda)<span class="sc">-</span>q</span>
+<span id="cb259-11"><a href="the-poisson-and-related-distributions.html#cb259-11" tabindex="-1"></a>}</span>
+<span id="cb259-12"><a href="the-poisson-and-related-distributions.html#cb259-12" tabindex="-1"></a><span class="fu">uniroot</span>(f,<span class="at">interval=</span><span class="fu">c</span>(<span class="fl">0.001</span>,<span class="dv">10000</span>),<span class="at">y.obs=</span><span class="fu">sum</span>(X)<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span><span class="sc">-</span>alpha<span class="sc">/</span><span class="dv">2</span>)<span class="sc">$</span>root<span class="sc">/</span>n</span></code></pre></div>
 <pre><code>## [1] 5.722035</code></pre>
-<div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="the-poisson-and-related-distributions.html#cb256-1" tabindex="-1"></a><span class="fu">uniroot</span>(f,<span class="at">interval=</span><span class="fu">c</span>(<span class="fl">0.001</span>,<span class="dv">10000</span>),<span class="at">y.obs=</span><span class="fu">sum</span>(X),alpha<span class="sc">/</span><span class="dv">2</span>)<span class="sc">$</span>root<span class="sc">/</span>n</span></code></pre></div>
+<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb261-1"><a href="the-poisson-and-related-distributions.html#cb261-1" tabindex="-1"></a><span class="fu">uniroot</span>(f,<span class="at">interval=</span><span class="fu">c</span>(<span class="fl">0.001</span>,<span class="dv">10000</span>),<span class="at">y.obs=</span><span class="fu">sum</span>(X),alpha<span class="sc">/</span><span class="dv">2</span>)<span class="sc">$</span>root<span class="sc">/</span>n</span></code></pre></div>
 <pre><code>## [1] 9.178654</code></pre>
 <blockquote>
 <p>Note the discreteness correction that we apply when deriving the
@@ -1200,9 +1297,9 @@ sampling a datum in the acceptance region given a null hypothesis
 <span class="math inline">\(H_o : \theta = \theta_o\)</span>, and thus the coverage will be, in general,
 <span class="math inline">\(&gt; 1-\alpha\)</span>. Let’s verify that that is the case here.</p>
 </blockquote>
-<div class="sourceCode" id="cb258"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb258-1"><a href="the-poisson-and-related-distributions.html#cb258-1" tabindex="-1"></a>y.rr.lo <span class="ot">&lt;-</span> <span class="fu">qpois</span>(alpha<span class="sc">/</span><span class="dv">2</span>,<span class="at">lambda=</span>lambda)</span>
-<span id="cb258-2"><a href="the-poisson-and-related-distributions.html#cb258-2" tabindex="-1"></a>y.rr.hi <span class="ot">&lt;-</span> <span class="fu">qpois</span>(<span class="dv">1</span><span class="sc">-</span>alpha<span class="sc">/</span><span class="dv">2</span>,<span class="at">lambda=</span>lambda)</span>
-<span id="cb258-3"><a href="the-poisson-and-related-distributions.html#cb258-3" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">dpois</span>(y.rr.lo<span class="sc">:</span>y.rr.hi,<span class="at">lambda=</span>lambda))</span></code></pre></div>
+<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb263-1"><a href="the-poisson-and-related-distributions.html#cb263-1" tabindex="-1"></a>y.rr.lo <span class="ot">&lt;-</span> <span class="fu">qpois</span>(alpha<span class="sc">/</span><span class="dv">2</span>,<span class="at">lambda=</span>lambda)</span>
+<span id="cb263-2"><a href="the-poisson-and-related-distributions.html#cb263-2" tabindex="-1"></a>y.rr.hi <span class="ot">&lt;-</span> <span class="fu">qpois</span>(<span class="dv">1</span><span class="sc">-</span>alpha<span class="sc">/</span><span class="dv">2</span>,<span class="at">lambda=</span>lambda)</span>
+<span id="cb263-3"><a href="the-poisson-and-related-distributions.html#cb263-3" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">dpois</span>(y.rr.lo<span class="sc">:</span>y.rr.hi,<span class="at">lambda=</span>lambda))</span></code></pre></div>
 <pre><code>## [1] 0.968989</code></pre>
 <blockquote>
 <p>In this particular situation, the coverage is 96.9%.</p>
@@ -1216,17 +1313,17 @@ sampling a datum in the acceptance region given a null hypothesis
 horse kicks per Prussian army corps per year was <span class="math inline">\(\hat{\lambda} = 0.61\)</span>.
 Here, we determine a 95% interval estimate for <span class="math inline">\(\lambda\)</span>.</p>
 </blockquote>
-<div class="sourceCode" id="cb260"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb260-1"><a href="the-poisson-and-related-distributions.html#cb260-1" tabindex="-1"></a>X     <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">0</span>,<span class="dv">109</span>),<span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">65</span>),<span class="fu">rep</span>(<span class="dv">2</span>,<span class="dv">22</span>),<span class="fu">rep</span>(<span class="dv">3</span>,<span class="dv">3</span>),<span class="fu">rep</span>(<span class="dv">4</span>,<span class="dv">1</span>))</span>
-<span id="cb260-2"><a href="the-poisson-and-related-distributions.html#cb260-2" tabindex="-1"></a>n     <span class="ot">&lt;-</span> <span class="fu">length</span>(X)</span>
-<span id="cb260-3"><a href="the-poisson-and-related-distributions.html#cb260-3" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
-<span id="cb260-4"><a href="the-poisson-and-related-distributions.html#cb260-4" tabindex="-1"></a></span>
-<span id="cb260-5"><a href="the-poisson-and-related-distributions.html#cb260-5" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(nlambda,y.obs,q)</span>
-<span id="cb260-6"><a href="the-poisson-and-related-distributions.html#cb260-6" tabindex="-1"></a>{</span>
-<span id="cb260-7"><a href="the-poisson-and-related-distributions.html#cb260-7" tabindex="-1"></a>  <span class="fu">ppois</span>(y.obs,<span class="at">lambda=</span>nlambda)<span class="sc">-</span>q</span>
-<span id="cb260-8"><a href="the-poisson-and-related-distributions.html#cb260-8" tabindex="-1"></a>}</span>
-<span id="cb260-9"><a href="the-poisson-and-related-distributions.html#cb260-9" tabindex="-1"></a><span class="fu">uniroot</span>(f,<span class="at">interval=</span><span class="fu">c</span>(<span class="fl">0.001</span>,<span class="dv">10000</span>),<span class="at">y.obs=</span><span class="fu">sum</span>(X)<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span><span class="sc">-</span>alpha<span class="sc">/</span><span class="dv">2</span>)<span class="sc">$</span>root<span class="sc">/</span>n</span></code></pre></div>
+<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="the-poisson-and-related-distributions.html#cb265-1" tabindex="-1"></a>X     <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">0</span>,<span class="dv">109</span>),<span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">65</span>),<span class="fu">rep</span>(<span class="dv">2</span>,<span class="dv">22</span>),<span class="fu">rep</span>(<span class="dv">3</span>,<span class="dv">3</span>),<span class="fu">rep</span>(<span class="dv">4</span>,<span class="dv">1</span>))</span>
+<span id="cb265-2"><a href="the-poisson-and-related-distributions.html#cb265-2" tabindex="-1"></a>n     <span class="ot">&lt;-</span> <span class="fu">length</span>(X)</span>
+<span id="cb265-3"><a href="the-poisson-and-related-distributions.html#cb265-3" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb265-4"><a href="the-poisson-and-related-distributions.html#cb265-4" tabindex="-1"></a></span>
+<span id="cb265-5"><a href="the-poisson-and-related-distributions.html#cb265-5" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(nlambda,y.obs,q)</span>
+<span id="cb265-6"><a href="the-poisson-and-related-distributions.html#cb265-6" tabindex="-1"></a>{</span>
+<span id="cb265-7"><a href="the-poisson-and-related-distributions.html#cb265-7" tabindex="-1"></a>  <span class="fu">ppois</span>(y.obs,<span class="at">lambda=</span>nlambda)<span class="sc">-</span>q</span>
+<span id="cb265-8"><a href="the-poisson-and-related-distributions.html#cb265-8" tabindex="-1"></a>}</span>
+<span id="cb265-9"><a href="the-poisson-and-related-distributions.html#cb265-9" tabindex="-1"></a><span class="fu">uniroot</span>(f,<span class="at">interval=</span><span class="fu">c</span>(<span class="fl">0.001</span>,<span class="dv">10000</span>),<span class="at">y.obs=</span><span class="fu">sum</span>(X)<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span><span class="sc">-</span>alpha<span class="sc">/</span><span class="dv">2</span>)<span class="sc">$</span>root<span class="sc">/</span>n</span></code></pre></div>
 <pre><code>## [1] 0.5065682</code></pre>
-<div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="the-poisson-and-related-distributions.html#cb262-1" tabindex="-1"></a><span class="fu">uniroot</span>(f,<span class="at">interval=</span><span class="fu">c</span>(<span class="fl">0.001</span>,<span class="dv">10000</span>),<span class="at">y.obs=</span><span class="fu">sum</span>(X),alpha<span class="sc">/</span><span class="dv">2</span>)<span class="sc">$</span>root<span class="sc">/</span>n</span></code></pre></div>
+<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="the-poisson-and-related-distributions.html#cb267-1" tabindex="-1"></a><span class="fu">uniroot</span>(f,<span class="at">interval=</span><span class="fu">c</span>(<span class="fl">0.001</span>,<span class="dv">10000</span>),<span class="at">y.obs=</span><span class="fu">sum</span>(X),alpha<span class="sc">/</span><span class="dv">2</span>)<span class="sc">$</span>root<span class="sc">/</span>n</span></code></pre></div>
 <pre><code>## [1] 0.7283408</code></pre>
 <blockquote>
 <p>The 95% confidence interval is <span class="math inline">\([0.507,0.728]\)</span>.</p>
@@ -1265,24 +1362,24 @@ the 2.5<span class="math inline">\(^{\rm th}\)</span> and 97.5<span class="math 
 <blockquote>
 <p>Now, let’s assume we have the same data as in the first example above.</p>
 </blockquote>
-<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="the-poisson-and-related-distributions.html#cb264-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
-<span id="cb264-2"><a href="the-poisson-and-related-distributions.html#cb264-2" tabindex="-1"></a>n      <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb264-3"><a href="the-poisson-and-related-distributions.html#cb264-3" tabindex="-1"></a>lambda <span class="ot">&lt;-</span> <span class="dv">8</span></span>
-<span id="cb264-4"><a href="the-poisson-and-related-distributions.html#cb264-4" tabindex="-1"></a>X      <span class="ot">&lt;-</span> <span class="fu">rpois</span>(n,<span class="at">lambda=</span>lambda)</span>
-<span id="cb264-5"><a href="the-poisson-and-related-distributions.html#cb264-5" tabindex="-1"></a><span class="fu">print</span>(X)</span></code></pre></div>
+<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="the-poisson-and-related-distributions.html#cb269-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
+<span id="cb269-2"><a href="the-poisson-and-related-distributions.html#cb269-2" tabindex="-1"></a>n      <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb269-3"><a href="the-poisson-and-related-distributions.html#cb269-3" tabindex="-1"></a>lambda <span class="ot">&lt;-</span> <span class="dv">8</span></span>
+<span id="cb269-4"><a href="the-poisson-and-related-distributions.html#cb269-4" tabindex="-1"></a>X      <span class="ot">&lt;-</span> <span class="fu">rpois</span>(n,<span class="at">lambda=</span>lambda)</span>
+<span id="cb269-5"><a href="the-poisson-and-related-distributions.html#cb269-5" tabindex="-1"></a><span class="fu">print</span>(X)</span></code></pre></div>
 <pre><code>##  [1] 7 4 9 9 6 6 8 7 9 8</code></pre>
 <blockquote>
 <p>The confidence interval that we construct for <span class="math inline">\(\lambda\)</span>, which is
 the distribution mean, is <span class="math inline">\([5.72,9.18]\)</span>. How does the bootstrap
 estimate of the mean compare?</p>
 </blockquote>
-<div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb266-1"><a href="the-poisson-and-related-distributions.html#cb266-1" tabindex="-1"></a>n.boot <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
-<span id="cb266-2"><a href="the-poisson-and-related-distributions.html#cb266-2" tabindex="-1"></a>x.bar  <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>,n.boot)</span>
-<span id="cb266-3"><a href="the-poisson-and-related-distributions.html#cb266-3" tabindex="-1"></a><span class="cf">for</span> ( ii <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n.boot ) {</span>
-<span id="cb266-4"><a href="the-poisson-and-related-distributions.html#cb266-4" tabindex="-1"></a>  s         <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">length</span>(X),<span class="fu">length</span>(X),<span class="at">replace=</span><span class="cn">TRUE</span>)</span>
-<span id="cb266-5"><a href="the-poisson-and-related-distributions.html#cb266-5" tabindex="-1"></a>  x.bar[ii] <span class="ot">&lt;-</span> <span class="fu">mean</span>(X[s])</span>
-<span id="cb266-6"><a href="the-poisson-and-related-distributions.html#cb266-6" tabindex="-1"></a>}</span>
-<span id="cb266-7"><a href="the-poisson-and-related-distributions.html#cb266-7" tabindex="-1"></a><span class="fu">quantile</span>(x.bar,<span class="at">probs=</span><span class="fu">c</span>(<span class="fl">0.025</span>,<span class="fl">0.975</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="the-poisson-and-related-distributions.html#cb271-1" tabindex="-1"></a>n.boot <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
+<span id="cb271-2"><a href="the-poisson-and-related-distributions.html#cb271-2" tabindex="-1"></a>x.bar  <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>,n.boot)</span>
+<span id="cb271-3"><a href="the-poisson-and-related-distributions.html#cb271-3" tabindex="-1"></a><span class="cf">for</span> ( ii <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n.boot ) {</span>
+<span id="cb271-4"><a href="the-poisson-and-related-distributions.html#cb271-4" tabindex="-1"></a>  s         <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">length</span>(X),<span class="fu">length</span>(X),<span class="at">replace=</span><span class="cn">TRUE</span>)</span>
+<span id="cb271-5"><a href="the-poisson-and-related-distributions.html#cb271-5" tabindex="-1"></a>  x.bar[ii] <span class="ot">&lt;-</span> <span class="fu">mean</span>(X[s])</span>
+<span id="cb271-6"><a href="the-poisson-and-related-distributions.html#cb271-6" tabindex="-1"></a>}</span>
+<span id="cb271-7"><a href="the-poisson-and-related-distributions.html#cb271-7" tabindex="-1"></a><span class="fu">quantile</span>(x.bar,<span class="at">probs=</span><span class="fu">c</span>(<span class="fl">0.025</span>,<span class="fl">0.975</span>))</span></code></pre></div>
 <pre><code>##  2.5% 97.5% 
 ##   6.3   8.2</code></pre>
 <blockquote>
@@ -1593,30 +1690,30 @@ run simulations. We simulate sets of data under the null (<span class="math inli
 and for each, we compute <span class="math inline">\(W\)</span>. The empirical rejection region boundary
 is then the, e.g., 95<span class="math inline">\(^{\rm th}\)</span> percentile of the values of <span class="math inline">\(W\)</span>.</p>
 </blockquote>
-<div class="sourceCode" id="cb268"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb268-1"><a href="the-poisson-and-related-distributions.html#cb268-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
-<span id="cb268-2"><a href="the-poisson-and-related-distributions.html#cb268-2" tabindex="-1"></a></span>
-<span id="cb268-3"><a href="the-poisson-and-related-distributions.html#cb268-3" tabindex="-1"></a>alpha   <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
-<span id="cb268-4"><a href="the-poisson-and-related-distributions.html#cb268-4" tabindex="-1"></a>num.sim <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
-<span id="cb268-5"><a href="the-poisson-and-related-distributions.html#cb268-5" tabindex="-1"></a>n       <span class="ot">&lt;-</span> <span class="dv">20</span></span>
-<span id="cb268-6"><a href="the-poisson-and-related-distributions.html#cb268-6" tabindex="-1"></a>mu.o    <span class="ot">&lt;-</span> <span class="dv">5</span>      </span>
-<span id="cb268-7"><a href="the-poisson-and-related-distributions.html#cb268-7" tabindex="-1"></a>sigma2  <span class="ot">&lt;-</span> <span class="dv">9</span>      <span class="co"># an arbitrary value</span></span>
-<span id="cb268-8"><a href="the-poisson-and-related-distributions.html#cb268-8" tabindex="-1"></a>alpha   <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
-<span id="cb268-9"><a href="the-poisson-and-related-distributions.html#cb268-9" tabindex="-1"></a>W       <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>,num.sim)</span>
-<span id="cb268-10"><a href="the-poisson-and-related-distributions.html#cb268-10" tabindex="-1"></a></span>
-<span id="cb268-11"><a href="the-poisson-and-related-distributions.html#cb268-11" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(X,n,mu.o)</span>
-<span id="cb268-12"><a href="the-poisson-and-related-distributions.html#cb268-12" tabindex="-1"></a>{</span>
-<span id="cb268-13"><a href="the-poisson-and-related-distributions.html#cb268-13" tabindex="-1"></a>  hat.mu.mle     <span class="ot">&lt;-</span> <span class="fu">mean</span>(X)</span>
-<span id="cb268-14"><a href="the-poisson-and-related-distributions.html#cb268-14" tabindex="-1"></a>  hat.sigma2.mle <span class="ot">&lt;-</span> (n<span class="dv">-1</span>)<span class="sc">*</span><span class="fu">var</span>(X)<span class="sc">/</span>n</span>
-<span id="cb268-15"><a href="the-poisson-and-related-distributions.html#cb268-15" tabindex="-1"></a></span>
-<span id="cb268-16"><a href="the-poisson-and-related-distributions.html#cb268-16" tabindex="-1"></a>  logL.o <span class="ot">&lt;-</span> <span class="sc">-</span>(n<span class="sc">/</span><span class="dv">2</span>)<span class="sc">*</span><span class="fu">log</span>(<span class="dv">2</span><span class="sc">*</span>pi<span class="sc">*</span>hat.sigma2.mle)<span class="sc">-</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span><span class="sc">/</span>hat.sigma2.mle)<span class="sc">*</span><span class="fu">sum</span>((X<span class="sc">-</span>mu.o)<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb268-17"><a href="the-poisson-and-related-distributions.html#cb268-17" tabindex="-1"></a>  logL   <span class="ot">&lt;-</span> <span class="sc">-</span>(n<span class="sc">/</span><span class="dv">2</span>)<span class="sc">*</span><span class="fu">log</span>(<span class="dv">2</span><span class="sc">*</span>pi<span class="sc">*</span>hat.sigma2.mle)<span class="sc">-</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span><span class="sc">/</span>hat.sigma2.mle)<span class="sc">*</span><span class="fu">sum</span>((X<span class="sc">-</span>hat.mu.mle)<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb268-18"><a href="the-poisson-and-related-distributions.html#cb268-18" tabindex="-1"></a>  <span class="fu">return</span>(<span class="sc">-</span><span class="dv">2</span><span class="sc">*</span>(logL.o <span class="sc">-</span> logL))</span>
-<span id="cb268-19"><a href="the-poisson-and-related-distributions.html#cb268-19" tabindex="-1"></a>}</span>
-<span id="cb268-20"><a href="the-poisson-and-related-distributions.html#cb268-20" tabindex="-1"></a></span>
-<span id="cb268-21"><a href="the-poisson-and-related-distributions.html#cb268-21" tabindex="-1"></a><span class="cf">for</span> ( ii <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>num.sim ) {</span>
-<span id="cb268-22"><a href="the-poisson-and-related-distributions.html#cb268-22" tabindex="-1"></a>  X     <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n,<span class="at">mean=</span>mu.o,<span class="at">sd=</span><span class="fu">sqrt</span>(sigma2))</span>
-<span id="cb268-23"><a href="the-poisson-and-related-distributions.html#cb268-23" tabindex="-1"></a>  W[ii] <span class="ot">&lt;-</span> <span class="fu">f</span>(X,n,mu.o)</span>
-<span id="cb268-24"><a href="the-poisson-and-related-distributions.html#cb268-24" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="the-poisson-and-related-distributions.html#cb273-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
+<span id="cb273-2"><a href="the-poisson-and-related-distributions.html#cb273-2" tabindex="-1"></a></span>
+<span id="cb273-3"><a href="the-poisson-and-related-distributions.html#cb273-3" tabindex="-1"></a>alpha   <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb273-4"><a href="the-poisson-and-related-distributions.html#cb273-4" tabindex="-1"></a>num.sim <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
+<span id="cb273-5"><a href="the-poisson-and-related-distributions.html#cb273-5" tabindex="-1"></a>n       <span class="ot">&lt;-</span> <span class="dv">20</span></span>
+<span id="cb273-6"><a href="the-poisson-and-related-distributions.html#cb273-6" tabindex="-1"></a>mu.o    <span class="ot">&lt;-</span> <span class="dv">5</span>      </span>
+<span id="cb273-7"><a href="the-poisson-and-related-distributions.html#cb273-7" tabindex="-1"></a>sigma2  <span class="ot">&lt;-</span> <span class="dv">9</span>      <span class="co"># an arbitrary value</span></span>
+<span id="cb273-8"><a href="the-poisson-and-related-distributions.html#cb273-8" tabindex="-1"></a>alpha   <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb273-9"><a href="the-poisson-and-related-distributions.html#cb273-9" tabindex="-1"></a>W       <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>,num.sim)</span>
+<span id="cb273-10"><a href="the-poisson-and-related-distributions.html#cb273-10" tabindex="-1"></a></span>
+<span id="cb273-11"><a href="the-poisson-and-related-distributions.html#cb273-11" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(X,n,mu.o)</span>
+<span id="cb273-12"><a href="the-poisson-and-related-distributions.html#cb273-12" tabindex="-1"></a>{</span>
+<span id="cb273-13"><a href="the-poisson-and-related-distributions.html#cb273-13" tabindex="-1"></a>  hat.mu.mle     <span class="ot">&lt;-</span> <span class="fu">mean</span>(X)</span>
+<span id="cb273-14"><a href="the-poisson-and-related-distributions.html#cb273-14" tabindex="-1"></a>  hat.sigma2.mle <span class="ot">&lt;-</span> (n<span class="dv">-1</span>)<span class="sc">*</span><span class="fu">var</span>(X)<span class="sc">/</span>n</span>
+<span id="cb273-15"><a href="the-poisson-and-related-distributions.html#cb273-15" tabindex="-1"></a></span>
+<span id="cb273-16"><a href="the-poisson-and-related-distributions.html#cb273-16" tabindex="-1"></a>  logL.o <span class="ot">&lt;-</span> <span class="sc">-</span>(n<span class="sc">/</span><span class="dv">2</span>)<span class="sc">*</span><span class="fu">log</span>(<span class="dv">2</span><span class="sc">*</span>pi<span class="sc">*</span>hat.sigma2.mle)<span class="sc">-</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span><span class="sc">/</span>hat.sigma2.mle)<span class="sc">*</span><span class="fu">sum</span>((X<span class="sc">-</span>mu.o)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb273-17"><a href="the-poisson-and-related-distributions.html#cb273-17" tabindex="-1"></a>  logL   <span class="ot">&lt;-</span> <span class="sc">-</span>(n<span class="sc">/</span><span class="dv">2</span>)<span class="sc">*</span><span class="fu">log</span>(<span class="dv">2</span><span class="sc">*</span>pi<span class="sc">*</span>hat.sigma2.mle)<span class="sc">-</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span><span class="sc">/</span>hat.sigma2.mle)<span class="sc">*</span><span class="fu">sum</span>((X<span class="sc">-</span>hat.mu.mle)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb273-18"><a href="the-poisson-and-related-distributions.html#cb273-18" tabindex="-1"></a>  <span class="fu">return</span>(<span class="sc">-</span><span class="dv">2</span><span class="sc">*</span>(logL.o <span class="sc">-</span> logL))</span>
+<span id="cb273-19"><a href="the-poisson-and-related-distributions.html#cb273-19" tabindex="-1"></a>}</span>
+<span id="cb273-20"><a href="the-poisson-and-related-distributions.html#cb273-20" tabindex="-1"></a></span>
+<span id="cb273-21"><a href="the-poisson-and-related-distributions.html#cb273-21" tabindex="-1"></a><span class="cf">for</span> ( ii <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>num.sim ) {</span>
+<span id="cb273-22"><a href="the-poisson-and-related-distributions.html#cb273-22" tabindex="-1"></a>  X     <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n,<span class="at">mean=</span>mu.o,<span class="at">sd=</span><span class="fu">sqrt</span>(sigma2))</span>
+<span id="cb273-23"><a href="the-poisson-and-related-distributions.html#cb273-23" tabindex="-1"></a>  W[ii] <span class="ot">&lt;-</span> <span class="fu">f</span>(X,n,mu.o)</span>
+<span id="cb273-24"><a href="the-poisson-and-related-distributions.html#cb273-24" tabindex="-1"></a>}</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:lrtsim"></span>
 <img src="_main_files/figure-html/lrtsim-1.png" alt="\label{fig:lrtsim}The empirical distribution of the statistic $-2(\log\mathcal{L}_o - \log\mathcal{L}_a)$, with the chi-square distribution for $\Delta r = 1$ degree of freedom overlaid (red curve). The dashed vertical green line represents the rejection region boundary according to Wilks' theorem, and the solid vertical green line represents the 95th percentile of simulated statistic values. The divergence of the two green lines indicates that Wilks' theorem at best provides approximate results and that simulations can provide more accurate and precise results." width="50%" />
 <p class="caption">
@@ -1928,11 +2025,11 @@ the quality of fit improves enough to justify the extra model complexity.</p>
 <p>Modeling Bortkiewicz’s horse-kick dataset provides a simple example
 of the use of Poisson regression.</p>
 </blockquote>
-<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="the-poisson-and-related-distributions.html#cb269-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">4</span></span>
-<span id="cb269-2"><a href="the-poisson-and-related-distributions.html#cb269-2" tabindex="-1"></a>Y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">109</span>,<span class="dv">65</span>,<span class="dv">22</span>,<span class="dv">3</span>,<span class="dv">1</span>)</span>
-<span id="cb269-3"><a href="the-poisson-and-related-distributions.html#cb269-3" tabindex="-1"></a></span>
-<span id="cb269-4"><a href="the-poisson-and-related-distributions.html#cb269-4" tabindex="-1"></a>poi.out <span class="ot">&lt;-</span> <span class="fu">glm</span>(Y<span class="sc">~</span>x,<span class="at">family=</span>poisson)</span>
-<span id="cb269-5"><a href="the-poisson-and-related-distributions.html#cb269-5" tabindex="-1"></a><span class="fu">summary</span>(poi.out)</span></code></pre></div>
+<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="the-poisson-and-related-distributions.html#cb274-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">4</span></span>
+<span id="cb274-2"><a href="the-poisson-and-related-distributions.html#cb274-2" tabindex="-1"></a>Y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">109</span>,<span class="dv">65</span>,<span class="dv">22</span>,<span class="dv">3</span>,<span class="dv">1</span>)</span>
+<span id="cb274-3"><a href="the-poisson-and-related-distributions.html#cb274-3" tabindex="-1"></a></span>
+<span id="cb274-4"><a href="the-poisson-and-related-distributions.html#cb274-4" tabindex="-1"></a>poi.out <span class="ot">&lt;-</span> <span class="fu">glm</span>(Y<span class="sc">~</span>x,<span class="at">family=</span>poisson)</span>
+<span id="cb274-5"><a href="the-poisson-and-related-distributions.html#cb274-5" tabindex="-1"></a><span class="fu">summary</span>(poi.out)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## glm(formula = Y ~ x, family = poisson)
@@ -1973,7 +2070,7 @@ value (38.911), subtract 2 times the number of model terms (2 here,
 thus yielding 34.911), and then dividing by <span class="math inline">\(-2\)</span>. The more straightforward
 way, however, is to utilize the <code>logLik()</code> function:</p>
 </blockquote>
-<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="the-poisson-and-related-distributions.html#cb271-1" tabindex="-1"></a><span class="fu">logLik</span>(poi.out)</span></code></pre></div>
+<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="the-poisson-and-related-distributions.html#cb276-1" tabindex="-1"></a><span class="fu">logLik</span>(poi.out)</span></code></pre></div>
 <pre><code>## &#39;log Lik.&#39; -17.45551 (df=2)</code></pre>
 <blockquote>
 <p>As we did in the context of logistic regression, we can use the
@@ -1991,7 +2088,7 @@ for Poisson regression we can simply assume that the residual deviance
 is chi-square-distributed for the given number of degrees of freedom.
 Here, the <span class="math inline">\(p\)</span>-value is</p>
 </blockquote>
-<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="the-poisson-and-related-distributions.html#cb273-1" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pchisq</span>(<span class="fl">12.437</span>,<span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="the-poisson-and-related-distributions.html#cb278-1" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pchisq</span>(<span class="fl">12.437</span>,<span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## [1] 0.006026712</code></pre>
 <blockquote>
 <p>or 0.0060. Because this value is less than, e.g., <span class="math inline">\(\alpha = 0.05\)</span>, we
@@ -2007,13 +2104,13 @@ data are truly Poisson distributed.</p>
 different values of <span class="math inline">\(x\)</span>: 1, 2, 3, and 4. The data are simulated
 with a Poisson overdispersion factor of 2.</p>
 </blockquote>
-<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="the-poisson-and-related-distributions.html#cb275-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">236</span>)</span>
-<span id="cb275-2"><a href="the-poisson-and-related-distributions.html#cb275-2" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">100</span>               <span class="co"># 100 data per x value</span></span>
-<span id="cb275-3"><a href="the-poisson-and-related-distributions.html#cb275-3" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>),n)</span>
-<span id="cb275-4"><a href="the-poisson-and-related-distributions.html#cb275-4" tabindex="-1"></a>Y <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>,<span class="fu">length</span>(x))</span>
-<span id="cb275-5"><a href="the-poisson-and-related-distributions.html#cb275-5" tabindex="-1"></a><span class="cf">for</span> ( ii <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(x) ) {</span>
-<span id="cb275-6"><a href="the-poisson-and-related-distributions.html#cb275-6" tabindex="-1"></a>  Y[ii] <span class="ot">&lt;-</span> <span class="fu">rpois</span>(<span class="dv">1</span>,<span class="fu">rgamma</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="at">scale=</span>x[ii]<span class="sc">/</span><span class="dv">2</span>))</span>
-<span id="cb275-7"><a href="the-poisson-and-related-distributions.html#cb275-7" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb280"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb280-1"><a href="the-poisson-and-related-distributions.html#cb280-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">236</span>)</span>
+<span id="cb280-2"><a href="the-poisson-and-related-distributions.html#cb280-2" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">100</span>               <span class="co"># 100 data per x value</span></span>
+<span id="cb280-3"><a href="the-poisson-and-related-distributions.html#cb280-3" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>),n)</span>
+<span id="cb280-4"><a href="the-poisson-and-related-distributions.html#cb280-4" tabindex="-1"></a>Y <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>,<span class="fu">length</span>(x))</span>
+<span id="cb280-5"><a href="the-poisson-and-related-distributions.html#cb280-5" tabindex="-1"></a><span class="cf">for</span> ( ii <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(x) ) {</span>
+<span id="cb280-6"><a href="the-poisson-and-related-distributions.html#cb280-6" tabindex="-1"></a>  Y[ii] <span class="ot">&lt;-</span> <span class="fu">rpois</span>(<span class="dv">1</span>,<span class="fu">rgamma</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="at">scale=</span>x[ii]<span class="sc">/</span><span class="dv">2</span>))</span>
+<span id="cb280-7"><a href="the-poisson-and-related-distributions.html#cb280-7" tabindex="-1"></a>}</span></code></pre></div>
 <blockquote>
 <p>For these data, <span class="math inline">\(E[Y \vert x] = x\)</span> and
 <span class="math inline">\(V[Y \vert x] = x + x^2/2\)</span>, meaning that the
@@ -2024,7 +2121,7 @@ Poisson regression model.</p>
 <blockquote>
 <p>First, the Poisson regression model itself:</p>
 </blockquote>
-<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="the-poisson-and-related-distributions.html#cb276-1" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">glm</span>(Y<span class="sc">~</span>x,<span class="at">family=</span>poisson))</span></code></pre></div>
+<div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb281-1"><a href="the-poisson-and-related-distributions.html#cb281-1" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">glm</span>(Y<span class="sc">~</span>x,<span class="at">family=</span>poisson))</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## glm(formula = Y ~ x, family = poisson)
@@ -2051,8 +2148,8 @@ of Massachusetts, but rather stands for “Modern Applied
 Statistics with S”…with <code>S</code> being the precursor
 software to <code>R</code>.)</p>
 </blockquote>
-<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="the-poisson-and-related-distributions.html#cb278-1" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
-<span id="cb278-2"><a href="the-poisson-and-related-distributions.html#cb278-2" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">glm.nb</span>(Y<span class="sc">~</span>x))</span></code></pre></div>
+<div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb283-1"><a href="the-poisson-and-related-distributions.html#cb283-1" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
+<span id="cb283-2"><a href="the-poisson-and-related-distributions.html#cb283-2" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">glm.nb</span>(Y<span class="sc">~</span>x))</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## glm.nb(formula = Y ~ x, init.theta = 1.84882707, link = log)
@@ -2284,19 +2381,19 @@ W = \frac{(109-108.67)^2}{108.67} + \frac{(65-66.29)^2}{66.29} + \frac{(22-20.29
 \]</span>
 This figure can be found using <code>R</code>:</p>
 </blockquote>
-<div class="sourceCode" id="cb282"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb282-1"><a href="the-poisson-and-related-distributions.html#cb282-1" tabindex="-1"></a>e    <span class="ot">&lt;-</span> <span class="dv">200</span><span class="sc">*</span><span class="fu">dpois</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">4</span>,<span class="fl">0.61</span>)</span>
-<span id="cb282-2"><a href="the-poisson-and-related-distributions.html#cb282-2" tabindex="-1"></a>e[<span class="dv">4</span>] <span class="ot">&lt;-</span> e[<span class="dv">4</span>]<span class="sc">+</span>e[<span class="dv">5</span>]</span>
-<span id="cb282-3"><a href="the-poisson-and-related-distributions.html#cb282-3" tabindex="-1"></a>e    <span class="ot">&lt;-</span> e[<span class="sc">-</span><span class="dv">5</span>]</span>
-<span id="cb282-4"><a href="the-poisson-and-related-distributions.html#cb282-4" tabindex="-1"></a>o    <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">109</span>,<span class="dv">65</span>,<span class="dv">22</span>,<span class="dv">4</span>)</span>
-<span id="cb282-5"><a href="the-poisson-and-related-distributions.html#cb282-5" tabindex="-1"></a></span>
-<span id="cb282-6"><a href="the-poisson-and-related-distributions.html#cb282-6" tabindex="-1"></a>(<span class="at">W =</span> <span class="fu">sum</span>((o<span class="sc">-</span>e)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>e))</span></code></pre></div>
+<div class="sourceCode" id="cb287"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb287-1"><a href="the-poisson-and-related-distributions.html#cb287-1" tabindex="-1"></a>e    <span class="ot">&lt;-</span> <span class="dv">200</span><span class="sc">*</span><span class="fu">dpois</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">4</span>,<span class="fl">0.61</span>)</span>
+<span id="cb287-2"><a href="the-poisson-and-related-distributions.html#cb287-2" tabindex="-1"></a>e[<span class="dv">4</span>] <span class="ot">&lt;-</span> e[<span class="dv">4</span>]<span class="sc">+</span>e[<span class="dv">5</span>]</span>
+<span id="cb287-3"><a href="the-poisson-and-related-distributions.html#cb287-3" tabindex="-1"></a>e    <span class="ot">&lt;-</span> e[<span class="sc">-</span><span class="dv">5</span>]</span>
+<span id="cb287-4"><a href="the-poisson-and-related-distributions.html#cb287-4" tabindex="-1"></a>o    <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">109</span>,<span class="dv">65</span>,<span class="dv">22</span>,<span class="dv">4</span>)</span>
+<span id="cb287-5"><a href="the-poisson-and-related-distributions.html#cb287-5" tabindex="-1"></a></span>
+<span id="cb287-6"><a href="the-poisson-and-related-distributions.html#cb287-6" tabindex="-1"></a>(<span class="at">W =</span> <span class="fu">sum</span>((o<span class="sc">-</span>e)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>e))</span></code></pre></div>
 <pre><code>## [1] 0.2980418</code></pre>
 <blockquote>
 <p>When using the chi-square GOF test to assess the viability of a distribution
 whose parameters are estimated, we lose additional degrees of freedom,
 so the number of degrees of freedom here is 4 - 2 = 2. The <span class="math inline">\(p\)</span>-value is</p>
 </blockquote>
-<div class="sourceCode" id="cb284"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb284-1"><a href="the-poisson-and-related-distributions.html#cb284-1" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pchisq</span>(W,<span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb289"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb289-1"><a href="the-poisson-and-related-distributions.html#cb289-1" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pchisq</span>(W,<span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] 0.8615511</code></pre>
 <blockquote>
 <p>We find that we fail to reject the null hypothesis and thus that it is
