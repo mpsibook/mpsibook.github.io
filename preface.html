@@ -65,7 +65,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -349,10 +349,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3.6" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#point-estimation-2"><i class="fa fa-check"></i><b>3.6</b> Point Estimation</a>
 <ul>
-<li class="chapter" data-level="3.6.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-mle-for-the-binomial-success-probability"><i class="fa fa-check"></i><b>3.6.1</b> The MLE for the Binomial Success Probability</a></li>
-<li class="chapter" data-level="3.6.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#sufficient-statistics-for-the-normal-distribution"><i class="fa fa-check"></i><b>3.6.2</b> Sufficient Statistics for the Normal Distribution</a></li>
-<li class="chapter" data-level="3.6.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-mvue-for-the-exponential-mean"><i class="fa fa-check"></i><b>3.6.3</b> The MVUE for the Exponential Mean</a></li>
-<li class="chapter" data-level="3.6.4" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-mvue-for-the-geometric-distribution"><i class="fa fa-check"></i><b>3.6.4</b> The MVUE for the Geometric Distribution</a></li>
+<li class="chapter" data-level="3.6.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#sufficiency-and-the-exponential-family-of-distributions"><i class="fa fa-check"></i><b>3.6.1</b> Sufficiency and the Exponential Family of Distributions</a></li>
+<li class="chapter" data-level="3.6.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-mle-for-the-binomial-success-probability"><i class="fa fa-check"></i><b>3.6.2</b> The MLE for the Binomial Success Probability</a></li>
+<li class="chapter" data-level="3.6.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#sufficient-statistics-for-the-normal-distribution"><i class="fa fa-check"></i><b>3.6.3</b> Sufficient Statistics for the Normal Distribution</a></li>
+<li class="chapter" data-level="3.6.4" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-mvue-for-the-exponential-mean"><i class="fa fa-check"></i><b>3.6.4</b> The MVUE for the Exponential Mean</a></li>
+<li class="chapter" data-level="3.6.5" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-mvue-for-the-geometric-distribution"><i class="fa fa-check"></i><b>3.6.5</b> The MVUE for the Geometric Distribution</a></li>
 </ul></li>
 <li class="chapter" data-level="3.7" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#confidence-intervals-2"><i class="fa fa-check"></i><b>3.7</b> Confidence Intervals</a>
 <ul>
@@ -423,6 +424,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.6.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#revisiting-the-death-by-horse-kick-example-1"><i class="fa fa-check"></i><b>4.6.2</b> Revisiting the Death-by-Horse-Kick Example</a></li>
 <li class="chapter" data-level="4.6.3" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#determining-a-confidence-interval-using-the-bootstrap"><i class="fa fa-check"></i><b>4.6.3</b> Determining a Confidence Interval Using the Bootstrap</a></li>
 <li class="chapter" data-level="4.6.4" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#the-proportion-of-observed-data-in-a-bootstrap-sample"><i class="fa fa-check"></i><b>4.6.4</b> The Proportion of Observed Data in a Bootstrap Sample</a></li>
+<li class="chapter" data-level="4.6.5" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#confidence-interval-estimation-via-simulation-and-numerical-optimization"><i class="fa fa-check"></i><b>4.6.5</b> Confidence Interval Estimation via Simulation and Numerical Optimization</a></li>
 </ul></li>
 <li class="chapter" data-level="4.7" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#hypothesis-testing-2"><i class="fa fa-check"></i><b>4.7</b> Hypothesis Testing</a>
 <ul>
@@ -446,6 +448,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="4.10.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#revisiting-the-death-by-horse-kick-example-3"><i class="fa fa-check"></i><b>4.10.1</b> Revisiting the Death-by-Horse-Kick Example</a></li>
 </ul></li>
+<li class="chapter" data-level="4.11" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#exercises-1"><i class="fa fa-check"></i><b>4.11</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html"><i class="fa fa-check"></i><b>5</b> The Uniform Distribution</a>
 <ul>
@@ -478,6 +481,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.6.1" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#the-power-curve-for-testing-the-uniform-distribution-upper-bound"><i class="fa fa-check"></i><b>5.6.1</b> The Power Curve for Testing the Uniform Distribution Upper Bound</a></li>
 <li class="chapter" data-level="5.6.2" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#an-illustration-of-multiple-comparisons-when-testing-for-the-normal-mean"><i class="fa fa-check"></i><b>5.6.2</b> An Illustration of Multiple Comparisons When Testing for the Normal Mean</a></li>
 </ul></li>
+<li class="chapter" data-level="5.7" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#exercises-2"><i class="fa fa-check"></i><b>5.7</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html"><i class="fa fa-check"></i><b>6</b> Multivariate Distributions</a>
 <ul>
@@ -538,6 +542,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="chapter-exercises-solutions.html"><a href="chapter-exercises-solutions.html"><i class="fa fa-check"></i>Chapter Exercises: Solutions</a>
 <ul>
 <li class="chapter" data-level="" data-path="chapter-exercises-solutions.html"><a href="chapter-exercises-solutions.html#chapter-3"><i class="fa fa-check"></i>Chapter 3</a></li>
+<li class="chapter" data-level="" data-path="chapter-exercises-solutions.html"><a href="chapter-exercises-solutions.html#chapter-4"><i class="fa fa-check"></i>Chapter 4</a></li>
 </ul></li>
 </ul>
 
@@ -560,7 +565,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1 class="title">Modern Probability and Statistical Inference</h1>
 <h2 class="subtitle"><em>Illustrated with R</em></h2>
 <p class="author"><em>Peter E. Freeman (Department of Statistics &amp; Data Science, Carnegie Mellon University)</em></p>
-<p class="date"><em>January 2025</em></p>
+<p class="date"><em>February 2025</em></p>
 </div>
 <div id="preface" class="section level1 unnumbered hasAnchor">
 <h1>Preface<a href="preface.html#preface" class="anchor-section" aria-label="Anchor link to header"></a></h1>
@@ -616,7 +621,7 @@ expressed consent. If you have comments or questions (or you want an updated
 version), please send email to the address given below.</p>
 <p>Peter Freeman</p>
 <p><code>pfreeman@cmu.edu</code></p>
-<p>January 2025</p>
+<p>February 2025</p>
 </div>
             </section>
 

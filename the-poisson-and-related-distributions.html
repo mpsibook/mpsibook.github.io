@@ -65,7 +65,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -349,10 +349,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3.6" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#point-estimation-2"><i class="fa fa-check"></i><b>3.6</b> Point Estimation</a>
 <ul>
-<li class="chapter" data-level="3.6.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-mle-for-the-binomial-success-probability"><i class="fa fa-check"></i><b>3.6.1</b> The MLE for the Binomial Success Probability</a></li>
-<li class="chapter" data-level="3.6.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#sufficient-statistics-for-the-normal-distribution"><i class="fa fa-check"></i><b>3.6.2</b> Sufficient Statistics for the Normal Distribution</a></li>
-<li class="chapter" data-level="3.6.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-mvue-for-the-exponential-mean"><i class="fa fa-check"></i><b>3.6.3</b> The MVUE for the Exponential Mean</a></li>
-<li class="chapter" data-level="3.6.4" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-mvue-for-the-geometric-distribution"><i class="fa fa-check"></i><b>3.6.4</b> The MVUE for the Geometric Distribution</a></li>
+<li class="chapter" data-level="3.6.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#sufficiency-and-the-exponential-family-of-distributions"><i class="fa fa-check"></i><b>3.6.1</b> Sufficiency and the Exponential Family of Distributions</a></li>
+<li class="chapter" data-level="3.6.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-mle-for-the-binomial-success-probability"><i class="fa fa-check"></i><b>3.6.2</b> The MLE for the Binomial Success Probability</a></li>
+<li class="chapter" data-level="3.6.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#sufficient-statistics-for-the-normal-distribution"><i class="fa fa-check"></i><b>3.6.3</b> Sufficient Statistics for the Normal Distribution</a></li>
+<li class="chapter" data-level="3.6.4" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-mvue-for-the-exponential-mean"><i class="fa fa-check"></i><b>3.6.4</b> The MVUE for the Exponential Mean</a></li>
+<li class="chapter" data-level="3.6.5" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-mvue-for-the-geometric-distribution"><i class="fa fa-check"></i><b>3.6.5</b> The MVUE for the Geometric Distribution</a></li>
 </ul></li>
 <li class="chapter" data-level="3.7" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#confidence-intervals-2"><i class="fa fa-check"></i><b>3.7</b> Confidence Intervals</a>
 <ul>
@@ -423,6 +424,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.6.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#revisiting-the-death-by-horse-kick-example-1"><i class="fa fa-check"></i><b>4.6.2</b> Revisiting the Death-by-Horse-Kick Example</a></li>
 <li class="chapter" data-level="4.6.3" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#determining-a-confidence-interval-using-the-bootstrap"><i class="fa fa-check"></i><b>4.6.3</b> Determining a Confidence Interval Using the Bootstrap</a></li>
 <li class="chapter" data-level="4.6.4" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#the-proportion-of-observed-data-in-a-bootstrap-sample"><i class="fa fa-check"></i><b>4.6.4</b> The Proportion of Observed Data in a Bootstrap Sample</a></li>
+<li class="chapter" data-level="4.6.5" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#confidence-interval-estimation-via-simulation-and-numerical-optimization"><i class="fa fa-check"></i><b>4.6.5</b> Confidence Interval Estimation via Simulation and Numerical Optimization</a></li>
 </ul></li>
 <li class="chapter" data-level="4.7" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#hypothesis-testing-2"><i class="fa fa-check"></i><b>4.7</b> Hypothesis Testing</a>
 <ul>
@@ -446,6 +448,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="4.10.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#revisiting-the-death-by-horse-kick-example-3"><i class="fa fa-check"></i><b>4.10.1</b> Revisiting the Death-by-Horse-Kick Example</a></li>
 </ul></li>
+<li class="chapter" data-level="4.11" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#exercises-1"><i class="fa fa-check"></i><b>4.11</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html"><i class="fa fa-check"></i><b>5</b> The Uniform Distribution</a>
 <ul>
@@ -478,6 +481,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.6.1" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#the-power-curve-for-testing-the-uniform-distribution-upper-bound"><i class="fa fa-check"></i><b>5.6.1</b> The Power Curve for Testing the Uniform Distribution Upper Bound</a></li>
 <li class="chapter" data-level="5.6.2" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#an-illustration-of-multiple-comparisons-when-testing-for-the-normal-mean"><i class="fa fa-check"></i><b>5.6.2</b> An Illustration of Multiple Comparisons When Testing for the Normal Mean</a></li>
 </ul></li>
+<li class="chapter" data-level="5.7" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#exercises-2"><i class="fa fa-check"></i><b>5.7</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html"><i class="fa fa-check"></i><b>6</b> Multivariate Distributions</a>
 <ul>
@@ -538,6 +542,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="chapter-exercises-solutions.html"><a href="chapter-exercises-solutions.html"><i class="fa fa-check"></i>Chapter Exercises: Solutions</a>
 <ul>
 <li class="chapter" data-level="" data-path="chapter-exercises-solutions.html"><a href="chapter-exercises-solutions.html#chapter-3"><i class="fa fa-check"></i>Chapter 3</a></li>
+<li class="chapter" data-level="" data-path="chapter-exercises-solutions.html"><a href="chapter-exercises-solutions.html#chapter-4"><i class="fa fa-check"></i>Chapter 4</a></li>
 </ul></li>
 </ul>
 
@@ -1420,6 +1425,104 @@ which, as <span class="math inline">\(n \rightarrow \infty\)</span>, approaches 
 Thus, for a sufficiently large sample, 63.2% of the observed data
 will appear at least once in a bootstrapped dataset.</p>
 </blockquote>
+<hr />
+</div>
+<div id="confidence-interval-estimation-via-simulation-and-numerical-optimization" class="section level3 hasAnchor" number="4.6.5">
+<h3><span class="header-section-number">4.6.5</span> Confidence Interval Estimation via Simulation and Numerical Optimization<a href="the-poisson-and-related-distributions.html#confidence-interval-estimation-via-simulation-and-numerical-optimization" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<blockquote>
+<p>Let’s suppose that we sample <span class="math inline">\(n\)</span> iid data from a Beta<span class="math inline">\((\alpha,2)\)</span>
+distribution:
+<span class="math display">\[\begin{align*}
+f_X(x) = \frac{x^{\alpha-1}(1-x)}{B(\alpha,2)} \,,
+\end{align*}\]</span>
+for <span class="math inline">\(x \in [0,1]\)</span> and <span class="math inline">\(\alpha &gt; 0\)</span>. A sufficient statistic for
+<span class="math inline">\(\alpha\)</span>, found via factorization, is <span class="math inline">\(\prod_{i=1}^n X_i\)</span>; another,
+more easy to work with, one is <span class="math inline">\(Y = -\sum_{i=1}^n \log X_i\)</span>. (Why do we
+include a minus sign? For no other reason that when we include it,
+<span class="math inline">\(Y\)</span> generally increases as <span class="math inline">\(n\)</span> increases.) The expected value of the
+random variable <span class="math inline">\(X\)</span> is <span class="math inline">\(E[X] = \alpha/(\alpha+2)\)</span>, which increases
+as <span class="math inline">\(\alpha\)</span> increases. However, as <span class="math inline">\(X \rightarrow 1\)</span>,
+<span class="math inline">\(-\log X \rightarrow 0\)</span>, and so <span class="math inline">\(E[Y]\)</span> will <em>decrease</em> with <span class="math inline">\(\alpha\)</span>.</p>
+</blockquote>
+<blockquote>
+<p>We are now all set to construct, e.g., 95% confidence intervals for <span class="math inline">\(\alpha\)</span>.
+Except…we cannot identify the sampling distribution for <span class="math inline">\(Y\)</span>. So we are
+stuck…but, in actuality, we are not. We just need to numerically
+estimate sampling distributions for <span class="math inline">\(Y \vert \alpha\)</span> via simulation,
+and find the values of <span class="math inline">\(\alpha\)</span> that make the estimated
+<span class="math inline">\(F_Y(y_{\rm obs} \vert \alpha)\)</span> (approximately) equal to 0.025 and 0.975.
+We can perform this latter step using numerical optimization.</p>
+</blockquote>
+<blockquote>
+<p>Let’s first build up the code that we would need to estimate the
+sampling distribution and estimate the cdf for the value <span class="math inline">\(y_{\rm obs}\)</span>.</p>
+</blockquote>
+<pre><code>X &lt;- matrix(rbeta(n*num.sim,shape1=alpha,shape2=2),nrow=num.sim)
+Y &lt;- apply(X,1,function(x){-sum(log(x))})
+sum(Y &lt;= y.obs)/num.sim</code></pre>
+<blockquote>
+<p>On the first line, we create <code>num.sim</code> separate datasets given a
+parameter value, and store them row-by-row in a matrix. On the second
+line, we use <code>R</code>’s <code>apply()</code> function, row-by-row (as indicated
+by the argument <code>1</code>), to determine the statistic value for each dataset.
+Then, on the third line, we determine the proportion of statistic values
+that are less than or equal to <span class="math inline">\(y_{\rm obs}\)</span>: that is our estimate
+of <span class="math inline">\(F_Y(y_{\rm obs} \vert \alpha)\)</span>.</p>
+</blockquote>
+<blockquote>
+<p>The next step is to embed this code into a numerical optimizer.</p>
+</blockquote>
+<blockquote>
+<p>Our objective, given a value of <span class="math inline">\(q\)</span>, is to determine the value of <span class="math inline">\(\alpha\)</span>
+such that <span class="math inline">\(F_Y(y_{\rm obs} \vert \alpha) = q\)</span> (at least approximately).
+So for our objective function, a function whose value we are trying to
+minimize,
+we adopt <span class="math inline">\(\left(F_Y(y_{\rm obs} \vert \alpha) - q\right)^2\)</span>.
+(This is not a unique
+choice<span class="math inline">\(-\)</span>we could, e.g., adopt <span class="math inline">\(\vert F_Y(y_{\rm obs} \vert \alpha) - q \vert\)</span>
+as our objective function<span class="math inline">\(-\)</span>but minimizing the squared error is a
+conventional and uncontroversial choice.)</p>
+</blockquote>
+<blockquote>
+<p>Let’s put this all together in an example where <span class="math inline">\(n = 5\)</span> and
+<span class="math inline">\(y_{\rm obs} = 10\)</span>:</p>
+</blockquote>
+<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="the-poisson-and-related-distributions.html#cb274-1" tabindex="-1"></a>n     <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb274-2"><a href="the-poisson-and-related-distributions.html#cb274-2" tabindex="-1"></a>y.obs <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb274-3"><a href="the-poisson-and-related-distributions.html#cb274-3" tabindex="-1"></a>conf  <span class="ot">&lt;-</span> <span class="fl">0.05</span> <span class="co"># so as not to confuse the confidence coefficient and alpha</span></span>
+<span id="cb274-4"><a href="the-poisson-and-related-distributions.html#cb274-4" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(alpha,n,y.obs,q,<span class="at">num.sim=</span><span class="dv">100000</span>,<span class="at">seed=</span><span class="dv">236</span>)</span>
+<span id="cb274-5"><a href="the-poisson-and-related-distributions.html#cb274-5" tabindex="-1"></a>{</span>
+<span id="cb274-6"><a href="the-poisson-and-related-distributions.html#cb274-6" tabindex="-1"></a>  <span class="fu">set.seed</span>(seed)</span>
+<span id="cb274-7"><a href="the-poisson-and-related-distributions.html#cb274-7" tabindex="-1"></a>  X <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">rbeta</span>(n<span class="sc">*</span>num.sim,<span class="at">shape1=</span>alpha,<span class="at">shape2=</span><span class="dv">2</span>),<span class="at">nrow=</span>num.sim)</span>
+<span id="cb274-8"><a href="the-poisson-and-related-distributions.html#cb274-8" tabindex="-1"></a>  Y <span class="ot">&lt;-</span> <span class="fu">apply</span>(X,<span class="dv">1</span>,<span class="cf">function</span>(x){<span class="sc">-</span><span class="fu">sum</span>(<span class="fu">log</span>(x))})</span>
+<span id="cb274-9"><a href="the-poisson-and-related-distributions.html#cb274-9" tabindex="-1"></a>  (<span class="fu">sum</span>(Y <span class="sc">&lt;=</span> y.obs)<span class="sc">/</span>num.sim<span class="sc">-</span>q)<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb274-10"><a href="the-poisson-and-related-distributions.html#cb274-10" tabindex="-1"></a>}</span>
+<span id="cb274-11"><a href="the-poisson-and-related-distributions.html#cb274-11" tabindex="-1"></a><span class="fu">optimize</span>(f,<span class="fu">c</span>(<span class="fl">0.1</span>,<span class="dv">3</span>),<span class="at">n=</span>n,<span class="at">y.obs=</span>y.obs,<span class="at">q=</span>conf<span class="sc">/</span><span class="dv">2</span>)<span class="sc">$</span>minimum</span></code></pre></div>
+<pre><code>## [1] 0.2482469</code></pre>
+<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="the-poisson-and-related-distributions.html#cb276-1" tabindex="-1"></a><span class="fu">optimize</span>(f,<span class="fu">c</span>(<span class="fl">0.1</span>,<span class="dv">3</span>),<span class="at">n=</span>n,<span class="at">y.obs=</span>y.obs,<span class="at">q=</span><span class="dv">1</span><span class="sc">-</span>conf<span class="sc">/</span><span class="dv">2</span>)<span class="sc">$</span>minimum</span></code></pre></div>
+<pre><code>## [1] 1.369313</code></pre>
+<blockquote>
+<p>Our estimated 95% confidence interval for <span class="math inline">\(\alpha\)</span> is [0.248,1.369].</p>
+</blockquote>
+<blockquote>
+<p>There are two important things to note when using <code>optimize()</code> to find
+interval bounds:</p>
+</blockquote>
+<blockquote>
+<ol style="list-style-type: decimal">
+<li>The search for bounds can fail when the search interval (here, 0.1 to 3)
+is too large. If the result is at the boundary of the search interval,
+change the search interval bounds and try again.</li>
+<li>The precision of the interval-bound estimates is directly related to the
+optimizer tolerance, which by default is <span class="math inline">\(\sim 10^{-4}\)</span>. (This means that
+if <code>(sum(Y &lt;= y.obs)/num.sim-q)^2</code> is less than <span class="math inline">\(\sim 10^{-4}\)</span>, the
+optimizer will assume it has found the optimal parameter value and
+it will stop searching.) If we
+wish to have more precise estimates, we should specify, e.g., <code>tol=1.e-6</code> (or
+some other number) in the argument list for <code>optimize()</code>. As one might
+expect, the tradeoff for greater precision is a longer runtime.</li>
+</ol>
+</blockquote>
 </div>
 </div>
 <div id="hypothesis-testing-2" class="section level2 hasAnchor" number="4.7">
@@ -1690,30 +1793,30 @@ run simulations. We simulate sets of data under the null (<span class="math inli
 and for each, we compute <span class="math inline">\(W\)</span>. The empirical rejection region boundary
 is then the, e.g., 95<span class="math inline">\(^{\rm th}\)</span> percentile of the values of <span class="math inline">\(W\)</span>.</p>
 </blockquote>
-<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="the-poisson-and-related-distributions.html#cb273-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
-<span id="cb273-2"><a href="the-poisson-and-related-distributions.html#cb273-2" tabindex="-1"></a></span>
-<span id="cb273-3"><a href="the-poisson-and-related-distributions.html#cb273-3" tabindex="-1"></a>alpha   <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
-<span id="cb273-4"><a href="the-poisson-and-related-distributions.html#cb273-4" tabindex="-1"></a>num.sim <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
-<span id="cb273-5"><a href="the-poisson-and-related-distributions.html#cb273-5" tabindex="-1"></a>n       <span class="ot">&lt;-</span> <span class="dv">20</span></span>
-<span id="cb273-6"><a href="the-poisson-and-related-distributions.html#cb273-6" tabindex="-1"></a>mu.o    <span class="ot">&lt;-</span> <span class="dv">5</span>      </span>
-<span id="cb273-7"><a href="the-poisson-and-related-distributions.html#cb273-7" tabindex="-1"></a>sigma2  <span class="ot">&lt;-</span> <span class="dv">9</span>      <span class="co"># an arbitrary value</span></span>
-<span id="cb273-8"><a href="the-poisson-and-related-distributions.html#cb273-8" tabindex="-1"></a>alpha   <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
-<span id="cb273-9"><a href="the-poisson-and-related-distributions.html#cb273-9" tabindex="-1"></a>W       <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>,num.sim)</span>
-<span id="cb273-10"><a href="the-poisson-and-related-distributions.html#cb273-10" tabindex="-1"></a></span>
-<span id="cb273-11"><a href="the-poisson-and-related-distributions.html#cb273-11" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(X,n,mu.o)</span>
-<span id="cb273-12"><a href="the-poisson-and-related-distributions.html#cb273-12" tabindex="-1"></a>{</span>
-<span id="cb273-13"><a href="the-poisson-and-related-distributions.html#cb273-13" tabindex="-1"></a>  hat.mu.mle     <span class="ot">&lt;-</span> <span class="fu">mean</span>(X)</span>
-<span id="cb273-14"><a href="the-poisson-and-related-distributions.html#cb273-14" tabindex="-1"></a>  hat.sigma2.mle <span class="ot">&lt;-</span> (n<span class="dv">-1</span>)<span class="sc">*</span><span class="fu">var</span>(X)<span class="sc">/</span>n</span>
-<span id="cb273-15"><a href="the-poisson-and-related-distributions.html#cb273-15" tabindex="-1"></a></span>
-<span id="cb273-16"><a href="the-poisson-and-related-distributions.html#cb273-16" tabindex="-1"></a>  logL.o <span class="ot">&lt;-</span> <span class="sc">-</span>(n<span class="sc">/</span><span class="dv">2</span>)<span class="sc">*</span><span class="fu">log</span>(<span class="dv">2</span><span class="sc">*</span>pi<span class="sc">*</span>hat.sigma2.mle)<span class="sc">-</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span><span class="sc">/</span>hat.sigma2.mle)<span class="sc">*</span><span class="fu">sum</span>((X<span class="sc">-</span>mu.o)<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb273-17"><a href="the-poisson-and-related-distributions.html#cb273-17" tabindex="-1"></a>  logL   <span class="ot">&lt;-</span> <span class="sc">-</span>(n<span class="sc">/</span><span class="dv">2</span>)<span class="sc">*</span><span class="fu">log</span>(<span class="dv">2</span><span class="sc">*</span>pi<span class="sc">*</span>hat.sigma2.mle)<span class="sc">-</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span><span class="sc">/</span>hat.sigma2.mle)<span class="sc">*</span><span class="fu">sum</span>((X<span class="sc">-</span>hat.mu.mle)<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb273-18"><a href="the-poisson-and-related-distributions.html#cb273-18" tabindex="-1"></a>  <span class="fu">return</span>(<span class="sc">-</span><span class="dv">2</span><span class="sc">*</span>(logL.o <span class="sc">-</span> logL))</span>
-<span id="cb273-19"><a href="the-poisson-and-related-distributions.html#cb273-19" tabindex="-1"></a>}</span>
-<span id="cb273-20"><a href="the-poisson-and-related-distributions.html#cb273-20" tabindex="-1"></a></span>
-<span id="cb273-21"><a href="the-poisson-and-related-distributions.html#cb273-21" tabindex="-1"></a><span class="cf">for</span> ( ii <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>num.sim ) {</span>
-<span id="cb273-22"><a href="the-poisson-and-related-distributions.html#cb273-22" tabindex="-1"></a>  X     <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n,<span class="at">mean=</span>mu.o,<span class="at">sd=</span><span class="fu">sqrt</span>(sigma2))</span>
-<span id="cb273-23"><a href="the-poisson-and-related-distributions.html#cb273-23" tabindex="-1"></a>  W[ii] <span class="ot">&lt;-</span> <span class="fu">f</span>(X,n,mu.o)</span>
-<span id="cb273-24"><a href="the-poisson-and-related-distributions.html#cb273-24" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="the-poisson-and-related-distributions.html#cb278-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
+<span id="cb278-2"><a href="the-poisson-and-related-distributions.html#cb278-2" tabindex="-1"></a></span>
+<span id="cb278-3"><a href="the-poisson-and-related-distributions.html#cb278-3" tabindex="-1"></a>alpha   <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb278-4"><a href="the-poisson-and-related-distributions.html#cb278-4" tabindex="-1"></a>num.sim <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
+<span id="cb278-5"><a href="the-poisson-and-related-distributions.html#cb278-5" tabindex="-1"></a>n       <span class="ot">&lt;-</span> <span class="dv">20</span></span>
+<span id="cb278-6"><a href="the-poisson-and-related-distributions.html#cb278-6" tabindex="-1"></a>mu.o    <span class="ot">&lt;-</span> <span class="dv">5</span>      </span>
+<span id="cb278-7"><a href="the-poisson-and-related-distributions.html#cb278-7" tabindex="-1"></a>sigma2  <span class="ot">&lt;-</span> <span class="dv">9</span>      <span class="co"># an arbitrary value</span></span>
+<span id="cb278-8"><a href="the-poisson-and-related-distributions.html#cb278-8" tabindex="-1"></a>alpha   <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb278-9"><a href="the-poisson-and-related-distributions.html#cb278-9" tabindex="-1"></a>W       <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>,num.sim)</span>
+<span id="cb278-10"><a href="the-poisson-and-related-distributions.html#cb278-10" tabindex="-1"></a></span>
+<span id="cb278-11"><a href="the-poisson-and-related-distributions.html#cb278-11" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(X,n,mu.o)</span>
+<span id="cb278-12"><a href="the-poisson-and-related-distributions.html#cb278-12" tabindex="-1"></a>{</span>
+<span id="cb278-13"><a href="the-poisson-and-related-distributions.html#cb278-13" tabindex="-1"></a>  hat.mu.mle     <span class="ot">&lt;-</span> <span class="fu">mean</span>(X)</span>
+<span id="cb278-14"><a href="the-poisson-and-related-distributions.html#cb278-14" tabindex="-1"></a>  hat.sigma2.mle <span class="ot">&lt;-</span> (n<span class="dv">-1</span>)<span class="sc">*</span><span class="fu">var</span>(X)<span class="sc">/</span>n</span>
+<span id="cb278-15"><a href="the-poisson-and-related-distributions.html#cb278-15" tabindex="-1"></a></span>
+<span id="cb278-16"><a href="the-poisson-and-related-distributions.html#cb278-16" tabindex="-1"></a>  logL.o <span class="ot">&lt;-</span> <span class="sc">-</span>(n<span class="sc">/</span><span class="dv">2</span>)<span class="sc">*</span><span class="fu">log</span>(<span class="dv">2</span><span class="sc">*</span>pi<span class="sc">*</span>hat.sigma2.mle)<span class="sc">-</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span><span class="sc">/</span>hat.sigma2.mle)<span class="sc">*</span><span class="fu">sum</span>((X<span class="sc">-</span>mu.o)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb278-17"><a href="the-poisson-and-related-distributions.html#cb278-17" tabindex="-1"></a>  logL   <span class="ot">&lt;-</span> <span class="sc">-</span>(n<span class="sc">/</span><span class="dv">2</span>)<span class="sc">*</span><span class="fu">log</span>(<span class="dv">2</span><span class="sc">*</span>pi<span class="sc">*</span>hat.sigma2.mle)<span class="sc">-</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span><span class="sc">/</span>hat.sigma2.mle)<span class="sc">*</span><span class="fu">sum</span>((X<span class="sc">-</span>hat.mu.mle)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb278-18"><a href="the-poisson-and-related-distributions.html#cb278-18" tabindex="-1"></a>  <span class="fu">return</span>(<span class="sc">-</span><span class="dv">2</span><span class="sc">*</span>(logL.o <span class="sc">-</span> logL))</span>
+<span id="cb278-19"><a href="the-poisson-and-related-distributions.html#cb278-19" tabindex="-1"></a>}</span>
+<span id="cb278-20"><a href="the-poisson-and-related-distributions.html#cb278-20" tabindex="-1"></a></span>
+<span id="cb278-21"><a href="the-poisson-and-related-distributions.html#cb278-21" tabindex="-1"></a><span class="cf">for</span> ( ii <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>num.sim ) {</span>
+<span id="cb278-22"><a href="the-poisson-and-related-distributions.html#cb278-22" tabindex="-1"></a>  X     <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n,<span class="at">mean=</span>mu.o,<span class="at">sd=</span><span class="fu">sqrt</span>(sigma2))</span>
+<span id="cb278-23"><a href="the-poisson-and-related-distributions.html#cb278-23" tabindex="-1"></a>  W[ii] <span class="ot">&lt;-</span> <span class="fu">f</span>(X,n,mu.o)</span>
+<span id="cb278-24"><a href="the-poisson-and-related-distributions.html#cb278-24" tabindex="-1"></a>}</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:lrtsim"></span>
 <img src="_main_files/figure-html/lrtsim-1.png" alt="\label{fig:lrtsim}The empirical distribution of the statistic $-2(\log\mathcal{L}_o - \log\mathcal{L}_a)$, with the chi-square distribution for $\Delta r = 1$ degree of freedom overlaid (red curve). The dashed vertical green line represents the rejection region boundary according to Wilks' theorem, and the solid vertical green line represents the 95th percentile of simulated statistic values. The divergence of the two green lines indicates that Wilks' theorem at best provides approximate results and that simulations can provide more accurate and precise results." width="50%" />
 <p class="caption">
@@ -2025,11 +2128,11 @@ the quality of fit improves enough to justify the extra model complexity.</p>
 <p>Modeling Bortkiewicz’s horse-kick dataset provides a simple example
 of the use of Poisson regression.</p>
 </blockquote>
-<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="the-poisson-and-related-distributions.html#cb274-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">4</span></span>
-<span id="cb274-2"><a href="the-poisson-and-related-distributions.html#cb274-2" tabindex="-1"></a>Y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">109</span>,<span class="dv">65</span>,<span class="dv">22</span>,<span class="dv">3</span>,<span class="dv">1</span>)</span>
-<span id="cb274-3"><a href="the-poisson-and-related-distributions.html#cb274-3" tabindex="-1"></a></span>
-<span id="cb274-4"><a href="the-poisson-and-related-distributions.html#cb274-4" tabindex="-1"></a>poi.out <span class="ot">&lt;-</span> <span class="fu">glm</span>(Y<span class="sc">~</span>x,<span class="at">family=</span>poisson)</span>
-<span id="cb274-5"><a href="the-poisson-and-related-distributions.html#cb274-5" tabindex="-1"></a><span class="fu">summary</span>(poi.out)</span></code></pre></div>
+<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="the-poisson-and-related-distributions.html#cb279-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">4</span></span>
+<span id="cb279-2"><a href="the-poisson-and-related-distributions.html#cb279-2" tabindex="-1"></a>Y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">109</span>,<span class="dv">65</span>,<span class="dv">22</span>,<span class="dv">3</span>,<span class="dv">1</span>)</span>
+<span id="cb279-3"><a href="the-poisson-and-related-distributions.html#cb279-3" tabindex="-1"></a></span>
+<span id="cb279-4"><a href="the-poisson-and-related-distributions.html#cb279-4" tabindex="-1"></a>poi.out <span class="ot">&lt;-</span> <span class="fu">glm</span>(Y<span class="sc">~</span>x,<span class="at">family=</span>poisson)</span>
+<span id="cb279-5"><a href="the-poisson-and-related-distributions.html#cb279-5" tabindex="-1"></a><span class="fu">summary</span>(poi.out)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## glm(formula = Y ~ x, family = poisson)
@@ -2070,7 +2173,7 @@ value (38.911), subtract 2 times the number of model terms (2 here,
 thus yielding 34.911), and then dividing by <span class="math inline">\(-2\)</span>. The more straightforward
 way, however, is to utilize the <code>logLik()</code> function:</p>
 </blockquote>
-<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="the-poisson-and-related-distributions.html#cb276-1" tabindex="-1"></a><span class="fu">logLik</span>(poi.out)</span></code></pre></div>
+<div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb281-1"><a href="the-poisson-and-related-distributions.html#cb281-1" tabindex="-1"></a><span class="fu">logLik</span>(poi.out)</span></code></pre></div>
 <pre><code>## &#39;log Lik.&#39; -17.45551 (df=2)</code></pre>
 <blockquote>
 <p>As we did in the context of logistic regression, we can use the
@@ -2088,7 +2191,7 @@ for Poisson regression we can simply assume that the residual deviance
 is chi-square-distributed for the given number of degrees of freedom.
 Here, the <span class="math inline">\(p\)</span>-value is</p>
 </blockquote>
-<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="the-poisson-and-related-distributions.html#cb278-1" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pchisq</span>(<span class="fl">12.437</span>,<span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb283-1"><a href="the-poisson-and-related-distributions.html#cb283-1" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pchisq</span>(<span class="fl">12.437</span>,<span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## [1] 0.006026712</code></pre>
 <blockquote>
 <p>or 0.0060. Because this value is less than, e.g., <span class="math inline">\(\alpha = 0.05\)</span>, we
@@ -2104,13 +2207,13 @@ data are truly Poisson distributed.</p>
 different values of <span class="math inline">\(x\)</span>: 1, 2, 3, and 4. The data are simulated
 with a Poisson overdispersion factor of 2.</p>
 </blockquote>
-<div class="sourceCode" id="cb280"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb280-1"><a href="the-poisson-and-related-distributions.html#cb280-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">236</span>)</span>
-<span id="cb280-2"><a href="the-poisson-and-related-distributions.html#cb280-2" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">100</span>               <span class="co"># 100 data per x value</span></span>
-<span id="cb280-3"><a href="the-poisson-and-related-distributions.html#cb280-3" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>),n)</span>
-<span id="cb280-4"><a href="the-poisson-and-related-distributions.html#cb280-4" tabindex="-1"></a>Y <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>,<span class="fu">length</span>(x))</span>
-<span id="cb280-5"><a href="the-poisson-and-related-distributions.html#cb280-5" tabindex="-1"></a><span class="cf">for</span> ( ii <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(x) ) {</span>
-<span id="cb280-6"><a href="the-poisson-and-related-distributions.html#cb280-6" tabindex="-1"></a>  Y[ii] <span class="ot">&lt;-</span> <span class="fu">rpois</span>(<span class="dv">1</span>,<span class="fu">rgamma</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="at">scale=</span>x[ii]<span class="sc">/</span><span class="dv">2</span>))</span>
-<span id="cb280-7"><a href="the-poisson-and-related-distributions.html#cb280-7" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb285"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb285-1"><a href="the-poisson-and-related-distributions.html#cb285-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">236</span>)</span>
+<span id="cb285-2"><a href="the-poisson-and-related-distributions.html#cb285-2" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">100</span>               <span class="co"># 100 data per x value</span></span>
+<span id="cb285-3"><a href="the-poisson-and-related-distributions.html#cb285-3" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>),n)</span>
+<span id="cb285-4"><a href="the-poisson-and-related-distributions.html#cb285-4" tabindex="-1"></a>Y <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>,<span class="fu">length</span>(x))</span>
+<span id="cb285-5"><a href="the-poisson-and-related-distributions.html#cb285-5" tabindex="-1"></a><span class="cf">for</span> ( ii <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(x) ) {</span>
+<span id="cb285-6"><a href="the-poisson-and-related-distributions.html#cb285-6" tabindex="-1"></a>  Y[ii] <span class="ot">&lt;-</span> <span class="fu">rpois</span>(<span class="dv">1</span>,<span class="fu">rgamma</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="at">scale=</span>x[ii]<span class="sc">/</span><span class="dv">2</span>))</span>
+<span id="cb285-7"><a href="the-poisson-and-related-distributions.html#cb285-7" tabindex="-1"></a>}</span></code></pre></div>
 <blockquote>
 <p>For these data, <span class="math inline">\(E[Y \vert x] = x\)</span> and
 <span class="math inline">\(V[Y \vert x] = x + x^2/2\)</span>, meaning that the
@@ -2121,7 +2224,7 @@ Poisson regression model.</p>
 <blockquote>
 <p>First, the Poisson regression model itself:</p>
 </blockquote>
-<div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb281-1"><a href="the-poisson-and-related-distributions.html#cb281-1" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">glm</span>(Y<span class="sc">~</span>x,<span class="at">family=</span>poisson))</span></code></pre></div>
+<div class="sourceCode" id="cb286"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb286-1"><a href="the-poisson-and-related-distributions.html#cb286-1" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">glm</span>(Y<span class="sc">~</span>x,<span class="at">family=</span>poisson))</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## glm(formula = Y ~ x, family = poisson)
@@ -2148,8 +2251,8 @@ of Massachusetts, but rather stands for “Modern Applied
 Statistics with S”…with <code>S</code> being the precursor
 software to <code>R</code>.)</p>
 </blockquote>
-<div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb283-1"><a href="the-poisson-and-related-distributions.html#cb283-1" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
-<span id="cb283-2"><a href="the-poisson-and-related-distributions.html#cb283-2" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">glm.nb</span>(Y<span class="sc">~</span>x))</span></code></pre></div>
+<div class="sourceCode" id="cb288"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb288-1"><a href="the-poisson-and-related-distributions.html#cb288-1" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
+<span id="cb288-2"><a href="the-poisson-and-related-distributions.html#cb288-2" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">glm.nb</span>(Y<span class="sc">~</span>x))</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## glm.nb(formula = Y ~ x, init.theta = 1.84882707, link = log)
@@ -2381,27 +2484,94 @@ W = \frac{(109-108.67)^2}{108.67} + \frac{(65-66.29)^2}{66.29} + \frac{(22-20.29
 \]</span>
 This figure can be found using <code>R</code>:</p>
 </blockquote>
-<div class="sourceCode" id="cb287"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb287-1"><a href="the-poisson-and-related-distributions.html#cb287-1" tabindex="-1"></a>e    <span class="ot">&lt;-</span> <span class="dv">200</span><span class="sc">*</span><span class="fu">dpois</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">4</span>,<span class="fl">0.61</span>)</span>
-<span id="cb287-2"><a href="the-poisson-and-related-distributions.html#cb287-2" tabindex="-1"></a>e[<span class="dv">4</span>] <span class="ot">&lt;-</span> e[<span class="dv">4</span>]<span class="sc">+</span>e[<span class="dv">5</span>]</span>
-<span id="cb287-3"><a href="the-poisson-and-related-distributions.html#cb287-3" tabindex="-1"></a>e    <span class="ot">&lt;-</span> e[<span class="sc">-</span><span class="dv">5</span>]</span>
-<span id="cb287-4"><a href="the-poisson-and-related-distributions.html#cb287-4" tabindex="-1"></a>o    <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">109</span>,<span class="dv">65</span>,<span class="dv">22</span>,<span class="dv">4</span>)</span>
-<span id="cb287-5"><a href="the-poisson-and-related-distributions.html#cb287-5" tabindex="-1"></a></span>
-<span id="cb287-6"><a href="the-poisson-and-related-distributions.html#cb287-6" tabindex="-1"></a>(<span class="at">W =</span> <span class="fu">sum</span>((o<span class="sc">-</span>e)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>e))</span></code></pre></div>
+<div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb292-1"><a href="the-poisson-and-related-distributions.html#cb292-1" tabindex="-1"></a>e    <span class="ot">&lt;-</span> <span class="dv">200</span><span class="sc">*</span><span class="fu">dpois</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">4</span>,<span class="fl">0.61</span>)</span>
+<span id="cb292-2"><a href="the-poisson-and-related-distributions.html#cb292-2" tabindex="-1"></a>e[<span class="dv">4</span>] <span class="ot">&lt;-</span> e[<span class="dv">4</span>]<span class="sc">+</span>e[<span class="dv">5</span>]</span>
+<span id="cb292-3"><a href="the-poisson-and-related-distributions.html#cb292-3" tabindex="-1"></a>e    <span class="ot">&lt;-</span> e[<span class="sc">-</span><span class="dv">5</span>]</span>
+<span id="cb292-4"><a href="the-poisson-and-related-distributions.html#cb292-4" tabindex="-1"></a>o    <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">109</span>,<span class="dv">65</span>,<span class="dv">22</span>,<span class="dv">4</span>)</span>
+<span id="cb292-5"><a href="the-poisson-and-related-distributions.html#cb292-5" tabindex="-1"></a></span>
+<span id="cb292-6"><a href="the-poisson-and-related-distributions.html#cb292-6" tabindex="-1"></a>(<span class="at">W =</span> <span class="fu">sum</span>((o<span class="sc">-</span>e)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>e))</span></code></pre></div>
 <pre><code>## [1] 0.2980418</code></pre>
 <blockquote>
 <p>When using the chi-square GOF test to assess the viability of a distribution
 whose parameters are estimated, we lose additional degrees of freedom,
 so the number of degrees of freedom here is 4 - 2 = 2. The <span class="math inline">\(p\)</span>-value is</p>
 </blockquote>
-<div class="sourceCode" id="cb289"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb289-1"><a href="the-poisson-and-related-distributions.html#cb289-1" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pchisq</span>(W,<span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb294"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb294-1"><a href="the-poisson-and-related-distributions.html#cb294-1" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pchisq</span>(W,<span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] 0.8615511</code></pre>
 <blockquote>
 <p>We find that we fail to reject the null hypothesis and thus that it is
 plausible that Bortkiewicz’s horse-kick data are indeed Poisson-distributed.</p>
 </blockquote>
+</div>
+</div>
+<div id="exercises-1" class="section level2 hasAnchor" number="4.11">
+<h2><span class="header-section-number">4.11</span> Exercises<a href="the-poisson-and-related-distributions.html#exercises-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li><p>Suppose that you receive phone calls at a rate of 2 per hour. (a) Let <span class="math inline">\(X\)</span> be the number of phone calls received in a randomly selected 15-minute period. Compute <span class="math inline">\(P(\mu \leq X \leq \mu+2\sigma)\)</span>. (b) Let <span class="math inline">\(Y\)</span> be the length of time between when the phone first rings from one call and when the phone first rings for the next call. What is <span class="math inline">\(P(Y &gt; 1/2 \, \vert \, Y &gt; 1/4)\)</span>? (c) When the phone rings, there is probability 0.2 that the caller is your friend, who you always talk to for 10 minutes. (All other calls are one minute in length.) What is the expected overall time spent on the phone during any given set of 10 phone calls?</p></li>
+<li><p>A particular basketball player shoots, <em>on average</em>, one time every two minutes, and exactly half of her shots are successful. In an upcoming game, she is to play for exactly eight minutes. (a) What is the probability that the player will have one successful shot, or less? (b) What is the probability that the number of successful shots will be within one standard deviation of the mean?</p></li>
+<li><p>A particular event happens, on average, three times per year in California, four times per year in Nevada, and one time per year in Arizona. Instances of these events are independent of each other. What the mean and variance for the total number of events, summed over the three states, that would be
+observed in a single two-year window of time?</p></li>
+<li><p>We sample <span class="math inline">\(n\)</span> iid data from the following distribution:
+<span class="math display">\[\begin{align*}
+f_X(x) = \frac{x}{\sigma^2} e^{-x^2/(2\sigma^2)} \,,
+\end{align*}\]</span>
+where <span class="math inline">\(x \geq 0\)</span> and <span class="math inline">\(\sigma &gt; 0\)</span>. For this distribution, <span class="math inline">\(E[X] = \sigma\sqrt{\pi/2}\)</span> and <span class="math inline">\(V[X] = (4-\pi)\sigma^2/2\)</span>. (a) What is <span class="math inline">\(E[X^2]\)</span>? (b) What is the method of moments estimator for <span class="math inline">\(\sigma\)</span> that utilizes the first population and sample moments? (c) What is the bias of <span class="math inline">\(\hat{\sigma}_{MoM}\)</span>? (d) What is the variance of <span class="math inline">\(\hat{\sigma}_{MoM}\)</span>? (e) What is the method of moments estimator of <span class="math inline">\(\sigma^2\)</span> that utilizes the <em>second</em> population and sample moments?</p></li>
+<li><p>We sample a datum <span class="math inline">\(X\)</span> from a geometric distribution. (a) Find a method-of-moments estimator of <span class="math inline">\(p\)</span>, based on the first population and sample moments. (b) Find a second method-of-moments estimator of <span class="math inline">\(p\)</span>, using the second moments.</p></li>
+<li><p>We sample <span class="math inline">\(n\)</span> iid data from a beta distribution with <em>known</em> value <span class="math inline">\(\alpha\)</span>. (a) Write down the method-of-moments estimator for <span class="math inline">\(\beta\)</span> that is based on the first sample moment. (b) Can we use our answer to part (a) to write down the method-of-moments estimator for <span class="math inline">\(\sqrt{\beta}\)</span>? If yes, write down that estimator.</p></li>
+<li><p>We have been given the code shown below for computing a 95% one-sided lower bound on <span class="math inline">\(\lambda\)</span>, given <span class="math inline">\(n\)</span> iid data sampled from a Poisson distribution. Apparently someone was in a hurry. (a) Is the argument list for <code>f</code> valid as is? If not, specify how it should be fixed. (b) Is the input to <code>ppois()</code> valid as is? If not, specify how it should be fixed. (c) The code writer forgot to “FIX” the input value of <code>q</code> in the <code>uniroot()</code> call. Specify the number that should go here. (d) Will the coverage of the confidence intervals found with a properly fixed code be exactly 95%, greater than or equal to 95%, or less than or equal to 95%?</p></li>
+</ol>
+<pre><code>X &lt;- ... # this is a vector of n iid Poisson r.v.&#39;s
+n &lt;- length(X)
+f &lt;- function(X,lambda,n,q)
+{
+  ppois(mean(X),lambda) - q
+}
+uniroot(f,interval=c(0.001,1000),X=X,n=n,q=FIX)$root</code></pre>
+<ol start="8" style="list-style-type: decimal">
+<li><p>The Bernoulli probability mass function is
+<span class="math display">\[\begin{align*}
+p_X(x) = p^x (1-p)^{1-x} \,,
+\end{align*}\]</span>
+where <span class="math inline">\(x \in \{0,1\}\)</span> and <span class="math inline">\(p \in (0,1)\)</span>. Assume that we draw <span class="math inline">\(n\)</span> iid data from this distribution. (a) Write down the likelihood ratio test statistic <span class="math inline">\(\lambda_{LR}\)</span> that arises when testing the hypothesis <span class="math inline">\(H_o : p = p_o\)</span> versus the hypothesis <span class="math inline">\(H_a : p \neq p_o\)</span>. (b) In this situation, is the LRT the most powerful test?</p></li>
+<li><p>In an experiment, you sample <em>one datum</em> from a Poisson distribution; the value of that datum is <span class="math inline">\(x_{\rm obs}\)</span>. You wish to test <span class="math inline">\(H_o : \lambda = \lambda_o\)</span> versus the alternative <span class="math inline">\(H_a : \lambda \neq \lambda_o\)</span>, and you will do this by utilizing the likelihood ratio test. However, instead of identifying a sufficient statistic and constructing an exact test, you decide to use Wilks’ theorem. (In real life: don’t do this…construct an exact test.) (a) Write down <span class="math inline">\(\hat{\lambda}_{MLE}\)</span>. (b) Write down an expression for <span class="math inline">\(\lambda_{LR}\)</span>. (c) Use the answer for part (a) to write down an expression for the Wilks’ theorem test statistic. (d) Regarding the statistic written down for part (c): what is its sampling distribution? Give the name and the values of its parameters.</p></li>
+<li><p>In an experiment, you sample <span class="math inline">\(n\)</span> iid data
+from a Poisson distribution with unknown mean <span class="math inline">\(\lambda\)</span>. You wish
+to conduct a likelihood-ratio test for which <span class="math inline">\(H_a : \lambda &lt; \lambda_o\)</span>. Assume
+<span class="math inline">\(\alpha = 0.05\)</span>. (a) Write down the sufficient statistic for <span class="math inline">\(\lambda\)</span> that
+appears directly in likelihood factorization. (b) Write down the sampling
+distribution for the statistic you found in part (a), the
+name and the value(s) of its parameters. (c) Write down the appropriate null
+hypothesis, given the stated alternative (and given that you are performing an
+LRT). (d) Write down the rejection region, using
+<code>R</code> code (e.g., <code>qnorm(0.975,mean=mu.o,sd=sqrt(sigma2))</code>).
+Assume the null value is to be written as <code>lambda.o</code>, and that
+a number should be provided for <span class="math inline">\(q\)</span>.</p></li>
+<li><p>You are given <span class="math inline">\(n\)</span> iid data sampled from an exponential distribution with pdf
+<span class="math display">\[\begin{align*}
+f_X(x \vert \beta) = \frac{1}{\beta}e^{-x/\beta} \,,
+\end{align*}\]</span>
+where <span class="math inline">\(x &gt; 0\)</span> and <span class="math inline">\(\beta &gt; 0\)</span>. (a) We wish to test <span class="math inline">\(H_o : \beta = 1\)</span> versus <span class="math inline">\(H_a : \beta \neq 1\)</span> at level <span class="math inline">\(\alpha = 0.05\)</span>. Write down an expression for the likelihood ratio test statistic <span class="math inline">\(\lambda\)</span>. Recall that the MLE for <span class="math inline">\(\beta\)</span> is <span class="math inline">\(\bar{X}\)</span>. (b) Assume that you do not know the sampling distribution for any sufficient statistic that you can define. Use Wilks’ theorem to write down a rejection region for this test.</p></li>
+<li><p>Suppose you flipped a coin 1000 times and observe heads 550 times. You wish to conduct a likelihood-ratio test to check whether this coin is fair, at the level <span class="math inline">\(\alpha = 0.05\)</span>. (a) Specify the null and alternative hypotheses. (b) What are the corresponding sets <span class="math inline">\(\Theta_0\)</span> and <span class="math inline">\(\Theta_a\)</span>? (c) Determine the number of free parameters <span class="math inline">\(r_0\)</span> and <span class="math inline">\(r\)</span> in <span class="math inline">\(\Theta_0\)</span> and <span class="math inline">\(\Theta = \Theta_0\, \cup\, \Theta_a\)</span>, respectively. (d) Determine the likelihood ratio test statistic, and its value for the observed data. (e) Assume that you do not know the sampling distribution for any sufficient statistic that you can define, and use Wilks’ theorem to determine the corresponding <span class="math inline">\(p\)</span>-value. (f) Give your conclusion. Is the coin fair?</p></li>
+<li><p>You are given the following probability density function:
+<span class="math display">\[\begin{align*}
+f_X(x) = \left\{ \begin{array}{cl} \frac{27}{16} x^2 e^{-\frac{3x}{2}} &amp; x &gt; 0 \\ 0 &amp; \mbox{otherwise} \end{array} \right. \,.
+\end{align*}\]</span>
+What are <span class="math inline">\(E[X]\)</span> and <span class="math inline">\(V[X]\)</span>?</p></li>
+<li><p>Assume you are working with a gamma distribution for which <span class="math inline">\(E[X] = 5\)</span> and <span class="math inline">\(V[X] = 10\)</span>. (a) What are the values of <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span>? (b) What other name is given to this particular distribution, given the values of <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> you derived in (a)?</p></li>
+<li><p>Compute <span class="math inline">\(E[X^{-1}]\)</span> for a chi-square distribution, leaving your answer in terms of the number of degrees of freedom <span class="math inline">\(\nu\)</span>.</p></li>
+<li><p>The inverse-gamma distribution has the probability density function
+<span class="math display">\[\begin{align*}
+f_X(x) = \frac{\beta^\alpha}{\Gamma(\alpha)} \frac{1}{x^{\alpha+1}} e^{-\beta/x} \,,
+\end{align*}\]</span>
+for <span class="math inline">\(x &gt; 0\)</span> and <span class="math inline">\(\alpha,\beta &gt; 0\)</span>. Derive <span class="math inline">\(E[X]\)</span> for this distribution. Your final answer should be in terms of <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> only (with no gamma or beta functions appearing in the answer).</p></li>
+<li><p>Let <span class="math inline">\(X\)</span> be a random variable sampled from a Gamma(3/2,<span class="math inline">\(\beta\)</span>) distribution. (a) If <span class="math inline">\(\beta = 2\)</span>, what sub-family of gamma distributions is <span class="math inline">\(X\)</span> sampled from? (b) Now, assume <span class="math inline">\(\beta\)</span> is unknown, and that we sample <span class="math inline">\(n\)</span> iid random variables <span class="math inline">\(\{X_1,\ldots,X_n\}\)</span>. What is a sufficient statistic for <span class="math inline">\(\beta\)</span>? (c) What is the MVUE for <span class="math inline">\(\beta\)</span>? (d) What is the method of moments estimator for <span class="math inline">\(\beta\)</span> that utilizes the first population and sample moments? (e) What is the bias of <span class="math inline">\(\hat{\beta}_{MoM}\)</span>?</p></li>
+<li><p>What is <span class="math inline">\(E[X^{1/2}]\)</span> for the random variable <span class="math inline">\(X \sim\)</span> Gamma(<span class="math inline">\(\alpha,\beta\)</span>)?</p></li>
+<li><p>Below is (edited) output from the application of Poisson and negative binomial regression to a dataset in <code>R</code>:
+<img src="figures/PoiNB.png" width="35%" style="display: block; margin: auto;" />
+(a) Identify the value for the overdispersion parameter. (b) Is the value of the overdispersion parameter such that we can conclude that the data are indeed overdispersed? (c) What procedure utilizes the two deviance values in each model to make inferences about one or more of the model coefficients? (d) What specific conclusion can we make given both the procedure in (c) and the deviance values that are observed? Recall what the null and alternative hypotheses are, and state a conclusion based on these and the observed deviance values.</p></li>
+</ol>
 
 <div style="page-break-after: always;"></div>
-</div>
 </div>
 </div>
             </section>

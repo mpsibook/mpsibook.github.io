@@ -65,7 +65,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -349,10 +349,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3.6" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#point-estimation-2"><i class="fa fa-check"></i><b>3.6</b> Point Estimation</a>
 <ul>
-<li class="chapter" data-level="3.6.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-mle-for-the-binomial-success-probability"><i class="fa fa-check"></i><b>3.6.1</b> The MLE for the Binomial Success Probability</a></li>
-<li class="chapter" data-level="3.6.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#sufficient-statistics-for-the-normal-distribution"><i class="fa fa-check"></i><b>3.6.2</b> Sufficient Statistics for the Normal Distribution</a></li>
-<li class="chapter" data-level="3.6.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-mvue-for-the-exponential-mean"><i class="fa fa-check"></i><b>3.6.3</b> The MVUE for the Exponential Mean</a></li>
-<li class="chapter" data-level="3.6.4" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-mvue-for-the-geometric-distribution"><i class="fa fa-check"></i><b>3.6.4</b> The MVUE for the Geometric Distribution</a></li>
+<li class="chapter" data-level="3.6.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#sufficiency-and-the-exponential-family-of-distributions"><i class="fa fa-check"></i><b>3.6.1</b> Sufficiency and the Exponential Family of Distributions</a></li>
+<li class="chapter" data-level="3.6.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-mle-for-the-binomial-success-probability"><i class="fa fa-check"></i><b>3.6.2</b> The MLE for the Binomial Success Probability</a></li>
+<li class="chapter" data-level="3.6.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#sufficient-statistics-for-the-normal-distribution"><i class="fa fa-check"></i><b>3.6.3</b> Sufficient Statistics for the Normal Distribution</a></li>
+<li class="chapter" data-level="3.6.4" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-mvue-for-the-exponential-mean"><i class="fa fa-check"></i><b>3.6.4</b> The MVUE for the Exponential Mean</a></li>
+<li class="chapter" data-level="3.6.5" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-mvue-for-the-geometric-distribution"><i class="fa fa-check"></i><b>3.6.5</b> The MVUE for the Geometric Distribution</a></li>
 </ul></li>
 <li class="chapter" data-level="3.7" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#confidence-intervals-2"><i class="fa fa-check"></i><b>3.7</b> Confidence Intervals</a>
 <ul>
@@ -423,6 +424,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.6.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#revisiting-the-death-by-horse-kick-example-1"><i class="fa fa-check"></i><b>4.6.2</b> Revisiting the Death-by-Horse-Kick Example</a></li>
 <li class="chapter" data-level="4.6.3" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#determining-a-confidence-interval-using-the-bootstrap"><i class="fa fa-check"></i><b>4.6.3</b> Determining a Confidence Interval Using the Bootstrap</a></li>
 <li class="chapter" data-level="4.6.4" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#the-proportion-of-observed-data-in-a-bootstrap-sample"><i class="fa fa-check"></i><b>4.6.4</b> The Proportion of Observed Data in a Bootstrap Sample</a></li>
+<li class="chapter" data-level="4.6.5" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#confidence-interval-estimation-via-simulation-and-numerical-optimization"><i class="fa fa-check"></i><b>4.6.5</b> Confidence Interval Estimation via Simulation and Numerical Optimization</a></li>
 </ul></li>
 <li class="chapter" data-level="4.7" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#hypothesis-testing-2"><i class="fa fa-check"></i><b>4.7</b> Hypothesis Testing</a>
 <ul>
@@ -446,6 +448,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="4.10.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#revisiting-the-death-by-horse-kick-example-3"><i class="fa fa-check"></i><b>4.10.1</b> Revisiting the Death-by-Horse-Kick Example</a></li>
 </ul></li>
+<li class="chapter" data-level="4.11" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#exercises-1"><i class="fa fa-check"></i><b>4.11</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html"><i class="fa fa-check"></i><b>5</b> The Uniform Distribution</a>
 <ul>
@@ -478,6 +481,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.6.1" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#the-power-curve-for-testing-the-uniform-distribution-upper-bound"><i class="fa fa-check"></i><b>5.6.1</b> The Power Curve for Testing the Uniform Distribution Upper Bound</a></li>
 <li class="chapter" data-level="5.6.2" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#an-illustration-of-multiple-comparisons-when-testing-for-the-normal-mean"><i class="fa fa-check"></i><b>5.6.2</b> An Illustration of Multiple Comparisons When Testing for the Normal Mean</a></li>
 </ul></li>
+<li class="chapter" data-level="5.7" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#exercises-2"><i class="fa fa-check"></i><b>5.7</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html"><i class="fa fa-check"></i><b>6</b> Multivariate Distributions</a>
 <ul>
@@ -538,6 +542,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="chapter-exercises-solutions.html"><a href="chapter-exercises-solutions.html"><i class="fa fa-check"></i>Chapter Exercises: Solutions</a>
 <ul>
 <li class="chapter" data-level="" data-path="chapter-exercises-solutions.html"><a href="chapter-exercises-solutions.html#chapter-3"><i class="fa fa-check"></i>Chapter 3</a></li>
+<li class="chapter" data-level="" data-path="chapter-exercises-solutions.html"><a href="chapter-exercises-solutions.html#chapter-4"><i class="fa fa-check"></i>Chapter 4</a></li>
 </ul></li>
 </ul>
 
@@ -775,7 +780,7 @@ Using the invariance property of the MLE, we find that
 <span class="math inline">\(\widehat{1/p}_{MLE} = \bar{X}\)</span>.</p>
 <p>(b) The variance of this estimator is
 <span class="math display">\[\begin{align*}
-V\left[\widehat{1/p}_{MLE}\right] = V \left[ \frac{\sum_{i=1}^n X_i}{n} \right] = \frac{V (X_1)}{n} = \frac{1 - p}{np^2} \,.
+V\left[\widehat{1/p}_{MLE}\right] = V \left[ \frac{\sum_{i=1}^n X_i}{n} \right] = \frac{V[X]}{n} = \frac{1 - p}{np^2} \,.
 \end{align*}\]</span></p>
 <hr />
 <ul>
@@ -1248,6 +1253,362 @@ degree of freedom.</p>
 <p>(d) The rejection region for a chi-square GoF test is
 <span class="math inline">\(W &gt; w_{\rm RR}\)</span>, so, since 5.625 is greater than 3.841, we would
 reject the null hypothesis.</p>
+</div>
+<div id="chapter-4" class="section level2 unnumbered hasAnchor">
+<h2>Chapter 4<a href="chapter-exercises-solutions.html#chapter-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Problem 1</li>
+</ul>
+<p>(a) This is a Poisson problem: <span class="math inline">\(X \sim\)</span> Poisson(<span class="math inline">\(\lambda = 2 \cdot 1/4 = 1/2\)</span>). So
+<span class="math display">\[\begin{align*}
+\mu = E[X] = \lambda = 1/2 ~~\text{and}~~ \sigma = \sqrt{V[X]} = \sqrt{\lambda} = \sqrt{1/2} \approx 0.707 \,.
+\end{align*}\]</span>
+Thus
+<span class="math display">\[\begin{align*}
+P(1/2 \leq X \leq 1/2+1.414) = p(1) = \frac{\lambda^1}{1!} e^{-\lambda} = \frac12 e^{-1/2} = 0.303 \,.
+\end{align*}\]</span></p>
+<p>(b) We have that <span class="math inline">\(X \sim\)</span> Exp(<span class="math inline">\(\beta = 1/2\)</span>) (since there is a half-hour
+on average between calls). By the memorylessness property,
+<span class="math inline">\(P(X &gt; 1/2 \vert X &gt; 1/4) = P(X &gt; 1/4)\)</span>. Thus
+<span class="math display">\[\begin{align*}
+P(X &gt; 1/4) = \int_{1/4}^\infty \frac{1}{\beta} e^{-x/\beta} dx = \int_{1/4}^\infty 2 e^{-2x} dx = \left.-e^{-2x}\right|_{1/4}^\infty = e^{-1/2} = 0.607 \,.
+\end{align*}\]</span></p>
+<p>(c) The overall time <span class="math inline">\(T\)</span> is <span class="math inline">\(10X + (10-X)\)</span>, where <span class="math inline">\(X\)</span>, the number of calls
+from the friend, is sampled from a binomial distribution with <span class="math inline">\(k = 10\)</span> and
+<span class="math inline">\(p = 0.2\)</span>. Thus the average total number of minutes is
+<span class="math display">\[\begin{align*}
+E[T] = E[10X + (10-X)] = E[9X+10] = 9E[X] + 10 = 9kp + 10 = 28 \,.
+\end{align*}\]</span></p>
+<hr />
+<ul>
+<li>Problem 2</li>
+</ul>
+<p>(a) The number of (successful) shots can be infinite; only <em>on average</em> is
+the number of shots in eight minutes going to be four. So we are working with
+a Poisson distribution whose parameter <span class="math inline">\(\lambda\)</span> (the expected
+number of <em>successful</em> shots) is
+<span class="math display">\[\begin{align*}
+\lambda = (1 \quad \frac{\text{shot}}{2\text{min}})(\frac{1}{2} \frac{\text{success}}{\text{shot}})(4 \quad 2\text{min}) = 2 \,.
+\end{align*}\]</span>
+Let <span class="math inline">\(X\)</span> be the number of successful shots. Then
+<span class="math display">\[\begin{align*}
+P(X \leq 1) = \frac{\lambda^0}{0!}e^{-\lambda} + \frac{\lambda^1}{1!}e^{-\lambda} = e^{-2}(1+2) = 3e^{-2} \,.
+\end{align*}\]</span></p>
+<p>(b) We know that <span class="math inline">\(E[X] = \lambda = 2\)</span>, <span class="math inline">\(V[X] = \lambda = 2\)</span>, and <span class="math inline">\(\sigma = \sqrt{\lambda} = \sqrt{2}\)</span>. Thus
+<span class="math display">\[\begin{align*}
+P(2 - \sqrt{2} &lt; X &lt; 2 + \sqrt{2}) &amp;= p_X(1) + p_X(2) + p_X(3) = e^{\lambda}\left(\lambda + \frac{\lambda^2}{2} + \frac{\lambda^3}{6} \right) \\
+&amp;= e^{2}\left(2 + 2+ \frac{8}{6} \right) = \frac{16}{3} e^{-2} = 0.722 \,.
+\end{align*}\]</span></p>
+<hr />
+<ul>
+<li>Problem 3</li>
+</ul>
+<p>The particular event in question happens 8 times per year in the
+three states, and thus the expected number of events in a two-year window
+is 16. The appropriate distribution in this case is the
+Poisson distribution. If the total number of observed events is denoted
+<span class="math inline">\(X\)</span>, then <span class="math inline">\(X \sim\)</span> Poisson(<span class="math inline">\(\lambda\)</span> = 16), and <span class="math inline">\(E[X] = V[X] = 16\)</span>.</p>
+<hr />
+<ul>
+<li>Problem 4</li>
+</ul>
+<p>(a) We utilize the shortcut formula:
+<span class="math display">\[\begin{align*}
+E[X^2] = V[X] + (E[X])^2 = 2\sigma^2 - \frac{\pi}{2}\sigma^2 + \frac{\pi}{2}\sigma^2 = 2\sigma^2 \,.
+\end{align*}\]</span></p>
+<p>(b) The first population moment is
+<span class="math inline">\(\mu_1&#39; = E[X] = \sigma\sqrt{\pi/2}\)</span> and the first sample moment is
+<span class="math inline">\(m_1&#39; = (1/n)\sum_{i=1}^n X_i = \bar{X}\)</span>. We set these equal and determine that
+<span class="math display">\[\begin{align*}
+\hat{\sigma}_{MoM} = \sqrt{\frac{2}{\pi}} \bar{X} \,.
+\end{align*}\]</span></p>
+<p>(c) The bias is <span class="math inline">\(E[\hat{\theta}-\theta] = E[\hat{\theta}] - \theta\)</span>,
+or
+<span class="math display">\[\begin{align*}
+B[\hat{\theta}_{MoM}] &amp;= E\left[\sqrt{\frac{2}{\pi}} \bar{X}\right] - \sigma = \sqrt{\frac{2}{\pi}} E\left[\bar{X}\right] - \sigma = \sqrt{\frac{2}{\pi}} E\left[X\right] - \sigma = \sqrt{\frac{2}{\pi}} \sqrt{\frac{\pi}{2}} \sigma - \sigma = 0 \,.
+\end{align*}\]</span></p>
+<p>(d) The variance is
+<span class="math display">\[\begin{align*}
+V[\hat{\theta}_{MoM}] &amp;= V\left[\sqrt{\frac{2}{\pi}} \bar{X}\right] = \frac{2}{\pi} V\left[\bar{X}\right] = \frac{2}{\pi} \frac{V\left[X\right]}{n} = \frac{2}{n\pi} \frac{(4-\pi)\sigma^2}{2} = \frac{(4-\pi)\sigma^2}{n\pi} \,.
+\end{align*}\]</span></p>
+<p>(e) The second population moment is
+<span class="math inline">\(\mu_2&#39; = E[X^2] = 2\sigma^2\)</span> (from part a) and the second sample moment is
+<span class="math inline">\(m_2&#39; = (1/n)\sum_{i=1}^n X_i^2 = \overline{X^2}\)</span>.
+We set these equal and determine that
+<span class="math display">\[\begin{align*}
+\widehat{\sigma^2}_{MoM} = \frac{\overline{X^2}}{2} \,.
+\end{align*}\]</span></p>
+<hr />
+<ul>
+<li>Problem 5</li>
+</ul>
+<p>(a) We have that <span class="math inline">\(\mu_1&#39; = \frac{1}{p}\)</span> and <span class="math inline">\(m_1&#39; = X\)</span>. It follows from moment equation <span class="math inline">\(\mu_1&#39; = m_1&#39;\)</span> that <span class="math inline">\(\frac{1}{p} = X\)</span>, so <span class="math inline">\(\hat{p}_{MoM} = \frac{1}{X}\)</span>.</p>
+<p>(b) We have that <span class="math inline">\(\mu_2&#39; = \frac{1 - p}{p^2} +  \frac{1}{p^2}  = \frac{2 - p}{p^2}\)</span> and <span class="math inline">\(m_2&#39; = X^2\)</span>. It follow from the second moment equation <span class="math inline">\(\mu_2&#39; = m_2&#39;\)</span> that
+<span class="math display">\[\begin{align*}
+\frac{2-p}{p^2} &amp; = X^2 \\
+\Rightarrow ~~~ 2-p &amp; = p^2 X^2 \\
+\Rightarrow ~~~ p^2 X^2 +p -2 &amp;= 0 \\
+\Rightarrow ~~~ \hat{p}_{MoM} &amp; = \frac{-1 + \sqrt{1 + 8 X^2}}{2X^2} \,.
+\end{align*}\]</span></p>
+<hr />
+<ul>
+<li>Problem 6</li>
+</ul>
+<p>(a) The expected value for a beta distribution is <span class="math inline">\(E[X] = \alpha/(\alpha+\beta)\)</span>, so, using the first sample moment, we get that
+<span class="math display">\[\begin{align*}
+E[X] &amp;= \bar{X} \\
+\Rightarrow ~~~ \frac{\alpha}{\alpha+\beta} &amp;= \bar{X} \\
+\Rightarrow ~~~ \frac{\alpha+\beta}{\alpha} = 1 + \frac{\beta}{\alpha} &amp;= \frac{1}{\bar{X}} \\
+\Rightarrow ~~~ \frac{\beta}{\alpha} &amp;= \frac{1}{\bar{X}}-1 \\
+\Rightarrow ~~~ \hat{\beta}_{MoM} &amp;= \alpha\left(\frac{1}{\bar{X}}-1\right) \,.
+\end{align*}\]</span></p>
+<p>(b) There is no invariance property for the method-of-moments estimator, so the answer is no.</p>
+<hr />
+<ul>
+<li>Problem 7</li>
+</ul>
+<p>(a) The argument list is fine.</p>
+<p>(b) We need to change <code>mean(X)</code> to <code>sum(X)</code> and <code>lambda</code> to <code>n*lambda</code>.</p>
+<p>(c) The reference table tells us that a one-sided lower bound where <span class="math inline">\(E[U]\)</span> increases with <span class="math inline">\(\lambda\)</span> will have a value of <span class="math inline">\(q\)</span> equal to <span class="math inline">\(1-\alpha\)</span>. So we plug in 0.95.</p>
+<p>(d) Confidence intervals derived from discrete sampling distributions will have coverages <span class="math inline">\(\geq 1-\alpha\)</span>, so, here, we would say “greater than or equal to 95%.”</p>
+<hr />
+<ul>
+<li>Problem 8</li>
+</ul>
+<p>(a) The likelihood ratio test statistic is
+<span class="math display">\[\begin{align*}
+\lambda_{LR} = \frac{\mbox{sup}_{\theta \in \Theta_o} \mathcal{L}(\theta \vert \mathbf{x})}{\mbox{sup}_{\theta \in \Theta} \mathcal{L}(\theta \vert \mathbf{x})}
+\end{align*}\]</span>
+Here, that becomes
+<span class="math display">\[\begin{align*}
+\lambda_{LR} &amp;= \frac{\mathcal{L}(p_o \vert \mathbf{x})}{\mathcal{L}(\hat{p}_{MLE} \vert \mathbf{x})} = \frac{p_o^{\sum_{i=1}^n X_i}(1-p_o)^{n-\sum_{i=1}^n X_i}}{\bar{X}^{\sum_{i=1}^n X_i}(1-\bar{X})^{n-\sum_{i=1}^n X_i}} = \frac{p_o^U(1-p_o)^{n-U}}{\bar{X}^U(1-\bar{X})^{n-U}} \,.
+\end{align*}\]</span></p>
+<p>(b) The test is a two-sided test, so we cannot proclaim it to be uniformly
+most powerful. However, it very well may be…we just cannot say with the information we have at hand. So: “maybe.”</p>
+<hr />
+<ul>
+<li>Problem 9</li>
+</ul>
+<p>(a) The maximum-likelihood estimate is
+<span class="math display">\[\begin{align*}
+\ell(\lambda \vert x) &amp;= x \log \lambda - \log x! - \lambda \\
+\Rightarrow ~~~ \ell&#39;(\lambda \vert x) &amp;= \frac{x}{\lambda} - 1 = 0\\
+\Rightarrow ~~~ \hat{\lambda}_{MLE} &amp;= X \,.
+\end{align*}\]</span>
+which here takes on the value <span class="math inline">\(x_{\rm obs}\)</span>.</p>
+<p>(b) The likelihood-ratio test statistic is
+<span class="math display">\[\begin{align*}
+\frac{\mbox{sup}_{\theta \in \Theta_o}\mathcal{L}(\theta \vert \mathbf{x})}{\mbox{sup}_{\theta \in \Theta}\mathcal{L}(\theta \vert \mathbf{x})} \,.
+\end{align*}\]</span>
+Here, that means that for the numerator, we insert the Poisson pmf (remember: one datum) with <span class="math inline">\(\lambda_o\)</span> plugged in, i.e.,
+<span class="math display">\[\begin{align*}
+\frac{\lambda_o^{x_{\rm obs}}}{x_{\rm obs}!} e^{-\lambda_o} \,,
+\end{align*}\]</span>
+while for the denominator, we plug in the MLE for <span class="math inline">\(\lambda\)</span>, i.e.,
+<span class="math display">\[\begin{align*}
+\frac{x_{\rm obs}^{x_{\rm obs}}}{x_{\rm obs}!} e^{-x_{\rm obs}} \,.
+\end{align*}\]</span>
+So the ratio is
+<span class="math display">\[\begin{align*}
+\left( \frac{\lambda_o}{x_{\rm obs}} \right)^{x_{\rm obs}} e^{-(\lambda_o-x_{\rm obs})} \,.
+\end{align*}\]</span></p>
+<p>(c) The expression is
+<span class="math display">\[\begin{align*}
+W = -2 \log \lambda_{LR} = -2 x_{\rm obs} \log \left( \frac{\lambda_o}{x_{\rm obs}} \right) + 2 (\lambda_o-x_{\rm obs}) \,.
+\end{align*}\]</span></p>
+<p>(d) <span class="math inline">\(W\)</span> is sampled from a chi-square distribution for 1 degree
+of freedom.</p>
+<hr />
+<ul>
+<li>Problem 10</li>
+</ul>
+<p>(a) The factorized likelihood is
+<span class="math display">\[\begin{align*}
+\mathcal{L}(\lambda \vert \mathbf{x}) = \prod_{i=1}^n \frac{\lambda^{x_i}}{x_i!}e^{-\lambda} = \left(\frac{1}{\prod_{i=1}^n x_i!}\right) \times \lambda^{\sum_{i=1}^n x_i} e^{-n\lambda} = h(\mathbf{x}) \times g(\lambda,\mathbf{x}) \,.
+\end{align*}\]</span>
+The sufficient statistic is <span class="math inline">\(Y = \sum_{i=1}^n X_i\)</span>.</p>
+<p>(b) The sum of <span class="math inline">\(n\)</span> iid Poisson random variables
+is a Poisson random variable with parameter <span class="math inline">\(n\lambda\)</span>.
+The moment-generating function for a Poisson random variable is
+<span class="math inline">\(m_X(t) = \exp(\lambda(e^t-1))\)</span>, so the mgf for <span class="math inline">\(Y\)</span> is
+<span class="math display">\[\begin{eqnarray*}
+m_Y(t) = \prod_{i=1}^n m_{X_i}(t) = \left[ m_{X_i}(t) \right]^n = \exp(n\lambda(e^t-1)) \,.
+\end{eqnarray*}\]</span>
+This is the mgf for a Poisson(<span class="math inline">\(n\lambda\)</span>) distribution.</p>
+<p>(c) Recall that in an LRT context, <span class="math inline">\(\Theta = \Theta_o \cup \Theta_a\)</span>;
+in other words, the null must contain <em>all</em> possible values of
+<span class="math inline">\(\theta\)</span> that are not in the alternative. Hence: <span class="math inline">\(H_o : \theta \geq \theta_o\)</span>.
+This inequality does not actually change how
+the test is constructed, but does change how we interpret it: the true
+<span class="math inline">\(\alpha\)</span> for this test will be less than or equal to the stated <span class="math inline">\(\alpha\)</span>.</p>
+<p>(d) We are performing a lower-tail test, and we are on the “yes”
+line (since <span class="math inline">\(E[Y] = n\lambda\)</span> increases with <span class="math inline">\(\lambda\)</span>). From the reference
+table, that means <span class="math inline">\(y_{\rm RR}\)</span> is equal to <span class="math inline">\(F_Y^{-1}(\alpha \vert n\lambda_o)\)</span>,
+which in code is {}. (Recall that there are no
+discreteness corrections in rejection-region boundary computations.)</p>
+<hr />
+<ul>
+<li>Problem 11</li>
+</ul>
+<p>(a) The likelihood function for the sample is:
+<span class="math display">\[\begin{align*}
+\mathcal{L}(\beta \vert \mathbf{x}) = \prod_{i=1}^{n} \frac{1}{\beta}e^{-x/\beta} = \frac{1}{\beta^n} e^{-\frac{\sum_{i=1}^{n}x_i}{\beta}} \,.
+\end{align*}\]</span>
+Under the null <span class="math inline">\(H_0 : \beta = 1\)</span>, the likelihood function becomes
+<span class="math display">\[\begin{align*}
+\mathcal{L}(\beta_0 \vert \mathbf{x}) = e^{-\sum_{i=1}^{n}x_i} = e^{-n\bar x} \,,
+\end{align*}\]</span>
+while under the alternative,
+<span class="math display">\[\begin{align*}
+\sup_{\beta &gt; 0} \mathcal{L}(\beta \vert \mathbf{x}) &amp;= \mathcal{L}(\hat{\beta}_{MLE} \vert \mathbf{x})\\
+&amp; = \frac{1}{\bar x^n}  e^{-\frac{\sum_{i=1}^{n}x_i}{\bar x}} = \frac{1}{\bar x^n}  e^{-n} \,.
+\end{align*}\]</span>
+So the likelihood ratio test statistic is
+<span class="math display">\[\begin{align*}
+\lambda_{LR} &amp;= \frac{\mathcal{L}(\beta_o\vert \mathbf{x})}{\sup_{\beta &gt; 0} \mathcal{L}(\beta \vert \mathbf{x})}\\
+&amp;= \frac{e^{-n\bar x}}{\frac{1}{\bar x^n} e^{-n}} \\
+&amp;= \bar x^ne^{-n(\bar x-1)} \,.
+\end{align*}\]</span></p>
+<p>(b) Under the null hypothesis, the number of degrees of freedom is <span class="math inline">\(r_o = 0\)</span>, because <span class="math inline">\(\beta = 1\)</span> is set to a constant. Under the alternative hypothesis, the number of degrees of freedom is <span class="math inline">\(r = 1\)</span>, because we have one free parameter: <span class="math inline">\(\beta\)</span>. Therefore, according to Wilks’ theorem, the degree of freedom of the <span class="math inline">\(\chi^2\)</span> distribution is <span class="math inline">\(r - r_o = 1-0=1\)</span>.
+Under the large-<span class="math inline">\(n\)</span> approximation, <span class="math inline">\(-2\log(\lambda_{LR}) \sim \chi^2(1)\)</span>.
+Therefore, the rejection region corresponds to:
+<span class="math display">\[\begin{align*}
+-2\log(\lambda) &amp;&gt; \chi^2_{0.95, 1}\\
+\Rightarrow ~~~ -2\log\left(\bar x^ne^{-n(\bar x-1)}\right) &amp;&gt; \chi^2_{0.95,1} = 3.84 \\
+\Rightarrow ~~~ n\left(\log(\bar x) - \bar x+1\right) &amp;&lt; \frac{3.84}{2} \,.
+\end{align*}\]</span></p>
+<hr />
+<ul>
+<li>Problem 12</li>
+</ul>
+<p>(a) <span class="math inline">\(H_0: p = p_0 = 0.5\)</span> and <span class="math inline">\(H_a: p \neq 0.5\)</span></p>
+<p>(b) <span class="math inline">\(\Theta_0 = \{p_0\}\)</span> and <span class="math inline">\(\Theta_a = \{p\, \vert\,  p \in [0,1] ~~\text{and}~~ p \neq p_0\}\)</span></p>
+<p>(c) <span class="math inline">\(r_0 = 0\)</span> (<span class="math inline">\(p\)</span> is fixed) and <span class="math inline">\(r = 1\)</span></p>
+<p>(d) The likelihood ratio test statistic is
+<span class="math display">\[\begin{align*}
+\lambda = \frac{\mathcal{L}(p_0 \vert x)}{\mathcal{L}(\hat{p}_{MLE} \vert x)} = \frac{\frac{1000!}{550!450!} 0.5^{550} (1-0.5)^{450} }{ \frac{1000!}{550!450!} 0.55^{550} (1-0.55)^{450}}  = \frac{0.5^{1000}}{0.55^{550} \cdot 0.45^{450}} = 0.00668 \,,
+\end{align*}\]</span>
+where we make use of the fact that <span class="math inline">\(\hat{p}_{MLE} = x/n = 0.55\)</span>.</p>
+<p>(e) We have that <span class="math inline">\(W_{\rm obs} = -2 \log(\lambda_{LR}) = 10.017\)</span>. According to Wilk’s theorem, the <span class="math inline">\(p\)</span>-value is
+<span class="math display">\[\begin{align*}
+\int_{W_{\rm obs}}^\infty f_W(w) dw \,,
+\end{align*}\]</span>
+for 1 degree of freedom, or <code>1 - pchisq(10.017,1)</code> (= 0.00155).</p>
+<p>(f) We have sufficient evidence to reject the null hypothesis and thus to
+conclude that the coin is not a fair one.</p>
+<hr />
+<ul>
+<li>Problem 13</li>
+</ul>
+<p>By inspection, <span class="math inline">\(X \sim\)</span> Gamma(3,2/3). Thus <span class="math inline">\(E[X] = \alpha \beta = 2\)</span> and <span class="math inline">\(V[X] = \alpha \beta^2 = 3 (2/3)^2 = 4/3\)</span>.</p>
+<hr />
+<ul>
+<li>Problem 14</li>
+</ul>
+<p>(a) <span class="math inline">\(E[X] = \alpha \beta\)</span> and <span class="math inline">\(V[X] = \alpha \beta^2\)</span>, so <span class="math inline">\(V[X]/E[X] = \beta =
+10/5 = 2\)</span>, and <span class="math inline">\(\alpha = 5/2 = 2.5\)</span>.</p>
+<p>(b) <span class="math inline">\(\beta = 2\)</span> and <span class="math inline">\(\alpha = 2.5\)</span> <span class="math inline">\(\Rightarrow\)</span> chi-square distribution (for
+5 degrees of freedom).</p>
+<hr />
+<ul>
+<li>Problem 15</li>
+</ul>
+<p>We have that
+<span class="math display">\[\begin{align*}
+E[X^{-1}] &amp;= \int_0^\infty \frac1x f_X(x) dx = \int_0^\infty \frac1x \frac{x^{\nu/2-1}}{2^{\nu/2}} \frac{e^{-x/2}}{\Gamma(\nu/2)} dx \\
+&amp;= \int_0^\infty \frac{x^{\nu/2-2}}{2^{\nu/2}} \frac{e^{-x/2}}{\Gamma(\nu/2)} dx = \int_0^\infty \frac{x^{\nu/2-2}}{2^{\nu/2}} \frac{2^{-1}}{2^{-1}} \frac{e^{-x/2}}{\Gamma(\nu/2)} \frac{\Gamma(\nu/2-1)}{\Gamma(\nu/2-1)} dx \\
+&amp;= 2^{-1} \frac{\Gamma(\nu/2-1)}{\Gamma(\nu/2)} \int_0^\infty \frac{x^{\nu/2-2}}{2^{\nu/2-1}} \frac{e^{-x/2}}{\Gamma(\nu/2-1)} dx = 2^{-1} \frac{\Gamma(\nu/2-1)}{\Gamma(\nu/2)} \\
+&amp;= \frac12 \frac{\Gamma(\nu/2-1)}{(\nu/2-1)\Gamma(\nu/2-1)} = \frac{1}{2(\nu/2-1)} = \frac{1}{\nu-2} \,.
+\end{align*}\]</span></p>
+<hr />
+<ul>
+<li>Problem 16</li>
+</ul>
+<p>We have that
+<span class="math display">\[\begin{align*}
+E[X] = \int_0^\infty x f_X(x) dx &amp;= \int_0^\infty x \frac{\beta^\alpha}{\Gamma(\alpha)} \frac{1}{x^{\alpha+1}} e^{-\beta/x} dx \\
+&amp;= \int_0^\infty \frac{\beta^\alpha}{\Gamma(\alpha)} \frac{1}{x^{\alpha}} e^{-\beta/x} dx \\
+&amp;= \frac{\beta^{\alpha}}{\beta{\alpha-1}} \frac{\Gamma(\alpha-1)}{\Gamma(\alpha)} \int_0^\infty \frac{\beta^{\alpha-1}}{\Gamma(\alpha-1)} \frac{1}{x^{\alpha}} e^{-\beta/x} dx \\
+&amp;= \frac{\beta^{\alpha}}{\beta{\alpha-1}} \frac{\Gamma(\alpha-1)}{\Gamma(\alpha)} \times 1 \\
+&amp;= \beta \frac{\Gamma(\alpha-1)}{(\alpha-1)\Gamma(\alpha-1)} \\
+&amp;= \frac{\beta}{\alpha-1} \,.
+\end{align*}\]</span></p>
+<hr />
+<ul>
+<li>Problem 17</li>
+</ul>
+<p>(a) If <span class="math inline">\(\beta = 2\)</span> and <span class="math inline">\(\alpha\)</span> is a half-integer or
+an integer, then <span class="math inline">\(X\)</span> is sampled from a “chi-square” distribution.
+(Note that because <span class="math inline">\(\alpha\)</span> is a half-integer here, you cannot answer
+“Erlang” or “exponential.”)</p>
+<p>(b) The gamma pdf with <span class="math inline">\(\alpha = 3/2\)</span> is
+<span class="math display">\[\begin{align*}
+f_X(x) = \frac{x^{1/2}}{\beta^{3/2}} \frac{e^{-x/\beta}}{\Gamma(3/2)} \,,
+\end{align*}\]</span>
+so the likelihood function is
+<span class="math display">\[\begin{align*}
+\mathcal{L}(\beta \vert \mathbf{x} = \prod_{i=1}^n \frac{x_i^{1/2}}{\beta^{3/2}} \frac{e^{-x_i/\beta}}{\Gamma(3/2)} = \frac{\sqrt{\prod_{i=1}^n x_i}}{[\Gamma(3/2)]^n} \times \frac{e^{-(\sum_{i=1}^n x_i)/\beta}}{\beta^{3/2}} = h(\mathbf{x}) \times g(\beta,\mathbf{x}) \,.
+\end{align*}\]</span>
+We can read off of the <span class="math inline">\(g(\cdot)\)</span> function that <span class="math inline">\(Y = \sum_{i=1}^n X_i\)</span> is
+a sufficient statistic for <span class="math inline">\(\beta\)</span>.</p>
+<p>(c) We start by computing
+<span class="math display">\[\begin{align*}
+E[Y] = E\left[ \sum_{i=1}^n X_i \right] = \sum_{i=1}^n E[X_i] = nE[X] = n \alpha \beta = \frac{3}{2}n\beta \,.
+\end{align*}\]</span>
+Thus
+<span class="math display">\[\begin{align*}
+E\left[\frac{2Y}{3n}\right] = \beta
+\end{align*}\]</span>
+and
+<span class="math display">\[\begin{align*}
+\hat{\beta}_{MVUE} = \frac{2Y}{3n} = \frac{2}{3}\bar{X} \,.
+\end{align*}\]</span></p>
+<p>(d) The first population moment is
+<span class="math inline">\(\mu_1&#39; = E[X] = (3/2)\beta\)</span> and the first sample moment is
+<span class="math inline">\(m_1&#39; = (1/n)\sum_{i=1}^n X_i = \bar{X}\)</span>.
+We set these equal and find that
+<span class="math display">\[\begin{align*}
+\hat{\beta}_{MoM} = \frac{2}{3}\bar{X} \,.
+\end{align*}\]</span></p>
+<p>(e) Because the MoM is equivalent to the MVUE, we know
+immediately that the bias of the MoM is 0.</p>
+<hr />
+<ul>
+<li>Problem 18</li>
+</ul>
+<p>We have that
+<span class="math display">\[\begin{align*}
+E[X^{1/2}] = \int_0^\infty x^{1/2} f_X(x) dx &amp;= \int_0^\infty x^{1/2} \frac{x^{\alpha-1}}{\beta^\alpha}\frac{e^{-x/\beta}}{\Gamma(\alpha)} dx \\
+&amp;= \int_0^\infty \frac{x^{\alpha-1/2}}{\beta^\alpha}\frac{e^{-x/\beta}}{\Gamma(\alpha)} dx \\
+&amp;= \int_0^\infty \frac{x^{\alpha-1/2}}{\beta^\alpha}\frac{e^{-x/\beta}}{\Gamma(\alpha)} \frac{\beta^{\alpha+1/2}}{\beta^{\alpha+1/2}} \frac{\Gamma(\alpha+1/2)}{\Gamma(\alpha+1/2)} dx \\
+&amp;= \frac{\beta^{\alpha+1/2}}{\beta^{\alpha}} \frac{\Gamma(\alpha+1/2)}{\Gamma(\alpha)} \int_0^\infty \frac{x^{\alpha-1/2}}{\beta^{\alpha+1/2}}\frac{e^{-x/\beta}}{\Gamma(\alpha+1/2)} dx \\
+&amp;= \frac{\beta^{\alpha+1/2}}{\beta^{\alpha}} \frac{\Gamma(\alpha+1/2)}{\Gamma(\alpha)} \\
+&amp;= \sqrt{\beta} \frac{\Gamma(\alpha+1/2)}{\Gamma(\alpha)} \,.
+\end{align*}\]</span>
+We note that in general,
+<span class="math display">\[\begin{align*}
+E[X^k] = \beta^k \frac{\Gamma(\alpha+k)}{\Gamma(\alpha)} \,.
+\end{align*}\]</span></p>
+<hr />
+<ul>
+<li>Problem 19</li>
+</ul>
+<p>(a) The overdispersion parameter in a negative
+binomial regression is dubbed “Theta” and is thus 214,488.</p>
+<p>(b) If the overdispersion parameter is <span class="math inline">\(\infty\)</span>, then
+Poisson regression is recovered. The value here is sufficiently large that
+we can say with confidence that there is no overdispersion.
+(Backing up this conclusion are
+the nearly identical results since when learning both regression models.)</p>
+<p>(c) The answer is the Likelihood Ratio test. The
+statistic is the difference in the deviance values, which we assume under
+the null is chi-square distributed for the difference in the
+numbers of degree of freedom.</p>
+<p>(d) The null hypothesis in the LRT is <span class="math inline">\(\beta_1 = 0\)</span> and the
+alternative is <span class="math inline">\(\beta_1 \neq 0\)</span>. The test statistic is <em>so large</em>
+(<span class="math inline">\(\approx\)</span> 165), especially considering that the expected value for
+a chi-square distribution is 1 for 1 degree of freedom, that we can
+safely conclude that <span class="math inline">\(\beta_1 \neq 0\)</span>.</p>
 
 </div>
 </div>

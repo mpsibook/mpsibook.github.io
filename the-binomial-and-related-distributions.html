@@ -65,7 +65,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -349,10 +349,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3.6" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#point-estimation-2"><i class="fa fa-check"></i><b>3.6</b> Point Estimation</a>
 <ul>
-<li class="chapter" data-level="3.6.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-mle-for-the-binomial-success-probability"><i class="fa fa-check"></i><b>3.6.1</b> The MLE for the Binomial Success Probability</a></li>
-<li class="chapter" data-level="3.6.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#sufficient-statistics-for-the-normal-distribution"><i class="fa fa-check"></i><b>3.6.2</b> Sufficient Statistics for the Normal Distribution</a></li>
-<li class="chapter" data-level="3.6.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-mvue-for-the-exponential-mean"><i class="fa fa-check"></i><b>3.6.3</b> The MVUE for the Exponential Mean</a></li>
-<li class="chapter" data-level="3.6.4" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-mvue-for-the-geometric-distribution"><i class="fa fa-check"></i><b>3.6.4</b> The MVUE for the Geometric Distribution</a></li>
+<li class="chapter" data-level="3.6.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#sufficiency-and-the-exponential-family-of-distributions"><i class="fa fa-check"></i><b>3.6.1</b> Sufficiency and the Exponential Family of Distributions</a></li>
+<li class="chapter" data-level="3.6.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-mle-for-the-binomial-success-probability"><i class="fa fa-check"></i><b>3.6.2</b> The MLE for the Binomial Success Probability</a></li>
+<li class="chapter" data-level="3.6.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#sufficient-statistics-for-the-normal-distribution"><i class="fa fa-check"></i><b>3.6.3</b> Sufficient Statistics for the Normal Distribution</a></li>
+<li class="chapter" data-level="3.6.4" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-mvue-for-the-exponential-mean"><i class="fa fa-check"></i><b>3.6.4</b> The MVUE for the Exponential Mean</a></li>
+<li class="chapter" data-level="3.6.5" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-mvue-for-the-geometric-distribution"><i class="fa fa-check"></i><b>3.6.5</b> The MVUE for the Geometric Distribution</a></li>
 </ul></li>
 <li class="chapter" data-level="3.7" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#confidence-intervals-2"><i class="fa fa-check"></i><b>3.7</b> Confidence Intervals</a>
 <ul>
@@ -423,6 +424,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.6.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#revisiting-the-death-by-horse-kick-example-1"><i class="fa fa-check"></i><b>4.6.2</b> Revisiting the Death-by-Horse-Kick Example</a></li>
 <li class="chapter" data-level="4.6.3" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#determining-a-confidence-interval-using-the-bootstrap"><i class="fa fa-check"></i><b>4.6.3</b> Determining a Confidence Interval Using the Bootstrap</a></li>
 <li class="chapter" data-level="4.6.4" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#the-proportion-of-observed-data-in-a-bootstrap-sample"><i class="fa fa-check"></i><b>4.6.4</b> The Proportion of Observed Data in a Bootstrap Sample</a></li>
+<li class="chapter" data-level="4.6.5" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#confidence-interval-estimation-via-simulation-and-numerical-optimization"><i class="fa fa-check"></i><b>4.6.5</b> Confidence Interval Estimation via Simulation and Numerical Optimization</a></li>
 </ul></li>
 <li class="chapter" data-level="4.7" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#hypothesis-testing-2"><i class="fa fa-check"></i><b>4.7</b> Hypothesis Testing</a>
 <ul>
@@ -446,6 +448,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="4.10.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#revisiting-the-death-by-horse-kick-example-3"><i class="fa fa-check"></i><b>4.10.1</b> Revisiting the Death-by-Horse-Kick Example</a></li>
 </ul></li>
+<li class="chapter" data-level="4.11" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#exercises-1"><i class="fa fa-check"></i><b>4.11</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html"><i class="fa fa-check"></i><b>5</b> The Uniform Distribution</a>
 <ul>
@@ -478,6 +481,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.6.1" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#the-power-curve-for-testing-the-uniform-distribution-upper-bound"><i class="fa fa-check"></i><b>5.6.1</b> The Power Curve for Testing the Uniform Distribution Upper Bound</a></li>
 <li class="chapter" data-level="5.6.2" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#an-illustration-of-multiple-comparisons-when-testing-for-the-normal-mean"><i class="fa fa-check"></i><b>5.6.2</b> An Illustration of Multiple Comparisons When Testing for the Normal Mean</a></li>
 </ul></li>
+<li class="chapter" data-level="5.7" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#exercises-2"><i class="fa fa-check"></i><b>5.7</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html"><i class="fa fa-check"></i><b>6</b> Multivariate Distributions</a>
 <ul>
@@ -538,6 +542,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="chapter-exercises-solutions.html"><a href="chapter-exercises-solutions.html"><i class="fa fa-check"></i>Chapter Exercises: Solutions</a>
 <ul>
 <li class="chapter" data-level="" data-path="chapter-exercises-solutions.html"><a href="chapter-exercises-solutions.html#chapter-3"><i class="fa fa-check"></i>Chapter 3</a></li>
+<li class="chapter" data-level="" data-path="chapter-exercises-solutions.html"><a href="chapter-exercises-solutions.html#chapter-4"><i class="fa fa-check"></i>Chapter 4</a></li>
 </ul></li>
 </ul>
 
@@ -1313,20 +1318,17 @@ variance.</em></p>
 <li>correcting any bias that is observed when we utilize that sufficient
 statistic as our initial estimator.</li>
 </ol>
-<p>A sufficient statistic for a parameter <span class="math inline">\(\theta\)</span>
+<p>Sufficient statistics for a parameter <span class="math inline">\(\theta\)</span>
 captures all information about <span class="math inline">\(\theta\)</span> contained in the sample.
-In other words, any additional statistic, beyond a sufficient statistic,
+In other words, any additional statistic, beyond sufficient statistics,
 will not provide any additional information about <span class="math inline">\(\theta\)</span>.
-This does not mean that a sufficient statistic is necessarily unique, as
-<em>any function of a sufficient statistic is also a
-sufficient statistic</em>. For instance, if <span class="math inline">\(\sum_{i=1}^n X_i\)</span> is a sufficient
-statistic, so is <span class="math inline">\(\bar{X}\)</span>.
-It just means that any additional statistic that is
-<em>not</em> a function of a sufficient statistic will not help us when we try
-to estimate <span class="math inline">\(\theta\)</span>. For instance, if <span class="math inline">\(\bar{X}\)</span> is a sufficient statistic
-for <span class="math inline">\(\theta\)</span>,
-then using <span class="math inline">\(\bar{X}\)</span> and the sample median to infer <span class="math inline">\(\theta\)</span>
-will lead to no better result than when we just use <span class="math inline">\(\bar{X}\)</span> by itself.)</p>
+The observed data <span class="math inline">\(\mathbf{X}\)</span> comprise a set of sufficient statistics,
+as does the full set of order statistics <span class="math inline">\(\{X_{(1)},\ldots,X_{(n)}\)</span>}$.
+However, working with a set of <span class="math inline">\(n\)</span> statistics directly is problematic
+when we attempt to make inferences: can we somehow combine elements
+of <span class="math inline">\(\mathbf{X}\)</span> together (i.e., can we enact “data reduction”) so that,
+instead of working with <span class="math inline">\(n\)</span> sufficient statistics, we only work with one?
+The answer is yes (sometimes; we will elaborate on this below).</p>
 <p>The simplest way by which to identify a sufficient statistic is
 by writing down the likelihood function and factorizing it into two
 functions, one of which depends <em>only</em> on the observed data and the
@@ -1340,27 +1342,53 @@ In the expression <span class="math inline">\(g(\mathbf{x},\theta)\)</span>, the
 summation (e.g., <span class="math inline">\(\sum_{i=1}^n x_i\)</span>) or a product
 (e.g., <span class="math inline">\(\prod_{i=1}^n x_i\)</span>), and
 we would identify that summation or product as a sufficient statistic.</p>
-<p>Let’s assume we are given a sample of <span class="math inline">\(n\)</span> iid binomial random variables.
+<p>As a first example,
+let’s assume we are given a sample of <span class="math inline">\(n\)</span> iid binomial random variables.
 The following is the factorized likelihood:
 <span class="math display">\[
 \mathcal{L}(p \vert \mathbf{x}) = \prod_{i=1}^n \binom{k}{x_i} p^{x_i} (1-p)^{k-x_i} = \underbrace{\left[ \prod_{i=1}^n \binom{k}{x_i} \right]}_{h(\mathbf{x})} \underbrace{p^{\sum_{i=1}^n x_i} (1-p)^{nk-\sum_{i=1}^n x_i}}_{g(\sum_{i=1}^n x_i,p)} \,.
 \]</span>
 By inspecting the function <span class="math inline">\(g(\mathbf{x},\theta)\)</span>, we determine that
 a sufficient statistic is <span class="math inline">\(Y = \sum_{i=1}^n X_i\)</span>.</p>
-<p>(The next step, in general, is to demonstrate whether the identified statistic is both
-minimally sufficient and complete; it needs to be both so that we can use it to determine the MVUE.
-It suffices to say here that the factorization criterion typically identifies statistics
-that are minimally sufficient and complete, particularly for those distributions
-that we examine in this book.
-See Chapter 7 for more details on how to determine if a sufficient
-statistic is a minimally sufficient statistic and if it is complete. Note that complete statistics
-are always minimally sufficient, but not necessarily vice-versa, so we
-would always check for completeness first!)</p>
-<p>If <span class="math inline">\(Y\)</span> is a minimally sufficient and complete statistic, and there is a function <span class="math inline">\(h(Y)\)</span> that is an
-unbiased estimator for <span class="math inline">\(\theta\)</span> and that depends on the data only through <span class="math inline">\(Y\)</span>, then <span class="math inline">\(h(Y)\)</span> is the MVUE for
+<p>We note the following about sufficient statistics:</p>
+<ol style="list-style-type: decimal">
+<li><p>A statistic <em>cannot</em> contain the value of the parameter itself and be
+dubbed a sufficient statistic. For instance, if
+factorization yields <span class="math inline">\(Y = \prod_{i=1}^n \vert X_i - \theta \vert\)</span>,
+then <span class="math inline">\(Y\)</span> is <em>not</em> a sufficient statistic, because within this expression
+we cannot isolate a function of the <span class="math inline">\(X_i\)</span>’s alone.</p></li>
+<li><p>Sufficient statistics are not unique. <em>Any one-to-one function
+of a sufficient statistic is also a
+sufficient statistic</em>. For instance, if <span class="math inline">\(\sum_{i=1}^n X_i\)</span> is a sufficient
+statistic for <span class="math inline">\(\theta\)</span>, so is <span class="math inline">\(\bar{X}\)</span>.
+Any additional statistic that is
+<em>not</em> a one-to-one function of a sufficient statistic
+will not help us when we try to infer <span class="math inline">\(\theta\)</span>.
+For instance, if <span class="math inline">\(\bar{X}\)</span> is a sufficient statistic for <span class="math inline">\(\theta\)</span>,
+then adding the value of the sample median into the inferential process
+will not lead to better results!</p></li>
+<li><p>We note that in general, we need to demonstrate whether an identified
+sufficient statistic is both <em>minimally sufficient</em> and <em>complete</em>, as
+it needs to be both so that we can use it to determine the MVUE. It suffices
+to say here that the factorization criterion typically identifies statistics
+that are minimally sufficient and complete, particularly for those
+distributions that we examine in this book. (See the first example below.)
+See Chapter 7 for more details on how one determines if a sufficient
+statistic is a minimally sufficient statistic and if it is complete.
+Note that complete statistics
+are always minimally sufficient, but not necessarily vice-versa, so one
+would always check for completeness first!</p></li>
+</ol>
+<p>For a (much) deeper treatment of sufficiency and data reduction in general
+than we provide here,
+the interested reader should consult Chapter 6 of Casella and Berger (2002).</p>
+<p>If <span class="math inline">\(Y\)</span> is a minimally sufficient and complete statistic, and there is a
+function <span class="math inline">\(h(Y)\)</span> that is an unbiased estimator for <span class="math inline">\(\theta\)</span> and that depends
+on the data only through <span class="math inline">\(Y\)</span>, then <span class="math inline">\(h(Y)\)</span> is the MVUE for
 <span class="math inline">\(\theta\)</span>. Here, given <span class="math inline">\(Y = \sum_{i=1}^n X_i\)</span>, we need to find a function
-<span class="math inline">\(h(\cdot)\)</span> such that <span class="math inline">\(E[h(Y)] = p\)</span>. Earlier in this chapter, we determined that the
-distribution for the sum of iid binomial random variables is Binomial(<span class="math inline">\(nk\)</span>,<span class="math inline">\(p\)</span>), and thus we
+<span class="math inline">\(h(\cdot)\)</span> such that <span class="math inline">\(E[h(Y)] = p\)</span>. Earlier in this chapter, we determined
+that the distribution for the sum of iid binomial random variables is
+Binomial(<span class="math inline">\(nk\)</span>,<span class="math inline">\(p\)</span>), and thus we
 know that this distribution has expected value <span class="math inline">\(nkp\)</span>. Thus
 <span class="math display">\[
 E\left[Y\right] = nkp ~\implies~ E\left[\frac{Y}{nk}\right] = p ~\implies~ h(Y) = \frac{Y}{nk} = \frac{\bar{X}}{k} ~\mbox{is the MVUE for}~p \,.
@@ -1389,8 +1417,71 @@ The lower bound on the variance is thus <span class="math inline">\(p(1-p)/(nk)\
 the MVUE <em>does</em> achieve the CRLB.
 We cannot define a better unbiased estimator for <span class="math inline">\(p\)</span> than <span class="math inline">\(\bar{X}/k\)</span>.</p>
 <hr />
-<div id="the-mle-for-the-binomial-success-probability" class="section level3 hasAnchor" number="3.6.1">
-<h3><span class="header-section-number">3.6.1</span> The MLE for the Binomial Success Probability<a href="the-binomial-and-related-distributions.html#the-mle-for-the-binomial-success-probability" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="sufficiency-and-the-exponential-family-of-distributions" class="section level3 hasAnchor" number="3.6.1">
+<h3><span class="header-section-number">3.6.1</span> Sufficiency and the Exponential Family of Distributions<a href="the-binomial-and-related-distributions.html#sufficiency-and-the-exponential-family-of-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<blockquote>
+<p>The exponential family is the set of discrete and continuous
+probability distributions whose probability mass and density functions
+can be expressed in the following manner (assuming a single parameter
+<span class="math inline">\(\theta\)</span>):
+<span class="math display">\[\begin{align*}
+h(x) e^{\eta(\theta)T(x) - A(\theta)} \,,
+\end{align*}\]</span>
+where <span class="math inline">\(T(x)\)</span> is a sufficient statistic. For instance, for the binomial
+distribution, we have that
+<span class="math display">\[\begin{align*}
+\binom{k}{x} p^x (1-p)^{k-x} &amp;= h(x) e^{\eta(\theta)T(x) - A(\theta)} \\
+\Rightarrow ~~~~~~ h(x) &amp;= \binom{k}{x} \\
+\Rightarrow ~~~~~~ \eta(\theta) T(x) - A(\theta) &amp;= x \log p + (k-x) \log(1-p) \\
+&amp;= x [\log p - \log(1-p)] + k \log(1-p) \\
+\Rightarrow ~~~~~~ A(\theta) &amp;= -k \log(1-p) \\
+\eta(\theta) &amp;= \log p - \log(1-p) \\
+T(x) &amp;= x \,.
+\end{align*}\]</span>
+(If we have <span class="math inline">\(n\)</span> iid data, the sufficient statistic becomes
+<span class="math inline">\(\sum_{i=1}^n T(X_i) = \sum_{i=1}^n X_i\)</span>.)
+Other familiar distributions that belong to the exponential family include
+the normal, Poisson, gamma, and beta distributions.</p>
+</blockquote>
+<blockquote>
+<p>We are bringing up the concept of the exponential family now for the following
+reason: the Pitman-Koopman-Darmois theorem holds that, among families of
+distributions that do not have domain-specifying parameters, only the
+exponential family of distributions have sufficient statistics whose
+dimension does not increase with sample size. (For instance, for the
+binomial distribution, the sufficient statistic <span class="math inline">\(\sum_{i=1}^n X_i\)</span> is
+a single number<span class="math inline">\(-\)</span>i.e., it has dimension one<span class="math inline">\(-\)</span>regardless of the sample
+size <span class="math inline">\(n\)</span>. We should note that there are exceptions to the PKD
+theorem<span class="math inline">\(-\)</span>we’ll see some in Chapter 5<span class="math inline">\(-\)</span>but they are relatively few.)
+The upshot is that our use of likelihood factorization to identify
+sufficient statistics (and, e.g., to subsequently derive minimum variance
+unbiased estimators) is limited to situations in which we are working
+with exponential family distributions. However, this is not a severe
+limitation: a very large proportion of statistical analyses involves
+the use of exponential family distributions!</p>
+</blockquote>
+<blockquote>
+<p>Let’s conclude by looking at an example of a distribution from outside the
+exponential family. A Laplace distribution with scale parameter 1 has the
+probability density function
+<span class="math display">\[\begin{align*}
+f_X(x \vert \theta) &amp;= \frac12 e^{-\vert x - \theta \vert} \,,
+\end{align*}\]</span>
+where <span class="math inline">\(x \in (-\infty,\infty)\)</span> and
+<span class="math inline">\(\theta \in (-\infty,\infty)\)</span>. If we observe <span class="math inline">\(n\)</span> iid data, then
+likelihood factorization yields
+<span class="math display">\[\begin{align*}
+\mathcal{L}(\theta \vert x) &amp;= \frac{1}{2^n} e^{-\sum_{i=1}^n \vert x_i - \theta \vert} \,.
+\end{align*}\]</span>
+Since we cannot isolate a function of <span class="math inline">\(x_i\)</span> alone, we conclude that no
+data reduction is possible here, and thus we are left with <span class="math inline">\(\mathbf{X}\)</span>
+as a set of sufficient statistics…a set whose dimensionality increases
+with <span class="math inline">\(n\)</span>. We thus will not be able to derive, e.g., an MVUE for <span class="math inline">\(\theta\)</span>.</p>
+</blockquote>
+<hr />
+</div>
+<div id="the-mle-for-the-binomial-success-probability" class="section level3 hasAnchor" number="3.6.2">
+<h3><span class="header-section-number">3.6.2</span> The MLE for the Binomial Success Probability<a href="the-binomial-and-related-distributions.html#the-mle-for-the-binomial-success-probability" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>Recall</strong>: <em>the value of <span class="math inline">\(\theta\)</span> that maximizes the likelihood function is the maximum likelihood estimate, or MLE, for <span class="math inline">\(\theta\)</span>. The maximum is found by taking the (partial) derivative of the (log-)likelihood function with respect to <span class="math inline">\(\theta\)</span>, setting the result to zero, and solving for <span class="math inline">\(\theta\)</span>. That solution is the maximum likelihood estimate <span class="math inline">\(\hat{\theta}_{MLE}\)</span>.</em></p>
 <blockquote>
 <p>Above, we determined that
@@ -1430,8 +1521,8 @@ is given by applying the same function to the MLE itself. Thus</p>
 </blockquote>
 <hr />
 </div>
-<div id="sufficient-statistics-for-the-normal-distribution" class="section level3 hasAnchor" number="3.6.2">
-<h3><span class="header-section-number">3.6.2</span> Sufficient Statistics for the Normal Distribution<a href="the-binomial-and-related-distributions.html#sufficient-statistics-for-the-normal-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="sufficient-statistics-for-the-normal-distribution" class="section level3 hasAnchor" number="3.6.3">
+<h3><span class="header-section-number">3.6.3</span> Sufficient Statistics for the Normal Distribution<a href="the-binomial-and-related-distributions.html#sufficient-statistics-for-the-normal-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <blockquote>
 <p>If we have <span class="math inline">\(n\)</span> iid data drawn from a normal distribution with unknown mean <span class="math inline">\(\mu\)</span> and
 unknown variance <span class="math inline">\(\sigma^2\)</span>, then the factorized likelihood is
@@ -1454,8 +1545,8 @@ and we can determine the MVUE for the other, freely varying parameter.)</p>
 </blockquote>
 <hr />
 </div>
-<div id="the-mvue-for-the-exponential-mean" class="section level3 hasAnchor" number="3.6.3">
-<h3><span class="header-section-number">3.6.3</span> The MVUE for the Exponential Mean<a href="the-binomial-and-related-distributions.html#the-mvue-for-the-exponential-mean" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="the-mvue-for-the-exponential-mean" class="section level3 hasAnchor" number="3.6.4">
+<h3><span class="header-section-number">3.6.4</span> The MVUE for the Exponential Mean<a href="the-binomial-and-related-distributions.html#the-mvue-for-the-exponential-mean" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <blockquote>
 <p>The exponential distribution is
 <span class="math display">\[
@@ -1500,8 +1591,8 @@ So <span class="math inline">\(\bar{X}^2\)</span> itself is <em>not</em> an unbi
 </blockquote>
 <hr />
 </div>
-<div id="the-mvue-for-the-geometric-distribution" class="section level3 hasAnchor" number="3.6.4">
-<h3><span class="header-section-number">3.6.4</span> The MVUE for the Geometric Distribution<a href="the-binomial-and-related-distributions.html#the-mvue-for-the-geometric-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="the-mvue-for-the-geometric-distribution" class="section level3 hasAnchor" number="3.6.5">
+<h3><span class="header-section-number">3.6.5</span> The MVUE for the Geometric Distribution<a href="the-binomial-and-related-distributions.html#the-mvue-for-the-geometric-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <blockquote>
 <p>Recall that the geometric distribution is a negative binomial distribution
 with <span class="math inline">\(s = 1\)</span>:
@@ -3580,12 +3671,12 @@ us to gather more data!</p>
 <li><p>Let <span class="math inline">\(X_1,...,X_n\)</span> be <span class="math inline">\(n\)</span> data drawn from a <span class="math inline">\(\mathcal{N}(2,4)\)</span> distribution. Write down the probability that exactly <span class="math inline">\(m\)</span> of the <span class="math inline">\(n\)</span> data have values <span class="math inline">\(&gt; 2\)</span>.</p></li>
 <li><p>You are a habitual buyer of raffle tickets. Each ticket costs $1, and each time you buy a ticket, you have a 40% chance of having a winning ticket, for which you will receive $3. You decide to keep buying tickets until you win for the first time. Let the random variable <span class="math inline">\(F\)</span> denote the total number of <em>losing</em> tickets that you buy, and let <span class="math inline">\(W\)</span> denote the total amount of money you win (or lose!). (a) <span class="math inline">\(F\)</span> is sampled from what distribution that has what parameter value(s)? (b) What is the probability that you will end up making money, i.e., what is <span class="math inline">\(P(W &gt; 0)\)</span>? (c) Let’s say instead of buying until you win, you decide you will buy exactly two tickets, then stop. What is the probability of buying a winning ticket exactly once, given that you buy at least one winning ticket?</p></li>
 <li><p>Suppose 50% of licensed drivers in a state are insured. If three licensed drivers are selected at random, what is the expected number of insured drivers given that the number of insured drivers is odd? (Assume the state’s population is effectively infinite, so that the probability of selecting an insured driver stays constant from trial to trial.)</p></li>
-<li><p>In an experiment, you take shots at a target until you hit that target twice. On any given shot, you have a 50% change of hitting the target. (a) What is the probability that you hit the target for the second time on your fourth shot overall? (b) You run your experiment twice. What is the probability of needing to take two shots during the first experiment to hit the target twice, and three shots during the second experiment to hit the target twice? Assume the results are independent (and of course identically distributed). (c) Let’s suppose you do not actually know the success probability <span class="math inline">\(p\)</span>, and you wish to determine a one-sided 90% upper bound on <span class="math inline">\(p\)</span>. As you are dealing with a discrete distribution, you need to build a <code>uniroot()</code>-style interval estimator. In your code, what value would you adopt for <span class="math inline">\(q\)</span>?</p></li>
+<li><p>In an experiment, you take shots at a target until you hit that target twice. On any given shot, you have a 50% change of hitting the target. (a) What is the probability that you hit the target for the second time on your fourth shot overall? (b) You run your experiment twice. What is the probability of needing to take two shots one of the experiments to hit the target twice, and three shots during the other one to hit the target twice? Assume the results are independent (and of course identically distributed). (c) Let’s suppose you do not actually know the success probability <span class="math inline">\(p\)</span>, and you wish to determine a one-sided 90% upper bound on <span class="math inline">\(p\)</span>. As you are dealing with a discrete distribution, you need to build a <code>uniroot()</code>-style interval estimator. In your code, what value would you adopt for <span class="math inline">\(q\)</span>?</p></li>
 <li><p>You collect <span class="math inline">\(n=4\)</span> iid samples from the following distribution:
 <span class="math display">\[\begin{eqnarray*}
 f_X(x) = \left\{ \begin{array}{cc} 3x^2 &amp; 0 \leq x \leq 1 \\ 0 &amp; \mbox{otherwise} \end{array} \right. \,.
 \end{eqnarray*}\]</span>
-(a) Write down the sampling distribution for the minimum observed value, <span class="math inline">\(X_{(1)}\)</span>. (b) The sampling distribution for the maximum observed value is <span class="math inline">\(g_{(4)}(x) = 12x^{11}\)</span>. What is <span class="math inline">\(E[X_4]\)</span>?</p></li>
+(a) Write down the sampling distribution for the minimum observed value, <span class="math inline">\(X_{(1)}\)</span>. (b) The sampling distribution for the maximum observed value is <span class="math inline">\(g_{(4)}(x) = 12x^{11}\)</span>. What is <span class="math inline">\(E[X_{(4)}]\)</span>?</p></li>
 <li><p>You are to sample <span class="math inline">\(n = 3\)</span> data from the following distribution:
 <span class="math display">\[\begin{eqnarray*}
 f_X(x) = \left\{ \begin{array}{cc} x &amp; 0 \leq x \leq \sqrt{2} \\ 0 &amp; \mbox{otherwise} \end{array} \right. \,.

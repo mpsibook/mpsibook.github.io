@@ -65,7 +65,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -349,10 +349,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3.6" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#point-estimation-2"><i class="fa fa-check"></i><b>3.6</b> Point Estimation</a>
 <ul>
-<li class="chapter" data-level="3.6.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-mle-for-the-binomial-success-probability"><i class="fa fa-check"></i><b>3.6.1</b> The MLE for the Binomial Success Probability</a></li>
-<li class="chapter" data-level="3.6.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#sufficient-statistics-for-the-normal-distribution"><i class="fa fa-check"></i><b>3.6.2</b> Sufficient Statistics for the Normal Distribution</a></li>
-<li class="chapter" data-level="3.6.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-mvue-for-the-exponential-mean"><i class="fa fa-check"></i><b>3.6.3</b> The MVUE for the Exponential Mean</a></li>
-<li class="chapter" data-level="3.6.4" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-mvue-for-the-geometric-distribution"><i class="fa fa-check"></i><b>3.6.4</b> The MVUE for the Geometric Distribution</a></li>
+<li class="chapter" data-level="3.6.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#sufficiency-and-the-exponential-family-of-distributions"><i class="fa fa-check"></i><b>3.6.1</b> Sufficiency and the Exponential Family of Distributions</a></li>
+<li class="chapter" data-level="3.6.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-mle-for-the-binomial-success-probability"><i class="fa fa-check"></i><b>3.6.2</b> The MLE for the Binomial Success Probability</a></li>
+<li class="chapter" data-level="3.6.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#sufficient-statistics-for-the-normal-distribution"><i class="fa fa-check"></i><b>3.6.3</b> Sufficient Statistics for the Normal Distribution</a></li>
+<li class="chapter" data-level="3.6.4" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-mvue-for-the-exponential-mean"><i class="fa fa-check"></i><b>3.6.4</b> The MVUE for the Exponential Mean</a></li>
+<li class="chapter" data-level="3.6.5" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-mvue-for-the-geometric-distribution"><i class="fa fa-check"></i><b>3.6.5</b> The MVUE for the Geometric Distribution</a></li>
 </ul></li>
 <li class="chapter" data-level="3.7" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#confidence-intervals-2"><i class="fa fa-check"></i><b>3.7</b> Confidence Intervals</a>
 <ul>
@@ -423,6 +424,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.6.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#revisiting-the-death-by-horse-kick-example-1"><i class="fa fa-check"></i><b>4.6.2</b> Revisiting the Death-by-Horse-Kick Example</a></li>
 <li class="chapter" data-level="4.6.3" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#determining-a-confidence-interval-using-the-bootstrap"><i class="fa fa-check"></i><b>4.6.3</b> Determining a Confidence Interval Using the Bootstrap</a></li>
 <li class="chapter" data-level="4.6.4" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#the-proportion-of-observed-data-in-a-bootstrap-sample"><i class="fa fa-check"></i><b>4.6.4</b> The Proportion of Observed Data in a Bootstrap Sample</a></li>
+<li class="chapter" data-level="4.6.5" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#confidence-interval-estimation-via-simulation-and-numerical-optimization"><i class="fa fa-check"></i><b>4.6.5</b> Confidence Interval Estimation via Simulation and Numerical Optimization</a></li>
 </ul></li>
 <li class="chapter" data-level="4.7" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#hypothesis-testing-2"><i class="fa fa-check"></i><b>4.7</b> Hypothesis Testing</a>
 <ul>
@@ -446,6 +448,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="4.10.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#revisiting-the-death-by-horse-kick-example-3"><i class="fa fa-check"></i><b>4.10.1</b> Revisiting the Death-by-Horse-Kick Example</a></li>
 </ul></li>
+<li class="chapter" data-level="4.11" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#exercises-1"><i class="fa fa-check"></i><b>4.11</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html"><i class="fa fa-check"></i><b>5</b> The Uniform Distribution</a>
 <ul>
@@ -478,6 +481,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.6.1" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#the-power-curve-for-testing-the-uniform-distribution-upper-bound"><i class="fa fa-check"></i><b>5.6.1</b> The Power Curve for Testing the Uniform Distribution Upper Bound</a></li>
 <li class="chapter" data-level="5.6.2" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#an-illustration-of-multiple-comparisons-when-testing-for-the-normal-mean"><i class="fa fa-check"></i><b>5.6.2</b> An Illustration of Multiple Comparisons When Testing for the Normal Mean</a></li>
 </ul></li>
+<li class="chapter" data-level="5.7" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#exercises-2"><i class="fa fa-check"></i><b>5.7</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html"><i class="fa fa-check"></i><b>6</b> Multivariate Distributions</a>
 <ul>
@@ -538,6 +542,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="chapter-exercises-solutions.html"><a href="chapter-exercises-solutions.html"><i class="fa fa-check"></i>Chapter Exercises: Solutions</a>
 <ul>
 <li class="chapter" data-level="" data-path="chapter-exercises-solutions.html"><a href="chapter-exercises-solutions.html#chapter-3"><i class="fa fa-check"></i>Chapter 3</a></li>
+<li class="chapter" data-level="" data-path="chapter-exercises-solutions.html"><a href="chapter-exercises-solutions.html#chapter-4"><i class="fa fa-check"></i>Chapter 4</a></li>
 </ul></li>
 </ul>
 
@@ -1120,9 +1125,9 @@ V[Y] &amp;= \sum_{i=1}^n a_i^2 V[X_i] + 2\sum_{i=1}^{n-1} \sum_{j=i+1}^n a_i a_j
 <blockquote>
 <p>Here is the same calculation using <code>R</code>.</p>
 </blockquote>
-<div class="sourceCode" id="cb309"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb309-1"><a href="multivariate-distributions.html#cb309-1" tabindex="-1"></a>a     <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="sc">-</span><span class="dv">1</span>)</span>
-<span id="cb309-2"><a href="multivariate-distributions.html#cb309-2" tabindex="-1"></a>Sigma <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="fl">0.25</span>,<span class="sc">-</span><span class="fl">0.05</span>,<span class="sc">-</span><span class="fl">0.05</span>,<span class="fl">0.45</span>),<span class="at">nrow=</span><span class="dv">2</span>) <span class="co"># fill column-by-column</span></span>
-<span id="cb309-3"><a href="multivariate-distributions.html#cb309-3" tabindex="-1"></a><span class="fu">t</span>(a) <span class="sc">%*%</span> Sigma <span class="sc">%*%</span> a</span></code></pre></div>
+<div class="sourceCode" id="cb315"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb315-1"><a href="multivariate-distributions.html#cb315-1" tabindex="-1"></a>a     <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="sc">-</span><span class="dv">1</span>)</span>
+<span id="cb315-2"><a href="multivariate-distributions.html#cb315-2" tabindex="-1"></a>Sigma <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="fl">0.25</span>,<span class="sc">-</span><span class="fl">0.05</span>,<span class="sc">-</span><span class="fl">0.05</span>,<span class="fl">0.45</span>),<span class="at">nrow=</span><span class="dv">2</span>) <span class="co"># fill column-by-column</span></span>
+<span id="cb315-3"><a href="multivariate-distributions.html#cb315-3" tabindex="-1"></a><span class="fu">t</span>(a) <span class="sc">%*%</span> Sigma <span class="sc">%*%</span> a</span></code></pre></div>
 <pre><code>##      [,1]
 ## [1,]  0.8</code></pre>
 <blockquote>
@@ -1274,11 +1279,11 @@ know this quantity, so we plug in <span class="math inline">\(\widehat{\sigma^2}
 <p>Let’s demonstrate how this works using the same data as we used to
 talk through the output from the <code>R</code> function <code>lm()</code> in Chapter 2.</p>
 </blockquote>
-<div class="sourceCode" id="cb311"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb311-1"><a href="multivariate-distributions.html#cb311-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">202</span>)</span>
-<span id="cb311-2"><a href="multivariate-distributions.html#cb311-2" tabindex="-1"></a>x      <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">40</span>,<span class="at">min=</span><span class="dv">0</span>,<span class="at">max=</span><span class="dv">10</span>)</span>
-<span id="cb311-3"><a href="multivariate-distributions.html#cb311-3" tabindex="-1"></a>Y      <span class="ot">&lt;-</span> <span class="dv">4</span> <span class="sc">+</span> <span class="fl">0.5</span><span class="sc">*</span>x <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">40</span>)</span>
-<span id="cb311-4"><a href="multivariate-distributions.html#cb311-4" tabindex="-1"></a>lm.out <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y<span class="sc">~</span>x)</span>
-<span id="cb311-5"><a href="multivariate-distributions.html#cb311-5" tabindex="-1"></a><span class="fu">summary</span>(lm.out)</span></code></pre></div>
+<div class="sourceCode" id="cb317"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb317-1"><a href="multivariate-distributions.html#cb317-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">202</span>)</span>
+<span id="cb317-2"><a href="multivariate-distributions.html#cb317-2" tabindex="-1"></a>x      <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">40</span>,<span class="at">min=</span><span class="dv">0</span>,<span class="at">max=</span><span class="dv">10</span>)</span>
+<span id="cb317-3"><a href="multivariate-distributions.html#cb317-3" tabindex="-1"></a>Y      <span class="ot">&lt;-</span> <span class="dv">4</span> <span class="sc">+</span> <span class="fl">0.5</span><span class="sc">*</span>x <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">40</span>)</span>
+<span id="cb317-4"><a href="multivariate-distributions.html#cb317-4" tabindex="-1"></a>lm.out <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y<span class="sc">~</span>x)</span>
+<span id="cb317-5"><a href="multivariate-distributions.html#cb317-5" tabindex="-1"></a><span class="fu">summary</span>(lm.out)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = Y ~ x)
@@ -1303,8 +1308,8 @@ talk through the output from the <code>R</code> function <code>lm()</code> in Ch
 <span class="math inline">\(\widehat{\sigma^2} = 0.9587\)</span>. We can extract this from the
 object <code>lm.out</code>:</p>
 </blockquote>
-<div class="sourceCode" id="cb313"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb313-1"><a href="multivariate-distributions.html#cb313-1" tabindex="-1"></a>hat.sigma  <span class="ot">&lt;-</span> <span class="fu">summary</span>(lm.out)<span class="sc">$</span>sigma</span>
-<span id="cb313-2"><a href="multivariate-distributions.html#cb313-2" tabindex="-1"></a>hat.sigma2 <span class="ot">&lt;-</span> hat.sigma<span class="sc">^</span><span class="dv">2</span></span></code></pre></div>
+<div class="sourceCode" id="cb319"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb319-1"><a href="multivariate-distributions.html#cb319-1" tabindex="-1"></a>hat.sigma  <span class="ot">&lt;-</span> <span class="fu">summary</span>(lm.out)<span class="sc">$</span>sigma</span>
+<span id="cb319-2"><a href="multivariate-distributions.html#cb319-2" tabindex="-1"></a>hat.sigma2 <span class="ot">&lt;-</span> hat.sigma<span class="sc">^</span><span class="dv">2</span></span></code></pre></div>
 <blockquote>
 <p>(To determine what quantities are available in an <code>R</code> list
 output by a function such as <code>summary(lm)</code>, we can type
@@ -1312,14 +1317,14 @@ output by a function such as <code>summary(lm)</code>, we can type
 is an accessible list element.)
 We can set up the design matrix as follows:</p>
 </blockquote>
-<div class="sourceCode" id="cb314"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb314-1"><a href="multivariate-distributions.html#cb314-1" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">40</span>),x)</span></code></pre></div>
+<div class="sourceCode" id="cb320"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb320-1"><a href="multivariate-distributions.html#cb320-1" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">40</span>),x)</span></code></pre></div>
 <blockquote>
 <p>“cbind” means “column bind”: the first argument is a vector of 1’s
 that is bound to the second argument, which is the vector of <span class="math inline">\(x_i\)</span>’s,
 thus creating a matrix with 40 rows and 2 columns. We can now compute
 the variance-covariance matrix:</p>
 </blockquote>
-<div class="sourceCode" id="cb315"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb315-1"><a href="multivariate-distributions.html#cb315-1" tabindex="-1"></a>hat.sigma2 <span class="sc">*</span> <span class="fu">solve</span>(<span class="fu">t</span>(X) <span class="sc">%*%</span> X)</span></code></pre></div>
+<div class="sourceCode" id="cb321"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb321-1"><a href="multivariate-distributions.html#cb321-1" tabindex="-1"></a>hat.sigma2 <span class="sc">*</span> <span class="fu">solve</span>(<span class="fu">t</span>(X) <span class="sc">%*%</span> X)</span></code></pre></div>
 <pre><code>##                         x
 ##    0.10344444 -0.01652116
 ## x -0.01652116  0.00343436</code></pre>
@@ -1352,11 +1357,11 @@ negatively) correlated.</p>
 computations we carry out above? No…because <code>R</code> provides wrapper
 functions to help us:</p>
 </blockquote>
-<div class="sourceCode" id="cb317"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb317-1"><a href="multivariate-distributions.html#cb317-1" tabindex="-1"></a>(Sigma <span class="ot">&lt;-</span> <span class="fu">vcov</span>(lm.out)) <span class="co"># compute the variance-covariance matrix</span></span></code></pre></div>
+<div class="sourceCode" id="cb323"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb323-1"><a href="multivariate-distributions.html#cb323-1" tabindex="-1"></a>(Sigma <span class="ot">&lt;-</span> <span class="fu">vcov</span>(lm.out)) <span class="co"># compute the variance-covariance matrix</span></span></code></pre></div>
 <pre><code>##             (Intercept)           x
 ## (Intercept)  0.10344444 -0.01652116
 ## x           -0.01652116  0.00343436</code></pre>
-<div class="sourceCode" id="cb319"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb319-1"><a href="multivariate-distributions.html#cb319-1" tabindex="-1"></a><span class="fu">cov2cor</span>(Sigma)          <span class="co"># convert the covariance to correlation</span></span></code></pre></div>
+<div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb325-1"><a href="multivariate-distributions.html#cb325-1" tabindex="-1"></a><span class="fu">cov2cor</span>(Sigma)          <span class="co"># convert the covariance to correlation</span></span></code></pre></div>
 <pre><code>##             (Intercept)          x
 ## (Intercept)   1.0000000 -0.8765245
 ## x            -0.8765245  1.0000000</code></pre>
@@ -1391,9 +1396,9 @@ Note that if we were to replace every non-zero matrix entry above with
 <p>Below, we show how to populate the <span class="math inline">\(\mathbf{W}\)</span> matrix and use it to determine
 the variance-covariance matrix.</p>
 </blockquote>
-<div class="sourceCode" id="cb321"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb321-1"><a href="multivariate-distributions.html#cb321-1" tabindex="-1"></a><span class="co"># run simple logistic regression on training dataset</span></span>
-<span id="cb321-2"><a href="multivariate-distributions.html#cb321-2" tabindex="-1"></a>log.out <span class="ot">&lt;-</span> <span class="fu">glm</span>(class<span class="sc">~</span>col.iz,<span class="at">data=</span>df.train,<span class="at">family=</span>binomial)</span>
-<span id="cb321-3"><a href="multivariate-distributions.html#cb321-3" tabindex="-1"></a><span class="fu">summary</span>(log.out)</span></code></pre></div>
+<div class="sourceCode" id="cb327"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb327-1"><a href="multivariate-distributions.html#cb327-1" tabindex="-1"></a><span class="co"># run simple logistic regression on training dataset</span></span>
+<span id="cb327-2"><a href="multivariate-distributions.html#cb327-2" tabindex="-1"></a>log.out <span class="ot">&lt;-</span> <span class="fu">glm</span>(class<span class="sc">~</span>col.iz,<span class="at">data=</span>df.train,<span class="at">family=</span>binomial)</span>
+<span id="cb327-3"><a href="multivariate-distributions.html#cb327-3" tabindex="-1"></a><span class="fu">summary</span>(log.out)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## glm(formula = class ~ col.iz, family = binomial, data = df.train)
@@ -1412,25 +1417,25 @@ the variance-covariance matrix.</p>
 ## AIC: 962.16
 ## 
 ## Number of Fisher Scoring iterations: 4</code></pre>
-<div class="sourceCode" id="cb323"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb323-1"><a href="multivariate-distributions.html#cb323-1" tabindex="-1"></a>hat.beta0 <span class="ot">&lt;-</span> log.out<span class="sc">$</span>coefficients[<span class="dv">1</span>]</span>
-<span id="cb323-2"><a href="multivariate-distributions.html#cb323-2" tabindex="-1"></a>hat.beta1 <span class="ot">&lt;-</span> log.out<span class="sc">$</span>coefficients[<span class="dv">2</span>]</span>
-<span id="cb323-3"><a href="multivariate-distributions.html#cb323-3" tabindex="-1"></a>e         <span class="ot">&lt;-</span> <span class="fu">exp</span>(hat.beta0 <span class="sc">+</span> hat.beta1<span class="sc">*</span>df.train<span class="sc">$</span>col.iz)</span>
-<span id="cb323-4"><a href="multivariate-distributions.html#cb323-4" tabindex="-1"></a>W         <span class="ot">&lt;-</span> <span class="fu">diag</span>(e<span class="sc">/</span>(<span class="dv">1</span><span class="sc">+</span>e)<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb323-5"><a href="multivariate-distributions.html#cb323-5" tabindex="-1"></a>X         <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="fu">rep</span>(<span class="dv">1</span>,<span class="fu">nrow</span>(df.train)),df.train<span class="sc">$</span>col.iz)</span>
-<span id="cb323-6"><a href="multivariate-distributions.html#cb323-6" tabindex="-1"></a>(Sigma    <span class="ot">&lt;-</span> <span class="fu">solve</span>(<span class="fu">t</span>(X) <span class="sc">%*%</span> W <span class="sc">%*%</span> X))</span></code></pre></div>
+<div class="sourceCode" id="cb329"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb329-1"><a href="multivariate-distributions.html#cb329-1" tabindex="-1"></a>hat.beta0 <span class="ot">&lt;-</span> log.out<span class="sc">$</span>coefficients[<span class="dv">1</span>]</span>
+<span id="cb329-2"><a href="multivariate-distributions.html#cb329-2" tabindex="-1"></a>hat.beta1 <span class="ot">&lt;-</span> log.out<span class="sc">$</span>coefficients[<span class="dv">2</span>]</span>
+<span id="cb329-3"><a href="multivariate-distributions.html#cb329-3" tabindex="-1"></a>e         <span class="ot">&lt;-</span> <span class="fu">exp</span>(hat.beta0 <span class="sc">+</span> hat.beta1<span class="sc">*</span>df.train<span class="sc">$</span>col.iz)</span>
+<span id="cb329-4"><a href="multivariate-distributions.html#cb329-4" tabindex="-1"></a>W         <span class="ot">&lt;-</span> <span class="fu">diag</span>(e<span class="sc">/</span>(<span class="dv">1</span><span class="sc">+</span>e)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb329-5"><a href="multivariate-distributions.html#cb329-5" tabindex="-1"></a>X         <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="fu">rep</span>(<span class="dv">1</span>,<span class="fu">nrow</span>(df.train)),df.train<span class="sc">$</span>col.iz)</span>
+<span id="cb329-6"><a href="multivariate-distributions.html#cb329-6" tabindex="-1"></a>(Sigma    <span class="ot">&lt;-</span> <span class="fu">solve</span>(<span class="fu">t</span>(X) <span class="sc">%*%</span> W <span class="sc">%*%</span> X))</span></code></pre></div>
 <pre><code>##              [,1]        [,2]
 ## [1,]  0.008584293 -0.01635715
 ## [2,] -0.016357147  0.09641920</code></pre>
-<div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb325-1"><a href="multivariate-distributions.html#cb325-1" tabindex="-1"></a><span class="fu">sqrt</span>(Sigma[<span class="dv">1</span>,<span class="dv">1</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb331-1"><a href="multivariate-distributions.html#cb331-1" tabindex="-1"></a><span class="fu">sqrt</span>(Sigma[<span class="dv">1</span>,<span class="dv">1</span>])</span></code></pre></div>
 <pre><code>## [1] 0.09265146</code></pre>
-<div class="sourceCode" id="cb327"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb327-1"><a href="multivariate-distributions.html#cb327-1" tabindex="-1"></a><span class="fu">sqrt</span>(Sigma[<span class="dv">2</span>,<span class="dv">2</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb333"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb333-1"><a href="multivariate-distributions.html#cb333-1" tabindex="-1"></a><span class="fu">sqrt</span>(Sigma[<span class="dv">2</span>,<span class="dv">2</span>])</span></code></pre></div>
 <pre><code>## [1] 0.3105144</code></pre>
 <blockquote>
 <p>We see that the diagonal elements match the standard errors output
 by the <code>summary()</code> function. We can find the correlation between
 <span class="math inline">\(\hat{\beta}_0\)</span> and <span class="math inline">\(\hat{\beta}_1\)</span> by using the function <code>cov2cor()</code>:</p>
 </blockquote>
-<div class="sourceCode" id="cb329"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb329-1"><a href="multivariate-distributions.html#cb329-1" tabindex="-1"></a><span class="fu">cov2cor</span>(Sigma)</span></code></pre></div>
+<div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb335-1"><a href="multivariate-distributions.html#cb335-1" tabindex="-1"></a><span class="fu">cov2cor</span>(Sigma)</span></code></pre></div>
 <pre><code>##            [,1]       [,2]
 ## [1,]  1.0000000 -0.5685564
 ## [2,] -0.5685564  1.0000000</code></pre>
@@ -1664,7 +1669,7 @@ easy to write down:
 <span class="math display">\[
 f_{X_2 \vert X_1}(x_2 \vert x_1) = \frac{f_{X_1,X_2}(x_1,x_2)}{f_{X_1}(x_1)} = \frac{6(1-x_2)}{3(1-x_1)^2} = \frac{2(1-x_2)}{(1-x_1)^2} \,.
 \]</span>
-Refering back to Figure (fig:mulfig1), we note that this conditional
+Refering back to Figure @(fig:mulfig1), we note that this conditional
 expression can only be non-zero along the line from <span class="math inline">\(x_2 = x_1\)</span> to 1.
 So the domain of this conditional distribution is <span class="math inline">\(x_2 \vert x_1 \in [x_1,1]\)</span>.
 See Figure <a href="multivariate-distributions.html#fig:marcond">6.7</a>.</p>
@@ -1960,28 +1965,28 @@ the marginal distribution is a bivariate normal with means
 <blockquote>
 <p>In <code>R</code>, we might visualize the result using the following code:</p>
 </blockquote>
-<div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb331-1"><a href="multivariate-distributions.html#cb331-1" tabindex="-1"></a>mu     <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>)</span>
-<span id="cb331-2"><a href="multivariate-distributions.html#cb331-2" tabindex="-1"></a>(Sigma <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">2</span>,<span class="fl">0.5</span>,<span class="fl">1.2</span>,<span class="fl">0.5</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="fl">1.2</span>,<span class="dv">1</span>,<span class="dv">2</span>),<span class="at">nrow=</span><span class="dv">3</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb337"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb337-1"><a href="multivariate-distributions.html#cb337-1" tabindex="-1"></a>mu     <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>)</span>
+<span id="cb337-2"><a href="multivariate-distributions.html#cb337-2" tabindex="-1"></a>(Sigma <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">2</span>,<span class="fl">0.5</span>,<span class="fl">1.2</span>,<span class="fl">0.5</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="fl">1.2</span>,<span class="dv">1</span>,<span class="dv">2</span>),<span class="at">nrow=</span><span class="dv">3</span>))</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]  2.0  0.5  1.2
 ## [2,]  0.5  2.0  1.0
 ## [3,]  1.2  1.0  2.0</code></pre>
-<div class="sourceCode" id="cb333"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb333-1"><a href="multivariate-distributions.html#cb333-1" tabindex="-1"></a>keep       <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)</span>
-<span id="cb333-2"><a href="multivariate-distributions.html#cb333-2" tabindex="-1"></a>mu.marg    <span class="ot">&lt;-</span> mu[keep]</span>
-<span id="cb333-3"><a href="multivariate-distributions.html#cb333-3" tabindex="-1"></a>Sigma.marg <span class="ot">&lt;-</span> Sigma[keep,keep]</span>
-<span id="cb333-4"><a href="multivariate-distributions.html#cb333-4" tabindex="-1"></a></span>
-<span id="cb333-5"><a href="multivariate-distributions.html#cb333-5" tabindex="-1"></a>x1.plot   <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">1.5</span>,<span class="fl">5.5</span>,<span class="at">by=</span><span class="fl">0.05</span>)</span>
-<span id="cb333-6"><a href="multivariate-distributions.html#cb333-6" tabindex="-1"></a>x2.plot   <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">0.5</span>,<span class="fl">7.5</span>,<span class="at">by=</span><span class="fl">0.05</span>)</span>
-<span id="cb333-7"><a href="multivariate-distributions.html#cb333-7" tabindex="-1"></a>x.plot    <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="at">x1=</span>x1.plot,<span class="at">x2=</span>x2.plot)</span>
-<span id="cb333-8"><a href="multivariate-distributions.html#cb333-8" tabindex="-1"></a></span>
-<span id="cb333-9"><a href="multivariate-distributions.html#cb333-9" tabindex="-1"></a><span class="fu">library</span>(mvtnorm)</span>
-<span id="cb333-10"><a href="multivariate-distributions.html#cb333-10" tabindex="-1"></a><span class="fu">library</span>(metR)</span>
-<span id="cb333-11"><a href="multivariate-distributions.html#cb333-11" tabindex="-1"></a>x.plot<span class="sc">$</span>fx <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">dmvnorm</span>(x.plot,mu.marg,Sigma.marg),<span class="at">ncol=</span><span class="dv">1</span>)</span>
-<span id="cb333-12"><a href="multivariate-distributions.html#cb333-12" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>x.plot,<span class="fu">aes</span>(<span class="at">x=</span>x1,<span class="at">y=</span>x2)) <span class="sc">+</span></span>
-<span id="cb333-13"><a href="multivariate-distributions.html#cb333-13" tabindex="-1"></a>  <span class="fu">geom_contour</span>(<span class="fu">aes</span>(<span class="at">z=</span>fx),<span class="at">col=</span><span class="st">&quot;turquoise&quot;</span>,<span class="at">breaks=</span><span class="fu">seq</span>(<span class="fl">0.01</span>,<span class="fl">0.08</span>,<span class="at">by=</span><span class="fl">0.01</span>)) <span class="sc">+</span></span>
-<span id="cb333-14"><a href="multivariate-distributions.html#cb333-14" tabindex="-1"></a>  <span class="fu">geom_text_contour</span>(<span class="fu">aes</span>(<span class="at">z=</span>fx),<span class="at">skip=</span><span class="fl">0.75</span>,<span class="at">col=</span><span class="st">&quot;turquoise&quot;</span>,<span class="at">stroke=</span><span class="fl">0.2</span>,<span class="at">stroke.color=</span><span class="st">&quot;azure2&quot;</span>) <span class="sc">+</span></span>
-<span id="cb333-15"><a href="multivariate-distributions.html#cb333-15" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="fu">expression</span>(x[<span class="dv">1</span>]),<span class="at">y=</span><span class="fu">expression</span>(x[<span class="dv">2</span>])) <span class="sc">+</span></span>
-<span id="cb333-16"><a href="multivariate-distributions.html#cb333-16" tabindex="-1"></a>  base_theme</span></code></pre></div>
+<div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb339-1"><a href="multivariate-distributions.html#cb339-1" tabindex="-1"></a>keep       <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)</span>
+<span id="cb339-2"><a href="multivariate-distributions.html#cb339-2" tabindex="-1"></a>mu.marg    <span class="ot">&lt;-</span> mu[keep]</span>
+<span id="cb339-3"><a href="multivariate-distributions.html#cb339-3" tabindex="-1"></a>Sigma.marg <span class="ot">&lt;-</span> Sigma[keep,keep]</span>
+<span id="cb339-4"><a href="multivariate-distributions.html#cb339-4" tabindex="-1"></a></span>
+<span id="cb339-5"><a href="multivariate-distributions.html#cb339-5" tabindex="-1"></a>x1.plot   <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">1.5</span>,<span class="fl">5.5</span>,<span class="at">by=</span><span class="fl">0.05</span>)</span>
+<span id="cb339-6"><a href="multivariate-distributions.html#cb339-6" tabindex="-1"></a>x2.plot   <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">0.5</span>,<span class="fl">7.5</span>,<span class="at">by=</span><span class="fl">0.05</span>)</span>
+<span id="cb339-7"><a href="multivariate-distributions.html#cb339-7" tabindex="-1"></a>x.plot    <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="at">x1=</span>x1.plot,<span class="at">x2=</span>x2.plot)</span>
+<span id="cb339-8"><a href="multivariate-distributions.html#cb339-8" tabindex="-1"></a></span>
+<span id="cb339-9"><a href="multivariate-distributions.html#cb339-9" tabindex="-1"></a><span class="fu">library</span>(mvtnorm)</span>
+<span id="cb339-10"><a href="multivariate-distributions.html#cb339-10" tabindex="-1"></a><span class="fu">library</span>(metR)</span>
+<span id="cb339-11"><a href="multivariate-distributions.html#cb339-11" tabindex="-1"></a>x.plot<span class="sc">$</span>fx <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">dmvnorm</span>(x.plot,mu.marg,Sigma.marg),<span class="at">ncol=</span><span class="dv">1</span>)</span>
+<span id="cb339-12"><a href="multivariate-distributions.html#cb339-12" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>x.plot,<span class="fu">aes</span>(<span class="at">x=</span>x1,<span class="at">y=</span>x2)) <span class="sc">+</span></span>
+<span id="cb339-13"><a href="multivariate-distributions.html#cb339-13" tabindex="-1"></a>  <span class="fu">geom_contour</span>(<span class="fu">aes</span>(<span class="at">z=</span>fx),<span class="at">col=</span><span class="st">&quot;turquoise&quot;</span>,<span class="at">breaks=</span><span class="fu">seq</span>(<span class="fl">0.01</span>,<span class="fl">0.08</span>,<span class="at">by=</span><span class="fl">0.01</span>)) <span class="sc">+</span></span>
+<span id="cb339-14"><a href="multivariate-distributions.html#cb339-14" tabindex="-1"></a>  <span class="fu">geom_text_contour</span>(<span class="fu">aes</span>(<span class="at">z=</span>fx),<span class="at">skip=</span><span class="fl">0.75</span>,<span class="at">col=</span><span class="st">&quot;turquoise&quot;</span>,<span class="at">stroke=</span><span class="fl">0.2</span>,<span class="at">stroke.color=</span><span class="st">&quot;azure2&quot;</span>) <span class="sc">+</span></span>
+<span id="cb339-15"><a href="multivariate-distributions.html#cb339-15" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="fu">expression</span>(x[<span class="dv">1</span>]),<span class="at">y=</span><span class="fu">expression</span>(x[<span class="dv">2</span>])) <span class="sc">+</span></span>
+<span id="cb339-16"><a href="multivariate-distributions.html#cb339-16" tabindex="-1"></a>  base_theme</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:mvmarg"></span>
 <img src="_main_files/figure-html/mvmarg-1.png" alt="\label{fig:margnorm}Contour plot indicating the location and orientation of a bivariate normal distribution with mean $\boldsymbol{\mu} = \{2,4\}$ and covariance matrix as given in the example. The numbers along each contour indicate the amplitude of the pdf, whose maximum point is in the center." width="45%" />
 <p class="caption">
@@ -2001,36 +2006,36 @@ the conditional distribution of <span class="math inline">\(X_1\)</span> and <sp
 question using <code>R</code> code only, following the mathematical prescription given
 in the text above.</p>
 </blockquote>
-<div class="sourceCode" id="cb334"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb334-1"><a href="multivariate-distributions.html#cb334-1" tabindex="-1"></a>mu    <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>)</span>
-<span id="cb334-2"><a href="multivariate-distributions.html#cb334-2" tabindex="-1"></a>Sigma <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">2</span>,<span class="fl">0.5</span>,<span class="fl">1.2</span>,<span class="fl">0.5</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="fl">1.2</span>,<span class="dv">1</span>,<span class="dv">2</span>),<span class="at">nrow=</span><span class="dv">3</span>)</span>
-<span id="cb334-3"><a href="multivariate-distributions.html#cb334-3" tabindex="-1"></a></span>
-<span id="cb334-4"><a href="multivariate-distributions.html#cb334-4" tabindex="-1"></a>u        <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>)</span>
-<span id="cb334-5"><a href="multivariate-distributions.html#cb334-5" tabindex="-1"></a>v        <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>)</span>
-<span id="cb334-6"><a href="multivariate-distributions.html#cb334-6" tabindex="-1"></a>v.coord  <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>)</span>
-<span id="cb334-7"><a href="multivariate-distributions.html#cb334-7" tabindex="-1"></a>mu.u     <span class="ot">&lt;-</span> mu[u]</span>
-<span id="cb334-8"><a href="multivariate-distributions.html#cb334-8" tabindex="-1"></a>mu.v     <span class="ot">&lt;-</span> mu[v]</span>
-<span id="cb334-9"><a href="multivariate-distributions.html#cb334-9" tabindex="-1"></a>Sigma.uu <span class="ot">&lt;-</span> Sigma[u,u]</span>
-<span id="cb334-10"><a href="multivariate-distributions.html#cb334-10" tabindex="-1"></a>Sigma.uv <span class="ot">&lt;-</span> Sigma[u,v]</span>
-<span id="cb334-11"><a href="multivariate-distributions.html#cb334-11" tabindex="-1"></a>Sigma.vu <span class="ot">&lt;-</span> Sigma[v,u]</span>
-<span id="cb334-12"><a href="multivariate-distributions.html#cb334-12" tabindex="-1"></a>Sigma.vv <span class="ot">&lt;-</span> Sigma[v,v]</span>
-<span id="cb334-13"><a href="multivariate-distributions.html#cb334-13" tabindex="-1"></a></span>
-<span id="cb334-14"><a href="multivariate-distributions.html#cb334-14" tabindex="-1"></a>mu.c     <span class="ot">&lt;-</span> mu.u <span class="sc">+</span> Sigma.uv <span class="sc">%*%</span> <span class="fu">solve</span>(Sigma.vv) <span class="sc">%*%</span> (v.coord <span class="sc">-</span> mu.v)</span>
-<span id="cb334-15"><a href="multivariate-distributions.html#cb334-15" tabindex="-1"></a>(Sigma.c <span class="ot">&lt;-</span> Sigma.uu <span class="sc">-</span> Sigma.uv <span class="sc">%*%</span> <span class="fu">solve</span>(Sigma.vv) <span class="sc">%*%</span> Sigma.vu)</span></code></pre></div>
+<div class="sourceCode" id="cb340"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb340-1"><a href="multivariate-distributions.html#cb340-1" tabindex="-1"></a>mu    <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>)</span>
+<span id="cb340-2"><a href="multivariate-distributions.html#cb340-2" tabindex="-1"></a>Sigma <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">2</span>,<span class="fl">0.5</span>,<span class="fl">1.2</span>,<span class="fl">0.5</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="fl">1.2</span>,<span class="dv">1</span>,<span class="dv">2</span>),<span class="at">nrow=</span><span class="dv">3</span>)</span>
+<span id="cb340-3"><a href="multivariate-distributions.html#cb340-3" tabindex="-1"></a></span>
+<span id="cb340-4"><a href="multivariate-distributions.html#cb340-4" tabindex="-1"></a>u        <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>)</span>
+<span id="cb340-5"><a href="multivariate-distributions.html#cb340-5" tabindex="-1"></a>v        <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>)</span>
+<span id="cb340-6"><a href="multivariate-distributions.html#cb340-6" tabindex="-1"></a>v.coord  <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>)</span>
+<span id="cb340-7"><a href="multivariate-distributions.html#cb340-7" tabindex="-1"></a>mu.u     <span class="ot">&lt;-</span> mu[u]</span>
+<span id="cb340-8"><a href="multivariate-distributions.html#cb340-8" tabindex="-1"></a>mu.v     <span class="ot">&lt;-</span> mu[v]</span>
+<span id="cb340-9"><a href="multivariate-distributions.html#cb340-9" tabindex="-1"></a>Sigma.uu <span class="ot">&lt;-</span> Sigma[u,u]</span>
+<span id="cb340-10"><a href="multivariate-distributions.html#cb340-10" tabindex="-1"></a>Sigma.uv <span class="ot">&lt;-</span> Sigma[u,v]</span>
+<span id="cb340-11"><a href="multivariate-distributions.html#cb340-11" tabindex="-1"></a>Sigma.vu <span class="ot">&lt;-</span> Sigma[v,u]</span>
+<span id="cb340-12"><a href="multivariate-distributions.html#cb340-12" tabindex="-1"></a>Sigma.vv <span class="ot">&lt;-</span> Sigma[v,v]</span>
+<span id="cb340-13"><a href="multivariate-distributions.html#cb340-13" tabindex="-1"></a></span>
+<span id="cb340-14"><a href="multivariate-distributions.html#cb340-14" tabindex="-1"></a>mu.c     <span class="ot">&lt;-</span> mu.u <span class="sc">+</span> Sigma.uv <span class="sc">%*%</span> <span class="fu">solve</span>(Sigma.vv) <span class="sc">%*%</span> (v.coord <span class="sc">-</span> mu.v)</span>
+<span id="cb340-15"><a href="multivariate-distributions.html#cb340-15" tabindex="-1"></a>(Sigma.c <span class="ot">&lt;-</span> Sigma.uu <span class="sc">-</span> Sigma.uv <span class="sc">%*%</span> <span class="fu">solve</span>(Sigma.vv) <span class="sc">%*%</span> Sigma.vu)</span></code></pre></div>
 <pre><code>##       [,1] [,2]
 ## [1,] 1.875 0.95
 ## [2,] 0.950 1.50</code></pre>
-<div class="sourceCode" id="cb336"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb336-1"><a href="multivariate-distributions.html#cb336-1" tabindex="-1"></a>x1.plot   <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">1.5</span>,<span class="fl">5.5</span>,<span class="at">by=</span><span class="fl">0.05</span>)</span>
-<span id="cb336-2"><a href="multivariate-distributions.html#cb336-2" tabindex="-1"></a>x2.plot   <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">3</span>,<span class="dv">10</span>,<span class="at">by=</span><span class="fl">0.05</span>)</span>
-<span id="cb336-3"><a href="multivariate-distributions.html#cb336-3" tabindex="-1"></a>x.plot    <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="at">x1=</span>x1.plot,<span class="at">x2=</span>x2.plot)</span>
-<span id="cb336-4"><a href="multivariate-distributions.html#cb336-4" tabindex="-1"></a></span>
-<span id="cb336-5"><a href="multivariate-distributions.html#cb336-5" tabindex="-1"></a><span class="fu">library</span>(mvtnorm)</span>
-<span id="cb336-6"><a href="multivariate-distributions.html#cb336-6" tabindex="-1"></a><span class="fu">library</span>(metR)</span>
-<span id="cb336-7"><a href="multivariate-distributions.html#cb336-7" tabindex="-1"></a>x.plot<span class="sc">$</span>fx <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">dmvnorm</span>(x.plot,mu.c,Sigma.c),<span class="at">ncol=</span><span class="dv">1</span>)</span>
-<span id="cb336-8"><a href="multivariate-distributions.html#cb336-8" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>x.plot,<span class="fu">aes</span>(<span class="at">x=</span>x1,<span class="at">y=</span>x2)) <span class="sc">+</span></span>
-<span id="cb336-9"><a href="multivariate-distributions.html#cb336-9" tabindex="-1"></a>  <span class="fu">geom_contour</span>(<span class="fu">aes</span>(<span class="at">z=</span>fx),<span class="at">col=</span><span class="st">&quot;turquoise&quot;</span>,<span class="at">breaks=</span><span class="fu">seq</span>(<span class="fl">0.01</span>,<span class="fl">0.11</span>,<span class="at">by=</span><span class="fl">0.01</span>)) <span class="sc">+</span></span>
-<span id="cb336-10"><a href="multivariate-distributions.html#cb336-10" tabindex="-1"></a>  <span class="fu">geom_text_contour</span>(<span class="fu">aes</span>(<span class="at">z=</span>fx),<span class="at">skip=</span><span class="fl">0.8</span>,<span class="at">col=</span><span class="st">&quot;turquoise&quot;</span>,<span class="at">stroke=</span><span class="fl">0.2</span>,<span class="at">stroke.color=</span><span class="st">&quot;azure2&quot;</span>) <span class="sc">+</span></span>
-<span id="cb336-11"><a href="multivariate-distributions.html#cb336-11" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="fu">expression</span>(x[<span class="dv">1</span>]),<span class="at">y=</span><span class="fu">expression</span>(x[<span class="dv">3</span>])) <span class="sc">+</span></span>
-<span id="cb336-12"><a href="multivariate-distributions.html#cb336-12" tabindex="-1"></a>  base_theme</span></code></pre></div>
+<div class="sourceCode" id="cb342"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb342-1"><a href="multivariate-distributions.html#cb342-1" tabindex="-1"></a>x1.plot   <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">1.5</span>,<span class="fl">5.5</span>,<span class="at">by=</span><span class="fl">0.05</span>)</span>
+<span id="cb342-2"><a href="multivariate-distributions.html#cb342-2" tabindex="-1"></a>x2.plot   <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">3</span>,<span class="dv">10</span>,<span class="at">by=</span><span class="fl">0.05</span>)</span>
+<span id="cb342-3"><a href="multivariate-distributions.html#cb342-3" tabindex="-1"></a>x.plot    <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="at">x1=</span>x1.plot,<span class="at">x2=</span>x2.plot)</span>
+<span id="cb342-4"><a href="multivariate-distributions.html#cb342-4" tabindex="-1"></a></span>
+<span id="cb342-5"><a href="multivariate-distributions.html#cb342-5" tabindex="-1"></a><span class="fu">library</span>(mvtnorm)</span>
+<span id="cb342-6"><a href="multivariate-distributions.html#cb342-6" tabindex="-1"></a><span class="fu">library</span>(metR)</span>
+<span id="cb342-7"><a href="multivariate-distributions.html#cb342-7" tabindex="-1"></a>x.plot<span class="sc">$</span>fx <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">dmvnorm</span>(x.plot,mu.c,Sigma.c),<span class="at">ncol=</span><span class="dv">1</span>)</span>
+<span id="cb342-8"><a href="multivariate-distributions.html#cb342-8" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>x.plot,<span class="fu">aes</span>(<span class="at">x=</span>x1,<span class="at">y=</span>x2)) <span class="sc">+</span></span>
+<span id="cb342-9"><a href="multivariate-distributions.html#cb342-9" tabindex="-1"></a>  <span class="fu">geom_contour</span>(<span class="fu">aes</span>(<span class="at">z=</span>fx),<span class="at">col=</span><span class="st">&quot;turquoise&quot;</span>,<span class="at">breaks=</span><span class="fu">seq</span>(<span class="fl">0.01</span>,<span class="fl">0.11</span>,<span class="at">by=</span><span class="fl">0.01</span>)) <span class="sc">+</span></span>
+<span id="cb342-10"><a href="multivariate-distributions.html#cb342-10" tabindex="-1"></a>  <span class="fu">geom_text_contour</span>(<span class="fu">aes</span>(<span class="at">z=</span>fx),<span class="at">skip=</span><span class="fl">0.8</span>,<span class="at">col=</span><span class="st">&quot;turquoise&quot;</span>,<span class="at">stroke=</span><span class="fl">0.2</span>,<span class="at">stroke.color=</span><span class="st">&quot;azure2&quot;</span>) <span class="sc">+</span></span>
+<span id="cb342-11"><a href="multivariate-distributions.html#cb342-11" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="fu">expression</span>(x[<span class="dv">1</span>]),<span class="at">y=</span><span class="fu">expression</span>(x[<span class="dv">3</span>])) <span class="sc">+</span></span>
+<span id="cb342-12"><a href="multivariate-distributions.html#cb342-12" tabindex="-1"></a>  base_theme</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:mvcond"></span>
 <img src="_main_files/figure-html/mvcond-1.png" alt="\label{fig:condnorm}Contour plot indicating the location and orientation of a bivariate normal distribution with conditional mean $\boldsymbol{\mu} = \{2.25,6.50\}$ and conditional covariance matrix as given in the example. The numbers along each contour indicate the amplitude of the pdf, whose maximum point is in the center." width="45%" />
 <p class="caption">
@@ -2051,21 +2056,21 @@ covariance matrix
 Furthermore, we assume that the covariance matrix is unknown to us. How
 would we estimate this matrix?</p>
 </blockquote>
-<div class="sourceCode" id="cb337"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb337-1"><a href="multivariate-distributions.html#cb337-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
-<span id="cb337-2"><a href="multivariate-distributions.html#cb337-2" tabindex="-1"></a>n     <span class="ot">&lt;-</span> <span class="dv">40</span></span>
-<span id="cb337-3"><a href="multivariate-distributions.html#cb337-3" tabindex="-1"></a>mu    <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">1</span>)</span>
-<span id="cb337-4"><a href="multivariate-distributions.html#cb337-4" tabindex="-1"></a>Sigma <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="fl">0.5</span>,<span class="fl">0.5</span>,<span class="dv">2</span>),<span class="at">nrow=</span><span class="dv">2</span>)</span>
-<span id="cb337-5"><a href="multivariate-distributions.html#cb337-5" tabindex="-1"></a>X     <span class="ot">&lt;-</span> <span class="fu">rmvnorm</span>(n,mu,Sigma)</span>
-<span id="cb337-6"><a href="multivariate-distributions.html#cb337-6" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">round</span>(X,<span class="dv">3</span>),<span class="dv">3</span>) <span class="co"># x1: column 1 | x2: column2</span></span></code></pre></div>
+<div class="sourceCode" id="cb343"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb343-1"><a href="multivariate-distributions.html#cb343-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
+<span id="cb343-2"><a href="multivariate-distributions.html#cb343-2" tabindex="-1"></a>n     <span class="ot">&lt;-</span> <span class="dv">40</span></span>
+<span id="cb343-3"><a href="multivariate-distributions.html#cb343-3" tabindex="-1"></a>mu    <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">1</span>)</span>
+<span id="cb343-4"><a href="multivariate-distributions.html#cb343-4" tabindex="-1"></a>Sigma <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="fl">0.5</span>,<span class="fl">0.5</span>,<span class="dv">2</span>),<span class="at">nrow=</span><span class="dv">2</span>)</span>
+<span id="cb343-5"><a href="multivariate-distributions.html#cb343-5" tabindex="-1"></a>X     <span class="ot">&lt;-</span> <span class="fu">rmvnorm</span>(n,mu,Sigma)</span>
+<span id="cb343-6"><a href="multivariate-distributions.html#cb343-6" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">round</span>(X,<span class="dv">3</span>),<span class="dv">3</span>) <span class="co"># x1: column 1 | x2: column2</span></span></code></pre></div>
 <pre><code>##       [,1]  [,2]
 ## [1,] 1.798 1.704
 ## [2,] 1.385 1.158
 ## [3,] 2.551 2.707</code></pre>
-<div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb339-1"><a href="multivariate-distributions.html#cb339-1" tabindex="-1"></a>df    <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x=</span>X[,<span class="dv">1</span>],<span class="at">y=</span>X[,<span class="dv">2</span>])</span>
-<span id="cb339-2"><a href="multivariate-distributions.html#cb339-2" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>df,<span class="fu">aes</span>(<span class="at">x=</span>x,<span class="at">y=</span>y)) <span class="sc">+</span></span>
-<span id="cb339-3"><a href="multivariate-distributions.html#cb339-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">col=</span><span class="st">&quot;blue&quot;</span>,<span class="at">size=</span><span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb339-4"><a href="multivariate-distributions.html#cb339-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="fu">expression</span>(x[<span class="dv">1</span>]),<span class="at">y=</span><span class="fu">expression</span>(x[<span class="dv">2</span>])) <span class="sc">+</span></span>
-<span id="cb339-5"><a href="multivariate-distributions.html#cb339-5" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">1.25</span>)))</span></code></pre></div>
+<div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb345-1"><a href="multivariate-distributions.html#cb345-1" tabindex="-1"></a>df    <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x=</span>X[,<span class="dv">1</span>],<span class="at">y=</span>X[,<span class="dv">2</span>])</span>
+<span id="cb345-2"><a href="multivariate-distributions.html#cb345-2" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>df,<span class="fu">aes</span>(<span class="at">x=</span>x,<span class="at">y=</span>y)) <span class="sc">+</span></span>
+<span id="cb345-3"><a href="multivariate-distributions.html#cb345-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">col=</span><span class="st">&quot;blue&quot;</span>,<span class="at">size=</span><span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb345-4"><a href="multivariate-distributions.html#cb345-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="fu">expression</span>(x[<span class="dv">1</span>]),<span class="at">y=</span><span class="fu">expression</span>(x[<span class="dv">2</span>])) <span class="sc">+</span></span>
+<span id="cb345-5"><a href="multivariate-distributions.html#cb345-5" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">1.25</span>)))</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:sampx"></span>
 <img src="_main_files/figure-html/sampx-1.png" alt="\label{fig:sampx}Sample of $n = 40$ iid data drawn from a bivariate normal distribution with means $\boldsymbol{\mu} = \{2,1\}$ and covariance matrix $\boldsymbol{\Sigma}$ given in the main body of the text." width="50%" />
 <p class="caption">
@@ -2081,12 +2086,12 @@ C_{jk} = \frac{1}{n-1} \sum_{i=1}^n (X_{ji} - \bar{X}_j)(X_{ki} - \bar{X}_k) \,.
 So, for instance, for our data we would determine <span class="math inline">\(C_{12}\)</span> in <code>R</code> as
 follows:</p>
 </blockquote>
-<div class="sourceCode" id="cb340"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb340-1"><a href="multivariate-distributions.html#cb340-1" tabindex="-1"></a>(<span class="dv">1</span><span class="sc">/</span>(n<span class="dv">-1</span>))<span class="sc">*</span><span class="fu">sum</span>((X[,<span class="dv">1</span>]<span class="sc">-</span><span class="fu">mean</span>(X[,<span class="dv">1</span>]))<span class="sc">*</span>(X[,<span class="dv">2</span>]<span class="sc">-</span><span class="fu">mean</span>(X[,<span class="dv">2</span>])))</span></code></pre></div>
+<div class="sourceCode" id="cb346"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb346-1"><a href="multivariate-distributions.html#cb346-1" tabindex="-1"></a>(<span class="dv">1</span><span class="sc">/</span>(n<span class="dv">-1</span>))<span class="sc">*</span><span class="fu">sum</span>((X[,<span class="dv">1</span>]<span class="sc">-</span><span class="fu">mean</span>(X[,<span class="dv">1</span>]))<span class="sc">*</span>(X[,<span class="dv">2</span>]<span class="sc">-</span><span class="fu">mean</span>(X[,<span class="dv">2</span>])))</span></code></pre></div>
 <pre><code>## [1] 0.389421</code></pre>
 <blockquote>
 <p>This calculation matches that done by the <code>R</code> function <code>cov()</code>:</p>
 </blockquote>
-<div class="sourceCode" id="cb342"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb342-1"><a href="multivariate-distributions.html#cb342-1" tabindex="-1"></a><span class="fu">cov</span>(X)</span></code></pre></div>
+<div class="sourceCode" id="cb348"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb348-1"><a href="multivariate-distributions.html#cb348-1" tabindex="-1"></a><span class="fu">cov</span>(X)</span></code></pre></div>
 <pre><code>##           [,1]     [,2]
 ## [1,] 0.8057418 0.389421
 ## [2,] 0.3894210 1.653003</code></pre>

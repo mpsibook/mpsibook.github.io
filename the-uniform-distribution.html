@@ -65,7 +65,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -349,10 +349,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3.6" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#point-estimation-2"><i class="fa fa-check"></i><b>3.6</b> Point Estimation</a>
 <ul>
-<li class="chapter" data-level="3.6.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-mle-for-the-binomial-success-probability"><i class="fa fa-check"></i><b>3.6.1</b> The MLE for the Binomial Success Probability</a></li>
-<li class="chapter" data-level="3.6.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#sufficient-statistics-for-the-normal-distribution"><i class="fa fa-check"></i><b>3.6.2</b> Sufficient Statistics for the Normal Distribution</a></li>
-<li class="chapter" data-level="3.6.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-mvue-for-the-exponential-mean"><i class="fa fa-check"></i><b>3.6.3</b> The MVUE for the Exponential Mean</a></li>
-<li class="chapter" data-level="3.6.4" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-mvue-for-the-geometric-distribution"><i class="fa fa-check"></i><b>3.6.4</b> The MVUE for the Geometric Distribution</a></li>
+<li class="chapter" data-level="3.6.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#sufficiency-and-the-exponential-family-of-distributions"><i class="fa fa-check"></i><b>3.6.1</b> Sufficiency and the Exponential Family of Distributions</a></li>
+<li class="chapter" data-level="3.6.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-mle-for-the-binomial-success-probability"><i class="fa fa-check"></i><b>3.6.2</b> The MLE for the Binomial Success Probability</a></li>
+<li class="chapter" data-level="3.6.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#sufficient-statistics-for-the-normal-distribution"><i class="fa fa-check"></i><b>3.6.3</b> Sufficient Statistics for the Normal Distribution</a></li>
+<li class="chapter" data-level="3.6.4" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-mvue-for-the-exponential-mean"><i class="fa fa-check"></i><b>3.6.4</b> The MVUE for the Exponential Mean</a></li>
+<li class="chapter" data-level="3.6.5" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-mvue-for-the-geometric-distribution"><i class="fa fa-check"></i><b>3.6.5</b> The MVUE for the Geometric Distribution</a></li>
 </ul></li>
 <li class="chapter" data-level="3.7" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#confidence-intervals-2"><i class="fa fa-check"></i><b>3.7</b> Confidence Intervals</a>
 <ul>
@@ -423,6 +424,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.6.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#revisiting-the-death-by-horse-kick-example-1"><i class="fa fa-check"></i><b>4.6.2</b> Revisiting the Death-by-Horse-Kick Example</a></li>
 <li class="chapter" data-level="4.6.3" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#determining-a-confidence-interval-using-the-bootstrap"><i class="fa fa-check"></i><b>4.6.3</b> Determining a Confidence Interval Using the Bootstrap</a></li>
 <li class="chapter" data-level="4.6.4" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#the-proportion-of-observed-data-in-a-bootstrap-sample"><i class="fa fa-check"></i><b>4.6.4</b> The Proportion of Observed Data in a Bootstrap Sample</a></li>
+<li class="chapter" data-level="4.6.5" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#confidence-interval-estimation-via-simulation-and-numerical-optimization"><i class="fa fa-check"></i><b>4.6.5</b> Confidence Interval Estimation via Simulation and Numerical Optimization</a></li>
 </ul></li>
 <li class="chapter" data-level="4.7" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#hypothesis-testing-2"><i class="fa fa-check"></i><b>4.7</b> Hypothesis Testing</a>
 <ul>
@@ -446,6 +448,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="4.10.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#revisiting-the-death-by-horse-kick-example-3"><i class="fa fa-check"></i><b>4.10.1</b> Revisiting the Death-by-Horse-Kick Example</a></li>
 </ul></li>
+<li class="chapter" data-level="4.11" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#exercises-1"><i class="fa fa-check"></i><b>4.11</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html"><i class="fa fa-check"></i><b>5</b> The Uniform Distribution</a>
 <ul>
@@ -478,6 +481,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.6.1" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#the-power-curve-for-testing-the-uniform-distribution-upper-bound"><i class="fa fa-check"></i><b>5.6.1</b> The Power Curve for Testing the Uniform Distribution Upper Bound</a></li>
 <li class="chapter" data-level="5.6.2" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#an-illustration-of-multiple-comparisons-when-testing-for-the-normal-mean"><i class="fa fa-check"></i><b>5.6.2</b> An Illustration of Multiple Comparisons When Testing for the Normal Mean</a></li>
 </ul></li>
+<li class="chapter" data-level="5.7" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#exercises-2"><i class="fa fa-check"></i><b>5.7</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html"><i class="fa fa-check"></i><b>6</b> Multivariate Distributions</a>
 <ul>
@@ -538,6 +542,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="chapter-exercises-solutions.html"><a href="chapter-exercises-solutions.html"><i class="fa fa-check"></i>Chapter Exercises: Solutions</a>
 <ul>
 <li class="chapter" data-level="" data-path="chapter-exercises-solutions.html"><a href="chapter-exercises-solutions.html#chapter-3"><i class="fa fa-check"></i>Chapter 3</a></li>
+<li class="chapter" data-level="" data-path="chapter-exercises-solutions.html"><a href="chapter-exercises-solutions.html#chapter-4"><i class="fa fa-check"></i>Chapter 4</a></li>
 </ul></li>
 </ul>
 
@@ -695,52 +700,52 @@ of the cumulative distribution function, given <span class="math inline">\(x\)</
 <p>For the discrete uniform distribution, one can code the
 probability mass function as follows:</p>
 </blockquote>
-<div class="sourceCode" id="cb291"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb291-1"><a href="the-uniform-distribution.html#cb291-1" tabindex="-1"></a>ddiscunif <span class="ot">&lt;-</span> <span class="cf">function</span>(x,<span class="at">min=</span><span class="dv">0</span>,<span class="at">max=</span><span class="dv">1</span>,<span class="at">step=</span><span class="dv">1</span>)</span>
-<span id="cb291-2"><a href="the-uniform-distribution.html#cb291-2" tabindex="-1"></a>{</span>
-<span id="cb291-3"><a href="the-uniform-distribution.html#cb291-3" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">seq</span>(min,max,<span class="at">by=</span>step)</span>
-<span id="cb291-4"><a href="the-uniform-distribution.html#cb291-4" tabindex="-1"></a>  <span class="cf">if</span> ( x <span class="sc">%in%</span> y ) <span class="fu">return</span>(<span class="dv">1</span><span class="sc">/</span><span class="fu">length</span>(y))</span>
-<span id="cb291-5"><a href="the-uniform-distribution.html#cb291-5" tabindex="-1"></a>  <span class="fu">return</span>(<span class="dv">0</span>)</span>
-<span id="cb291-6"><a href="the-uniform-distribution.html#cb291-6" tabindex="-1"></a>}</span>
-<span id="cb291-7"><a href="the-uniform-distribution.html#cb291-7" tabindex="-1"></a><span class="fu">ddiscunif</span>(<span class="dv">4</span>,<span class="at">min=</span><span class="dv">1</span>,<span class="at">max=</span><span class="dv">6</span>) <span class="co"># assume a fair six-sided die</span></span></code></pre></div>
+<div class="sourceCode" id="cb297"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb297-1"><a href="the-uniform-distribution.html#cb297-1" tabindex="-1"></a>ddiscunif <span class="ot">&lt;-</span> <span class="cf">function</span>(x,<span class="at">min=</span><span class="dv">0</span>,<span class="at">max=</span><span class="dv">1</span>,<span class="at">step=</span><span class="dv">1</span>)</span>
+<span id="cb297-2"><a href="the-uniform-distribution.html#cb297-2" tabindex="-1"></a>{</span>
+<span id="cb297-3"><a href="the-uniform-distribution.html#cb297-3" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">seq</span>(min,max,<span class="at">by=</span>step)</span>
+<span id="cb297-4"><a href="the-uniform-distribution.html#cb297-4" tabindex="-1"></a>  <span class="cf">if</span> ( x <span class="sc">%in%</span> y ) <span class="fu">return</span>(<span class="dv">1</span><span class="sc">/</span><span class="fu">length</span>(y))</span>
+<span id="cb297-5"><a href="the-uniform-distribution.html#cb297-5" tabindex="-1"></a>  <span class="fu">return</span>(<span class="dv">0</span>)</span>
+<span id="cb297-6"><a href="the-uniform-distribution.html#cb297-6" tabindex="-1"></a>}</span>
+<span id="cb297-7"><a href="the-uniform-distribution.html#cb297-7" tabindex="-1"></a><span class="fu">ddiscunif</span>(<span class="dv">4</span>,<span class="at">min=</span><span class="dv">1</span>,<span class="at">max=</span><span class="dv">6</span>) <span class="co"># assume a fair six-sided die</span></span></code></pre></div>
 <pre><code>## [1] 0.1666667</code></pre>
 <blockquote>
 <p>As for the cumulative distribution function:</p>
 </blockquote>
-<div class="sourceCode" id="cb293"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb293-1"><a href="the-uniform-distribution.html#cb293-1" tabindex="-1"></a>pdiscunif <span class="ot">&lt;-</span> <span class="cf">function</span>(x,<span class="at">min=</span><span class="dv">0</span>,<span class="at">max=</span><span class="dv">1</span>,<span class="at">step=</span><span class="dv">1</span>)</span>
-<span id="cb293-2"><a href="the-uniform-distribution.html#cb293-2" tabindex="-1"></a>{</span>
-<span id="cb293-3"><a href="the-uniform-distribution.html#cb293-3" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">seq</span>(min,max,<span class="at">by=</span>step)</span>
-<span id="cb293-4"><a href="the-uniform-distribution.html#cb293-4" tabindex="-1"></a>  w <span class="ot">&lt;-</span> <span class="fu">which</span>(y<span class="sc">&lt;=</span>x)</span>
-<span id="cb293-5"><a href="the-uniform-distribution.html#cb293-5" tabindex="-1"></a>  <span class="cf">if</span> ( <span class="fu">length</span>(w) <span class="sc">==</span> <span class="dv">0</span> ) <span class="fu">return</span>(<span class="dv">0</span>)</span>
-<span id="cb293-6"><a href="the-uniform-distribution.html#cb293-6" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">length</span>(w)<span class="sc">/</span><span class="fu">length</span>(y))</span>
-<span id="cb293-7"><a href="the-uniform-distribution.html#cb293-7" tabindex="-1"></a>}</span>
-<span id="cb293-8"><a href="the-uniform-distribution.html#cb293-8" tabindex="-1"></a><span class="fu">pdiscunif</span>(<span class="dv">4</span>,<span class="at">min=</span><span class="dv">1</span>,<span class="at">max=</span><span class="dv">6</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb299"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb299-1"><a href="the-uniform-distribution.html#cb299-1" tabindex="-1"></a>pdiscunif <span class="ot">&lt;-</span> <span class="cf">function</span>(x,<span class="at">min=</span><span class="dv">0</span>,<span class="at">max=</span><span class="dv">1</span>,<span class="at">step=</span><span class="dv">1</span>)</span>
+<span id="cb299-2"><a href="the-uniform-distribution.html#cb299-2" tabindex="-1"></a>{</span>
+<span id="cb299-3"><a href="the-uniform-distribution.html#cb299-3" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">seq</span>(min,max,<span class="at">by=</span>step)</span>
+<span id="cb299-4"><a href="the-uniform-distribution.html#cb299-4" tabindex="-1"></a>  w <span class="ot">&lt;-</span> <span class="fu">which</span>(y<span class="sc">&lt;=</span>x)</span>
+<span id="cb299-5"><a href="the-uniform-distribution.html#cb299-5" tabindex="-1"></a>  <span class="cf">if</span> ( <span class="fu">length</span>(w) <span class="sc">==</span> <span class="dv">0</span> ) <span class="fu">return</span>(<span class="dv">0</span>)</span>
+<span id="cb299-6"><a href="the-uniform-distribution.html#cb299-6" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">length</span>(w)<span class="sc">/</span><span class="fu">length</span>(y))</span>
+<span id="cb299-7"><a href="the-uniform-distribution.html#cb299-7" tabindex="-1"></a>}</span>
+<span id="cb299-8"><a href="the-uniform-distribution.html#cb299-8" tabindex="-1"></a><span class="fu">pdiscunif</span>(<span class="dv">4</span>,<span class="at">min=</span><span class="dv">1</span>,<span class="at">max=</span><span class="dv">6</span>)</span></code></pre></div>
 <pre><code>## [1] 0.6666667</code></pre>
 <blockquote>
 <p>The inverse cdf implements the generalized inverse algorithm:</p>
 </blockquote>
-<div class="sourceCode" id="cb295"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb295-1"><a href="the-uniform-distribution.html#cb295-1" tabindex="-1"></a>qdiscunif <span class="ot">&lt;-</span> <span class="cf">function</span>(q,<span class="at">min=</span><span class="dv">0</span>,<span class="at">max=</span><span class="dv">1</span>,<span class="at">step=</span><span class="dv">1</span>)</span>
-<span id="cb295-2"><a href="the-uniform-distribution.html#cb295-2" tabindex="-1"></a>{</span>
-<span id="cb295-3"><a href="the-uniform-distribution.html#cb295-3" tabindex="-1"></a>  y   <span class="ot">&lt;-</span> <span class="fu">seq</span>(min,max,<span class="at">by=</span>step)</span>
-<span id="cb295-4"><a href="the-uniform-distribution.html#cb295-4" tabindex="-1"></a>  <span class="cf">if</span> ( q <span class="sc">==</span> <span class="dv">0</span> ) <span class="fu">return</span>(<span class="fu">min</span>(y))</span>
-<span id="cb295-5"><a href="the-uniform-distribution.html#cb295-5" tabindex="-1"></a>  <span class="cf">if</span> ( q <span class="sc">==</span> <span class="dv">1</span> ) <span class="fu">return</span>(<span class="fu">max</span>(y))</span>
-<span id="cb295-6"><a href="the-uniform-distribution.html#cb295-6" tabindex="-1"></a>  cdf <span class="ot">&lt;-</span> (<span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(y))<span class="sc">/</span><span class="fu">length</span>(y)</span>
-<span id="cb295-7"><a href="the-uniform-distribution.html#cb295-7" tabindex="-1"></a>  w   <span class="ot">&lt;-</span> <span class="fu">which</span>(cdf<span class="sc">&gt;=</span>q)</span>
-<span id="cb295-8"><a href="the-uniform-distribution.html#cb295-8" tabindex="-1"></a>  <span class="cf">if</span> ( <span class="fu">length</span>(w) <span class="sc">==</span> <span class="dv">0</span> ) <span class="fu">return</span>(<span class="fu">max</span>(y))</span>
-<span id="cb295-9"><a href="the-uniform-distribution.html#cb295-9" tabindex="-1"></a>  <span class="fu">return</span>(y[<span class="fu">min</span>(w)])</span>
-<span id="cb295-10"><a href="the-uniform-distribution.html#cb295-10" tabindex="-1"></a>}</span>
-<span id="cb295-11"><a href="the-uniform-distribution.html#cb295-11" tabindex="-1"></a><span class="fu">qdiscunif</span>(<span class="fl">0.55</span>,<span class="at">min=</span><span class="dv">1</span>,<span class="at">max=</span><span class="dv">6</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb301"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb301-1"><a href="the-uniform-distribution.html#cb301-1" tabindex="-1"></a>qdiscunif <span class="ot">&lt;-</span> <span class="cf">function</span>(q,<span class="at">min=</span><span class="dv">0</span>,<span class="at">max=</span><span class="dv">1</span>,<span class="at">step=</span><span class="dv">1</span>)</span>
+<span id="cb301-2"><a href="the-uniform-distribution.html#cb301-2" tabindex="-1"></a>{</span>
+<span id="cb301-3"><a href="the-uniform-distribution.html#cb301-3" tabindex="-1"></a>  y   <span class="ot">&lt;-</span> <span class="fu">seq</span>(min,max,<span class="at">by=</span>step)</span>
+<span id="cb301-4"><a href="the-uniform-distribution.html#cb301-4" tabindex="-1"></a>  <span class="cf">if</span> ( q <span class="sc">==</span> <span class="dv">0</span> ) <span class="fu">return</span>(<span class="fu">min</span>(y))</span>
+<span id="cb301-5"><a href="the-uniform-distribution.html#cb301-5" tabindex="-1"></a>  <span class="cf">if</span> ( q <span class="sc">==</span> <span class="dv">1</span> ) <span class="fu">return</span>(<span class="fu">max</span>(y))</span>
+<span id="cb301-6"><a href="the-uniform-distribution.html#cb301-6" tabindex="-1"></a>  cdf <span class="ot">&lt;-</span> (<span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(y))<span class="sc">/</span><span class="fu">length</span>(y)</span>
+<span id="cb301-7"><a href="the-uniform-distribution.html#cb301-7" tabindex="-1"></a>  w   <span class="ot">&lt;-</span> <span class="fu">which</span>(cdf<span class="sc">&gt;=</span>q)</span>
+<span id="cb301-8"><a href="the-uniform-distribution.html#cb301-8" tabindex="-1"></a>  <span class="cf">if</span> ( <span class="fu">length</span>(w) <span class="sc">==</span> <span class="dv">0</span> ) <span class="fu">return</span>(<span class="fu">max</span>(y))</span>
+<span id="cb301-9"><a href="the-uniform-distribution.html#cb301-9" tabindex="-1"></a>  <span class="fu">return</span>(y[<span class="fu">min</span>(w)])</span>
+<span id="cb301-10"><a href="the-uniform-distribution.html#cb301-10" tabindex="-1"></a>}</span>
+<span id="cb301-11"><a href="the-uniform-distribution.html#cb301-11" tabindex="-1"></a><span class="fu">qdiscunif</span>(<span class="fl">0.55</span>,<span class="at">min=</span><span class="dv">1</span>,<span class="at">max=</span><span class="dv">6</span>)</span></code></pre></div>
 <pre><code>## [1] 4</code></pre>
 <blockquote>
 <p>And last, the random data generator:</p>
 </blockquote>
-<div class="sourceCode" id="cb297"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb297-1"><a href="the-uniform-distribution.html#cb297-1" tabindex="-1"></a>rdiscunif <span class="ot">&lt;-</span> <span class="cf">function</span>(n,<span class="at">min=</span><span class="dv">0</span>,<span class="at">max=</span><span class="dv">1</span>,<span class="at">step=</span><span class="dv">1</span>)</span>
-<span id="cb297-2"><a href="the-uniform-distribution.html#cb297-2" tabindex="-1"></a>{</span>
-<span id="cb297-3"><a href="the-uniform-distribution.html#cb297-3" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">seq</span>(min,max,<span class="at">by=</span>step)</span>
-<span id="cb297-4"><a href="the-uniform-distribution.html#cb297-4" tabindex="-1"></a>  s <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">length</span>(y),n,<span class="at">replace=</span><span class="cn">TRUE</span>)</span>
-<span id="cb297-5"><a href="the-uniform-distribution.html#cb297-5" tabindex="-1"></a>  <span class="fu">return</span>(y[s])</span>
-<span id="cb297-6"><a href="the-uniform-distribution.html#cb297-6" tabindex="-1"></a>}</span>
-<span id="cb297-7"><a href="the-uniform-distribution.html#cb297-7" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">235</span>) <span class="co"># set to ensure consistent output</span></span>
-<span id="cb297-8"><a href="the-uniform-distribution.html#cb297-8" tabindex="-1"></a><span class="fu">rdiscunif</span>(<span class="dv">10</span>,<span class="at">min=</span><span class="dv">1</span>,<span class="at">max=</span><span class="dv">6</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb303"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb303-1"><a href="the-uniform-distribution.html#cb303-1" tabindex="-1"></a>rdiscunif <span class="ot">&lt;-</span> <span class="cf">function</span>(n,<span class="at">min=</span><span class="dv">0</span>,<span class="at">max=</span><span class="dv">1</span>,<span class="at">step=</span><span class="dv">1</span>)</span>
+<span id="cb303-2"><a href="the-uniform-distribution.html#cb303-2" tabindex="-1"></a>{</span>
+<span id="cb303-3"><a href="the-uniform-distribution.html#cb303-3" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">seq</span>(min,max,<span class="at">by=</span>step)</span>
+<span id="cb303-4"><a href="the-uniform-distribution.html#cb303-4" tabindex="-1"></a>  s <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">length</span>(y),n,<span class="at">replace=</span><span class="cn">TRUE</span>)</span>
+<span id="cb303-5"><a href="the-uniform-distribution.html#cb303-5" tabindex="-1"></a>  <span class="fu">return</span>(y[s])</span>
+<span id="cb303-6"><a href="the-uniform-distribution.html#cb303-6" tabindex="-1"></a>}</span>
+<span id="cb303-7"><a href="the-uniform-distribution.html#cb303-7" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">235</span>) <span class="co"># set to ensure consistent output</span></span>
+<span id="cb303-8"><a href="the-uniform-distribution.html#cb303-8" tabindex="-1"></a><span class="fu">rdiscunif</span>(<span class="dv">10</span>,<span class="at">min=</span><span class="dv">1</span>,<span class="at">max=</span><span class="dv">6</span>)</span></code></pre></div>
 <pre><code>##  [1] 6 5 5 6 2 1 5 1 3 6</code></pre>
 </div>
 </div>
@@ -1416,41 +1421,41 @@ size <span class="math inline">\(n = 40\)</span>; for <span class="math inline">
 to one. For each dataset, we test the hypotheses <span class="math inline">\(H_o : \mu = 0\)</span>
 versus <span class="math inline">\(H_a : \mu &gt; 0\)</span>.</p>
 </blockquote>
-<div class="sourceCode" id="cb300"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb300-1"><a href="the-uniform-distribution.html#cb300-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
-<span id="cb300-2"><a href="the-uniform-distribution.html#cb300-2" tabindex="-1"></a></span>
-<span id="cb300-3"><a href="the-uniform-distribution.html#cb300-3" tabindex="-1"></a>n      <span class="ot">&lt;-</span> <span class="dv">40</span></span>
-<span id="cb300-4"><a href="the-uniform-distribution.html#cb300-4" tabindex="-1"></a>k      <span class="ot">&lt;-</span> <span class="dv">100</span></span>
-<span id="cb300-5"><a href="the-uniform-distribution.html#cb300-5" tabindex="-1"></a>k.p    <span class="ot">&lt;-</span> <span class="dv">80</span></span>
-<span id="cb300-6"><a href="the-uniform-distribution.html#cb300-6" tabindex="-1"></a>mu     <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">0</span>,k.p),<span class="fu">rep</span>(<span class="fl">0.5</span>,k<span class="sc">-</span>k.p))</span>
-<span id="cb300-7"><a href="the-uniform-distribution.html#cb300-7" tabindex="-1"></a>mu.o   <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb300-8"><a href="the-uniform-distribution.html#cb300-8" tabindex="-1"></a>sigma2 <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb300-9"><a href="the-uniform-distribution.html#cb300-9" tabindex="-1"></a></span>
-<span id="cb300-10"><a href="the-uniform-distribution.html#cb300-10" tabindex="-1"></a>p      <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>,k)</span>
-<span id="cb300-11"><a href="the-uniform-distribution.html#cb300-11" tabindex="-1"></a><span class="cf">for</span> ( ii <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>k ) {</span>
-<span id="cb300-12"><a href="the-uniform-distribution.html#cb300-12" tabindex="-1"></a>  X     <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n,<span class="at">mean=</span>mu[ii],<span class="at">sd=</span>sigma2)</span>
-<span id="cb300-13"><a href="the-uniform-distribution.html#cb300-13" tabindex="-1"></a>  p[ii] <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="fu">mean</span>(X),<span class="at">mean=</span>mu.o,<span class="at">sd=</span><span class="fu">sqrt</span>(sigma2<span class="sc">/</span>n))</span>
-<span id="cb300-14"><a href="the-uniform-distribution.html#cb300-14" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb306"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb306-1"><a href="the-uniform-distribution.html#cb306-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
+<span id="cb306-2"><a href="the-uniform-distribution.html#cb306-2" tabindex="-1"></a></span>
+<span id="cb306-3"><a href="the-uniform-distribution.html#cb306-3" tabindex="-1"></a>n      <span class="ot">&lt;-</span> <span class="dv">40</span></span>
+<span id="cb306-4"><a href="the-uniform-distribution.html#cb306-4" tabindex="-1"></a>k      <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb306-5"><a href="the-uniform-distribution.html#cb306-5" tabindex="-1"></a>k.p    <span class="ot">&lt;-</span> <span class="dv">80</span></span>
+<span id="cb306-6"><a href="the-uniform-distribution.html#cb306-6" tabindex="-1"></a>mu     <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">0</span>,k.p),<span class="fu">rep</span>(<span class="fl">0.5</span>,k<span class="sc">-</span>k.p))</span>
+<span id="cb306-7"><a href="the-uniform-distribution.html#cb306-7" tabindex="-1"></a>mu.o   <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb306-8"><a href="the-uniform-distribution.html#cb306-8" tabindex="-1"></a>sigma2 <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb306-9"><a href="the-uniform-distribution.html#cb306-9" tabindex="-1"></a></span>
+<span id="cb306-10"><a href="the-uniform-distribution.html#cb306-10" tabindex="-1"></a>p      <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>,k)</span>
+<span id="cb306-11"><a href="the-uniform-distribution.html#cb306-11" tabindex="-1"></a><span class="cf">for</span> ( ii <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>k ) {</span>
+<span id="cb306-12"><a href="the-uniform-distribution.html#cb306-12" tabindex="-1"></a>  X     <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n,<span class="at">mean=</span>mu[ii],<span class="at">sd=</span>sigma2)</span>
+<span id="cb306-13"><a href="the-uniform-distribution.html#cb306-13" tabindex="-1"></a>  p[ii] <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="fu">mean</span>(X),<span class="at">mean=</span>mu.o,<span class="at">sd=</span><span class="fu">sqrt</span>(sigma2<span class="sc">/</span>n))</span>
+<span id="cb306-14"><a href="the-uniform-distribution.html#cb306-14" tabindex="-1"></a>}</span></code></pre></div>
 <blockquote>
 <p>Below, we try two separate corrections for multiple comparisons: the
 Bonferroni correction (controlling FWER), and the Benjamini-Hochberg
 procedure (controlling FDR).</p>
 </blockquote>
-<div class="sourceCode" id="cb301"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb301-1"><a href="the-uniform-distribution.html#cb301-1" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
-<span id="cb301-2"><a href="the-uniform-distribution.html#cb301-2" tabindex="-1"></a></span>
-<span id="cb301-3"><a href="the-uniform-distribution.html#cb301-3" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The number of rejected null hypotheses for Bonferroni: &quot;</span>,</span>
-<span id="cb301-4"><a href="the-uniform-distribution.html#cb301-4" tabindex="-1"></a>    <span class="fu">sum</span>(p <span class="sc">&lt;</span> alpha<span class="sc">/</span>k),<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb307"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb307-1"><a href="the-uniform-distribution.html#cb307-1" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb307-2"><a href="the-uniform-distribution.html#cb307-2" tabindex="-1"></a></span>
+<span id="cb307-3"><a href="the-uniform-distribution.html#cb307-3" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The number of rejected null hypotheses for Bonferroni: &quot;</span>,</span>
+<span id="cb307-4"><a href="the-uniform-distribution.html#cb307-4" tabindex="-1"></a>    <span class="fu">sum</span>(p <span class="sc">&lt;</span> alpha<span class="sc">/</span>k),<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## The number of rejected null hypotheses for Bonferroni:  9</code></pre>
-<div class="sourceCode" id="cb303"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb303-1"><a href="the-uniform-distribution.html#cb303-1" tabindex="-1"></a>w <span class="ot">&lt;-</span> <span class="fu">which</span>(p <span class="sc">&lt;</span> alpha<span class="sc">/</span>k)</span>
-<span id="cb303-2"><a href="the-uniform-distribution.html#cb303-2" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The number of falsely rejected null hypotheses is:     &quot;</span>,<span class="fu">sum</span>(w<span class="sc">&lt;=</span>k.p),<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb309"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb309-1"><a href="the-uniform-distribution.html#cb309-1" tabindex="-1"></a>w <span class="ot">&lt;-</span> <span class="fu">which</span>(p <span class="sc">&lt;</span> alpha<span class="sc">/</span>k)</span>
+<span id="cb309-2"><a href="the-uniform-distribution.html#cb309-2" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The number of falsely rejected null hypotheses is:     &quot;</span>,<span class="fu">sum</span>(w<span class="sc">&lt;=</span>k.p),<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## The number of falsely rejected null hypotheses is:      0</code></pre>
-<div class="sourceCode" id="cb305"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb305-1"><a href="the-uniform-distribution.html#cb305-1" tabindex="-1"></a>p.sort <span class="ot">&lt;-</span> <span class="fu">sort</span>(p)</span>
-<span id="cb305-2"><a href="the-uniform-distribution.html#cb305-2" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The number of rejected null hypotheses for FDR:        &quot;</span>,</span>
-<span id="cb305-3"><a href="the-uniform-distribution.html#cb305-3" tabindex="-1"></a>    <span class="fu">sum</span>(p.sort <span class="sc">&lt;</span> (<span class="dv">1</span><span class="sc">:</span>k)<span class="sc">*</span>alpha<span class="sc">/</span>k),<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb311"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb311-1"><a href="the-uniform-distribution.html#cb311-1" tabindex="-1"></a>p.sort <span class="ot">&lt;-</span> <span class="fu">sort</span>(p)</span>
+<span id="cb311-2"><a href="the-uniform-distribution.html#cb311-2" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The number of rejected null hypotheses for FDR:        &quot;</span>,</span>
+<span id="cb311-3"><a href="the-uniform-distribution.html#cb311-3" tabindex="-1"></a>    <span class="fu">sum</span>(p.sort <span class="sc">&lt;</span> (<span class="dv">1</span><span class="sc">:</span>k)<span class="sc">*</span>alpha<span class="sc">/</span>k),<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## The number of rejected null hypotheses for FDR:         17</code></pre>
-<div class="sourceCode" id="cb307"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb307-1"><a href="the-uniform-distribution.html#cb307-1" tabindex="-1"></a>p.rej <span class="ot">&lt;-</span> p.sort[p.sort<span class="sc">&lt;</span>(<span class="dv">1</span><span class="sc">:</span>k)<span class="sc">*</span>alpha<span class="sc">/</span>k]</span>
-<span id="cb307-2"><a href="the-uniform-distribution.html#cb307-2" tabindex="-1"></a>w <span class="ot">&lt;-</span> p <span class="sc">%in%</span> p.rej</span>
-<span id="cb307-3"><a href="the-uniform-distribution.html#cb307-3" tabindex="-1"></a>w <span class="ot">&lt;-</span> <span class="fu">which</span>(w<span class="sc">==</span><span class="cn">TRUE</span>)</span>
-<span id="cb307-4"><a href="the-uniform-distribution.html#cb307-4" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The number of falsely rejected null hypotheses is:     &quot;</span>,<span class="fu">sum</span>(w<span class="sc">&lt;=</span>k.p),<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb313"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb313-1"><a href="the-uniform-distribution.html#cb313-1" tabindex="-1"></a>p.rej <span class="ot">&lt;-</span> p.sort[p.sort<span class="sc">&lt;</span>(<span class="dv">1</span><span class="sc">:</span>k)<span class="sc">*</span>alpha<span class="sc">/</span>k]</span>
+<span id="cb313-2"><a href="the-uniform-distribution.html#cb313-2" tabindex="-1"></a>w <span class="ot">&lt;-</span> p <span class="sc">%in%</span> p.rej</span>
+<span id="cb313-3"><a href="the-uniform-distribution.html#cb313-3" tabindex="-1"></a>w <span class="ot">&lt;-</span> <span class="fu">which</span>(w<span class="sc">==</span><span class="cn">TRUE</span>)</span>
+<span id="cb313-4"><a href="the-uniform-distribution.html#cb313-4" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The number of falsely rejected null hypotheses is:     &quot;</span>,<span class="fu">sum</span>(w<span class="sc">&lt;=</span>k.p),<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## The number of falsely rejected null hypotheses is:      0</code></pre>
 <blockquote>
 <p>With the Bonferroni correction, we reject nine null hypotheses (with the
@@ -1469,9 +1474,13 @@ an erroneous rejection…here, we reject no correct null hypotheses).</p>
 Figure 5.5: An illustration of the difference between the Bonferroni correction and the Benjamini-Hochberg procedure. The blue dots represent sorted <span class="math inline">\(p\)</span>-values resulting from a simulation in which 80 of 100 null hypotheses are correct (so that a perfect disambiguation between null and non-null hypotheses would result in 20 rejected nulls, with none falsely rejected. The Bonferroni correction shifts <span class="math inline">\(\alpha = 0.05\)</span> downwards to the green short-dashed line; 9 <span class="math inline">\(p\)</span>-values lie below the line, so 9 (true) null hypotheses are rejected in all. The BH procedure looks for the number of <span class="math inline">\(p\)</span>-values lying below the red dashed line; that number is 17 (with no false rejections).
 </p>
 </div>
+</div>
+</div>
+<div id="exercises-2" class="section level2 hasAnchor" number="5.7">
+<h2><span class="header-section-number">5.7</span> Exercises<a href="the-uniform-distribution.html#exercises-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>TBD. Let <span class="math inline">\(X_1, X_2, \ldots, X_n\)</span> denote independent and identically distributed uniform random variables on the interval <span class="math inline">\([0, 3\theta]\)</span>. Derive the method-of-moments estimator for <span class="math inline">\(\theta\)</span>.</p>
 
 <div style="page-break-after: always;"></div>
-</div>
 </div>
 </div>
             </section>

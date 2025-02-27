@@ -231,6 +231,7 @@ order-statistics
 distribution-of-the-minimum-value-sampled-from-an-exponential-distribution
 distribution-of-the-median-value-sampled-from-a-uniform01-distribution
 point-estimation-2
+sufficiency-and-the-exponential-family-of-distributions
 the-mle-for-the-binomial-success-probability
 sufficient-statistics-for-the-normal-distribution
 the-mvue-for-the-exponential-mean
@@ -281,6 +282,7 @@ confidence-interval-for-the-poisson-parameter-lambda
 revisiting-the-death-by-horse-kick-example-1
 determining-a-confidence-interval-using-the-bootstrap
 the-proportion-of-observed-data-in-a-bootstrap-sample
+confidence-interval-estimation-via-simulation-and-numerical-optimization
 hypothesis-testing-2
 the-uniformly-most-powerful-test-of-poisson-lambda
 likelihood-ratio-test-of-the-poisson-parameter-lambda
@@ -295,6 +297,7 @@ revisiting-the-death-by-horse-kick-example-2
 negative-binomial-regression-example
 chi-square-based-hypothesis-testing-1
 revisiting-the-death-by-horse-kick-example-3
+exercises-1
 the-uniform-distribution
 properties
 the-expected-value-and-variance-of-a-uniform-random-variable
@@ -313,6 +316,7 @@ confidence-coefficient-for-a-uniform-based-interval-estimator
 hypothesis-testing-3
 the-power-curve-for-testing-the-uniform-distribution-upper-bound
 an-illustration-of-multiple-comparisons-when-testing-for-the-normal-mean
+exercises-2
 multivariate-distributions
 independence-of-random-variables
 determining-whether-two-random-variables-are-independent
