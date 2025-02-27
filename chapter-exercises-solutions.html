@@ -966,10 +966,12 @@ or, in code,</p>
 <p>(a) The moment-generating function for the random variable <span class="math inline">\(X\)</span> is
 <span class="math display">\[\begin{align*}
 m_X(t) = E\left[e^{tX}\right] &amp;= \int_b^\infty e^{tx} \frac{1}{\theta} e^{-(x-b)/\theta} dx \\
-&amp;= e^{b/\theta} \frac{1}{\theta} \int_b^\infty e^{-x(1/theta - t)} dx \\
-&amp;= e^{b/\theta} \frac{1}{\theta} \frac{e^{-b(1/theta - t)}}{(1/theta-t)} \\
+&amp;= e^{b/\theta} \frac{1}{\theta} \int_b^\infty e^{-x(1/\theta - t)} dx \\
+&amp;= e^{b/\theta} \frac{1}{\theta} \frac{e^{-b(1/\theta - t)}}{(1/\theta-t)} \\
 &amp;= e^{bt} (1-t\theta)^{-1} \,.
 \end{align*}\]</span>
+(Here we make the implicit assumption
+that <span class="math inline">\(t &lt; 1/\theta\)</span>, so that the integral evaluated at <span class="math inline">\(\infty\)</span> is zero.)
 This is the final answer, but
 recall that when <span class="math inline">\(X = U+b\)</span>, <span class="math inline">\(m_X(t) = e^{bt} m_U(t)\)</span>. Since we recognize
 that <span class="math inline">\((1-t\theta)^{-1}\)</span> is the mgf for an exponential distribution,
