@@ -424,7 +424,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.6.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#revisiting-the-death-by-horse-kick-example-1"><i class="fa fa-check"></i><b>4.6.2</b> Revisiting the Death-by-Horse-Kick Example</a></li>
 <li class="chapter" data-level="4.6.3" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#determining-a-confidence-interval-using-the-bootstrap"><i class="fa fa-check"></i><b>4.6.3</b> Determining a Confidence Interval Using the Bootstrap</a></li>
 <li class="chapter" data-level="4.6.4" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#the-proportion-of-observed-data-in-a-bootstrap-sample"><i class="fa fa-check"></i><b>4.6.4</b> The Proportion of Observed Data in a Bootstrap Sample</a></li>
-<li class="chapter" data-level="4.6.5" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#confidence-interval-estimation-via-simulation-and-numerical-optimization"><i class="fa fa-check"></i><b>4.6.5</b> Confidence Interval Estimation via Simulation and Numerical Optimization</a></li>
+<li class="chapter" data-level="4.6.5" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#confidence-interval-estimation-via-simulation"><i class="fa fa-check"></i><b>4.6.5</b> Confidence Interval Estimation via Simulation</a></li>
 </ul></li>
 <li class="chapter" data-level="4.7" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#hypothesis-testing-2"><i class="fa fa-check"></i><b>4.7</b> Hypothesis Testing</a>
 <ul>
@@ -520,6 +520,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.6.2" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html#the-conditional-distribution-of-a-multivariate-normal-distribution"><i class="fa fa-check"></i><b>6.6.2</b> The Conditional Distribution of a Multivariate Normal Distribution</a></li>
 <li class="chapter" data-level="6.6.3" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html#the-calculation-of-sample-covariance"><i class="fa fa-check"></i><b>6.6.3</b> The Calculation of Sample Covariance</a></li>
 </ul></li>
+<li class="chapter" data-level="6.7" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html#exercises-3"><i class="fa fa-check"></i><b>6.7</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="further-conceptual-details-optional.html"><a href="further-conceptual-details-optional.html"><i class="fa fa-check"></i><b>7</b> Further Conceptual Details (Optional)</a>
 <ul>
@@ -543,6 +544,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="" data-path="chapter-exercises-solutions.html"><a href="chapter-exercises-solutions.html#chapter-3"><i class="fa fa-check"></i>Chapter 3</a></li>
 <li class="chapter" data-level="" data-path="chapter-exercises-solutions.html"><a href="chapter-exercises-solutions.html#chapter-4"><i class="fa fa-check"></i>Chapter 4</a></li>
+<li class="chapter" data-level="" data-path="chapter-exercises-solutions.html"><a href="chapter-exercises-solutions.html#chapter-5"><i class="fa fa-check"></i>Chapter 5</a></li>
+<li class="chapter" data-level="" data-path="chapter-exercises-solutions.html"><a href="chapter-exercises-solutions.html#chapter-6"><i class="fa fa-check"></i>Chapter 6</a></li>
 </ul></li>
 </ul>
 
@@ -1218,18 +1221,18 @@ because of the constraint that
 <li>Problem 34</li>
 </ul>
 <p>(a) The exponential distribution with mean 1 is <span class="math inline">\(e^{-x}\)</span>, for <span class="math inline">\(x \geq 0\)</span>. Therefore, the probabilities for arriving between 1 and 2 minutes after the previous person is given by
-<span class="math display">\[\begin{equation*}
+<span class="math display">\[\begin{align*}
 \int_1^2 e^{-x} dx =  -\left.e^{-x}\right|_1^2 = 0.233 \,.
-\end{equation*}\]</span></p>
+\end{align*}\]</span></p>
 <p>(b) The probabilities for the other two “bins” are
 <span class="math display">\[\begin{align*}
 \int_0^1 e^{-x} dx &amp;= -\left.e^{-x}\right|_0^1 = 0.632 \\
 \int_2^\infty e^{-x} dx &amp;= 1 - 0.632 - 0.233 = 0.135 \,.
 \end{align*}\]</span>
 We can now carry out a chi-square goodness-of-fit test:
-<span class="math display">\[\begin{equation*}
+<span class="math display">\[\begin{align*}
 W = \frac{(52-63.2)^2}{63.2} + \frac{(23-23.3)^2}{23.3} + \frac{(25-13.5)^2}{13.5} = 1.985 + 0.004 + 9.796 = 11.785 \,,
-\end{equation*}\]</span>
+\end{align*}\]</span>
 and <span class="math inline">\(W \sim \chi_2^2\)</span>. The rejection region is <span class="math inline">\(W &gt; w_{\rm RR} = 5.991\)</span>
 (i.e., <code>qchisq(0.95,2)</code>), and
 the <span class="math inline">\(p\)</span>-value is 0.0028 (i.e., <code>1-pchisq(11.785,2)</code>).
@@ -1433,9 +1436,9 @@ The sufficient statistic is <span class="math inline">\(Y = \sum_{i=1}^n X_i\)</
 is a Poisson random variable with parameter <span class="math inline">\(n\lambda\)</span>.
 The moment-generating function for a Poisson random variable is
 <span class="math inline">\(m_X(t) = \exp(\lambda(e^t-1))\)</span>, so the mgf for <span class="math inline">\(Y\)</span> is
-<span class="math display">\[\begin{eqnarray*}
+<span class="math display">\[\begin{align*}
 m_Y(t) = \prod_{i=1}^n m_{X_i}(t) = \left[ m_{X_i}(t) \right]^n = \exp(n\lambda(e^t-1)) \,.
-\end{eqnarray*}\]</span>
+\end{align*}\]</span>
 This is the mgf for a Poisson(<span class="math inline">\(n\lambda\)</span>) distribution.</p>
 <p>(c) Recall that in an LRT context, <span class="math inline">\(\Theta = \Theta_o \cup \Theta_a\)</span>;
 in other words, the null must contain <em>all</em> possible values of
@@ -1446,7 +1449,7 @@ the test is constructed, but does change how we interpret it: the true
 <p>(d) We are performing a lower-tail test, and we are on the “yes”
 line (since <span class="math inline">\(E[Y] = n\lambda\)</span> increases with <span class="math inline">\(\lambda\)</span>). From the reference
 table, that means <span class="math inline">\(y_{\rm RR}\)</span> is equal to <span class="math inline">\(F_Y^{-1}(\alpha \vert n\lambda_o)\)</span>,
-which in code is {}. (Recall that there are no
+which in code is <code>qpois(0.05,n*lambda.o)</code>. (Recall that there are no
 discreteness corrections in rejection-region boundary computations.)</p>
 <hr />
 <ul>
@@ -1541,7 +1544,7 @@ E[X] = \int_0^\infty x f_X(x) dx &amp;= \int_0^\infty x \frac{\beta^\alpha}{\Gam
 </ul>
 <p>(a) If <span class="math inline">\(\beta = 2\)</span> and <span class="math inline">\(\alpha\)</span> is a half-integer or
 an integer, then <span class="math inline">\(X\)</span> is sampled from a “chi-square” distribution.
-(Note that because <span class="math inline">\(\alpha\)</span> is a half-integer here, you cannot answer
+(Note that because <span class="math inline">\(\alpha\)</span> is a half-integer here, we cannot answer
 “Erlang” or “exponential.”)</p>
 <p>(b) The gamma pdf with <span class="math inline">\(\alpha = 3/2\)</span> is
 <span class="math display">\[\begin{align*}
@@ -1611,6 +1614,718 @@ alternative is <span class="math inline">\(\beta_1 \neq 0\)</span>. The test sta
 (<span class="math inline">\(\approx\)</span> 165), especially considering that the expected value for
 a chi-square distribution is 1 for 1 degree of freedom, that we can
 safely conclude that <span class="math inline">\(\beta_1 \neq 0\)</span>.</p>
+</div>
+<div id="chapter-5" class="section level2 unnumbered hasAnchor">
+<h2>Chapter 5<a href="chapter-exercises-solutions.html#chapter-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Problem 1</li>
+</ul>
+<p>Here, the first population moment is <span class="math inline">\(\mu_1&#39; = E[X] = \frac{3}{2} \theta\)</span> and the first sample moment is <span class="math inline">\(m_1&#39; = \frac{1}{n} \sum X_i = \bar{X}\)</span>. So the MoM estimator for <span class="math inline">\(\theta\)</span>, following from setting <span class="math inline">\(\mu_1&#39; = m_1&#39;\)</span>, is <span class="math inline">\(\hat{\theta}_{MoM} = \frac{2}{3} \bar{X}\)</span>.</p>
+<hr />
+<ul>
+<li>Problem 2</li>
+</ul>
+<p>We have that
+<span class="math display">\[\begin{align*}
+P(X &gt; a+b \vert X &gt; b) = \frac{P(X &gt; a+b \cap X &gt; b)}{P(X &gt; b)} = \frac{P(X &gt; a+b)}{P(X &gt; b)} \,,
+\end{align*}\]</span>
+and
+<span class="math display">\[\begin{align*}
+P(X &gt; a+b) = \int_{a+b}^1 dx = 1-(a+b) ~~~ P(X &gt; b) = \int_b^1 dx = 1-b \,.
+\end{align*}\]</span>
+So
+<span class="math display">\[\begin{align*}
+\frac{P(X &gt; a+b)}{P(X &gt; b)} = \frac{1 - (a+b)}{1-b} \,.
+\end{align*}\]</span>
+The uniform distribution does <em>not</em> exhibit the memoryless property, as the ratio above does not depend just on <span class="math inline">\(a\)</span>. (If <span class="math inline">\(b\)</span> cancelled out top and bottom, then the distribution would exhibit memorylessness.)</p>
+<hr />
+<ul>
+<li>Problem 3</li>
+</ul>
+<p>(a) It doesn’t matter when she arrives:
+<span class="math display">\[\begin{align*}
+P(x_0 \leq X \leq x_0 + 10) = \int_{x_0}^{x_0 + 10} \frac{1}{70} dx = \frac{x_0 + 10}{70} - \frac{x_0}{70} = \frac{1}{7} \,.
+\end{align*}\]</span></p>
+<p>(b) We have that <span class="math inline">\(Y =\)</span> Binomial<span class="math inline">\((n=5,p=1/7)\)</span>, so
+<span class="math display">\[\begin{align*}
+P(Y\geq 1) = 1 - P(Y = 0) = 1 - {5 \choose 0}\frac{1}{7}^0\left(1 - \frac{1}{7}\right) = 1 - \left( \frac{6}{7}\right)^5.
+\end{align*}\]</span></p>
+<hr />
+<ul>
+<li>Problem 4</li>
+</ul>
+<p>We have that
+<span class="math display">\[\begin{align*}
+P(X \leq 2u | X \geq u) = \frac{P(X \leq 2u \cap X \geq u)}{P(X \geq u)} = \frac{\int_u^{2u}dx}{\int_u^{1}dx} = \frac{2u - u}{1 - u} = \frac{u}{1-u} \,.
+\end{align*}\]</span></p>
+<hr />
+<ul>
+<li>Problem 5</li>
+</ul>
+<p>We have that
+<span class="math display">\[\begin{align*}
+P(X_1 &lt; 2X_2 \vert X_2 &lt; 1/2) = \frac{P(X_2 &gt; X_1/2 \cap X_2 &lt; 1/2)}{P(X_2 &lt; 1/2)} \,.
+\end{align*}\]</span>
+We can approach this geometrically. The denominator is, by inspection, 1/2, so
+<span class="math display">\[\begin{align*}
+P(X_1 &lt; 2X_2 \vert X_2 &lt; 1/2) = 2P(X_2 &gt; X_1/2 \cap X_2 &lt; 1/2) \,.
+\end{align*}\]</span>
+The remaining expression evaluates as the area of the triangle with vertices (0,0), (1,1/2), and (0,1/2), which is (1/2)(1)(1/2) = 1/4. Thus
+<span class="math display">\[\begin{align*}
+P(X_1 &lt; 2X_2 \vert X_2 &lt; 1/2) = 2 \cdot 1/4 = 1/2 \,.
+\end{align*}\]</span></p>
+<hr />
+<ul>
+<li>Problem 6</li>
+</ul>
+<p>(a) Since <span class="math inline">\(\theta\)</span> is a lower bound, the sufficient statistic is <span class="math inline">\(X_{(1)}\)</span>, the minimum observed datum, by inspection.</p>
+<p>(b) The cdf <span class="math inline">\(F_{(1)}(x)\)</span> is
+<span class="math display">\[\begin{align*}
+F_{(1)}(x) = 1 - [1 - F_X(x)]^n \,.
+\end{align*}\]</span>
+The cdf <span class="math inline">\(F_X(x)\)</span> is
+<span class="math display">\[\begin{align*}
+F_X(x) = - \int_{\theta}^x \frac{1}{\theta} dy = - \frac{1}{\theta} \int_{\theta}^x dy = - \frac{1}{\theta} (x - \theta) = 1 - x/\theta \,.
+\end{align*}\]</span>
+Thus
+<span class="math display">\[\begin{align*}
+F_{(1)}(x) = 1 - [1 - (1 - x/\theta)]^n = 1 - \left(\frac{x}{\theta}\right)^n \,,
+\end{align*}\]</span></p>
+<p>(c) If the null is true, we cannot observe a value of <span class="math inline">\(X_{(1)}\)</span> that is smaller than <span class="math inline">\(\theta_o\)</span>. So the “trivial rejection region” is <span class="math inline">\(X_{(1)} &lt; \theta_o\)</span>. This is “trivial” because we can write it down via inspection (and it does not depend on <span class="math inline">\(\alpha\)</span>).</p>
+<p>(d) We can only reject the null if <span class="math inline">\(X_{(1)} &gt; \theta_o\)</span>, so we have to “all the <span class="math inline">\(\alpha\)</span>” on that side of <span class="math inline">\(\theta_o\)</span>: <span class="math inline">\(1 - \alpha\)</span>.</p>
+<p>(e) We have that
+<span class="math display">\[\begin{align*}
+1 - \left(\frac{x_{RR}}{\theta_o}\right)^n &amp;= 1 - \alpha ~~~ \Rightarrow ~~~ \left(\frac{x_{RR}}{\theta_o}\right)^n = \alpha ~~~ \Rightarrow ~~~ x_{RR} = \theta_o \alpha^{1/n} \,.
+\end{align*}\]</span></p>
+<hr />
+<ul>
+<li>Problem 7</li>
+</ul>
+<p>(a) By inspection, <span class="math inline">\(\hat{\theta}_{MLE} = X_{(n)}\)</span>.</p>
+<p>(b) The cdf for <span class="math inline">\(X_{(n)}\)</span> is <span class="math inline">\([F_X(x)]^n = (x/\theta)^{2n}\)</span>, and the pdf is thus
+<span class="math display">\[\begin{align*}
+f_{(1)}(x) = \frac{d}{dx} F_{(1)}(x) = \frac{2n}{\theta^{2n}} x^{2n-1} \,.
+\end{align*}\]</span>
+Thus
+<span class="math display">\[\begin{align*}
+E[X_{(n)}] &amp;= \int_0^\theta x f_{(1)}(x) dx = \frac{2n}{\theta^{2n}} \int_0^\theta x^{2n} dx = \frac{2n}{\theta^{2n}} \left. \frac{x^{2n+1}}{2n+1}\right|_0^{\theta} = \frac{2n}{2n+1}\theta \,.
+\end{align*}\]</span></p>
+<p>(c) Since
+<span class="math display">\[\begin{align*}
+E[X_{(n)}] &amp;= \frac{2n}{2n+1}\theta \,,
+\end{align*}\]</span>
+we have that
+<span class="math display">\[\begin{align*}
+E\left[\frac{2n+1}{2n}X_{(n)}\right] &amp;= \theta
+\end{align*}\]</span>
+and thus
+<span class="math display">\[\begin{align*}
+\hat{\theta}_{MVUE} = \frac{2n+1}{2n}X_{(n)} \,.
+\end{align*}\]</span></p>
+<hr />
+<ul>
+<li>Problem 8</li>
+</ul>
+<p>(a) As <span class="math inline">\(\theta\)</span> is a lower bound, <span class="math inline">\(X_{(1)}\)</span> is a sufficient statistic.</p>
+<p>(b) The MLE <em>is</em> the sufficient statistic in (a): <span class="math inline">\(\hat{\theta}_{MLE} = X_{(1)}\)</span>.</p>
+<p>(c) The pdf for the minimum datum is
+<span class="math display">\[\begin{align*}
+f_{(1)}(x) = n f_X(x) [1-F_X(x)]^{n-1} = n e^{-(x-\theta)} \left(e^{-(x-\theta)}\right)^{n-1} = n e^{-n(x-\theta)} \,.
+\end{align*}\]</span></p>
+<p>(d) The expected value of <span class="math inline">\(X_{(1)}\)</span> is
+<span class="math display">\[\begin{align*}
+E[X_{(1)}] = \int_{\theta}^\infty x n e^{-n(x-\theta)} dx = n \int_{\theta}^\infty x n e^{-n(x-\theta)} dx \,.
+\end{align*}\]</span>
+Let <span class="math inline">\(u = n(x-\theta)\)</span>. Then <span class="math inline">\(du = n dx\)</span>, and if <span class="math inline">\(x = \theta\)</span>, <span class="math inline">\(u = 0\)</span>, and if
+<span class="math inline">\(x = \infty\)</span>, <span class="math inline">\(u = \infty\)</span>. Thus
+<span class="math display">\[\begin{align*}
+E[X_{(1)}] &amp;= n \int_0^\infty \left(\frac{u}{n}+\theta\right) e^{-u} \frac{du}{n} = \int_0^\infty \frac{u}{n} e^{-u} du + \int_0^\infty \theta e^{-u} du = \frac{1}{n} \int_0^\infty u e^{-u} du + \theta \int_0^\infty e^{-u} du \\
+&amp;= \frac{1}{n} \Gamma(2) + \theta \Gamma(1) = \frac{1}{n} \cdot 1! + \theta \cdot 0! = \theta + \frac{1}{n} \,.
+\end{align*}\]</span>
+Hence <span class="math inline">\(\hat{\theta}_{MVUE} = X_{(1)} - 1/n\)</span>.</p>
+<hr />
+<ul>
+<li>Problem 9</li>
+</ul>
+<p>(a) Since <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> are independent, <span class="math inline">\(P(X_1 &gt; 1/2 \vert X_2 &lt; 1/2) = P(X_1 &gt; 1/2) = 1/2\)</span>.</p>
+<p>(b) We have that
+<span class="math display">\[\begin{align*}
+P\left(X_1 &gt; \frac12 \vert X_1 &lt; \frac34\right) = \frac{P(X_1 &gt; 1/2 \cap X_1 &lt; 3/4)}{P(X_1 &lt; 3/4)} = \frac{P(1/2 &lt; X_1 &lt; 3/4)}{P(X_1 &lt; 3/4)} = \frac{0.25}{0.75} = \frac13 \,.
+\end{align*}\]</span></p>
+<p>(c) <span class="math inline">\(X_1 &lt; 3X_2\)</span> is equivalent to <span class="math inline">\(X_2 &gt; \frac13 X_1\)</span>, i.e., <span class="math inline">\(X_2\)</span> lies above the line with intercept 0 and slope 1/3. The area of this region is 1 minus the area of the triangle with vertices (0,0), (1,0), and (1,1/3) or <span class="math inline">\(1 - 1/6\)</span> = 5/6.</p>
+<p>(d) We have that
+<span class="math display">\[\begin{align*}
+P\left(X_2 &lt; X_1 \vert X_2 &lt; \frac12\right) = \frac{P(X_2 &lt; X_1 \cap X_2 &lt; 1/2)}{P(X_1 &lt; 1/2)} = 2P(X_2 &lt; X_1 \cap X_2 &lt; 1/2) \,.
+\end{align*}\]</span>
+The probability is the area of the polygon with vertices (0,0), (1,0), (1,1/2), and (1/2,1/2), or 3/8. So <span class="math inline">\(P\left(X_2 &lt; X_1 \vert X_2 &lt; \frac12\right) = 6/8\)</span> or 3/4.</p>
+<hr />
+<ul>
+<li>Problem 10</li>
+</ul>
+<p>(a) The expected value indicates that we are on the “yes” line of the confidence interval reference table, hence we want to solve
+<span class="math display">\[\begin{align*}
+1 - e^{-n(y_{\rm obs}-\theta)} - (1-\alpha) = 0
+\end{align*}\]</span>
+for <span class="math inline">\(\theta\)</span>:
+<span class="math display">\[\begin{align*}
+e^{-n(y_{\rm obs}-\theta)} &amp;= \alpha \\
+\Rightarrow ~~~ -n(y_{\rm obs}-\theta) &amp;= \log(\alpha) \\
+\Rightarrow ~~~ \theta - y_{\rm obs} &amp;= \frac{1}{n}\log(\alpha) \\
+\Rightarrow ~~~ \hat{\theta}_L &amp;= y_{\rm obs} + \frac{1}{n}\log(\alpha) \,.
+\end{align*}\]</span></p>
+<p>(b) Note that although this is a two-tailed test, it is impossible to sample a statistic value less than <span class="math inline">\(\theta\)</span>, so we derive the rejection region boundary as if we are performing an upper-tail test. We are on the “yes” line of the hypothesis test reference table, hence we want to solve
+<span class="math display">\[\begin{align*}
+1 - e^{-n(y_{\rm RR}-\theta_o)} - (1-\alpha) = 0
+\end{align*}\]</span>
+for <span class="math inline">\(y_{\rm RR}\)</span>:
+<span class="math display">\[\begin{align*}
+e^{-n(y_{\rm RR}-\theta_o)} &amp;= \alpha ~~~ \Rightarrow ~~~ -n(y_{\rm RR}-\theta_o) &amp;= \log(\alpha) ~~~ \Rightarrow ~~~ y_{\rm RR} - \theta_o = -\frac{1}{n}\log(\alpha) ~~~ \Rightarrow ~~~ y_{\rm RR} = \theta_o - \frac{1}{n}\log(\alpha) \,.
+\end{align*}\]</span></p>
+</div>
+<div id="chapter-6" class="section level2 unnumbered hasAnchor">
+<h2>Chapter 6<a href="chapter-exercises-solutions.html#chapter-6" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Problem 1</li>
+</ul>
+<p>(a) We have that
+<span class="math display">\[\begin{align*}
+\int_0^1 \left( \int_0^1 dx_2 k (x_1 + x_2^2) \right) dx_1 &amp;= 1 = k \left[ \int_0^1 x_1 \left( \int_0^1 dx_2 \right) dx_1 + \int_0^1 \left( \int_0^1 x_2^2 dx_2 \right) dx_1 \right] \\
+&amp;= k \left[ \int_0^1 x_1 dx_1 + \int_0^1 \frac13 dx_1 \right] = k \left[ \left. \frac{x_1^2}{2} \right|_0^1 + \left. \frac{x_1}{3} \right|_0^1 \right] \\
+&amp;= k \left( \frac{1}{2} + \frac{1}{3} \right) = k \frac{5}{6} \,.
+\end{align*}\]</span>
+Thus <span class="math inline">\(k = 6/5\)</span>.</p>
+<p>(b) We have that
+<span class="math display">\[\begin{align*}
+f_{X_1 \vert X_2}(x_1 \vert x_2) = \frac{f_{X_1,X_2}(x_1,x_2)}{f_{X_2}(x_2)} = \frac{k (x_1 + x_2^2)}{f_{X_2}(x_2)} \,.
+\end{align*}\]</span>
+So we need to compute the marginal density:
+<span class="math display">\[\begin{align*}
+f_{X_2}(x_2) = k \int_0^1 dx_1 (x_1+x_2^2) = k \left[ \int_0^1 x_1 dx_1 + \int_0^1 x_2^2 dx_1 \right] = k \left[ \left. \frac{x_1^2}{2} \right|_0^1 + x_2^2 (\left. x_1\right|_0^1) \right] = k \left( \frac{1}{2} + x_2^2 \right) \,.
+\end{align*}\]</span>
+Thus
+<span class="math display">\[\begin{align*}
+f_{X_1 \vert X_2}(x_1 \vert x_2) = \frac{k (x_1 + x_2^2)}{k ( \frac{1}{2} + x_2^2 )} = \frac{2x_1 + 2x_2^2}{1 + 2x_2^2} \,.
+\end{align*}\]</span>
+This may initially appear strange (in that if <span class="math inline">\(x_1 &gt; 1/2\)</span>, <span class="math inline">\(f_{X_1 \vert X_2}(x_1 \vert x_2) &gt; 1\)</span>), but we simply need to remind ourselves that <span class="math inline">\(f_{X_1 \vert X_2}(x_1 \vert x_2)\)</span> is a conditional probability density function, not a probability itself.</p>
+<hr />
+<ul>
+<li>Problem 2</li>
+</ul>
+<p>(a) Cov(<span class="math inline">\(X_1,X_2\)</span>) = <span class="math inline">\(E[X_1X_2] - E[X_1]E[X_2]\)</span> = <span class="math inline">\(1 \cdot 1 \cdot 0.1 - (1 \cdot 0.4 + 1 \cdot 0.1)^2 = 0.1 - 0.25 = -0.15\)</span>.</p>
+<p>(b) <span class="math inline">\(\rho\)</span> = Cov(<span class="math inline">\(X_1,X_2\)</span>)/(<span class="math inline">\(\sigma_1\sigma_2\)</span>), where
+<span class="math display">\[\begin{align*}
+\sigma_1 = \sqrt{E[X_1^2] - (E[X_1])^2} = \sqrt{0.5 - (0.5)^2} = \sqrt{0.25} = 0.5 = \sigma_2 \,.
+\end{align*}\]</span>
+So <span class="math inline">\(\rho = -0.15/0.5/0.5 = -0.15/0.25 = -0.6\)</span>.</p>
+<p>(c) <span class="math inline">\(E[X_1 \vert X_2 &lt; 1]\)</span> is equivalent to <span class="math inline">\(E[X_1 \vert X_2 = 0]\)</span>, i.e., the expected value for data drawn from the first row of the given table.
+<span class="math display">\[\begin{align*}
+E[X_1 \vert X_2 = 0] &amp;= \sum_{x_1=0}^1 x_1 p(x_1 \vert x_2=0) = \sum_{x_1=0}^1 x_1 \frac{p(x_1,x_2=0)}{p(p_2{x_2}=0)} \\
+&amp;= \frac{0 \cdot p(x_1=0,x_2=0) + 1 \cdot p(x_1=1,x_2=0)}{p(x_1=0,x_2=0)+p(x_1=1,x_2=0)} = \frac{0.4}{0.5} = 0.8 \,.
+\end{align*}\]</span>
+This answer could be reasoned out by inspecting the table.</p>
+<p>(d) We have that
+<span class="math display">\[\begin{align*}
+V[X_2 \vert X_1=1] &amp;= E[X_2^2 \vert X_1=1] - (E[X_2\vert X_1=1])^2 \\
+&amp;= \sum_{x_2=0}^1 x_2^2 p(x_2 \vert x_1=1) - \left[\sum_{x_2=0}^1 x_2 p(x_2 \vert x_1=1)\right]^2 \\
+&amp;= \sum_{x_2=0}^1 x_2^2 \frac{p(x_1=1,x_2)}{p(p_1{x_1=1})} - \left[\sum_{x_2=0}^1 x_2 \frac{P(x_1=1,x_2)}{p(p_1{x_1=1})}\right]^2 \\
+&amp;= 1 \cdot \frac{p(x_1=1,x_2=1)}{p(x_1=1,x_2=0)+p(x_1=1,x_2=1)} -
+&amp;~~~~~\left[1 \cdot \frac{p(x_1=1,x_2=1)}{p(x_1=1,x_2=0)+p(x_1=1,x_2=1)}\right]^2 \\
+&amp;= \frac{0.1}{0.5} - \left(\frac{0.1}{0.5}\right)^2 = 0.2 - 0.04 = 0.16 \,.
+\end{align*}\]</span>
+This answer could also be reasoned out by inspecting the table.</p>
+<hr />
+<ul>
+<li>Problem 3</li>
+</ul>
+<p>(a) We have that <span class="math inline">\(X \vert p\)</span> <span class="math inline">\(\sim\)</span> Bin(<span class="math inline">\(n,p\)</span>) and that <span class="math inline">\(p \sim\)</span> Uniform(0,0.1). The expected value of <span class="math inline">\(X \vert p\)</span> is <span class="math inline">\(np\)</span> and the expected value of <span class="math inline">\(p\)</span> is <span class="math inline">\((0+0.1)/2 = 0.05\)</span>. Thus
+<span class="math display">\[\begin{align*}
+E[X] = E[E[X \vert p]] = E[np] = nE[p] = 0.05n \,.
+\end{align*}\]</span></p>
+<p>(b) We have that
+<span class="math display">\[\begin{align*}
+V[X] &amp;= E[V[X \vert p]] + V[E[X \vert p]] = E[np(1-p)] + V[np] = n(E[p] - E[p^2]) + n^2V[p] \\
+&amp;= n[E[p] - (V[p]+E[p]^2)] + n^2V[p] = n(n-1)V[p] + nE[p] - n(E[p])^2 \,.
+\end{align*}\]</span></p>
+<hr />
+<ul>
+<li>Problem 4</li>
+</ul>
+<p>(a) The area of integration lies between the <span class="math inline">\(x_1\)</span> axis, the <span class="math inline">\(x_2\)</span> axis, and the line <span class="math inline">\(x_2 = 1-x_1\)</span>, in the first quadrant.
+<span class="math display">\[\begin{align*}
+1 &amp;= \int_0^1 \int_0^{1-x_1} k x_1^2 x_2 dx_2 dx_1 = k \int_0^1 x_1^2 \int_0^{1-x_1} x_2 dx_2 dx_1 = k \int_0^1 x_1^2 \left( \left. \frac{x_2^2}{2}\right|_0^{1-x_1}\right) dx_1 \\
+&amp;= \frac{k}{2} \int_0^1 x_1^2 (1-x_1)^2 dx_1 = \frac{k}{2} B(3,3) = \frac{k \Gamma(3) \Gamma(3)}{2 \Gamma(6)} = \frac{4k}{240} \,.
+\end{align*}\]</span>
+So <span class="math inline">\(k = 60\)</span>.</p>
+<p>(b) <span class="math inline">\(P(X_1 &gt; 0.25 \vert X_2 = 0.5) = \int_{0.25}^{0.5} f(x_1 \vert x_2=0.5)dx_1\)</span>. <span class="math inline">\(f_{X_1 \vert X_2}(x_1 \vert x_2) = f_{X_1,X_2}(x_1,x_2)/f_{X_2}(x_2)\)</span>, and
+<span class="math display">\[\begin{align*}
+f_{X_2}(x_2) = \int_0^{1-x_2} 60 x_1^2 x_2 dx_1 = 60 x_2 \left( \left.\frac{x_1^3}{3}\right|_0^{1-x_2}\right) = 20x_2(1-x_2)^3 \,.
+\end{align*}\]</span>
+So:
+<span class="math display">\[\begin{align*}
+f_{X_1 \vert X_2}(x_1 \vert x_2) = \frac{60x_1^2y_2}{20x_2(1-y_2)^3} = \frac{3x_1^2}{(1-x_2)^3} \,.
+\end{align*}\]</span>
+Plugging in <span class="math inline">\(x_2 = 0.5\)</span>, we get <span class="math inline">\(24x_1^2\)</span>. Finally:
+<span class="math display">\[\begin{align*}
+\int_{1/4}^{1/2} 24 x_1^2 dx_1 = \left.8 x_1^3\right|_{1/4}^{1/2} = 7/8 \,.
+\end{align*}\]</span></p>
+<p>(c) The region over which <span class="math inline">\(f_{X_1 \vert X_2}(x_1 \vert x_2)\)</span> is non-zero is not rectangular: <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> are dependent random variables.</p>
+<hr />
+<ul>
+<li>Problem 5</li>
+</ul>
+<p>(a) We sum over rows:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(x_2\)</span></th>
+<th align="center">0</th>
+<th align="center">1</th>
+<th align="center">2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(p_{x_2}(x_2)\)</span></td>
+<td align="center">0.4</td>
+<td align="center">0.4</td>
+<td align="center">0.2</td>
+</tr>
+</tbody>
+</table>
+<p>(b) We have that</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(x_2\)</span></th>
+<th align="center"><span class="math inline">\((-\infty,0)\)</span></th>
+<th align="center">[0,1)</th>
+<th align="center">[1,2)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(F_{X_2}(x_2)\)</span></td>
+<td align="center">0</td>
+<td align="center">0.4</td>
+<td align="center">0.8</td>
+</tr>
+</tbody>
+</table>
+<p>(c) We have that
+<span class="math display">\[\begin{align*}
+E[X] &amp;= \sum_x x p_X(x) = 0 \cdot 0.4 + 1 \cdot 0.4 + 2 \cdot 0.2 = 0.8 \\
+E[Y^2] &amp;= \sum_x x^2 p_X(x) = 0^2 \cdot 0.4 + 1^2 \cdot 0.4 + 2^2 \cdot 0.2 = 1.2 \\
+\end{align*}\]</span>
+so <span class="math inline">\(V[X] = E[X^2] - (E[X])^2 = 0.56\)</span> and <span class="math inline">\(\sigma_X = \sqrt{0.56} = 0.748\)</span>.</p>
+<hr />
+<ul>
+<li>Problem 6</li>
+</ul>
+<p>The region of integration lies between the <span class="math inline">\(x\)</span> axis, the <span class="math inline">\(y\)</span> axis, and the line <span class="math inline">\(x_2 = 1-x_1\)</span>, in the first quadrant.</p>
+<p>(a) <span class="math inline">\({\rm Cov}(X_1,X_2) = E[X_1X_2] - E[X_1]E[X_2]\)</span>…so we need to compute
+<span class="math inline">\(E[X_1X_2]\)</span>:
+<span class="math display">\[\begin{align*}
+E[X_1X_2] &amp;= \int_0^1 \int_0^{1-x_1} x_1 x_2 60 x_1^2 x_2 dx_2 dx_1 = 60 \int_0^1 x_1^3 \int_0^{1-x_1} x_2^2 dx_2 dx_1 \\
+&amp;= 60 \int_0^1 x_1^3 \frac{(1-x_1)^3}{3} dx_1 = 20 B(4,4) = 20 \frac{3! 3!}{7!} = 1/7 \,.
+\end{align*}\]</span>
+Hence Cov(<span class="math inline">\(X_1,X_2\)</span>) = 1/7 - 1/2(1/3) = <span class="math inline">\(-1/42\)</span>.</p>
+<p>(b) We have that
+<span class="math display">\[\begin{align*}
+{\rm Corr}(X_1,X_2) = \frac{{\rm Cov}(X_1,X_2)}{\sigma_{X_1}\sigma_{X_2}} = \frac{-1/42}{\sqrt{2/7-1/4} \sqrt{1/7-1/9}} = \cdots = -1/\sqrt{2} \,.
+\end{align*}\]</span></p>
+<p>(c) <span class="math inline">\(V[X_1-2X_2] = V[X_1] + 4V[X_2] - 2 \cdot 2 \cdot {\rm Cov}(X_1,X_2) = 1/28 + 8/63 + 4/42 = \cdots = 65/252\)</span>.</p>
+<hr />
+<ul>
+<li>Problem 7</li>
+</ul>
+<p>Let <span class="math inline">\(N\)</span> be the number of laid egges: <span class="math inline">\(N \sim\)</span> Poi(<span class="math inline">\(\lambda\)</span>), and <span class="math inline">\(E[N] = V[N] = \lambda\)</span>. Let <span class="math inline">\(X\)</span> be the number of hatched eggs: <span class="math inline">\(X \vert N \sim\)</span> Bin(<span class="math inline">\(N,p\)</span>), and <span class="math inline">\(E[X \vert N] = Np\)</span> and <span class="math inline">\(V[X \vert N] = Np(1-p)\)</span>.</p>
+<p>(a) <span class="math inline">\(E[X] = E[E[X\vert N]] = E[Np] = pE[N] = \lambda p\)</span>.</p>
+<p>(b) We have that
+<span class="math display">\[\begin{align*}
+V[X] &amp;= V[E[X\vert N]] + E[V[X \vert N]] = V[Np] + E[Np(1-p)] \\
+&amp;= p^2V[N] + p(1-p)E[N] = \lambda p^2 + \lambda p - \lambda p^2 = \lambda p \,.
+\end{align*}\]</span></p>
+<hr />
+<ul>
+<li>Problem 8</li>
+</ul>
+<p>(a) <span class="math inline">\(X_1\)</span>, <span class="math inline">\(X_2\)</span> are independent <span class="math inline">\(\Rightarrow f_{X_1,X_2}(x_1, x_2) = f_{X_1}(x_1) f_{X_2}(x_2) = \left[ k_1 x_1 e^{-x_1/2}\right]\left[k_2x_2(1-x_2) \right]\)</span>. <span class="math inline">\(X_1 \sim \text{Gamma}(2,2) \left[ \text{or } \chi^2_4\right]\)</span>, and <span class="math inline">\(X_2 \sim \text{Beta}(2,2)\)</span>, thus
+<span class="math display">\[\begin{align*}
+k = k_1 k_2 = \frac{1}{\beta_1^{\alpha_1}\Gamma(\alpha_1)}\underbrace{\frac{\Gamma(\alpha_2 + \beta_2)}{\Gamma(\alpha_2)\Gamma(\beta_2)}}_{1/B(\alpha_2,\beta_2)} = \frac{1}{2^21!}\frac{3!}{1!1!} = \frac{3}{2} \,.
+\end{align*}\]</span></p>
+<p>(b) We have that
+<span class="math display">\[\begin{align*}
+V[X_1 - X_2] &amp;=  V[X_1] + V[X_2] = \underbrace{\alpha_1 \beta_1^2}_{\text{Gamma}} + \underbrace{\alpha\beta/\left[(\alpha_2 + \beta_2)^2(\alpha_2 + \beta_2 + 1)\right]}_{\text{Beta}}\\
+&amp;= 8 + 4/(16 \cdot 5) = 8 + \frac{1}{20} = \frac{161}{20} \,.
+\end{align*}\]</span></p>
+<hr />
+<ul>
+<li>Problem 9</li>
+</ul>
+<p>(a) <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> are uniformly distributed. In a plane described by <span class="math inline">\(X_1\)</span>, <span class="math inline">\(X_2\)</span>, the region where <span class="math inline">\(f_{X_1,X_2}(x_1, x_2)&gt;0\)</span> corresponds to a rectangular trapezoid, with long base going from the point with coordinate <span class="math inline">\((0,0)\)</span> to the point with coordinate <span class="math inline">\((2,0)\)</span>, and short base going from the point with coordinate <span class="math inline">\((0,1)\)</span> to the point with coordinate <span class="math inline">\((1,1)\)</span>. Therefore the segment connecting the two points <span class="math inline">\((1,1)-(2,0)\)</span> corresponds to the line <span class="math inline">\(X_2 = -X_1 + 2\)</span>, or <span class="math inline">\(X_1 = 2 - X_2\)</span>. Thus
+<span class="math display">\[\begin{align*}
+f_{X_1,X_2}(x_1, x_2) = \frac{1}{\text{area of the region for which }f_{X_1,X_2}(x_1, x_2)&gt;0 }= \frac{1}{3/2} = \frac{2}{3} \,.
+\end{align*}\]</span></p>
+<p>(b) <span class="math inline">\(f_{X_2}(x_2) = \int_{x_1 = 0}^{x_1 = 2-x_2} k dx_1 = k \left[ x_1|_0^{2-x_2}\right] = k(2-x_2)\)</span>,i if <span class="math inline">\(0\leq x_2 \leq 1\)</span>. Therefore,
+<span class="math inline">\(f_{X_2}(x_2) = k(2-x_2)\)</span> for <span class="math inline">\(x_2 \in [0,1]\)</span>.</p>
+<p>(c) <span class="math inline">\(f_{X_1 | X_2}(x_1 | x_2) = f_{X_1,X_2}(x_1, x_2)/f_{X_2}(x_2) = 1/(2-x_2)\)</span>, for <span class="math inline">\(x_1 \in [0,2-x_2]\)</span> and <span class="math inline">\(x_2 \in [0,1]\)</span>.</p>
+<p>(d) We have that
+<span class="math display">\[\begin{align*}
+E[X_1] =&amp; \int_0^1 \int_{x_1 = 0}^{x_1 = 2-x_2} x_1 k dx_1 dx_2 = k \int_0^1 \left[\frac{x_1^2}{2}\bigg|_{0}^{2-x_2} \right] dx_2 \\
+=&amp; k \int_0^1 \frac{1}{2} (2-x_2)^2 dx_2 = \frac{k}{2} \int_0^1 (4 - 4x_2 + x_2^2) dx_2\\
+=&amp; \frac{k}{2} \left[ 4x_2\bigg|_0^1 - 2x_2^2\bigg|_0^1 + \frac{x_2^3}{3}\bigg|_0^1\right] = \frac{k}{2}\left(4 -2 +\frac{1}{3}\right) = \frac{7}{6}k \,.
+\end{align*}\]</span></p>
+<p>(e) They are dependent since the region over which <span class="math inline">\(f_{X_1,X_2}(x_1, x_2) &gt;0\)</span> is non-rectangular.</p>
+<hr />
+<ul>
+<li>Problem 10</li>
+</ul>
+<p>(a) <span class="math inline">\(p \sim {\rm Beta}(2,2)\)</span>, and <span class="math inline">\(X|p \sim {\rm Bin}(5,p)\)</span>, thus
+<span class="math display">\[\begin{align*}
+E\left[ E\left[ X|p\right] \right]  = E[5p] = 5E[p] = 5\frac{\alpha}{\alpha + \beta} = 2.5 \,.
+\end{align*}\]</span></p>
+<p>(b) We have that
+<span class="math display">\[\begin{align*}
+V[X] &amp;= V\left[ E\left[ X|p\right] \right] +  E\left[ V\left[ X|p\right] \right] = V[5p] + E[5p(1-p)] = 25V[p] + 5\left[E[p] - E[p^2] \right]\\
+&amp;= 25V[p] + 5E[p] -5\left[ V[p] + (E[p])^2 \right] = 20V[p] + 5E[p] -5(E[p])^2\\
+&amp;= 20 \frac{\alpha \beta}{(\alpha + \beta)^2(\alpha + \beta + 1)} + 5\frac{\alpha}{\alpha + \beta} - 5\left(\frac{\alpha}{\alpha + \beta}\right)^2\\
+&amp;= 20 \frac{4}{16 \cdot 5} + 2.5 -1.25 = 1 + 2.5 - 1.25 = 2.25 \,.
+\end{align*}\]</span></p>
+<hr />
+<ul>
+<li>Problem 11</li>
+</ul>
+<p>The region where <span class="math inline">\(f_{X_1,X_2}(x_1, x_2)&gt;0\)</span> can be represented by a triangle with vertices (0,0), (1,0), and (1,1). Thus:
+<span class="math display">\[\begin{align*}
+E[X_1 X_2] &amp;= \int_0^1 \left( \int_0^{x_1} x_1 x_2 (3 x_1) dx_2 \right) dx_1
+= \int_0^1 3x_1^2 \left( \int_0^{x_1} x_2 dx_2\right) dx_1 \\
+&amp;=  \int_0^1 3x_1^2 \frac{x_1^2}{2} dx_1 = \frac{3}{2} \int_0^1x_1^4 dx_1 = \frac{3}{10} x_1^5\bigg|_0^1 = \frac{3}{10} \,.
+\end{align*}\]</span>
+Therefore
+<span class="math display">\[\begin{align*}
+\rho = \frac{{\rm Cov}(X_1,X_2)}{\sqrt{V[X_1] V[X_2]}} = \frac{E[X_1X_2] - E[X_1] E[X_2]}{\sqrt{V[X_1] V[X_2]}}  = \frac{\frac{3}{10} - \frac{9}{32}}{\sqrt{\frac{3}{80}\frac{19}{320}}} = 0.397 \,.
+\end{align*}\]</span></p>
+<hr />
+<ul>
+<li>Problem 12</li>
+</ul>
+<p>The region of integration lies in the first quadrant, below the line <span class="math inline">\(x_2 = x_1\)</span>.</p>
+<p>(a) We have that
+<span class="math display">\[\begin{align*}
+\int_0^\infty \left[ \int_0^{x_1} k e^{-x_1} dx_2 \right] dx_1 = k \int_0^\infty e^{-x_1} \int_0^{x_1} dx_2 dx_1 = k \int_0^\infty x_1 e^{-x_1} dx_1 = k \Gamma(2) = 1 \Rightarrow k = 1 \,.
+\end{align*}\]</span></p>
+<p>(b) We have that
+<span class="math display">\[\begin{align*}
+P(X_2 &lt; 1) &amp;= \int_0^1 \left[ \int_{x_2}^\infty e^{-x_1} dx_1 \right] dx_2  = \int_0^1 \left(-\left.e^{-x_1}\right|_{x_2}^\infty \right) dx_2 \\
+&amp;= \int_0^1 e^{-x_2} dx_2 = -\left.e^{-x_2}\right|_0^1 = -(e^{-1}-1) = 1-e^{-1} \,.
+\end{align*}\]</span></p>
+<p>(c) The marginal distribution is
+<span class="math display">\[\begin{align*}
+f_{X_2}(x_2) = \int_{x_2}^\infty e^{-x_1} dx_1 = -\left.e^{-x_1}\right|_{x_2}^\infty = -(0-e^{-x_2}) = e^{-x_2} \,,
+\end{align*}\]</span>
+or, in full,
+<span class="math display">\[\begin{align*}
+f_{X_2}(x_2) = \left\{ \begin{array}{cl} e^{-x_2} &amp; x_2 \geq 0 \\ 0 &amp; \mbox{otherwise} \end{array} \right. \,.
+\end{align*}\]</span></p>
+<p>(d) The conditional pdf is
+<span class="math display">\[\begin{align*}
+f_{X_1 \vert X_2}(x_1 \vert x_2) = \frac{f_{X_1,X_2}(x_1,x_2)}{f_{X_2}(x_2)} = \frac{e^{-x_1}}{e^{-x_2}} = e^{x_2-x_1} \,,
+\end{align*}\]</span>
+or, in full,
+<span class="math display">\[\begin{align*}
+f_{X_1 \vert X_2}(x_1 \vert x_2) = \left\{ \begin{array}{cl} e^{x_2-x_1} &amp; x_1,x_2 \geq 0 \\ 0 &amp; \mbox{otherwise} \end{array} \right. \,.
+\end{align*}\]</span></p>
+<p>(e) We have that
+<span class="math display">\[\begin{align*}
+P(X_1 &gt; 2 \vert X_1 = 1) &amp;= \int_2^\infty f_{X_1 \vert X_2=1}(x_1 \vert x_2=1) dx_1 = \int_2^\infty e^{1-x_1} dx_1 \\
+&amp;= e^1 \left(-\left.e^{-x_1}\right|_2^\infty\right) = e^1(-(0-e^{-2})) = e^{-1} \,.
+\end{align*}\]</span></p>
+<hr />
+<ul>
+<li>Problem 13</li>
+</ul>
+<p>We are given that <span class="math inline">\(X|\lambda \sim\)</span> Poisson<span class="math inline">\((\lambda)\)</span>, and <span class="math inline">\(\lambda \sim\)</span> NegBinom<span class="math inline">\((4,1/2)\)</span>. Thus <span class="math inline">\(E[X|\lambda] = \lambda\)</span> and <span class="math inline">\(E[\lambda] = \frac{r}{p} = 8\)</span>, and <span class="math inline">\(V[X|\lambda] = \lambda\)</span> and <span class="math inline">\(V[\lambda] = \frac{r(1-p)}{p^2} = \frac{2}{1/4} = 8\)</span>.</p>
+<p>(a) <span class="math inline">\(E[X] = E\left[ E\left[ X|\lambda\right] \right] = E[\lambda] = 8\)</span>.</p>
+<p>(b) <span class="math inline">\(V[X] = E\left[ V\left[ X|\lambda\right] \right] + V\left[ E\left[ X|\lambda\right] \right] = E[\lambda] + V[\lambda] = 8 + 8 = 16\)</span>.</p>
+<hr />
+<ul>
+<li>Problem 14</li>
+</ul>
+<p>The region where <span class="math inline">\(f_{X_1,X_2}(x_1, x_2)\)</span> is positive can be described as the union of two rectangular triangle. The first one with vertexes <span class="math inline">\((-2,0) - (-2, 2) - (0,0)\)</span>. The second one with vertexes <span class="math inline">\((2,0) - (2, 2) - (0,0)\)</span>.</p>
+<p>(a) The region is not rectangular: <span class="math inline">\(X_1, X_2\)</span> are not independent.</p>
+<p>(b) Uniformity <span class="math inline">\(\Rightarrow k = \frac{1}{\text{geometric area}} = \frac{1}{4}\)</span>.</p>
+<p>(c) We have that
+<span class="math display">\[\begin{align*}
+E[X_2] &amp;= \int_0^2 \left[\int_{-2}^{-x_2} \frac{x_2}{4} dx_1 + \int_{x_2}^{2} \frac{x_2}{4} dx_1  \right] dx_2 = 2\int_0^2 \left[\int_{x_2}^{2} \frac{x_2}{4} dx_1 \right] dx_2\\
+&amp;=\frac{1}{2}\int_0^2 x_2 \left[\int_{x_2}^{2} dx_1 \right] dx_2 =\frac{1}{2}\int_0^2 x_2(2-x_2) dx_2 = \frac{1}{2} \left[ x_2^2\bigg|_0^2 - \frac{x_2^3}{3}\bigg|_0^2\right] \\
+&amp;= \frac{1}{2} \left[ 4 - \frac{8}{3}\right]=  \frac{2}{3} \,.
+\end{align*}\]</span></p>
+<hr />
+<ul>
+<li>Problem 15</li>
+</ul>
+<p>(a) We have that
+<span class="math display">\[\begin{align*}
+\int_0^1 \int_0^1 f_{X_1,X_2}(x_1, x_2) dx_1 dx_2 = 1 = k \left[ \int_0^1 x_1 dx_1 \int_0^1 x_2 dx_2 \right] =  k \left[  \frac{x_1^2}{2}\bigg|_0^1 \frac{x_2^2}{2}\bigg|_0^1 \right]  = \frac{k}{4} \,.
+\end{align*}\]</span>
+Therefore <span class="math inline">\(k = 4\)</span>.</p>
+<p>(b) <span class="math inline">\(X_1, X_2\)</span> are independent, so
+<span class="math display">\[\begin{align*}
+P(X_2 &gt; 1/2|X_1 = 1/2) &amp;= P(X_2 &gt; 1/2) = \int_{1/2}^1 \left[ \int_0^1 4 x_1 x_2 dx_1\right] dx_2\\
+&amp;=  \int_{1/2}^1 x_2 \left[ \int_0^1 4 x_1 dx_1\right] dx_2 =  \int_{1/2}^1 x_2 \frac{1}{2} dx_2 = 2 \left( \frac{x_2^2}{2}\bigg|_{1/2}^1\right) \\
+&amp;= 1^2 - (1/2)^2 = \frac{3}{4} \,.
+\end{align*}\]</span></p>
+<p>(c) <span class="math inline">\(X_1, X_2\)</span> are independent, so Cov<span class="math inline">\((X_1, X_2) = 0\)</span>.</p>
+<hr />
+<ul>
+<li>Problem 16</li>
+</ul>
+<p>We have that
+<span class="math display">\[\begin{align*}
+V[U] = a^T\Sigma a =
+\begin{bmatrix}
+2 &amp; -1
+\end{bmatrix}
+\begin{bmatrix}
+3 &amp; 2\\
+2 &amp; 3
+\end{bmatrix}
+\begin{bmatrix}
+2 \\
+-1
+\end{bmatrix}
+=
+\begin{bmatrix}
+2 &amp; -1
+\end{bmatrix}
+\begin{bmatrix}
+4 \\
+1
+\end{bmatrix}
+= 8 - 1 =7 \,.
+\end{align*}\]</span>
+Alternatively,
+<span class="math display">\[\begin{align*}
+V[U] = a_1^2V[X_1] + a_2^2 V[X_2] + 2a_1a_2 \text{Cov}(X_1, X_2) = 4 \cdot 3 + 1 \cdot 3 + 2 (2)(-1)(2) = 15-8 = 7 \,.
+\end{align*}\]</span></p>
+<hr />
+<ul>
+<li>Problem 17</li>
+</ul>
+<p>Before we begin, we can write down that <span class="math inline">\(X \sim \text{Bernoulli}(1/2)\)</span>, so <span class="math inline">\(E[X] = \frac{1}{2}\)</span> and <span class="math inline">\(V[X] = \frac{1}{2}\left( 1 - \frac{1}{2}\right) = \frac{1}{4}\)</span>, and that <span class="math inline">\(U \vert X \sim \text{Uniform}(X,2)\)</span>, so <span class="math inline">\(E[U \vert X] = \frac{X+2}{2}\)</span> and <span class="math inline">\(V[U \vert X] = \frac{1}{12}\left( 2 - X^2 \right)\)</span>.</p>
+<p>We have that
+<span class="math display">\[\begin{align*}
+V[U] &amp;= E\left[V \left[ U|X \right] \right] + V\left[E \left[ U|X \right] \right] \\
+&amp;= E\left[\frac{1}{12}\left( 2 - X^2 \right) \right] + V\left[\frac{X+2}{2} \right] \,,
+\end{align*}\]</span>
+where
+<span class="math display">\[\begin{align*}
+V\left[\frac{X+2}{2}\right] = V\left[\frac{X}{2}\right] = \frac{1}{4}V[X] = \frac{1}{16}
+\end{align*}\]</span>
+and
+<span class="math display">\[\begin{align*}
+E\left[\frac{1}{12}\left( 2 - X^2 \right) \right] &amp;= \frac{1}{12} E[4 - 4X + X^2] = \frac{1}{3} - \frac{1}{6} + \frac{1}{12}\left[V[X] + (E[X])^2 \right]\\
+&amp;= \frac{1}{6} + \frac{1}{12} \left[ \frac{1}{4} \frac{1}{4}\right]  = \frac{4}{24} + \frac{1}{24} = \frac{5}{24} \,.
+\end{align*}\]</span>
+Thus <span class="math inline">\(V[U] = 5/24 + 1/16 = 13/48\)</span>.</p>
+<hr />
+<ul>
+<li>Problem 18</li>
+</ul>
+<p>(a) Is the region rectangular? Yes. And <span class="math inline">\(f_{X_1,X_2}(x_1,x_2) = f_{X_1}(x_1) f_{X_2}(x_2) = f_{X_1}(x_1)\)</span>, with <span class="math inline">\(f_{X_2}(x_2) = 1\)</span>, so <span class="math inline">\(X_1, X_2\)</span> are independent random variables.</p>
+<p>(b) <span class="math inline">\(f_{X_1,X_2}(x_1, x_2) =f_{X_1}(x_1) f_{X_2}(x_2) = 12 x_1^2(1-x_1) \times 1\)</span>, therefore <span class="math inline">\(f_{X_2}(x_2) = 1\)</span> for <span class="math inline">\(x_2 \in [0,1]\)</span>, or <span class="math inline">\(X_2 \sim \text{Uniform}(0,1)\)</span>. Other ways to derive this result include
+<span class="math display">\[\begin{align*}
+f_{X_2}(x_2) &amp;= \underbrace{\int_0^1 12 x_1^2(1-x_1) dx_1}_{\text{Beta}(3,2)} = 1 \\
+&amp;= \int_0^1 12 x_1^2(1-x_1) dx_1 = 12 \left[ \frac{x_1^3}{3}\bigg|_0^1 - \frac{x_1^4}{4}\bigg|_0^1 \right] = \frac{12}{12} = 1 \,.
+\end{align*}\]</span></p>
+<p>(c) <span class="math inline">\(X_1 \sim \text{Beta}(3,2)\)</span>, hence <span class="math inline">\(E[X_1] = \alpha/(\alpha + \beta) = \frac{3}{5}\)</span>. Another way to derive this result is
+<span class="math display">\[\begin{align*}
+f_{X_1}(x_1) &amp;= \int_0^1 12 x_1^2(1-x_1) dx_1 =  12 x_1^2(1-x_1) \\
+E[X_1] &amp;= \int_0^1 x_1 f_{X_1}(x_1) dx_1 = \int_0^1 12 x_1^3(1-x_1) dx_1 =  12 \left[ \frac{x_1^4}{4}\bigg|_0^1 - \frac{x_1^5}{5}\bigg|_0^1 \right] = \frac{12}{20} = \frac{3}{5} \,.
+\end{align*}\]</span></p>
+<hr />
+<ul>
+<li>Problem 19</li>
+</ul>
+<p>(a) The area where <span class="math inline">\(f_{X_1,X_2}(x_1,x_2)&gt;0\)</span> is a triangle with vertices at (0,0), (1,1), and (2,0). For a bivariate uniform, <span class="math inline">\(c = 1/\)</span>(the area of the region), so <span class="math inline">\(c = 1\)</span>. Another way to derive this is via brute force:
+<span class="math display">\[\begin{align*}
+\int_0^1 \left[\int_{x_2}^{2 - x_2} c dx_1\right] dx_2 &amp;= c \int_0^1 (2- x_2) - x_2 dx_2\\
+&amp;= c \int_0^1 2(1- x_2) dx_2 = 2c \left[ x_2\bigg|_0^1 - \frac{x_2^2}{2}\bigg|_0^1 \right]  = c  = 1 \,.
+\end{align*}\]</span></p>
+<p>(b) <span class="math inline">\(f_{X_2}(x_2) = \int_{x_2}^{2 - x_2} dx_1 = 2(1- x_2)\)</span> for <span class="math inline">\(x_2 \in [0,1]\)</span>.</p>
+<p>(c) <span class="math inline">\(f_{X_1|X_2}(x_1|x_2) =\frac{f_{X_1,X_2}(x_1,x_2)}{f_{X_2}(x_2)} = 1/[2(1-x_2)]\)</span> for <span class="math inline">\(x_1 \in [0,2]\)</span>, and <span class="math inline">\(x_2 \in [0,x_1]\)</span> and <span class="math inline">\(x_2 \in [0,2-x_1]\)</span>.</p>
+<hr />
+<ul>
+<li>Problem 20</li>
+</ul>
+<p>(a) We can recognize immediately that <span class="math inline">\(X_1,X_2\)</span> are independent, thus <span class="math inline">\(f_{X_1}(x_1) = 2x_1\)</span> for <span class="math inline">\(x_1 \in [0,1]\)</span>. We can also derive this result via brute force:
+<span class="math display">\[\begin{align*}
+f_{X_1}(x_1) = \int_0^1 4 x_1 x_2 dx_2 = 4x_1 \frac{x_2^2}{2}\bigg|_0^1 = 2x_1 \,.
+\end{align*}\]</span></p>
+<p>(b) We have that <span class="math inline">\(f_{X_2|X_1}(x_2|x_1) = \frac{f_{X_1,X_2}(x_1,x_2)}{f_{X_1}(x_1)} = \frac{4 x_1 x_2}{2x_1} = 2x_2\)</span> for <span class="math inline">\(x_1 \in [0,1]\)</span> and <span class="math inline">\(x_2 \in [0,1]\)</span>.</p>
+<p>(c) We have that
+<span class="math display">\[\begin{align*}
+P(X_2 &lt; 1/2 |X_1 = x_1) = \int_0^{1/2} f_{X_2|X_1}(x_2|x_1) dx_2 =  \int_0^{1/2}2x_2dx_2 = x_2^2\bigg|_0^{1/2} = \frac{1}{4} \,.
+\end{align*}\]</span></p>
+<hr />
+<ul>
+<li>Problem 21</li>
+</ul>
+<p>We begin by noting that <span class="math inline">\(V[X_1] = E[X_1^2] - E[X_1]^2\)</span>, and that
+<span class="math display">\[\begin{align*}
+E[X_1] &amp;= \int_0^1 \int_0^{1-x_1} 2x_1 dx_2 dx_1 = 2 \int_0^1 x_1(1-x_1) dx_1 = 2B(2,2) = 2 \frac{\Gamma(2)\Gamma(2)}{\Gamma(4)} = \frac{1!1!}{3!} = \frac{1}{3} \,. \\
+E[X_1^2] &amp;= \int_0^1 \int_0^{1-x_1} 2x_1 x_1 dx_2 dx_1 = 2 \int_0^1 x_1^2(1-x_1) dx_1 = 2B(3,2) = 2 \frac{2!1!}{4!} = \frac{1}{6} \,.
+\end{align*}\]</span>
+Thus <span class="math inline">\(V[X_1] = 1/6 -  \left( 1/3 \right)^2 = 1/18\)</span>.</p>
+<hr />
+<ul>
+<li>Problem 22</li>
+</ul>
+<p>We have that <span class="math inline">\(V[X_1 - X_2] = V[X_1] + V[X_2] - 2\)</span>Cov<span class="math inline">\((X_1,X_2)\)</span>. So we need to compute every part of the formula above:
+<span class="math display">\[\begin{align*}
+E[X_1] &amp;= \sum \sum x_1 p_{X_1,X_2}(x_1,x_2) = 1 \cdot \frac{2}{9} + 1 \cdot \frac{2}{9} + 2 \cdot \frac{1}{9} = \frac{6}{9}\\
+V[X_1] &amp;= E[X_1^2] - E[X_1]^2 =  \frac{8}{9} -  \frac{36}{81} = \frac{4}{9}\\
+E[X_2] &amp;= \sum \sum x_2 p_{X_1,X_2}(x_1,x_2) = 1 \cdot \frac{3}{9} + 1 \cdot \frac{2}{9} + 1 \cdot \frac{1}{9} = \frac{6}{9}\\
+V[X_1] &amp;= E[X_1^2] - E[X_1]^2 =  \frac{6}{9} -  \frac{36}{81} = \frac{2}{9}\\
+E[X_1X_2] &amp;=  \sum \sum x_1 x_2 p_{X_1,X_2}(x_1,x_2) = 1 \cdot 1 \cdot \frac{2}{9} + 2 \cdot 1 \cdot \frac{1}{9} = \frac{4}{9}\\
+\mbox{Cov}(X_1, X_2) &amp;= \frac{4}{9} - \left( \frac{6}{9}\right)^2 = 0 \,.
+\end{align*}\]</span>
+Thus <span class="math inline">\(V[X_1 - X_2] = 6/9 = 2/3\)</span>.</p>
+<hr />
+<ul>
+<li>Problem 23</li>
+</ul>
+<p>We recognize that <span class="math inline">\(X|\beta \sim \text{Gamma}(\alpha, \beta)\)</span> and that <span class="math inline">\(\beta \sim \text{Exp}(\gamma)\)</span>, with <span class="math inline">\(E[\beta] = \gamma, V[\beta] =  \gamma^2\)</span>, and <span class="math inline">\(E[X|\beta] = \alpha \beta\)</span>, <span class="math inline">\(V[X|\beta] = \alpha \beta^2\)</span>.</p>
+<p>(a) <span class="math inline">\(E[X] = E\left[ E\left[ X|p\right] \right] = E[\alpha \beta] = \alpha E[\beta] = \alpha \gamma\)</span>.</p>
+<p>(b) We have that
+<span class="math display">\[\begin{align*}
+V[X] &amp;= V\left[ E\left[ X|p\right] \right] +  E\left[ V\left[ X|p\right] \right] = E[\alpha \beta^2] + V[\alpha \beta]\\
+&amp;= \alpha E[\beta^2] + \alpha^2V[\beta]= \alpha \left[ V[\beta] + E[\beta]^2\right] + \alpha^2 \gamma^2\\
+&amp;= \alpha \left[ \gamma^2+\gamma^2\right] + \alpha^2 \gamma^2  = (2\alpha + \alpha^2) \gamma^2 \,.
+\end{align*}\]</span></p>
+<hr />
+<ul>
+<li>Problem 24</li>
+</ul>
+<p>The region of integration is a triangle with vertices at (0,0), (0,1), and (1,1).</p>
+<p>(a) The area of the triangle is 1/2, so <span class="math inline">\(f_{X_1,X_2}(x_1,x_2) = 2\)</span>.</p>
+<p>(b) Geometry will not directly help us here; we still have to integrate. The expected value <span class="math inline">\(E[X_1]\)</span> is
+<span class="math display">\[\begin{align*}
+E[X_1] &amp;= \int_0^1 \left[ \int_0^{x_1} 2 x_1 dx_2 \right] dx_1 = 2 \int_0^1 x_1 \left[ \int_0^{x_1} dx_2 \right] dx_1 \\
+&amp;= 2 \int_0^1 x_1 x_1 dx_1 = 2 \left.\frac{x_1^3}{3}\right|_0^1 = \frac23 \,.
+\end{align*}\]</span></p>
+<p>(c) We have that Cov[<span class="math inline">\(X_1,X_2\)</span>] = <span class="math inline">\(E[X_1X_2] - E[X_1]E[X_2]\)</span>. So we need to compute <span class="math inline">\(E[X_1X_2]\)</span>:
+<span class="math display">\[\begin{align*}
+E[X_1X_2] &amp;= \int_0^1 \left[ \int_0^{x_1} 2 x_1 x_2 dx_2 \right] dx_1 = 2 \int_0^1 x_1 \left[ \int_0^{x_1} x_2 dx_2 \right] dx_1 \\
+&amp;= 2 \int_0^1 x_1 \left[ \left.\frac{x_2^2}{2}\right|_0^{x_1} \right] dx_1 = \int_0^1 x_1 x_1^2 dx_1 = \left.\frac{x_1^4}{4}\right|_0^1 = \frac14 \,.
+\end{align*}\]</span>
+So the covariance is <span class="math inline">\(1/4 - (2/3)(1/3) = 9/36 - 8/36 = 1/36\)</span>.</p>
+<hr />
+<ul>
+<li>Problem 25</li>
+</ul>
+<p>(a) The long way to do this involves integration. The short way is to see by inspection that <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> are independent (the region of integration is “rectangular,” and <span class="math inline">\(x_2\)</span> doesn’t directly appear in <span class="math inline">\(f_{X_1,X_2}(x_1,x_2)\)</span>, so <span class="math inline">\(f_{X_1,X_2}(x_1,x_2)\)</span> can be trivially split into two functions <span class="math inline">\(g(x_1)h(x_2)\)</span>), and to see that
+<span class="math display">\[\begin{align*}
+X_1 \sim {\rm Exp}(\beta = 2) ~{\rm and}~ X_2 \sim {\rm Unif}(0,2) \,.
+\end{align*}\]</span>
+We know <span class="math inline">\(f_{X_1,X_2}(x_1,x_2) = f_{X_1}(x_1)f_{X_2}(x_2) = (1/\beta){\rm exp}(-x_1/2) \cdot (1/2)\)</span>, so <span class="math inline">\(k = 1/(2\beta) = 1/4\)</span>.</p>
+<p>(b) The key here is to realize that since <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> are independent, <span class="math inline">\(E[X_1]\)</span> is just the expected value of <span class="math inline">\(f_{X_1}(x_1)\)</span>, i.e., it is the expected value of an exponential distribution with mean 2. So: <span class="math inline">\(E[X_1] = \beta = 2\)</span>.</p>
+<hr />
+<ul>
+<li>Problem 26</li>
+</ul>
+<p>The region of integration is a triangle with vertices (0,0), (2,0), and (1,1). The area of the region of integration is 1, so <span class="math inline">\(f_{X_1,X_2}(x_1,x_2) = 1\)</span>.</p>
+<p>(a) We have that
+<span class="math display">\[\begin{align*}
+f_{X_2}(x_2) &amp;= \int_{x_2}^{2-x_2} dx_1 = 2(1-x_2) ~~~ x_2 \in [0,1] \,.
+\end{align*}\]</span></p>
+<p>(b) We have that
+<span class="math display">\[\begin{align*}
+f_{X_1 \vert X_2}(x_1 \vert x_2) &amp;= \frac{f_{X_1,X_2}(x_1,x_2)}{f_{X_2}(x_2)} = \frac{1}{2(1-x_2)} ~~~ x_1 \in [x_2,2-x_2] ~~~ x_2 \in [0,1] \,.
+\end{align*}\]</span></p>
+<p>(c) The new region of integration is a triangle with vertices at (0,0), (1,0), and (1/2,1/2). Since we are dealing with a bivariate uniform, we know that the probability of sampling data from this triangle is the ratio of its area to the area of the total region of integration for the pdf. Thus <span class="math inline">\(P(X_1 + X_2 \leq 1) = (1/2 \cdot 1 \cdot 1/2)/1 = 1/4\)</span>.</p>
+<hr />
+<ul>
+<li>Problem 27</li>
+</ul>
+<p>We are given that <span class="math inline">\(X \vert \mu \sim N(\mu,1)\)</span> and that <span class="math inline">\(\mu \sim N(0,1)\)</span>. We thus know that <span class="math inline">\(E[X \vert \mu] = \mu\)</span> and <span class="math inline">\(V[X \vert \mu] = 1\)</span>, while <span class="math inline">\(E[\mu] = 0\)</span> and <span class="math inline">\(V[\mu] = 1\)</span>. Thus
+<span class="math display">\[\begin{align*}
+V[X] &amp;= V\left[E[X \vert \mu]\right] + E\left[V[X \vert \mu]\right] = V[\mu] + E[1] = 1 + 1 = 2 \,.
+\end{align*}\]</span></p>
+<hr />
+<ul>
+<li>Problem 28</li>
+</ul>
+<p>(a) The conditional expected value is
+<span class="math display">\[\begin{align*}
+E[X_1 \vert X_2=1] &amp;= (x_1 = 0) \cdot p(x_1=0 \vert x_2=1) + (x_1 = 1) \cdot p(x_1=1 \vert x_2=1) \\
+&amp;= 1 \cdot \frac{p(1,1)}{p_2(1)} = 1 \cdot \frac{0.1}{0.3+0.1} = 0.25 \,.
+\end{align*}\]</span></p>
+<p>(b) The conditional variance is
+<span class="math display">\[\begin{align*}
+V[X_1 \vert X_2=1] &amp;= E[X_1^2 \vert X_2=1] - (E[X_1 \vert X_2=1])^2 \,.
+\end{align*}\]</span>
+We know the second term. The first term can be derived in a manner similar to above:
+<span class="math display">\[\begin{align*}
+E[X_1^2 \vert X_2=1] &amp;= \ldots = 1^2 \cdot \frac{p(1,1)}{p_2(1)} = 1 \cdot \frac{0.1}{0.3+0.1} = 0.25 \,.
+\end{align*}\]</span>
+Thus the conditional variance is <span class="math inline">\(V[X_1 \vert X_2=1] = 0.25 - 0.25^2 = 1/4 - 1/16 = 3/16\)</span>.</p>
+<hr />
+<ul>
+<li>Problem 29</li>
+</ul>
+<p>(a) Because the boundary of the domain is not rectangular (see <span class="math inline">\(x_1 + x_2 \leq 2\)</span>), <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> are <em>not</em> independent.</p>
+<p>(b) We need the distribution to integrate to 1:
+<span class="math display">\[\begin{align*}
+1 &amp;= \int_{x_1} \int_{x_2} c x_1^2 dx_2 dx_1 \,.
+\end{align*}\]</span>
+The domain is a triangle with vertices (0,0), (2,0), and (0,2), and thus there is no real advantage gained by utilizing either order of integration, so we’ll keep the integral over <span class="math inline">\(x_2\)</span> as our “inner” integral:
+<span class="math display">\[\begin{align*}
+\int_0^2 \int_0^{2-x_1} c x_1^2 dx_2 dx_1 &amp;= c \int_0^2 x_1^2 \left( \int_0^{2-x_1} dx_2 \right) dx_1 \\
+&amp;= c \int_0^2 x_1^2 (2 - x_1) dx_1 \\
+&amp;= c \left( 2 \int_0^2 x_1^2 dx_1 - \int_0^2 x_1^3 dx_1 \right) \\
+&amp;= c \left( 2 \left. \frac{x_1^3}{3}\right|_0^2 - \left. \frac{x_1^4}{4}\right|_0^2 \right) \\
+&amp;= c \left( \frac{16}{3} - 4 \right) = c\frac{4}{3} \,.
+\end{align*}\]</span>
+Hence <span class="math inline">\(c = 3/4\)</span>.</p>
+<p>(c) We actually already derived the marginal distribution above:
+<span class="math display">\[\begin{align*}
+f_{X_1}(x_1) &amp;= c x_1^2 \int_0^{2-x_1} dx_2 \\
+&amp;= c x_1^2 (2 - x_1) ~~~ x_1 \in [0,2] \,.
+\end{align*}\]</span></p>
+<p>(d) The conditional distribution is
+<span class="math display">\[\begin{align*}
+f_{X_2 \vert X_1}(x_2 \vert x_1) = \frac{f_{X_1,X_2}(x_1,x_2)}{f_{X_1}(x_1)} = \frac{cx_1^2}{cx_1^2(2-x_1)} = \frac{1}{2-x_1} ~~~ x_2 \in [0,2-x_1] \,.
+\end{align*}\]</span></p>
+<p>(e) Given the domain and the flat pdf, we know that <span class="math inline">\(f_{X_2 \vert X_1}(x_2 \vert x_1)\)</span> is a “uniform” distribution.</p>
+<hr />
+<ul>
+<li>Problem 30</li>
+</ul>
+<p>(a) We need to determine <span class="math inline">\(E[X_1]\)</span>, <span class="math inline">\(E[X_2]\)</span>, and <span class="math inline">\(E[X_1X_2]\)</span>:
+<span class="math display">\[\begin{align*}
+E[X_1] &amp;= 1 \cdot (0.1 + 0.5) = 0.6 \\
+E[X_2] &amp;= 1 \cdot (0.1 + 0.5) = 0.6 \\
+E[X_1X_2] &amp;= 1 \cdot 1 \cdot 0.5 = 0.5 \,.
+\end{align*}\]</span>
+Thus Cov(<span class="math inline">\(X_1,X_2\)</span>) = <span class="math inline">\(E[X_1X_2] - E[X_1]E[X_2] = 0.5 - 0.6^2 = 0.14\)</span>.</p>
+<p>(b) Now we need <span class="math inline">\(E[X_1^2]\)</span> and <span class="math inline">\(E[X_2^2]\)</span>:
+<span class="math display">\[\begin{align*}
+E[X_1^2] &amp;= 1^2 \cdot (0.1 + 0.5) = 0.6 \\
+E[X_2^2] &amp;= 1^2 \cdot (0.1 + 0.5) = 0.6 \,.
+\end{align*}\]</span>
+Thus
+<span class="math display">\[\begin{align*}
+V[X_1] &amp;= E[X_1^2] - (E[X_1])^2 = 0.6 - 0.6^2 = 0.24 \\
+V[X_2] &amp;= E[X_2^2] - (E[X_2])^2 = 0.6 - 0.6^2 = 0.24 \,,
+\end{align*}\]</span>
+and <span class="math inline">\(\sigma_1\sigma_2 = \sqrt{V[X_1]V[X_2]} = 0.24\)</span>, and <span class="math inline">\(\rho_{X_1,X_2} = 0.14/0.24 = 7/12\)</span>.</p>
+<p>(c) We have that
+<span class="math display">\[\begin{align*}
+V[Y] &amp;= a_1^2 V[X_1] + a_2^2 V[X_2] + 2 a_1 a_2 \mbox{Cov}(X_1,X_2) \\
+&amp;= 4 \cdot 0.24 + 1 \cdot 0.24 - 2 \cdot 2 \cdot 1 \cdot 0.14 \\
+&amp;= 1.2 - 4 \cdot 0.14 = 0.64 \,.
+\end{align*}\]</span></p>
 
 </div>
 </div>

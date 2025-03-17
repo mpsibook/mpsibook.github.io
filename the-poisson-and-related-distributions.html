@@ -424,7 +424,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.6.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#revisiting-the-death-by-horse-kick-example-1"><i class="fa fa-check"></i><b>4.6.2</b> Revisiting the Death-by-Horse-Kick Example</a></li>
 <li class="chapter" data-level="4.6.3" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#determining-a-confidence-interval-using-the-bootstrap"><i class="fa fa-check"></i><b>4.6.3</b> Determining a Confidence Interval Using the Bootstrap</a></li>
 <li class="chapter" data-level="4.6.4" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#the-proportion-of-observed-data-in-a-bootstrap-sample"><i class="fa fa-check"></i><b>4.6.4</b> The Proportion of Observed Data in a Bootstrap Sample</a></li>
-<li class="chapter" data-level="4.6.5" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#confidence-interval-estimation-via-simulation-and-numerical-optimization"><i class="fa fa-check"></i><b>4.6.5</b> Confidence Interval Estimation via Simulation and Numerical Optimization</a></li>
+<li class="chapter" data-level="4.6.5" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#confidence-interval-estimation-via-simulation"><i class="fa fa-check"></i><b>4.6.5</b> Confidence Interval Estimation via Simulation</a></li>
 </ul></li>
 <li class="chapter" data-level="4.7" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#hypothesis-testing-2"><i class="fa fa-check"></i><b>4.7</b> Hypothesis Testing</a>
 <ul>
@@ -520,6 +520,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.6.2" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html#the-conditional-distribution-of-a-multivariate-normal-distribution"><i class="fa fa-check"></i><b>6.6.2</b> The Conditional Distribution of a Multivariate Normal Distribution</a></li>
 <li class="chapter" data-level="6.6.3" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html#the-calculation-of-sample-covariance"><i class="fa fa-check"></i><b>6.6.3</b> The Calculation of Sample Covariance</a></li>
 </ul></li>
+<li class="chapter" data-level="6.7" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html#exercises-3"><i class="fa fa-check"></i><b>6.7</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="further-conceptual-details-optional.html"><a href="further-conceptual-details-optional.html"><i class="fa fa-check"></i><b>7</b> Further Conceptual Details (Optional)</a>
 <ul>
@@ -543,6 +544,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="" data-path="chapter-exercises-solutions.html"><a href="chapter-exercises-solutions.html#chapter-3"><i class="fa fa-check"></i>Chapter 3</a></li>
 <li class="chapter" data-level="" data-path="chapter-exercises-solutions.html"><a href="chapter-exercises-solutions.html#chapter-4"><i class="fa fa-check"></i>Chapter 4</a></li>
+<li class="chapter" data-level="" data-path="chapter-exercises-solutions.html"><a href="chapter-exercises-solutions.html#chapter-5"><i class="fa fa-check"></i>Chapter 5</a></li>
+<li class="chapter" data-level="" data-path="chapter-exercises-solutions.html"><a href="chapter-exercises-solutions.html#chapter-6"><i class="fa fa-check"></i>Chapter 6</a></li>
 </ul></li>
 </ul>
 
@@ -1427,37 +1430,36 @@ will appear at least once in a bootstrapped dataset.</p>
 </blockquote>
 <hr />
 </div>
-<div id="confidence-interval-estimation-via-simulation-and-numerical-optimization" class="section level3 hasAnchor" number="4.6.5">
-<h3><span class="header-section-number">4.6.5</span> Confidence Interval Estimation via Simulation and Numerical Optimization<a href="the-poisson-and-related-distributions.html#confidence-interval-estimation-via-simulation-and-numerical-optimization" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="confidence-interval-estimation-via-simulation" class="section level3 hasAnchor" number="4.6.5">
+<h3><span class="header-section-number">4.6.5</span> Confidence Interval Estimation via Simulation<a href="the-poisson-and-related-distributions.html#confidence-interval-estimation-via-simulation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <blockquote>
-<p>Let’s suppose that we sample <span class="math inline">\(n\)</span> iid data from a Beta<span class="math inline">\((\alpha,2)\)</span>
+<p>Let’s suppose that we sample <span class="math inline">\(n\)</span> iid data from a Beta<span class="math inline">\((a,2)\)</span>
 distribution:
 <span class="math display">\[\begin{align*}
-f_X(x) = \frac{x^{\alpha-1}(1-x)}{B(\alpha,2)} \,,
+f_X(x) = \frac{x^{a-1}(1-x)}{B(a,2)} \,,
 \end{align*}\]</span>
-for <span class="math inline">\(x \in [0,1]\)</span> and <span class="math inline">\(\alpha &gt; 0\)</span>. A sufficient statistic for
-<span class="math inline">\(\alpha\)</span>, found via factorization, is <span class="math inline">\(\prod_{i=1}^n X_i\)</span>; another,
+for <span class="math inline">\(x \in [0,1]\)</span> and <span class="math inline">\(a &gt; 0\)</span>. A sufficient statistic for
+<span class="math inline">\(a\)</span>, found via factorization, is <span class="math inline">\(\prod_{i=1}^n X_i\)</span>; another,
 more easy to work with, one is <span class="math inline">\(Y = -\sum_{i=1}^n \log X_i\)</span>. (Why do we
 include a minus sign? For no other reason that when we include it,
 <span class="math inline">\(Y\)</span> generally increases as <span class="math inline">\(n\)</span> increases.) The expected value of the
-random variable <span class="math inline">\(X\)</span> is <span class="math inline">\(E[X] = \alpha/(\alpha+2)\)</span>, which increases
-as <span class="math inline">\(\alpha\)</span> increases. However, as <span class="math inline">\(X \rightarrow 1\)</span>,
-<span class="math inline">\(-\log X \rightarrow 0\)</span>, and so <span class="math inline">\(E[Y]\)</span> will <em>decrease</em> with <span class="math inline">\(\alpha\)</span>.</p>
+random variable <span class="math inline">\(X\)</span> is <span class="math inline">\(E[X] = a/(a+2)\)</span>, which increases
+as <span class="math inline">\(a\)</span> increases. However, as <span class="math inline">\(X \rightarrow 1\)</span>,
+<span class="math inline">\(-\log X \rightarrow 0\)</span>, and so <span class="math inline">\(E[Y]\)</span> will <em>decrease</em> with <span class="math inline">\(a\)</span>.</p>
 </blockquote>
 <blockquote>
-<p>We are now all set to construct, e.g., 95% confidence intervals for <span class="math inline">\(\alpha\)</span>.
+<p>We are now all set to construct, e.g., 95% confidence intervals for <span class="math inline">\(a\)</span>.
 Except…we cannot identify the sampling distribution for <span class="math inline">\(Y\)</span>. So we are
 stuck…but, in actuality, we are not. We just need to numerically
-estimate sampling distributions for <span class="math inline">\(Y \vert \alpha\)</span> via simulation,
-and find the values of <span class="math inline">\(\alpha\)</span> that make the estimated
-<span class="math inline">\(F_Y(y_{\rm obs} \vert \alpha)\)</span> (approximately) equal to 0.025 and 0.975.
-We can perform this latter step using numerical optimization.</p>
+estimate sampling distributions for <span class="math inline">\(Y \vert a\)</span> via simulation,
+and find the values of <span class="math inline">\(a\)</span> that make the estimated
+<span class="math inline">\(F_Y(y_{\rm obs} \vert a)\)</span> (approximately) equal to 0.025 and 0.975.</p>
 </blockquote>
 <blockquote>
 <p>Let’s first build up the code that we would need to estimate the
 sampling distribution and estimate the cdf for the value <span class="math inline">\(y_{\rm obs}\)</span>.</p>
 </blockquote>
-<pre><code>X &lt;- matrix(rbeta(n*num.sim,shape1=alpha,shape2=2),nrow=num.sim)
+<pre><code>X &lt;- matrix(rbeta(n*num.sim,shape1=a,shape2=2),nrow=num.sim)
 Y &lt;- apply(X,1,function(x){-sum(log(x))})
 sum(Y &lt;= y.obs)/num.sim</code></pre>
 <blockquote>
@@ -1466,22 +1468,10 @@ parameter value, and store them row-by-row in a matrix. On the second
 line, we use <code>R</code>’s <code>apply()</code> function, row-by-row (as indicated
 by the argument <code>1</code>), to determine the statistic value for each dataset.
 Then, on the third line, we determine the proportion of statistic values
-that are less than or equal to <span class="math inline">\(y_{\rm obs}\)</span>: that is our estimate
-of <span class="math inline">\(F_Y(y_{\rm obs} \vert \alpha)\)</span>.</p>
-</blockquote>
-<blockquote>
-<p>The next step is to embed this code into a numerical optimizer.</p>
-</blockquote>
-<blockquote>
-<p>Our objective, given a value of <span class="math inline">\(q\)</span>, is to determine the value of <span class="math inline">\(\alpha\)</span>
-such that <span class="math inline">\(F_Y(y_{\rm obs} \vert \alpha) = q\)</span> (at least approximately).
-So for our objective function, a function whose value we are trying to
-minimize,
-we adopt <span class="math inline">\(\left(F_Y(y_{\rm obs} \vert \alpha) - q\right)^2\)</span>.
-(This is not a unique
-choice<span class="math inline">\(-\)</span>we could, e.g., adopt <span class="math inline">\(\vert F_Y(y_{\rm obs} \vert \alpha) - q \vert\)</span>
-as our objective function<span class="math inline">\(-\)</span>but minimizing the squared error is a
-conventional and uncontroversial choice.)</p>
+that are less than or equal to <span class="math inline">\(y_{\rm obs}\)</span>: this is the empirical
+cumulative distribution function value <span class="math inline">\(\hat{F}_n(y_{\rm obs} \vert a)\)</span>.
+We then find the value of <span class="math inline">\(a\)</span> for which
+<span class="math inline">\(\hat{F}_n(y_{\rm obs} \vert a) - q = 0\)</span> using <code>uniroot()</code>.</p>
 </blockquote>
 <blockquote>
 <p>Let’s put this all together in an example where <span class="math inline">\(n = 5\)</span> and
@@ -1489,39 +1479,43 @@ conventional and uncontroversial choice.)</p>
 </blockquote>
 <div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="the-poisson-and-related-distributions.html#cb274-1" tabindex="-1"></a>n     <span class="ot">&lt;-</span> <span class="dv">5</span></span>
 <span id="cb274-2"><a href="the-poisson-and-related-distributions.html#cb274-2" tabindex="-1"></a>y.obs <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb274-3"><a href="the-poisson-and-related-distributions.html#cb274-3" tabindex="-1"></a>conf  <span class="ot">&lt;-</span> <span class="fl">0.05</span> <span class="co"># so as not to confuse the confidence coefficient and alpha</span></span>
-<span id="cb274-4"><a href="the-poisson-and-related-distributions.html#cb274-4" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(alpha,n,y.obs,q,<span class="at">num.sim=</span><span class="dv">100000</span>,<span class="at">seed=</span><span class="dv">236</span>)</span>
+<span id="cb274-3"><a href="the-poisson-and-related-distributions.html#cb274-3" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb274-4"><a href="the-poisson-and-related-distributions.html#cb274-4" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(a,n,y.obs,q,<span class="at">num.sim=</span><span class="dv">1000000</span>,<span class="at">seed=</span><span class="dv">236</span>)</span>
 <span id="cb274-5"><a href="the-poisson-and-related-distributions.html#cb274-5" tabindex="-1"></a>{</span>
 <span id="cb274-6"><a href="the-poisson-and-related-distributions.html#cb274-6" tabindex="-1"></a>  <span class="fu">set.seed</span>(seed)</span>
-<span id="cb274-7"><a href="the-poisson-and-related-distributions.html#cb274-7" tabindex="-1"></a>  X <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">rbeta</span>(n<span class="sc">*</span>num.sim,<span class="at">shape1=</span>alpha,<span class="at">shape2=</span><span class="dv">2</span>),<span class="at">nrow=</span>num.sim)</span>
+<span id="cb274-7"><a href="the-poisson-and-related-distributions.html#cb274-7" tabindex="-1"></a>  X <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">rbeta</span>(n<span class="sc">*</span>num.sim,<span class="at">shape1=</span>a,<span class="at">shape2=</span><span class="dv">2</span>),<span class="at">nrow=</span>num.sim)</span>
 <span id="cb274-8"><a href="the-poisson-and-related-distributions.html#cb274-8" tabindex="-1"></a>  Y <span class="ot">&lt;-</span> <span class="fu">apply</span>(X,<span class="dv">1</span>,<span class="cf">function</span>(x){<span class="sc">-</span><span class="fu">sum</span>(<span class="fu">log</span>(x))})</span>
-<span id="cb274-9"><a href="the-poisson-and-related-distributions.html#cb274-9" tabindex="-1"></a>  (<span class="fu">sum</span>(Y <span class="sc">&lt;=</span> y.obs)<span class="sc">/</span>num.sim<span class="sc">-</span>q)<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb274-9"><a href="the-poisson-and-related-distributions.html#cb274-9" tabindex="-1"></a>  <span class="fu">sum</span>(Y <span class="sc">&lt;=</span> y.obs)<span class="sc">/</span>num.sim<span class="sc">-</span>q</span>
 <span id="cb274-10"><a href="the-poisson-and-related-distributions.html#cb274-10" tabindex="-1"></a>}</span>
-<span id="cb274-11"><a href="the-poisson-and-related-distributions.html#cb274-11" tabindex="-1"></a><span class="fu">optimize</span>(f,<span class="fu">c</span>(<span class="fl">0.1</span>,<span class="dv">3</span>),<span class="at">n=</span>n,<span class="at">y.obs=</span>y.obs,<span class="at">q=</span>conf<span class="sc">/</span><span class="dv">2</span>)<span class="sc">$</span>minimum</span></code></pre></div>
-<pre><code>## [1] 0.2482469</code></pre>
-<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="the-poisson-and-related-distributions.html#cb276-1" tabindex="-1"></a><span class="fu">optimize</span>(f,<span class="fu">c</span>(<span class="fl">0.1</span>,<span class="dv">3</span>),<span class="at">n=</span>n,<span class="at">y.obs=</span>y.obs,<span class="at">q=</span><span class="dv">1</span><span class="sc">-</span>conf<span class="sc">/</span><span class="dv">2</span>)<span class="sc">$</span>minimum</span></code></pre></div>
-<pre><code>## [1] 1.369313</code></pre>
+<span id="cb274-11"><a href="the-poisson-and-related-distributions.html#cb274-11" tabindex="-1"></a><span class="fu">uniroot</span>(f,<span class="fu">c</span>(<span class="fl">0.1</span>,<span class="dv">3</span>),<span class="at">n=</span>n,<span class="at">y.obs=</span>y.obs,<span class="at">q=</span>alpha<span class="sc">/</span><span class="dv">2</span>)<span class="sc">$</span>root</span></code></pre></div>
+<pre><code>## [1] 0.248806</code></pre>
+<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="the-poisson-and-related-distributions.html#cb276-1" tabindex="-1"></a><span class="fu">uniroot</span>(f,<span class="fu">c</span>(<span class="fl">0.1</span>,<span class="dv">3</span>),<span class="at">n=</span>n,<span class="at">y.obs=</span>y.obs,<span class="at">q=</span><span class="dv">1</span><span class="sc">-</span>alpha<span class="sc">/</span><span class="dv">2</span>)<span class="sc">$</span>root</span></code></pre></div>
+<pre><code>## [1] 1.374306</code></pre>
 <blockquote>
-<p>Our estimated 95% confidence interval for <span class="math inline">\(\alpha\)</span> is [0.248,1.369].</p>
+<p>Our estimated 95% confidence interval for <span class="math inline">\(a\)</span> is [0.249,1.374].</p>
 </blockquote>
 <blockquote>
-<p>There are two important things to note when using <code>optimize()</code> to find
-interval bounds:</p>
-</blockquote>
-<blockquote>
-<ol style="list-style-type: decimal">
-<li>The search for bounds can fail when the search interval (here, 0.1 to 3)
-is too large. If the result is at the boundary of the search interval,
-change the search interval bounds and try again.</li>
-<li>The precision of the interval-bound estimates is directly related to the
-optimizer tolerance, which by default is <span class="math inline">\(\sim 10^{-4}\)</span>. (This means that
-if <code>(sum(Y &lt;= y.obs)/num.sim-q)^2</code> is less than <span class="math inline">\(\sim 10^{-4}\)</span>, the
-optimizer will assume it has found the optimal parameter value and
-it will stop searching.) If we
-wish to have more precise estimates, we should specify, e.g., <code>tol=1.e-6</code> (or
-some other number) in the argument list for <code>optimize()</code>. As one might
-expect, the tradeoff for greater precision is a longer runtime.</li>
-</ol>
+<p>We note that the default number of simulated datasets in the code
+above is <span class="math inline">\(10^6\)</span>. This choice is driven a desire to make the result
+as precise as possible while keeping the runtime reasonable. (Here,
+the runtime is <span class="math inline">\(\lesssim\)</span> 1 CPU minute per <code>uniroot()</code> call on a
+standard desktop or laptop computer.) The empirical cdf is an
+<em>estimate</em>, i.e., even if we hold <span class="math inline">\(a\)</span> constant, <code>sum(Y &lt;= y.obs)</code>
+is a random variable. Let’s denote the sum as <span class="math inline">\(S \vert a\)</span>, the
+total number of simulated datasets as <span class="math inline">\(k\)</span>, and the true cdf value
+(given <span class="math inline">\(y_{\rm obs}\)</span>) as <span class="math inline">\(p\)</span>. Then
+<span class="math display">\[\begin{align*}
+S \vert a \sim \text{Binomial}(k,p) \,.
+\end{align*}\]</span>
+The standard error for the empirical cdf is thus
+<span class="math display">\[\begin{align*}
+\sqrt{V\left[\frac{1}{k}(S \vert a)\right]} = \sqrt{\frac{p(1-p)}{k}} \,.
+\end{align*}\]</span>
+If <span class="math inline">\(k = 10^6\)</span> and, e.g., <span class="math inline">\(p = 0.025\)</span>, the standard error is
+<span class="math inline">\(\sim 10^{-4}\)</span>, which is on par with typical uncertainties of estimates
+generated by <code>uniroot()</code>.
+We thus expect the uncertainties of our interval bound
+estimates to be <span class="math inline">\(\sim 10^{-4}\)</span>.</p>
 </blockquote>
 </div>
 </div>
@@ -1752,25 +1746,18 @@ and the log-likelihood is
 \]</span>
 The test statistic for Wilks’ theorem is
 <span class="math display">\[
-W = -2 \left[ \ell(\mu_o,\widehat{\sigma^2}_{MLE} \vert \mathbf{x}) - \ell(\hat{\mu}_{MLE},\widehat{\sigma^2}_{MLE} \vert \mathbf{x}) \right] \,,
+W = -2 \left[ \ell(\mu_o,\widehat{\sigma^2}_{MLE,o} \vert \mathbf{x}) - \ell(\hat{\mu}_{MLE},\widehat{\sigma^2}_{MLE} \vert \mathbf{x}) \right] \,,
 \]</span>
-where <span class="math inline">\(\hat{\mu}_{MLE}\)</span> and <span class="math inline">\(\widehat{\sigma^2}_{MLE}\)</span> are the MLEs for <span class="math inline">\(\mu\)</span> and
-<span class="math inline">\(\sigma\)</span>. We know these results from previous derivations:
+where <span class="math inline">\(\hat{\mu}_{MLE}\)</span> is the MLE for <span class="math inline">\(\mu\)</span> and where
+<span class="math inline">\(\widehat{\sigma^2}_{MLE,o}\)</span> and
+<span class="math inline">\(\widehat{\sigma^2}_{MLE}\)</span> are the MLEs for <span class="math inline">\(\sigma\)</span> given the
+restricted and full parameter spaces, respectively
+We know these results from previous derivations:
 <span class="math display">\[\begin{align*}
 \hat{\mu}_{MLE} &amp;= \bar{X} \\
+\widehat{\sigma^2}_{MLE,o} &amp;= \frac{n-1}{n}S^2 = \frac{1}{n} \sum_{i=1}^n (X_i - \mu_o)^2 \\
 \widehat{\sigma^2}_{MLE} &amp;= \frac{n-1}{n}S^2 = \frac{1}{n} \sum_{i=1}^n (X_i - \bar{X})^2 \,.
 \end{align*}\]</span>
-(“Wait a second,” the reader says. “Shouldn’t we use <span class="math inline">\(\mu_o\)</span> instead of
-<span class="math inline">\(\bar{X}\)</span> for <span class="math inline">\(\widehat{\sigma^2}_{MLE}\)</span> when
-optimizing the likelihood in the numerator above? In other words,
-shouldn’t we use
-<span class="math display">\[
-\widehat{\sigma^2}_{MLE,o} = \frac{1}{n} \sum_{i=1}^n (X_i - \mu_o)^2
-\]</span>
-instead of <span class="math inline">\(\widehat{\sigma^2}_{MLE}\)</span>?” No, for the simple reason that
-<span class="math inline">\(\widehat{\sigma^2}_{MLE} \geq \widehat{\sigma^2}_{MLE,o}\)</span>: we achieve
-a “more likely” value of the distribution width when we center on where
-the data actually are, rather than where we hypothesize they are.)
 Ultimately, we compare the value of <span class="math inline">\(W\)</span> against a chi-square
 distribution for <span class="math inline">\(r-r_o = 1\)</span> degree of freedom, and thus we reject the
 null (at level <span class="math inline">\(\alpha = 0.05\)</span>) if <span class="math inline">\(W &gt; 3.841\)</span> (= <code>qchisq(0.95,1)</code>).</p>

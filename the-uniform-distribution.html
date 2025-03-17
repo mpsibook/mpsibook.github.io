@@ -424,7 +424,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.6.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#revisiting-the-death-by-horse-kick-example-1"><i class="fa fa-check"></i><b>4.6.2</b> Revisiting the Death-by-Horse-Kick Example</a></li>
 <li class="chapter" data-level="4.6.3" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#determining-a-confidence-interval-using-the-bootstrap"><i class="fa fa-check"></i><b>4.6.3</b> Determining a Confidence Interval Using the Bootstrap</a></li>
 <li class="chapter" data-level="4.6.4" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#the-proportion-of-observed-data-in-a-bootstrap-sample"><i class="fa fa-check"></i><b>4.6.4</b> The Proportion of Observed Data in a Bootstrap Sample</a></li>
-<li class="chapter" data-level="4.6.5" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#confidence-interval-estimation-via-simulation-and-numerical-optimization"><i class="fa fa-check"></i><b>4.6.5</b> Confidence Interval Estimation via Simulation and Numerical Optimization</a></li>
+<li class="chapter" data-level="4.6.5" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#confidence-interval-estimation-via-simulation"><i class="fa fa-check"></i><b>4.6.5</b> Confidence Interval Estimation via Simulation</a></li>
 </ul></li>
 <li class="chapter" data-level="4.7" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#hypothesis-testing-2"><i class="fa fa-check"></i><b>4.7</b> Hypothesis Testing</a>
 <ul>
@@ -520,6 +520,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.6.2" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html#the-conditional-distribution-of-a-multivariate-normal-distribution"><i class="fa fa-check"></i><b>6.6.2</b> The Conditional Distribution of a Multivariate Normal Distribution</a></li>
 <li class="chapter" data-level="6.6.3" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html#the-calculation-of-sample-covariance"><i class="fa fa-check"></i><b>6.6.3</b> The Calculation of Sample Covariance</a></li>
 </ul></li>
+<li class="chapter" data-level="6.7" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html#exercises-3"><i class="fa fa-check"></i><b>6.7</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="further-conceptual-details-optional.html"><a href="further-conceptual-details-optional.html"><i class="fa fa-check"></i><b>7</b> Further Conceptual Details (Optional)</a>
 <ul>
@@ -543,6 +544,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="" data-path="chapter-exercises-solutions.html"><a href="chapter-exercises-solutions.html#chapter-3"><i class="fa fa-check"></i>Chapter 3</a></li>
 <li class="chapter" data-level="" data-path="chapter-exercises-solutions.html"><a href="chapter-exercises-solutions.html#chapter-4"><i class="fa fa-check"></i>Chapter 4</a></li>
+<li class="chapter" data-level="" data-path="chapter-exercises-solutions.html"><a href="chapter-exercises-solutions.html#chapter-5"><i class="fa fa-check"></i>Chapter 5</a></li>
+<li class="chapter" data-level="" data-path="chapter-exercises-solutions.html"><a href="chapter-exercises-solutions.html#chapter-6"><i class="fa fa-check"></i>Chapter 6</a></li>
 </ul></li>
 </ul>
 
@@ -1478,7 +1481,42 @@ Figure 5.5: An illustration of the difference between the Bonferroni correction 
 </div>
 <div id="exercises-2" class="section level2 hasAnchor" number="5.7">
 <h2><span class="header-section-number">5.7</span> Exercises<a href="the-uniform-distribution.html#exercises-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>TBD. Let <span class="math inline">\(X_1, X_2, \ldots, X_n\)</span> denote independent and identically distributed uniform random variables on the interval <span class="math inline">\([0, 3\theta]\)</span>. Derive the method-of-moments estimator for <span class="math inline">\(\theta\)</span>.</p>
+<ol style="list-style-type: decimal">
+<li><p>Let <span class="math inline">\(X_1, X_2, \ldots, X_n\)</span> denote independent and identically distributed uniform random variables on the interval <span class="math inline">\([0, 3\theta]\)</span>. Derive the method-of-moments estimator for <span class="math inline">\(\theta\)</span>.</p></li>
+<li><p>Compute <span class="math inline">\(P(X &gt; a+b \vert X &gt; b)\)</span> for a Uniform(0,1) distribution. (Assume <span class="math inline">\(0 &lt; b &lt; a+b &lt; 1\)</span>.) Does the Uniform(0,1) distribution exhibit the property of memorylessness? Why or why not?</p></li>
+<li><p>A woman goes to her local bus stop every day at a random time between noon and 1 PM, for five days total. If a bus doesn’t appear to pick her up within 10 minutes, she immediately hops into a waiting Uber and is driven off. On every day, there is only one bus that will arrive between noon and 1:10 PM, and it will arrive at a random time <span class="math inline">\(X\)</span> minutes after noon. <span class="math inline">\(X\)</span> is sampled from the following distribution:
+<span class="math display">\[\begin{eqnarray*}
+f_X(x) = \left\{ \begin{array}{ll} 1/70 &amp; x \in [0,70] \\ 0 &amp; \mbox{otherwise} \end{array} \right. \,.
+\end{eqnarray*}\]</span>
+(a) On any one day, what is the probability that the woman catches the bus? (b) Over the five days, what is the probability that the woman catches the bus one or more times? (You may leave fractions raised to powers in your final answer, such as <span class="math inline">\((3/4)^3\)</span> or <span class="math inline">\((7/15)^5\)</span>, if they are part of your answer.) (Also, if you are in doubt about your answer to (a), just use the variable <span class="math inline">\(p\)</span> in place of your answer for (a) in part (b).)</p></li>
+<li><p>You sample a datum <span class="math inline">\(X\)</span> from a Uniform(0,1) distribution. What is <span class="math inline">\(P(X \leq 2u \vert X \geq u])\)</span>, where <span class="math inline">\(0 \leq u \leq 0.5\)</span>?</p></li>
+<li><p>Let <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> be two iid random variables sampled from a Uniform(0,1) distribution. What is <span class="math inline">\(P(X_1 &lt; 2X_2 \vert X_2 &lt; 1/2)\)</span>? (Note: <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> are {} order statistics, so do not treat them as such!)</p></li>
+<li><p>Assume that we have sampled <span class="math inline">\(n\)</span> iid random variables from a Uniform(<span class="math inline">\(\theta,0\)</span>) distribution, where <span class="math inline">\(\theta &lt; 0\)</span>. (a) What is a sufficient statistic for <span class="math inline">\(\theta\)</span>? (b) What is the cdf for this sufficient statistic? Be careful when deriving <span class="math inline">\(F_X(x)\)</span>: the pdf <span class="math inline">\(f_X(x)\)</span> is <span class="math inline">\(1/(0-\theta) = -1/\theta\)</span> and not <span class="math inline">\(1/\theta\)</span>. Also, take care when writing down the integral bounds. (c) We wish to test <span class="math inline">\(H_o : \theta = \theta_o\)</span> versus <span class="math inline">\(H_a : \theta \neq \theta_o\)</span>. Recall that hypothesis tests are written down (in theory!) before the collection of data. Given that factoid, write down the trivial part of the test rejection region, i.e., the part of the overall rejection region that one can write down without having to work with the sufficient statistic cdf. (d) To derive the other part of the rejection region, do we set the cdf for the sufficient statistic to <span class="math inline">\(1-\alpha\)</span> or <span class="math inline">\(1-\alpha/2\)</span>? Choose one and write it in the answer box. Recall that the power of the hypothesis test when <span class="math inline">\(\theta = \theta_o\)</span> is exactly <span class="math inline">\(\alpha\)</span>. (e) Given your answers for (b) and (d), derive the boundary of the other part of the rejection region (the non-trivial part).</p></li>
+<li><p>You sample <span class="math inline">\(n\)</span> iid data from the following (unnamed) distribution:
+<span class="math display">\[\begin{eqnarray*}
+f_X(x) = \frac{2}{\theta^2} x  ~~~ x \in [0,\theta] \,.
+\end{eqnarray*}\]</span>
+The cdf for this distribution is <span class="math inline">\(F_X(x) = (x/\theta)^2\)</span>. (a) What is the MLE for <span class="math inline">\(\theta\)</span>? (b) What is <span class="math inline">\(E[X_{(n)}]\)</span>? (c) What is the MVUE for <span class="math inline">\(\theta\)</span>?</p></li>
+<li><p>Let’s assume we have sampled <span class="math inline">\(n\)</span> iid data from the following distribution:
+<span class="math display">\[\begin{align*}
+f_X(x) = e^{-(x-\theta)} ~~~ x \in [\theta,\infty)
+\end{align*}\]</span>
+where <span class="math inline">\(\theta &gt; 0\)</span>. The cdf for this distribution, for <span class="math inline">\(x \geq \theta\)</span>, is
+<span class="math display">\[\begin{align*}
+F_X(x) = 1-e^{-(x-\theta)} \,.
+\end{align*}\]</span>
+(a) Identify a sufficient statistic for <span class="math inline">\(\theta\)</span>. (b) Identify the maximum likelihood estimator for <span class="math inline">\(\theta\)</span>. No work need be shown. (c) Determine the sampling distribution (specifically, the pdf, and not the cdf) for the sufficient statistic identified in part (a). (d) Determine the minimum variance unbiased estimator for <span class="math inline">\(\theta\)</span>. You will want to utilize a variable subsitution here. Recall that
+<span class="math display">\[\begin{align*}
+\Gamma(a+1) = a! = \int_0^\infty u^a e^{-u} du \,,
+\end{align*}\]</span>
+assuming that <span class="math inline">\(a\)</span> is a non-negative integer. (Also recall that 0! = 1.)</p></li>
+<li><p>We sample two iid data, <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span>, from a Uniform(0,1) distribution. (a) What is <span class="math inline">\(P(X_1 &gt; 1/2 \vert X_2 &lt; 1/2)\)</span>? (b) What is <span class="math inline">\(P(X_1 &gt; 1/2 \vert X_1 &lt; 3/4)\)</span>? (c) What is <span class="math inline">\(P(X_1 &lt; 3X_2)\)</span>? (Hint: draw this out in a 1 <span class="math inline">\(\times\)</span> 1 box. Do the same for (d).) (d) What is <span class="math inline">\(P(X_2 &lt; X_1 \vert X_2 &lt; 1/2)\)</span>?</p></li>
+<li><p>Let’s assume that we have sampled <span class="math inline">\(n\)</span> iid data from a particular distribution with domain <span class="math inline">\([\theta,\infty)\)</span>, and let the cdf of the sampling distribution of the appropriate statistic <span class="math inline">\(Y\)</span> to use to construct confidence intervals and perform hypothesis tests be
+<span class="math display">\[\begin{align*}
+F_Y(y) = 1 - e^{-n(y-\theta)} \,.
+\end{align*}\]</span>
+Assume the observed statistic value is <span class="math inline">\(y_{\rm obs}\)</span>, and that <span class="math inline">\(E[Y] = \theta + 1/n\)</span>. (Note that it is not necessary to know what <span class="math inline">\(Y\)</span> actually represents to answer the questions below.) (a) Determine a <span class="math inline">\(100(1-\alpha)\)</span>-percent lower bound on <span class="math inline">\(\theta\)</span>. (b) Assume we wish to test <span class="math inline">\(H_o : \theta = \theta_o\)</span> versus <span class="math inline">\(H_a : \theta \neq \theta_o\)</span>. Derive the rejection-region boundary (or boundaries) <span class="math inline">\(y_{\rm RR}\)</span> in terms of <span class="math inline">\(\theta_o\)</span>, the Type I error <span class="math inline">\(\alpha\)</span>, and <span class="math inline">\(n\)</span>.</p></li>
+</ol>
 
 <div style="page-break-after: always;"></div>
 </div>

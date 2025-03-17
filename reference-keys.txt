@@ -282,7 +282,7 @@ confidence-interval-for-the-poisson-parameter-lambda
 revisiting-the-death-by-horse-kick-example-1
 determining-a-confidence-interval-using-the-bootstrap
 the-proportion-of-observed-data-in-a-bootstrap-sample
-confidence-interval-estimation-via-simulation-and-numerical-optimization
+confidence-interval-estimation-via-simulation
 hypothesis-testing-2
 the-uniformly-most-powerful-test-of-poisson-lambda
 likelihood-ratio-test-of-the-poisson-parameter-lambda
@@ -341,6 +341,7 @@ the-multivariate-normal-distribution
 the-marginal-distribution-of-a-multivariate-normal-distribution
 the-conditional-distribution-of-a-multivariate-normal-distribution
 the-calculation-of-sample-covariance
+exercises-3
 further-conceptual-details-optional
 types-of-convergence
 the-central-limit-theorem-1

@@ -424,7 +424,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.6.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#revisiting-the-death-by-horse-kick-example-1"><i class="fa fa-check"></i><b>4.6.2</b> Revisiting the Death-by-Horse-Kick Example</a></li>
 <li class="chapter" data-level="4.6.3" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#determining-a-confidence-interval-using-the-bootstrap"><i class="fa fa-check"></i><b>4.6.3</b> Determining a Confidence Interval Using the Bootstrap</a></li>
 <li class="chapter" data-level="4.6.4" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#the-proportion-of-observed-data-in-a-bootstrap-sample"><i class="fa fa-check"></i><b>4.6.4</b> The Proportion of Observed Data in a Bootstrap Sample</a></li>
-<li class="chapter" data-level="4.6.5" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#confidence-interval-estimation-via-simulation-and-numerical-optimization"><i class="fa fa-check"></i><b>4.6.5</b> Confidence Interval Estimation via Simulation and Numerical Optimization</a></li>
+<li class="chapter" data-level="4.6.5" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#confidence-interval-estimation-via-simulation"><i class="fa fa-check"></i><b>4.6.5</b> Confidence Interval Estimation via Simulation</a></li>
 </ul></li>
 <li class="chapter" data-level="4.7" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#hypothesis-testing-2"><i class="fa fa-check"></i><b>4.7</b> Hypothesis Testing</a>
 <ul>
@@ -520,6 +520,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.6.2" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html#the-conditional-distribution-of-a-multivariate-normal-distribution"><i class="fa fa-check"></i><b>6.6.2</b> The Conditional Distribution of a Multivariate Normal Distribution</a></li>
 <li class="chapter" data-level="6.6.3" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html#the-calculation-of-sample-covariance"><i class="fa fa-check"></i><b>6.6.3</b> The Calculation of Sample Covariance</a></li>
 </ul></li>
+<li class="chapter" data-level="6.7" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html#exercises-3"><i class="fa fa-check"></i><b>6.7</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="further-conceptual-details-optional.html"><a href="further-conceptual-details-optional.html"><i class="fa fa-check"></i><b>7</b> Further Conceptual Details (Optional)</a>
 <ul>
@@ -543,6 +544,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="" data-path="chapter-exercises-solutions.html"><a href="chapter-exercises-solutions.html#chapter-3"><i class="fa fa-check"></i>Chapter 3</a></li>
 <li class="chapter" data-level="" data-path="chapter-exercises-solutions.html"><a href="chapter-exercises-solutions.html#chapter-4"><i class="fa fa-check"></i>Chapter 4</a></li>
+<li class="chapter" data-level="" data-path="chapter-exercises-solutions.html"><a href="chapter-exercises-solutions.html#chapter-5"><i class="fa fa-check"></i>Chapter 5</a></li>
+<li class="chapter" data-level="" data-path="chapter-exercises-solutions.html"><a href="chapter-exercises-solutions.html#chapter-6"><i class="fa fa-check"></i>Chapter 6</a></li>
 </ul></li>
 </ul>
 
@@ -2103,9 +2106,237 @@ sample variance <span class="math inline">\((n-1)S^2/\sigma^2\)</span> is chi-sq
 is sampled from a Wishart distribution, a
 multivariate generalization of the chi-square distribution.</p>
 </blockquote>
+</div>
+</div>
+<div id="exercises-3" class="section level2 hasAnchor" number="6.7">
+<h2><span class="header-section-number">6.7</span> Exercises<a href="multivariate-distributions.html#exercises-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li><p>We are given the following bivariate pdf:
+<span class="math display">\[\begin{align*}
+f_{X_1,X_2}(x_1,x_2) = \left\{ \begin{array}{cc} k(x_1+x_2^2) &amp; 0 \leq x_1 \leq 1, 0 \leq x_2 \leq 1 \\ 0 &amp; \mbox{otherwise} \end{array} \right. \,.
+\end{align*}\]</span>
+(a) Determine the constant <span class="math inline">\(k\)</span>. (b) What is the conditional
+probability density function <span class="math inline">\(f_{X_1|X_2}(x_1|x_2)\)</span>?</p></li>
+<li><p>We are given the probability mass function shown below. (a) Compute Cov(<span class="math inline">\(X_1,X_2\)</span>). (b) Compute <span class="math inline">\(\rho_{X_1,X_2}\)</span>. (c) Write down the conditional expected value <span class="math inline">\(E[X_1 \vert X_2 &lt; 1]\)</span>. (This can be done by inspection.) (d) Write down the conditional variance <span class="math inline">\(V[X_2 \vert X_1 = 1]\)</span>. (This can also be done by inspection.)</p></li>
+</ol>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center"><span class="math inline">\(x_1 = 0\)</span></th>
+<th align="center"><span class="math inline">\(x_1 = 1\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(x_2 = 0\)</span></td>
+<td align="center">0.1</td>
+<td align="center">0.4</td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(x_2 = 1\)</span></td>
+<td align="center">0.4</td>
+<td align="center">0.1</td>
+</tr>
+</tbody>
+</table>
+<ol start="3" style="list-style-type: decimal">
+<li><p>Every day, we sample <span class="math inline">\(n\)</span> items built via an assembly line and look for defectives. On any given day, there is a constant probability <span class="math inline">\(p\)</span> of assembling a defective item, but <span class="math inline">\(p\)</span> can change from day to day: it is sampled from a Uniform(0,0.1) distribution. (a) What is the unconditional expected value for <span class="math inline">\(X\)</span>, the number of defectives observed per day? (Hint: what is the named distribution for the conditional expected value?) (b) What is the unconditional variance of <span class="math inline">\(X\)</span>?</p></li>
+<li><p>We are given the following bivariate probability density function:
+<span class="math display">\[\begin{align*}
+f_{X_1,X_2}(x_1,x_2) = \left\{ \begin{array}{cl} k x_1^2 x_2 &amp; x_1 \geq 0,\,x_2 \geq 0,\,x_1+x_2 \leq 1 \\ \\ 0 &amp; \mbox{otherwise} \end{array} \right. \,.
+\end{align*}\]</span>
+(a) Determine the value of <span class="math inline">\(k\)</span> such that <span class="math inline">\(f_{X_1,X_2}(x_1,x_2)\)</span> is a valid bivariate pdf. (b) Compute <span class="math inline">\(P(X_1 &gt; 0.25 \vert X_2 = 0.5)\)</span>. (c) Are <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> independent random variables?</p></li>
+<li><p>We are given the probability mass function shown below. (a) Write down the marginal probability mass function <span class="math inline">\(p_{X_2}(x_2)\)</span>. (b) Using our answer from (a), write down the marginal cdf <span class="math inline">\(F_{X_2}(x_2)\)</span>. (c) Assume <span class="math inline">\(p_X(x) = p_{X_2}(x_2)\)</span> (i.e., forget the table exists…all we have now is a univariate pmf). Compute the mean and standard deviation of <span class="math inline">\(p_X(x)\)</span>.</p></li>
+</ol>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"><span class="math inline">\(x_1 = 0\)</span></th>
+<th align="center"><span class="math inline">\(x_1 = 1\)</span></th>
+<th align="center"><span class="math inline">\(x_1 = 2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(x_2 = 0\)</span></td>
+<td align="center">0</td>
+<td align="center">0.2</td>
+<td align="center">0.1</td>
+<td align="center">0.1</td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(x_2 = 1\)</span></td>
+<td align="center">1</td>
+<td align="center">0.1</td>
+<td align="center">0.3</td>
+<td align="center">0</td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(x_2 = 2\)</span></td>
+<td align="center">2</td>
+<td align="center">0.05</td>
+<td align="center">0.05</td>
+<td align="center">0.1</td>
+</tr>
+</tbody>
+</table>
+<ol start="6" style="list-style-type: decimal">
+<li><p>We are given the following bivariate probability density function:
+<span class="math display">\[\begin{align*}
+f_{X_1,X_2}(x_1,x_2) = \left\{ \begin{array}{cl} 60 x_1^2 x_2 &amp; x_1 \geq 0,\,x_2 \geq 0,\,x_1+x_2 \leq 1 \\ \\ 0 &amp; \mbox{otherwise} \end{array} \right. \,.
+\end{align*}\]</span>
+We are also given that <span class="math inline">\(E[X_1] = 1/2\)</span>, <span class="math inline">\(E[X_2] = 1/3\)</span>, <span class="math inline">\(E[X_1^2] = 2/7\)</span>, and <span class="math inline">\(E[X_2^2] = 1/7\)</span>. (a) Compute Cov(<span class="math inline">\(X_1,X_2\)</span>). (b) Compute Corr(<span class="math inline">\(X_1,X_2\)</span>). (c) Compute <span class="math inline">\(V[X_1-2X_2]\)</span>.</p></li>
+<li><p>The number of eggs laid by a certain insect is Poisson-distributed with mean <span class="math inline">\(\lambda\)</span>, and the probability that any one egg hatches is <span class="math inline">\(p\)</span>. Assume that the eggs hatch independently of one another. (a) Compute the expected value for the number of eggs that hatch. (b) Compute the variance for the number of eggs that hatch.</p></li>
+<li><p>We are given the following bivariate probability density function:
+<span class="math display">\[\begin{eqnarray*}
+f_{X_1,X_2}(x_1,x_2) = \left\{ \begin{array}{cc} k x_1 x_2 e^{-x_1/2} (1-x_2) &amp; 0 \leq x_1 &lt; \infty \,, \,0 \leq x_2 \leq 1 \\ 0 &amp; \mbox{otherwise} \end{array} \right. \,.
+\end{eqnarray*}\]</span>
+<span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> are independent random variables. (a) What (numerical) value of <span class="math inline">\(k\)</span> makes this a valid bivariate pdf? (b) Compute <span class="math inline">\(V[X_1-X_2]\)</span>.</p></li>
+<li><p>We are given that the random variables <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> are distributed <em>uniformly</em> within the region bounded by <span class="math inline">\(0 \leq x_2 \leq 1\)</span> and <span class="math inline">\(0 \leq x_1 \leq 2-x_2\)</span>. (a) What is <span class="math inline">\(f_{X_1,X_2}(x_1,x_2)\)</span> in the region specified above? For parts (b)-(d), assume <span class="math inline">\(f_{X_1,X_2}(x_1,x_2) = k\)</span>. (b) Write down the marginal distribution for <span class="math inline">\(X_2\)</span>. (c) Specify the conditional distribution for <span class="math inline">\(X_1\)</span> given <span class="math inline">\(X_2 = x_2\)</span>. (d) What is the expected value of <span class="math inline">\(X_1\)</span>? (e) Are <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> independent or dependent random variables?</p></li>
+<li><p>A car drives through the same five traffic lights while on its way to work every day. The probability that the car has to stop at any given light on any given day is a beta-distributed random variable with parameters <span class="math inline">\(\alpha = \beta = 2\)</span>. (To be clear, the probability is <span class="math inline">\(p\)</span> that the car will stop at the first light, then <span class="math inline">\(p\)</span> that it will stop at the second light, etc., up to the fifth light. <span class="math inline">\(p\)</span> changes from one day to the next.) Assume the traffic lights operate independently. (a) If <span class="math inline">\(X\)</span> is the r.v. representing the number of lights the car stops at on any single day, what is <span class="math inline">\(E[X]\)</span>? (b) What is <span class="math inline">\(V[X]\)</span>?</p></li>
+<li><p>We are given the following bivariate pdf:
+<span class="math display">\[\begin{eqnarray*}
+f_{X_1,X_2}(x_1,x_2) = \left\{ \begin{array}{cc} 3x_1 &amp; 0 \leq x_2 \leq x_1 \leq 1 \\ 0 &amp; \mbox{otherwise} \end{array} \right. \,.
+\end{eqnarray*}\]</span>
+We are also given that <span class="math inline">\(E[X_1]\)</span> = 3/4, <span class="math inline">\(E[X_2]\)</span> = 3/8, <span class="math inline">\(V[X_1]\)</span> = 3/80, and <span class="math inline">\(V[X_2]\)</span> = 19/320. Compute the correlation coefficient <span class="math inline">\(\rho\)</span> between <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span>.</p></li>
+<li><p>We are given the following bivariate probability density function:
+<span class="math display">\[\begin{eqnarray*}
+f_{X_1,X_2}(x_1,x_2) = \left\{ \begin{array}{cc} ke^{-x_1} &amp; 0 \leq x_2 \leq x_1 &lt; \infty \\ 0 &amp; \mbox{otherwise} \end{array} \right. \,.
+\end{eqnarray*}\]</span>
+(a) What value of <span class="math inline">\(k\)</span> makes this a valid bivariate pdf? (b) What is <span class="math inline">\(P(X_2 &lt; 1)\)</span>? (c) Derive the marginal distribution for <span class="math inline">\(X_2\)</span>. (d) Derive the conditional pdf for <span class="math inline">\(X_1\)</span> given <span class="math inline">\(X_2 = x_2\)</span>. (e) Compute <span class="math inline">\(P(X_1 &gt; 2 \vert X_2 = 1)\)</span>.</p></li>
+<li><p>A strangely designed prize machine works as follows: the payout <span class="math inline">\(X\)</span>, in dollars, is a Poisson-distributed random variable whose mean is sampled from a negative binomial distribution with <span class="math inline">\(r = 4\)</span> and <span class="math inline">\(p = 1/2\)</span>. (a) Compute <span class="math inline">\(E[X]\)</span>. (b) Compute <span class="math inline">\(V[X]\)</span>.</p></li>
+<li><p>We are given the following bivariate pdf:
+<span class="math display">\[\begin{eqnarray*}
+f_{X_1,X_2}(x_1,x_2) = \left\{ \begin{array}{cc} c &amp; -2 \leq x_1 \leq 2 \,, 0 \leq x_2 \leq \vert x_1 \vert \\ 0 &amp; \mbox{otherwise} \end{array} \right. \,.
+\end{eqnarray*}\]</span>
+(a) Are <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> independent random variables? (b) Determine <span class="math inline">\(c\)</span>. (c) Compute <span class="math inline">\(E[X_2]\)</span>.</p></li>
+<li><p>We are given the following bivariate pdf:
+<span class="math display">\[\begin{eqnarray*}
+f_{X_1,X_2}(x_1,x_2) = \left\{ \begin{array}{cc} cx_1x_2 &amp; 0 \leq x_1 \leq 1 \,, 0 \leq x_2 \leq 1 \\ 0 &amp; \mbox{otherwise} \end{array} \right. \,.
+\end{eqnarray*}\]</span>
+(a) What is <span class="math inline">\(c\)</span>? (b) What is <span class="math inline">\(P(X_2 &gt; 1/2 \vert X_1 = 1/2)\)</span>? (c) What is Cov(<span class="math inline">\(X_1,X_2\)</span>)?</p></li>
+<li><p>We are given two r.v.’s, <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span>, whose variances are <span class="math inline">\(V[X_1] = V[X_2] = 3\)</span> and whose covariance is 2. We define a new r.v. <span class="math inline">\(U = 2X_1 - X_2\)</span>. What is <span class="math inline">\(V[U]\)</span>?</p></li>
+<li><p>In an experiment, we flip a fair coin. If the coin shows heads, we then sample a datum <span class="math inline">\(U\)</span> from a Uniform(1,2) distribution; otherwise we sample <span class="math inline">\(U\)</span> from a Uniform(0,2) distribution. Compute the unconditional variance of the random variable <span class="math inline">\(U\)</span>.</p></li>
+<li><p>We are given the following bivariate probability density function:
+<span class="math display">\[\begin{eqnarray*}
+f_{X_1,X_2}(x_1,x_2) = \left\{ \begin{array}{cc} 12x_1^2(1-x_1) &amp; 0 \leq x_1 \leq 1, 0 \leq x_2 \leq 1 \\ 0 &amp; \mbox{otherwise} \end{array} \right. \,.
+\end{eqnarray*}\]</span>
+(a) Are <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> independent random variables? (b) Write down the marginal distribution <span class="math inline">\(f_{X_2}(x_2)\)</span>. (c) Compute <span class="math inline">\(E[X_1]\)</span>.</p></li>
+<li><p>We are given the following:
+<span class="math display">\[\begin{eqnarray*}
+f_{X_1,X_2}(x_1,x_2) = \left\{ \begin{array}{cc} c &amp; 0 \leq x_1 \leq 2, x_2 \geq 0, x_2 \leq x_1 ~\mbox{and}~x_2 \leq 2-x_1 \\ 0 &amp; \mbox{otherwise} \end{array} \right. \,.
+\end{eqnarray*}\]</span>
+(a) Determine the value of <span class="math inline">\(c\)</span> that makes <span class="math inline">\(f_{X_1,X_2}(x_1,x_2)\)</span> a valid pdf. (b) Write down the marginal distribution <span class="math inline">\(f_{X_2}(x_2)\)</span>. (c) Write down the conditional distribution <span class="math inline">\(f_{X_1 \vert X_2}(x_1 \vert x_2)\)</span>.</p></li>
+<li><p>We are given the following bivariate probability density function:
+<span class="math display">\[\begin{eqnarray*}
+f_{X_1,X_2}(x_1,x_2) = \left\{ \begin{array}{cc} 4x_1x_2 &amp; 0 \leq x_1 \leq 1, 0 \leq x_2 \leq 1 \\ 0 &amp; \mbox{otherwise} \end{array} \right. \,.
+\end{eqnarray*}\]</span>
+(a) Compute <span class="math inline">\(f_{X_1}(x_1)\)</span>. (b) Compute <span class="math inline">\(f_{X_2 \vert X_1}(x_2 \vert x_1)\)</span>. (c) Compute <span class="math inline">\(P(X_2 &lt; 1/2 \vert X_1=x_1)\)</span>.</p></li>
+<li><p>We are given the following bivariate probability density function:
+<span class="math display">\[\begin{eqnarray*}
+f_{X_1,X_2}(x_1,x_2) = \left\{ \begin{array}{cc} 2 &amp; x_1 \geq 0~~x_2 \geq 0~~x_1+x_2 \leq 1 \\ 0 &amp; \mbox{otherwise} \end{array} \right. \,.
+\end{eqnarray*}\]</span>
+Compute the variance of <span class="math inline">\(X_1\)</span>.</p></li>
+<li><p>We are given the probability mass function shown below. Compute the variance of <span class="math inline">\(X_1-X_2\)</span>. It may help to know that <span class="math inline">\(E[X_1^2] = 8/9\)</span>, <span class="math inline">\(E[X_2^2] = 6/9\)</span>, and <span class="math inline">\(E[X_1X_2] = 4/9\)</span>.</p></li>
+</ol>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"><span class="math inline">\(x_2 = 0\)</span></th>
+<th align="center"><span class="math inline">\(x_2 = 1\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(x_1 = 0\)</span></td>
+<td align="center">0</td>
+<td align="center">1/9</td>
+<td align="center">3/9</td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(x_1 = 1\)</span></td>
+<td align="center">1</td>
+<td align="center">2/9</td>
+<td align="center">2/9</td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(x_1 = 2\)</span></td>
+<td align="center">2</td>
+<td align="center">0</td>
+<td align="center">1/9</td>
+</tr>
+</tbody>
+</table>
+<ol start="23" style="list-style-type: decimal">
+<li><p>In an experiment, we sample a datum <span class="math inline">\(X\)</span> from a gamma distribution whose <span class="math inline">\(\beta\)</span> parameter is drawn from an exponential distribution with mean <span class="math inline">\(\gamma\)</span>. (a) What is the unconditional expected value of <span class="math inline">\(X\)</span>? (b) What is <span class="math inline">\(V[X]\)</span>?</p></li>
+<li><p>We are given a bivariate uniform probability density function that is non-zero for <span class="math inline">\(0 \leq x_1 \leq 1\)</span> and <span class="math inline">\(0 \leq x_2 \leq x_1\)</span>. (a) What is the amplitude of the pdf inside the region described above? (b) What is <span class="math inline">\(E[X_1]\)</span>? (c) What is the covariance between <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span>? (Note that <span class="math inline">\(E[X_2] = 1/3\)</span>.)</p></li>
+<li><p>We are given the following bivariate probability density function:
+<span class="math display">\[\begin{eqnarray*}
+f_{X_1,X_2}(x_1,x_2) = \left\{ \begin{array}{cc} k e^{-x_1/2} &amp; x_1 \geq 0 ~{\rm and}~ 0 \leq x_2 \leq 2 \\ 0 &amp; \mbox{otherwise} \end{array} \right. \,.
+\end{eqnarray*}\]</span>
+(a) Find the value of <span class="math inline">\(k\)</span> that makes <span class="math inline">\(f_{X_1,X_2}(x_1,x_2)\)</span> a valid pdf. (b) Compute <span class="math inline">\(E[X_1]\)</span>.</p></li>
+<li><p>We are given a bivariate uniform probability density function that is non-zero for <span class="math inline">\(x_2 \geq 0\)</span>, <span class="math inline">\(x_2 \leq x_1\)</span>, and <span class="math inline">\(x_2 \leq 2-x_1\)</span>. (a) Compute the marginal distribution for <span class="math inline">\(X_2\)</span>. (b) Compute the conditional distribution for <span class="math inline">\(X_1\)</span> given <span class="math inline">\(X_2\)</span>. (c) Compute <span class="math inline">\(P(X_1 + X_2 \leq 1)\)</span>.</p></li>
+<li><p>We sample a random variable <span class="math inline">\(X\)</span> from a normal distribution with mean <span class="math inline">\(\mu\)</span> and variance one, and you are given that <span class="math inline">\(\mu \sim N(0,1)\)</span>. Write down the variance of <span class="math inline">\(X\)</span>.</p></li>
+<li><p>We are given the probability mass function shown below. (a) Compute the conditional expected value <span class="math inline">\(E[X_1 \vert X_2=1]\)</span>. (b) Compute the conditional variance <span class="math inline">\(V[X_1 \vert X_2=1]\)</span>.</p></li>
+</ol>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center"><span class="math inline">\(x_2 = 0\)</span></th>
+<th align="center"><span class="math inline">\(x_2=1\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(x_1 = 0\)</span></td>
+<td align="center">0.2</td>
+<td align="center">0.3</td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(x_1 = 1\)</span></td>
+<td align="center">0.4</td>
+<td align="center">0.1</td>
+</tr>
+</tbody>
+</table>
+<ol start="29" style="list-style-type: decimal">
+<li><p>Let <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> be data that are jointly sampled from the bivariate probability density function
+<span class="math display">\[\begin{eqnarray*}
+f_{X_1,X_2}(x_1,x_2) = k x_1^2 \,,
+\end{eqnarray*}\]</span>
+where <span class="math inline">\(x_1 \geq 0\)</span>, <span class="math inline">\(x_2 \geq 0\)</span>, and <span class="math inline">\(x_1 + x_2 \leq 2\)</span>, and <span class="math inline">\(k\)</span> is a constant. (a) Are <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> independent random variables? (b) What value of <span class="math inline">\(k\)</span> makes <span class="math inline">\(f_{X_1,X_2}(x_1,x_2)\)</span> a valid probability density function? (c) Derive the marginal distribution <span class="math inline">\(f_{X_1}(x_1)\)</span>. (d) Derive the conditional distribution
+<span class="math inline">\(f_{X_2 \vert X_1}(x_2 \vert x_1)\)</span>. (e) <span class="math inline">\(f_{X_2 \vert X_1}(x_2 \vert x_1)\)</span> is a distribution from what named univariate family of distributions?</p></li>
+<li><p>We are given the bivariate probability mass function shown below. (a) What is Cov(<span class="math inline">\(X_1,X_2\)</span>)? (b) What is <span class="math inline">\(\rho_{X_1,X_2}\)</span>? (c) Let <span class="math inline">\(Y = 2X_1 - X_2\)</span>. Derive <span class="math inline">\(V[Y]\)</span>.</p></li>
+</ol>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center"><span class="math inline">\(x_2 = 0\)</span></th>
+<th align="center"><span class="math inline">\(x_2 = 1\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(x_1 = 0\)</span></td>
+<td align="center">0.3</td>
+<td align="center">0.1</td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(x_1 = 1\)</span></td>
+<td align="center">0.1</td>
+<td align="center">0.5</td>
+</tr>
+</tbody>
+</table>
 
 <div style="page-break-after: always;"></div>
-</div>
 </div>
 </div>
             </section>
