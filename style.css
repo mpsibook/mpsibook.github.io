@@ -7,3 +7,14 @@ p.caption {
 .table {
   width: 80%;
 }
+
+.graybox {
+  padding: 1em;
+  background: #D3D3D3;
+  color: black;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+.center {
+  text-align: center;
+}

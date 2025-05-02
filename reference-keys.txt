@@ -71,6 +71,7 @@ fig:disccicover
 fig:binci
 fig:nbinci
 fig:cisim
+fig:lognp
 fig:logexp
 fig:glmpred
 fig:nbplot
@@ -155,6 +156,7 @@ estimating-the-sampling-distribution-for-the-sample-median
 the-empirical-distribution-of-maximum-likelihood-estimates
 empirically-verifying-the-confidence-coefficient-value
 empirically-verifying-the-type-i-error-alpha
+exercises
 the-normal-and-related-distributions
 motivation
 probability-density-function
@@ -214,6 +216,8 @@ linear-regression-in-r
 one-way-analysis-of-variance
 one-way-anova-the-statistical-model
 linear-regression-in-r-redux
+the-exponential-family-of-distributions
+exponential-family-with-a-vector-of-parameters
 the-binomial-and-related-distributions
 motivation-1
 probability-mass-function
@@ -221,6 +225,7 @@ variance-of-a-binomial-random-variable
 the-expected-value-of-a-negative-binomial-random-variable
 binomial-distribution-normal-approximation
 computing-probabilities-7
+the-binomial-distribution-as-part-of-the-exponential-family
 cumulative-distribution-function-1
 computing-probabilities-8
 sampling-data-from-an-arbitrary-probability-mass-function
@@ -231,9 +236,9 @@ order-statistics
 distribution-of-the-minimum-value-sampled-from-an-exponential-distribution
 distribution-of-the-median-value-sampled-from-a-uniform01-distribution
 point-estimation-2
-sufficiency-and-the-exponential-family-of-distributions
 the-mle-for-the-binomial-success-probability
 sufficient-statistics-for-the-normal-distribution
+the-sufficiency-principle-examples-of-when-we-cannot-reduce-data
 the-mvue-for-the-exponential-mean
 the-mvue-for-the-geometric-distribution
 confidence-intervals-2
@@ -246,6 +251,7 @@ ump-test-negative-binomial-distribution
 defining-a-ump-test-for-the-normal-population-mean
 defining-a-test-that-is-not-uniformly-most-powerful
 estimating-a-p-value-via-simulation
+utilizing-simulations-when-data-reduction-is-not-possible
 large-sample-tests-of-the-binomial-success-probability
 logistic-regression
 logistic-regression-in-r
@@ -261,10 +267,11 @@ chi-square-based-hypothesis-testing
 chi-square-goodness-of-fit-test
 simulating-an-exact-multinomial-test
 chi-square-test-of-independence
-exercises
+exercises-1
 the-poisson-and-related-distributions
 motivation-2
 probability-mass-function-1
+the-poisson-distribution-as-part-of-the-exponential-family
 the-expected-value-of-a-poisson-random-variable
 cumulative-distribution-function-2
 computing-probabilities-9
@@ -297,7 +304,7 @@ revisiting-the-death-by-horse-kick-example-2
 negative-binomial-regression-example
 chi-square-based-hypothesis-testing-1
 revisiting-the-death-by-horse-kick-example-3
-exercises-1
+exercises-2
 the-uniform-distribution
 properties
 the-expected-value-and-variance-of-a-uniform-random-variable
@@ -316,7 +323,7 @@ confidence-coefficient-for-a-uniform-based-interval-estimator
 hypothesis-testing-3
 the-power-curve-for-testing-the-uniform-distribution-upper-bound
 an-illustration-of-multiple-comparisons-when-testing-for-the-normal-mean
-exercises-2
+exercises-3
 multivariate-distributions
 independence-of-random-variables
 determining-whether-two-random-variables-are-independent
@@ -341,7 +348,7 @@ the-multivariate-normal-distribution
 the-marginal-distribution-of-a-multivariate-normal-distribution
 the-conditional-distribution-of-a-multivariate-normal-distribution
 the-calculation-of-sample-covariance
-exercises-3
+exercises-4
 further-conceptual-details-optional
 types-of-convergence
 the-central-limit-theorem-1

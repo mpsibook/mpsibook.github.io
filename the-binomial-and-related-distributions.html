@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>3 The Binomial (and Related) Distributions | Modern Probability and Statistical Inference</title>
   <meta name="description" content="3 The Binomial (and Related) Distributions | Modern Probability and Statistical Inference" />
-  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
   <meta property="og:title" content="3 The Binomial (and Related) Distributions | Modern Probability and Statistical Inference" />
   <meta property="og:type" content="book" />
@@ -226,6 +226,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.18.3" data-path="the-basics-of-probability-and-statistical-inference.html"><a href="the-basics-of-probability-and-statistical-inference.html#empirically-verifying-the-confidence-coefficient-value"><i class="fa fa-check"></i><b>1.18.3</b> Empirically Verifying the Confidence Coefficient Value</a></li>
 <li class="chapter" data-level="1.18.4" data-path="the-basics-of-probability-and-statistical-inference.html"><a href="the-basics-of-probability-and-statistical-inference.html#empirically-verifying-the-type-i-error-alpha"><i class="fa fa-check"></i><b>1.18.4</b> Empirically Verifying the Type I Error <span class="math inline">\(\alpha\)</span></a></li>
 </ul></li>
+<li class="chapter" data-level="1.19" data-path="the-basics-of-probability-and-statistical-inference.html"><a href="the-basics-of-probability-and-statistical-inference.html#exercises"><i class="fa fa-check"></i><b>1.19</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="the-normal-and-related-distributions.html"><a href="the-normal-and-related-distributions.html"><i class="fa fa-check"></i><b>2</b> The Normal (and Related) Distributions</a>
 <ul>
@@ -321,6 +322,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.18.1" data-path="the-normal-and-related-distributions.html"><a href="the-normal-and-related-distributions.html#one-way-anova-the-statistical-model"><i class="fa fa-check"></i><b>2.18.1</b> One-Way ANOVA: the Statistical Model</a></li>
 <li class="chapter" data-level="2.18.2" data-path="the-normal-and-related-distributions.html"><a href="the-normal-and-related-distributions.html#linear-regression-in-r-redux"><i class="fa fa-check"></i><b>2.18.2</b> Linear Regression in R: Redux</a></li>
 </ul></li>
+<li class="chapter" data-level="2.19" data-path="the-normal-and-related-distributions.html"><a href="the-normal-and-related-distributions.html#the-exponential-family-of-distributions"><i class="fa fa-check"></i><b>2.19</b> The Exponential Family of Distributions</a>
+<ul>
+<li class="chapter" data-level="2.19.1" data-path="the-normal-and-related-distributions.html"><a href="the-normal-and-related-distributions.html#exponential-family-with-a-vector-of-parameters"><i class="fa fa-check"></i><b>2.19.1</b> Exponential Family with a Vector of Parameters</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html"><i class="fa fa-check"></i><b>3</b> The Binomial (and Related) Distributions</a>
 <ul>
@@ -331,6 +336,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-expected-value-of-a-negative-binomial-random-variable"><i class="fa fa-check"></i><b>3.2.2</b> The Expected Value of a Negative Binomial Random Variable</a></li>
 <li class="chapter" data-level="3.2.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#binomial-distribution-normal-approximation"><i class="fa fa-check"></i><b>3.2.3</b> Binomial Distribution: Normal Approximation</a></li>
 <li class="chapter" data-level="3.2.4" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#computing-probabilities-7"><i class="fa fa-check"></i><b>3.2.4</b> Computing Probabilities</a></li>
+<li class="chapter" data-level="3.2.5" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-binomial-distribution-as-part-of-the-exponential-family"><i class="fa fa-check"></i><b>3.2.5</b> The Binomial Distribution as Part of the Exponential Family</a></li>
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#cumulative-distribution-function-1"><i class="fa fa-check"></i><b>3.3</b> Cumulative Distribution Function</a>
 <ul>
@@ -349,9 +355,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3.6" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#point-estimation-2"><i class="fa fa-check"></i><b>3.6</b> Point Estimation</a>
 <ul>
-<li class="chapter" data-level="3.6.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#sufficiency-and-the-exponential-family-of-distributions"><i class="fa fa-check"></i><b>3.6.1</b> Sufficiency and the Exponential Family of Distributions</a></li>
-<li class="chapter" data-level="3.6.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-mle-for-the-binomial-success-probability"><i class="fa fa-check"></i><b>3.6.2</b> The MLE for the Binomial Success Probability</a></li>
-<li class="chapter" data-level="3.6.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#sufficient-statistics-for-the-normal-distribution"><i class="fa fa-check"></i><b>3.6.3</b> Sufficient Statistics for the Normal Distribution</a></li>
+<li class="chapter" data-level="3.6.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-mle-for-the-binomial-success-probability"><i class="fa fa-check"></i><b>3.6.1</b> The MLE for the Binomial Success Probability</a></li>
+<li class="chapter" data-level="3.6.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#sufficient-statistics-for-the-normal-distribution"><i class="fa fa-check"></i><b>3.6.2</b> Sufficient Statistics for the Normal Distribution</a></li>
+<li class="chapter" data-level="3.6.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-sufficiency-principle-examples-of-when-we-cannot-reduce-data"><i class="fa fa-check"></i><b>3.6.3</b> The Sufficiency Principle: Examples of When We Cannot Reduce Data</a></li>
 <li class="chapter" data-level="3.6.4" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-mvue-for-the-exponential-mean"><i class="fa fa-check"></i><b>3.6.4</b> The MVUE for the Exponential Mean</a></li>
 <li class="chapter" data-level="3.6.5" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-mvue-for-the-geometric-distribution"><i class="fa fa-check"></i><b>3.6.5</b> The MVUE for the Geometric Distribution</a></li>
 </ul></li>
@@ -368,7 +374,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.8.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#defining-a-ump-test-for-the-normal-population-mean"><i class="fa fa-check"></i><b>3.8.3</b> Defining a UMP Test for the Normal Population Mean</a></li>
 <li class="chapter" data-level="3.8.4" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#defining-a-test-that-is-not-uniformly-most-powerful"><i class="fa fa-check"></i><b>3.8.4</b> Defining a Test That is Not Uniformly Most Powerful</a></li>
 <li class="chapter" data-level="3.8.5" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#estimating-a-p-value-via-simulation"><i class="fa fa-check"></i><b>3.8.5</b> Estimating a <span class="math inline">\(p\)</span>-Value via Simulation</a></li>
-<li class="chapter" data-level="3.8.6" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#large-sample-tests-of-the-binomial-success-probability"><i class="fa fa-check"></i><b>3.8.6</b> Large-Sample Tests of the Binomial Success Probability</a></li>
+<li class="chapter" data-level="3.8.6" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#utilizing-simulations-when-data-reduction-is-not-possible"><i class="fa fa-check"></i><b>3.8.6</b> Utilizing Simulations When Data Reduction is Not Possible</a></li>
+<li class="chapter" data-level="3.8.7" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#large-sample-tests-of-the-binomial-success-probability"><i class="fa fa-check"></i><b>3.8.7</b> Large-Sample Tests of the Binomial Success Probability</a></li>
 </ul></li>
 <li class="chapter" data-level="3.9" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#logistic-regression"><i class="fa fa-check"></i><b>3.9</b> Logistic Regression</a>
 <ul>
@@ -392,14 +399,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.13.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#simulating-an-exact-multinomial-test"><i class="fa fa-check"></i><b>3.13.2</b> Simulating an Exact Multinomial Test</a></li>
 <li class="chapter" data-level="3.13.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#chi-square-test-of-independence"><i class="fa fa-check"></i><b>3.13.3</b> Chi-Square Test of Independence</a></li>
 </ul></li>
-<li class="chapter" data-level="3.14" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#exercises"><i class="fa fa-check"></i><b>3.14</b> Exercises</a></li>
+<li class="chapter" data-level="3.14" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#exercises-1"><i class="fa fa-check"></i><b>3.14</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html"><i class="fa fa-check"></i><b>4</b> The Poisson (and Related) Distributions</a>
 <ul>
 <li class="chapter" data-level="4.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#motivation-2"><i class="fa fa-check"></i><b>4.1</b> Motivation</a></li>
 <li class="chapter" data-level="4.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#probability-mass-function-1"><i class="fa fa-check"></i><b>4.2</b> Probability Mass Function</a>
 <ul>
-<li class="chapter" data-level="4.2.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#the-expected-value-of-a-poisson-random-variable"><i class="fa fa-check"></i><b>4.2.1</b> The Expected Value of a Poisson Random Variable</a></li>
+<li class="chapter" data-level="4.2.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#the-poisson-distribution-as-part-of-the-exponential-family"><i class="fa fa-check"></i><b>4.2.1</b> The Poisson Distribution as Part of the Exponential Family</a></li>
+<li class="chapter" data-level="4.2.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#the-expected-value-of-a-poisson-random-variable"><i class="fa fa-check"></i><b>4.2.2</b> The Expected Value of a Poisson Random Variable</a></li>
 </ul></li>
 <li class="chapter" data-level="4.3" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#cumulative-distribution-function-2"><i class="fa fa-check"></i><b>4.3</b> Cumulative Distribution Function</a>
 <ul>
@@ -448,7 +456,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="4.10.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#revisiting-the-death-by-horse-kick-example-3"><i class="fa fa-check"></i><b>4.10.1</b> Revisiting the Death-by-Horse-Kick Example</a></li>
 </ul></li>
-<li class="chapter" data-level="4.11" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#exercises-1"><i class="fa fa-check"></i><b>4.11</b> Exercises</a></li>
+<li class="chapter" data-level="4.11" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#exercises-2"><i class="fa fa-check"></i><b>4.11</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html"><i class="fa fa-check"></i><b>5</b> The Uniform Distribution</a>
 <ul>
@@ -481,7 +489,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.6.1" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#the-power-curve-for-testing-the-uniform-distribution-upper-bound"><i class="fa fa-check"></i><b>5.6.1</b> The Power Curve for Testing the Uniform Distribution Upper Bound</a></li>
 <li class="chapter" data-level="5.6.2" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#an-illustration-of-multiple-comparisons-when-testing-for-the-normal-mean"><i class="fa fa-check"></i><b>5.6.2</b> An Illustration of Multiple Comparisons When Testing for the Normal Mean</a></li>
 </ul></li>
-<li class="chapter" data-level="5.7" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#exercises-2"><i class="fa fa-check"></i><b>5.7</b> Exercises</a></li>
+<li class="chapter" data-level="5.7" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#exercises-3"><i class="fa fa-check"></i><b>5.7</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html"><i class="fa fa-check"></i><b>6</b> Multivariate Distributions</a>
 <ul>
@@ -520,7 +528,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.6.2" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html#the-conditional-distribution-of-a-multivariate-normal-distribution"><i class="fa fa-check"></i><b>6.6.2</b> The Conditional Distribution of a Multivariate Normal Distribution</a></li>
 <li class="chapter" data-level="6.6.3" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html#the-calculation-of-sample-covariance"><i class="fa fa-check"></i><b>6.6.3</b> The Calculation of Sample Covariance</a></li>
 </ul></li>
-<li class="chapter" data-level="6.7" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html#exercises-3"><i class="fa fa-check"></i><b>6.7</b> Exercises</a></li>
+<li class="chapter" data-level="6.7" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html#exercises-4"><i class="fa fa-check"></i><b>6.7</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="further-conceptual-details-optional.html"><a href="further-conceptual-details-optional.html"><i class="fa fa-check"></i><b>7</b> Further Conceptual Details (Optional)</a>
 <ul>
@@ -542,6 +550,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="bibliography.html"><a href="bibliography.html"><i class="fa fa-check"></i>Bibliography</a></li>
 <li class="chapter" data-level="" data-path="chapter-exercises-solutions.html"><a href="chapter-exercises-solutions.html"><i class="fa fa-check"></i>Chapter Exercises: Solutions</a>
 <ul>
+<li class="chapter" data-level="" data-path="chapter-exercises-solutions.html"><a href="chapter-exercises-solutions.html#chapter-1"><i class="fa fa-check"></i>Chapter 1</a></li>
 <li class="chapter" data-level="" data-path="chapter-exercises-solutions.html"><a href="chapter-exercises-solutions.html#chapter-3"><i class="fa fa-check"></i>Chapter 3</a></li>
 <li class="chapter" data-level="" data-path="chapter-exercises-solutions.html"><a href="chapter-exercises-solutions.html#chapter-4"><i class="fa fa-check"></i>Chapter 4</a></li>
 <li class="chapter" data-level="" data-path="chapter-exercises-solutions.html"><a href="chapter-exercises-solutions.html#chapter-5"><i class="fa fa-check"></i>Chapter 5</a></li>
@@ -884,6 +893,42 @@ next time we sample data according to this distribution.</p>
 </blockquote>
 <div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="the-binomial-and-related-distributions.html#cb168-1" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">sum</span>(<span class="fu">dnbinom</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">1</span>,<span class="at">size=</span><span class="dv">3</span>,<span class="at">prob=</span><span class="fl">0.6</span>))</span></code></pre></div>
 <pre><code>## [1] 0.5248</code></pre>
+<hr />
+</div>
+<div id="the-binomial-distribution-as-part-of-the-exponential-family" class="section level3 hasAnchor" number="3.2.5">
+<h3><span class="header-section-number">3.2.5</span> The Binomial Distribution as Part of the Exponential Family<a href="the-binomial-and-related-distributions.html#the-binomial-distribution-as-part-of-the-exponential-family" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<blockquote>
+<p>Recall that the exponential family of distributions, introduced in the
+last chapter, comprises distributions whose probability mass or density
+functions can be written in the form
+<span class="math display">\[\begin{align*}
+h(x) \exp\left( \eta(\theta)T(x) - A(\theta) \right) \,.
+\end{align*}\]</span>
+Is the binomial distribution a member of the larger exponential family
+of distributions? It would initially appear that the answer is no (as
+there are no exponential functions in its pmf), but if we note that
+<span class="math display">\[\begin{align*}
+p^x = \exp\left(\log p^x\right) = \exp\left(x \log p\right)
+\end{align*}\]</span>
+and that
+<span class="math display">\[\begin{align*}
+(1-p)^{k-x} = \exp\left(\log (1-p)^{k-x}\right) = \exp\left((k-x) \log (1-p)\right) \,,
+\end{align*}\]</span>
+we can see that
+<span class="math display">\[\begin{align*}
+p_X(x \vert p) = \binom{k}{x} \exp\left( x [ \log(p) - \log(1-p) ] + k \log (1-p) \right)
+\end{align*}\]</span>
+and thus that
+<span class="math display">\[\begin{align*}
+h(x) &amp;= \binom{k}{x} \\
+\eta(p) &amp;= \log(p) - \log(1-p) = \log \frac{p}{1-p} \\
+T(x) &amp;= x \\
+A(p) &amp;= -k \log(1-p) \,.
+\end{align*}\]</span>
+The binomial distribution is indeed a member of the exponential family.
+We will leave it as an exercise to the reader to show that the
+negative binomial distribution lies within the exponential family as well.</p>
+</blockquote>
 </div>
 </div>
 <div id="cumulative-distribution-function-1" class="section level2 hasAnchor" number="3.3">
@@ -1285,7 +1330,7 @@ expected value 1/2 and a variance that shrinks with <span class="math inline">\(
 </div>
 <div id="point-estimation-2" class="section level2 hasAnchor" number="3.6">
 <h2><span class="header-section-number">3.6</span> Point Estimation<a href="the-binomial-and-related-distributions.html#point-estimation-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In the first two chapters, we introduced a number of concepts related to point estimation, the
+<p>In the first two chapters, we introduce a number of concepts related to point estimation, the
 act of using statistics to make inferences about a population parameter <span class="math inline">\(\theta\)</span>. We…</p>
 <ul>
 <li>assess point estimators using the metrics of bias, variance, mean-squared error, and consistency;</li>
@@ -1317,24 +1362,47 @@ performance of, if not do better than, the MLE, in terms of bias and/or
 variance.</em></p>
 <p>There are two steps to carry out when deriving the MVUE:</p>
 <ol style="list-style-type: decimal">
-<li>determining a <em>sufficient statistic</em> for <span class="math inline">\(\theta\)</span>; and</li>
+<li>determining a sufficient statistic for <span class="math inline">\(\theta\)</span>; and</li>
 <li>correcting any bias that is observed when we utilize that sufficient
 statistic as our initial estimator.</li>
 </ol>
-<p>Sufficient statistics for a parameter <span class="math inline">\(\theta\)</span>
+<p>A <em>sufficient statistic</em> for a parameter <span class="math inline">\(\theta\)</span>
 captures all information about <span class="math inline">\(\theta\)</span> contained in the sample.
-In other words, any additional statistic, beyond sufficient statistics,
-will not provide any additional information about <span class="math inline">\(\theta\)</span>.
-The observed data <span class="math inline">\(\mathbf{X}\)</span> comprise a set of sufficient statistics,
-as does the full set of order statistics <span class="math inline">\(\{X_{(1)},\ldots,X_{(n)}\)</span>}$.
-However, working with a set of <span class="math inline">\(n\)</span> statistics directly is problematic
-when we attempt to make inferences: can we somehow combine elements
-of <span class="math inline">\(\mathbf{X}\)</span> together (i.e., can we enact “data reduction”) so that,
-instead of working with <span class="math inline">\(n\)</span> sufficient statistics, we only work with one?
-The answer is yes (sometimes; we will elaborate on this below).</p>
-<p>The simplest way by which to identify a sufficient statistic is
-by writing down the likelihood function and factorizing it into two
-functions, one of which depends <em>only</em> on the observed data and the
+The sufficiency principle holds that if, e.g., <span class="math inline">\(Y\)</span> is
+a sufficient statistic for <span class="math inline">\(\theta\)</span>, and we collect two datasets
+<span class="math inline">\(\mathbf{U}\)</span> and <span class="math inline">\(\mathbf{V}\)</span> such that <span class="math inline">\(Y(\mathbf{U}) = Y(\mathbf{V})\)</span>,
+then the inferences we make about <span class="math inline">\(\theta\)</span> given that we observe <span class="math inline">\(\mathbf{U}\)</span>
+will be exactly the same as those we would make if we were to
+observe <span class="math inline">\(\mathbf{V}\)</span> instead.
+Using any statistic beyond a sufficient
+statistic will not lead to improved inferences about <span class="math inline">\(\theta\)</span>. This
+means that, for instance, combining <span class="math inline">\(\bar{X}\)</span> (a sufficient statistic
+for the normal mean <span class="math inline">\(\mu\)</span> when the variance is known) with, say,
+the sample median will not reduce the length of confidence intervals for <span class="math inline">\(\mu\)</span>
+or change the power of hypothesis tests about <span class="math inline">\(\mu\)</span>, relative to what we
+would derive using <span class="math inline">\(\bar{X}\)</span> alone.
+Note that utilizing the sufficiency principle is but one way by which
+statisticians can attempt <em>data reduction</em> prior to inference; two others,
+which are beyond the scope of this book, are the likelihood and
+equivalence principles. For a deeper treatment of sufficiency and of data
+reduction than we provide here, the interested reader should consult
+Chapter 6 of Casella and Berger (2002).</p>
+<p>A statistic <span class="math inline">\(Y(\mathbf{X})\)</span> is a sufficient statistic for <span class="math inline">\(\theta\)</span> if
+the ratio
+<span class="math display">\[\begin{align*}
+\frac{f_X(\mathbf{x} \vert \theta)}{f_Y(y \vert \theta)} \mathrel{{iid}\rightarrow} \frac{\prod_{i=1}^n f_X(x_i \vert \theta)}{f_Y(y \vert \theta)} \,,
+\end{align*}\]</span>
+where <span class="math inline">\(f_Y(y \vert \theta)\)</span> is the probability density function of the
+sampling distribution for <span class="math inline">\(Y\)</span>, is constant as a function of <span class="math inline">\(\theta\)</span>.
+We note that by this definition, <span class="math inline">\(\mathbf{X}\)</span> itself comprises a
+sufficient statistic for <span class="math inline">\(\theta\)</span>, as does the full set of order statistics
+<span class="math inline">\(\{X_{(1)},\ldots,X_{(n)}\}\)</span>. The relevant questions are: can we
+define a sufficient statistic that actually reduces the data? and if so,
+how can we identify it?</p>
+<p>Let’s answer the second question first.
+The simplest way by which to identify a sufficient statistic is
+to write down the likelihood function and then to factorize it into two
+separate functions, one of which depends <em>only</em> on the observed data and the
 other of which depends on both the observed data and the parameter of
 interest:
 <span class="math display">\[
@@ -1344,59 +1412,77 @@ This is the so-called <em>factorization criterion</em>.
 In the expression <span class="math inline">\(g(\mathbf{x},\theta)\)</span>, the data will appear within, e.g., a
 summation (e.g., <span class="math inline">\(\sum_{i=1}^n x_i\)</span>) or a product
 (e.g., <span class="math inline">\(\prod_{i=1}^n x_i\)</span>), and
-we would identify that summation or product as a sufficient statistic.</p>
-<p>As a first example,
-let’s assume we are given a sample of <span class="math inline">\(n\)</span> iid binomial random variables.
-The following is the factorized likelihood:
+we would identify that summation or product as a sufficient statistic for
+<span class="math inline">\(\theta\)</span>. For instance, for the binomial distribution,
+the factorized likelihood (given <span class="math inline">\(n\)</span> iid data) is
 <span class="math display">\[
 \mathcal{L}(p \vert \mathbf{x}) = \prod_{i=1}^n \binom{k}{x_i} p^{x_i} (1-p)^{k-x_i} = \underbrace{\left[ \prod_{i=1}^n \binom{k}{x_i} \right]}_{h(\mathbf{x})} \underbrace{p^{\sum_{i=1}^n x_i} (1-p)^{nk-\sum_{i=1}^n x_i}}_{g(\sum_{i=1}^n x_i,p)} \,.
 \]</span>
-By inspecting the function <span class="math inline">\(g(\mathbf{x},\theta)\)</span>, we determine that
-a sufficient statistic is <span class="math inline">\(Y = \sum_{i=1}^n X_i\)</span>.</p>
-<p>We note the following about sufficient statistics:</p>
-<ol style="list-style-type: decimal">
-<li><p>A statistic <em>cannot</em> contain the value of the parameter itself and be
-dubbed a sufficient statistic. For instance, if
-factorization yields <span class="math inline">\(Y = \prod_{i=1}^n \vert X_i - \theta \vert\)</span>,
-then <span class="math inline">\(Y\)</span> is <em>not</em> a sufficient statistic, because within this expression
-we cannot isolate a function of the <span class="math inline">\(X_i\)</span>’s alone.</p></li>
-<li><p>Sufficient statistics are not unique. <em>Any one-to-one function
-of a sufficient statistic is also a
-sufficient statistic</em>. For instance, if <span class="math inline">\(\sum_{i=1}^n X_i\)</span> is a sufficient
-statistic for <span class="math inline">\(\theta\)</span>, so is <span class="math inline">\(\bar{X}\)</span>.
-Any additional statistic that is
-<em>not</em> a one-to-one function of a sufficient statistic
-will not help us when we try to infer <span class="math inline">\(\theta\)</span>.
-For instance, if <span class="math inline">\(\bar{X}\)</span> is a sufficient statistic for <span class="math inline">\(\theta\)</span>,
-then adding the value of the sample median into the inferential process
-will not lead to better results!</p></li>
-<li><p>We note that in general, we need to demonstrate whether an identified
-sufficient statistic is both <em>minimally sufficient</em> and <em>complete</em>, as
-it needs to be both so that we can use it to determine the MVUE. It suffices
-to say here that the factorization criterion typically identifies statistics
-that are minimally sufficient and complete, particularly for those
-distributions that we examine in this book. (See the first example below.)
-See Chapter 7 for more details on how one determines if a sufficient
-statistic is a minimally sufficient statistic and if it is complete.
-Note that complete statistics
-are always minimally sufficient, but not necessarily vice-versa, so one
-would always check for completeness first!</p></li>
-</ol>
-<p>For a (much) deeper treatment of sufficiency and data reduction in general
-than we provide here,
-the interested reader should consult Chapter 6 of Casella and Berger (2002).</p>
-<p>If <span class="math inline">\(Y\)</span> is a minimally sufficient and complete statistic, and there is a
+By inspecting the function <span class="math inline">\(g(\mathbf{x},p)\)</span>, we immediately determine that
+a sufficient statistic for <span class="math inline">\(p\)</span> is <span class="math inline">\(Y = \sum_{i=1}^n X_i\)</span>.
+We say “a” sufficient statistic because
+sufficient statistics are not unique: <em>any one-to-one function
+of a sufficient statistic is also a sufficient statistic</em>.
+For instance, if <span class="math inline">\(Y = \sum_{i=1}^n X_i\)</span> is a sufficient
+statistic for <span class="math inline">\(\theta\)</span>, so is <span class="math inline">\(Y = \bar{X}\)</span>, etc.</p>
+<p>Now we return to the first question above: can we define a sufficient
+statistic that actually reduces the data? The answer is “not always.”
+In fact, across all
+possible distributions, it is relatively rare that we can do this.
+The Pitman-Koopman-Darmois theorem holds that, among families of
+distributions that do not have domain-specifying parameters, only the
+exponential family of distributions have sufficient statistics whose
+dimension does not increase as the sample size increases.
+(This theorem motivates, in large part,
+our introduction of the exponential family in Chapter 2.)
+Recall that the exponential
+family of distributions comprises a set of distributions whose probability
+mass or density functions can be written as
+<span class="math display">\[\begin{align*}
+h(x) \exp\left( \eta(\theta) T(x) - A(\theta) \right) \,.
+\end{align*}\]</span>
+(Here we assume that the distribution has just one free parameter <span class="math inline">\(\theta\)</span>.)
+In this expression, <span class="math inline">\(T(x)\)</span> <em>is</em> the sufficient statistic;
+as seen in a previous example,
+for the binomial distribution <span class="math inline">\(T(X) = X\)</span>. If we collect <span class="math inline">\(n\)</span> iid data,
+then the sufficient statistic is <span class="math inline">\(T(\mathbf{X}) = \sum_{i=1}^n X_i\)</span>, and
+as we can see it is still
+a single number<span class="math inline">\(-\)</span>i.e., it has a dimension of one<span class="math inline">\(-\)</span>regardless of the value
+of <span class="math inline">\(n\)</span>. Now, restricting ourselves to exponential family distributions in
+inferential situations would appear to limit the practical utility of
+the sufficiency principle…except it is the case that <em>many</em> (if not <em>most</em>)
+of the distributions that we
+utilize in inference are indeed exponential-family distributions,
+including all the ones that we focus on in this book.</p>
+<p>(We note here for completeness that once we identify a sufficient statistic,
+we are technically required to demonstrate that it is
+both <em>minimally sufficient</em> and <em>complete</em>, as
+it needs to be both so that we can use it, e.g., to determine the
+minimum variance unbiased estimator. It suffices
+to say here that the sufficient statistics that we identify for
+exponential family distributions via likelihood factorization
+are minimally sufficient and complete.
+See Chapter 7 for more details on minimal sufficiency
+and completeness.)</p>
+<!--
+TBD: add example that describes the concept of ancillary statistics, and
+mention Basu's theorem and the result that, e.g., barX and S^2 are 
+independent r.v.'s
+-->
+<p>If <span class="math inline">\(Y\)</span> is a sufficient statistic for <span class="math inline">\(\theta\)</span>, and there is a
 function <span class="math inline">\(h(Y)\)</span> that is an unbiased estimator for <span class="math inline">\(\theta\)</span> and that depends
 on the data only through <span class="math inline">\(Y\)</span>, then <span class="math inline">\(h(Y)\)</span> is the MVUE for
-<span class="math inline">\(\theta\)</span>. Here, given <span class="math inline">\(Y = \sum_{i=1}^n X_i\)</span>, we need to find a function
+<span class="math inline">\(\theta\)</span>. (Recall from above that one-to-one functions of sufficient
+statistics are themselves sufficient statistics, hence <span class="math inline">\(h(Y)\)</span> is sufficient
+for <span class="math inline">\(\theta\)</span>.) Here, given <span class="math inline">\(Y = \sum_{i=1}^n X_i\)</span>, we need to find a function
 <span class="math inline">\(h(\cdot)\)</span> such that <span class="math inline">\(E[h(Y)] = p\)</span>. Earlier in this chapter, we determined
 that the distribution for the sum of iid binomial random variables is
 Binomial(<span class="math inline">\(nk\)</span>,<span class="math inline">\(p\)</span>), and thus we
 know that this distribution has expected value <span class="math inline">\(nkp\)</span>. Thus
 <span class="math display">\[
 E\left[Y\right] = nkp ~\implies~ E\left[\frac{Y}{nk}\right] = p ~\implies~ h(Y) = \frac{Y}{nk} = \frac{\bar{X}}{k} ~\mbox{is the MVUE for}~p \,.
-\]</span></p>
-<p>The variance of <span class="math inline">\(\hat{p}\)</span> is
+\]</span>
+The variance of <span class="math inline">\(\hat{p}\)</span> is
 <span class="math display">\[
 V[\hat{p}] = V\left[\frac{\bar{X}}{k}\right] = \frac{1}{k^2}V[\bar{X}] = \frac{1}{k^2} \frac{V[X]}{n} = \frac{1}{k^2}\frac{kp(1-p)}{n} = \frac{p(1-p)}{nk} \,.
 \]</span>
@@ -1420,71 +1506,8 @@ The lower bound on the variance is thus <span class="math inline">\(p(1-p)/(nk)\
 the MVUE <em>does</em> achieve the CRLB.
 We cannot define a better unbiased estimator for <span class="math inline">\(p\)</span> than <span class="math inline">\(\bar{X}/k\)</span>.</p>
 <hr />
-<div id="sufficiency-and-the-exponential-family-of-distributions" class="section level3 hasAnchor" number="3.6.1">
-<h3><span class="header-section-number">3.6.1</span> Sufficiency and the Exponential Family of Distributions<a href="the-binomial-and-related-distributions.html#sufficiency-and-the-exponential-family-of-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<blockquote>
-<p>The exponential family is the set of discrete and continuous
-probability distributions whose probability mass and density functions
-can be expressed in the following manner (assuming a single parameter
-<span class="math inline">\(\theta\)</span>):
-<span class="math display">\[\begin{align*}
-h(x) e^{\eta(\theta)T(x) - A(\theta)} \,,
-\end{align*}\]</span>
-where <span class="math inline">\(T(x)\)</span> is a sufficient statistic. For instance, for the binomial
-distribution, we have that
-<span class="math display">\[\begin{align*}
-\binom{k}{x} p^x (1-p)^{k-x} &amp;= h(x) e^{\eta(\theta)T(x) - A(\theta)} \\
-\Rightarrow ~~~~~~ h(x) &amp;= \binom{k}{x} \\
-\Rightarrow ~~~~~~ \eta(\theta) T(x) - A(\theta) &amp;= x \log p + (k-x) \log(1-p) \\
-&amp;= x [\log p - \log(1-p)] + k \log(1-p) \\
-\Rightarrow ~~~~~~ A(\theta) &amp;= -k \log(1-p) \\
-\eta(\theta) &amp;= \log p - \log(1-p) \\
-T(x) &amp;= x \,.
-\end{align*}\]</span>
-(If we have <span class="math inline">\(n\)</span> iid data, the sufficient statistic becomes
-<span class="math inline">\(\sum_{i=1}^n T(X_i) = \sum_{i=1}^n X_i\)</span>.)
-Other familiar distributions that belong to the exponential family include
-the normal, Poisson, gamma, and beta distributions.</p>
-</blockquote>
-<blockquote>
-<p>We are bringing up the concept of the exponential family now for the following
-reason: the Pitman-Koopman-Darmois theorem holds that, among families of
-distributions that do not have domain-specifying parameters, only the
-exponential family of distributions have sufficient statistics whose
-dimension does not increase with sample size. (For instance, for the
-binomial distribution, the sufficient statistic <span class="math inline">\(\sum_{i=1}^n X_i\)</span> is
-a single number<span class="math inline">\(-\)</span>i.e., it has dimension one<span class="math inline">\(-\)</span>regardless of the sample
-size <span class="math inline">\(n\)</span>. We should note that there are exceptions to the PKD
-theorem<span class="math inline">\(-\)</span>we’ll see some in Chapter 5<span class="math inline">\(-\)</span>but they are relatively few.)
-The upshot is that our use of likelihood factorization to identify
-sufficient statistics (and, e.g., to subsequently derive minimum variance
-unbiased estimators) is limited to situations in which we are working
-with exponential family distributions. However, this is not a severe
-limitation: a very large proportion of statistical analyses involves
-the use of exponential family distributions!</p>
-</blockquote>
-<blockquote>
-<p>Let’s conclude by looking at an example of a distribution from outside the
-exponential family. A Laplace distribution with scale parameter 1 has the
-probability density function
-<span class="math display">\[\begin{align*}
-f_X(x \vert \theta) &amp;= \frac12 e^{-\vert x - \theta \vert} \,,
-\end{align*}\]</span>
-where <span class="math inline">\(x \in (-\infty,\infty)\)</span> and
-<span class="math inline">\(\theta \in (-\infty,\infty)\)</span>. If we observe <span class="math inline">\(n\)</span> iid data, then
-likelihood factorization yields
-<span class="math display">\[\begin{align*}
-\mathcal{L}(\theta \vert x) &amp;= \frac{1}{2^n} e^{-\sum_{i=1}^n \vert x_i - \theta \vert} \,.
-\end{align*}\]</span>
-Since we cannot isolate a function of <span class="math inline">\(x_i\)</span> alone, we conclude that no
-data reduction is possible here, and thus we are left with <span class="math inline">\(\mathbf{X}\)</span>
-as a set of sufficient statistics…a set whose dimensionality increases
-with <span class="math inline">\(n\)</span>. We thus will not be able to derive, e.g., an MVUE for <span class="math inline">\(\theta\)</span>.</p>
-</blockquote>
-<hr />
-</div>
-<div id="the-mle-for-the-binomial-success-probability" class="section level3 hasAnchor" number="3.6.2">
-<h3><span class="header-section-number">3.6.2</span> The MLE for the Binomial Success Probability<a href="the-binomial-and-related-distributions.html#the-mle-for-the-binomial-success-probability" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="the-mle-for-the-binomial-success-probability" class="section level3 hasAnchor" number="3.6.1">
+<h3><span class="header-section-number">3.6.1</span> The MLE for the Binomial Success Probability<a href="the-binomial-and-related-distributions.html#the-mle-for-the-binomial-success-probability" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>Recall</strong>: <em>the value of <span class="math inline">\(\theta\)</span> that maximizes the likelihood function is the maximum likelihood estimate, or MLE, for <span class="math inline">\(\theta\)</span>. The maximum is found by taking the (partial) derivative of the (log-)likelihood function with respect to <span class="math inline">\(\theta\)</span>, setting the result to zero, and solving for <span class="math inline">\(\theta\)</span>. That solution is the maximum likelihood estimate <span class="math inline">\(\hat{\theta}_{MLE}\)</span>.</em></p>
 <blockquote>
 <p>Above, we determined that
@@ -1524,8 +1547,8 @@ is given by applying the same function to the MLE itself. Thus</p>
 </blockquote>
 <hr />
 </div>
-<div id="sufficient-statistics-for-the-normal-distribution" class="section level3 hasAnchor" number="3.6.3">
-<h3><span class="header-section-number">3.6.3</span> Sufficient Statistics for the Normal Distribution<a href="the-binomial-and-related-distributions.html#sufficient-statistics-for-the-normal-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="sufficient-statistics-for-the-normal-distribution" class="section level3 hasAnchor" number="3.6.2">
+<h3><span class="header-section-number">3.6.2</span> Sufficient Statistics for the Normal Distribution<a href="the-binomial-and-related-distributions.html#sufficient-statistics-for-the-normal-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <blockquote>
 <p>If we have <span class="math inline">\(n\)</span> iid data drawn from a normal distribution with unknown mean <span class="math inline">\(\mu\)</span> and
 unknown variance <span class="math inline">\(\sigma^2\)</span>, then the factorized likelihood is
@@ -1545,6 +1568,51 @@ density function for <span class="math inline">\(Y_1 = \sum_{i=1}^n X_i^2\)</spa
 if one
 of these values is fixed, then there will only be one sufficient statistic
 and we can determine the MVUE for the other, freely varying parameter.)</p>
+</blockquote>
+<hr />
+</div>
+<div id="the-sufficiency-principle-examples-of-when-we-cannot-reduce-data" class="section level3 hasAnchor" number="3.6.3">
+<h3><span class="header-section-number">3.6.3</span> The Sufficiency Principle: Examples of When We Cannot Reduce Data<a href="the-binomial-and-related-distributions.html#the-sufficiency-principle-examples-of-when-we-cannot-reduce-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<blockquote>
+<p>As stated above, it is often impossible to reduce data to, e.g.,
+a single-number summary. The following examples, utilizing distributions
+that are <em>not</em> exponential-family distributions, illustrate this.</p>
+</blockquote>
+<blockquote>
+<ol style="list-style-type: decimal">
+<li>A Laplace distribution with scale parameter 1 has the
+probability density function
+<span class="math display">\[\begin{align*}
+f_X(x \vert \theta) &amp;= \frac12 e^{-\vert x - \theta \vert} \,,
+\end{align*}\]</span>
+where <span class="math inline">\(x \in (-\infty,\infty)\)</span> and
+<span class="math inline">\(\theta \in (-\infty,\infty)\)</span>. If we observe <span class="math inline">\(n\)</span> iid data, then
+likelihood factorization yields
+<span class="math display">\[\begin{align*}
+\mathcal{L}(\theta \vert \mathbf{x}) = \frac{1}{2^n} e^{-\sum_{i=1}^n \vert x_i - \theta \vert} \,.
+\end{align*}\]</span>
+<span class="math inline">\(Y = \sum_{i=1}^n \vert X_i - \theta \vert\)</span> is not a sufficient statistic
+as it contains the (unknown) parameter: a sufficient statistic
+for <span class="math inline">\(\theta\)</span> cannot contain <span class="math inline">\(\theta\)</span> itself! We cannot isolate a function
+of <span class="math inline">\(\mathbf{X}\)</span> alone, and thus no data reduction is possible.</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="2" style="list-style-type: decimal">
+<li>A Cauchy distribution with scale parameter 1 has the probability density
+function
+<span class="math display">\[\begin{align*}
+f_X(x \vert \theta) = \frac{1}{\pi (x-\theta)^2} \,,
+\end{align*}\]</span>
+where <span class="math inline">\(x \in (-\infty,\infty)\)</span> and
+<span class="math inline">\(\theta \in (-\infty,\infty)\)</span>. If we observe <span class="math inline">\(n\)</span> iid data, then
+likelihood factorization yields
+<span class="math display">\[\begin{align*}
+\mathcal{L}(\theta \vert \mathbf{x}) = \frac{1}{\pi^n} \frac{1}{\prod_{i=1}^n (x_i-\theta)^2} \,.
+\end{align*}\]</span>
+Again, we cannot isolate a function of the <span class="math inline">\(X_i\)</span>’s alone: no data reduction
+is possible.</li>
+</ol>
 </blockquote>
 <hr />
 </div>
@@ -1949,18 +2017,23 @@ hypothesis. We will examine how to work with composite hypotheses in the next ch
 For a given test level <span class="math inline">\(\alpha\)</span>, the <em>Neyman-Pearson lemma</em> states that the
 test that maximizes the power has a rejection region of the form
 <span class="math display">\[
-\frac{\mathcal{L}(\theta_o \vert \mathbf{x})}{\mathcal{L}(\theta_a \vert \mathbf{x})} &lt; c(\alpha) \,,
+\lambda_{NP} = \frac{\mathcal{L}(\theta_o \vert \mathbf{x})}{\mathcal{L}(\theta_a \vert \mathbf{x})} &lt; c(\alpha) \,,
 \]</span>
 where <span class="math inline">\(c\)</span> is a constant whose value depends on <span class="math inline">\(\alpha\)</span> that we have to
 determine. While this formulation initially
 appears straightforward, it is in fact not necessarily clear how to
-derive <span class="math inline">\(c(\alpha)\)</span>. However: in typical analysis situations,
+derive <span class="math inline">\(c(\alpha)\)</span>. However: when we work with distributions
+that belong to the exponential family,
 <em>we don’t need to</em>! The NP lemma utilizes the likelihood function,
-so implicitly, what it is telling us that <em>the best statistic for
+so in this situation it is implicitly telling us that <em>the best statistic for
 differentiating between two simple hypotheses is a sufficient statistic</em>.
-We simply determine a sufficient statistic for which we
-know the sampling distribution, and use it to define a hypothesis
-test via the procedure we laid out in previous chapters. Full stop.</p>
+We simply determine a sufficient statistic and
+and use its sampling distribution to define a hypothesis
+test via the procedure we have laid out in previous chapters. Full stop.
+(What if the distribution we are working with is not a member of
+the exponential family? We would need to determine the sampling
+distribution of <span class="math inline">\(\lambda_{NP}\)</span> itself, something most easily
+done via the use of simulations. We illustrate this in an example below.)</p>
 <p>For instance, when we draw <span class="math inline">\(n\)</span> iid data from a binomial distribution,
 the sufficient statistic <span class="math inline">\(\sum_{i=1}^n X_i\)</span> has a known and easily
 utilized sampling distribution<span class="math inline">\(-\)</span>namely, Binom(<span class="math inline">\(nk,p\)</span>)<span class="math inline">\(-\)</span>while
@@ -2431,8 +2504,87 @@ to reject the null hypothesis that <span class="math inline">\(\theta = \theta_o
 </blockquote>
 <hr />
 </div>
-<div id="large-sample-tests-of-the-binomial-success-probability" class="section level3 hasAnchor" number="3.8.6">
-<h3><span class="header-section-number">3.8.6</span> Large-Sample Tests of the Binomial Success Probability<a href="the-binomial-and-related-distributions.html#large-sample-tests-of-the-binomial-success-probability" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="utilizing-simulations-when-data-reduction-is-not-possible" class="section level3 hasAnchor" number="3.8.6">
+<h3><span class="header-section-number">3.8.6</span> Utilizing Simulations When Data Reduction is Not Possible<a href="the-binomial-and-related-distributions.html#utilizing-simulations-when-data-reduction-is-not-possible" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<blockquote>
+<p>The logistic distribution, whose probability density function is
+<span class="math display">\[\begin{align*}
+f_X(x \vert \mu) = \frac{\exp(\mu-x)}{[1+\exp(\mu-x)]^2}
+\end{align*}\]</span>
+for <span class="math inline">\(x \in (-\infty,\infty)\)</span> and <span class="math inline">\(\mu \in (-\infty,\infty)\)</span>, is <em>not</em>
+a member of the exponential family of distributions. This means that
+if we sample <span class="math inline">\(n\)</span> iid data according to this distribution,
+we cannot reduce them so as to define a single-number sufficient statistic
+for <span class="math inline">\(\mu\)</span>. What we <em>can</em> do, however, is the following:</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>we can simulate a large number of datasets under the null hypothesis <span class="math inline">\(\mu = \mu_o\)</span>;</li>
+<li>for each dataset, we can record <span class="math inline">\(\mathcal{L}(\mu_o \vert \mathbf{x})\)</span> and <span class="math inline">\(\mathcal{L}(\mu_a \vert \mathbf{x})\)</span>, and their difference (which is <span class="math inline">\(\log \lambda_{NP}\)</span>); and</li>
+<li>we can determine the <span class="math inline">\(\alpha^{\rm th}\)</span> percentile of the distribution of <span class="math inline">\(\log \lambda_{NP}\)</span> values.</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>The <span class="math inline">\(\alpha^{\rm th}\)</span> percentile is <span class="math inline">\(c&#39;(\alpha) = \log c(\alpha)\)</span>, i.e., it
+is the rejection-region boundary for the most powerful test of
+the simple hypotheses <span class="math inline">\(\mu = \mu_o\)</span> and <span class="math inline">\(\mu = \mu_a\)</span>.
+(However, note that because <span class="math inline">\(\mu_a\)</span> factors directly into the simulations,
+what we define is <em>not</em> a uniformly most powerful test, which is to say
+as we change <span class="math inline">\(\mu_a\)</span>, the value of <span class="math inline">\(c&#39;(\alpha)\)</span> will also change, unlike
+the rejection-region boundaries that we derive in single-value sufficient
+statistic/exponential family distribution contexts.</p>
+</blockquote>
+<blockquote>
+<p>Below, we show how to carry out simulations to determine the
+rejection-region boundary, the <span class="math inline">\(p\)</span>-value, and the test power
+for a situation in which we
+sample <span class="math inline">\(n = 10\)</span> iid data according to a logistic
+distribution for which <span class="math inline">\(\mu_o = 1\)</span>, with our alternative hypothesis
+being <span class="math inline">\(\mu_a = 3\)</span>. (See Figure <a href="the-binomial-and-related-distributions.html#fig:lognp">3.12</a>.)</p>
+</blockquote>
+<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="the-binomial-and-related-distributions.html#cb222-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">36236</span>)</span>
+<span id="cb222-2"><a href="the-binomial-and-related-distributions.html#cb222-2" tabindex="-1"></a>alpha   <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb222-3"><a href="the-binomial-and-related-distributions.html#cb222-3" tabindex="-1"></a>num.sim <span class="ot">&lt;-</span> <span class="dv">100000</span></span>
+<span id="cb222-4"><a href="the-binomial-and-related-distributions.html#cb222-4" tabindex="-1"></a>n       <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb222-5"><a href="the-binomial-and-related-distributions.html#cb222-5" tabindex="-1"></a>mu.o    <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb222-6"><a href="the-binomial-and-related-distributions.html#cb222-6" tabindex="-1"></a>mu.a    <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb222-7"><a href="the-binomial-and-related-distributions.html#cb222-7" tabindex="-1"></a>X       <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">rlogis</span>(n<span class="sc">*</span>num.sim,<span class="at">location=</span>mu.o),<span class="at">nrow=</span>num.sim)</span>
+<span id="cb222-8"><a href="the-binomial-and-related-distributions.html#cb222-8" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x,mu.o)</span>
+<span id="cb222-9"><a href="the-binomial-and-related-distributions.html#cb222-9" tabindex="-1"></a>{</span>
+<span id="cb222-10"><a href="the-binomial-and-related-distributions.html#cb222-10" tabindex="-1"></a>  <span class="fu">sum</span>(<span class="fu">log</span>(<span class="fu">dlogis</span>(x,<span class="at">location=</span>mu.o)))</span>
+<span id="cb222-11"><a href="the-binomial-and-related-distributions.html#cb222-11" tabindex="-1"></a>}</span>
+<span id="cb222-12"><a href="the-binomial-and-related-distributions.html#cb222-12" tabindex="-1"></a>log.like.o     <span class="ot">&lt;-</span> <span class="fu">apply</span>(X,<span class="dv">1</span>,f,<span class="at">mu.o=</span>mu.o)</span>
+<span id="cb222-13"><a href="the-binomial-and-related-distributions.html#cb222-13" tabindex="-1"></a>log.like.a     <span class="ot">&lt;-</span> <span class="fu">apply</span>(X,<span class="dv">1</span>,f,<span class="at">mu.o=</span>mu.a)</span>
+<span id="cb222-14"><a href="the-binomial-and-related-distributions.html#cb222-14" tabindex="-1"></a>delta.log.like <span class="ot">&lt;-</span> log.like.o <span class="sc">-</span> log.like.a</span>
+<span id="cb222-15"><a href="the-binomial-and-related-distributions.html#cb222-15" tabindex="-1"></a></span>
+<span id="cb222-16"><a href="the-binomial-and-related-distributions.html#cb222-16" tabindex="-1"></a><span class="co"># The rejection-region boundary</span></span>
+<span id="cb222-17"><a href="the-binomial-and-related-distributions.html#cb222-17" tabindex="-1"></a>rr <span class="ot">&lt;-</span> <span class="fu">quantile</span>(delta.log.like,<span class="at">probs=</span>alpha)</span>
+<span id="cb222-18"><a href="the-binomial-and-related-distributions.html#cb222-18" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The rejection-region boundary is&quot;</span>,<span class="fu">round</span>(rr,<span class="dv">3</span>),<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## The rejection-region boundary is -1.362</code></pre>
+<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="the-binomial-and-related-distributions.html#cb224-1" tabindex="-1"></a><span class="co"># The p-value for a dataset sampled under the null</span></span>
+<span id="cb224-2"><a href="the-binomial-and-related-distributions.html#cb224-2" tabindex="-1"></a>X                  <span class="ot">&lt;-</span> <span class="fu">rlogis</span>(n,<span class="at">location=</span>mu.o)</span>
+<span id="cb224-3"><a href="the-binomial-and-related-distributions.html#cb224-3" tabindex="-1"></a>delta.log.like.obs <span class="ot">&lt;-</span> <span class="fu">f</span>(X,mu.o) <span class="sc">-</span> <span class="fu">f</span>(X,mu.a)</span>
+<span id="cb224-4"><a href="the-binomial-and-related-distributions.html#cb224-4" tabindex="-1"></a>p                  <span class="ot">&lt;-</span> <span class="fu">sum</span>(delta.log.like<span class="sc">&lt;=</span>delta.log.like.obs)<span class="sc">/</span>num.sim</span>
+<span id="cb224-5"><a href="the-binomial-and-related-distributions.html#cb224-5" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The p-value for the statistic&quot;</span>,<span class="fu">round</span>(delta.log.like.obs,<span class="dv">3</span>),<span class="st">&quot;is&quot;</span>,<span class="fu">round</span>(p,<span class="dv">4</span>),<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## The p-value for the statistic 0.834 is 0.3226</code></pre>
+<div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb226-1"><a href="the-binomial-and-related-distributions.html#cb226-1" tabindex="-1"></a><span class="co"># The test power for mu = mu.a</span></span>
+<span id="cb226-2"><a href="the-binomial-and-related-distributions.html#cb226-2" tabindex="-1"></a>X                <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">rlogis</span>(n<span class="sc">*</span>num.sim,<span class="at">location=</span>mu.a),<span class="at">nrow=</span>num.sim)</span>
+<span id="cb226-3"><a href="the-binomial-and-related-distributions.html#cb226-3" tabindex="-1"></a>log.like.o.p     <span class="ot">&lt;-</span> <span class="fu">apply</span>(X,<span class="dv">1</span>,f,<span class="at">mu.o=</span>mu.o)</span>
+<span id="cb226-4"><a href="the-binomial-and-related-distributions.html#cb226-4" tabindex="-1"></a>log.like.a.p     <span class="ot">&lt;-</span> <span class="fu">apply</span>(X,<span class="dv">1</span>,f,<span class="at">mu.o=</span>mu.a)</span>
+<span id="cb226-5"><a href="the-binomial-and-related-distributions.html#cb226-5" tabindex="-1"></a>delta.log.like.p <span class="ot">&lt;-</span> log.like.o.p <span class="sc">-</span> log.like.a.p</span>
+<span id="cb226-6"><a href="the-binomial-and-related-distributions.html#cb226-6" tabindex="-1"></a>power            <span class="ot">&lt;-</span> <span class="fu">sum</span>(delta.log.like.p<span class="sc">&lt;</span>rr)<span class="sc">/</span>num.sim</span>
+<span id="cb226-7"><a href="the-binomial-and-related-distributions.html#cb226-7" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The test power for mu =&quot;</span>,mu.a,<span class="st">&quot;is&quot;</span>,<span class="fu">round</span>(power,<span class="dv">3</span>),<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## The test power for mu = 2 is 0.568</code></pre>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:lognp"></span>
+<img src="_main_files/figure-html/lognp-1.png" alt="\label{fig:lognp}The empirical sampling distribution for the statistic $Y = \log\lambda_{NP}$, determined by simulating 100,000 datasets of size $n = 10$ drawn from a logistic distribution with mean $\mu_o = 1$. The estimated rejection-region boundary $\log c(\alpha)$ is indicated by the vertical red line; if the $y_{\rm obs} &lt; \log c(\alpha)$ is less than the boundary value, we would reject the null hypothesis that $\mu_o = 1$." width="50%" />
+<p class="caption">
+Figure 3.12: The empirical sampling distribution for the statistic <span class="math inline">\(Y = \log\lambda_{NP}\)</span>, determined by simulating 100,000 datasets of size <span class="math inline">\(n = 10\)</span> drawn from a logistic distribution with mean <span class="math inline">\(\mu_o = 1\)</span>. The estimated rejection-region boundary <span class="math inline">\(\log c(\alpha)\)</span> is indicated by the vertical red line; if the <span class="math inline">\(y_{\rm obs} &lt; \log c(\alpha)\)</span> is less than the boundary value, we would reject the null hypothesis that <span class="math inline">\(\mu_o = 1\)</span>.
+</p>
+</div>
+<hr />
+</div>
+<div id="large-sample-tests-of-the-binomial-success-probability" class="section level3 hasAnchor" number="3.8.7">
+<h3><span class="header-section-number">3.8.7</span> Large-Sample Tests of the Binomial Success Probability<a href="the-binomial-and-related-distributions.html#large-sample-tests-of-the-binomial-success-probability" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <blockquote>
 <p>Earlier in the chapter, we saw that if
 <span class="math display">\[
@@ -2510,11 +2662,11 @@ is the <em>logit</em> function:
 <span class="math display">\[
 g(p \vert x) = \log\left[\frac{p \vert x}{1-p \vert x}\right] = \beta_0 + \beta_1 x ~\implies~ p \vert x = \frac{\exp\left(\beta_0+\beta_1x\right)}{1+\exp\left(\beta_0+\beta_1x\right)} \,.
 \]</span>
-Using the logit function to model dichotomous data is dubbed <em>logistic regression</em>. See Figure <a href="the-binomial-and-related-distributions.html#fig:logexp">3.12</a>.</p>
+Using the logit function to model dichotomous data is dubbed <em>logistic regression</em>. See Figure <a href="the-binomial-and-related-distributions.html#fig:logexp">3.13</a>.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:logexp"></span>
 <img src="_main_files/figure-html/logexp-1.png" alt="\label{fig:logexp}An example of an estimated logistic regression line. The blue line is a sigmoid function; it represents the probability that we would sample a datum of Class 1 as a function of $x$. The red points are the observed data." width="50%" />
 <p class="caption">
-Figure 3.12: An example of an estimated logistic regression line. The blue line is a sigmoid function; it represents the probability that we would sample a datum of Class 1 as a function of <span class="math inline">\(x\)</span>. The red points are the observed data.
+Figure 3.13: An example of an estimated logistic regression line. The blue line is a sigmoid function; it represents the probability that we would sample a datum of Class 1 as a function of <span class="math inline">\(x\)</span>. The red points are the observed data.
 </p>
 </div>
 <p>How do we learn a logistic regression model? In linear regression, we
@@ -2609,8 +2761,8 @@ One can always override this default behavior.)</p>
 <code>family=binomial</code>, which means “do logistic regression.”
 (We can add additional arguments to, e.g., change the link function.)</p>
 </blockquote>
-<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="the-binomial-and-related-distributions.html#cb222-1" tabindex="-1"></a>glm.out <span class="ot">&lt;-</span> <span class="fu">glm</span>(class<span class="sc">~</span>r,<span class="at">data=</span>df,<span class="at">family=</span>binomial)</span>
-<span id="cb222-2"><a href="the-binomial-and-related-distributions.html#cb222-2" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">summary</span>(glm.out),<span class="at">show.residuals=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb228-1"><a href="the-binomial-and-related-distributions.html#cb228-1" tabindex="-1"></a>glm.out <span class="ot">&lt;-</span> <span class="fu">glm</span>(class<span class="sc">~</span>r,<span class="at">data=</span>df,<span class="at">family=</span>binomial)</span>
+<span id="cb228-2"><a href="the-binomial-and-related-distributions.html#cb228-2" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">summary</span>(glm.out),<span class="at">show.residuals=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## glm(formula = class ~ r, family = binomial, data = df)
@@ -2730,14 +2882,14 @@ classes at the same time.”)
 If there is class imbalance, then we will almost certainly have to change
 0.5 to some other value for optimal classification.
 In the current example, the classes <em>are</em> balanced, and so putting the
-“dividing line” at 0.5, as we do in Figure <a href="the-binomial-and-related-distributions.html#fig:glmpred">3.13</a>, is
+“dividing line” at 0.5, as we do in Figure <a href="the-binomial-and-related-distributions.html#fig:glmpred">3.14</a>, is
 an optimal choice.</p>
 </blockquote>
-<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="the-binomial-and-related-distributions.html#cb224-1" tabindex="-1"></a>glm.predictions <span class="ot">&lt;-</span> <span class="fu">predict.glm</span>(glm.out,<span class="at">type=</span><span class="st">&quot;response&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb230-1"><a href="the-binomial-and-related-distributions.html#cb230-1" tabindex="-1"></a>glm.predictions <span class="ot">&lt;-</span> <span class="fu">predict.glm</span>(glm.out,<span class="at">type=</span><span class="st">&quot;response&quot;</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:glmpred"></span>
-<img src="_main_files/figure-html/glmpred-1.png" alt="\label{fig:glmpred}Boxplots showing the estimated probability that a datum is a star, as a function of the object type (quasar or star). To convert estimated probabilities to predicted classes, one would &quot;draw&quot; a dividing line between the two boxes: all objects with probabilities below the line would be predicted to be quasars and all others would be predicted to be stars. The line would be placed to, e.g., minimize the number of misclassifications." width="50%" />
+&lt;img src=“_main_files/figure-html/glmpred-1.png” alt=“Boxplots showing the estimated probability that a datum is a star, as a function of the object type (quasar or star). To convert estimated probabilities to predicted classes, one would”draw” a dividing line between the two boxes: all objects with probabilities below the line would be predicted to be quasars and all others would be predicted to be stars. The line would be placed to, e.g., minimize the number of misclassifications.” width=“50%” /&gt;
 <p class="caption">
-Figure 3.13: Boxplots showing the estimated probability that a datum is a star, as a function of the object type (quasar or star). To convert estimated probabilities to predicted classes, one would “draw” a dividing line between the two boxes: all objects with probabilities below the line would be predicted to be quasars and all others would be predicted to be stars. The line would be placed to, e.g., minimize the number of misclassifications.
+Figure 3.14: Boxplots showing the estimated probability that a datum is a star, as a function of the object type (quasar or star). To convert estimated probabilities to predicted classes, one would “draw” a dividing line between the two boxes: all objects with probabilities below the line would be predicted to be quasars and all others would be predicted to be stars. The line would be placed to, e.g., minimize the number of misclassifications.
 </p>
 </div>
 </div>
@@ -2962,23 +3114,23 @@ where we can observe immediately that <span class="math inline">\(p(Y) = 3/9 = 1
 To compute, e.g., <span class="math inline">\(p(x \vert Y)\)</span>, we first compute the sample mean
 and sample standard deviation for the observed data for which <span class="math inline">\(Y\)</span> is “Yes”:</p>
 </blockquote>
-<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="the-binomial-and-related-distributions.html#cb225-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">1487.00</span>,<span class="fl">2205.80</span>,<span class="fl">1774.69</span>)</span>
-<span id="cb225-2"><a href="the-binomial-and-related-distributions.html#cb225-2" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">mean</span>(x),<span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb231-1"><a href="the-binomial-and-related-distributions.html#cb231-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">1487.00</span>,<span class="fl">2205.80</span>,<span class="fl">1774.69</span>)</span>
+<span id="cb231-2"><a href="the-binomial-and-related-distributions.html#cb231-2" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">mean</span>(x),<span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] 1822.5</code></pre>
-<div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb227-1"><a href="the-binomial-and-related-distributions.html#cb227-1" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">sd</span>(x),<span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb233"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb233-1"><a href="the-binomial-and-related-distributions.html#cb233-1" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">sd</span>(x),<span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] 361.78</code></pre>
 <blockquote>
 <p>The mean is $1,822.50 and the standard deviation is $361.78,
 so the probability density associated with observing $1,200 is</p>
 </blockquote>
-<div class="sourceCode" id="cb229"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb229-1"><a href="the-binomial-and-related-distributions.html#cb229-1" tabindex="-1"></a><span class="fu">dnorm</span>(<span class="dv">1200</span>,<span class="at">mean=</span><span class="fu">mean</span>(x),<span class="at">sd=</span><span class="fu">sd</span>(x))</span></code></pre></div>
+<div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb235-1"><a href="the-binomial-and-related-distributions.html#cb235-1" tabindex="-1"></a><span class="fu">dnorm</span>(<span class="dv">1200</span>,<span class="at">mean=</span><span class="fu">mean</span>(x),<span class="at">sd=</span><span class="fu">sd</span>(x))</span></code></pre></div>
 <pre><code>## [1] 0.0002509367</code></pre>
 <blockquote>
 <p>The density is 2.51 <span class="math inline">\(\times\)</span> 10<span class="math inline">\(^{-4}\)</span>. As far as for those data for
 which <span class="math inline">\(Y\)</span> is “No”:</p>
 </blockquote>
-<div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb231-1"><a href="the-binomial-and-related-distributions.html#cb231-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">324.74</span>,<span class="fl">988.21</span>,<span class="fl">836.30</span>,<span class="fl">927.89</span>,<span class="fl">712.28</span>,<span class="fl">706.16</span>)</span>
-<span id="cb231-2"><a href="the-binomial-and-related-distributions.html#cb231-2" tabindex="-1"></a><span class="fu">dnorm</span>(<span class="dv">1200</span>,<span class="at">mean=</span><span class="fu">mean</span>(x),<span class="at">sd=</span><span class="fu">sd</span>(x))</span></code></pre></div>
+<div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb237-1"><a href="the-binomial-and-related-distributions.html#cb237-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">324.74</span>,<span class="fl">988.21</span>,<span class="fl">836.30</span>,<span class="fl">927.89</span>,<span class="fl">712.28</span>,<span class="fl">706.16</span>)</span>
+<span id="cb237-2"><a href="the-binomial-and-related-distributions.html#cb237-2" tabindex="-1"></a><span class="fu">dnorm</span>(<span class="dv">1200</span>,<span class="at">mean=</span><span class="fu">mean</span>(x),<span class="at">sd=</span><span class="fu">sd</span>(x))</span></code></pre></div>
 <pre><code>## [1] 0.0002748351</code></pre>
 <blockquote>
 <p>The density is 2.75 <span class="math inline">\(\times\)</span> 10<span class="math inline">\(^{-4}\)</span>. Thus
@@ -2997,8 +3149,8 @@ $1,200 will default on their debt.</p>
 <p>Here, we learn a Naive Bayes model that we can use to differentiate between
 stars and quasars, utilizing functions from <code>R</code>’s <code>e1071</code> package.</p>
 </blockquote>
-<div class="sourceCode" id="cb233"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb233-1"><a href="the-binomial-and-related-distributions.html#cb233-1" tabindex="-1"></a><span class="fu">library</span>(e1071)</span>
-<span id="cb233-2"><a href="the-binomial-and-related-distributions.html#cb233-2" tabindex="-1"></a><span class="fu">naiveBayes</span>(class<span class="sc">~</span>r,<span class="at">data=</span>df)</span></code></pre></div>
+<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="the-binomial-and-related-distributions.html#cb239-1" tabindex="-1"></a><span class="fu">library</span>(e1071)</span>
+<span id="cb239-2"><a href="the-binomial-and-related-distributions.html#cb239-2" tabindex="-1"></a><span class="fu">naiveBayes</span>(class<span class="sc">~</span>r,<span class="at">data=</span>df)</span></code></pre></div>
 <pre><code>## 
 ## Naive Bayes Classifier for Discrete Predictors
 ## 
@@ -3021,12 +3173,12 @@ stars and quasars, utilizing functions from <code>R</code>’s <code>e1071</code
 It then shows the estimated distributions of <code>r</code> values
 for quasars (a normal with estimated mean 19.358 and standard
 deviation 0.828) and stars (mean 17.964 and standard deviation 1.365).
-See Figure <a href="the-binomial-and-related-distributions.html#fig:nbplot">3.14</a>.</p>
+See Figure <a href="the-binomial-and-related-distributions.html#fig:nbplot">3.15</a>.</p>
 </blockquote>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:nbplot"></span>
 <img src="_main_files/figure-html/nbplot-1.png" alt="\label{fig:nbplot}An illustration of the Naive Bayes regression model, as applied to the star-quasar dataset. The red curve is the estimated normal probability density function for stars, while the green curve is the estimated pdf for quasars. Because the two classes in this example are balanced, we can state that where the amplitude of the red curve is higher, the predicted class would be STAR; otherwise, it would be QUASAR." width="50%" />
 <p class="caption">
-Figure 3.14: An illustration of the Naive Bayes regression model, as applied to the star-quasar dataset. The red curve is the estimated normal probability density function for stars, while the green curve is the estimated pdf for quasars. Because the two classes in this example are balanced, we can state that where the amplitude of the red curve is higher, the predicted class would be STAR; otherwise, it would be QUASAR.
+Figure 3.15: An illustration of the Naive Bayes regression model, as applied to the star-quasar dataset. The red curve is the estimated normal probability density function for stars, while the green curve is the estimated pdf for quasars. Because the two classes in this example are balanced, we can state that where the amplitude of the red curve is higher, the predicted class would be STAR; otherwise, it would be QUASAR.
 </p>
 </div>
 </div>
@@ -3043,7 +3195,7 @@ where <span class="math inline">\(x \in [0,1]\)</span>, <span class="math inline
 <span class="math display">\[
 B(\alpha,\beta) = \int_0^1 x^{\alpha-1}(1-x)^{\beta-1} dx = \frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha+\beta)} \,.
 \]</span>
-(See Figure <a href="the-binomial-and-related-distributions.html#fig:betapdf">3.15</a>.)
+(See Figure <a href="the-binomial-and-related-distributions.html#fig:betapdf">3.16</a>.)
 We have seen the gamma function, <span class="math inline">\(\Gamma(\alpha)\)</span>, before; it is defined as
 <span class="math display">\[
 \Gamma(\alpha) = \int_0^\infty x^{\alpha-1} e^{-x} dx \,.
@@ -3097,7 +3249,7 @@ then the likelihood function <span class="math inline">\(\mathcal{L}(p \vert k,x
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:betapdf"></span>
 <img src="_main_files/figure-html/betapdf-1.png" alt="\label{fig:betapdf}Three examples of beta probability density functions: Beta(2,2) (solid red line), Beta(4,2) (dashed green line), and Beta(2,3) (dotted blue line)." width="50%" />
 <p class="caption">
-Figure 3.15: Three examples of beta probability density functions: Beta(2,2) (solid red line), Beta(4,2) (dashed green line), and Beta(2,3) (dotted blue line).
+Figure 3.16: Three examples of beta probability density functions: Beta(2,2) (solid red line), Beta(4,2) (dashed green line), and Beta(2,3) (dotted blue line).
 </p>
 </div>
 <hr />
@@ -3166,12 +3318,12 @@ so <span class="math inline">\(\tilde{X} \sim\)</span> Beta<span class="math inl
 <p>(In fact, we can go further and state a more general result:
 <span class="math inline">\(X_{(j)} \sim\)</span> Beta(<span class="math inline">\(j,n-j+1\)</span>): <em>all</em> the order statistics for data
 drawn from a Uniform(0,1) distribution are beta-distributed random variables!
-See Figure <a href="the-binomial-and-related-distributions.html#fig:betaunif">3.16</a>.)</p>
+See Figure <a href="the-binomial-and-related-distributions.html#fig:betaunif">3.17</a>.)</p>
 </blockquote>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:betaunif"></span>
 <img src="_main_files/figure-html/betaunif-1.png" alt="\label{fig:betaunif}The order statistic probability density functions $f_{(j)}(x)$ for, from left to right, $j = 1$ through $j = 5$, for the situation in which $n = 5$ iid data are drawn from a Uniform(0,1) distribution (overlaid in red). Each pdf is itself a beta distribution, with parameter values $j$ and $n-j+1$." width="50%" />
 <p class="caption">
-Figure 3.16: The order statistic probability density functions <span class="math inline">\(f_{(j)}(x)\)</span> for, from left to right, <span class="math inline">\(j = 1\)</span> through <span class="math inline">\(j = 5\)</span>, for the situation in which <span class="math inline">\(n = 5\)</span> iid data are drawn from a Uniform(0,1) distribution (overlaid in red). Each pdf is itself a beta distribution, with parameter values <span class="math inline">\(j\)</span> and <span class="math inline">\(n-j+1\)</span>.
+Figure 3.17: The order statistic probability density functions <span class="math inline">\(f_{(j)}(x)\)</span> for, from left to right, <span class="math inline">\(j = 1\)</span> through <span class="math inline">\(j = 5\)</span>, for the situation in which <span class="math inline">\(n = 5\)</span> iid data are drawn from a Uniform(0,1) distribution (overlaid in red). Each pdf is itself a beta distribution, with parameter values <span class="math inline">\(j\)</span> and <span class="math inline">\(n-j+1\)</span>.
 </p>
 </div>
 <!--
@@ -3453,12 +3605,12 @@ The number of degrees of freedom is <span class="math inline">\(m-1 = 3\)</span>
 is <span class="math inline">\(F_{W}^{-1}(1-\alpha)\)</span> = <code>qchisq(0.95,3)</code> = 7.815. Since 5.04 <span class="math inline">\(&lt;\)</span> 7.815, we
 fail to reject the null hypothesis that the animals are distributed uniformly as
 a function of azimuthal angle. (The <span class="math inline">\(p\)</span>-value is <code>1-pchisq(5.04,3)</code> = 0.169.)
-See Figure <a href="the-binomial-and-related-distributions.html#fig:chi2gof">3.17</a>.</p>
+See Figure <a href="the-binomial-and-related-distributions.html#fig:chi2gof">3.18</a>.</p>
 </blockquote>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:chi2gof"></span>
 <img src="_main_files/figure-html/chi2gof-1.png" alt="\label{fig:chi2gof}An illustration of the sampling distribution and rejection region for the chi-square goodness-of-fit test. Here, the number of degrees of freedom is 3, so the rejection region are values of chi-square above 7.815. The observed test statistic is 5.04, which lies outside the rejection region, hence we fail to reject the null hypothesis." width="50%" />
 <p class="caption">
-Figure 3.17: An illustration of the sampling distribution and rejection region for the chi-square goodness-of-fit test. Here, the number of degrees of freedom is 3, so the rejection region are values of chi-square above 7.815. The observed test statistic is 5.04, which lies outside the rejection region, hence we fail to reject the null hypothesis.
+Figure 3.18: An illustration of the sampling distribution and rejection region for the chi-square goodness-of-fit test. Here, the number of degrees of freedom is 3, so the rejection region are values of chi-square above 7.815. The observed test statistic is 5.04, which lies outside the rejection region, hence we fail to reject the null hypothesis.
 </p>
 </div>
 <hr />
@@ -3475,18 +3627,18 @@ we <em>can</em> estimate the <span class="math inline">\(p\)</span>-value for th
 via simulation. Will we achieve a result very different from that above,
 <span class="math inline">\(p = 0.169\)</span>?</p>
 </blockquote>
-<div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb235-1"><a href="the-binomial-and-related-distributions.html#cb235-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
-<span id="cb235-2"><a href="the-binomial-and-related-distributions.html#cb235-2" tabindex="-1"></a>O <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">28</span>,<span class="dv">32</span>,<span class="dv">17</span>,<span class="dv">23</span>)</span>
-<span id="cb235-3"><a href="the-binomial-and-related-distributions.html#cb235-3" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>,<span class="dv">4</span>)</span>
-<span id="cb235-4"><a href="the-binomial-and-related-distributions.html#cb235-4" tabindex="-1"></a></span>
-<span id="cb235-5"><a href="the-binomial-and-related-distributions.html#cb235-5" tabindex="-1"></a>num.sim <span class="ot">&lt;-</span> <span class="dv">100000</span></span>
-<span id="cb235-6"><a href="the-binomial-and-related-distributions.html#cb235-6" tabindex="-1"></a>k       <span class="ot">&lt;-</span> <span class="fu">sum</span>(O)</span>
-<span id="cb235-7"><a href="the-binomial-and-related-distributions.html#cb235-7" tabindex="-1"></a>m       <span class="ot">&lt;-</span> <span class="fu">length</span>(O)</span>
-<span id="cb235-8"><a href="the-binomial-and-related-distributions.html#cb235-8" tabindex="-1"></a>pmf.obs <span class="ot">&lt;-</span> <span class="fu">dmultinom</span>(O,<span class="at">prob=</span>p)    <span class="co"># the observed multinomial pmf</span></span>
-<span id="cb235-9"><a href="the-binomial-and-related-distributions.html#cb235-9" tabindex="-1"></a>X       <span class="ot">&lt;-</span> <span class="fu">rmultinom</span>(num.sim,k,p) <span class="co"># generates an m x num.sim matrix</span></span>
-<span id="cb235-10"><a href="the-binomial-and-related-distributions.html#cb235-10" tabindex="-1"></a>                                  <span class="co"># (m determined as the length of p)</span></span>
-<span id="cb235-11"><a href="the-binomial-and-related-distributions.html#cb235-11" tabindex="-1"></a>pmf     <span class="ot">&lt;-</span> <span class="fu">apply</span>(X,<span class="dv">2</span>,<span class="cf">function</span>(x){<span class="fu">dmultinom</span>(x,<span class="at">prob=</span>p)}) <span class="co"># simulated pmf&#39;s</span></span>
-<span id="cb235-12"><a href="the-binomial-and-related-distributions.html#cb235-12" tabindex="-1"></a><span class="fu">sum</span>(pmf<span class="sc">&lt;</span>pmf.obs)<span class="sc">/</span>num.sim </span></code></pre></div>
+<div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="the-binomial-and-related-distributions.html#cb241-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
+<span id="cb241-2"><a href="the-binomial-and-related-distributions.html#cb241-2" tabindex="-1"></a>O <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">28</span>,<span class="dv">32</span>,<span class="dv">17</span>,<span class="dv">23</span>)</span>
+<span id="cb241-3"><a href="the-binomial-and-related-distributions.html#cb241-3" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>,<span class="dv">4</span>)</span>
+<span id="cb241-4"><a href="the-binomial-and-related-distributions.html#cb241-4" tabindex="-1"></a></span>
+<span id="cb241-5"><a href="the-binomial-and-related-distributions.html#cb241-5" tabindex="-1"></a>num.sim <span class="ot">&lt;-</span> <span class="dv">100000</span></span>
+<span id="cb241-6"><a href="the-binomial-and-related-distributions.html#cb241-6" tabindex="-1"></a>k       <span class="ot">&lt;-</span> <span class="fu">sum</span>(O)</span>
+<span id="cb241-7"><a href="the-binomial-and-related-distributions.html#cb241-7" tabindex="-1"></a>m       <span class="ot">&lt;-</span> <span class="fu">length</span>(O)</span>
+<span id="cb241-8"><a href="the-binomial-and-related-distributions.html#cb241-8" tabindex="-1"></a>pmf.obs <span class="ot">&lt;-</span> <span class="fu">dmultinom</span>(O,<span class="at">prob=</span>p)    <span class="co"># the observed multinomial pmf</span></span>
+<span id="cb241-9"><a href="the-binomial-and-related-distributions.html#cb241-9" tabindex="-1"></a>X       <span class="ot">&lt;-</span> <span class="fu">rmultinom</span>(num.sim,k,p) <span class="co"># generates an m x num.sim matrix</span></span>
+<span id="cb241-10"><a href="the-binomial-and-related-distributions.html#cb241-10" tabindex="-1"></a>                                  <span class="co"># (m determined as the length of p)</span></span>
+<span id="cb241-11"><a href="the-binomial-and-related-distributions.html#cb241-11" tabindex="-1"></a>pmf     <span class="ot">&lt;-</span> <span class="fu">apply</span>(X,<span class="dv">2</span>,<span class="cf">function</span>(x){<span class="fu">dmultinom</span>(x,<span class="at">prob=</span>p)}) <span class="co"># simulated pmf&#39;s</span></span>
+<span id="cb241-12"><a href="the-binomial-and-related-distributions.html#cb241-12" tabindex="-1"></a><span class="fu">sum</span>(pmf<span class="sc">&lt;</span>pmf.obs)<span class="sc">/</span>num.sim </span></code></pre></div>
 <pre><code>## [1] 0.15974</code></pre>
 <blockquote>
 <p>What does <code>apply()</code> do? It applies the function given as
@@ -3630,31 +3782,31 @@ assuming <span class="math inline">\(\alpha = 0.05\)</span>.</p>
 <p>We can already see that working with the numbers directly is tedious. Can we make
 a matrix of such numbers using <code>R</code>?</p>
 </blockquote>
-<div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb237-1"><a href="the-binomial-and-related-distributions.html#cb237-1" tabindex="-1"></a>r <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">57</span>,<span class="dv">43</span>)</span>
-<span id="cb237-2"><a href="the-binomial-and-related-distributions.html#cb237-2" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">28</span>,<span class="dv">32</span>,<span class="dv">17</span>,<span class="dv">23</span>)</span>
-<span id="cb237-3"><a href="the-binomial-and-related-distributions.html#cb237-3" tabindex="-1"></a>E <span class="ot">&lt;-</span> (r <span class="sc">%*%</span> <span class="fu">t</span>(c))<span class="sc">/</span><span class="fu">sum</span>(r)  <span class="co"># multiply r and the transpose of c </span></span>
-<span id="cb237-4"><a href="the-binomial-and-related-distributions.html#cb237-4" tabindex="-1"></a><span class="fu">print</span>(E)                  <span class="co"># much better</span></span></code></pre></div>
+<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="the-binomial-and-related-distributions.html#cb243-1" tabindex="-1"></a>r <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">57</span>,<span class="dv">43</span>)</span>
+<span id="cb243-2"><a href="the-binomial-and-related-distributions.html#cb243-2" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">28</span>,<span class="dv">32</span>,<span class="dv">17</span>,<span class="dv">23</span>)</span>
+<span id="cb243-3"><a href="the-binomial-and-related-distributions.html#cb243-3" tabindex="-1"></a>E <span class="ot">&lt;-</span> (r <span class="sc">%*%</span> <span class="fu">t</span>(c))<span class="sc">/</span><span class="fu">sum</span>(r)  <span class="co"># multiply r and the transpose of c </span></span>
+<span id="cb243-4"><a href="the-binomial-and-related-distributions.html#cb243-4" tabindex="-1"></a><span class="fu">print</span>(E)                  <span class="co"># much better</span></span></code></pre></div>
 <pre><code>##       [,1]  [,2] [,3]  [,4]
 ## [1,] 15.96 18.24 9.69 13.11
 ## [2,] 12.04 13.76 7.31  9.89</code></pre>
 <blockquote>
 <p>If we wish to continue using <code>R</code>, we need to define a matrix of observed data values:</p>
 </blockquote>
-<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="the-binomial-and-related-distributions.html#cb239-1" tabindex="-1"></a>O <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">20</span>,<span class="dv">8</span>,<span class="dv">18</span>,<span class="dv">14</span>,<span class="dv">5</span>,<span class="dv">12</span>,<span class="dv">14</span>,<span class="dv">9</span>),<span class="at">nrow=</span><span class="dv">2</span>) <span class="co"># fills in column-by-column</span></span>
-<span id="cb239-2"><a href="the-binomial-and-related-distributions.html#cb239-2" tabindex="-1"></a><span class="fu">print</span>(O)</span></code></pre></div>
+<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb245-1"><a href="the-binomial-and-related-distributions.html#cb245-1" tabindex="-1"></a>O <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">20</span>,<span class="dv">8</span>,<span class="dv">18</span>,<span class="dv">14</span>,<span class="dv">5</span>,<span class="dv">12</span>,<span class="dv">14</span>,<span class="dv">9</span>),<span class="at">nrow=</span><span class="dv">2</span>) <span class="co"># fills in column-by-column</span></span>
+<span id="cb245-2"><a href="the-binomial-and-related-distributions.html#cb245-2" tabindex="-1"></a><span class="fu">print</span>(O)</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4]
 ## [1,]   20   18    5   14
 ## [2,]    8   14   12    9</code></pre>
 <blockquote>
 <p>Now we have what we need. The test statistic is</p>
 </blockquote>
-<div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="the-binomial-and-related-distributions.html#cb241-1" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">sum</span>( (O<span class="sc">-</span>E)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>E ),<span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="the-binomial-and-related-distributions.html#cb247-1" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">sum</span>( (O<span class="sc">-</span>E)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>E ),<span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## [1] 7.805</code></pre>
 <blockquote>
 <p>and the number of degrees of freedom is <span class="math inline">\((r-1)(c-1) = 1 \cdot 3 = 3\)</span>, so the
 rejection region boundary is</p>
 </blockquote>
-<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="the-binomial-and-related-distributions.html#cb243-1" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">qchisq</span>(<span class="fl">0.95</span>,<span class="dv">3</span>),<span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="the-binomial-and-related-distributions.html#cb249-1" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">qchisq</span>(<span class="fl">0.95</span>,<span class="dv">3</span>),<span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## [1] 7.815</code></pre>
 <blockquote>
 <p>We find that if <span class="math inline">\(\alpha = 0.05\)</span>, we <em>cannot</em> reject the null hypothesis. We might be
@@ -3668,8 +3820,8 @@ us to gather more data!</p>
 </blockquote>
 </div>
 </div>
-<div id="exercises" class="section level2 hasAnchor" number="3.14">
-<h2><span class="header-section-number">3.14</span> Exercises<a href="the-binomial-and-related-distributions.html#exercises" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="exercises-1" class="section level2 hasAnchor" number="3.14">
+<h2><span class="header-section-number">3.14</span> Exercises<a href="the-binomial-and-related-distributions.html#exercises-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
 <li><p>Let <span class="math inline">\(X_1,...,X_n\)</span> be <span class="math inline">\(n\)</span> data drawn from a <span class="math inline">\(\mathcal{N}(2,4)\)</span> distribution. Write down the probability that exactly <span class="math inline">\(m\)</span> of the <span class="math inline">\(n\)</span> data have values <span class="math inline">\(&gt; 2\)</span>.</p></li>
 <li><p>You are a habitual buyer of raffle tickets. Each ticket costs $1, and each time you buy a ticket, you have a 40% chance of having a winning ticket, for which you will receive $3. You decide to keep buying tickets until you win for the first time. Let the random variable <span class="math inline">\(F\)</span> denote the total number of <em>losing</em> tickets that you buy, and let <span class="math inline">\(W\)</span> denote the total amount of money you win (or lose!). (a) <span class="math inline">\(F\)</span> is sampled from what distribution that has what parameter value(s)? (b) What is the probability that you will end up making money, i.e., what is <span class="math inline">\(P(W &gt; 0)\)</span>? (c) Let’s say instead of buying until you win, you decide you will buy exactly two tickets, then stop. What is the probability of buying a winning ticket exactly once, given that you buy at least one winning ticket?</p></li>
@@ -3861,42 +4013,42 @@ where <span class="math inline">\(x \in [0,1]\)</span> and <span class="math inl
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": null,
-"text": null
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": null,
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>
