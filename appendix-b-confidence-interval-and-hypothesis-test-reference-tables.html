@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Modern Probability and Statistical Inference</title>
-  <meta name="description" content="Modern Probability and Statistical Inference" />
+  <title>Appendix B: Confidence Interval and Hypothesis Test Reference Tables | Modern Probability and Statistical Inference</title>
+  <meta name="description" content="Appendix B: Confidence Interval and Hypothesis Test Reference Tables | Modern Probability and Statistical Inference" />
   <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Modern Probability and Statistical Inference" />
+  <meta property="og:title" content="Appendix B: Confidence Interval and Hypothesis Test Reference Tables | Modern Probability and Statistical Inference" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Modern Probability and Statistical Inference" />
+  <meta name="twitter:title" content="Appendix B: Confidence Interval and Hypothesis Test Reference Tables | Modern Probability and Statistical Inference" />
   
   
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="acknowledgements.html"/>
+<link rel="prev" href="appendix-a-table-of-symbols.html"/>
+<link rel="next" href="bibliography.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -580,75 +580,207 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Modern Probability and Statistical Inference</h1>
-<h2 class="subtitle"><em>Illustrated with R</em></h2>
-<p class="author"><em>Peter E. Freeman (Department of Statistics &amp; Data Science, Carnegie Mellon University)</em></p>
-<p class="date"><em>January 2025</em></p>
-</div>
-<div id="preface" class="section level1 unnumbered hasAnchor">
-<h1>Preface<a href="preface.html#preface" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>I have developed this textbook for a new mathematical statistics
-course sequence for statistics students at Carnegie Mellon University
-(numbered 36-235 and 36-236), first piloted in Fall 2022 and Spring 2023.
-<em>The primary difference between it and others that are commonly
-used in math-stat classes is that I explicitly implement a</em>
-<strong>spiral-learning</strong> <em>framework, with concepts
-that are usually covered in relative isolation elsewhere being
-repeatedly covered here (such as, e.g., point estimation).</em></p>
-<p>My use of a spiral-learning framework is motivated by
-the observation that many students fixate on
-mathematics and coding and pay less attention to statistical concepts, with
-the details of concepts that are seen once often quickly forgotten.
-The spiral approach is meant to result in enhanced conceptual retention.</p>
-<p>To build the spiral structure, I have rather radically revised the
-order in which I cover topics, relative to the order one usually sees
-in a classic math-stat textbook.
-That textbook might have one chapter that illustrates the
-properties of discrete probability distributions using, e.g.,
-the binomial, geometric, and Poisson
-distributions, then a second chapter that illustrates the
-properties of continuous distributions such as, e.g., the normal and gamma
-distributions, with neither chapter showing how these distributions are
-applied in statistical inference.
-Here, major distributions are broken out into their own
-chapters, and within each I revisit fundamental concepts: probability mass
-and density functions, cumulative distribution functions, statistics,
-sampling distibutions, point estimation, interval estimation, and
-hypothesis testing, etc.
-Then, as I move from chapter to chapter, I cover concepts at greater depth.
-As a concrete example: when discussing point estimation
-in Chapter 1, I introduce the concepts of bias, variance,
-and using the likelihood function to define estimators; when I return to
-point estimation in Chapter 2, I review these concepts (and derive the
-MLEs for normal distribution parameters), then add the concepts of
-consistency, Fisher information, the Cramer-Rao lower bound,
-and the asymptotic distribution of maximum likelihood estimates.
-Then in Chapter 3, I add in sufficient statistics and likelihood factorization,
-along with the minimum variance unbiased estimator. Etc.</p>
-<p>Another important difference between this textbook and older, more
-established math-stat textbooks is that I utilize <code>R</code> for coding
-visualizations, analyses, and simulations. It is expected that this will
-help students understand concepts more readily; it also allows me to
-broaden the “problem space” beyond typically used, analytically
-tractable distributions. (But I note that the newest
-generation of textbooks often employ enhanced computation…so it is
-really the spiral structure that makes this textbook fundamentally different.)</p>
-<p>If you are an instructor, feel free to utilize aspects of this book for
-your own class(es), but please do not share this document without my
-expressed consent. If you have comments or questions (or you want an updated
-version), please send email to the address given below.</p>
-<p>Peter Freeman</p>
-<p><code>pfreeman@cmu.edu</code></p>
-<p>January 2025</p>
+<div id="appendix-b-confidence-interval-and-hypothesis-test-reference-tables" class="section level1 unnumbered hasAnchor">
+<h1>Appendix B: Confidence Interval and Hypothesis Test Reference Tables<a href="appendix-b-confidence-interval-and-hypothesis-test-reference-tables.html#appendix-b-confidence-interval-and-hypothesis-test-reference-tables" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><strong>Confidence Interval</strong></p>
+<table>
+<colgroup>
+<col width="26%" />
+<col width="26%" />
+<col width="23%" />
+<col width="23%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right">Interval</th>
+<th align="right"><span class="math inline">\(E[Y]\)</span> Increases with <span class="math inline">\(\theta\)</span>?</th>
+<th align="center"><span class="math inline">\(q\)</span> for Lower Bound</th>
+<th align="center"><span class="math inline">\(q\)</span> for Upper Bound</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">two-sided</td>
+<td align="right">yes</td>
+<td align="center"><span class="math inline">\(1-\alpha/2\)</span></td>
+<td align="center"><span class="math inline">\(\alpha/2\)</span></td>
+</tr>
+<tr class="even">
+<td align="right"></td>
+<td align="right">no</td>
+<td align="center"><span class="math inline">\(\alpha/2\)</span></td>
+<td align="center"><span class="math inline">\(1-\alpha/2\)</span></td>
+</tr>
+<tr class="odd">
+<td align="right">one-sided lower</td>
+<td align="right">yes</td>
+<td align="center"><span class="math inline">\(1-\alpha\)</span></td>
+<td align="center"><span class="math inline">\(-\)</span></td>
+</tr>
+<tr class="even">
+<td align="right"></td>
+<td align="right">no</td>
+<td align="center"><span class="math inline">\(\alpha\)</span></td>
+<td align="center"><span class="math inline">\(-\)</span></td>
+</tr>
+<tr class="odd">
+<td align="right">one-sided upper</td>
+<td align="right">yes</td>
+<td align="center"><span class="math inline">\(-\)</span></td>
+<td align="center"><span class="math inline">\(\alpha\)</span></td>
+</tr>
+<tr class="even">
+<td align="right"></td>
+<td align="right">no</td>
+<td align="center"><span class="math inline">\(-\)</span></td>
+<td align="center"><span class="math inline">\(1-\alpha\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Hypothesis Test: Rejection Region(s)</strong></p>
+<table>
+<colgroup>
+<col width="21%" />
+<col width="21%" />
+<col width="34%" />
+<col width="21%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right">Type</th>
+<th align="right"><span class="math inline">\(E[Y]\)</span> Increases with <span class="math inline">\(\theta\)</span>?</th>
+<th align="center">Rejection Region Boundary</th>
+<th align="center">Reject If…</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">two-tail</td>
+<td align="right">yes</td>
+<td align="center"><span class="math inline">\(y_{\rm RR,lo} = F_Y^{-1}(\alpha/2 \vert \theta_o)\)</span></td>
+<td align="center"><span class="math inline">\(y_{\rm obs} &lt; y_{\rm RR,lo}\)</span></td>
+</tr>
+<tr class="even">
+<td align="right"></td>
+<td align="right"></td>
+<td align="center"><span class="math inline">\(y_{\rm RR,hi} = F_Y^{-1}(1-\alpha/2 \vert \theta_o)\)</span></td>
+<td align="center"><span class="math inline">\(y_{\rm obs} &gt; y_{\rm RR,hi}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="right"></td>
+<td align="right">no</td>
+<td align="center"><span class="math inline">\(y_{\rm RR,lo} = F_Y^{-1}(1-\alpha/2 \vert \theta_o)\)</span></td>
+<td align="center"><span class="math inline">\(y_{\rm obs} &lt; y_{\rm RR,lo}\)</span></td>
+</tr>
+<tr class="even">
+<td align="right"></td>
+<td align="right"></td>
+<td align="center"><span class="math inline">\(y_{\rm RR,hi} = F_Y^{-1}(\alpha/2 \vert \theta_o)\)</span></td>
+<td align="center"><span class="math inline">\(y_{\rm obs} &gt; y_{\rm RR,hi}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="right">lower-tail</td>
+<td align="right">yes</td>
+<td align="center"><span class="math inline">\(y_{\rm RR} = F_Y^{-1}(\alpha \vert \theta_o)\)</span></td>
+<td align="center"><span class="math inline">\(y_{\rm obs} &lt; y_{\rm RR}\)</span></td>
+</tr>
+<tr class="even">
+<td align="right"></td>
+<td align="right">no</td>
+<td align="center"><span class="math inline">\(y_{\rm RR} = F_Y^{-1}(1-\alpha \vert \theta_o)\)</span></td>
+<td align="center"><span class="math inline">\(y_{\rm obs} &gt; y_{\rm RR}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="right">upper-tail</td>
+<td align="right">yes</td>
+<td align="center"><span class="math inline">\(y_{\rm RR} = F_Y^{-1}(1-\alpha \vert \theta_o)\)</span></td>
+<td align="center"><span class="math inline">\(y_{\rm obs} &gt; y_{\rm RR}\)</span></td>
+</tr>
+<tr class="even">
+<td align="right"></td>
+<td align="right">no</td>
+<td align="center"><span class="math inline">\(y_{\rm RR} = F_Y^{-1}(\alpha \vert \theta_o)\)</span></td>
+<td align="center"><span class="math inline">\(y_{\rm obs} &lt; y_{\rm RR}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Hypothesis Test: p-Value and Power</strong></p>
+<table>
+<colgroup>
+<col width="21%" />
+<col width="21%" />
+<col width="34%" />
+<col width="21%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right">Type</th>
+<th align="right"><span class="math inline">\(E[Y]\)</span> Increases with <span class="math inline">\(\theta\)</span>?</th>
+<th align="center"><span class="math inline">\(p\)</span>-Value</th>
+<th align="center">Test Power</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">two-tail</td>
+<td align="right">yes</td>
+<td align="center">2 <span class="math inline">\(\times\)</span> min[<span class="math inline">\(F_Y(y_{\rm obs} \vert \theta_o)\)</span>,</td>
+<td align="center"><span class="math inline">\(F_Y(y_{\rm RR,lo} \vert \theta)\)</span> +</td>
+</tr>
+<tr class="even">
+<td align="right"></td>
+<td align="right"></td>
+<td align="center"><span class="math inline">\(1-F_Y(y_{\rm obs} \vert \theta_o)\)</span>]</td>
+<td align="center"><span class="math inline">\(1 - F_Y(y_{\rm RR,hi} \vert \theta)\)</span></td>
+</tr>
+<tr class="odd">
+<td align="right"></td>
+<td align="right">no</td>
+<td align="center">same as above</td>
+<td align="center">same as above</td>
+</tr>
+<tr class="even">
+<td align="right"></td>
+<td align="right"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="right">lower-tail</td>
+<td align="right">yes</td>
+<td align="center"><span class="math inline">\(F_Y(y_{\rm obs} \vert \theta_o)\)</span></td>
+<td align="center"><span class="math inline">\(F_Y(y_{\rm RR} \vert \theta)\)</span></td>
+</tr>
+<tr class="even">
+<td align="right"></td>
+<td align="right">no</td>
+<td align="center"><span class="math inline">\(1-F_Y(y_{\rm obs} \vert \theta_o)\)</span></td>
+<td align="center"><span class="math inline">\(1-F_Y(y_{\rm RR} \vert \theta)\)</span></td>
+</tr>
+<tr class="odd">
+<td align="right">upper-tail</td>
+<td align="right">yes</td>
+<td align="center"><span class="math inline">\(1-F_Y(y_{\rm obs} \vert \theta_o)\)</span></td>
+<td align="center"><span class="math inline">\(1-F_Y(y_{\rm RR} \vert \theta)\)</span></td>
+</tr>
+<tr class="even">
+<td align="right"></td>
+<td align="right">no</td>
+<td align="center"><span class="math inline">\(F_Y(y_{\rm obs} \vert \theta_o)\)</span></td>
+<td align="center"><span class="math inline">\(F_Y(y_{\rm RR} \vert \theta)\)</span></td>
+</tr>
+</tbody>
+</table>
+
+<div style="page-break-after: always;"></div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="acknowledgements.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="appendix-a-table-of-symbols.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="bibliography.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
