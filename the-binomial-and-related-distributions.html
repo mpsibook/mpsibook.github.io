@@ -393,11 +393,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.11.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-expected-value-of-a-beta-random-variable"><i class="fa fa-check"></i><b>3.11.1</b> The Expected Value of a Beta Random Variable</a></li>
 <li class="chapter" data-level="3.11.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-sample-median-of-a-uniform01-distribution"><i class="fa fa-check"></i><b>3.11.2</b> The Sample Median of a Uniform(0,1) Distribution</a></li>
 </ul></li>
-<li class="chapter" data-level="3.12" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-multinomial-distribution"><i class="fa fa-check"></i><b>3.12</b> The Multinomial Distribution</a></li>
+<li class="chapter" data-level="3.12" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-multinomial-distribution"><i class="fa fa-check"></i><b>3.12</b> The Multinomial Distribution</a>
+<ul>
+<li class="chapter" data-level="3.12.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#performing-a-multinomial-test"><i class="fa fa-check"></i><b>3.12.1</b> Performing a Multinomial Test</a></li>
+</ul></li>
 <li class="chapter" data-level="3.13" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#chi-square-based-hypothesis-testing"><i class="fa fa-check"></i><b>3.13</b> Chi-Square-Based Hypothesis Testing</a>
 <ul>
 <li class="chapter" data-level="3.13.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#chi-square-goodness-of-fit-test"><i class="fa fa-check"></i><b>3.13.1</b> Chi-Square Goodness of Fit Test</a></li>
-<li class="chapter" data-level="3.13.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#simulating-an-exact-multinomial-test"><i class="fa fa-check"></i><b>3.13.2</b> Simulating an Exact Multinomial Test</a></li>
+<li class="chapter" data-level="3.13.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-average-p-value-difference-between-the-multinomial-and-chi-square-gof-tests"><i class="fa fa-check"></i><b>3.13.2</b> The Average p-Value Difference Between the Multinomial and Chi-Square GoF Tests</a></li>
 <li class="chapter" data-level="3.13.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#chi-square-test-of-independence"><i class="fa fa-check"></i><b>3.13.3</b> Chi-Square Test of Independence</a></li>
 </ul></li>
 <li class="chapter" data-level="3.14" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#exercises-2"><i class="fa fa-check"></i><b>3.14</b> Exercises</a></li>
@@ -3790,20 +3793,34 @@ the concept of covariance in Chapter 6.)
 This also makes intuitive sense: given that the number of trials <span class="math inline">\(k\)</span> is
 fixed, observing more data that achieve one outcome will usually mean
 we will observe fewer data achieving any other given outcome.</p>
-</div>
-<div id="chi-square-based-hypothesis-testing" class="section level2 hasAnchor" number="3.13">
-<h2><span class="header-section-number">3.13</span> Chi-Square-Based Hypothesis Testing<a href="the-binomial-and-related-distributions.html#chi-square-based-hypothesis-testing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<hr />
+<p>For our immediate purposes, the context in which we work with the
+multinomial distribution is hypothesis testing.</p>
+<p>A single multinomial experiment yields a single data vector
+<span class="math inline">\(\mathbf{X} = \{X_1,\ldots,X_m\}\)</span>. This vector is trivially
+a sufficient statistic
+for the vector of probabilities <span class="math inline">\(\mathbf{p} = \{p_1,\ldots,p_m\}\)</span>, and
+the probability mass function of the sampling distribution for this
+statistic is simply the multinomial pmf given above. Because we are dealing
+with a multivariate distribution, we cannot easily determine hypothesis test
+<span class="math inline">\(p\)</span>-values by hand; rather, we fall back on the definition that a <span class="math inline">\(p\)</span>-value
+is the probability of observing the statistic value we see or a value
+that is more extreme, and state that the <span class="math inline">\(p\)</span>-value for a multinomial
+test is the probability that
+a data vector simulated under the null hypothesis
+has a pmf value that is smaller than the observed pmf value.
+Estimating the <span class="math inline">\(p\)</span>-value for a multinomial test is easily done, as we
+show in the example below.</p>
+<hr />
+<div id="performing-a-multinomial-test" class="section level3 hasAnchor" number="3.12.1">
+<h3><span class="header-section-number">3.12.1</span> Performing a Multinomial Test<a href="the-binomial-and-related-distributions.html#performing-a-multinomial-test" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<blockquote>
 <p>Imagine that we are scientists, sitting on a platform in the middle of a plain.
 We are recording the number of animals of a particular species that we see, and
 the azimuthal angle for each one. (An azimuthal angle is, e.g.,
 <span class="math inline">\(0^\circ\)</span> when looking directly north, and 90<span class="math inline">\(^\circ\)</span>, 180<span class="math inline">\(^\circ\)</span>, and
-270<span class="math inline">\(^\circ\)</span> as we look east, south, and west, etc.)
-The question we want to answer is, are the animals uniformly distributed as a function
-of angle?</p>
-<p>There is no unique way to answer this question. However, a very common approach is
-to bin the data and use a <em>chi-square goodness-of-fit test</em>. Let’s
-assume we’ve observed 100 animals and that we record the numbers seen in each of
-four quadrants:</p>
+270<span class="math inline">\(^\circ\)</span> as we look east, south, and west, etc.) The data we observe are</p>
+</blockquote>
 <table>
 <colgroup>
 <col width="35%" />
@@ -3831,44 +3848,95 @@ four quadrants:</p>
 </tr>
 </tbody>
 </table>
-<p>There is nothing “special” about the choice of four quadrants<span class="math inline">\(-\)</span>we could have
-chosen eight, etc.<span class="math inline">\(-\)</span>but as we’ll see below, the chi-square GoF test is an
-“approximate” test and its results become more precise as the numbers of data in each
-bin get larger. So there is a tradeoff if we increase the number of quadrants: we might
-be able to detect smaller-scale non-uniformities, but are test results will become less
-precise.</p>
-<p>To perform a chi-square GoF test with these data, we first specify are null and
-alternative hypotheses:
-<span class="math display">\[
-H_o : p_1 = p_{1,o},\cdots,p_m = p_{m,o} ~~ vs. ~~ H_a : \mbox{at least two of the probabilities differ} \,,
-\]</span>
-where <span class="math inline">\(p_{i,o}\)</span> is the null hypothesis proportion in bin <span class="math inline">\(i\)</span>.
-Here, <span class="math inline">\(k = 100\)</span>, <span class="math inline">\(m = 4\)</span>, and
-<span class="math inline">\(p_{1,o} = p_{2,o} = p_{3,o} = p_{4,o} = 0.25\)</span>…we expect, under
-the null, to see 25 animals in each quadrant.</p>
-<p>The null hypothesis is that the data are
-<em>multinomially distributed</em> with specified proportions being expected in each of
-the <span class="math inline">\(m\)</span> defined bins.
-As we might imagine, performing a hypothesis test of the form given above
-that utilizes the multinomial distribution
-would be difficult to do by hand; multinomial distributions are intrinsically
-high-dimensional and the data (the numbers of counts in each bin) are not iid.
-In 1900, the statistician
-Karl Pearson proposed a “workaround” for testing
-multinomial hypotheses.
-He noted that as <span class="math inline">\(k \rightarrow \infty\)</span>, multinomial random variables
+<blockquote>
+<p>and the question we wish to
+answer is whether the animals uniformly distributed as a function of angle.</p>
+</blockquote>
+<blockquote>
+<p>To answer this question, we simulate <span class="math inline">\(100{,}000\)</span> data vectors given the
+null hypothesis <span class="math inline">\(H_o : \{p_1 = 0.25, p_2 = 0.25, p_3 = 0.25, p_4 = 0.25\}\)</span>
+and determine the proportion of vectors with multinomial pmf values that
+are smaller than the value we observe:</p>
+</blockquote>
+<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="the-binomial-and-related-distributions.html#cb242-1" tabindex="-1"></a>O       <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">28</span>,<span class="dv">32</span>,<span class="dv">17</span>,<span class="dv">23</span>)</span>
+<span id="cb242-2"><a href="the-binomial-and-related-distributions.html#cb242-2" tabindex="-1"></a>p       <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>,<span class="dv">4</span>)</span>
+<span id="cb242-3"><a href="the-binomial-and-related-distributions.html#cb242-3" tabindex="-1"></a>pmf.obs <span class="ot">&lt;-</span> <span class="fu">dmultinom</span>(O,<span class="at">prob=</span>p)    <span class="co"># the observed multinomial pmf value</span></span>
+<span id="cb242-4"><a href="the-binomial-and-related-distributions.html#cb242-4" tabindex="-1"></a></span>
+<span id="cb242-5"><a href="the-binomial-and-related-distributions.html#cb242-5" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
+<span id="cb242-6"><a href="the-binomial-and-related-distributions.html#cb242-6" tabindex="-1"></a></span>
+<span id="cb242-7"><a href="the-binomial-and-related-distributions.html#cb242-7" tabindex="-1"></a>num.sim <span class="ot">&lt;-</span> <span class="dv">100000</span></span>
+<span id="cb242-8"><a href="the-binomial-and-related-distributions.html#cb242-8" tabindex="-1"></a>k       <span class="ot">&lt;-</span> <span class="fu">sum</span>(O)</span>
+<span id="cb242-9"><a href="the-binomial-and-related-distributions.html#cb242-9" tabindex="-1"></a>m       <span class="ot">&lt;-</span> <span class="fu">length</span>(O)</span>
+<span id="cb242-10"><a href="the-binomial-and-related-distributions.html#cb242-10" tabindex="-1"></a>X       <span class="ot">&lt;-</span> <span class="fu">rmultinom</span>(num.sim,k,p) <span class="co"># generates an m x num.sim matrix</span></span>
+<span id="cb242-11"><a href="the-binomial-and-related-distributions.html#cb242-11" tabindex="-1"></a>                                  <span class="co"># (m determined as the length of p)</span></span>
+<span id="cb242-12"><a href="the-binomial-and-related-distributions.html#cb242-12" tabindex="-1"></a>pmf     <span class="ot">&lt;-</span> <span class="fu">apply</span>(X,<span class="dv">2</span>,<span class="cf">function</span>(x){<span class="fu">dmultinom</span>(x,<span class="at">prob=</span>p)}) <span class="co"># pmf vector</span></span>
+<span id="cb242-13"><a href="the-binomial-and-related-distributions.html#cb242-13" tabindex="-1"></a><span class="fu">sum</span>(pmf<span class="sc">&lt;</span>pmf.obs)<span class="sc">/</span>num.sim</span></code></pre></div>
+<pre><code>## [1] 0.15974</code></pre>
+<blockquote>
+<p>What does <code>apply()</code> do? It calls the function given as
+the third argument (which evaluates the multinomial probability
+mass function given a set of four data <span class="math inline">\(\mathbf{x}\)</span> and a
+a set of four probabilities <span class="math inline">\(\mathbf{p}\)</span>) to each <em>column</em> (hence
+the “2” as the second argument…“1” would denote rows) of the
+matrix <span class="math inline">\(\mathbf{X}\)</span>. It is a convenient function that allows us to
+not have to embed the evaluation of the multinomial pmf into a <code>for</code>
+loop that would iterate over all the rows of the matrix.
+We note that the above computation takes $$1 CPU second on
+a standard desktop/laptop computer.</p>
+</blockquote>
+<blockquote>
+<p>We observe <span class="math inline">\(p = 0.160\)</span>, i.e., approximately <span class="math inline">\(16{,}000\)</span> of the <span class="math inline">\(100{,}000\)</span>
+simulated data vectors have pmf values smaller than what we observe.
+We thus fail to reject the null hypothesis and conclude that it is
+plausible that the animals are distributed uniformly as a function of angle.</p>
+</blockquote>
+<blockquote>
+<p>The multinomial hypothesis test is <em>exact</em>, in the sense that the
+data are distributed according to the multinomial distribution, but because
+we only sample a finite number of data vectors, the <span class="math inline">\(p\)</span>-value is an
+estimate and not an exact value. We can utilize the framework given
+earlier in the chapter for constructing confidence intervals for the
+binomial probability <span class="math inline">\(p\)</span> to ascertain the level of uncertainty in the
+estimated <span class="math inline">\(p\)</span>-value:</p>
+</blockquote>
+<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="the-binomial-and-related-distributions.html#cb244-1" tabindex="-1"></a>y.obs <span class="ot">&lt;-</span> <span class="fu">sum</span>(pmf<span class="sc">&lt;</span>pmf.obs)</span>
+<span id="cb244-2"><a href="the-binomial-and-related-distributions.html#cb244-2" tabindex="-1"></a>f     <span class="ot">&lt;-</span> <span class="cf">function</span>(p,k,y.obs,q)</span>
+<span id="cb244-3"><a href="the-binomial-and-related-distributions.html#cb244-3" tabindex="-1"></a>{</span>
+<span id="cb244-4"><a href="the-binomial-and-related-distributions.html#cb244-4" tabindex="-1"></a>  <span class="fu">pbinom</span>(y.obs,<span class="at">size=</span>k,<span class="at">prob=</span>p) <span class="sc">-</span> q</span>
+<span id="cb244-5"><a href="the-binomial-and-related-distributions.html#cb244-5" tabindex="-1"></a>}</span>
+<span id="cb244-6"><a href="the-binomial-and-related-distributions.html#cb244-6" tabindex="-1"></a><span class="fu">uniroot</span>(f,<span class="at">interval=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="at">k=</span>num.sim,<span class="at">y.obs=</span>y.obs<span class="dv">-1</span>,<span class="at">q=</span><span class="fl">0.975</span>)<span class="sc">$</span>root</span></code></pre></div>
+<pre><code>## [1] 0.1574441</code></pre>
+<div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb246-1"><a href="the-binomial-and-related-distributions.html#cb246-1" tabindex="-1"></a><span class="fu">uniroot</span>(f,<span class="at">interval=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="at">k=</span>num.sim,<span class="at">y.obs=</span>y.obs  ,<span class="at">q=</span><span class="fl">0.025</span>)<span class="sc">$</span>root</span></code></pre></div>
+<pre><code>## [1] 0.1620439</code></pre>
+<blockquote>
+<p>The 95% two-sided confidence interval on the true <span class="math inline">\(p\)</span>-value
+is <span class="math inline">\([0.1574,0.1620]\)</span>.
+To decrease the interval length, we simply increase <code>num.sim</code>,
+with the tradeoff that the computation time becomes that much longer.</p>
+</blockquote>
+</div>
+</div>
+<div id="chi-square-based-hypothesis-testing" class="section level2 hasAnchor" number="3.13">
+<h2><span class="header-section-number">3.13</span> Chi-Square-Based Hypothesis Testing<a href="the-binomial-and-related-distributions.html#chi-square-based-hypothesis-testing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Performing a hypothesis test that utilizes the multinomial
+distribution is impossible to do by hand; multinomial distributions are
+intrinsically high-dimensional and the data (the numbers of counts in each
+bin) are not iid. Thus in the era before computers, statisticians could not
+carry out exact tests. In a paper published in 1900, the statistician
+Karl Pearson noted that as <span class="math inline">\(k \rightarrow \infty\)</span>, multinomial random variables
 converge in distribution to multivariate normal random variables (with the
 latter being something we will discuss in Chapter 6), and that the
 statistic
 <span class="math display">\[
 W = \sum_{i=1}^m \frac{(X_i-E[X_i])^2}{E[X_i]} = \sum_{i=1}^m \frac{(X_i - kp_i)^2}{kp_i}
 \]</span>
-converges in distribution to the chi-square random variable for
+converges in distribution to a chi-square random variable for
 <span class="math inline">\(m-1\)</span> degrees of freedom.
 (We subtract 1 because only <span class="math inline">\(m-1\)</span> of the multinomial
 probabilities can freely vary; the <span class="math inline">\(m^{th}\)</span> one is constrained by
 the fact that the probabilities must sum to 1. This constraint is what
-makes multinomial data <em>not</em> iid.) The computation of <span class="math inline">\(W\)</span> is thus the
+makes multinomial data <em>not</em> iid.)</p>
+<p>The computation of the test statistic <span class="math inline">\(W\)</span> is the
 basis of the <em>chi-square goodness-of-fit test</em>, or chi-square GoF test.
 For this test,</p>
 <ul>
@@ -3877,11 +3945,27 @@ For this test,</p>
 <li>the <span class="math inline">\(p\)</span>-value is <span class="math inline">\(1 - F_{W(m-1)}(w_{\rm obs})\)</span> (e.g., <code>1-pchisq(w.obs,m-1)</code>); and</li>
 <li>by convention, <span class="math inline">\(kp_i\)</span> must be <span class="math inline">\(\geq\)</span> 5 in each bin for the test to yield a valid result.</li>
 </ul>
-<p>This last point underscores the tradeoff between splitting the data over more bins
-and test precision!</p>
-<p>In a chi-square GoF test, the inputs are the observed data and the hypothesized
-proportions. There are variations on this test in which the inputs are tables of
-observed data, ones that differ depending upon how the data are collected:</p>
+<p>At this point, we should state that
+<strong>one should always implement exact multinomial tests rather
+than chi-square GoF tests,</strong> given the choice.
+We are discussing the chi-square GoF test here
+because its use is ubiquitous in statistics and thus every student
+should know what it is and how it is carried out…but not because one should
+actually use it now, in the age of computers.</p>
+<p>One issue that arises when we use the chi-square GoF test is that the
+<span class="math inline">\(p\)</span>-values we compute can be substantially different from those observed
+for multinomial tests. We demonstrate this in an example below, where
+we reanalyze the animal/angle data using the chi-square
+GoF test. In a second example below, we show that for small values of <span class="math inline">\(k\)</span>
+the chi-square GoF test yields <span class="math inline">\(p\)</span>-values that are, on average,
+<em>smaller</em> than those yielded by the exact multinomial test. This means that
+when we perform the chi-square GoF test, the probability of rejecting a
+correct null hypothesis is, on average, actually <span class="math inline">\(\gtrsim \alpha\)</span>, and
+not exactly <span class="math inline">\(\alpha\)</span>.</p>
+<hr />
+<p>There are two variations on the chi-square GoF test for which no
+exact analogues exist, ones in which the inputs are tables of
+observed data. The tests differ depending upon how we collect data:</p>
 <ul>
 <li><em>chi-square test of independence</em>: the question is whether two variables are
 associated with each other in a population; subjects are selected and the
@@ -3911,43 +3995,21 @@ of data in row <span class="math inline">\(i\)</span> and column <span class="ma
 W = \sum_{i=1}^r \sum_{j=1}^c \frac{(X_{ij} - \widehat{E[X_{ij}]})^2}{\widehat{E[X_{ij}]}} \mathrel{\dot\sim} \chi_{(r-1)(c-1)}^2 \,,
 \]</span>
 i.e., the test statistic <span class="math inline">\(W\)</span> is, under the null, assumed to be
-chi-square distributed for <span class="math inline">\((r-1) \times (c-1)\)</span> degrees of freedom.</p>
+chi-square distributed for <span class="math inline">\((r-1) \times (c-1)\)</span> degrees of freedom.
+(Because we do not specify exact probabilities for observing data in
+each table cell under the null, the observed data
+are <em>not</em> sampled according to a multinomial distribution…and, in fact,
+we cannot specify an exact distribution. Hence for testing independence
+and homogeneity given categorical data, the chi-square framework is
+going to be the most appropriate framework for us to use.)</p>
 <hr />
 <div id="chi-square-goodness-of-fit-test" class="section level3 hasAnchor" number="3.13.1">
 <h3><span class="header-section-number">3.13.1</span> Chi-Square Goodness of Fit Test<a href="the-binomial-and-related-distributions.html#chi-square-goodness-of-fit-test" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <blockquote>
-<p>Let’s work with the data presented above at the beginning of this section:</p>
-</blockquote>
-<table>
-<colgroup>
-<col width="35%" />
-<col width="16%" />
-<col width="16%" />
-<col width="16%" />
-<col width="16%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="center">angle range</th>
-<th align="center">0<span class="math inline">\(^\circ\)</span>-90<span class="math inline">\(^\circ\)</span></th>
-<th align="center">90<span class="math inline">\(^\circ\)</span>-180<span class="math inline">\(^\circ\)</span></th>
-<th align="center">180<span class="math inline">\(^\circ\)</span>-270<span class="math inline">\(^\circ\)</span></th>
-<th align="center">270<span class="math inline">\(^\circ\)</span>-360<span class="math inline">\(^\circ\)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center">number of animals</td>
-<td align="center">28</td>
-<td align="center">32</td>
-<td align="center">17</td>
-<td align="center">23</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>As stated above, we expect 25 counts in each bin. Given this expectation, are these
-data plausible, at level <span class="math inline">\(\alpha = 0.05\)</span>?</p>
+<p>Let’s go back to working with our animal/angle data, and determine,
+via the use of the chi-square GoF test, whether it is
+plausible that the number of animals is distributed uniformly as
+a function of angle.</p>
 </blockquote>
 <blockquote>
 <p>We first compute the test statistic:
@@ -3958,7 +4020,7 @@ W &amp;= \sum_{i=1}^m \frac{(X_i - kp_i)^2}{kp_i} = \frac{(28-25)^2}{25} + \frac
 The number of degrees of freedom is <span class="math inline">\(m-1 = 3\)</span>, so the rejection region boundary
 is <span class="math inline">\(F_{W}^{-1}(1-\alpha)\)</span> = <code>qchisq(0.95,3)</code> = 7.815. Since 5.04 <span class="math inline">\(&lt;\)</span> 7.815, we
 fail to reject the null hypothesis that the animals are distributed uniformly as
-a function of azimuthal angle. (The <span class="math inline">\(p\)</span>-value is <code>1-pchisq(5.04,3)</code> = 0.169.)
+a function of azimuthal angle.
 See Figure <a href="the-binomial-and-related-distributions.html#fig:chi2gof">3.18</a>.</p>
 </blockquote>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:chi2gof"></span>
@@ -3967,67 +4029,102 @@ See Figure <a href="the-binomial-and-related-distributions.html#fig:chi2gof">3.1
 Figure 3.18: An illustration of the sampling distribution and rejection region for the chi-square goodness-of-fit test. Here, the number of degrees of freedom is 3, so the rejection region are values of chi-square above 7.815. The observed test statistic is 5.04, which lies outside the rejection region, hence we fail to reject the null hypothesis.
 </p>
 </div>
+<blockquote>
+<p>The observed <span class="math inline">\(p\)</span>-value is <code>1 - pchisq(5.04,3)</code> = 0.169, which is
+5.6% larger than the value observed for the exact
+multinomial test (0.160, with 95% CI <span class="math inline">\([0.1574,0.1620]\)</span> for <span class="math inline">\(100{,}000\)</span>
+simulations). As we will see below, sometimes the <span class="math inline">\(p\)</span>-value is larger and
+sometimes smaller, but on average the <span class="math inline">\(p\)</span>-value observed for the
+chi-square GoF test will be <em>smaller</em> than that observed for the
+multinomial test, at least for small values of <span class="math inline">\(k\)</span>.</p>
+</blockquote>
 <hr />
 </div>
-<div id="simulating-an-exact-multinomial-test" class="section level3 hasAnchor" number="3.13.2">
-<h3><span class="header-section-number">3.13.2</span> Simulating an Exact Multinomial Test<a href="the-binomial-and-related-distributions.html#simulating-an-exact-multinomial-test" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="the-average-p-value-difference-between-the-multinomial-and-chi-square-gof-tests" class="section level3 hasAnchor" number="3.13.2">
+<h3><span class="header-section-number">3.13.2</span> The Average p-Value Difference Between the Multinomial and Chi-Square GoF Tests<a href="the-binomial-and-related-distributions.html#the-average-p-value-difference-between-the-multinomial-and-chi-square-gof-tests" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <blockquote>
-<p>Let’s assume the same data as in the last example. One reason<span class="math inline">\(-\)</span>in fact,
-<em>the</em> reason<span class="math inline">\(-\)</span>why we utilize the chi-square GoF test when analyzing these
-data is that “it has always been done this way.” Stated differently, we
-have historically not worked with the multinomial distribution directly
-because we couldn’t…at least, not until computers came along. But now
-we <em>can</em> estimate the <span class="math inline">\(p\)</span>-value for the hypothesis in the last example
-via simulation. Will we achieve a result very different from that above,
-<span class="math inline">\(p = 0.169\)</span>?</p>
-</blockquote>
-<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="the-binomial-and-related-distributions.html#cb242-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
-<span id="cb242-2"><a href="the-binomial-and-related-distributions.html#cb242-2" tabindex="-1"></a>O <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">28</span>,<span class="dv">32</span>,<span class="dv">17</span>,<span class="dv">23</span>)</span>
-<span id="cb242-3"><a href="the-binomial-and-related-distributions.html#cb242-3" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>,<span class="dv">4</span>)</span>
-<span id="cb242-4"><a href="the-binomial-and-related-distributions.html#cb242-4" tabindex="-1"></a></span>
-<span id="cb242-5"><a href="the-binomial-and-related-distributions.html#cb242-5" tabindex="-1"></a>num.sim <span class="ot">&lt;-</span> <span class="dv">100000</span></span>
-<span id="cb242-6"><a href="the-binomial-and-related-distributions.html#cb242-6" tabindex="-1"></a>k       <span class="ot">&lt;-</span> <span class="fu">sum</span>(O)</span>
-<span id="cb242-7"><a href="the-binomial-and-related-distributions.html#cb242-7" tabindex="-1"></a>m       <span class="ot">&lt;-</span> <span class="fu">length</span>(O)</span>
-<span id="cb242-8"><a href="the-binomial-and-related-distributions.html#cb242-8" tabindex="-1"></a>pmf.obs <span class="ot">&lt;-</span> <span class="fu">dmultinom</span>(O,<span class="at">prob=</span>p)    <span class="co"># the observed multinomial pmf</span></span>
-<span id="cb242-9"><a href="the-binomial-and-related-distributions.html#cb242-9" tabindex="-1"></a>X       <span class="ot">&lt;-</span> <span class="fu">rmultinom</span>(num.sim,k,p) <span class="co"># generates an m x num.sim matrix</span></span>
-<span id="cb242-10"><a href="the-binomial-and-related-distributions.html#cb242-10" tabindex="-1"></a>                                  <span class="co"># (m determined as the length of p)</span></span>
-<span id="cb242-11"><a href="the-binomial-and-related-distributions.html#cb242-11" tabindex="-1"></a>pmf     <span class="ot">&lt;-</span> <span class="fu">apply</span>(X,<span class="dv">2</span>,<span class="cf">function</span>(x){<span class="fu">dmultinom</span>(x,<span class="at">prob=</span>p)}) <span class="co"># simulated pmf&#39;s</span></span>
-<span id="cb242-12"><a href="the-binomial-and-related-distributions.html#cb242-12" tabindex="-1"></a><span class="fu">sum</span>(pmf<span class="sc">&lt;</span>pmf.obs)<span class="sc">/</span>num.sim </span></code></pre></div>
-<pre><code>## [1] 0.15974</code></pre>
-<blockquote>
-<p>What does <code>apply()</code> do? It applies the function given as
-the third argument (which evaluates the multinomial probability
-mass function given a set of four data <span class="math inline">\(\mathbf{x}\)</span> and a
-a set of four probabilities <span class="math inline">\(\mathbf{p}\)</span>) to each <em>column</em> (hence
-the “2” as the second argument…“1” would denote rows) of the
-matrix <span class="math inline">\(\mathbf{X}\)</span>. It is a convenient function that allows us to
-not have to embed the evaluation of the multinomial pmf into a <code>for</code>
-loop that would iterate over all the rows of the matrix.</p>
+<p>Let’s suppose that in an experiment, we toss a six-sided die <span class="math inline">\(k\)</span> times and
+record the result. For instance, we might toss it <span class="math inline">\(k = 10\)</span> times,
+and record the
+data vector <span class="math inline">\(\mathbf{X} = \{2,1,3,1,0,3\}\)</span> (i.e., we observe 1 two times,
+2 one time, etc.). We wish to test the hypothesis that the die is
+fair. On average, what is the difference in the <span class="math inline">\(p\)</span>-value observed when
+utilize the exact multinomial test versus when we utilize the approximate
+chi-square GoF test?</p>
 </blockquote>
 <blockquote>
-<p>We observe <span class="math inline">\(p = 0.160\)</span>. This is close to, but at the same time still
-substantially
-less than, 0.169. In case the reader is to say “but, the computation
-time must be much longer than for the chi-square GoF test,”
-the above computation takes <span class="math inline">\(\sim\)</span> 1 CPU second.
-The chi-square test is definitely important to know, in part because
-testing hypotheses about multinomial probabilities
-“has always been done this way”…but we would argue
-that when a simulation of the exact test is possible, one should
-code that simulation! (And run as many simulations as possible, to
-reduce uncertainty in the final result. Here, we can take our estimated
-<span class="math inline">\(p\)</span>-value of 0.160 and state that our one standard error uncertainty
-is approximately <span class="math inline">\(\sqrt{kp(1-p)}/k = 0.001\)</span>, i.e., we expect the true
-<span class="math inline">\(p\)</span>-value to be in the range <span class="math inline">\(0.160 \pm 3 \cdot 0.001\)</span> or
-<span class="math inline">\([0.157,0.163]\)</span>.</p>
+<p>Let’s first illustrate how we would determine the average difference when
+<span class="math inline">\(k = 30\)</span>. (See Figure <a href="the-binomial-and-related-distributions.html#fig:deltap">3.19</a>.) For this number of trials, the
+expected number of counts in each bin is exactly 5, i.e., this is the
+minimum number of trials required by convention when carrying out
+the chi-square GoF test.</p>
 </blockquote>
+<div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="the-binomial-and-related-distributions.html#cb248-1" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="dv">30</span></span>
+<span id="cb248-2"><a href="the-binomial-and-related-distributions.html#cb248-2" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="dv">6</span></span>
+<span id="cb248-3"><a href="the-binomial-and-related-distributions.html#cb248-3" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">/</span>m,m)</span>
+<span id="cb248-4"><a href="the-binomial-and-related-distributions.html#cb248-4" tabindex="-1"></a></span>
+<span id="cb248-5"><a href="the-binomial-and-related-distributions.html#cb248-5" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
+<span id="cb248-6"><a href="the-binomial-and-related-distributions.html#cb248-6" tabindex="-1"></a></span>
+<span id="cb248-7"><a href="the-binomial-and-related-distributions.html#cb248-7" tabindex="-1"></a>num.rep <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb248-8"><a href="the-binomial-and-related-distributions.html#cb248-8" tabindex="-1"></a>p.chi   <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>,num.rep)</span>
+<span id="cb248-9"><a href="the-binomial-and-related-distributions.html#cb248-9" tabindex="-1"></a>p.mult  <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>,num.rep)</span>
+<span id="cb248-10"><a href="the-binomial-and-related-distributions.html#cb248-10" tabindex="-1"></a>delta.p <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>,num.rep)</span>
+<span id="cb248-11"><a href="the-binomial-and-related-distributions.html#cb248-11" tabindex="-1"></a></span>
+<span id="cb248-12"><a href="the-binomial-and-related-distributions.html#cb248-12" tabindex="-1"></a>num.sim <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb248-13"><a href="the-binomial-and-related-distributions.html#cb248-13" tabindex="-1"></a><span class="cf">for</span> ( ii <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>num.rep ) {</span>
+<span id="cb248-14"><a href="the-binomial-and-related-distributions.html#cb248-14" tabindex="-1"></a>  X.obs       <span class="ot">&lt;-</span> <span class="fu">rmultinom</span>(<span class="dv">1</span>,k,p)</span>
+<span id="cb248-15"><a href="the-binomial-and-related-distributions.html#cb248-15" tabindex="-1"></a>  W           <span class="ot">&lt;-</span> <span class="fu">sum</span>((X.obs<span class="sc">-</span>k<span class="sc">*</span>p)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>(k<span class="sc">*</span>p))</span>
+<span id="cb248-16"><a href="the-binomial-and-related-distributions.html#cb248-16" tabindex="-1"></a>  p.chi[ii]   <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">pchisq</span>(W,m<span class="dv">-1</span>)</span>
+<span id="cb248-17"><a href="the-binomial-and-related-distributions.html#cb248-17" tabindex="-1"></a>  obs         <span class="ot">&lt;-</span> <span class="fu">dmultinom</span>(X.obs,<span class="at">prob=</span>p)</span>
+<span id="cb248-18"><a href="the-binomial-and-related-distributions.html#cb248-18" tabindex="-1"></a>  X           <span class="ot">&lt;-</span> <span class="fu">rmultinom</span>(num.sim,k,p)</span>
+<span id="cb248-19"><a href="the-binomial-and-related-distributions.html#cb248-19" tabindex="-1"></a>  a           <span class="ot">&lt;-</span> <span class="fu">apply</span>(X,<span class="dv">2</span>,<span class="cf">function</span>(x,p){<span class="fu">dmultinom</span>(x,<span class="at">prob=</span>p)},<span class="at">p=</span>p)</span>
+<span id="cb248-20"><a href="the-binomial-and-related-distributions.html#cb248-20" tabindex="-1"></a>  p.mult[ii]  <span class="ot">&lt;-</span> <span class="fu">sum</span>(a<span class="sc">&lt;=</span>obs)<span class="sc">/</span>num.sim</span>
+<span id="cb248-21"><a href="the-binomial-and-related-distributions.html#cb248-21" tabindex="-1"></a>  delta.p[ii] <span class="ot">&lt;-</span> p.mult[ii] <span class="sc">-</span> p.chi[ii]</span>
+<span id="cb248-22"><a href="the-binomial-and-related-distributions.html#cb248-22" tabindex="-1"></a>}</span>
+<span id="cb248-23"><a href="the-binomial-and-related-distributions.html#cb248-23" tabindex="-1"></a></span>
+<span id="cb248-24"><a href="the-binomial-and-related-distributions.html#cb248-24" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Mean Difference:&quot;</span>,<span class="fu">round</span>(<span class="fu">mean</span>(delta.p),<span class="dv">5</span>),<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Mean Difference: 0.0098</code></pre>
+<div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="the-binomial-and-related-distributions.html#cb250-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;SE Difference:  &quot;</span>,<span class="fu">round</span>(<span class="fu">sd</span>(delta.p)<span class="sc">/</span><span class="fu">sqrt</span>(num.rep),<span class="dv">5</span>),<span class="st">&quot;</span><span class="sc">\n\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## SE Difference:   0.00135</code></pre>
+<div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb252-1"><a href="the-binomial-and-related-distributions.html#cb252-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span><span class="fu">data.frame</span>(delta.p),<span class="at">mapping=</span><span class="fu">aes</span>(<span class="at">x=</span>delta.p,<span class="at">y=</span><span class="fu">after_stat</span>(density))) <span class="sc">+</span></span>
+<span id="cb252-2"><a href="the-binomial-and-related-distributions.html#cb252-2" tabindex="-1"></a>      <span class="fu">geom_histogram</span>(<span class="at">fill=</span><span class="st">&quot;dodgerblue&quot;</span>,<span class="at">bins=</span><span class="dv">25</span>) <span class="sc">+</span></span>
+<span id="cb252-3"><a href="the-binomial-and-related-distributions.html#cb252-3" tabindex="-1"></a>      <span class="fu">geom_vline</span>(<span class="at">xintercept=</span><span class="dv">0</span>,<span class="at">col=</span><span class="st">&quot;seagreen&quot;</span>,<span class="at">lty=</span><span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb252-4"><a href="the-binomial-and-related-distributions.html#cb252-4" tabindex="-1"></a>      <span class="fu">xlab</span>(<span class="fu">expression</span>(Delta<span class="sc">*</span><span class="st">&quot;p&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb252-5"><a href="the-binomial-and-related-distributions.html#cb252-5" tabindex="-1"></a>      base_theme</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:deltap"></span>
+<img src="_main_files/figure-html/deltap-1.png" alt="\label{fig:deltap}Histogram showing the empirical distribution of values of $\Delta p = p_{\rm mult} - p_{\rm chi}$ that arise when we repeatedly toss a die 30 times and test whether the die is fair. If $\Delta p &gt; 0$, then the chi-square test is less conservative, i.e., we are more likely to reject a correct null than if we are to use the exact multinomial test. Here, the average value of $\Delta p$ is $\approx 0.01$." width="50%" />
+<p class="caption">
+Figure 3.19: Histogram showing the empirical distribution of values of <span class="math inline">\(\Delta p = p_{\rm mult} - p_{\rm chi}\)</span> that arise when we repeatedly toss a die 30 times and test whether the die is fair. If <span class="math inline">\(\Delta p &gt; 0\)</span>, then the chi-square test is less conservative, i.e., we are more likely to reject a correct null than if we are to use the exact multinomial test. Here, the average value of <span class="math inline">\(\Delta p\)</span> is <span class="math inline">\(\approx 0.01\)</span>.
+</p>
+</div>
+<blockquote>
+<p>We find that for <span class="math inline">\(k = 30\)</span>, the average
+value of <span class="math inline">\(\Delta p = p_{\rm mult} - p_{\rm chi}\)</span>
+is <span class="math inline">\(\approx 0.01\)</span>, i.e., on average the chi-square GoF test is
+less conservative (or more likely to result in the rejection
+of a correct null hypothesis).</p>
+</blockquote>
+<blockquote>
+<p>In Figure <a href="the-binomial-and-related-distributions.html#fig:deltap2">3.20</a>, we show how the average value of
+<span class="math inline">\(\Delta p\)</span> changes as a function of <span class="math inline">\(k\)</span>. We see here that while by
+convention the expected number of counts per bin is supposed to be
+at least five, it is only when the expected counts reach
+<span class="math inline">\(\approx\)</span> 20 or more that we no longer observed a statistically significant
+difference between the average <span class="math inline">\(p\)</span>-values.</p>
+</blockquote>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:deltap2"></span>
+<img src="_main_files/figure-html/deltap2-1.png" alt="\label{fig:deltap2}The average value of $\Delta p = p_{\rm mult} - p_{\rm chi}$ as a function of the number of tosses of a six-sided die. The vertical dashed green line at $k = 30$ represents where the expected number of counts in each data bin is exactly 5, the minimum value conventionally required for use of the chi-square GoF test." width="50%" />
+<p class="caption">
+Figure 3.20: The average value of <span class="math inline">\(\Delta p = p_{\rm mult} - p_{\rm chi}\)</span> as a function of the number of tosses of a six-sided die. The vertical dashed green line at <span class="math inline">\(k = 30\)</span> represents where the expected number of counts in each data bin is exactly 5, the minimum value conventionally required for use of the chi-square GoF test.
+</p>
+</div>
 <hr />
 </div>
 <div id="chi-square-test-of-independence" class="section level3 hasAnchor" number="3.13.3">
 <h3><span class="header-section-number">3.13.3</span> Chi-Square Test of Independence<a href="the-binomial-and-related-distributions.html#chi-square-test-of-independence" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <blockquote>
-<p>Let’s go back to our animal data. When we observe the animals in each quadrant, we
-record their color: black or red. So now are data look like this:</p>
+<p>Let’s go back to our animal data. When we observe the animals in each quadrant, let’s suppose we also
+record their colors: black or red. So now are data look like this:</p>
 </blockquote>
 <table>
 <colgroup>
@@ -4136,31 +4233,31 @@ assuming <span class="math inline">\(\alpha = 0.05\)</span>.</p>
 <p>We can already see that working with the numbers directly is tedious. Can we make
 a matrix of such numbers using <code>R</code>?</p>
 </blockquote>
-<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="the-binomial-and-related-distributions.html#cb244-1" tabindex="-1"></a>r <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">57</span>,<span class="dv">43</span>)</span>
-<span id="cb244-2"><a href="the-binomial-and-related-distributions.html#cb244-2" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">28</span>,<span class="dv">32</span>,<span class="dv">17</span>,<span class="dv">23</span>)</span>
-<span id="cb244-3"><a href="the-binomial-and-related-distributions.html#cb244-3" tabindex="-1"></a>E <span class="ot">&lt;-</span> (r <span class="sc">%*%</span> <span class="fu">t</span>(c))<span class="sc">/</span><span class="fu">sum</span>(r)  <span class="co"># multiply r and the transpose of c </span></span>
-<span id="cb244-4"><a href="the-binomial-and-related-distributions.html#cb244-4" tabindex="-1"></a><span class="fu">print</span>(E)                  <span class="co"># much better</span></span></code></pre></div>
+<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="the-binomial-and-related-distributions.html#cb253-1" tabindex="-1"></a>r <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">57</span>,<span class="dv">43</span>)</span>
+<span id="cb253-2"><a href="the-binomial-and-related-distributions.html#cb253-2" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">28</span>,<span class="dv">32</span>,<span class="dv">17</span>,<span class="dv">23</span>)</span>
+<span id="cb253-3"><a href="the-binomial-and-related-distributions.html#cb253-3" tabindex="-1"></a>E <span class="ot">&lt;-</span> (r <span class="sc">%*%</span> <span class="fu">t</span>(c))<span class="sc">/</span><span class="fu">sum</span>(r)  <span class="co"># multiply r and the transpose of c </span></span>
+<span id="cb253-4"><a href="the-binomial-and-related-distributions.html#cb253-4" tabindex="-1"></a><span class="fu">print</span>(E)                  <span class="co"># much better</span></span></code></pre></div>
 <pre><code>##       [,1]  [,2] [,3]  [,4]
 ## [1,] 15.96 18.24 9.69 13.11
 ## [2,] 12.04 13.76 7.31  9.89</code></pre>
 <blockquote>
 <p>If we wish to continue using <code>R</code>, we need to define a matrix of observed data values:</p>
 </blockquote>
-<div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb246-1"><a href="the-binomial-and-related-distributions.html#cb246-1" tabindex="-1"></a>O <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">20</span>,<span class="dv">8</span>,<span class="dv">18</span>,<span class="dv">14</span>,<span class="dv">5</span>,<span class="dv">12</span>,<span class="dv">14</span>,<span class="dv">9</span>),<span class="at">nrow=</span><span class="dv">2</span>) <span class="co"># fills in column-by-column</span></span>
-<span id="cb246-2"><a href="the-binomial-and-related-distributions.html#cb246-2" tabindex="-1"></a><span class="fu">print</span>(O)</span></code></pre></div>
+<div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb255-1"><a href="the-binomial-and-related-distributions.html#cb255-1" tabindex="-1"></a>O <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">20</span>,<span class="dv">8</span>,<span class="dv">18</span>,<span class="dv">14</span>,<span class="dv">5</span>,<span class="dv">12</span>,<span class="dv">14</span>,<span class="dv">9</span>),<span class="at">nrow=</span><span class="dv">2</span>) <span class="co"># fills in column-by-column</span></span>
+<span id="cb255-2"><a href="the-binomial-and-related-distributions.html#cb255-2" tabindex="-1"></a><span class="fu">print</span>(O)</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4]
 ## [1,]   20   18    5   14
 ## [2,]    8   14   12    9</code></pre>
 <blockquote>
 <p>Now we have what we need. The test statistic is</p>
 </blockquote>
-<div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="the-binomial-and-related-distributions.html#cb248-1" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">sum</span>( (O<span class="sc">-</span>E)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>E ),<span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb257-1"><a href="the-binomial-and-related-distributions.html#cb257-1" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">sum</span>( (O<span class="sc">-</span>E)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>E ),<span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## [1] 7.805</code></pre>
 <blockquote>
 <p>and the number of degrees of freedom is <span class="math inline">\((r-1)(c-1) = 1 \cdot 3 = 3\)</span>, so the
 rejection region boundary is</p>
 </blockquote>
-<div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="the-binomial-and-related-distributions.html#cb250-1" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">qchisq</span>(<span class="fl">0.95</span>,<span class="dv">3</span>),<span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb259"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb259-1"><a href="the-binomial-and-related-distributions.html#cb259-1" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">qchisq</span>(<span class="fl">0.95</span>,<span class="dv">3</span>),<span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## [1] 7.815</code></pre>
 <blockquote>
 <p>We find that if <span class="math inline">\(\alpha = 0.05\)</span>, we <em>cannot</em> reject the null hypothesis. We might be
