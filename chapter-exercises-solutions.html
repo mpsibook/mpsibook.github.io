@@ -393,11 +393,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.11.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-expected-value-of-a-beta-random-variable"><i class="fa fa-check"></i><b>3.11.1</b> The Expected Value of a Beta Random Variable</a></li>
 <li class="chapter" data-level="3.11.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-sample-median-of-a-uniform01-distribution"><i class="fa fa-check"></i><b>3.11.2</b> The Sample Median of a Uniform(0,1) Distribution</a></li>
 </ul></li>
-<li class="chapter" data-level="3.12" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-multinomial-distribution"><i class="fa fa-check"></i><b>3.12</b> The Multinomial Distribution</a></li>
+<li class="chapter" data-level="3.12" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-multinomial-distribution"><i class="fa fa-check"></i><b>3.12</b> The Multinomial Distribution</a>
+<ul>
+<li class="chapter" data-level="3.12.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#performing-a-multinomial-test"><i class="fa fa-check"></i><b>3.12.1</b> Performing a Multinomial Test</a></li>
+</ul></li>
 <li class="chapter" data-level="3.13" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#chi-square-based-hypothesis-testing"><i class="fa fa-check"></i><b>3.13</b> Chi-Square-Based Hypothesis Testing</a>
 <ul>
 <li class="chapter" data-level="3.13.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#chi-square-goodness-of-fit-test"><i class="fa fa-check"></i><b>3.13.1</b> Chi-Square Goodness of Fit Test</a></li>
-<li class="chapter" data-level="3.13.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#simulating-an-exact-multinomial-test"><i class="fa fa-check"></i><b>3.13.2</b> Simulating an Exact Multinomial Test</a></li>
+<li class="chapter" data-level="3.13.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-average-p-value-difference-between-the-multinomial-and-chi-square-gof-tests"><i class="fa fa-check"></i><b>3.13.2</b> The Average p-Value Difference Between the Multinomial and Chi-Square GoF Tests</a></li>
 <li class="chapter" data-level="3.13.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#chi-square-test-of-independence"><i class="fa fa-check"></i><b>3.13.3</b> Chi-Square Test of Independence</a></li>
 </ul></li>
 <li class="chapter" data-level="3.14" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#exercises-2"><i class="fa fa-check"></i><b>3.14</b> Exercises</a></li>
@@ -1414,6 +1417,41 @@ F_Y(y_{\rm RR} \vert \mu_o) - \alpha &amp;= 0 \\
 Since <span class="math inline">\(1/0.05 = 20\)</span>, we find that <span class="math inline">\(y_{\rm RR} = -\log(19)\)</span>.</p>
 <p>(b) As stated in the hypothesis test reference table, the rejection region is <span class="math inline">\(y_{\rm obs} &lt; y_{\rm RR}\)</span>. Thus if <span class="math inline">\(y_{\rm obs} \geq y_{\rm RR}\)</span>, we fail to reject the null hypothesis.</p>
 <p>(c) If we go from a lower-tail test (with <span class="math inline">\(E[Y]\)</span> increasing with <span class="math inline">\(\mu\)</span>) to a two-tail test, then the lower rejection region boundary will shift because we put <span class="math inline">\(\alpha/2 = 0.025\)</span> into the equation rather than <span class="math inline">\(\alpha = 0.05\)</span>. This moves the boundary further from <span class="math inline">\(\mu_o = 0\)</span>. (Specifically, <span class="math inline">\(1/\alpha\)</span> would now be 40, so the new <span class="math inline">\(y_{\rm RR} = -\log(39)\)</span>, which is further from 0 than <span class="math inline">\(-\log(19)\)</span>.)</p>
+<hr />
+<ul>
+<li>Problem 47</li>
+</ul>
+<p>(a) The expected value of <span class="math inline">\(Y\)</span> increases with <span class="math inline">\(\theta\)</span>, putting us on the “yes” line of the reference table. Hence we want to solve <span class="math inline">\(F_Y(y_{\rm obs} \vert \theta) - \alpha = 0\)</span> for <span class="math inline">\(\theta\)</span>:
+<span class="math display">\[\begin{align*}
+e^{-e^{-(y_{\rm obs} - \theta)}} - \alpha &amp;= 0 \\
+\Rightarrow ~~~ -e^{-(y_{\rm obs} - \theta)} &amp;= \log(\alpha) \\
+\Rightarrow ~~~ e^{-(y_{\rm obs} - \theta)} &amp;= -\log(\alpha) \\
+\Rightarrow ~~~ -(y_{\rm obs} - \theta) &amp;= \log(-\log(\alpha)) \\
+\Rightarrow ~~~ \hat{\theta}_U &amp;= \log(-\log(\alpha)) + y_{\rm obs} \,.
+\end{align*}\]</span></p>
+<p>(b) All we need to do here is switch out <span class="math inline">\(\alpha\)</span> for <span class="math inline">\(1 - \alpha/2\)</span> (with “<span class="math inline">\(1-\)</span>” for the lower bound, and “<span class="math inline">\(\alpha/2\)</span>” for the change from one-sided to two-sided:
+<span class="math display">\[\begin{align*}
+\hat{\theta}_L &amp;= \log(-\log(1-\alpha/2)) + y_{\rm obs} \,.
+\end{align*}\]</span></p>
+<hr />
+<ul>
+<li>Problem 48</li>
+</ul>
+<p>(a) The expected value of <span class="math inline">\(Y\)</span> increases with <span class="math inline">\(\theta\)</span>, putting us on the “yes” line of the reference table. Hence we want to solve <span class="math inline">\(F_Y(y \vert \theta_o) - (1-\alpha) = 0\)</span> for <span class="math inline">\(y\)</span>:
+<span class="math display">\[\begin{align*}
+1 - e^{-(y-2)/\theta_o} - (1-\alpha) &amp;= 0 \\
+\Rightarrow ~~~ e^{-(y-2)} &amp;= \alpha \\
+\Rightarrow ~~~ -(y-2) &amp;= \log(\alpha) \\
+\Rightarrow ~~~ -y &amp;= \log(\alpha) - 2 \\
+\Rightarrow ~~~ y_{\rm RR} &amp;= 2 - \log(\alpha) \,.
+\end{align*}\]</span></p>
+<p>(b) If <span class="math inline">\(y_{\rm obs} &lt; y_{\rm RR}\)</span> for an upper-tail test/“yes”
+line, then we <em>fail to reject</em> the null hypothesis (and conclude that we
+have insufficient data to rule out the idea that <span class="math inline">\(\theta = \theta_o = 1\)</span>).</p>
+<p>(c) We simply replace <span class="math inline">\(\alpha\)</span> with <span class="math inline">\(1 - \alpha/2\)</span>:
+<span class="math display">\[\begin{align*}
+y_{\rm RR} &amp;= 2 - \log(1 - \alpha/2) \,.
+\end{align*}\]</span></p>
 </div>
 <div id="chapter-2" class="section level2 unnumbered hasAnchor">
 <h2>Chapter 2<a href="chapter-exercises-solutions.html#chapter-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -2876,10 +2914,10 @@ Hence <span class="math inline">\(E[X] = E[1+X] - 1 = \alpha/(\beta-1)\)</span>.
 W = 2 \times \frac{(8-6)^2}{6} + \frac{(8-12)^2}{12} = \frac{4}{3} + \frac{4}{3} = \frac{8}{3} \,.
 \end{align*}\]</span></p>
 <p>(b) The number of degrees of freedom is <span class="math inline">\(m-1 = 2\)</span> and the rejection region boundary is given by</p>
-<div class="sourceCode" id="cb370"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb370-1"><a href="chapter-exercises-solutions.html#cb370-1" tabindex="-1"></a><span class="fu">qchisq</span>(<span class="fl">0.95</span>,<span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb379"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb379-1"><a href="chapter-exercises-solutions.html#cb379-1" tabindex="-1"></a><span class="fu">qchisq</span>(<span class="fl">0.95</span>,<span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] 5.991465</code></pre>
 <p>(c) The <span class="math inline">\(p\)</span>-value is given by</p>
-<div class="sourceCode" id="cb372"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb372-1"><a href="chapter-exercises-solutions.html#cb372-1" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pchisq</span>(<span class="dv">8</span><span class="sc">/</span><span class="dv">3</span>,<span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb381"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb381-1"><a href="chapter-exercises-solutions.html#cb381-1" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pchisq</span>(<span class="dv">8</span><span class="sc">/</span><span class="dv">3</span>,<span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] 0.2635971</code></pre>
 <p>(d) The data <span class="math inline">\(\{8,8,8\}\)</span> are sampled according to a <em>multinomial</em> distribution.</p>
 </div>
@@ -3256,7 +3294,7 @@ which we recognize as a Gamma(100,1/100) distribution.</p>
 P(\bar{X} \geq E[X]) = 1 - P(\bar{X} &lt; 1) = 1 - F_{\bar{X}}(1) \,,
 \end{align*}\]</span>
 which rendered in <code>R</code> is</p>
-<div class="sourceCode" id="cb374"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb374-1"><a href="chapter-exercises-solutions.html#cb374-1" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pgamma</span>(<span class="dv">1</span>,<span class="at">shape=</span><span class="dv">100</span>,<span class="at">scale=</span><span class="dv">1</span><span class="sc">/</span><span class="dv">100</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb383"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb383-1"><a href="chapter-exercises-solutions.html#cb383-1" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pgamma</span>(<span class="dv">1</span>,<span class="at">shape=</span><span class="dv">100</span>,<span class="at">scale=</span><span class="dv">1</span><span class="sc">/</span><span class="dv">100</span>)</span></code></pre></div>
 <pre><code>## [1] 0.4867012</code></pre>
 <hr />
 <ul>
