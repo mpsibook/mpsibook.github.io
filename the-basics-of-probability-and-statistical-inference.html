@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>1 The Basics of Probability and Statistical Inference | Modern Probability and Statistical Inference</title>
   <meta name="description" content="1 The Basics of Probability and Statistical Inference | Modern Probability and Statistical Inference" />
-  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
   <meta property="og:title" content="1 The Basics of Probability and Statistical Inference | Modern Probability and Statistical Inference" />
   <meta property="og:type" content="book" />
@@ -54,8 +54,9 @@
 
 
 <style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -65,7 +66,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -327,94 +328,97 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html"><i class="fa fa-check"></i><b>3</b> The Binomial (and Related) Distributions</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#motivation"><i class="fa fa-check"></i><b>3.1</b> Motivation</a></li>
-<li class="chapter" data-level="3.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#probability-mass-function"><i class="fa fa-check"></i><b>3.2</b> Probability Mass Function</a>
+<li class="chapter" data-level="3.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#binomial-distribution-probability-mass-function"><i class="fa fa-check"></i><b>3.1</b> Binomial Distribution: Probability Mass Function</a>
 <ul>
-<li class="chapter" data-level="3.2.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#variance-of-a-binomial-random-variable"><i class="fa fa-check"></i><b>3.2.1</b> Variance of a Binomial Random Variable</a></li>
-<li class="chapter" data-level="3.2.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-expected-value-of-a-negative-binomial-random-variable"><i class="fa fa-check"></i><b>3.2.2</b> The Expected Value of a Negative Binomial Random Variable</a></li>
-<li class="chapter" data-level="3.2.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#binomial-distribution-normal-approximation"><i class="fa fa-check"></i><b>3.2.3</b> Binomial Distribution: Normal Approximation</a></li>
-<li class="chapter" data-level="3.2.4" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#computing-probabilities-8"><i class="fa fa-check"></i><b>3.2.4</b> Computing Probabilities</a></li>
-<li class="chapter" data-level="3.2.5" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-binomial-distribution-as-part-of-the-exponential-family"><i class="fa fa-check"></i><b>3.2.5</b> The Binomial Distribution as Part of the Exponential Family</a></li>
+<li class="chapter" data-level="3.1.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#binomial-random-variable-variance"><i class="fa fa-check"></i><b>3.1.1</b> Binomial Random Variable: Variance</a></li>
+<li class="chapter" data-level="3.1.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#binomial-distribution-normal-approximation"><i class="fa fa-check"></i><b>3.1.2</b> Binomial Distribution: Normal Approximation</a></li>
+<li class="chapter" data-level="3.1.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#binomial-distribution-exponential-family"><i class="fa fa-check"></i><b>3.1.3</b> Binomial Distribution: Exponential Family</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#cumulative-distribution-function"><i class="fa fa-check"></i><b>3.3</b> Cumulative Distribution Function</a>
+<li class="chapter" data-level="3.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#binomial-distribution-cumulative-distribution-function"><i class="fa fa-check"></i><b>3.2</b> Binomial Distribution: Cumulative Distribution Function</a>
 <ul>
-<li class="chapter" data-level="3.3.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#computing-probabilities-9"><i class="fa fa-check"></i><b>3.3.1</b> Computing Probabilities</a></li>
-<li class="chapter" data-level="3.3.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#sampling-data-from-an-arbitrary-probability-mass-function"><i class="fa fa-check"></i><b>3.3.2</b> Sampling Data From an Arbitrary Probability Mass Function</a></li>
+<li class="chapter" data-level="3.2.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#computing-probabilities-8"><i class="fa fa-check"></i><b>3.2.1</b> Computing Probabilities</a></li>
+<li class="chapter" data-level="3.2.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#probability-mass-functions-data-sampling"><i class="fa fa-check"></i><b>3.2.2</b> Probability Mass Functions: Data Sampling</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#linear-functions-of-random-variables"><i class="fa fa-check"></i><b>3.4</b> Linear Functions of Random Variables</a>
+<li class="chapter" data-level="3.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#binomial-related-distributions"><i class="fa fa-check"></i><b>3.3</b> Binomial-Related Distributions</a>
 <ul>
-<li class="chapter" data-level="3.4.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-mgf-for-a-geometric-random-variable"><i class="fa fa-check"></i><b>3.4.1</b> The MGF for a Geometric Random Variable</a></li>
-<li class="chapter" data-level="3.4.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-pmf-for-the-sample-mean"><i class="fa fa-check"></i><b>3.4.2</b> The PMF for the Sample Mean</a></li>
+<li class="chapter" data-level="3.3.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#negative-binomial-random-variable-expected-value"><i class="fa fa-check"></i><b>3.3.1</b> Negative Binomial Random Variable: Expected Value</a></li>
+<li class="chapter" data-level="3.3.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#beta-random-variable-expected-value"><i class="fa fa-check"></i><b>3.3.2</b> Beta Random Variable: Expected Value</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#linear-functions-of-binomial-random-variables"><i class="fa fa-check"></i><b>3.4</b> Linear Functions of Binomial Random Variables</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#geometric-random-variable-moment-generating-function"><i class="fa fa-check"></i><b>3.4.1</b> Geometric Random Variable: Moment-Generating Function</a></li>
+<li class="chapter" data-level="3.4.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#binomial-data-sample-mean-distribution"><i class="fa fa-check"></i><b>3.4.2</b> Binomial Data: Sample Mean Distribution</a></li>
+<li class="chapter" data-level="3.4.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#probability-generating-functions"><i class="fa fa-check"></i><b>3.4.3</b> Probability Generating Functions</a></li>
 </ul></li>
 <li class="chapter" data-level="3.5" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#order-statistics"><i class="fa fa-check"></i><b>3.5</b> Order Statistics</a>
 <ul>
-<li class="chapter" data-level="3.5.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#distribution-of-the-minimum-value-sampled-from-an-exponential-distribution"><i class="fa fa-check"></i><b>3.5.1</b> Distribution of the Minimum Value Sampled from an Exponential Distribution</a></li>
-<li class="chapter" data-level="3.5.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#distribution-of-the-median-value-sampled-from-a-uniform01-distribution"><i class="fa fa-check"></i><b>3.5.2</b> Distribution of the Median Value Sampled from a Uniform(0,1) Distribution</a></li>
+<li class="chapter" data-level="3.5.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#exponential-distribution-minimum-value"><i class="fa fa-check"></i><b>3.5.1</b> Exponential Distribution: Minimum Value</a></li>
+<li class="chapter" data-level="3.5.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#uniform01-distribution-sample-median"><i class="fa fa-check"></i><b>3.5.2</b> Uniform(0,1) Distribution: Sample Median</a></li>
+<li class="chapter" data-level="3.5.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#order-statistic-distribution-numeric-calculation"><i class="fa fa-check"></i><b>3.5.3</b> Order Statistic Distribution: Numeric Calculation</a></li>
+<li class="chapter" data-level="3.5.4" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#discrete-order-statistic-probability-mass-function"><i class="fa fa-check"></i><b>3.5.4</b> Discrete Order Statistic: Probability Mass Function</a></li>
 </ul></li>
 <li class="chapter" data-level="3.6" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#point-estimation-2"><i class="fa fa-check"></i><b>3.6</b> Point Estimation</a>
 <ul>
 <li class="chapter" data-level="3.6.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-mle-for-the-binomial-success-probability"><i class="fa fa-check"></i><b>3.6.1</b> The MLE for the Binomial Success Probability</a></li>
-<li class="chapter" data-level="3.6.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#sufficient-statistics-for-the-normal-distribution"><i class="fa fa-check"></i><b>3.6.2</b> Sufficient Statistics for the Normal Distribution</a></li>
-<li class="chapter" data-level="3.6.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-sufficiency-principle-examples-of-when-we-cannot-reduce-data"><i class="fa fa-check"></i><b>3.6.3</b> The Sufficiency Principle: Examples of When We Cannot Reduce Data</a></li>
-<li class="chapter" data-level="3.6.4" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-mvue-for-the-exponential-mean"><i class="fa fa-check"></i><b>3.6.4</b> The MVUE for the Exponential Mean</a></li>
-<li class="chapter" data-level="3.6.5" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-mvue-for-the-geometric-distribution"><i class="fa fa-check"></i><b>3.6.5</b> The MVUE for the Geometric Distribution</a></li>
+<li class="chapter" data-level="3.6.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#normal-distribution-sufficient-statistics"><i class="fa fa-check"></i><b>3.6.2</b> Normal Distribution: Sufficient Statistics</a></li>
+<li class="chapter" data-level="3.6.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#sufficiency-when-we-cannot-reduce-data"><i class="fa fa-check"></i><b>3.6.3</b> Sufficiency: When We Cannot Reduce Data</a></li>
+<li class="chapter" data-level="3.6.4" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#exponential-distribution-mvue-for-population-mean"><i class="fa fa-check"></i><b>3.6.4</b> Exponential Distribution: MVUE for Population Mean</a></li>
+<li class="chapter" data-level="3.6.5" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#geometric-distribution-mvue-for-number-of-failures"><i class="fa fa-check"></i><b>3.6.5</b> Geometric Distribution: MVUE for Number of Failures</a></li>
 </ul></li>
 <li class="chapter" data-level="3.7" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#confidence-intervals-2"><i class="fa fa-check"></i><b>3.7</b> Confidence Intervals</a>
 <ul>
-<li class="chapter" data-level="3.7.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#confidence-interval-for-the-binomial-success-probability"><i class="fa fa-check"></i><b>3.7.1</b> Confidence Interval for the Binomial Success Probability</a></li>
-<li class="chapter" data-level="3.7.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#confidence-interval-for-the-negative-binomial-success-probability"><i class="fa fa-check"></i><b>3.7.2</b> Confidence Interval for the Negative Binomial Success Probability</a></li>
-<li class="chapter" data-level="3.7.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#wald-interval-for-the-binomial-success-probability"><i class="fa fa-check"></i><b>3.7.3</b> Wald Interval for the Binomial Success Probability</a></li>
+<li class="chapter" data-level="3.7.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#binomial-probability-confidence-interval"><i class="fa fa-check"></i><b>3.7.1</b> Binomial Probability: Confidence Interval</a></li>
+<li class="chapter" data-level="3.7.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#binomial-probability-wald-interval"><i class="fa fa-check"></i><b>3.7.2</b> Binomial Probability: Wald Interval</a></li>
+<li class="chapter" data-level="3.7.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#negative-binomial-probability-confidence-interval"><i class="fa fa-check"></i><b>3.7.3</b> Negative Binomial Probability: Confidence Interval</a></li>
+<li class="chapter" data-level="3.7.4" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#hypergeometric-distribution-number-of-successes"><i class="fa fa-check"></i><b>3.7.4</b> Hypergeometric Distribution: Number of Successes</a></li>
+<li class="chapter" data-level="3.7.5" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#order-statistic-confidence-interval"><i class="fa fa-check"></i><b>3.7.5</b> Order Statistic: Confidence Interval</a></li>
 </ul></li>
-<li class="chapter" data-level="3.8" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#hypothesis-testing-2"><i class="fa fa-check"></i><b>3.8</b> Hypothesis Testing</a>
+<li class="chapter" data-level="3.8" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#hypothesis-testing-neyman-pearson-lemma"><i class="fa fa-check"></i><b>3.8</b> Hypothesis Testing: Neyman-Pearson Lemma</a>
 <ul>
-<li class="chapter" data-level="3.8.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#ump-test-exponential-distribution"><i class="fa fa-check"></i><b>3.8.1</b> UMP Test: Exponential Distribution</a></li>
-<li class="chapter" data-level="3.8.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#ump-test-negative-binomial-distribution"><i class="fa fa-check"></i><b>3.8.2</b> UMP Test: Negative Binomial Distribution</a></li>
-<li class="chapter" data-level="3.8.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#defining-a-ump-test-for-the-normal-population-mean"><i class="fa fa-check"></i><b>3.8.3</b> Defining a UMP Test for the Normal Population Mean</a></li>
-<li class="chapter" data-level="3.8.4" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#defining-a-test-that-is-not-uniformly-most-powerful"><i class="fa fa-check"></i><b>3.8.4</b> Defining a Test That is Not Uniformly Most Powerful</a></li>
+<li class="chapter" data-level="3.8.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#exponential-distribution-ump-test-of-population-mean"><i class="fa fa-check"></i><b>3.8.1</b> Exponential Distribution: UMP Test of Population Mean</a></li>
+<li class="chapter" data-level="3.8.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#negative-binomial-distribution-ump-test-of-success-probability"><i class="fa fa-check"></i><b>3.8.2</b> Negative Binomial Distribution: UMP Test of Success Probability</a></li>
+<li class="chapter" data-level="3.8.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#normal-distribution-ump-test-for-the-population-mean"><i class="fa fa-check"></i><b>3.8.3</b> Normal Distribution: UMP Test for the Population Mean</a></li>
+<li class="chapter" data-level="3.8.4" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#a-not-uniformly-most-powerful-test"><i class="fa fa-check"></i><b>3.8.4</b> A Not Uniformly Most Powerful Test</a></li>
 <li class="chapter" data-level="3.8.5" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#estimating-a-p-value-via-simulation"><i class="fa fa-check"></i><b>3.8.5</b> Estimating a <span class="math inline">\(p\)</span>-Value via Simulation</a></li>
-<li class="chapter" data-level="3.8.6" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#utilizing-simulations-when-data-reduction-is-not-possible"><i class="fa fa-check"></i><b>3.8.6</b> Utilizing Simulations When Data Reduction is Not Possible</a></li>
-<li class="chapter" data-level="3.8.7" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#large-sample-tests-of-the-binomial-success-probability"><i class="fa fa-check"></i><b>3.8.7</b> Large-Sample Tests of the Binomial Success Probability</a></li>
+<li class="chapter" data-level="3.8.6" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#simulating-when-data-reduction-is-not-possible"><i class="fa fa-check"></i><b>3.8.6</b> Simulating When Data Reduction is Not Possible</a></li>
+<li class="chapter" data-level="3.8.7" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#binomial-probability-large-sample-approximation-tests"><i class="fa fa-check"></i><b>3.8.7</b> Binomial Probability: Large-Sample Approximation Tests</a></li>
+<li class="chapter" data-level="3.8.8" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#uniform-distribution-test-of-population-bound-with-sample-median"><i class="fa fa-check"></i><b>3.8.8</b> Uniform Distribution: Test of Population Bound with Sample Median</a></li>
 </ul></li>
-<li class="chapter" data-level="3.9" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#logistic-regression"><i class="fa fa-check"></i><b>3.9</b> Logistic Regression</a>
+<li class="chapter" data-level="3.9" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#hypothesis-testing-categorical-hypotheses"><i class="fa fa-check"></i><b>3.9</b> Hypothesis Testing: Categorical Hypotheses</a>
 <ul>
-<li class="chapter" data-level="3.9.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#logistic-regression-in-r"><i class="fa fa-check"></i><b>3.9.1</b> Logistic Regression in R</a></li>
+<li class="chapter" data-level="3.9.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#multinomial-simulations"><i class="fa fa-check"></i><b>3.9.1</b> Multinomial Simulations</a></li>
+<li class="chapter" data-level="3.9.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#chi-square-goodness-of-fit-test"><i class="fa fa-check"></i><b>3.9.2</b> Chi-Square Goodness of Fit Test</a></li>
+<li class="chapter" data-level="3.9.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#comparing-multinomial-simulations-with-the-chi-square-gof-test"><i class="fa fa-check"></i><b>3.9.3</b> Comparing Multinomial Simulations with the Chi-Square GoF Test</a></li>
+<li class="chapter" data-level="3.9.4" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#chi-square-gof-test-discrete-distributions"><i class="fa fa-check"></i><b>3.9.4</b> Chi-Square GoF Test: Discrete Distributions</a></li>
+<li class="chapter" data-level="3.9.5" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#two-sample-test-of-binomial-proportions"><i class="fa fa-check"></i><b>3.9.5</b> Two-Sample Test of Binomial Proportions</a></li>
+<li class="chapter" data-level="3.9.6" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#chi-square-tests-of-homogeneity-and-independence"><i class="fa fa-check"></i><b>3.9.6</b> Chi-Square Tests of Homogeneity and Independence</a></li>
 </ul></li>
-<li class="chapter" data-level="3.10" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#naive-bayes-regression"><i class="fa fa-check"></i><b>3.10</b> Naive Bayes Regression</a>
+<li class="chapter" data-level="3.10" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#logistic-regression"><i class="fa fa-check"></i><b>3.10</b> Logistic Regression</a>
 <ul>
-<li class="chapter" data-level="3.10.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#naive-bayes-regression-with-categorical-predictors"><i class="fa fa-check"></i><b>3.10.1</b> Naive Bayes Regression With Categorical Predictors</a></li>
-<li class="chapter" data-level="3.10.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#naive-bayes-regression-with-continuous-predictors"><i class="fa fa-check"></i><b>3.10.2</b> Naive Bayes Regression With Continuous Predictors</a></li>
-<li class="chapter" data-level="3.10.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#naive-bayes-applied-to-star-quasar-data"><i class="fa fa-check"></i><b>3.10.3</b> Naive Bayes Applied to Star-Quasar Data</a></li>
+<li class="chapter" data-level="3.10.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#logistic-regression-in-r"><i class="fa fa-check"></i><b>3.10.1</b> Logistic Regression in R</a></li>
+<li class="chapter" data-level="3.10.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#beta-regression-in-r"><i class="fa fa-check"></i><b>3.10.2</b> Beta Regression in R</a></li>
 </ul></li>
-<li class="chapter" data-level="3.11" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-beta-distribution"><i class="fa fa-check"></i><b>3.11</b> The Beta Distribution</a>
+<li class="chapter" data-level="3.11" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#naive-bayes-regression"><i class="fa fa-check"></i><b>3.11</b> Naive Bayes Regression</a>
 <ul>
-<li class="chapter" data-level="3.11.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-expected-value-of-a-beta-random-variable"><i class="fa fa-check"></i><b>3.11.1</b> The Expected Value of a Beta Random Variable</a></li>
-<li class="chapter" data-level="3.11.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-sample-median-of-a-uniform01-distribution"><i class="fa fa-check"></i><b>3.11.2</b> The Sample Median of a Uniform(0,1) Distribution</a></li>
+<li class="chapter" data-level="3.11.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#naive-bayes-regression-with-categorical-predictors"><i class="fa fa-check"></i><b>3.11.1</b> Naive Bayes Regression With Categorical Predictors</a></li>
+<li class="chapter" data-level="3.11.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#naive-bayes-regression-with-continuous-predictors"><i class="fa fa-check"></i><b>3.11.2</b> Naive Bayes Regression With Continuous Predictors</a></li>
+<li class="chapter" data-level="3.11.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#naive-bayes-in-r"><i class="fa fa-check"></i><b>3.11.3</b> Naive Bayes in R</a></li>
 </ul></li>
-<li class="chapter" data-level="3.12" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-multinomial-distribution"><i class="fa fa-check"></i><b>3.12</b> The Multinomial Distribution</a>
-<ul>
-<li class="chapter" data-level="3.12.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#performing-a-multinomial-test"><i class="fa fa-check"></i><b>3.12.1</b> Performing a Multinomial Test</a></li>
-</ul></li>
-<li class="chapter" data-level="3.13" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#chi-square-based-hypothesis-testing"><i class="fa fa-check"></i><b>3.13</b> Chi-Square-Based Hypothesis Testing</a>
-<ul>
-<li class="chapter" data-level="3.13.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#chi-square-goodness-of-fit-test"><i class="fa fa-check"></i><b>3.13.1</b> Chi-Square Goodness of Fit Test</a></li>
-<li class="chapter" data-level="3.13.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-average-p-value-difference-between-the-multinomial-and-chi-square-gof-tests"><i class="fa fa-check"></i><b>3.13.2</b> The Average p-Value Difference Between the Multinomial and Chi-Square GoF Tests</a></li>
-<li class="chapter" data-level="3.13.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#chi-square-test-of-independence"><i class="fa fa-check"></i><b>3.13.3</b> Chi-Square Test of Independence</a></li>
-</ul></li>
-<li class="chapter" data-level="3.14" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#exercises-2"><i class="fa fa-check"></i><b>3.14</b> Exercises</a></li>
+<li class="chapter" data-level="3.12" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#exercises-2"><i class="fa fa-check"></i><b>3.12</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html"><i class="fa fa-check"></i><b>4</b> The Poisson (and Related) Distributions</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#motivation-1"><i class="fa fa-check"></i><b>4.1</b> Motivation</a></li>
-<li class="chapter" data-level="4.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#probability-mass-function-1"><i class="fa fa-check"></i><b>4.2</b> Probability Mass Function</a>
+<li class="chapter" data-level="4.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#motivation"><i class="fa fa-check"></i><b>4.1</b> Motivation</a></li>
+<li class="chapter" data-level="4.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#probability-mass-function"><i class="fa fa-check"></i><b>4.2</b> Probability Mass Function</a>
 <ul>
 <li class="chapter" data-level="4.2.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#the-poisson-distribution-as-part-of-the-exponential-family"><i class="fa fa-check"></i><b>4.2.1</b> The Poisson Distribution as Part of the Exponential Family</a></li>
 <li class="chapter" data-level="4.2.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#the-expected-value-of-a-poisson-random-variable"><i class="fa fa-check"></i><b>4.2.2</b> The Expected Value of a Poisson Random Variable</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#cumulative-distribution-function-1"><i class="fa fa-check"></i><b>4.3</b> Cumulative Distribution Function</a>
+<li class="chapter" data-level="4.3" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#cumulative-distribution-function"><i class="fa fa-check"></i><b>4.3</b> Cumulative Distribution Function</a>
 <ul>
-<li class="chapter" data-level="4.3.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#computing-probabilities-10"><i class="fa fa-check"></i><b>4.3.1</b> Computing Probabilities</a></li>
+<li class="chapter" data-level="4.3.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#computing-probabilities-9"><i class="fa fa-check"></i><b>4.3.1</b> Computing Probabilities</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#linear-functions-of-random-variables-1"><i class="fa fa-check"></i><b>4.4</b> Linear Functions of Random Variables</a>
+<li class="chapter" data-level="4.4" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#linear-functions-of-random-variables"><i class="fa fa-check"></i><b>4.4</b> Linear Functions of Random Variables</a>
 <ul>
 <li class="chapter" data-level="4.4.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#the-moment-generating-function-of-a-poisson-random-variable"><i class="fa fa-check"></i><b>4.4.1</b> The Moment-Generating Function of a Poisson Random Variable</a></li>
 <li class="chapter" data-level="4.4.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#the-distribution-of-the-difference-of-two-poisson-random-variables"><i class="fa fa-check"></i><b>4.4.2</b> The Distribution of the Difference of Two Poisson Random Variables</a></li>
@@ -435,7 +439,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.6.4" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#the-proportion-of-observed-data-in-a-bootstrap-sample"><i class="fa fa-check"></i><b>4.6.4</b> The Proportion of Observed Data in a Bootstrap Sample</a></li>
 <li class="chapter" data-level="4.6.5" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#confidence-interval-estimation-via-simulation"><i class="fa fa-check"></i><b>4.6.5</b> Confidence Interval Estimation via Simulation</a></li>
 </ul></li>
-<li class="chapter" data-level="4.7" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#hypothesis-testing-3"><i class="fa fa-check"></i><b>4.7</b> Hypothesis Testing</a>
+<li class="chapter" data-level="4.7" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#hypothesis-testing-2"><i class="fa fa-check"></i><b>4.7</b> Hypothesis Testing</a>
 <ul>
 <li class="chapter" data-level="4.7.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#the-uniformly-most-powerful-test-of-poisson-lambda"><i class="fa fa-check"></i><b>4.7.1</b> The Uniformly Most Powerful Test of Poisson <span class="math inline">\(\lambda\)</span></a></li>
 <li class="chapter" data-level="4.7.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#likelihood-ratio-test-of-the-poisson-parameter-lambda"><i class="fa fa-check"></i><b>4.7.2</b> Likelihood Ratio Test of the Poisson Parameter <span class="math inline">\(\lambda\)</span></a></li>
@@ -453,7 +457,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.9.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#revisiting-the-death-by-horse-kick-example-2"><i class="fa fa-check"></i><b>4.9.1</b> Revisiting the Death-by-Horse-Kick Example</a></li>
 <li class="chapter" data-level="4.9.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#negative-binomial-regression-example"><i class="fa fa-check"></i><b>4.9.2</b> Negative Binomial Regression Example</a></li>
 </ul></li>
-<li class="chapter" data-level="4.10" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#chi-square-based-hypothesis-testing-1"><i class="fa fa-check"></i><b>4.10</b> Chi-Square-Based Hypothesis Testing</a>
+<li class="chapter" data-level="4.10" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#chi-square-based-hypothesis-testing"><i class="fa fa-check"></i><b>4.10</b> Chi-Square-Based Hypothesis Testing</a>
 <ul>
 <li class="chapter" data-level="4.10.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#revisiting-the-death-by-horse-kick-example-3"><i class="fa fa-check"></i><b>4.10.1</b> Revisiting the Death-by-Horse-Kick Example</a></li>
 </ul></li>
@@ -485,7 +489,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.5.1" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#interval-estimation-using-an-order-statistic"><i class="fa fa-check"></i><b>5.5.1</b> Interval Estimation Using an Order Statistic</a></li>
 <li class="chapter" data-level="5.5.2" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#confidence-coefficient-for-a-uniform-based-interval-estimator"><i class="fa fa-check"></i><b>5.5.2</b> Confidence Coefficient for a Uniform-Based Interval Estimator</a></li>
 </ul></li>
-<li class="chapter" data-level="5.6" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#hypothesis-testing-4"><i class="fa fa-check"></i><b>5.6</b> Hypothesis Testing</a>
+<li class="chapter" data-level="5.6" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#hypothesis-testing-3"><i class="fa fa-check"></i><b>5.6</b> Hypothesis Testing</a>
 <ul>
 <li class="chapter" data-level="5.6.1" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#hypothesis-test-for-the-uniform-distribution-upper-bound"><i class="fa fa-check"></i><b>5.6.1</b> Hypothesis Test for the Uniform Distribution Upper Bound</a></li>
 </ul></li>
@@ -812,20 +816,18 @@ and <em>De Morgan’s laws</em>,
 <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>:</p>
 </blockquote>
 <table>
-<thead>
-<tr class="header">
-<th align="right"></th>
-<th align="center"><span class="math inline">\(A\)</span></th>
-<th align="center"><span class="math inline">\(\bar{A}\)</span></th>
-</tr>
-</thead>
 <tbody>
 <tr class="odd">
+<td align="right"></td>
+<td align="center"><span class="math inline">\(A\)</span></td>
+<td align="center"><span class="math inline">\(\bar{A}\)</span></td>
+</tr>
+<tr class="even">
 <td align="right"><span class="math inline">\(B\)</span></td>
 <td align="center">0.45</td>
 <td align="center">0.12</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="right"><span class="math inline">\(\bar{B}\)</span></td>
 <td align="center">0.21</td>
 <td align="center">0.22</td>
@@ -941,28 +943,26 @@ Figure 1.6: <span class="math inline">\(A\)</span> and <span class="math inline"
 section, but with some additional information added:</p>
 </blockquote>
 <table>
-<thead>
-<tr class="header">
-<th align="right"></th>
-<th align="center"><span class="math inline">\(A\)</span></th>
-<th align="center"><span class="math inline">\(\bar{A}\)</span></th>
-<th align="center"></th>
-</tr>
-</thead>
 <tbody>
 <tr class="odd">
+<td align="right"></td>
+<td align="center"><span class="math inline">\(A\)</span></td>
+<td align="center"><span class="math inline">\(\bar{A}\)</span></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
 <td align="right"><span class="math inline">\(B\)</span></td>
 <td align="center">0.45</td>
 <td align="center">0.12</td>
 <td align="center">0.57</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="right"><span class="math inline">\(\bar{B}\)</span></td>
 <td align="center">0.21</td>
 <td align="center">0.22</td>
 <td align="center">0.43</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="right"></td>
 <td align="center">0.67</td>
 <td align="center">0.33</td>
@@ -1818,8 +1818,7 @@ a single numerical value. So we have
 to figure out where the value of the integral value is stored:</p>
 </blockquote>
 <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="the-basics-of-probability-and-statistical-inference.html#cb23-1" tabindex="-1"></a><span class="fu">names</span>(<span class="fu">integrate</span>(f,<span class="dv">1</span>,<span class="dv">2</span>))  <span class="co"># return the names of each list element</span></span></code></pre></div>
-<pre><code>## [1] &quot;value&quot;        &quot;abs.error&quot;    &quot;subdivisions&quot; &quot;message&quot;     
-## [5] &quot;call&quot;</code></pre>
+<pre><code>## [1] &quot;value&quot;        &quot;abs.error&quot;    &quot;subdivisions&quot; &quot;message&quot;      &quot;call&quot;</code></pre>
 <blockquote>
 <p>What we want is <code>value</code>. To reference the value directly, we use a dollar
 sign, as shown here:</p>
@@ -3481,21 +3480,36 @@ Before doing so, however, we will show how the construction of confidence
 intervals and the performance of hypothesis tests both boil down to
 performing a root-finding exercise in which we work directly with
 a sampling distribution.</p>
-<p>Let <span class="math inline">\(Y = g(X_1,\ldots,X_n)\)</span> be a statistic, with the <span class="math inline">\(X_i\)</span>’s being
-independent and identically distributed (iid) random variables. (To be
-clear, <span class="math inline">\(Y\)</span> does not have to be a function of <em>all</em> the observed data, but
-rather at least one of them: e.g., the sample median, in contrast to
-the sample mean.) As we describe above, <span class="math inline">\(Y\)</span> has a sampling distribution,
-whose probability density function is <span class="math inline">\(f_Y(y \vert \theta)\)</span> and
-whose cumulative distribution function is <span class="math inline">\(F_Y(y \vert \theta)\)</span>.
-(For simplicity, and without loss of generality, we assume <span class="math inline">\(Y\)</span> is a
-continuous random variable, and that <span class="math inline">\(\theta\)</span> is continuously valued.)
-We can alter the shape and/or location of <span class="math inline">\(Y\)</span>’s sampling distribution
-by changing the value(s) of <span class="math inline">\(\theta\)</span>. To illustrate this, let’s make
-up a pdf for a sampling distribution:
+<p>Let’s posit a simple situation in which we sample a single datum according
+to the following probability density function:
 <span class="math display">\[
-f_Y(y \vert \theta) = \frac{1}{2} ~~~ y \in [\theta-1,\theta+1]
+f_X(x \vert \theta) = \frac{1}{2} ~~~ x \in [\theta-1,\theta+1]
 \]</span>
+Our statistic is thus <span class="math inline">\(Y = X\)</span>, and the sampling distribution
+<span class="math inline">\(f_Y(y \vert \theta)\)</span> is equivalent to <span class="math inline">\(f_X(x \vert \theta)\)</span>.
+(In future chapters, we will discuss how to derive
+sampling distributions for statistics computed from <span class="math inline">\(n\)</span>
+independent and identically distributed [iid] random variables, and
+begin to work with more typically seen statistics like <span class="math inline">\(\bar{X}\)</span>.)
+<!--
+Let $Y = g(X_1,\ldots,X_n)$ be a statistic, with the $X_i$'s being
+independent and identically distributed (iid) random variables. (To be
+clear, $Y$ does not have to be a function of *all* the observed data, but
+rather at least one of them: e.g., the sample median, in contrast to
+the sample mean.) As we describe above, $Y$ has a sampling distribution,
+whose probability density function is $f_Y(y \vert \theta)$ and 
+whose cumulative distribution function is $F_Y(y \vert \theta)$. 
+(For simplicity, and without loss of generality, we assume $Y$ is a 
+continuous random variable, and that $\theta$ is continuously valued.)
+We can alter the shape and/or location of $Y$'s sampling distribution
+by changing the value(s) of $\theta$. To illustrate this, let's make
+up a pdf for a sampling distribution:
+$$
+f_Y(y \vert \theta) = \frac{1}{2} ~~~ y \in [\theta-1,\theta+1]
+$$
+-->
+We can alter the shape and/or location of the sampling distribution
+by changing the value(s) of <span class="math inline">\(\theta\)</span>.
 In Figure <a href="the-basics-of-probability-and-statistical-inference.html#fig:samppdf">1.32</a>, we show how the pdf moves with <span class="math inline">\(\theta\)</span>;
 as <span class="math inline">\(\theta\)</span> changes from 2.8 to 5.2, the pdf shifts (smoothly) from the
 location indicated by the red lines to that indicated by the blue lines.
@@ -3518,7 +3532,7 @@ observe, we can invert each of the following cdf-based equations:
 F_Y(y_{\rm obs} \vert \theta) = 0 ~~~\mbox{and}~~~ F_Y(y_{\rm obs} \vert \theta) = 1 \,,
 \]</span>
 where <span class="math inline">\(F_Y(y_{\rm obs} \vert \theta)\)</span> is the cdf of <span class="math inline">\(Y\)</span> evaluated at
-the coordinate <span class="math inline">\(y_{\rm obs\)</span>. The cdf is
+the coordinate <span class="math inline">\(y_{\rm obs}\)</span>. The cdf is
 <span class="math display">\[
 F_Y(y \vert \theta) = \int_{\theta-1}^y \frac{dx}{2} = \left. \frac{x}{2} \right|_{\theta-1}^y = \frac12(y-\theta+1) \,,
 \]</span>
@@ -3528,20 +3542,10 @@ and thus the solutions to the two equations above are
 \]</span>
 Our “plausible interval” is <span class="math inline">\([y_{\rm obs}-1,y_{\rm obs}+1]\)</span>, or
 here, <span class="math inline">\([2.4,4.4]\)</span>.</p>
-<!--
-%To tie this illustration back to confidence intervals and hypothesis testing,
-%a confidence interval for $\theta$ is a range of "acceptable values" for 
-%$\theta$ given what we observe (which initially we can think of here as
-%$[\hat{\theta}_L,\hat{\theta}_U] = [2.4,4.4]$, since these values generate
-%pdfs that overlap $y_{\rm obs}$), and a hypothesis test is the
-%determination of whether a stated value of $\theta$ is "acceptable" given
-%what we observe (here, a hypothesis that $\theta = 3.1$ would be acceptable,
-%while a hypothesis that $\theta = 10$ definitely would not be).
--->
 <p>However, there is an issue with our initial approach: it only provides an
 informative interval for <span class="math inline">\(\theta\)</span> if the pdf for <span class="math inline">\(Y\)</span> has a finite, bounded
 domain. If, for instance, the pdf for <span class="math inline">\(Y\)</span> has the domain <span class="math inline">\((-\infty,\infty)\)</span>,
-and <span class="math inline">\(\theta\)</span> represented the mean of <span class="math inline">\(Y\)</span>’s sampling distribution, then
+and <span class="math inline">\(\theta\)</span> represented the mean of <span class="math inline">\(Y\)</span>’s sampling distribution,
 then our plausible interval for <span class="math inline">\(\theta\)</span> would also be <span class="math inline">\((-\infty,\infty)\)</span>.
 To generalize the workflow, we first combine the two equations above into
 the single equation
@@ -4458,17 +4462,15 @@ F_X(x) = \left\{ \begin{array}{cc} 0 &amp; x &lt; 0 \\ x^3 &amp; 0 \leq x \leq 1
 <li><p>Below we display a cumulative density function for a discrete random variable. What is <span class="math inline">\(V[X]\)</span>?</p></li>
 </ol>
 <table>
-<thead>
-<tr class="header">
-<th align="center"></th>
-<th align="center"><span class="math inline">\(x &lt;\)</span> 0</th>
-<th align="center"><span class="math inline">\(0 \leq x &lt; 1\)</span></th>
-<th align="center"><span class="math inline">\(1 \leq x &lt; 3\)</span></th>
-<th align="center"><span class="math inline">\(x \geq 3\)</span></th>
-</tr>
-</thead>
 <tbody>
 <tr class="odd">
+<td align="center"></td>
+<td align="center"><span class="math inline">\(x &lt;\)</span> 0</td>
+<td align="center"><span class="math inline">\(0 \leq x &lt; 1\)</span></td>
+<td align="center"><span class="math inline">\(1 \leq x &lt; 3\)</span></td>
+<td align="center"><span class="math inline">\(x \geq 3\)</span></td>
+</tr>
+<tr class="even">
 <td align="center"><span class="math inline">\(F_X(x)\)</span></td>
 <td align="center">0</td>
 <td align="center">0.5</td>
@@ -4491,16 +4493,14 @@ where <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)
 <li><p>See the probability mass function table below. (a) If <span class="math inline">\(E[X] = 2\)</span>, what is the value of <span class="math inline">\(y\)</span>? (b) If <span class="math inline">\(y = 3\)</span>, what is <span class="math inline">\(\sigma\)</span> for this distribution? (c) Assume <span class="math inline">\(y = 3\)</span>. What is <span class="math inline">\(P(\mu-\sigma \leq X \leq \mu+\sigma)\)</span>?</p></li>
 </ol>
 <table>
-<thead>
-<tr class="header">
-<th align="center"><span class="math inline">\(x\)</span></th>
-<th align="center">0</th>
-<th align="center">1</th>
-<th align="center"><span class="math inline">\(y\)</span></th>
-</tr>
-</thead>
 <tbody>
 <tr class="odd">
+<td align="center"><span class="math inline">\(x\)</span></td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center"><span class="math inline">\(y\)</span></td>
+</tr>
+<tr class="even">
 <td align="center"><span class="math inline">\(p_X(x)\)</span></td>
 <td align="center">0.4</td>
 <td align="center">0.4</td>
@@ -4537,16 +4537,14 @@ where <span class="math inline">\(c\)</span> is a constant. (a) What is the valu
 <li><p>Below we display a probability mass function. (a) What is <span class="math inline">\(c\)</span>? (b) What is the value of the cumulative distribution function at <span class="math inline">\(x=0.5\)</span>? (c) What is the inverse cdf for <span class="math inline">\(q = 0.9\)</span>? (d) What is the variance <span class="math inline">\(V[X]\)</span>?</p></li>
 </ol>
 <table>
-<thead>
-<tr class="header">
-<th align="center"><span class="math inline">\(x\)</span></th>
-<th align="center">-1</th>
-<th align="center">0</th>
-<th align="center">1</th>
-</tr>
-</thead>
 <tbody>
 <tr class="odd">
+<td align="center"><span class="math inline">\(x\)</span></td>
+<td align="center">-1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
 <td align="center"><span class="math inline">\(p_X(x)\)</span></td>
 <td align="center">1/6</td>
 <td align="center"><span class="math inline">\(c\)</span></td>
