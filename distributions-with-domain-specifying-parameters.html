@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>5 The Uniform Distribution | Modern Probability and Statistical Inference</title>
-  <meta name="description" content="5 The Uniform Distribution | Modern Probability and Statistical Inference" />
-  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+  <title>5 Distributions with Domain-Specifying Parameters | Modern Probability and Statistical Inference</title>
+  <meta name="description" content="5 Distributions with Domain-Specifying Parameters | Modern Probability and Statistical Inference" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="5 The Uniform Distribution | Modern Probability and Statistical Inference" />
+  <meta property="og:title" content="5 Distributions with Domain-Specifying Parameters | Modern Probability and Statistical Inference" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="5 The Uniform Distribution | Modern Probability and Statistical Inference" />
+  <meta name="twitter:title" content="5 Distributions with Domain-Specifying Parameters | Modern Probability and Statistical Inference" />
   
   
   
@@ -54,9 +54,8 @@
 
 
 <style type="text/css">
-html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -66,7 +65,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -247,7 +246,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.3.2" data-path="the-normal-and-related-distributions.html"><a href="the-normal-and-related-distributions.html#mgf-probability-density-function"><i class="fa fa-check"></i><b>2.3.2</b> MGF: Probability Density Function</a></li>
 <li class="chapter" data-level="2.3.3" data-path="the-normal-and-related-distributions.html"><a href="the-normal-and-related-distributions.html#mgf-normal-distribution"><i class="fa fa-check"></i><b>2.3.3</b> MGF: Normal Distribution</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="the-normal-and-related-distributions.html"><a href="the-normal-and-related-distributions.html#normal-distribution-sample-mean"><i class="fa fa-check"></i><b>2.4</b> Normal Distribution: Sample Mean</a>
+<li class="chapter" data-level="2.4" data-path="the-normal-and-related-distributions.html"><a href="the-normal-and-related-distributions.html#normal-distribution-linear-functions-of-random-variables"><i class="fa fa-check"></i><b>2.4</b> Normal Distribution: Linear Functions of Random Variables</a>
 <ul>
 <li class="chapter" data-level="2.4.1" data-path="the-normal-and-related-distributions.html"><a href="the-normal-and-related-distributions.html#computing-probabilities-2"><i class="fa fa-check"></i><b>2.4.1</b> Computing Probabilities</a></li>
 <li class="chapter" data-level="2.4.2" data-path="the-normal-and-related-distributions.html"><a href="the-normal-and-related-distributions.html#sample-sum"><i class="fa fa-check"></i><b>2.4.2</b> Sample Sum</a></li>
@@ -467,37 +466,37 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4.9" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#exercises-3"><i class="fa fa-check"></i><b>4.9</b> Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html"><i class="fa fa-check"></i><b>5</b> The Uniform Distribution</a>
+<li class="chapter" data-level="5" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html"><i class="fa fa-check"></i><b>5</b> Distributions with Domain-Specifying Parameters</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#properties"><i class="fa fa-check"></i><b>5.1</b> Properties</a>
+<li class="chapter" data-level="5.1" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#distribution-examples"><i class="fa fa-check"></i><b>5.1</b> Distribution Examples</a>
 <ul>
-<li class="chapter" data-level="5.1.1" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#the-expected-value-and-variance-of-a-uniform-random-variable"><i class="fa fa-check"></i><b>5.1.1</b> The Expected Value and Variance of a Uniform Random Variable</a></li>
-<li class="chapter" data-level="5.1.2" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#coding-r-style-functions-for-the-discrete-uniform-distribution"><i class="fa fa-check"></i><b>5.1.2</b> Coding R-Style Functions for the Discrete Uniform Distribution</a></li>
+<li class="chapter" data-level="5.1.1" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#uniform-random-variable-expected-value-and-variance"><i class="fa fa-check"></i><b>5.1.1</b> Uniform Random Variable: Expected Value and Variance</a></li>
+<li class="chapter" data-level="5.1.2" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#uniform-distribution-order-statistics"><i class="fa fa-check"></i><b>5.1.2</b> Uniform Distribution: Order Statistics</a></li>
+<li class="chapter" data-level="5.1.3" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#pareto-random-variable-expected-value"><i class="fa fa-check"></i><b>5.1.3</b> Pareto Random Variable: Expected Value</a></li>
+<li class="chapter" data-level="5.1.4" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#discrete-uniform-distribution"><i class="fa fa-check"></i><b>5.1.4</b> Discrete Uniform Distribution</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#linear-functions-of-uniform-random-variables"><i class="fa fa-check"></i><b>5.2</b> Linear Functions of Uniform Random Variables</a>
+<li class="chapter" data-level="5.2" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#linear-functions-of-random-variables"><i class="fa fa-check"></i><b>5.2</b> Linear Functions of Random Variables</a>
 <ul>
-<li class="chapter" data-level="5.2.1" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#the-moment-generating-function-for-a-discrete-uniform-distribution"><i class="fa fa-check"></i><b>5.2.1</b> The Moment-Generating Function for a Discrete Uniform Distribution</a></li>
+<li class="chapter" data-level="5.2.1" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#uniform-data-sample-sum-and-mean-distributions"><i class="fa fa-check"></i><b>5.2.1</b> Uniform Data: Sample Sum and Mean Distributions</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#sufficient-statistics-and-the-minimum-variance-unbiased-estimator"><i class="fa fa-check"></i><b>5.3</b> Sufficient Statistics and the Minimum Variance Unbiased Estimator</a>
+<li class="chapter" data-level="5.3" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#point-estimation-4"><i class="fa fa-check"></i><b>5.3</b> Point Estimation</a>
 <ul>
-<li class="chapter" data-level="5.3.1" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#sufficient-statistics-for-the-pareto-domain-parameter"><i class="fa fa-check"></i><b>5.3.1</b> Sufficient Statistics for the Pareto Domain Parameter</a></li>
-<li class="chapter" data-level="5.3.2" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#mvue-properties-for-uniform-distribution-bounds"><i class="fa fa-check"></i><b>5.3.2</b> MVUE Properties for Uniform Distribution Bounds</a></li>
+<li class="chapter" data-level="5.3.1" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#uniform-domain-parameter-mle"><i class="fa fa-check"></i><b>5.3.1</b> Uniform Domain Parameter: MLE</a></li>
+<li class="chapter" data-level="5.3.2" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#pareto-domain-parameter-mle"><i class="fa fa-check"></i><b>5.3.2</b> Pareto Domain Parameter: MLE</a></li>
+<li class="chapter" data-level="5.3.3" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#uniform-domain-parameter-mvue"><i class="fa fa-check"></i><b>5.3.3</b> Uniform Domain Parameter: MVUE</a></li>
+<li class="chapter" data-level="5.3.4" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#pareto-domain-parameter-mvue"><i class="fa fa-check"></i><b>5.3.4</b> Pareto Domain Parameter: MVUE</a></li>
 </ul></li>
-<li class="chapter" data-level="5.4" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#maximum-likelihood-estimation"><i class="fa fa-check"></i><b>5.4</b> Maximum Likelihood Estimation</a>
+<li class="chapter" data-level="5.4" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#confidence-intervals-4"><i class="fa fa-check"></i><b>5.4</b> Confidence Intervals</a>
 <ul>
-<li class="chapter" data-level="5.4.1" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#the-mle-for-the-pareto-domain-parameter"><i class="fa fa-check"></i><b>5.4.1</b> The MLE for the Pareto Domain Parameter</a></li>
-<li class="chapter" data-level="5.4.2" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#mle-properties-for-uniform-distribution-bounds"><i class="fa fa-check"></i><b>5.4.2</b> MLE Properties for Uniform Distribution Bounds</a></li>
+<li class="chapter" data-level="5.4.1" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#uniform-domain-parameter-interval-estimation"><i class="fa fa-check"></i><b>5.4.1</b> Uniform Domain Parameter: Interval Estimation</a></li>
+<li class="chapter" data-level="5.4.2" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#uniform-domain-parameter-confidence-coefficient"><i class="fa fa-check"></i><b>5.4.2</b> Uniform Domain Parameter: Confidence Coefficient</a></li>
+<li class="chapter" data-level="5.4.3" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#pareto-domain-parameter-interval-estimation"><i class="fa fa-check"></i><b>5.4.3</b> Pareto Domain Parameter: Interval Estimation</a></li>
 </ul></li>
-<li class="chapter" data-level="5.5" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#confidence-intervals-4"><i class="fa fa-check"></i><b>5.5</b> Confidence Intervals</a>
+<li class="chapter" data-level="5.5" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#hypothesis-testing-3"><i class="fa fa-check"></i><b>5.5</b> Hypothesis Testing</a>
 <ul>
-<li class="chapter" data-level="5.5.1" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#interval-estimation-using-an-order-statistic"><i class="fa fa-check"></i><b>5.5.1</b> Interval Estimation Using an Order Statistic</a></li>
-<li class="chapter" data-level="5.5.2" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#confidence-coefficient-for-a-uniform-based-interval-estimator"><i class="fa fa-check"></i><b>5.5.2</b> Confidence Coefficient for a Uniform-Based Interval Estimator</a></li>
+<li class="chapter" data-level="5.5.1" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#uniform-domain-parameter-hypothesis-test"><i class="fa fa-check"></i><b>5.5.1</b> Uniform Domain Parameter: Hypothesis Test</a></li>
 </ul></li>
-<li class="chapter" data-level="5.6" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#hypothesis-testing-3"><i class="fa fa-check"></i><b>5.6</b> Hypothesis Testing</a>
-<ul>
-<li class="chapter" data-level="5.6.1" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#hypothesis-test-for-the-uniform-distribution-upper-bound"><i class="fa fa-check"></i><b>5.6.1</b> Hypothesis Test for the Uniform Distribution Upper Bound</a></li>
-</ul></li>
-<li class="chapter" data-level="5.7" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#exercises-4"><i class="fa fa-check"></i><b>5.7</b> Exercises</a></li>
+<li class="chapter" data-level="5.6" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#exercises-4"><i class="fa fa-check"></i><b>5.6</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html"><i class="fa fa-check"></i><b>6</b> Multivariate Distributions</a>
 <ul>
@@ -559,8 +558,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.6.1" data-path="further-conceptual-details-optional.html"><a href="further-conceptual-details-optional.html#an-illustration-of-multiple-comparisons-when-testing-for-the-normal-mean"><i class="fa fa-check"></i><b>7.6.1</b> An Illustration of Multiple Comparisons When Testing for the Normal Mean</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="appendix-a-table-of-symbols.html"><a href="appendix-a-table-of-symbols.html"><i class="fa fa-check"></i>Appendix A: Table of Symbols</a></li>
-<li class="chapter" data-level="" data-path="appendix-b-confidence-interval-and-hypothesis-test-reference-tables.html"><a href="appendix-b-confidence-interval-and-hypothesis-test-reference-tables.html"><i class="fa fa-check"></i>Appendix B: Confidence Interval and Hypothesis Test Reference Tables</a></li>
+<li class="chapter" data-level="" data-path="appendix-table-of-symbols.html"><a href="appendix-table-of-symbols.html"><i class="fa fa-check"></i>Appendix: Table of Symbols</a></li>
 <li class="chapter" data-level="" data-path="bibliography.html"><a href="bibliography.html"><i class="fa fa-check"></i>Bibliography</a></li>
 <li class="chapter" data-level="" data-path="chapter-exercises-solutions.html"><a href="chapter-exercises-solutions.html"><i class="fa fa-check"></i>Chapter Exercises: Solutions</a>
 <ul>
@@ -588,43 +586,59 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="the-uniform-distribution" class="section level1 hasAnchor" number="5">
-<h1><span class="header-section-number">5</span> The Uniform Distribution<a href="the-uniform-distribution.html#the-uniform-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div class="graybox">
+<div id="distributions-with-domain-specifying-parameters" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">5</span> Distributions with Domain-Specifying Parameters<a href="distributions-with-domain-specifying-parameters.html#distributions-with-domain-specifying-parameters" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div class="bluebox">
 <p>Let <span class="math inline">\(\{X_1,\ldots,X_n\}\)</span> be <span class="math inline">\(n\)</span> independent and identically distributed
 data sampled according to a distribution <span class="math inline">\(P(\theta)\)</span>.</p>
 <ul>
-<li><p><span class="math inline">\(\theta\)</span> is a <em>domain-specifying parameter</em> if, e.g., all the sampled
-data have values <span class="math inline">\(\leq \theta\)</span>.</p></li>
-<li><p>This chapter is all about the quirks that we observe when we work with
+<li><span class="math inline">\(\theta\)</span> is a <em>domain-specifying parameter</em> if, e.g., all the sampled
+data have values <span class="math inline">\(\leq \theta\)</span>.</li>
+</ul>
+<p>This chapter is all about the quirks that we observe when we work with
 domain-specifying parameters, ones that affect the determination of
 maximum-likelihood and minimum-variance unbiased estimators, how we
-go about constructing hypothesis tests, etc.</p></li>
+go about constructing hypothesis tests, etc.</p>
+</div>
+<div id="distribution-examples" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Distribution Examples<a href="distributions-with-domain-specifying-parameters.html#distribution-examples" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="graybox">
+<p>What to take away from this section:</p>
+<ul>
+<li><p>While there are many distributions that feature domain-specifying parameters, in this chapter we will focus our attention on two:</p>
+<ul>
+<li><p>the <em>uniform</em> distribution, a finite distribution whose probability density function has the domain <span class="math inline">\([a,b]\)</span>; and</p></li>
+<li><p>the <em>Pareto</em> distribution, a semi-infinite distribution whose pdf has the domain <span class="math inline">\([b,\infty)\)</span>.</p></li>
+</ul></li>
 </ul>
 </div>
-<div id="properties" class="section level2 hasAnchor" number="5.1">
-<h2><span class="header-section-number">5.1</span> Properties<a href="the-uniform-distribution.html#properties" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The uniform distribution is often used within the realm of probability,
+<p><br></p>
+<p>Many probability distributions have parameters that bound their domain.
+In this chapter, we will concentrate on two in particular that are
+often used in inferential analyses:</p>
+<ul>
+<li>the <em>uniform</em> distribution; and</li>
+<li>the <em>Pareto</em> distribution.</li>
+</ul>
+<p><strong>Uniform Distribution.</strong>
+The uniform distribution is often used within the realm of probability,
 in part because of its utility and in part because of its simplicity.
-We briefly touched upon this distribution at times earlier in this book,
-such as, for instance,
-when we talked about hypothesis test <span class="math inline">\(p\)</span>-values (which are distributed
-uniformly between 0 and 1 when the null hypothesis is correct).
+We have touched upon this distribution previously, such as
+when we discussed how hypothesis test <span class="math inline">\(p\)</span>-values are distributed
+uniformly between 0 and 1 when the null hypothesis is correct.
 Why do we return to the uniform distribution
 now? Because it is slightly different from other distributions: its two
 parameters, often denoted <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> (where <span class="math inline">\(b &gt; a\)</span>), do not dictate the
-shape of its probability density function, but rather its domain. This
-affects aspects of estimation, such as determining sufficient statistics
-and deriving maximum likelihood estimates, etc.
-We highlight these quirks of the uniform distribution (and, indeed, of
-any distribution with domain-specifying parameters) throughout this chapter.</p>
+shape of its probability density function, but rather its domain.</p>
+<blockquote>
 <p><strong>Recall</strong>: <em>a probability density function is one way to represent a continuous probablity distribution, and it has the properties (a) <span class="math inline">\(f_X(x) \geq 0\)</span> and (b) <span class="math inline">\(\int_x f_X(x) dx = 1\)</span>, where the integral is over all values of <span class="math inline">\(x\)</span> in the distribution’s domain.</em></p>
+</blockquote>
 <p>The uniform pdf is defined as
 <span class="math display">\[
-f_X(x) = \frac{1}{b-a} ~~\mbox{where}~~ x \in [a,b] \,.
+f_X(x) = \frac{1}{b-a} \,,
 \]</span>
-<span class="math inline">\(f_X(x)\)</span> is thus constant between <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>.
-(See Figure <a href="the-uniform-distribution.html#fig:unifpdf">5.1</a>.)
+where <span class="math inline">\(x \in [a,b]\)</span>; <span class="math inline">\(f_X(x)\)</span> is thus constant between <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>.
+(See Figure <a href="distributions-with-domain-specifying-parameters.html#fig:unifpdf">5.1</a>.)
 This means that we can
 think of the uniform distribution “geometrically,” as the following
 is true:
@@ -636,12 +650,14 @@ if we know
 <span class="math inline">\(f_X(x)\)</span>, we immediately know the width of the domain (but not <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>
 themselves).</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:unifpdf"></span>
-<img src="_main_files/figure-html/unifpdf-1.png" alt="\label{fig:unifpdf}Three examples of uniform probability mass functions: Uniform(0,1) (solid red line), Uniform(0.5,2) (dashed green line), and Uniform(-1.5,1.5) (dotted blue line)." width="50%" />
+<img src="_main_files/figure-html/unifpdf-1.png" alt="\label{fig:unifpdf}Three examples of uniform probability density functions: Uniform(0,1) (solid red line), Uniform(0.5,2) (dashed green line), and Uniform(-1.5,1.5) (dotted blue line)." width="50%" />
 <p class="caption">
-Figure 5.1: Three examples of uniform probability mass functions: Uniform(0,1) (solid red line), Uniform(0.5,2) (dashed green line), and Uniform(-1.5,1.5) (dotted blue line).
+Figure 5.1: Three examples of uniform probability density functions: Uniform(0,1) (solid red line), Uniform(0.5,2) (dashed green line), and Uniform(-1.5,1.5) (dotted blue line).
 </p>
 </div>
+<blockquote>
 <p><strong>Recall</strong>: <em>the cumulative distribution function, or cdf, is another means by which to encapsulate information about a probability distribution. For a continuous distribution, it is defined as <span class="math inline">\(F_X(x) = \int_{y \leq x} f_Y(y) dy\)</span>, and it is defined for all values <span class="math inline">\(x \in (-\infty,\infty)\)</span>, with <span class="math inline">\(F_X(-\infty) = 0\)</span> and <span class="math inline">\(F_X(\infty) = 1\)</span>.</em></p>
+</blockquote>
 <p>The cdf for a uniformly distributed random variable is
 <span class="math display">\[
 F_X(x) = \int_a^x f_Y(y) dy = \int_a^x \frac{1}{b-a} dy = \frac{x-a}{b-a} ~~ x \in [a,b] \,,
@@ -649,50 +665,55 @@ F_X(x) = \int_a^x f_Y(y) dy = \int_a^x \frac{1}{b-a} dy = \frac{x-a}{b-a} ~~ x \
 with a value of 0 for <span class="math inline">\(x &lt; a\)</span> and 1 for <span class="math inline">\(x &gt; b\)</span>. (We can quickly confirm that
 the derivative of the cdf yields the pdf. Recall that for continuous
 distributions, <span class="math inline">\(f_X(x) = dF_X(x)/dx\)</span>.)</p>
+<blockquote>
 <p><strong>Recall</strong>: <em>an inverse cdf function <span class="math inline">\(F_X^{-1}(q)\)</span>
 takes as input a distribution quantile
 <span class="math inline">\(q \in [0,1]\)</span> and returns the value of <span class="math inline">\(x\)</span> such that <span class="math inline">\(q = F_X(x)\)</span>.</em></p>
+</blockquote>
 <p>The inverse cdf is exceptionally simple to compute:
 <span class="math display">\[
 q = \frac{x-a}{b-a} ~~ \Rightarrow ~~ x = (b-a)q + a \,.
-\]</span>
-Technically the inverse cdf has no unique solution when <span class="math inline">\(q = 0\)</span> or
-<span class="math inline">\(q = 1\)</span>. However, it is convention (for instance, within <code>R</code>) that
-the inverse cdf output for continuous distributions be the largest
-value for which <span class="math inline">\(q = 0\)</span> and the smallest value for which <span class="math inline">\(q = 1\)</span>. Thus,
-for a Uniform(<span class="math inline">\(a,b\)</span>) distribution,
-when <span class="math inline">\(q = 0\)</span>, then <span class="math inline">\(x = a\)</span>, and when <span class="math inline">\(q = 1\)</span>, <span class="math inline">\(x = b\)</span>.</p>
-<hr />
-<p>A discrete analogue to the uniform distribution is the
-<em>discrete uniform distribution</em>, which is defined over a range of
-integers <span class="math inline">\([a,b]\)</span>. (The rolls of a fair, six-sided die would, for
-instance, be governed by the discrete uniform distribution.) The pmf
-for the discrete uniform is
+\]</span></p>
+<p><strong>Pareto Distribution</strong>.
+The Pareto [puh-RAY-toh] distribution, also known as
+the power-law distribution, has the probability density function
 <span class="math display">\[
-p_X(x) = \frac{1}{n} ~~ x \in [a,b] \,,
+f_X(x) = \frac{a b^a}{x^{a+1}} \,,
 \]</span>
-where <span class="math inline">\(n = b - a + 1\)</span> is the number of possible experimental outcomes.
-The cdf is
+where <span class="math inline">\(a &gt; 0\)</span> and <span class="math inline">\(x \in [b,\infty)\)</span>.
+<span class="math inline">\(b\)</span> is thus a domain-specifying parameter. See Figure <a href="distributions-with-domain-specifying-parameters.html#fig:parpdf">5.2</a>.
+Many phenomena are linked to
+this distribution<span class="math inline">\(-\)</span>the sizes of asteroids in the Solar System, the sizes
+of human settlements, personal wealth, etc.<span class="math inline">\(-\)</span>and it is popularly known for
+spawning the so-called “80-20 rule”: e.g., 80% of wealth is tied to
+20% of the population. (Note that this rule is linked to a specific
+value of <span class="math inline">\(a\)</span> and is not meant to be taken as an iron-clad law that spans
+across disciplines.)</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:parpdf"></span>
+<img src="_main_files/figure-html/parpdf-1.png" alt="\label{fig:parpdf}Three examples of Pareto probability density functions: Pareto($a$=2,$b$=1) (solid red line), Pareto($a$=3,$b$=1) (dashed green line), and Pareto($a$=2,$b$=2) (dotted blue line). Note that the pdfs are displayed on a log-log scale, given how quickly they decrease towards zero." width="50%" />
+<p class="caption">
+Figure 5.2: Three examples of Pareto probability density functions: Pareto(<span class="math inline">\(a\)</span>=2,<span class="math inline">\(b\)</span>=1) (solid red line), Pareto(<span class="math inline">\(a\)</span>=3,<span class="math inline">\(b\)</span>=1) (dashed green line), and Pareto(<span class="math inline">\(a\)</span>=2,<span class="math inline">\(b\)</span>=2) (dotted blue line). Note that the pdfs are displayed on a log-log scale, given how quickly they decrease towards zero.
+</p>
+</div>
+<p>The cdf for a Pareto distribution is derived in an example later in this
+chapter; for completeness, it is
 <span class="math display">\[
-F_X(x) = \frac{\lfloor x \rfloor - a + 1}{n} ~~ x \in [a,b] \,,
+F_X(x) = 1 - \left(\frac{x}{b}\right)^a \,,
 \]</span>
-where <span class="math inline">\(\lfloor x \rfloor\)</span> is the largest integer that is smaller than
-or equal to <span class="math inline">\(x\)</span>, while the inverse cdf is given by the generalized inverse
-cdf formalism that we’ve previously seen for discrete distributions.</p>
-<p>Note that there are no standard <code>R</code> functions of the form <code>xdiscunif()</code>
-for computing the pmf or cdf of
-the discrete uniform distribution, or for sampling from it. (See, however,
-the <code>xdunif()</code> functions defined within the contributed <code>extraDistr</code>
-package.) We show how one can easily create such functions for one’s own
-use in an example below.</p>
+and thus the inverse cdf is
+<span class="math display">\[
+x = \frac{b}{(1-q)^{1/a}} \,.
+\]</span></p>
 <hr />
-<div id="the-expected-value-and-variance-of-a-uniform-random-variable" class="section level3 hasAnchor" number="5.1.1">
-<h3><span class="header-section-number">5.1.1</span> The Expected Value and Variance of a Uniform Random Variable<a href="the-uniform-distribution.html#the-expected-value-and-variance-of-a-uniform-random-variable" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="uniform-random-variable-expected-value-and-variance" class="section level3 hasAnchor" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> Uniform Random Variable: Expected Value and Variance<a href="distributions-with-domain-specifying-parameters.html#uniform-random-variable-expected-value-and-variance" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<blockquote>
 <p><strong>Recall:</strong> <em>the expected value of a continuously distributed random variable is</em>
 <span class="math display">\[
 E[X] = \int_x x f_X(x) dx\,,
 \]</span>
 <em>where the integral is over all values of <span class="math inline">\(x\)</span> within the domain of the pdf <span class="math inline">\(f_X(x)\)</span>. The expected value is equivalent to a weighted average, with the weight for each possible value of <span class="math inline">\(x\)</span> given by <span class="math inline">\(f_X(x)\)</span>.</em></p>
+</blockquote>
 <blockquote>
 <p>The expected value of a random variable drawn from a Uniform(<span class="math inline">\(a,b\)</span>)
 distribution is
@@ -701,37 +722,120 @@ E[X] &amp;= \int_a^b x f_X(x) dx = \int_a^b \frac{x}{b-a} dx \\
 &amp;= \frac{1}{b-a} \left. \frac{x^2}{2} \right|_a^b = \frac{1}{b-a} \frac{b^2-a^2}{2} = \frac{1}{b-a} \frac{(b-a)(b+a)}{2} = \frac{a+b}{2} \,.
 \end{align*}\]</span></p>
 </blockquote>
+<blockquote>
 <p><strong>Recall:</strong> <em>the variance of a continuously distributed random variable is</em>
 <span class="math display">\[
 V[X] = \int_x (x-\mu)^2 f_X(x) dx = E[X^2] - (E[X])^2\,,
 \]</span>
 <em>where the integral is over all values of <span class="math inline">\(x\)</span> within the domain of the pdf <span class="math inline">\(f_X(x)\)</span>. The variance represents the square of the “width” of a probability density function, where by “width” we mean the range of values of <span class="math inline">\(x\)</span> for which <span class="math inline">\(f_X(x)\)</span> is effectively non-zero.</em></p>
+</blockquote>
 <blockquote>
 <p>To find the variance, we work with the shortcut formula:
 <span class="math inline">\(V[X] = E[X^2] - (E[X])^2\)</span>. We know <span class="math inline">\(E[X]\)</span> already; as for <span class="math inline">\(E[X^2]\)</span>,
 we utilize the Law of the Unconscious Statistician:
 <span class="math display">\[\begin{align*}
-E[X^2] = \int_a^b x^2 f_X(x) dx &amp;= \int_a^b \frac{x^2}{b-a} dx \\
-&amp;= \frac{1}{b-a} \left. \frac{x^3}{3} \right|_a^b \\
-&amp;= \frac{b^3-a^3}{3(b-a)} \\
+E[X^2] = \int_a^b x^2 f_X(x) dx &amp;= \int_a^b \frac{x^2}{b-a} dx = \frac{1}{b-a} \left. \frac{x^3}{3} \right|_a^b = \frac{b^3-a^3}{3(b-a)} \\
 &amp;= \frac{(b-a)(a^2+ab+b^2)}{3(b-a)} = \frac{1}{3}\left(a^2 + ab + b^2\right) \,.
 \end{align*}\]</span>
 Thus
 <span class="math display">\[\begin{align*}
-V[X] &amp;= \frac{1}{3}\left(a^2 + ab + b^2\right) - \left(\frac{a+b}{2}\right)^2 \\
-&amp;= \frac{1}{3}\left(a^2 + ab + b^2\right) - \frac{1}{4}\left(a^2+2ab+b^2\right) \\
-&amp;= \frac{1}{12}\left(4a^2 + 4ab + 4b^2 - 3a^2 - 6ab - 3b^2\right) \\
-&amp;= \frac{1}{12}\left(a^2 - 2ab + b^2 \right) \\
-&amp;= \frac{(a-b)^2}{12} \,.
+V[X] &amp;= \frac{1}{3}\left(a^2 + ab + b^2\right) - \left(\frac{a+b}{2}\right)^2 = \frac{1}{3}\left(a^2 + ab + b^2\right) - \frac{1}{4}\left(a^2+2ab+b^2\right) \\
+&amp;= \frac{1}{12}\left(4a^2 + 4ab + 4b^2 - 3a^2 - 6ab - 3b^2\right) = \frac{1}{12}\left(a^2 - 2ab + b^2 \right) = \frac{(a-b)^2}{12} \,.
 \end{align*}\]</span></p>
 </blockquote>
 <hr />
 </div>
-<div id="coding-r-style-functions-for-the-discrete-uniform-distribution" class="section level3 hasAnchor" number="5.1.2">
-<h3><span class="header-section-number">5.1.2</span> Coding R-Style Functions for the Discrete Uniform Distribution<a href="the-uniform-distribution.html#coding-r-style-functions-for-the-discrete-uniform-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="uniform-distribution-order-statistics" class="section level3 hasAnchor" number="5.1.2">
+<h3><span class="header-section-number">5.1.2</span> Uniform Distribution: Order Statistics<a href="distributions-with-domain-specifying-parameters.html#uniform-distribution-order-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <blockquote>
-<p>There are four standard functions associated with any distribution:
-the one prefaced by <code>d</code> that returns the output of the
+<p><strong>Recall</strong>: <em>order statistics are observed data ranked in ascending order (e.g., <span class="math inline">\(X_{(1)}\)</span> is the minimum observed value in a set of <span class="math inline">\(n\)</span> iid data, while <span class="math inline">\(X_{(n)}\)</span> is the maximum observed value). For a continuous distribution, the probability density function for <span class="math inline">\(X_{(j)}\)</span> is</em>
+<span class="math display">\[
+f_{(j)}(x) = \frac{d}{dx}F_{(j)}(x) = \frac{n!}{(j-1)!(n-j)!} f_X(x) [F_X(x)]^{j-1} [1 - F_X(x)]^{n-j} \,.
+\]</span></p>
+</blockquote>
+<blockquote>
+<p>In an example in Chapter 3, we showed that given a set of <span class="math inline">\(n\)</span> iid data
+sampled according to a Uniform(0,1) distribution, where <span class="math inline">\(n\)</span> is an odd
+number, the sample median
+is sampled according to a Beta<span class="math inline">\(((n+1)/2,(n+1)/2)\)</span> distribution. For
+completeness, we will show here that <em>all</em> the order statistics are
+beta-distributed. We recall that within the domain of the Uniform(0,1)
+distribution, <span class="math inline">\(f_X(x) = 1\)</span> and <span class="math inline">\(F_X(x) = x\)</span>, and
+write down the order statistic and beta pdfs side-by-side:
+<span class="math display">\[
+\frac{n!}{(j-1)!(n-j)!} x^{j-1} (1 - x)^{n-j} = \frac{\Gamma(n+1)}{\Gamma(j) \Gamma(n-j+1)} x^{j-1} (1 - x)^{n-j} ~~~ \leftrightarrow ~~~ \frac{\Gamma(a+b)}{\Gamma(a) \Gamma(b)} x^{a-1} (1-x)^{b-1} \,.
+\]</span>
+Immediately, we can identify that <span class="math inline">\(a = j\)</span> and <span class="math inline">\(b-1 = n-j\)</span>, or that
+<span class="math inline">\(b = n-j+1\)</span>. Hence <span class="math inline">\(X_{(j)} \sim \mbox{Beta}(j,n-j+1)\)</span>.</p>
+</blockquote>
+<blockquote>
+<p>As a small illustration, we can use this information to easily determine,
+e.g., the probability that the fourth smallest of nine Uniform(0,1) random
+variables has a value between 0.3 and 0.4:</p>
+</blockquote>
+<div class="sourceCode" id="cb360"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb360-1"><a href="distributions-with-domain-specifying-parameters.html#cb360-1" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">9</span></span>
+<span id="cb360-2"><a href="distributions-with-domain-specifying-parameters.html#cb360-2" tabindex="-1"></a>j <span class="ot">&lt;-</span> <span class="dv">4</span></span>
+<span id="cb360-3"><a href="distributions-with-domain-specifying-parameters.html#cb360-3" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">pbeta</span>(<span class="fl">0.4</span>, <span class="at">shape1=</span>j, <span class="at">shape2=</span>n<span class="sc">-</span>j<span class="sc">+</span><span class="dv">1</span>) <span class="sc">-</span> <span class="fu">pbeta</span>(<span class="fl">0.3</span>, <span class="at">shape1=</span>j, <span class="at">shape2=</span>n<span class="sc">-</span>j<span class="sc">+</span><span class="dv">1</span>), <span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## [1] 0.247</code></pre>
+<hr />
+</div>
+<div id="pareto-random-variable-expected-value" class="section level3 hasAnchor" number="5.1.3">
+<h3><span class="header-section-number">5.1.3</span> Pareto Random Variable: Expected Value<a href="distributions-with-domain-specifying-parameters.html#pareto-random-variable-expected-value" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<blockquote>
+<p>The expected value of a Pareto random variable is
+<span class="math display">\[\begin{align*}
+E[X] = \int_b^\infty x \frac{a b^a}{x^{a+1}} dx &amp;= a b^a \int_b^\infty \frac{x}{x^{a+1}} dx = a b^a \int_b^\infty x^{-a} dx \\
+&amp;= a b^a \left. \frac{1}{-a+1} x^{-a+1} \right|_b^\infty \\
+&amp;= \frac{a b^a}{1-a} \left( 0 - b^{1-a} \right) \\
+&amp;= \frac{a b}{a-1} \,.
+\end{align*}\]</span>
+However, note how the integral is that of <span class="math inline">\(1/x^a\)</span>: the integral diverges
+if <span class="math inline">\(a \leq 1\)</span>. So in the regime <span class="math inline">\(a \in (0,1]\)</span>, <span class="math inline">\(E[X] = \infty\)</span>.</p>
+</blockquote>
+<blockquote>
+<p>We leave it as an exercise to the reader to show that the variance of
+the Pareto distribution is
+<span class="math display">\[
+V[X] = \frac{a b^2}{(a-1)^2 (a-2)}
+\]</span>
+for <span class="math inline">\(a &gt; 2\)</span>, and is infinite otherwise.</p>
+</blockquote>
+<hr />
+</div>
+<div id="discrete-uniform-distribution" class="section level3 hasAnchor" number="5.1.4">
+<h3><span class="header-section-number">5.1.4</span> Discrete Uniform Distribution<a href="distributions-with-domain-specifying-parameters.html#discrete-uniform-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<blockquote>
+<p>In this chapter, we will be concentrating on continuous distributions
+that have domain-specifying parameters (specifically, the uniform and
+Pareto distributions). However, for completeness we will touch upon
+the commonly used discrete analogue to the uniform distribution.</p>
+</blockquote>
+<blockquote>
+<p>The <em>discrete uniform distribution</em> is technically defined as having the
+domain <span class="math inline">\(\{x_1,\ldots,x_m\}\)</span>, with the probability masses at each value
+being <span class="math inline">\(p_X(x) = 1/m\)</span>, but in common usage it is defined over a sequence
+of non-negative integers, from <span class="math inline">\(a\)</span> to <span class="math inline">\(b\)</span>. (The rolls of a fair, six-sided
+die, where <span class="math inline">\(a = 1\)</span> and <span class="math inline">\(b = 6\)</span>, would
+be governed by the discrete uniform distribution.) When we assume a
+sequence of integers,
+the cumulative distribution function within the domain is
+<span class="math display">\[
+F_X(x) = \frac{\lfloor x \rfloor - a + 1}{n} \,,
+\]</span>
+where <span class="math inline">\(x \in [a,b]\)</span>, and
+<span class="math inline">\(\lfloor x \rfloor\)</span> is the largest integer that is smaller than
+or equal to <span class="math inline">\(x\)</span>, while the inverse cdf is given by the generalized inverse
+cdf formalism that we’ve previously seen for discrete distributions.</p>
+</blockquote>
+<blockquote>
+<p>Note that there are no standard <code>R</code> functions of the form <code>xdiscunif()</code>
+for computing the pmf or cdf of
+the discrete uniform distribution, or for sampling from it. (See, however,
+the <code>xdunif()</code> functions defined within the contributed <code>extraDistr</code>
+package.) However, the reader should hopefully realize that it is
+simple enough to create such functions for one’s own use.
+There are four standard functions associated with any distribution:
+the one prefaced by <code>d</code> that returns the value of the
 probability mass function or probability density function, given a
 coordinate <span class="math inline">\(x\)</span>; the one prefaced by <code>p</code> that returns the output
 of the cumulative distribution function, given <span class="math inline">\(x\)</span>; the one prefaced
@@ -742,80 +846,112 @@ of the cumulative distribution function, given <span class="math inline">\(x\)</
 <p>For the discrete uniform distribution, one can code the
 probability mass function as follows:</p>
 </blockquote>
-<div class="sourceCode" id="cb361"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb361-1"><a href="the-uniform-distribution.html#cb361-1" tabindex="-1"></a>ddiscunif <span class="ot">&lt;-</span> <span class="cf">function</span>(x,<span class="at">min=</span><span class="dv">0</span>,<span class="at">max=</span><span class="dv">1</span>,<span class="at">step=</span><span class="dv">1</span>)</span>
-<span id="cb361-2"><a href="the-uniform-distribution.html#cb361-2" tabindex="-1"></a>{</span>
-<span id="cb361-3"><a href="the-uniform-distribution.html#cb361-3" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">seq</span>(min,max,<span class="at">by=</span>step)</span>
-<span id="cb361-4"><a href="the-uniform-distribution.html#cb361-4" tabindex="-1"></a>  <span class="cf">if</span> ( x <span class="sc">%in%</span> y ) <span class="fu">return</span>(<span class="dv">1</span><span class="sc">/</span><span class="fu">length</span>(y))</span>
-<span id="cb361-5"><a href="the-uniform-distribution.html#cb361-5" tabindex="-1"></a>  <span class="fu">return</span>(<span class="dv">0</span>)</span>
-<span id="cb361-6"><a href="the-uniform-distribution.html#cb361-6" tabindex="-1"></a>}</span>
-<span id="cb361-7"><a href="the-uniform-distribution.html#cb361-7" tabindex="-1"></a><span class="fu">ddiscunif</span>(<span class="dv">4</span>,<span class="at">min=</span><span class="dv">1</span>,<span class="at">max=</span><span class="dv">6</span>) <span class="co"># assume a fair six-sided die</span></span></code></pre></div>
-<pre><code>## [1] 0.1666667</code></pre>
+<div class="sourceCode" id="cb362"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb362-1"><a href="distributions-with-domain-specifying-parameters.html#cb362-1" tabindex="-1"></a>ddiscunif <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">min=</span><span class="dv">0</span>, <span class="at">max=</span><span class="dv">1</span>, <span class="at">step=</span><span class="dv">1</span>)</span>
+<span id="cb362-2"><a href="distributions-with-domain-specifying-parameters.html#cb362-2" tabindex="-1"></a>{</span>
+<span id="cb362-3"><a href="distributions-with-domain-specifying-parameters.html#cb362-3" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">seq</span>(min, max, <span class="at">by=</span>step)</span>
+<span id="cb362-4"><a href="distributions-with-domain-specifying-parameters.html#cb362-4" tabindex="-1"></a>  <span class="cf">if</span> ( x <span class="sc">%in%</span> y ) <span class="fu">return</span>(<span class="dv">1</span><span class="sc">/</span><span class="fu">length</span>(y))</span>
+<span id="cb362-5"><a href="distributions-with-domain-specifying-parameters.html#cb362-5" tabindex="-1"></a>  <span class="fu">return</span>(<span class="dv">0</span>)</span>
+<span id="cb362-6"><a href="distributions-with-domain-specifying-parameters.html#cb362-6" tabindex="-1"></a>}</span>
+<span id="cb362-7"><a href="distributions-with-domain-specifying-parameters.html#cb362-7" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">ddiscunif</span>(<span class="dv">4</span>, <span class="at">min=</span><span class="dv">1</span>, <span class="at">max=</span><span class="dv">6</span>), <span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## [1] 0.167</code></pre>
 <blockquote>
 <p>As for the cumulative distribution function:</p>
 </blockquote>
-<div class="sourceCode" id="cb363"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb363-1"><a href="the-uniform-distribution.html#cb363-1" tabindex="-1"></a>pdiscunif <span class="ot">&lt;-</span> <span class="cf">function</span>(x,<span class="at">min=</span><span class="dv">0</span>,<span class="at">max=</span><span class="dv">1</span>,<span class="at">step=</span><span class="dv">1</span>)</span>
-<span id="cb363-2"><a href="the-uniform-distribution.html#cb363-2" tabindex="-1"></a>{</span>
-<span id="cb363-3"><a href="the-uniform-distribution.html#cb363-3" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">seq</span>(min,max,<span class="at">by=</span>step)</span>
-<span id="cb363-4"><a href="the-uniform-distribution.html#cb363-4" tabindex="-1"></a>  w <span class="ot">&lt;-</span> <span class="fu">which</span>(y<span class="sc">&lt;=</span>x)</span>
-<span id="cb363-5"><a href="the-uniform-distribution.html#cb363-5" tabindex="-1"></a>  <span class="cf">if</span> ( <span class="fu">length</span>(w) <span class="sc">==</span> <span class="dv">0</span> ) <span class="fu">return</span>(<span class="dv">0</span>)</span>
-<span id="cb363-6"><a href="the-uniform-distribution.html#cb363-6" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">length</span>(w)<span class="sc">/</span><span class="fu">length</span>(y))</span>
-<span id="cb363-7"><a href="the-uniform-distribution.html#cb363-7" tabindex="-1"></a>}</span>
-<span id="cb363-8"><a href="the-uniform-distribution.html#cb363-8" tabindex="-1"></a><span class="fu">pdiscunif</span>(<span class="dv">4</span>,<span class="at">min=</span><span class="dv">1</span>,<span class="at">max=</span><span class="dv">6</span>)</span></code></pre></div>
-<pre><code>## [1] 0.6666667</code></pre>
+<div class="sourceCode" id="cb364"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb364-1"><a href="distributions-with-domain-specifying-parameters.html#cb364-1" tabindex="-1"></a>pdiscunif <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">min=</span><span class="dv">0</span>, <span class="at">max=</span><span class="dv">1</span>, <span class="at">step=</span><span class="dv">1</span>)</span>
+<span id="cb364-2"><a href="distributions-with-domain-specifying-parameters.html#cb364-2" tabindex="-1"></a>{</span>
+<span id="cb364-3"><a href="distributions-with-domain-specifying-parameters.html#cb364-3" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">seq</span>(min, max, <span class="at">by=</span>step)</span>
+<span id="cb364-4"><a href="distributions-with-domain-specifying-parameters.html#cb364-4" tabindex="-1"></a>  w <span class="ot">&lt;-</span> <span class="fu">which</span>(y<span class="sc">&lt;=</span>x)</span>
+<span id="cb364-5"><a href="distributions-with-domain-specifying-parameters.html#cb364-5" tabindex="-1"></a>  <span class="cf">if</span> ( <span class="fu">length</span>(w) <span class="sc">==</span> <span class="dv">0</span> ) <span class="fu">return</span>(<span class="dv">0</span>)</span>
+<span id="cb364-6"><a href="distributions-with-domain-specifying-parameters.html#cb364-6" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">length</span>(w)<span class="sc">/</span><span class="fu">length</span>(y))</span>
+<span id="cb364-7"><a href="distributions-with-domain-specifying-parameters.html#cb364-7" tabindex="-1"></a>}</span>
+<span id="cb364-8"><a href="distributions-with-domain-specifying-parameters.html#cb364-8" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">pdiscunif</span>(<span class="dv">4</span>, <span class="at">min=</span><span class="dv">1</span>, <span class="at">max=</span><span class="dv">6</span>), <span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## [1] 0.667</code></pre>
 <blockquote>
 <p>The inverse cdf implements the generalized inverse algorithm:</p>
 </blockquote>
-<div class="sourceCode" id="cb365"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb365-1"><a href="the-uniform-distribution.html#cb365-1" tabindex="-1"></a>qdiscunif <span class="ot">&lt;-</span> <span class="cf">function</span>(q,<span class="at">min=</span><span class="dv">0</span>,<span class="at">max=</span><span class="dv">1</span>,<span class="at">step=</span><span class="dv">1</span>)</span>
-<span id="cb365-2"><a href="the-uniform-distribution.html#cb365-2" tabindex="-1"></a>{</span>
-<span id="cb365-3"><a href="the-uniform-distribution.html#cb365-3" tabindex="-1"></a>  y   <span class="ot">&lt;-</span> <span class="fu">seq</span>(min,max,<span class="at">by=</span>step)</span>
-<span id="cb365-4"><a href="the-uniform-distribution.html#cb365-4" tabindex="-1"></a>  <span class="cf">if</span> ( q <span class="sc">==</span> <span class="dv">0</span> ) <span class="fu">return</span>(<span class="fu">min</span>(y))</span>
-<span id="cb365-5"><a href="the-uniform-distribution.html#cb365-5" tabindex="-1"></a>  <span class="cf">if</span> ( q <span class="sc">==</span> <span class="dv">1</span> ) <span class="fu">return</span>(<span class="fu">max</span>(y))</span>
-<span id="cb365-6"><a href="the-uniform-distribution.html#cb365-6" tabindex="-1"></a>  cdf <span class="ot">&lt;-</span> (<span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(y))<span class="sc">/</span><span class="fu">length</span>(y)</span>
-<span id="cb365-7"><a href="the-uniform-distribution.html#cb365-7" tabindex="-1"></a>  w   <span class="ot">&lt;-</span> <span class="fu">which</span>(cdf<span class="sc">&gt;=</span>q)</span>
-<span id="cb365-8"><a href="the-uniform-distribution.html#cb365-8" tabindex="-1"></a>  <span class="cf">if</span> ( <span class="fu">length</span>(w) <span class="sc">==</span> <span class="dv">0</span> ) <span class="fu">return</span>(<span class="fu">max</span>(y))</span>
-<span id="cb365-9"><a href="the-uniform-distribution.html#cb365-9" tabindex="-1"></a>  <span class="fu">return</span>(y[<span class="fu">min</span>(w)])</span>
-<span id="cb365-10"><a href="the-uniform-distribution.html#cb365-10" tabindex="-1"></a>}</span>
-<span id="cb365-11"><a href="the-uniform-distribution.html#cb365-11" tabindex="-1"></a><span class="fu">qdiscunif</span>(<span class="fl">0.55</span>,<span class="at">min=</span><span class="dv">1</span>,<span class="at">max=</span><span class="dv">6</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb366"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb366-1"><a href="distributions-with-domain-specifying-parameters.html#cb366-1" tabindex="-1"></a>qdiscunif <span class="ot">&lt;-</span> <span class="cf">function</span>(q, <span class="at">min=</span><span class="dv">0</span>, <span class="at">max=</span><span class="dv">1</span>, <span class="at">step=</span><span class="dv">1</span>)</span>
+<span id="cb366-2"><a href="distributions-with-domain-specifying-parameters.html#cb366-2" tabindex="-1"></a>{</span>
+<span id="cb366-3"><a href="distributions-with-domain-specifying-parameters.html#cb366-3" tabindex="-1"></a>  y   <span class="ot">&lt;-</span> <span class="fu">seq</span>(min, max, <span class="at">by=</span>step)</span>
+<span id="cb366-4"><a href="distributions-with-domain-specifying-parameters.html#cb366-4" tabindex="-1"></a>  <span class="cf">if</span> ( q <span class="sc">==</span> <span class="dv">0</span> ) <span class="fu">return</span>(<span class="fu">min</span>(y))</span>
+<span id="cb366-5"><a href="distributions-with-domain-specifying-parameters.html#cb366-5" tabindex="-1"></a>  <span class="cf">if</span> ( q <span class="sc">==</span> <span class="dv">1</span> ) <span class="fu">return</span>(<span class="fu">max</span>(y))</span>
+<span id="cb366-6"><a href="distributions-with-domain-specifying-parameters.html#cb366-6" tabindex="-1"></a>  cdf <span class="ot">&lt;-</span> (<span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(y))<span class="sc">/</span><span class="fu">length</span>(y)</span>
+<span id="cb366-7"><a href="distributions-with-domain-specifying-parameters.html#cb366-7" tabindex="-1"></a>  w   <span class="ot">&lt;-</span> <span class="fu">which</span>(cdf<span class="sc">&gt;=</span>q)</span>
+<span id="cb366-8"><a href="distributions-with-domain-specifying-parameters.html#cb366-8" tabindex="-1"></a>  <span class="cf">if</span> ( <span class="fu">length</span>(w) <span class="sc">==</span> <span class="dv">0</span> ) <span class="fu">return</span>(<span class="fu">max</span>(y))</span>
+<span id="cb366-9"><a href="distributions-with-domain-specifying-parameters.html#cb366-9" tabindex="-1"></a>  <span class="fu">return</span>(y[<span class="fu">min</span>(w)])</span>
+<span id="cb366-10"><a href="distributions-with-domain-specifying-parameters.html#cb366-10" tabindex="-1"></a>}</span>
+<span id="cb366-11"><a href="distributions-with-domain-specifying-parameters.html#cb366-11" tabindex="-1"></a><span class="fu">qdiscunif</span>(<span class="fl">0.55</span>, <span class="at">min=</span><span class="dv">1</span>, <span class="at">max=</span><span class="dv">6</span>)</span></code></pre></div>
 <pre><code>## [1] 4</code></pre>
 <blockquote>
 <p>And last, the random data generator:</p>
 </blockquote>
-<div class="sourceCode" id="cb367"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb367-1"><a href="the-uniform-distribution.html#cb367-1" tabindex="-1"></a>rdiscunif <span class="ot">&lt;-</span> <span class="cf">function</span>(n,<span class="at">min=</span><span class="dv">0</span>,<span class="at">max=</span><span class="dv">1</span>,<span class="at">step=</span><span class="dv">1</span>)</span>
-<span id="cb367-2"><a href="the-uniform-distribution.html#cb367-2" tabindex="-1"></a>{</span>
-<span id="cb367-3"><a href="the-uniform-distribution.html#cb367-3" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">seq</span>(min,max,<span class="at">by=</span>step)</span>
-<span id="cb367-4"><a href="the-uniform-distribution.html#cb367-4" tabindex="-1"></a>  s <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">length</span>(y),n,<span class="at">replace=</span><span class="cn">TRUE</span>)</span>
-<span id="cb367-5"><a href="the-uniform-distribution.html#cb367-5" tabindex="-1"></a>  <span class="fu">return</span>(y[s])</span>
-<span id="cb367-6"><a href="the-uniform-distribution.html#cb367-6" tabindex="-1"></a>}</span>
-<span id="cb367-7"><a href="the-uniform-distribution.html#cb367-7" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">235</span>) <span class="co"># set to ensure consistent output</span></span>
-<span id="cb367-8"><a href="the-uniform-distribution.html#cb367-8" tabindex="-1"></a><span class="fu">rdiscunif</span>(<span class="dv">10</span>,<span class="at">min=</span><span class="dv">1</span>,<span class="at">max=</span><span class="dv">6</span>)</span></code></pre></div>
-<pre><code>##  [1] 6 5 5 6 2 1 5 1 3 6</code></pre>
+<div class="sourceCode" id="cb368"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb368-1"><a href="distributions-with-domain-specifying-parameters.html#cb368-1" tabindex="-1"></a>rdiscunif <span class="ot">&lt;-</span> <span class="cf">function</span>(n, <span class="at">min=</span><span class="dv">0</span>, <span class="at">max=</span><span class="dv">1</span>, <span class="at">step=</span><span class="dv">1</span>)</span>
+<span id="cb368-2"><a href="distributions-with-domain-specifying-parameters.html#cb368-2" tabindex="-1"></a>{</span>
+<span id="cb368-3"><a href="distributions-with-domain-specifying-parameters.html#cb368-3" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">seq</span>(min, max, <span class="at">by=</span>step)</span>
+<span id="cb368-4"><a href="distributions-with-domain-specifying-parameters.html#cb368-4" tabindex="-1"></a>  s <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">length</span>(y), n, <span class="at">replace=</span><span class="cn">TRUE</span>)</span>
+<span id="cb368-5"><a href="distributions-with-domain-specifying-parameters.html#cb368-5" tabindex="-1"></a>  <span class="fu">return</span>(y[s])</span>
+<span id="cb368-6"><a href="distributions-with-domain-specifying-parameters.html#cb368-6" tabindex="-1"></a>}</span>
+<span id="cb368-7"><a href="distributions-with-domain-specifying-parameters.html#cb368-7" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">236</span>) <span class="co"># set to ensure consistent output</span></span>
+<span id="cb368-8"><a href="distributions-with-domain-specifying-parameters.html#cb368-8" tabindex="-1"></a><span class="fu">rdiscunif</span>(<span class="dv">10</span>,<span class="at">min=</span><span class="dv">1</span>,<span class="at">max=</span><span class="dv">6</span>)</span></code></pre></div>
+<pre><code>##  [1] 6 6 6 3 3 4 1 1 5 4</code></pre>
 </div>
 </div>
-<div id="linear-functions-of-uniform-random-variables" class="section level2 hasAnchor" number="5.2">
-<h2><span class="header-section-number">5.2</span> Linear Functions of Uniform Random Variables<a href="the-uniform-distribution.html#linear-functions-of-uniform-random-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Let’s assume that we are given <span class="math inline">\(n\)</span> iid Uniform random variables:
-<span class="math inline">\(X_1,X_2,\ldots,X_n \sim\)</span> Uniform(<span class="math inline">\(a,b\)</span>). What is the distribution
-of the sum <span class="math inline">\(Y = \sum_{i=1}^n X_i\)</span>?</p>
+<div id="linear-functions-of-random-variables" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Linear Functions of Random Variables<a href="distributions-with-domain-specifying-parameters.html#linear-functions-of-random-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="graybox">
+<p>What to take away from this section:</p>
+<ul>
+<li><p>The <em>method of moment-generating functions</em> allows us to determine that…</p>
+<ul>
+<li><p>the sum of <span class="math inline">\(n\)</span> iid Uniform(0,1) random variables is sampled according to an <em>Irwin-Hall</em> distribution;</p></li>
+<li><p>the mean of <span class="math inline">\(n\)</span> iid Uniform(0,1) random variables is sampled according to an <em>Bates</em> distribution; and</p></li>
+<li><p>we cannot use the method of mgfs to say anything about functions of Pareto random variables.</p></li>
+</ul></li>
+<li><p>Foreshadowing: these results are shown for completeness but they do not actually help us make optimal statistical inferences about distribution bounds; as we will see in the next section, a sufficient statistic for a distribution bound is actually an <em>order statistic</em>, and that is what we would use for optimal inference.</p></li>
+</ul>
+</div>
+<p><br></p>
+<p>Let’s assume we are given <span class="math inline">\(n\)</span> iid random variables <span class="math inline">\(\{X_1,\ldots,X_n\}\)</span>
+sampled according to some distribution that has a domain-specifying parameter.
+What is the distribution of <span class="math inline">\(Y = \sum_{i=1}^n a_i X_i\)</span>?</p>
+<blockquote>
 <p><strong>Recall</strong>: <em>the moment-generating function, or mgf, is a means by which to encapsulate information about a probability distribution. When it exists, the mgf is given by <span class="math inline">\(E[e^{tX}]\)</span>. If <span class="math inline">\(Y = \sum_{i=1}^n a_iX_i\)</span>, then <span class="math inline">\(m_Y(t) = m_{X_1}(a_1t) m_{X_2}(a_2t) \cdots m_{X_n}(a_nt)\)</span>; if we can identify <span class="math inline">\(m_Y(t)\)</span> os the mgf for a known family of distributions, then we can immediately identify the distribution of <span class="math inline">\(Y\)</span> and the parameters of that distribution.</em></p>
-<p>The moment-generating function for the uniform distribution is
+</blockquote>
+<p>Below we discuss the distributions of the sample sum and sample mean for
+uniformly distributed data. Note that for the Pareto distribution, the
+mgf does not exist, and so to perform statistical inference with
+Pareto-distributed data with, e.g., the sample sum or the sample mean,
+we would have no choice but to utilize a simulation framework.</p>
+<hr />
+<div id="uniform-data-sample-sum-and-mean-distributions" class="section level3 hasAnchor" number="5.2.1">
+<h3><span class="header-section-number">5.2.1</span> Uniform Data: Sample Sum and Mean Distributions<a href="distributions-with-domain-specifying-parameters.html#uniform-data-sample-sum-and-mean-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<blockquote>
+<p>Let’s assume that we are given <span class="math inline">\(n\)</span> iid Uniform random variables:
+<span class="math inline">\(X_1,X_2,\ldots,X_n \sim\)</span> Uniform(<span class="math inline">\(a,b\)</span>). What is, e.g., the distribution
+of the sum <span class="math inline">\(Y = \sum_{i=1}^n X_i\)</span>?</p>
+</blockquote>
+<blockquote>
+<p>We start by deriving
+the moment-generating function for the uniform distribution:
 <span class="math display">\[\begin{align*}
-m_X(t) = E[e^{tX}] &amp;= \int_a^b \frac{e^{tx}}{b-a} dx = \frac{1}{b-a} \left. \frac{1}{t}e^{tx} \right|_a^b = \frac{e^{tb}-e^{ta}}{t(b-a)} \,,
+m_X(t) = E[e^{tX}] &amp;= \int_a^b \frac{e^{tx}}{b-a} dx = \frac{1}{b-a} \left. \frac{1}{t}e^{tx} \right|_a^b = \frac{e^{tb}-e^{ta}}{t(b-a)} \,.
 \end{align*}\]</span>
-thus the mgf for the sum <span class="math inline">\(Y = \sum_{i=1}^n X_i\)</span> is
+Thus the mgf for the sum <span class="math inline">\(Y = \sum_{i=1}^n X_i\)</span> is
 <span class="math display">\[
 m_Y(t) = \prod_{i=1}^n m_{X_i}(t) = \left( \frac{e^{tb}-e^{ta}}{t(b-a)} \right)^n \,.
 \]</span>
 This expression does not simplify such that we recognize the distribution
 of <span class="math inline">\(Y\)</span>. If <span class="math inline">\(a = 0\)</span> and <span class="math inline">\(b = 1\)</span>, it turns out that the mgf does take on the
-form of that for an Irwin-Hall distribution. An Irwin-Hall random variable
+form of that for an <em>Irwin-Hall distribution</em>. An Irwin-Hall random variable
 converges in distribution to a normal random variable as
 <span class="math inline">\(n \rightarrow \infty\)</span>.</p>
+</blockquote>
+<blockquote>
 <p>We find ourselves in a similar situation if we look at the sample mean
 <span class="math inline">\(\bar{X} = Y/n\)</span>:
 <span class="math display">\[
 m_{\bar{X}}(t) = \prod_{i=1}^n m_{X_i}\left(\frac{t}{n}\right) = \left( \frac{n(e^{tb/n}-e^{ta/n})}{t(b-a)} \right)^n \,.
 \]</span>
-If <span class="math inline">\(a = 0\)</span> and <span class="math inline">\(b = 1\)</span>, <span class="math inline">\(\bar{X}\)</span> is sampled from a Bates distribution.
+If <span class="math inline">\(a = 0\)</span> and <span class="math inline">\(b = 1\)</span>, <span class="math inline">\(\bar{X}\)</span> is sampled from a <em>Bates distribution</em>.
 A Bates random variable converges in distribution to a normal random variable
 as <span class="math inline">\(n \rightarrow \infty\)</span>. For all other combinations of <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, we
 cannot write down a specific functional form for the sampling distribution of
@@ -824,46 +960,63 @@ etc. (However, we note that because statistical inference for a uniform
 distribution involves determining
 the lower and/or upper bounds, we can utilize order
 statistics for inference instead of <span class="math inline">\(\bar{X}\)</span>. See the next section below.)</p>
-<hr />
-<div id="the-moment-generating-function-for-a-discrete-uniform-distribution" class="section level3 hasAnchor" number="5.2.1">
-<h3><span class="header-section-number">5.2.1</span> The Moment-Generating Function for a Discrete Uniform Distribution<a href="the-uniform-distribution.html#the-moment-generating-function-for-a-discrete-uniform-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<blockquote>
-<p>The mgf for a discrete uniform random variable is
-<span class="math display">\[
-E[e^{tX}] = \sum_{x=a}^b e^{tx} p_X(x) = \frac{1}{n} \sum_{x=a}^b e^{tx} \,.
-\]</span>
-We cannot say anything further without making an assumption. If we say
-that <span class="math inline">\(x \in [a,a+1,\ldots,b-1,b]\)</span>, i.e., that there are integer steps
-between the probability masses, then
-<span class="math display">\[
-E[e^{tX}] = \frac{1}{n} \sum_{x=a}^b e^{tx} = \frac{1}{n}e^{ta} \left( 1 + e^{t(a+1)} + \cdots + e^{t(b-a)} \right) \,.
-\]</span>
-If <span class="math inline">\(t\)</span> is negative, then we can make use of a geometric sum:
-<span class="math display">\[
-1 + e^t + \cdots = \frac{1}{1-e^t} = \underbrace{1 + \cdots + e^{t(b-a)}}_{} + \underbrace{e^{t(b-a+1)} + \cdots}_{} \,,
-\]</span>
-where the first underbraced quantity is what appears above in the
-expected value. Thus we can rearrange terms and write
-<span class="math display">\[\begin{align*}
-1 + e^{t(a+1)} + \cdots + e^{t(b-a)} &amp;= \frac{1}{1-e^t} - \left( e^{t(b-a+1)} + \cdots \right) \\
-&amp;= \frac{1}{1-e^t} - e^{t(b-a+1)}\left(1 + e^t + \cdots\right) \\
-&amp;= \frac{1}{1-e^t} - \frac{e^{t(b-a+1)}}{1-e^t} = \frac{1-e^{t(b-a+1)}}{1-e^t} \,.
-\end{align*}\]</span>
-Putting everything together, we find that
-<span class="math display">\[
-m_X(t) = \frac{1}{n}e^{ta} \frac{1-e^{t(b-a+1)}}{1-e^t} = \frac{e^{ta}-e^{t(b+1)}}{n(1-e^t)} \,.
-\]</span>
-This is the usual form of the mgf presented for the discrete uniform
-distribution, but again, this is only valid if the masses are separated
-by one unit: <span class="math inline">\(x \in [a,a+1,\ldots,b-1,b]\)</span>.</p>
 </blockquote>
 </div>
 </div>
-<div id="sufficient-statistics-and-the-minimum-variance-unbiased-estimator" class="section level2 hasAnchor" number="5.3">
-<h2><span class="header-section-number">5.3</span> Sufficient Statistics and the Minimum Variance Unbiased Estimator<a href="the-uniform-distribution.html#sufficient-statistics-and-the-minimum-variance-unbiased-estimator" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="point-estimation-4" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Point Estimation<a href="distributions-with-domain-specifying-parameters.html#point-estimation-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="graybox">
+<p>What to take away from this section:</p>
+<ul>
+<li><p>A sufficient statistic for a distribution lower bound is the smallest-observed datum, <span class="math inline">\(X_{(1)}\)</span>, while for an upper bound, it is the largest-observed datum, <span class="math inline">\(X_{(n)}\)</span>.</p></li>
+<li><p>Sufficient statistics provide both the MLE and the MVUE for a distribution bound.</p></li>
+</ul>
+</div>
+<p><br></p>
+<p>Previously, we described two commonly used point estimators:
+the maximum likelihood estimator (or MLE)
+and the minimum variance unbiased estimator (or MVUE). Below, we show how one
+would work with both in the context of estimating domain-specifying parameters.</p>
+<blockquote>
+<p><strong>Recall</strong>: <em>the value of <span class="math inline">\(\theta\)</span> that maximizes the likelihood function is the maximum likelihood estimate, or MLE, for <span class="math inline">\(\theta\)</span>. The maximum is,</em> <strong>thus far,</strong> <em>found by taking the (partial) derivative of the (log-)likelihood function with respect to <span class="math inline">\(\theta\)</span>, setting the result to zero, and solving for <span class="math inline">\(\theta\)</span>. That solution is the maximum likelihood estimate <span class="math inline">\(\hat{\theta}_{MLE}\)</span>. Also recall the invariance property of the MLE: if <span class="math inline">\(\hat{\theta}_{MLE}\)</span> is the MLE for <span class="math inline">\(\theta\)</span>, then <span class="math inline">\(g(\hat{\theta}_{MLE})\)</span> is the MLE for <span class="math inline">\(g(\theta)\)</span>.</em></p>
+</blockquote>
+<p>Now that we have recalled how maximum likelihood estimation works, we can
+state that this is <em>not</em> how the MLE is found for a domain-affecting
+parameter! (Hence the “thus far” in the recall statement above.)
+Let’s assume, for instance, that we sample <span class="math inline">\(n\)</span> iid random
+variables from a Uniform(<span class="math inline">\(0,\theta\)</span>) distribution. The likelihood is
+<span class="math display">\[
+\mathcal{L}(\theta \vert \mathbf{x}) = \frac{1}{\theta^n} \,.
+\]</span>
+This means that the smaller the value of <span class="math inline">\(\theta\)</span> is,
+the larger the likelihood will be.
+So how small can <span class="math inline">\(\theta\)</span> be? We can answer this intuitively: the domain
+<span class="math inline">\([0,\theta]\)</span> has to just encompass all the observed data, i.e.,
+<span class="math display">\[
+\hat{\theta}_{MLE} = X_{(n)} \,.
+\]</span>
+If <span class="math inline">\(\theta\)</span> were smaller, <span class="math inline">\(X_{(n)}\)</span> would lie outside the domain. It is
+fine for <span class="math inline">\(\theta\)</span> to be larger, since then all the data lie in the
+domain <span class="math inline">\([0,\theta]\)</span>…but the larger <span class="math inline">\(\theta\)</span> is, the smaller the
+likelihood.</p>
+<p>We plot an example likelihood function in Figure <a href="distributions-with-domain-specifying-parameters.html#fig:uniflik">5.3</a>. We observe
+immediately that the usual MLE algorithm will not work here, as the likelihood
+function is not differentiable at <span class="math inline">\(\theta = X_{(n)}\)</span>.
+All we can do is, e.g., plot the likelihood and identify
+the MLE as that value for which the likelihood is maximized (or identify the
+value intuitively as we do above).</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:uniflik"></span>
+<img src="_main_files/figure-html/uniflik-1.png" alt="\label{fig:uniflik}The likelihood function given $n=5$ data drawn from a Uniform(0,$\theta$) distribution, with $\theta = 1$. As $\theta$ cannot be smaller than the maximum observed value, the likelihood is zero for $\theta &lt; X_{(n)}$; it is $1/\theta^n$ for $\theta \geq X_{(n)}$. The maximum likelihood estimate is thus $X_{(n)}$ itself; as the likelihood function is not differentiable at this point, the MLE cannot be found via the algorithm that we have used previously." width="50%" />
+<p class="caption">
+Figure 5.3: The likelihood function given <span class="math inline">\(n=5\)</span> data drawn from a Uniform(0,<span class="math inline">\(\theta\)</span>) distribution, with <span class="math inline">\(\theta = 1\)</span>. As <span class="math inline">\(\theta\)</span> cannot be smaller than the maximum observed value, the likelihood is zero for <span class="math inline">\(\theta &lt; X_{(n)}\)</span>; it is <span class="math inline">\(1/\theta^n\)</span> for <span class="math inline">\(\theta \geq X_{(n)}\)</span>. The maximum likelihood estimate is thus <span class="math inline">\(X_{(n)}\)</span> itself; as the likelihood function is not differentiable at this point, the MLE cannot be found via the algorithm that we have used previously.
+</p>
+</div>
+<blockquote>
 <p><strong>Recall</strong>: <em>a sufficient statistic for a population parameter <span class="math inline">\(\theta\)</span> captures all information about <span class="math inline">\(\theta\)</span> contained in a data sample; no additional statistic will provide more information about <span class="math inline">\(\theta\)</span>. Sufficient statistics are not unique: one-to-one functions of sufficient statistics are themselves sufficient statistics.</em></p>
-<p>Before we discuss sufficient statistics in the context of the uniform
-distribution, it is useful to (re-)introduce the <em>indicator function</em>. This
+</blockquote>
+<p>Before we discuss sufficient statistics in the context of working with
+domain-specifying parameters,
+it is useful to (re-)introduce the <em>indicator function</em>. This
 function, mentioned briefly in Chapter 1, takes on the value 1 if a
 specified condition is met and 0 otherwise. For instance,
 <span class="math display">\[
@@ -874,13 +1027,13 @@ or pdf. For instance, we can write
 <span class="math display">\[
 f_X(x) = \left\{ \begin{array}{ll} e^{-x} &amp; x \geq 0 \\ 0 &amp; \mbox{otherwise} \end{array} \right.
 \]</span>
-to express that the exponential distribution with rate <span class="math inline">\(\beta = 1\)</span> is
+to express that the exponential distribution with rate <span class="math inline">\(\theta = 1\)</span> is
 defined within the domain <span class="math inline">\(x \in [0,\infty)\)</span>, or, equivalently, we can write
 <span class="math display">\[
 f_X(x) = e^{-x} \mathbb{I}_{x \in [0,\infty)} \,.
 \]</span>
 The latter form expresses the same information in a more condensed fashion.</p>
-<p>So…what do indicator functions have to do with uniform distributions?</p>
+<p>So…why would we use indicator functions now?</p>
 <p>Let’s suppose we sample <span class="math inline">\(n\)</span> iid data <span class="math inline">\(\{X_1,\ldots,X_n\}\)</span> from
 a uniform distribution with lower bound 0 and upper bound <span class="math inline">\(\theta\)</span>, and
 our goal is to define a sufficient statistic for <span class="math inline">\(\theta\)</span>. Let’s work
@@ -892,43 +1045,68 @@ The likelihood is
 <span class="math display">\[
 \mathcal{L}(\theta \vert \mathbf{x}) = \prod_{i=1}^n f_X(x_i \vert \theta) = \prod_{i=1}^n \frac{1}{\theta} = \frac{1}{\theta^n} \,.
 \]</span>
-OK…no…wait, there are no data in this expression, so we cannot define
-a sufficient statistic. The way around this is to re-express the pdf as
+OK…no…wait: there are no data in this expression, so we cannot (yet)
+read off a sufficient statistic for <span class="math inline">\(\theta\)</span>.
+Let’s re-express the pdf as
 <span class="math display">\[
 f_X(x) = \frac{1}{\theta} \mathbb{I}_{x \in [0,\theta]}
 \]</span>
-and to rewrite the likelihood as
+and rewrite the likelihood as
 <span class="math display">\[
 \mathcal{L}(\theta \vert \mathbf{x}) = \prod_{i=1}^n f_X(x_i \vert \theta) = \frac{1}{\theta^n} \prod_{i=1}^n \mathbb{I}_{x_i \in [0,\theta]} \,.
 \]</span>
-A product of indicator functions will equal 1 if and only if <em>all</em> data lie
+The product of indicator functions will equal 1 if and only if <em>all</em> data lie
 in the domain <span class="math inline">\(x \in [0,\theta]\)</span>. This is equivalent to saying that
 <span class="math inline">\(\theta \geq X_{(n)}\)</span>, the order statistic representing the maximum observed
 datum. Thus <span class="math inline">\(X_{(n)}\)</span> is a sufficient statistic for <span class="math inline">\(\theta\)</span>: we know
 <span class="math inline">\(\theta\)</span> is greater than this statistic’s value, and none of the data
-aside from <span class="math inline">\(X_{(n)}\)</span> provide any additional information about <span class="math inline">\(\theta\)</span>.</p>
-<p>The upshot: when the parameter <span class="math inline">\(\theta\)</span> dictates (at least in part)
-the domain of a distribution, a sufficient statistic for <span class="math inline">\(\theta\)</span> will be
-an order statistic (or one-to-one functions of an order statistic).</p>
+aside from <span class="math inline">\(X_{(n)}\)</span> provide additional information about <span class="math inline">\(\theta\)</span>.</p>
+<p>The upshot: when <span class="math inline">\(\theta\)</span> is a domain-specifying parameter,
+a sufficient statistic for <span class="math inline">\(\theta\)</span> will be
+an order statistic (or any one-to-one function of that order statistic).</p>
 <p>When we first introduced the factorization criterion and sufficient statistics
-back in Chapter 3, we did it so that ultimately we could write down the
+in Chapter 3, we did it so that ultimately we could write down the
 minimum variance unbiased estimator (or MVUE).</p>
+<blockquote>
 <p><strong>Recall</strong>: <em>the bias of an estimator is the difference between the average value of the estimates it generates and the true parameter value. If <span class="math inline">\(E[\hat{\theta}-\theta] = 0\)</span>, then the estimator <span class="math inline">\(\hat{\theta}\)</span> is said to be unbiased.</em></p>
+</blockquote>
+<blockquote>
 <p><strong>Recall</strong>: <em>deriving the minimum variance unbiased estimator involves two steps:</em></p>
+</blockquote>
+<blockquote>
 <ol style="list-style-type: decimal">
 <li><em>factorizing the likelihood function to uncover a sufficient statistic <span class="math inline">\(U\)</span> (that we assume is both minimal and complete); and</em></li>
 <li><em>finding a function <span class="math inline">\(h(U)\)</span> such that <span class="math inline">\(E[h(U)] = \theta\)</span>.</em></li>
 </ol>
-<p>If <span class="math inline">\(\{X_1,\ldots,X_n\}\)</span> are iid data sampled according to a
+</blockquote>
+<p>For instance, if <span class="math inline">\(\{X_1,\ldots,X_n\}\)</span> are iid data sampled according to a
 Uniform(<span class="math inline">\(0,\theta\)</span>) distribution, can we
-define an MVUE for <span class="math inline">\(\theta\)</span>? The answer is yes…but we have to recall how
-we define the pdf of <span class="math inline">\(X_{(n)}\)</span> first.</p>
+define an MVUE for <span class="math inline">\(\theta\)</span>? The answer is yes…as we will show
+in an example below.</p>
+<p>(For completeness, we should mention that the method of moments estimator
+for <span class="math inline">\(\theta\)</span> can <em>never</em> be a sufficient statistic, since MoM estimators are
+not constructed from order statistics.)</p>
+<hr />
+<div id="uniform-domain-parameter-mle" class="section level3 hasAnchor" number="5.3.1">
+<h3><span class="header-section-number">5.3.1</span> Uniform Domain Parameter: MLE<a href="distributions-with-domain-specifying-parameters.html#uniform-domain-parameter-mle" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<blockquote>
+<p>Let <span class="math inline">\(\{X_1,\ldots,X_n\}\)</span> be <span class="math inline">\(n\)</span> iid data sampled according to
+a Uniform(<span class="math inline">\(0,\theta\)</span>) distribution. As shown above, the MLE for
+<span class="math inline">\(\theta\)</span> is <span class="math inline">\(X_{(n)}\)</span>, the maximum observed datum.
+The properties of estimators that we have examined thus far include the
+bias (are our estimates offset from the truth, on average?), the variance
+(over how large a range do our estimates vary?), etc. Let’s look at
+these properties here.</p>
+</blockquote>
+<blockquote>
 <p><strong>Recall</strong>: <em>the maximum of <span class="math inline">\(n\)</span> iid random variables sampled from a pdf
 <span class="math inline">\(f_X(x)\)</span> has a sampling distribution given by</em>
 <span class="math display">\[
 f_{(n)}(x) = n f_X(x) [ F_X(x) ]^{n-1} \,,
 \]</span>
 <em>where <span class="math inline">\(F_X(x)\)</span> is the associated cdf.</em></p>
+</blockquote>
+<blockquote>
 <p>For the Uniform(<span class="math inline">\(0,\theta\)</span>) distribution,
 <span class="math display">\[
 f_X(x) = \frac{1}{\theta} ~~\mbox{and}~~ F_X(x) = \int_0^x f_Y(y) dy = \int_0^x \frac{1}{\theta} dy = \frac{x}{\theta} \,,
@@ -937,65 +1115,74 @@ so
 <span class="math display">\[
 f_{(n)}(x) = n \frac{1}{\theta} \left[ \frac{x}{\theta} \right]^{n-1} = n \frac{x^{n-1}}{\theta^n} \,.
 \]</span>
-To find the MVUE, we first compute the expected value of <span class="math inline">\(X_{(n)}\)</span>:
+The expected value of <span class="math inline">\(X_{(n)}\)</span> is thus
 <span class="math display">\[
 E[X_{(n)}] = \int_0^\theta x n \frac{x^{n-1}}{\theta^n} dx = \left. \frac{n}{(n+1)\theta^n} x^{n+1} \right|_0^\theta = \frac{n}{n+1} \theta \,,
 \]</span>
-and then rearrange terms:
+and the bias of the MLE for <span class="math inline">\(\theta\)</span> is thus
 <span class="math display">\[
-E\left[\frac{n+1}{n}X_{(n)}\right] = \theta \,.
+B[\hat{\theta}_{MLE}] = E[\hat{\theta}_{MLE}] - \theta = \frac{n}{n+1}\theta - \theta = -\frac{1}{n+1}\theta \,.
 \]</span>
-Thus
-<span class="math display">\[
-\hat{\theta}_{MVUE} = \frac{n+1}{n}X_{(n)}
-\]</span>
-is the MVUE for <span class="math inline">\(\theta\)</span>. (Note that we can utilize
-a similar calculation to this one
-to determine, e.g., the MVUE for <span class="math inline">\(\theta\)</span> when
-data are sampled according to a Uniform(<span class="math inline">\(\theta,b\)</span>) distribution.)</p>
-<div id="sufficient-statistics-for-the-pareto-domain-parameter" class="section level3 hasAnchor" number="5.3.1">
-<h3><span class="header-section-number">5.3.1</span> Sufficient Statistics for the Pareto Domain Parameter<a href="the-uniform-distribution.html#sufficient-statistics-for-the-pareto-domain-parameter" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<blockquote>
-<p>The Pareto [puh-RAY-toh] distribution, also known in some quarters as
-the power-law distribution, is
-<span class="math display">\[
-f_X(x) = \frac{\alpha \beta^\alpha}{x^{\alpha+1}} \,,
-\]</span>
-where <span class="math inline">\(\alpha &gt; 0\)</span> is the shape parameter and <span class="math inline">\(x \in [\beta,\infty)\)</span>,
-where <span class="math inline">\(\beta\)</span> is the scale (or location)
-parameter. Let’s assume <span class="math inline">\(\alpha\)</span> is known.
-A sufficient statistic for <span class="math inline">\(\beta\)</span>, found via likelihood factorization,
-is
-<span class="math display">\[
-\mathcal{L}(\beta \vert \mathbf{x}) = \prod_{i=1}^n f_X(x_i) = \underbrace{\beta^{n\alpha}}_{g(\mathbf{x},\beta)} \cdot \underbrace{\frac{\alpha^n}{(\prod_{i=1}^n x_i)^{\alpha+1}}}_{h(\mathbf{x})} \,.
-\]</span>
-Wait…again, as is the case for the uniform distribution, no data appear
-in the
-expression <span class="math inline">\(g(\cdot)\)</span>. So we would go back and introduce
-an indicator function into the pdf; it should be clear that when we do so,
-<span class="math inline">\(g(\mathbf{x},\beta)\)</span> changes to
-<span class="math display">\[
-g(\mathbf{x},\beta) = \beta^{n\alpha} \prod_{i=1}^n \mathbb{I}_{x_i \in [\beta,\infty)}
-\]</span>
-and thus that because all data have to be larger than <span class="math inline">\(\beta\)</span>, a sufficient
-statistic will be the minimum observed datum, <span class="math inline">\(X_{(1)}\)</span>.</p>
+The MLE is biased, but as we expect it is at least asymptotically unbiased,
+as the bias goes to zero as <span class="math inline">\(n \rightarrow \infty\)</span>.</p>
 </blockquote>
+<blockquote>
+<p><strong>Recall</strong>: <em>an estimator is consistent if its mean-squared error, <span class="math inline">\(B[\hat{\theta}]^2 + V[\hat{\theta}]\)</span>, goes to zero as the sample size <span class="math inline">\(n\)</span> goes to infinity.</em></p>
+</blockquote>
+<blockquote>
+<p>The variance of the MLE is
+<span class="math display">\[
+V[\hat{\theta}_{MLE}] = E[\hat{\theta}_{MLE}^2] - \left(E[\hat{\theta}_{MLE}\right)^2 = E[X_{(n)}^2] - (E[X_{(n)}])^2 \,.
+\]</span>
+To derive the variance, we need to determine <span class="math inline">\(E[X_{(n)}^2]\)</span>:
+<span class="math display">\[
+E[X_{(n)}^2] = \int_0^\theta x^2 n \frac{x^{n-1}}{\theta^n} dx = \left. \frac{n}{(n+2)\theta^n} x^{n+2} \right|_0^\theta = \frac{n}{n+2} \theta^2 \,.
+\]</span>
+So now we can write down that
+<span class="math display">\[
+V[\hat{\theta}_{MLE}] = \frac{n}{n+2}\theta^2 - \left( \frac{n}{n+1}\theta\right)^2 = \frac{n}{(n+2)(n+1)^2}\theta^2 \rightarrow \frac{\theta^2}{n^2} ~~\mbox{as}~~ n \rightarrow \infty\,.
+\]</span>
+We observe that because the variance goes
+to zero as <span class="math inline">\(n \rightarrow \infty\)</span>, the
+mean-squared error does as well…and thus the MLE for <span class="math inline">\(\theta\)</span>
+is a consistent estimator.</p>
+</blockquote>
+<hr />
 </div>
-<div id="mvue-properties-for-uniform-distribution-bounds" class="section level3 hasAnchor" number="5.3.2">
-<h3><span class="header-section-number">5.3.2</span> MVUE Properties for Uniform Distribution Bounds<a href="the-uniform-distribution.html#mvue-properties-for-uniform-distribution-bounds" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="pareto-domain-parameter-mle" class="section level3 hasAnchor" number="5.3.2">
+<h3><span class="header-section-number">5.3.2</span> Pareto Domain Parameter: MLE<a href="distributions-with-domain-specifying-parameters.html#pareto-domain-parameter-mle" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <blockquote>
-<p>The properties of estimators that we have examined thus far include the
-bias (are our estimates offset from the truth, on average?), the variance
-(over how large a range do our estimates vary?), etc. Let’s look at some
-of these properties here, assuming we sample <span class="math inline">\(n\)</span> iid data from a
-Uniform(<span class="math inline">\(0,\theta\)</span>) distribution.</p>
+<p>Recall that the Pareto distribution has the probability density function
+<span class="math display">\[
+f_X(x) = \frac{a b^a}{x^{a+1}} \,,
+\]</span>
+where <span class="math inline">\(a &gt; 0\)</span> and <span class="math inline">\(x \in [b,\infty)\)</span>.
+Because <span class="math inline">\(b\)</span> is a domain-specifying parameter,
+we find the MLE not via differentiation but rather by
+identifying that the likelihood is maximized when <span class="math inline">\(b\)</span> is exactly
+equal to <span class="math inline">\(X_{(1)}\)</span>, i.e., <span class="math inline">\(\hat{b}_{MLE} = X_{(1)}\)</span>. See Figure
+<a href="distributions-with-domain-specifying-parameters.html#fig:parlik">5.4</a>.</p>
 </blockquote>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:parlik"></span>
+<img src="_main_files/figure-html/parlik-1.png" alt="\label{fig:parlik}The likelihood function given $n=5$ data drawn from a Pareto(1,$b$) distribution, with $b = 1$. As $b$ cannot be larger than the minimum observed value, the likelihood is zero for $b \geq X_{(1)}$; it is $\theta^n(1/\prod_{i=1}^n x_i)^2$ for $b &lt; X_{(n)}$. The maximum likelihood estimate is thus $X_{(1)}$ itself; as the likelihood function is not differentiable at this point, the MLE cannot be found via the algorithm we have used previously." width="50%" />
+<p class="caption">
+Figure 5.4: The likelihood function given <span class="math inline">\(n=5\)</span> data drawn from a Pareto(1,<span class="math inline">\(b\)</span>) distribution, with <span class="math inline">\(b = 1\)</span>. As <span class="math inline">\(b\)</span> cannot be larger than the minimum observed value, the likelihood is zero for <span class="math inline">\(b \geq X_{(1)}\)</span>; it is <span class="math inline">\(\theta^n(1/\prod_{i=1}^n x_i)^2\)</span> for <span class="math inline">\(b &lt; X_{(n)}\)</span>. The maximum likelihood estimate is thus <span class="math inline">\(X_{(1)}\)</span> itself; as the likelihood function is not differentiable at this point, the MLE cannot be found via the algorithm we have used previously.
+</p>
+</div>
+<hr />
+</div>
+<div id="uniform-domain-parameter-mvue" class="section level3 hasAnchor" number="5.3.3">
+<h3><span class="header-section-number">5.3.3</span> Uniform Domain Parameter: MVUE<a href="distributions-with-domain-specifying-parameters.html#uniform-domain-parameter-mvue" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <blockquote>
-<p>Bias: the MVUE is by definition unbiased, since
-<span class="math inline">\(E[(n+1/n)X_{(n)}] = \theta\)</span>.</p>
-</blockquote>
-<blockquote>
-<p>Variance: the variance of <span class="math inline">\(\hat{\theta}_{MVUE}\)</span> is
+<p>Above, we determined that if we sample <span class="math inline">\(n\)</span> iid data according to
+a Uniform<span class="math inline">\((0,\theta)\)</span> distribution, a sufficient statistic for <span class="math inline">\(\theta\)</span>
+is <span class="math inline">\(X_{(n)}\)</span> and the expected value of <span class="math inline">\(X_{(n)}\)</span> is <span class="math inline">\(n\theta/(n+1)\)</span>.
+Given this information, it is trivial to rearrange terms and to
+write down the MVUE for <span class="math inline">\(\theta\)</span>:
+<span class="math display">\[
+E\left[\frac{n+1}{n}X_{(n)}\right] = \theta ~~~ \Rightarrow ~~~ \hat{\theta}_{MVUE} = \frac{n+1}{n}X_{(n)} \,.
+\]</span>
+The variance of <span class="math inline">\(\hat{\theta}_{MVUE}\)</span> is
 <span class="math display">\[\begin{align*}
 V[\hat{\theta}_{MVUE}] &amp;= E\left[\left(\hat{\theta}_{MVUE}\right)^2\right] - \left( E\left[ \hat{\theta}_{MVUE} \right] \right)^2 \\
 &amp;= \frac{(n+1)^2}{n^2} \left( E[X_{(n)}^2] - (E[X_{(n)}])^2 \right) \,,
@@ -1012,221 +1199,168 @@ V[\hat{\theta}_{MVUE}] &amp;= \frac{(n+1)^2}{n^2} \left( \frac{n}{n+2} \theta^2 
 &amp;= \frac{1}{n(n+2)} \theta^2 \rightarrow \frac{\theta^2}{n^2} ~~\mbox{as}~~ n \rightarrow \infty \,.
 \end{align*}\]</span>
 We observe that since the variance goes to zero as <span class="math inline">\(n \rightarrow \infty\)</span>,
-the MVUE is a consistent estimator…</p>
+the MVUE is a consistent estimator…but does it achieve the
+Cramer-Rao Lower Bound (CRLB), the theoretical
+lower bound on the variance of unbiased estimators?</p>
 </blockquote>
 <blockquote>
-<p>…but does the MVUE achieve the Cramer-Rao Lower Bound (CRLB), the
-theoretical
-lower bound on the variance of unbiased estimators? It turns out that
+<p><strong>Recall</strong>: <em>the Cramer-Rao Lower Bound (or CRLB) is the lower bound on the variance of any unbiased estimator. If an unbiased estimator achieves the CRLB, it is the MVUE…but it can be the case that the MVUE does not achieve the CRLB. For a discrete distribution, the CRLB is given by</em>
+<span class="math display">\[
+V_{\rm CRLB}[\hat{\theta}] = -\left(nE\left[\frac{d^2}{d\theta^2} \log p_X(X \vert p) \right]\right)^{-1} = \frac{1}{nI(\theta)}
+\]</span>
+<em>where <span class="math inline">\(I(\theta)\)</span> is the Fisher information:</em>
+<span class="math display">\[
+I(\theta) = -E\left[ \frac{\partial^2}{\partial \theta^2} \log f_X(x \vert \theta) \right] \,.
+\]</span></p>
+</blockquote>
+<blockquote>
+<p>It turns out that
 not only does it achieve the lower bound (which one can show equals
-<span class="math inline">\(\theta^2/n\)</span>), but it even surpasses that bound!</p>
-</blockquote>
-<blockquote>
-<p>Ultimately, we need not worry about
+<span class="math inline">\(\theta^2/n\)</span>), but it even surpasses that bound, as
+<span class="math display">\[
+\frac{1}{n(n+2)} \theta^2 &lt; \frac{1}{n} \theta^2 \,.
+\]</span>
+Ultimately, we need not worry about
 this seemingly worrisome result, because one of the so-called regularity
 conditions that must hold for the bound calculation to be valid is
 that the log-likelihood is differentiable everywhere within a
-distribution’s domain. As we will see in the next section, this
+distribution’s domain…but this
 condition does <em>not</em> hold when we are working with domain-specifying
 parameters.</p>
 </blockquote>
-</div>
-</div>
-<div id="maximum-likelihood-estimation" class="section level2 hasAnchor" number="5.4">
-<h2><span class="header-section-number">5.4</span> Maximum Likelihood Estimation<a href="the-uniform-distribution.html#maximum-likelihood-estimation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>Recall</strong>: <em>the value of <span class="math inline">\(\theta\)</span> that maximizes the likelihood function is the maximum likelihood estimate, or MLE, for <span class="math inline">\(\theta\)</span>. The maximum is, thus far, found by taking the (partial) derivative of the (log-)likelihood function with respect to <span class="math inline">\(\theta\)</span>, setting the result to zero, and solving for <span class="math inline">\(\theta\)</span>. That solution is the maximum likelihood estimate <span class="math inline">\(\hat{\theta}_{MLE}\)</span>. Also recall the invariance property of the MLE: if <span class="math inline">\(\hat{\theta}_{MLE}\)</span> is the MLE for <span class="math inline">\(\theta\)</span>, then <span class="math inline">\(g(\hat{\theta}_{MLE})\)</span> is the MLE for <span class="math inline">\(g(\theta)\)</span>.</em></p>
-<p>Now that we have recalled how maximum likelihood estimation works, we can
-state that this is <em>not</em> how the MLE is found for a domain-affecting
-parameter! (Hence the “thus far” in the recall statement above.)
-Let’s assume, for instance, that we sample <span class="math inline">\(n\)</span> iid random
-variables from a Uniform(<span class="math inline">\(0,\theta\)</span>) distribution. As stated above (without
-the indicator function), the likelihood is
-<span class="math display">\[
-\mathcal{L}(\theta \vert \mathbf{x}) = \frac{1}{\theta^n} \,.
-\]</span>
-This means that the smaller <span class="math inline">\(\theta\)</span> is, the larger the likelihood will be.
-So how small can <span class="math inline">\(\theta\)</span> be? We can answer this intuitively: the domain
-<span class="math inline">\([0,\theta]\)</span> has to just encompass all the observed data, i.e.,
-<span class="math display">\[
-\hat{\theta}_{MLE} = X_{(n)} \,.
-\]</span>
-If <span class="math inline">\(\theta\)</span> were smaller, <span class="math inline">\(X_{(n)}\)</span> would lie outside the domain. It is
-fine for <span class="math inline">\(\theta\)</span> to be larger, since then all the data lie in the
-domain <span class="math inline">\([0,\theta]\)</span>…but the larger <span class="math inline">\(\theta\)</span> is, the smaller the
-likelihood.</p>
-<p>We plot an example likelihood function in Figure <a href="the-uniform-distribution.html#fig:uniflik">5.2</a>. We observe
-immediately that the usual MLE algorithm will not work here, as the likelihood
-function is not differentiable at <span class="math inline">\(\theta = X_{(n)}\)</span>.
-All we can do is, e.g., plot the likelihood and identify
-the MLE as that value for which the likelihood is maximized (or identify the
-value intuitively as we do above).</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:uniflik"></span>
-<img src="_main_files/figure-html/uniflik-1.png" alt="\label{fig:uniflik}The likelihood function given $n=5$ data drawn from a Uniform(0,$\theta$) distribution, with $\theta = 1$. As $\theta$ cannot be smaller than the maximum observed value, the likelihood is zero for $\theta &lt; X_{(n)}$; it is $1/\theta^n$ for $\theta \geq X_{(n)}$. The maximum likelihood estimate is thus $X_{(n)}$ itself; as the likelihood function is not differentiable at this point, the MLE cannot be found via the algorithm that we have used previously." width="50%" />
-<p class="caption">
-Figure 5.2: The likelihood function given <span class="math inline">\(n=5\)</span> data drawn from a Uniform(0,<span class="math inline">\(\theta\)</span>) distribution, with <span class="math inline">\(\theta = 1\)</span>. As <span class="math inline">\(\theta\)</span> cannot be smaller than the maximum observed value, the likelihood is zero for <span class="math inline">\(\theta &lt; X_{(n)}\)</span>; it is <span class="math inline">\(1/\theta^n\)</span> for <span class="math inline">\(\theta \geq X_{(n)}\)</span>. The maximum likelihood estimate is thus <span class="math inline">\(X_{(n)}\)</span> itself; as the likelihood function is not differentiable at this point, the MLE cannot be found via the algorithm that we have used previously.
-</p>
-</div>
-<hr />
-<div id="the-mle-for-the-pareto-domain-parameter" class="section level3 hasAnchor" number="5.4.1">
-<h3><span class="header-section-number">5.4.1</span> The MLE for the Pareto Domain Parameter<a href="the-uniform-distribution.html#the-mle-for-the-pareto-domain-parameter" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <blockquote>
-<p>Recall that the Pareto distribution has the probability density function
-<span class="math display">\[
-f_X(x) = \frac{\alpha\beta^\alpha}{x^{\alpha+1}} \,,
-\]</span>
-where <span class="math inline">\(\alpha &gt; 0\)</span> and <span class="math inline">\(x \in [\beta,\infty)\)</span>, and we show that a
-sufficient statistic for <span class="math inline">\(\beta\)</span> (with <span class="math inline">\(\alpha\)</span> fixed) is the smallest
-observed datum, <span class="math inline">\(X_{(1)}\)</span>. Because <span class="math inline">\(\beta\)</span> is a parameter that dictates
-the domain, we find the MLE not via differentiation but rather by
-identifying that the likelihood is maximized when <span class="math inline">\(\beta\)</span> is exactly
-equal to <span class="math inline">\(X_{(1)}\)</span>, i.e., <span class="math inline">\(\hat{\beta}_{MLE} = X_{(1)}\)</span>. See Figure
-<a href="the-uniform-distribution.html#fig:parlik">5.3</a>.</p>
-</blockquote>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:parlik"></span>
-<img src="_main_files/figure-html/parlik-1.png" alt="\label{fig:parlik}The likelihood function given $n=5$ data drawn from a Pareto(1,$\beta$) distribution, with $\beta = 1$. As $\beta$ cannot be larger than the minimum observed value, the likelihood is zero for $\beta \geq X_{(1)}$; it is $\theta^n(1/\prod_{i=1}^n x_i)^2$ for $\beta &lt; X_{(n)}$. The maximum likelihood estimate is thus $X_{(1)}$ itself; as the likelihood function is not differentiable at this point, the MLE cannot be found via the algorithm we have used previously." width="50%" />
-<p class="caption">
-Figure 5.3: The likelihood function given <span class="math inline">\(n=5\)</span> data drawn from a Pareto(1,<span class="math inline">\(\beta\)</span>) distribution, with <span class="math inline">\(\beta = 1\)</span>. As <span class="math inline">\(\beta\)</span> cannot be larger than the minimum observed value, the likelihood is zero for <span class="math inline">\(\beta \geq X_{(1)}\)</span>; it is <span class="math inline">\(\theta^n(1/\prod_{i=1}^n x_i)^2\)</span> for <span class="math inline">\(\beta &lt; X_{(n)}\)</span>. The maximum likelihood estimate is thus <span class="math inline">\(X_{(1)}\)</span> itself; as the likelihood function is not differentiable at this point, the MLE cannot be found via the algorithm we have used previously.
-</p>
-</div>
-<hr />
-</div>
-<div id="mle-properties-for-uniform-distribution-bounds" class="section level3 hasAnchor" number="5.4.2">
-<h3><span class="header-section-number">5.4.2</span> MLE Properties for Uniform Distribution Bounds<a href="the-uniform-distribution.html#mle-properties-for-uniform-distribution-bounds" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<blockquote>
-<p>In this example, we mimic what we do above when discussing the
-properties of the MVUE: we look at estimator bias and variance, etc.,
-assuming that <span class="math inline">\(\{X_1,\ldots,X_n\}\)</span> are iid data sampled according to
-a Uniform(<span class="math inline">\(0,\theta\)</span>) distribution.</p>
-</blockquote>
-<blockquote>
-<p>Bias: we know, from our derivation of the MVUE, that
-<span class="math display">\[
-E[\hat{\theta}_{MLE}] = E[X_{(n)}] = \frac{n}{n+1}\theta \,,
-\]</span>
-and thus the estimator bias is
-<span class="math display">\[
-B[\hat{\theta}_{MLE}] = E[\hat{\theta}_{MLE}] - \theta = \frac{n}{n+1}\theta - \theta = -\frac{1}{n+1}\theta \,.
-\]</span>
-As we expect for the MLE, the estimator is at least asymptotically unbiased,
-as the bias goes to zero as <span class="math inline">\(n \rightarrow \infty\)</span>.</p>
-</blockquote>
-<blockquote>
-<p>Variance: the variance of the MLE is
-<span class="math display">\[
-V[\hat{\theta}_{MLE}] = E[\hat{\theta}_{MLE}^2] - \left(E[\hat{\theta}_{MLE}\right)^2 = E[X_{(n)}^2] - (E[X_{(n)}])^2 \,.
-\]</span>
-We derived both <span class="math inline">\(E[X_{(n)}]\)</span> and <span class="math inline">\(E[X_{(n)}^2]\)</span> above when discussing the
-MVUE, so we can write down immediately that
-<span class="math display">\[
-V[\hat{\theta}_{MLE}] = \frac{n}{n+2}\theta^2 - \left( \frac{n}{n+1}\theta\right)^2 = \frac{n}{(n+2)(n+1)^2}\theta^2 \rightarrow \frac{\theta^2}{n^2} ~~\mbox{as}~~ n \rightarrow \infty\,.
-\]</span>
-We observe that because the variance goes
-to zero as <span class="math inline">\(n \rightarrow \infty\)</span>, the MLE is a consistent estimator.
-The variance of the MLE is similar to, but not exactly the same as,
+<p>The variance of the MLE is similar to, but not exactly the same as,
 the variance for the MVUE, although the two variances converge to the same
 value in as <span class="math inline">\(n \rightarrow \infty\)</span>.</p>
 </blockquote>
+<hr />
+</div>
+<div id="pareto-domain-parameter-mvue" class="section level3 hasAnchor" number="5.3.4">
+<h3><span class="header-section-number">5.3.4</span> Pareto Domain Parameter: MVUE<a href="distributions-with-domain-specifying-parameters.html#pareto-domain-parameter-mvue" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<blockquote>
+<p>The Pareto probability density function is
+<span class="math display">\[
+f_X(x) = \frac{a b^a}{x^{a+1}} \,,
+\]</span>
+where <span class="math inline">\(a &gt; 0\)</span> and <span class="math inline">\(x \in [b,\infty)\)</span>.
+Let’s assume <span class="math inline">\(a\)</span> is fixed.
+A sufficient statistic for <span class="math inline">\(b\)</span>, found via likelihood factorization, is
+<span class="math display">\[
+\mathcal{L}(b \vert \mathbf{x}) = \prod_{i=1}^n f_X(x_i) = \underbrace{b^{na}}_{g(\mathbf{x},b)} \cdot \underbrace{\frac{a^n}{(\prod_{i=1}^n x_i)^{a+1}}}_{h(\mathbf{x})} \,.
+\]</span>
+Wait…again, as is the case for the uniform distribution, no data appear
+in the expression <span class="math inline">\(g(\cdot)\)</span>. So we would go back and introduce
+an indicator function into the pdf; it should be clear that when we do so,
+<span class="math inline">\(g(\mathbf{x},b)\)</span> changes to
+<span class="math display">\[
+g(\mathbf{x},b) = b^{na} \prod_{i=1}^n \mathbb{I}_{x_i \in [b,\infty)}
+\]</span>
+and thus that because all data have to be larger than <span class="math inline">\(b\)</span>, a sufficient
+statistic will be the minimum observed datum, <span class="math inline">\(X_{(1)}\)</span>.</p>
+</blockquote>
+<blockquote>
+<p>To go from here to finding the MVUE, we need to derive a number of quantities:</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>the cumulative distribution function for a Pareto distribution;</li>
+<li>the probability density function for the smallest-valued of <span class="math inline">\(n\)</span> Pareto random variables; and</li>
+<li>the expected value of this smallest-valued random variable.</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>Let’s do each in turn.</p>
+</blockquote>
+<blockquote>
+<p>As for the cdf:
+<span class="math display">\[\begin{align*}
+F_X(x) = \int_b^x \frac{a b^a}{y^{a+1}} dy &amp;= a b^a \int y^{-a-1} dy = a b^a \left. \frac{1}{-a} y^{-a} \right|_b^x \\
+&amp;= b^a \left. y^{-a} \right|_x^b = b^a \left( b^{-a} - x^{-a} \right) = 1 - \left(\frac{b}{x}\right)^a \,.
+\end{align*}\]</span>
+The pdf for the smallest-valued of <span class="math inline">\(n\)</span> iid Pareto data is given by
+<span class="math display">\[\begin{align*}
+f_{(1)}(x) &amp;= n f_X(x) \left[ 1 - F_X(x) \right]^{n-1} \\
+&amp;= n \frac{a b^a}{x^{a+1}} \left[ 1 - \left( 1 - \left[\frac{b}{x}\right]^a \right) \right]^{n-1} \\
+&amp;= n \frac{a b^a}{x^{a+1}} \left(\frac{b}{x}\right)^{na-a} \\
+&amp;= n \frac{a b^{na}}{x^{na+1}} \,.
+\end{align*}\]</span>
+Last, the expected value of this datum is
+<span class="math display">\[\begin{align*}
+E[X_{(1)}] &amp;= \int_b^\infty n x \frac{a b^{na}}{x^{na+1}} = n a b^{na} \int_b^\infty x^{-na} dx \\
+&amp;= n a b^{na} \frac{1}{-na+1} \left. x^{-na+1} \right|_b^\infty \\
+&amp;= n a b^{na} \frac{1}{-na+1} \left( 0 - b^{-na+1} \right) \\
+&amp;= \frac{n a b}{na-1} \,.
+\end{align*}\]</span>
+Hence we see that
+<span class="math display">\[
+E\left[\frac{na-1}{na} X_{(1)}\right] = b
+\]</span>
+and that
+<span class="math display">\[
+\hat{b}_{\rm MVUE} = \frac{na-1}{na} X_{(1)} \,.
+\]</span></p>
+</blockquote>
 </div>
 </div>
-<div id="confidence-intervals-4" class="section level2 hasAnchor" number="5.5">
-<h2><span class="header-section-number">5.5</span> Confidence Intervals<a href="the-uniform-distribution.html#confidence-intervals-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="confidence-intervals-4" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> Confidence Intervals<a href="distributions-with-domain-specifying-parameters.html#confidence-intervals-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="graybox">
+<p>What to take away from this section:</p>
+<ul>
+<li>Interval estimates for distribution bounds generated using sufficient statistics (i.e., order statistics) behave “properly” in that they do not overlap the value of the statistic itself.</li>
+</ul>
+</div>
+<p><br></p>
+<blockquote>
 <p><strong>Recall:</strong> <em>a confidence interval is a random interval
 <span class="math inline">\([\hat{\theta}_L,\hat{\theta}_U]\)</span> that overlaps (or covers) the
 true value <span class="math inline">\(\theta\)</span> with probability</em>
 <span class="math display">\[
 P\left( \hat{\theta}_L \leq \theta \leq \hat{\theta}_U \right) = 1 - \alpha \,,
 \]</span>
-<em>where <span class="math inline">\(1 - \alpha\)</span> is the confidence coefficient. Note that this is
-a long-term probabilistic statement that is not to be applied to any one
-numerically evaluated interval: an evaluated interval either overlaps
-the true value, or it does not (and thus we cannot say there is a
-<span class="math inline">\(100(1-\alpha)\)</span>-percent chance that <span class="math inline">\(\theta\)</span> lies within the interval).
-We determine <span class="math inline">\(\hat{\theta}\)</span> by solving the following equation:</em>
+<em>where <span class="math inline">\(1 - \alpha\)</span> is the confidence coefficient. Note that this is a long-term probabilistic statement that is not to be applied to any one numerically evaluated interval: an evaluated interval either overlaps the true value, or it does not (and thus we cannot say there is a <span class="math inline">\(100(1-\alpha)\)</span>-percent chance that <span class="math inline">\(\theta\)</span> lies within the interval). We determine <span class="math inline">\(\hat{\theta}\)</span> by solving the following equation:</em>
 <span class="math display">\[
 F_Y(y_{\rm obs} \vert \theta) - q = 0 \,,
 \]</span>
-<em>where <span class="math inline">\(F_Y(\cdot)\)</span> is the cumulative distribution function for
-the statistic <span class="math inline">\(Y\)</span>, <span class="math inline">\(y_{\rm obs}\)</span> is the observed value of the statistic,
-and <span class="math inline">\(q\)</span> is an appropriate quantile value that is determined using
-the confidence interval reference table introduced in
-section 16 of Chapter 1.</em></p>
-<p>Recall that a sufficient statistic for a domain-specifying parameter is
-an order statistic. For instance, when we sample <span class="math inline">\(n\)</span> iid data according to
-a Uniform(<span class="math inline">\(0,\theta\)</span>) distribution, a sufficient statistic is <span class="math inline">\(Y = X_{(n)}\)</span>,
-with probability density function
-<span class="math display">\[
-f_Y(y) = f_{(n)}(x) = n \frac{x^{n-1}}{\theta^n}
-\]</span>
-and cumulative distribution function
-<span class="math display">\[
-F_Y(y) = F_{(n)}(x) = (x/\theta)^n \,.
-\]</span>
-We work with this cdf in an example below to derive a two-sided
-confidence interval for <span class="math inline">\(\theta\)</span>.</p>
-<hr />
-<p>We conclude our coverage (so to speak) of confidence intervals by going back
-to the notion of the confidence coefficient <span class="math inline">\(1 - \alpha\)</span>. In a footnote
-in Chapter 1, we make the point that technically, the confidence coefficient
-is the infimum, or minimum value, of the probability
-<span class="math inline">\(P(\hat{\theta}_L \leq \theta \leq \hat{\theta}_U)\)</span>. What does this
-actually mean?</p>
-<p>Let’s suppose that we have sampled <span class="math inline">\(n\)</span> iid data from a normal distribution,
-and that we are going to construct a confidence interval of the form
-<span class="math display">\[
-P(S^2 - a \leq \sigma^2 \leq S^2 + a)
-\]</span>
-for the population variance <span class="math inline">\(\sigma^2\)</span>. We can do this, right? Let’s see…
-<span class="math display">\[\begin{align*}
-P(S^2 - a \leq \sigma^2 \leq S^2 + a) &amp;= P(-a \leq S^2-\sigma^2 \leq a) \\
-&amp;= P\left(1 - \frac{a}{\sigma^2} \leq \frac{S^2}{\sigma^2} \leq 1 + \frac{a}{\sigma^2}\right) \\
-&amp;= P\left( (n-1)\left(1 - \frac{a}{\sigma^2}\right) \leq \frac{(n-1)S^2}{\sigma^2} \leq (n-1)\left(1 + \frac{a}{\sigma^2}\right) \right)\\
-&amp;= F_{W}\left( (n-1)\left(1 + \frac{a}{\sigma^2}\right) \right) - F_{W}\left( (n-1)\left(1 - \frac{a}{\sigma^2}\right) \right) \,,
-\end{align*}\]</span>
-where <span class="math inline">\(W\)</span> is a chi-square-distributed random variable for <span class="math inline">\(n-1\)</span> degrees of
-freedom.
-The key to interpreting the last line above is that <span class="math inline">\(\sigma^2\)</span> is <em>unknown</em>
-(otherwise, why would we be constructing a confidence interval for it
-in the first place?), and thus
-can plausibly have any positive value. What if <span class="math inline">\(\sigma^2\)</span> is very large?
-<span class="math display">\[
-\lim_{\sigma^2 \to \infty} F_{W}\left[ (n-1)\left(1 + \frac{a}{\sigma^2}\right) \right] - F_{W}\left[ (n-1)\left(1 - \frac{a}{\sigma^2}\right) \right] = F_{W}(n-1) - F_{W}(n-1) = 0 \,.
-\]</span>
-Thus the confidence coefficient for the interval
-<span class="math inline">\(S^2 - a \leq \sigma^2 \leq S^2 + a\)</span> is <span class="math inline">\(1 - \alpha = 0\)</span> (or,
-we have that <span class="math inline">\(\alpha = 1\)</span>).</p>
-<p>The upshot: one cannot just write down any interval and assume that it comes
-with a guarantee of non-zero coverage!</p>
-<div id="interval-estimation-using-an-order-statistic" class="section level3 hasAnchor" number="5.5.1">
-<h3><span class="header-section-number">5.5.1</span> Interval Estimation Using an Order Statistic<a href="the-uniform-distribution.html#interval-estimation-using-an-order-statistic" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<em>where <span class="math inline">\(F_Y(\cdot)\)</span> is the cumulative distribution function for the statistic <span class="math inline">\(Y\)</span>, <span class="math inline">\(y_{\rm obs}\)</span> is the observed value of the statistic, and <span class="math inline">\(q\)</span> is an appropriate quantile value that is determined using the confidence interval reference table introduced in section 16 of Chapter 1.</em></p>
+</blockquote>
+<div id="uniform-domain-parameter-interval-estimation" class="section level3 hasAnchor" number="5.4.1">
+<h3><span class="header-section-number">5.4.1</span> Uniform Domain Parameter: Interval Estimation<a href="distributions-with-domain-specifying-parameters.html#uniform-domain-parameter-interval-estimation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <blockquote>
-<p>We assume that we are given <span class="math inline">\(n\)</span> iid data that are sampled according
-to a Uniform(<span class="math inline">\(0,\theta\)</span>)
-distribution. Above, we write down that the cdf for the maximum observed
-datum, <span class="math inline">\(X_{(n)}\)</span>, is <span class="math inline">\(F_{(n)}(x) = (x/\theta)^n\)</span>.
-Before we continue, however, we need to determine whether or not
-the expected value of the maximum observed datum, <span class="math inline">\(E[X_{(n)}]\)</span>, increases
-with <span class="math inline">\(\theta\)</span>. The expected value is easily derived, but here we will appeal
-to reason: if we increase <span class="math inline">\(\theta\)</span>, the upper bound of the domain, then
-on average the maximum observed value <em>must</em> increase. Thus we know that
-we will work with the quantities on the “yes” line of the confidence
+<p>Recall that when we sample <span class="math inline">\(n\)</span> iid data according to
+a Uniform(<span class="math inline">\(0,\theta\)</span>) distribution, a sufficient statistic is <span class="math inline">\(Y = X_{(n)}\)</span>,
+which has probability density function
+<span class="math display">\[
+f_Y(y) = f_{(n)}(x) = n \frac{x^{n-1}}{\theta^n} \,,
+\]</span>
+cumulative distribution function
+<span class="math display">\[
+F_Y(y) = F_{(n)}(x) = (x/\theta)^n \,,
+\]</span>
+and expected value
+<span class="math display">\[
+E[Y] = E[X_{(n)}] = \frac{n}{n+1} \theta \,.
+\]</span>
+Given that <span class="math inline">\(E[Y]\)</span> increases with <span class="math inline">\(\theta\)</span>, we know that
+we will be working with quantities on the “yes” line of the confidence
 interval reference table.</p>
 </blockquote>
 <blockquote>
-<p>To find the lower and upper
-bounds on <span class="math inline">\(\theta\)</span>, respectively, we solve for <span class="math inline">\(\theta\)</span> in the expressions
+<p>To find the lower and upper bounds on <span class="math inline">\(\theta\)</span>, respectively, for a
+two-sided interval, we solve for <span class="math inline">\(\theta\)</span> in the expressions
 <span class="math display">\[\begin{align*}
 \left(\frac{X_{(n)}}{\theta}\right)^n - \left(1 - \frac{\alpha}{2}\right) &amp;= 0 ~~~ \mbox{(lower)} \\
-\left(\frac{X_{(n)}}{\theta}\right)^n - \frac{\alpha}{2} &amp;= 0 ~~~ \mbox{(upper)} \,.
+\left(\frac{X_{(n)}}{\theta}\right)^n - \frac{\alpha}{2} &amp;= 0 ~~~ \mbox{(upper)} \,,
 \end{align*}\]</span>
-We find that
+and we find that
 <span class="math display">\[
 \hat{\theta}_L = \frac{X_{(n)}}{(1-\alpha/2)^{1/n}} ~~\mbox{and}~~ \hat{\theta}_U = \frac{X_{(n)}}{(\alpha/2)^{1/n}} \,.
 \]</span></p>
 </blockquote>
 <blockquote>
-<p>In Figure <a href="the-uniform-distribution.html#fig:unifci">5.4</a>, we display 10 separate 90 percent
+<p>In Figure <a href="distributions-with-domain-specifying-parameters.html#fig:unifci">5.5</a>, we display 10 separate 90 percent
 confidence intervals generated using data sampled according to a
-Uniform(<span class="math inline">\(0,\theta\)</span>) distribution (where here <span class="math inline">\(\theta = 1\)</span>). In this
+Uniform(0,1) distribution. In this
 figure, the maximum observed values for each dataset are shown as red
 crosses, while the intervals are displayed as blue lines. We immediately
 see one of the quirks associated with domain-specifying parameters:
@@ -1239,21 +1373,34 @@ bound is the true value.)</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:unifci"></span>
 <img src="_main_files/figure-html/unifci-1.png" alt="\label{fig:unifci}Ten 90 percent confidence intervals, generated using data from 10 separate datasets of size $n = 10$ sampled according to a Uniform($0,\theta$) distribution. (Here, $\theta = 1$.) The observed statistic values $X_{(n)}$ are shown as red crosses; in each case, the values lie outside the derived intervals." width="50%" />
 <p class="caption">
-Figure 5.4: Ten 90 percent confidence intervals, generated using data from 10 separate datasets of size <span class="math inline">\(n = 10\)</span> sampled according to a Uniform(<span class="math inline">\(0,\theta\)</span>) distribution. (Here, <span class="math inline">\(\theta = 1\)</span>.) The observed statistic values <span class="math inline">\(X_{(n)}\)</span> are shown as red crosses; in each case, the values lie outside the derived intervals.
+Figure 5.5: Ten 90 percent confidence intervals, generated using data from 10 separate datasets of size <span class="math inline">\(n = 10\)</span> sampled according to a Uniform(<span class="math inline">\(0,\theta\)</span>) distribution. (Here, <span class="math inline">\(\theta = 1\)</span>.) The observed statistic values <span class="math inline">\(X_{(n)}\)</span> are shown as red crosses; in each case, the values lie outside the derived intervals.
 </p>
 </div>
 <hr />
 </div>
-<div id="confidence-coefficient-for-a-uniform-based-interval-estimator" class="section level3 hasAnchor" number="5.5.2">
-<h3><span class="header-section-number">5.5.2</span> Confidence Coefficient for a Uniform-Based Interval Estimator<a href="the-uniform-distribution.html#confidence-coefficient-for-a-uniform-based-interval-estimator" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="uniform-domain-parameter-confidence-coefficient" class="section level3 hasAnchor" number="5.4.2">
+<h3><span class="header-section-number">5.4.2</span> Uniform Domain Parameter: Confidence Coefficient<a href="distributions-with-domain-specifying-parameters.html#uniform-domain-parameter-confidence-coefficient" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<blockquote>
+<p>A confidence interval is a random interval
+<span class="math inline">\([\hat{\theta}_L,\hat{\theta}_U]\)</span> that covers the
+true value <span class="math inline">\(\theta\)</span> with probability
+<span class="math display">\[
+P\left( \hat{\theta}_L \leq \theta \leq \hat{\theta}_U \right) = 1 - \alpha \,,
+\]</span>
+where <span class="math inline">\(1 - \alpha\)</span> is the confidence coefficient. In
+Chapter 1, we make the point that technically, the confidence coefficient
+is the infimum, or minimum value, of
+<span class="math inline">\(P(\hat{\theta}_L \leq \theta \leq \hat{\theta}_U)\)</span>. What does this
+actually mean in practice?</p>
+</blockquote>
 <blockquote>
 <p>In the example above, we show that the interval estimate with confidence
 coefficient <span class="math inline">\(1-\alpha\)</span> for the uniform upper bound <span class="math inline">\(\theta\)</span> has
 the form <span class="math inline">\([aX_{(n)},bX_{(n)}]\)</span>. Can we also define an appropriate
 interval estimator if, for instance, it has the form
 <span class="math inline">\([X_{(n)} + a,X_{(n)} + b]\)</span>? The short answer is no…because the
-confidence coefficient will be <em>zero</em>! To see why, let’s expand out and
-solve:
+confidence coefficient will be <em>zero</em>! To see why, let’s work directly
+with the probability statement that defines the confidence coefficient:
 <span class="math display">\[\begin{align*}
 P(X_{(n)} + a \leq \theta \leq X_{(n)} + b) &amp;= P(\theta - b \leq X_{(n)} \leq \theta - a)\\
 &amp;= P(X_{(n)} \leq \theta - a) - P(X_{(n)} \leq \theta - b)\\
@@ -1261,38 +1408,122 @@ P(X_{(n)} + a \leq \theta \leq X_{(n)} + b) &amp;= P(\theta - b \leq X_{(n)} \le
 &amp;= \left(\frac{\theta-a}{\theta}\right)^2 - \left(\frac{\theta-b}{\theta}\right)^2\\
 &amp;= \left(1-\frac{a}{\theta}\right)^2 - \left(1-\frac{b}{\theta}\right)^2 \,.
 \end{align*}\]</span>
-The confidence coefficient is the infimum (or minimum value)
-that this expression can take on. For an interval of the form
-<span class="math inline">\([aX_{(n)},bX_{(n)}]\)</span>, <span class="math inline">\(\theta\)</span> does not appear, and thus the infimum
-is a constant. Here, however,
+The key to interpreting the last line above is that <span class="math inline">\(\theta\)</span> is <em>unknown</em>
+(otherwise, why would we be constructing a confidence interval for it
+in the first place?), and thus can take on any allowable value.
+For an interval of the form
+<span class="math inline">\([aX_{(n)},bX_{(n)}]\)</span>, <span class="math inline">\(\theta\)</span> does not appear, and thus the confidence
+coefficient is the user-set constant <span class="math inline">\(1 - \alpha\)</span>. Here, however,
 <span class="math display">\[
 \lim_{\theta \to \infty} P(X_{(n)} + a \leq \theta \leq X_{(n)} + b) = 0 \,,
 \]</span>
 and thus
-the confidence coefficient is (i.e., the proportion of computed
+the confidence coefficient (or the proportion of computed
 intervals that overlap the true value <span class="math inline">\(\theta\)</span>) goes to zero.
 Thus an interval estimator of the form <span class="math inline">\([aX_{(n)},bX_{(n)}]\)</span> is a better
 one than one of the form <span class="math inline">\([X_{(n)} + a,X_{(n)} + b]\)</span>.</p>
 </blockquote>
+<blockquote>
+<p>The upshot: one cannot just write down any interval and assume that it comes
+with a guarantee of non-zero coverage! It turns out that by working with
+the sampling distributions of statistics, useful interval estimators are
+naturally defined for us.</p>
+</blockquote>
+<hr />
+</div>
+<div id="pareto-domain-parameter-interval-estimation" class="section level3 hasAnchor" number="5.4.3">
+<h3><span class="header-section-number">5.4.3</span> Pareto Domain Parameter: Interval Estimation<a href="distributions-with-domain-specifying-parameters.html#pareto-domain-parameter-interval-estimation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<blockquote>
+<p>As was mentioned earlier in this chapter, a moment-generating function
+does not exist for the Pareto distribution. Thus if we sample <span class="math inline">\(n &gt; 1\)</span> iid
+data according to this distribution (with fixed parameter <span class="math inline">\(a\)</span>), we cannot
+begin to analytically identify the sampling distribution for, e.g.,
+<span class="math inline">\(Y = \sum_{i=1}^n X_i\)</span>…so we would have to utilize a simulation
+framework to construct intervals with this statistic. But it turns out that
+this doesn’t actually matter to us, as we have since found out that a
+sufficient statistic for the Pareto <span class="math inline">\(b\)</span> parameter is <span class="math inline">\(X_{(1)}\)</span>, and we
+certainly do know the cdf of the sampling distribution for that:
+<span class="math display">\[\begin{align*}
+F_{(1)}(x) &amp;= \int_b^x \frac{n a b^{na}}{y^{na+1}} dy = n a b^{na} \int_b^x y^{-na-1} dy \\
+&amp;= n a b^{na} \frac{1}{-na} \left. y^{-na} \right|_b^x = - b^{na} \left( x^{-na} - b^{-na} \right) \\
+%= 1 - \left(\frac{b}{x}\right)^{na} \,.
+\end{align*}\]</span>
+If we solve the general equation <span class="math inline">\(F_Y(y_{\rm obs} \vert \theta) - q = 0\)</span>,
+we find that
+<span class="math display">\[
+\hat{b}(q) = x_{(1),\rm obs} (1 - q)^{1/na} \,.
+\]</span></p>
+</blockquote>
+<blockquote>
+<p>But, for review purposes, let’s say we really want to utilize the sample
+mean as our interval-constructing statistic. (We shouldn’t, because it is
+not a sufficient statistic for <span class="math inline">\(b\)</span>, but we are headstrong and are going to
+plow ahead.) Below we show a simulation framework for estimating a 95%
+upper bound for <span class="math inline">\(b\)</span>, given that <span class="math inline">\(a = 3\)</span> and <span class="math inline">\(n = 8\)</span>. Note that the
+expected value of <span class="math inline">\(\bar{X}\)</span> increases with <span class="math inline">\(b\)</span>, as the reader can verify,
+so <span class="math inline">\(q = \alpha = 0.05\)</span>.</p>
+</blockquote>
+<div class="sourceCode" id="cb370"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb370-1"><a href="distributions-with-domain-specifying-parameters.html#cb370-1" tabindex="-1"></a><span class="co"># generate data</span></span>
+<span id="cb370-2"><a href="distributions-with-domain-specifying-parameters.html#cb370-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">236</span>)</span>
+<span id="cb370-3"><a href="distributions-with-domain-specifying-parameters.html#cb370-3" tabindex="-1"></a>num.sim <span class="ot">&lt;-</span> <span class="dv">100000</span></span>
+<span id="cb370-4"><a href="distributions-with-domain-specifying-parameters.html#cb370-4" tabindex="-1"></a>n       <span class="ot">&lt;-</span> <span class="dv">8</span></span>
+<span id="cb370-5"><a href="distributions-with-domain-specifying-parameters.html#cb370-5" tabindex="-1"></a>a       <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb370-6"><a href="distributions-with-domain-specifying-parameters.html#cb370-6" tabindex="-1"></a>b       <span class="ot">&lt;-</span> <span class="fl">1.5</span></span>
+<span id="cb370-7"><a href="distributions-with-domain-specifying-parameters.html#cb370-7" tabindex="-1"></a>X.obs   <span class="ot">&lt;-</span> extraDistr<span class="sc">::</span><span class="fu">rpareto</span>(n, <span class="at">a=</span>a, <span class="at">b=</span>b) <span class="co"># avoid namespace conflict</span></span>
+<span id="cb370-8"><a href="distributions-with-domain-specifying-parameters.html#cb370-8" tabindex="-1"></a>y.obs   <span class="ot">&lt;-</span> <span class="fu">mean</span>(X.obs)</span>
+<span id="cb370-9"><a href="distributions-with-domain-specifying-parameters.html#cb370-9" tabindex="-1"></a></span>
+<span id="cb370-10"><a href="distributions-with-domain-specifying-parameters.html#cb370-10" tabindex="-1"></a><span class="fu">min</span>(X.obs)</span></code></pre></div>
+<pre><code>## [1] 1.582117</code></pre>
+<div class="sourceCode" id="cb372"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb372-1"><a href="distributions-with-domain-specifying-parameters.html#cb372-1" tabindex="-1"></a><span class="co"># now find a 95% upper bound</span></span>
+<span id="cb372-2"><a href="distributions-with-domain-specifying-parameters.html#cb372-2" tabindex="-1"></a></span>
+<span id="cb372-3"><a href="distributions-with-domain-specifying-parameters.html#cb372-3" tabindex="-1"></a>alpha   <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb372-4"><a href="distributions-with-domain-specifying-parameters.html#cb372-4" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(b, a, n, y.obs, q, <span class="at">num.sim=</span><span class="dv">1000000</span>, <span class="at">seed=</span><span class="dv">236</span>)</span>
+<span id="cb372-5"><a href="distributions-with-domain-specifying-parameters.html#cb372-5" tabindex="-1"></a>{</span>
+<span id="cb372-6"><a href="distributions-with-domain-specifying-parameters.html#cb372-6" tabindex="-1"></a>  <span class="fu">set.seed</span>(seed)</span>
+<span id="cb372-7"><a href="distributions-with-domain-specifying-parameters.html#cb372-7" tabindex="-1"></a>  X <span class="ot">&lt;-</span> <span class="fu">matrix</span>(extraDistr<span class="sc">::</span><span class="fu">rpareto</span>(num.sim<span class="sc">*</span>n, <span class="at">a=</span>a, <span class="at">b=</span>b), <span class="at">nrow=</span>num.sim)</span>
+<span id="cb372-8"><a href="distributions-with-domain-specifying-parameters.html#cb372-8" tabindex="-1"></a>  Y <span class="ot">&lt;-</span> <span class="fu">rowMeans</span>(X)</span>
+<span id="cb372-9"><a href="distributions-with-domain-specifying-parameters.html#cb372-9" tabindex="-1"></a>  <span class="fu">sum</span>(Y <span class="sc">&lt;=</span> y.obs)<span class="sc">/</span>num.sim <span class="sc">-</span> q</span>
+<span id="cb372-10"><a href="distributions-with-domain-specifying-parameters.html#cb372-10" tabindex="-1"></a>}</span>
+<span id="cb372-11"><a href="distributions-with-domain-specifying-parameters.html#cb372-11" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">uniroot</span>(f, <span class="fu">c</span>(<span class="fl">0.001</span>, <span class="dv">1000</span>), <span class="at">a=</span>a, <span class="at">n=</span>n, <span class="at">y.obs=</span>y.obs, <span class="at">q=</span>alpha)<span class="sc">$</span>root, <span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## [1] 1.666</code></pre>
+<blockquote>
+<p>The upper bound is 1.666. We can immediately see that this is problematic
+since the smallest value among our eight data is <span class="math inline">\(x_{(1),{\rm obs}} = 1.582\)</span>:
+we should not have an upper bound on <span class="math inline">\(b\)</span> that exceeds any data values we
+observe!
+We can compare the sample mean upper bound against the value we would
+derive using <span class="math inline">\(x_{(1),{\rm obs}}\)</span>:
+<span class="math display">\[
+x_{(1),\rm obs} (1 - q)^{1/na} = (1.582) (0.95)^{1/24} = 1.578 \,.
+\]</span>
+We see that utilizing the sufficient statistic gives both a shorter interval
+and a valid interval.</p>
+</blockquote>
 </div>
 </div>
-<div id="hypothesis-testing-3" class="section level2 hasAnchor" number="5.6">
-<h2><span class="header-section-number">5.6</span> Hypothesis Testing<a href="the-uniform-distribution.html#hypothesis-testing-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="hypothesis-testing-3" class="section level2 hasAnchor" number="5.5">
+<h2><span class="header-section-number">5.5</span> Hypothesis Testing<a href="distributions-with-domain-specifying-parameters.html#hypothesis-testing-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="graybox">
+<p>What to take away from this section:</p>
+<ul>
+<li><p>When conducting hypothesis tests concerning distribution bounds, one cannot define two-tail tests: if the null hypothesis is correct, it is impossible to sample data with values smaller than a hypothesized lower bound, or larger than a hypothesized upper bound.</p></li>
+<li><p>When computing the test power for a hypothesis test, one must take into account the two ways in which one can reject the null hypothesis; for instance, if <span class="math inline">\(H_o : \theta = \theta_o\)</span> is an upper distribution bound, and we wish to compute the test power given <span class="math inline">\(\theta &gt; \theta_o\)</span>, then we would reject the null if <span class="math inline">\(X_{(n)}\)</span> fall into the rejection region defined under the null <em>and</em> if <span class="math inline">\(X_{(n)} &gt; \theta_o\)</span>.</p></li>
+</ul>
+</div>
+<p><br></p>
+<blockquote>
 <p><strong>Recall</strong>: <em>a hypothesis test is a framework to make an inference about the value of a population parameter <span class="math inline">\(\theta\)</span>. The null hypothesis <span class="math inline">\(H_o\)</span> is that <span class="math inline">\(\theta = \theta_o\)</span>, while possible alternatives <span class="math inline">\(H_a\)</span> are <span class="math inline">\(\theta \neq \theta_o\)</span> (two-tail test), <span class="math inline">\(\theta &gt; \theta_o\)</span> (upper-tail test), and <span class="math inline">\(\theta &lt; \theta_o\)</span> (lower-tail test). For, e.g., a one-tail test, we reject the null hypothesis if the observed test statistic <span class="math inline">\(y_{\rm obs}\)</span> falls outside the bound given by <span class="math inline">\(y_{RR}\)</span>, which is a solution to the equation</em>
 <span class="math display">\[
 F_Y(y_{RR} \vert \theta_o) - q = 0 \,,
 \]</span>
-<em>where <span class="math inline">\(F_Y(\cdot)\)</span> is the cumulative distribution function for
-the statistic <span class="math inline">\(Y\)</span> and <span class="math inline">\(q\)</span> is an appropriate quantile value that is determined
-using the hypothesis test reference table introduced in
-section 17 of Chapter 1. Note that the hypothesis test framework only
-allows us to make a decision about a null hypothesis; nothing is proven.</em></p>
+<em>where <span class="math inline">\(F_Y(\cdot)\)</span> is the cumulative distribution function for the statistic <span class="math inline">\(Y\)</span> and <span class="math inline">\(q\)</span> is an appropriate quantile value that is determined using the hypothesis test reference table introduced in section 17 of Chapter 1. Note that the hypothesis test framework only allows us to make a decision about a null hypothesis; nothing is proven.</em></p>
+</blockquote>
 <p>One aspect of hypothesis testing that we reiterate here is that the hypotheses
 are always to be established, along with the level of the test,
 <em>before</em> we collect data. This should be obvious<span class="math inline">\(-\)</span>looking at the data
 prior to establishing hypotheses and test levels can (and often will) lead
-to biased outcomes<span class="math inline">\(-\)</span>so why are we reiterating this now? We are making this point
-because when we perform tests involving domain-specifying parameters, there
+to biased outcomes<span class="math inline">\(-\)</span>so why are we reiterating this now?
+Because when we perform tests involving domain-specifying parameters, there
 is a quirk that we (sometimes) observe when we attempt to
 establish rejection-region boundaries.</p>
 <p>For instance, let’s say that we sample <span class="math inline">\(n\)</span> iid data according to
@@ -1319,7 +1550,7 @@ are larger than <span class="math inline">\(\theta\)</span>…we can only sample
 and thus we can only reject the null when <span class="math inline">\(X_{(n)} \ll \theta\)</span>.
 Hence we would use <span class="math inline">\(\alpha\)</span> in our derivation, not <span class="math inline">\(\alpha/2\)</span>, to ensure
 that the power of the test when <span class="math inline">\(\theta = \theta_o\)</span> is indeed <span class="math inline">\(\alpha\)</span>.</p>
-<p>Another way of stating this result is that <em>there really is no such thing as a two-tail test for a domain-specifying parameter</em>: if the parameter specifies an upper bound, then the only test we can define is a lower-tail test, and if the parameter specifies a lower bound, then the only test we can define is an upper-tail test.</p>
+<p>Another way of stating this result is that <strong>there really is no such thing as a two-tail test for a domain-specifying parameter</strong>: if the parameter specifies an upper bound, then the only test we can define is a lower-tail test, and if the parameter specifies a lower bound, then the only test we can define is an upper-tail test.</p>
 <p>However, there is yet one more quirk to discuss, and that is how we would
 compute the power of the test for values <span class="math inline">\(\theta &gt; \theta_o\)</span>. In this
 situation, there are <em>two</em> possible ways to reject the null:</p>
@@ -1329,8 +1560,8 @@ situation, there are <em>two</em> possible ways to reject the null:</p>
 </ol>
 <p>We work out the mathematics of the power calculation in an example below.</p>
 <hr />
-<div id="hypothesis-test-for-the-uniform-distribution-upper-bound" class="section level3 hasAnchor" number="5.6.1">
-<h3><span class="header-section-number">5.6.1</span> Hypothesis Test for the Uniform Distribution Upper Bound<a href="the-uniform-distribution.html#hypothesis-test-for-the-uniform-distribution-upper-bound" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="uniform-domain-parameter-hypothesis-test" class="section level3 hasAnchor" number="5.5.1">
+<h3><span class="header-section-number">5.5.1</span> Uniform Domain Parameter: Hypothesis Test<a href="distributions-with-domain-specifying-parameters.html#uniform-domain-parameter-hypothesis-test" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <blockquote>
 <p>We sample <span class="math inline">\(n\)</span> iid data according to a Uniform(<span class="math inline">\(0,\theta\)</span>) distribution,
 and we use these data to test
@@ -1340,7 +1571,7 @@ H_o: \theta = \theta_o ~~\mbox{versus}~~ H_a: \theta &lt; \theta_o \,.
 The sufficient statistic is the maximum datum <span class="math inline">\(X_{(n)}\)</span>; as stated previously,
 we can appeal to reason to state that the expected value of this quantity
 must increase as <span class="math inline">\(\theta\)</span> increases, so we know that we are using the
-“yes” line of the hypothesis test reference tables and that <span class="math inline">\(q = \alpha\)</span>:
+“yes” line of the hypothesis test reference tables and thus that <span class="math inline">\(q = \alpha\)</span>:
 <span class="math display">\[\begin{align*}
 F_Y(y \vert \theta) - q = 0 ~~~ \Rightarrow ~~~ F_{(n)}(x_{\rm RR} \vert \theta_o) - \alpha = 0 ~~~ \Rightarrow ~~~ \left(\frac{x_{\rm RR}}{\theta_o}\right)^n - \alpha = 0 \,.
 \end{align*}\]</span>
@@ -1368,8 +1599,8 @@ F_Y(y_{\rm RR} \vert \theta) ~~~ \Rightarrow ~~~ F_{(n)}(x_{\rm RR} \vert \theta
 The power rises from <span class="math inline">\(\alpha\)</span> to 1 as <span class="math inline">\(\theta\)</span> decreases from <span class="math inline">\(\theta_o\)</span>
 to <span class="math inline">\(x_{\rm RR}\)</span>, and for smaller values of <span class="math inline">\(\theta\)</span> it is 1 by definition
 (as it becomes impossible to sample a datum outside of the rejection
-region). (See the left-hand side of Figure <a href="the-uniform-distribution.html#fig:uhyppow">5.5</a> and
-the left panel of Figure <a href="the-uniform-distribution.html#fig:uhyppow2">5.6</a>.)</p>
+region). (See the left-hand side of Figure <a href="distributions-with-domain-specifying-parameters.html#fig:uhyppow">5.6</a> and
+the left panel of Figure <a href="distributions-with-domain-specifying-parameters.html#fig:uhyppow2">5.7</a>.)</p>
 </blockquote>
 <blockquote>
 <p>If <span class="math inline">\(\theta &gt; \theta_o\)</span>, then we would reject the null hypothesis if
@@ -1379,26 +1610,26 @@ P(\mbox{reject}~\mbox{null} \vert \theta) &amp;= P(X_{(n)} &lt; x_{\rm RR} \cup 
 &amp;= F_{(n)}(x_{\rm RR} \vert \theta) + [1 - F_{(n)}(\theta_o \vert \theta)] \\
 &amp;= \left(\frac{x_\alpha}{\theta}\right)^n + \left( 1 - \left(\frac{\theta_o}{\theta}\right)^n \right) \,.
 \end{align*}\]</span>
-(See the right-hand side of Figure <a href="the-uniform-distribution.html#fig:uhyppow">5.5</a> and
-the right panel of Figure <a href="the-uniform-distribution.html#fig:uhyppow2">5.6</a>.)</p>
+(See the right-hand side of Figure <a href="distributions-with-domain-specifying-parameters.html#fig:uhyppow">5.6</a> and
+the right panel of Figure <a href="distributions-with-domain-specifying-parameters.html#fig:uhyppow2">5.7</a>.)</p>
 </blockquote>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:uhyppow"></span>
 <img src="_main_files/figure-html/uhyppow-1.png" alt="\label{fig:uhyppow}The power curve for the test of $H_o : \theta = \theta_o = 1$ versus $H_a : \theta \neq \theta_o$, assuming $n = 10$. The curve displays three discrete segments whose functional forms are given in the body of the text, and it achieves its minimum value, $\alpha = 0.05$, at $\theta = 1$." width="50%" />
 <p class="caption">
-Figure 5.5: The power curve for the test of <span class="math inline">\(H_o : \theta = \theta_o = 1\)</span> versus <span class="math inline">\(H_a : \theta \neq \theta_o\)</span>, assuming <span class="math inline">\(n = 10\)</span>. The curve displays three discrete segments whose functional forms are given in the body of the text, and it achieves its minimum value, <span class="math inline">\(\alpha = 0.05\)</span>, at <span class="math inline">\(\theta = 1\)</span>.
+Figure 5.6: The power curve for the test of <span class="math inline">\(H_o : \theta = \theta_o = 1\)</span> versus <span class="math inline">\(H_a : \theta \neq \theta_o\)</span>, assuming <span class="math inline">\(n = 10\)</span>. The curve displays three discrete segments whose functional forms are given in the body of the text, and it achieves its minimum value, <span class="math inline">\(\alpha = 0.05\)</span>, at <span class="math inline">\(\theta = 1\)</span>.
 </p>
 </div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:uhyppow2"></span>
 <img src="_main_files/figure-html/uhyppow2-1.png" alt="\label{fig:uhyppow2}The rejection regions that inform the power curve calculation shown in Figure \@ref(fig:uhyppow). To the left: if $\theta &lt; \theta_o$, then we reject the null hypothesis if $x_{(n),\rm obs} &lt; x_{\rm RR}$. The power is thus the area under the curve shown in red. To the right: if $\theta &gt; \theta_o$, then we reject the null hypothesis if $x_{(n),\rm obs} &lt; x_{\rm RR}$ or if $x_{(n),\rm obs} &gt; \theta_o = 1$. The power is thus the sum of the two areas under the curve shown in red." width="50%" /><img src="_main_files/figure-html/uhyppow2-2.png" alt="\label{fig:uhyppow2}The rejection regions that inform the power curve calculation shown in Figure \@ref(fig:uhyppow). To the left: if $\theta &lt; \theta_o$, then we reject the null hypothesis if $x_{(n),\rm obs} &lt; x_{\rm RR}$. The power is thus the area under the curve shown in red. To the right: if $\theta &gt; \theta_o$, then we reject the null hypothesis if $x_{(n),\rm obs} &lt; x_{\rm RR}$ or if $x_{(n),\rm obs} &gt; \theta_o = 1$. The power is thus the sum of the two areas under the curve shown in red." width="50%" />
 <p class="caption">
-Figure 5.6: The rejection regions that inform the power curve calculation shown in Figure <a href="the-uniform-distribution.html#fig:uhyppow">5.5</a>. To the left: if <span class="math inline">\(\theta &lt; \theta_o\)</span>, then we reject the null hypothesis if <span class="math inline">\(x_{(n),\rm obs} &lt; x_{\rm RR}\)</span>. The power is thus the area under the curve shown in red. To the right: if <span class="math inline">\(\theta &gt; \theta_o\)</span>, then we reject the null hypothesis if <span class="math inline">\(x_{(n),\rm obs} &lt; x_{\rm RR}\)</span> or if <span class="math inline">\(x_{(n),\rm obs} &gt; \theta_o = 1\)</span>. The power is thus the sum of the two areas under the curve shown in red.
+Figure 5.7: The rejection regions that inform the power curve calculation shown in Figure <a href="distributions-with-domain-specifying-parameters.html#fig:uhyppow">5.6</a>. To the left: if <span class="math inline">\(\theta &lt; \theta_o\)</span>, then we reject the null hypothesis if <span class="math inline">\(x_{(n),\rm obs} &lt; x_{\rm RR}\)</span>. The power is thus the area under the curve shown in red. To the right: if <span class="math inline">\(\theta &gt; \theta_o\)</span>, then we reject the null hypothesis if <span class="math inline">\(x_{(n),\rm obs} &lt; x_{\rm RR}\)</span> or if <span class="math inline">\(x_{(n),\rm obs} &gt; \theta_o = 1\)</span>. The power is thus the sum of the two areas under the curve shown in red.
 </p>
 </div>
 <hr />
 </div>
 </div>
-<div id="exercises-4" class="section level2 hasAnchor" number="5.7">
-<h2><span class="header-section-number">5.7</span> Exercises<a href="the-uniform-distribution.html#exercises-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="exercises-4" class="section level2 hasAnchor" number="5.6">
+<h2><span class="header-section-number">5.6</span> Exercises<a href="distributions-with-domain-specifying-parameters.html#exercises-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
 <li><p>Let <span class="math inline">\(X_1, X_2, \ldots, X_n\)</span> denote independent and identically distributed uniform random variables on the interval <span class="math inline">\([0, 3\theta]\)</span>. Derive the method-of-moments estimator for <span class="math inline">\(\theta\)</span>.</p></li>
 <li><p>Compute <span class="math inline">\(P(X &gt; a+b \vert X &gt; b)\)</span> for a Uniform(0,1) distribution. (Assume <span class="math inline">\(0 &lt; b &lt; a+b &lt; 1\)</span>.) Does the Uniform(0,1) distribution exhibit the property of memorylessness? Why or why not?</p></li>

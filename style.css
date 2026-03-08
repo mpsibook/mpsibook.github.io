@@ -15,6 +15,15 @@ p.caption {
   border: 2px solid black;
   border-radius: 10px;
 }
+
+.bluebox {
+  padding: 1em;
+  background: #90D5FF;
+  color: black;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
 .center {
   text-align: center;
 }

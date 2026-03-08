@@ -29,7 +29,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="the-uniform-distribution.html"/>
+<link rel="prev" href="distributions-with-domain-specifying-parameters.html"/>
 <link rel="next" href="further-conceptual-details-optional.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -246,7 +246,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.3.2" data-path="the-normal-and-related-distributions.html"><a href="the-normal-and-related-distributions.html#mgf-probability-density-function"><i class="fa fa-check"></i><b>2.3.2</b> MGF: Probability Density Function</a></li>
 <li class="chapter" data-level="2.3.3" data-path="the-normal-and-related-distributions.html"><a href="the-normal-and-related-distributions.html#mgf-normal-distribution"><i class="fa fa-check"></i><b>2.3.3</b> MGF: Normal Distribution</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="the-normal-and-related-distributions.html"><a href="the-normal-and-related-distributions.html#normal-distribution-sample-mean"><i class="fa fa-check"></i><b>2.4</b> Normal Distribution: Sample Mean</a>
+<li class="chapter" data-level="2.4" data-path="the-normal-and-related-distributions.html"><a href="the-normal-and-related-distributions.html#normal-distribution-linear-functions-of-random-variables"><i class="fa fa-check"></i><b>2.4</b> Normal Distribution: Linear Functions of Random Variables</a>
 <ul>
 <li class="chapter" data-level="2.4.1" data-path="the-normal-and-related-distributions.html"><a href="the-normal-and-related-distributions.html#computing-probabilities-2"><i class="fa fa-check"></i><b>2.4.1</b> Computing Probabilities</a></li>
 <li class="chapter" data-level="2.4.2" data-path="the-normal-and-related-distributions.html"><a href="the-normal-and-related-distributions.html#sample-sum"><i class="fa fa-check"></i><b>2.4.2</b> Sample Sum</a></li>
@@ -327,169 +327,176 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html"><i class="fa fa-check"></i><b>3</b> The Binomial (and Related) Distributions</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#motivation"><i class="fa fa-check"></i><b>3.1</b> Motivation</a></li>
-<li class="chapter" data-level="3.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#probability-mass-function"><i class="fa fa-check"></i><b>3.2</b> Probability Mass Function</a>
+<li class="chapter" data-level="3.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#binomial-distribution-probability-mass-function"><i class="fa fa-check"></i><b>3.1</b> Binomial Distribution: Probability Mass Function</a>
 <ul>
-<li class="chapter" data-level="3.2.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#variance-of-a-binomial-random-variable"><i class="fa fa-check"></i><b>3.2.1</b> Variance of a Binomial Random Variable</a></li>
-<li class="chapter" data-level="3.2.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-expected-value-of-a-negative-binomial-random-variable"><i class="fa fa-check"></i><b>3.2.2</b> The Expected Value of a Negative Binomial Random Variable</a></li>
-<li class="chapter" data-level="3.2.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#binomial-distribution-normal-approximation"><i class="fa fa-check"></i><b>3.2.3</b> Binomial Distribution: Normal Approximation</a></li>
-<li class="chapter" data-level="3.2.4" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#computing-probabilities-8"><i class="fa fa-check"></i><b>3.2.4</b> Computing Probabilities</a></li>
-<li class="chapter" data-level="3.2.5" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-binomial-distribution-as-part-of-the-exponential-family"><i class="fa fa-check"></i><b>3.2.5</b> The Binomial Distribution as Part of the Exponential Family</a></li>
+<li class="chapter" data-level="3.1.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#binomial-random-variable-variance"><i class="fa fa-check"></i><b>3.1.1</b> Binomial Random Variable: Variance</a></li>
+<li class="chapter" data-level="3.1.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#binomial-distribution-normal-approximation"><i class="fa fa-check"></i><b>3.1.2</b> Binomial Distribution: Normal Approximation</a></li>
+<li class="chapter" data-level="3.1.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#binomial-distribution-exponential-family"><i class="fa fa-check"></i><b>3.1.3</b> Binomial Distribution: Exponential Family</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#cumulative-distribution-function"><i class="fa fa-check"></i><b>3.3</b> Cumulative Distribution Function</a>
+<li class="chapter" data-level="3.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#binomial-distribution-cumulative-distribution-function"><i class="fa fa-check"></i><b>3.2</b> Binomial Distribution: Cumulative Distribution Function</a>
 <ul>
-<li class="chapter" data-level="3.3.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#computing-probabilities-9"><i class="fa fa-check"></i><b>3.3.1</b> Computing Probabilities</a></li>
-<li class="chapter" data-level="3.3.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#sampling-data-from-an-arbitrary-probability-mass-function"><i class="fa fa-check"></i><b>3.3.2</b> Sampling Data From an Arbitrary Probability Mass Function</a></li>
+<li class="chapter" data-level="3.2.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#computing-probabilities-8"><i class="fa fa-check"></i><b>3.2.1</b> Computing Probabilities</a></li>
+<li class="chapter" data-level="3.2.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#probability-mass-functions-data-sampling"><i class="fa fa-check"></i><b>3.2.2</b> Probability Mass Functions: Data Sampling</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#linear-functions-of-random-variables"><i class="fa fa-check"></i><b>3.4</b> Linear Functions of Random Variables</a>
+<li class="chapter" data-level="3.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#binomial-related-distributions"><i class="fa fa-check"></i><b>3.3</b> Binomial-Related Distributions</a>
 <ul>
-<li class="chapter" data-level="3.4.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-mgf-for-a-geometric-random-variable"><i class="fa fa-check"></i><b>3.4.1</b> The MGF for a Geometric Random Variable</a></li>
-<li class="chapter" data-level="3.4.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-pmf-for-the-sample-mean"><i class="fa fa-check"></i><b>3.4.2</b> The PMF for the Sample Mean</a></li>
+<li class="chapter" data-level="3.3.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#negative-binomial-random-variable-expected-value"><i class="fa fa-check"></i><b>3.3.1</b> Negative Binomial Random Variable: Expected Value</a></li>
+<li class="chapter" data-level="3.3.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#beta-random-variable-expected-value"><i class="fa fa-check"></i><b>3.3.2</b> Beta Random Variable: Expected Value</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#linear-functions-of-binomial-random-variables"><i class="fa fa-check"></i><b>3.4</b> Linear Functions of Binomial Random Variables</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#geometric-random-variable-moment-generating-function"><i class="fa fa-check"></i><b>3.4.1</b> Geometric Random Variable: Moment-Generating Function</a></li>
+<li class="chapter" data-level="3.4.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#binomial-data-sample-mean-distribution"><i class="fa fa-check"></i><b>3.4.2</b> Binomial Data: Sample Mean Distribution</a></li>
+<li class="chapter" data-level="3.4.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#probability-generating-functions"><i class="fa fa-check"></i><b>3.4.3</b> Probability Generating Functions</a></li>
 </ul></li>
 <li class="chapter" data-level="3.5" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#order-statistics"><i class="fa fa-check"></i><b>3.5</b> Order Statistics</a>
 <ul>
-<li class="chapter" data-level="3.5.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#distribution-of-the-minimum-value-sampled-from-an-exponential-distribution"><i class="fa fa-check"></i><b>3.5.1</b> Distribution of the Minimum Value Sampled from an Exponential Distribution</a></li>
-<li class="chapter" data-level="3.5.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#distribution-of-the-median-value-sampled-from-a-uniform01-distribution"><i class="fa fa-check"></i><b>3.5.2</b> Distribution of the Median Value Sampled from a Uniform(0,1) Distribution</a></li>
+<li class="chapter" data-level="3.5.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#exponential-distribution-minimum-value"><i class="fa fa-check"></i><b>3.5.1</b> Exponential Distribution: Minimum Value</a></li>
+<li class="chapter" data-level="3.5.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#uniform01-distribution-sample-median"><i class="fa fa-check"></i><b>3.5.2</b> Uniform(0,1) Distribution: Sample Median</a></li>
+<li class="chapter" data-level="3.5.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#order-statistic-distribution-numeric-calculation"><i class="fa fa-check"></i><b>3.5.3</b> Order Statistic Distribution: Numeric Calculation</a></li>
+<li class="chapter" data-level="3.5.4" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#discrete-order-statistic-probability-mass-function"><i class="fa fa-check"></i><b>3.5.4</b> Discrete Order Statistic: Probability Mass Function</a></li>
 </ul></li>
 <li class="chapter" data-level="3.6" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#point-estimation-2"><i class="fa fa-check"></i><b>3.6</b> Point Estimation</a>
 <ul>
 <li class="chapter" data-level="3.6.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-mle-for-the-binomial-success-probability"><i class="fa fa-check"></i><b>3.6.1</b> The MLE for the Binomial Success Probability</a></li>
-<li class="chapter" data-level="3.6.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#sufficient-statistics-for-the-normal-distribution"><i class="fa fa-check"></i><b>3.6.2</b> Sufficient Statistics for the Normal Distribution</a></li>
-<li class="chapter" data-level="3.6.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-sufficiency-principle-examples-of-when-we-cannot-reduce-data"><i class="fa fa-check"></i><b>3.6.3</b> The Sufficiency Principle: Examples of When We Cannot Reduce Data</a></li>
-<li class="chapter" data-level="3.6.4" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-mvue-for-the-exponential-mean"><i class="fa fa-check"></i><b>3.6.4</b> The MVUE for the Exponential Mean</a></li>
-<li class="chapter" data-level="3.6.5" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-mvue-for-the-geometric-distribution"><i class="fa fa-check"></i><b>3.6.5</b> The MVUE for the Geometric Distribution</a></li>
+<li class="chapter" data-level="3.6.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#normal-distribution-sufficient-statistics"><i class="fa fa-check"></i><b>3.6.2</b> Normal Distribution: Sufficient Statistics</a></li>
+<li class="chapter" data-level="3.6.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#sufficiency-when-we-cannot-reduce-data"><i class="fa fa-check"></i><b>3.6.3</b> Sufficiency: When We Cannot Reduce Data</a></li>
+<li class="chapter" data-level="3.6.4" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#exponential-distribution-mvue-for-population-mean"><i class="fa fa-check"></i><b>3.6.4</b> Exponential Distribution: MVUE for Population Mean</a></li>
+<li class="chapter" data-level="3.6.5" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#geometric-distribution-mvue-for-number-of-failures"><i class="fa fa-check"></i><b>3.6.5</b> Geometric Distribution: MVUE for Number of Failures</a></li>
 </ul></li>
 <li class="chapter" data-level="3.7" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#confidence-intervals-2"><i class="fa fa-check"></i><b>3.7</b> Confidence Intervals</a>
 <ul>
-<li class="chapter" data-level="3.7.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#confidence-interval-for-the-binomial-success-probability"><i class="fa fa-check"></i><b>3.7.1</b> Confidence Interval for the Binomial Success Probability</a></li>
-<li class="chapter" data-level="3.7.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#confidence-interval-for-the-negative-binomial-success-probability"><i class="fa fa-check"></i><b>3.7.2</b> Confidence Interval for the Negative Binomial Success Probability</a></li>
-<li class="chapter" data-level="3.7.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#wald-interval-for-the-binomial-success-probability"><i class="fa fa-check"></i><b>3.7.3</b> Wald Interval for the Binomial Success Probability</a></li>
+<li class="chapter" data-level="3.7.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#binomial-probability-confidence-interval"><i class="fa fa-check"></i><b>3.7.1</b> Binomial Probability: Confidence Interval</a></li>
+<li class="chapter" data-level="3.7.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#binomial-probability-wald-interval"><i class="fa fa-check"></i><b>3.7.2</b> Binomial Probability: Wald Interval</a></li>
+<li class="chapter" data-level="3.7.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#negative-binomial-probability-confidence-interval"><i class="fa fa-check"></i><b>3.7.3</b> Negative Binomial Probability: Confidence Interval</a></li>
+<li class="chapter" data-level="3.7.4" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#hypergeometric-distribution-number-of-successes"><i class="fa fa-check"></i><b>3.7.4</b> Hypergeometric Distribution: Number of Successes</a></li>
+<li class="chapter" data-level="3.7.5" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#order-statistic-confidence-interval"><i class="fa fa-check"></i><b>3.7.5</b> Order Statistic: Confidence Interval</a></li>
 </ul></li>
-<li class="chapter" data-level="3.8" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#hypothesis-testing-2"><i class="fa fa-check"></i><b>3.8</b> Hypothesis Testing</a>
+<li class="chapter" data-level="3.8" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#hypothesis-testing-neyman-pearson-lemma"><i class="fa fa-check"></i><b>3.8</b> Hypothesis Testing: Neyman-Pearson Lemma</a>
 <ul>
-<li class="chapter" data-level="3.8.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#ump-test-exponential-distribution"><i class="fa fa-check"></i><b>3.8.1</b> UMP Test: Exponential Distribution</a></li>
-<li class="chapter" data-level="3.8.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#ump-test-negative-binomial-distribution"><i class="fa fa-check"></i><b>3.8.2</b> UMP Test: Negative Binomial Distribution</a></li>
-<li class="chapter" data-level="3.8.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#defining-a-ump-test-for-the-normal-population-mean"><i class="fa fa-check"></i><b>3.8.3</b> Defining a UMP Test for the Normal Population Mean</a></li>
-<li class="chapter" data-level="3.8.4" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#defining-a-test-that-is-not-uniformly-most-powerful"><i class="fa fa-check"></i><b>3.8.4</b> Defining a Test That is Not Uniformly Most Powerful</a></li>
+<li class="chapter" data-level="3.8.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#exponential-distribution-ump-test-of-population-mean"><i class="fa fa-check"></i><b>3.8.1</b> Exponential Distribution: UMP Test of Population Mean</a></li>
+<li class="chapter" data-level="3.8.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#negative-binomial-distribution-ump-test-of-success-probability"><i class="fa fa-check"></i><b>3.8.2</b> Negative Binomial Distribution: UMP Test of Success Probability</a></li>
+<li class="chapter" data-level="3.8.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#normal-distribution-ump-test-for-the-population-mean"><i class="fa fa-check"></i><b>3.8.3</b> Normal Distribution: UMP Test for the Population Mean</a></li>
+<li class="chapter" data-level="3.8.4" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#a-not-uniformly-most-powerful-test"><i class="fa fa-check"></i><b>3.8.4</b> A Not Uniformly Most Powerful Test</a></li>
 <li class="chapter" data-level="3.8.5" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#estimating-a-p-value-via-simulation"><i class="fa fa-check"></i><b>3.8.5</b> Estimating a <span class="math inline">\(p\)</span>-Value via Simulation</a></li>
-<li class="chapter" data-level="3.8.6" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#utilizing-simulations-when-data-reduction-is-not-possible"><i class="fa fa-check"></i><b>3.8.6</b> Utilizing Simulations When Data Reduction is Not Possible</a></li>
-<li class="chapter" data-level="3.8.7" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#large-sample-tests-of-the-binomial-success-probability"><i class="fa fa-check"></i><b>3.8.7</b> Large-Sample Tests of the Binomial Success Probability</a></li>
+<li class="chapter" data-level="3.8.6" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#simulating-when-data-reduction-is-not-possible"><i class="fa fa-check"></i><b>3.8.6</b> Simulating When Data Reduction is Not Possible</a></li>
+<li class="chapter" data-level="3.8.7" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#binomial-probability-large-sample-approximation-tests"><i class="fa fa-check"></i><b>3.8.7</b> Binomial Probability: Large-Sample Approximation Tests</a></li>
+<li class="chapter" data-level="3.8.8" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#uniform-distribution-test-of-population-bound-with-sample-median"><i class="fa fa-check"></i><b>3.8.8</b> Uniform Distribution: Test of Population Bound with Sample Median</a></li>
 </ul></li>
-<li class="chapter" data-level="3.9" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#logistic-regression"><i class="fa fa-check"></i><b>3.9</b> Logistic Regression</a>
+<li class="chapter" data-level="3.9" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#hypothesis-testing-categorical-hypotheses"><i class="fa fa-check"></i><b>3.9</b> Hypothesis Testing: Categorical Hypotheses</a>
 <ul>
-<li class="chapter" data-level="3.9.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#logistic-regression-in-r"><i class="fa fa-check"></i><b>3.9.1</b> Logistic Regression in R</a></li>
+<li class="chapter" data-level="3.9.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#multinomial-simulations"><i class="fa fa-check"></i><b>3.9.1</b> Multinomial Simulations</a></li>
+<li class="chapter" data-level="3.9.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#chi-square-goodness-of-fit-test"><i class="fa fa-check"></i><b>3.9.2</b> Chi-Square Goodness of Fit Test</a></li>
+<li class="chapter" data-level="3.9.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#comparing-multinomial-simulations-with-the-chi-square-gof-test"><i class="fa fa-check"></i><b>3.9.3</b> Comparing Multinomial Simulations with the Chi-Square GoF Test</a></li>
+<li class="chapter" data-level="3.9.4" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#chi-square-gof-test-discrete-distributions"><i class="fa fa-check"></i><b>3.9.4</b> Chi-Square GoF Test: Discrete Distributions</a></li>
+<li class="chapter" data-level="3.9.5" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#two-sample-test-of-binomial-proportions"><i class="fa fa-check"></i><b>3.9.5</b> Two-Sample Test of Binomial Proportions</a></li>
+<li class="chapter" data-level="3.9.6" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#chi-square-tests-of-homogeneity-and-independence"><i class="fa fa-check"></i><b>3.9.6</b> Chi-Square Tests of Homogeneity and Independence</a></li>
 </ul></li>
-<li class="chapter" data-level="3.10" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#naive-bayes-regression"><i class="fa fa-check"></i><b>3.10</b> Naive Bayes Regression</a>
+<li class="chapter" data-level="3.10" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#logistic-regression"><i class="fa fa-check"></i><b>3.10</b> Logistic Regression</a>
 <ul>
-<li class="chapter" data-level="3.10.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#naive-bayes-regression-with-categorical-predictors"><i class="fa fa-check"></i><b>3.10.1</b> Naive Bayes Regression With Categorical Predictors</a></li>
-<li class="chapter" data-level="3.10.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#naive-bayes-regression-with-continuous-predictors"><i class="fa fa-check"></i><b>3.10.2</b> Naive Bayes Regression With Continuous Predictors</a></li>
-<li class="chapter" data-level="3.10.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#naive-bayes-applied-to-star-quasar-data"><i class="fa fa-check"></i><b>3.10.3</b> Naive Bayes Applied to Star-Quasar Data</a></li>
+<li class="chapter" data-level="3.10.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#logistic-regression-in-r"><i class="fa fa-check"></i><b>3.10.1</b> Logistic Regression in R</a></li>
+<li class="chapter" data-level="3.10.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#beta-regression-in-r"><i class="fa fa-check"></i><b>3.10.2</b> Beta Regression in R</a></li>
 </ul></li>
-<li class="chapter" data-level="3.11" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-beta-distribution"><i class="fa fa-check"></i><b>3.11</b> The Beta Distribution</a>
+<li class="chapter" data-level="3.11" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#naive-bayes-regression"><i class="fa fa-check"></i><b>3.11</b> Naive Bayes Regression</a>
 <ul>
-<li class="chapter" data-level="3.11.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-expected-value-of-a-beta-random-variable"><i class="fa fa-check"></i><b>3.11.1</b> The Expected Value of a Beta Random Variable</a></li>
-<li class="chapter" data-level="3.11.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-sample-median-of-a-uniform01-distribution"><i class="fa fa-check"></i><b>3.11.2</b> The Sample Median of a Uniform(0,1) Distribution</a></li>
+<li class="chapter" data-level="3.11.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#naive-bayes-regression-with-categorical-predictors"><i class="fa fa-check"></i><b>3.11.1</b> Naive Bayes Regression With Categorical Predictors</a></li>
+<li class="chapter" data-level="3.11.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#naive-bayes-regression-with-continuous-predictors"><i class="fa fa-check"></i><b>3.11.2</b> Naive Bayes Regression With Continuous Predictors</a></li>
+<li class="chapter" data-level="3.11.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#naive-bayes-in-r"><i class="fa fa-check"></i><b>3.11.3</b> Naive Bayes in R</a></li>
 </ul></li>
-<li class="chapter" data-level="3.12" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-multinomial-distribution"><i class="fa fa-check"></i><b>3.12</b> The Multinomial Distribution</a>
-<ul>
-<li class="chapter" data-level="3.12.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#performing-a-multinomial-test"><i class="fa fa-check"></i><b>3.12.1</b> Performing a Multinomial Test</a></li>
-</ul></li>
-<li class="chapter" data-level="3.13" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#chi-square-based-hypothesis-testing"><i class="fa fa-check"></i><b>3.13</b> Chi-Square-Based Hypothesis Testing</a>
-<ul>
-<li class="chapter" data-level="3.13.1" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#chi-square-goodness-of-fit-test"><i class="fa fa-check"></i><b>3.13.1</b> Chi-Square Goodness of Fit Test</a></li>
-<li class="chapter" data-level="3.13.2" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#the-average-p-value-difference-between-the-multinomial-and-chi-square-gof-tests"><i class="fa fa-check"></i><b>3.13.2</b> The Average p-Value Difference Between the Multinomial and Chi-Square GoF Tests</a></li>
-<li class="chapter" data-level="3.13.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#chi-square-test-of-independence"><i class="fa fa-check"></i><b>3.13.3</b> Chi-Square Test of Independence</a></li>
-</ul></li>
-<li class="chapter" data-level="3.14" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#exercises-2"><i class="fa fa-check"></i><b>3.14</b> Exercises</a></li>
+<li class="chapter" data-level="3.12" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#exercises-2"><i class="fa fa-check"></i><b>3.12</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html"><i class="fa fa-check"></i><b>4</b> The Poisson (and Related) Distributions</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#motivation-1"><i class="fa fa-check"></i><b>4.1</b> Motivation</a></li>
-<li class="chapter" data-level="4.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#probability-mass-function-1"><i class="fa fa-check"></i><b>4.2</b> Probability Mass Function</a>
+<li class="chapter" data-level="4.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#probability-mass-function"><i class="fa fa-check"></i><b>4.1</b> Probability Mass Function</a>
 <ul>
-<li class="chapter" data-level="4.2.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#the-poisson-distribution-as-part-of-the-exponential-family"><i class="fa fa-check"></i><b>4.2.1</b> The Poisson Distribution as Part of the Exponential Family</a></li>
-<li class="chapter" data-level="4.2.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#the-expected-value-of-a-poisson-random-variable"><i class="fa fa-check"></i><b>4.2.2</b> The Expected Value of a Poisson Random Variable</a></li>
+<li class="chapter" data-level="4.1.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#poisson-random-variable-expected-value"><i class="fa fa-check"></i><b>4.1.1</b> Poisson Random Variable: Expected Value</a></li>
+<li class="chapter" data-level="4.1.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#poisson-distribution-normal-approximation"><i class="fa fa-check"></i><b>4.1.2</b> Poisson Distribution: Normal Approximation</a></li>
+<li class="chapter" data-level="4.1.3" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#poisson-distribution-exponential-family"><i class="fa fa-check"></i><b>4.1.3</b> Poisson Distribution: Exponential Family</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#cumulative-distribution-function-1"><i class="fa fa-check"></i><b>4.3</b> Cumulative Distribution Function</a>
+<li class="chapter" data-level="4.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#poisson-distribution-cumulative-distribution-function"><i class="fa fa-check"></i><b>4.2</b> Poisson Distribution: Cumulative Distribution Function</a>
 <ul>
-<li class="chapter" data-level="4.3.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#computing-probabilities-10"><i class="fa fa-check"></i><b>4.3.1</b> Computing Probabilities</a></li>
+<li class="chapter" data-level="4.2.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#computing-probabilities-9"><i class="fa fa-check"></i><b>4.2.1</b> Computing Probabilities</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#linear-functions-of-random-variables-1"><i class="fa fa-check"></i><b>4.4</b> Linear Functions of Random Variables</a>
+<li class="chapter" data-level="4.3" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#poisson-related-distributions"><i class="fa fa-check"></i><b>4.3</b> Poisson-Related Distributions</a>
 <ul>
-<li class="chapter" data-level="4.4.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#the-moment-generating-function-of-a-poisson-random-variable"><i class="fa fa-check"></i><b>4.4.1</b> The Moment-Generating Function of a Poisson Random Variable</a></li>
-<li class="chapter" data-level="4.4.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#the-distribution-of-the-difference-of-two-poisson-random-variables"><i class="fa fa-check"></i><b>4.4.2</b> The Distribution of the Difference of Two Poisson Random Variables</a></li>
+<li class="chapter" data-level="4.3.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#zero-inflated-poisson-random-variable-expected-value"><i class="fa fa-check"></i><b>4.3.1</b> Zero-Inflated Poisson Random Variable: Expected Value</a></li>
+<li class="chapter" data-level="4.3.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#zero-truncated-poisson-random-variable-expected-value"><i class="fa fa-check"></i><b>4.3.2</b> Zero-Truncated Poisson Random Variable: Expected Value</a></li>
+<li class="chapter" data-level="4.3.3" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#gamma-random-variable-expected-value"><i class="fa fa-check"></i><b>4.3.3</b> Gamma Random Variable: Expected Value</a></li>
+<li class="chapter" data-level="4.3.4" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#exponential-distribution-memorylessness"><i class="fa fa-check"></i><b>4.3.4</b> Exponential Distribution: Memorylessness</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#linear-functions-of-poisson-random-variables"><i class="fa fa-check"></i><b>4.4</b> Linear Functions of Poisson Random Variables</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#two-poisson-random-variables-difference-distribution"><i class="fa fa-check"></i><b>4.4.1</b> Two Poisson Random Variables: Difference Distribution</a></li>
+<li class="chapter" data-level="4.4.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#zero-inflated-poisson-distribution-moment-generating-function"><i class="fa fa-check"></i><b>4.4.2</b> Zero-Inflated Poisson Distribution: Moment-Generating Function</a></li>
+<li class="chapter" data-level="4.4.3" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#exponential-data-sample-sum-distribution"><i class="fa fa-check"></i><b>4.4.3</b> Exponential Data: Sample Sum Distribution</a></li>
 </ul></li>
 <li class="chapter" data-level="4.5" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#point-estimation-3"><i class="fa fa-check"></i><b>4.5</b> Point Estimation</a>
 <ul>
-<li class="chapter" data-level="4.5.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#revisiting-the-death-by-horse-kick-example"><i class="fa fa-check"></i><b>4.5.1</b> Revisiting the Death-by-Horse-Kick Example</a></li>
-<li class="chapter" data-level="4.5.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#the-crlb-on-the-variance-of-lambda-estimators"><i class="fa fa-check"></i><b>4.5.2</b> The CRLB on the Variance of <span class="math inline">\(\lambda\)</span> Estimators</a></li>
-<li class="chapter" data-level="4.5.3" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#minimum-variance-unbiased-estimation-and-the-invariance-property"><i class="fa fa-check"></i><b>4.5.3</b> Minimum Variance Unbiased Estimation and the Invariance Property</a></li>
-<li class="chapter" data-level="4.5.4" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#method-of-moments-estimation-for-the-gamma-distribution"><i class="fa fa-check"></i><b>4.5.4</b> Method of Moments Estimation for the Gamma Distribution</a></li>
-<li class="chapter" data-level="4.5.5" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#maximum-likelihood-estimation-via-numerical-optimization"><i class="fa fa-check"></i><b>4.5.5</b> Maximum Likelihood Estimation via Numerical Optimization</a></li>
+<li class="chapter" data-level="4.5.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#poisson-expected-counts-maximum-likelihood-estimator"><i class="fa fa-check"></i><b>4.5.1</b> Poisson Expected Counts: Maximum Likelihood Estimator</a></li>
+<li class="chapter" data-level="4.5.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#poisson-expected-counts-minimum-variance-unbiased-estimator"><i class="fa fa-check"></i><b>4.5.2</b> Poisson Expected Counts: Minimum Variance Unbiased Estimator</a></li>
+<li class="chapter" data-level="4.5.3" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#death-by-horse-kick-point-estimate"><i class="fa fa-check"></i><b>4.5.3</b> Death-by-Horse-Kick: Point Estimate</a></li>
+<li class="chapter" data-level="4.5.4" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#the-crlb-for-the-variance-of-expected-counts-estimators"><i class="fa fa-check"></i><b>4.5.4</b> The CRLB for the Variance of Expected Counts Estimators</a></li>
+<li class="chapter" data-level="4.5.5" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#minimum-variance-unbiased-estimation-lack-of-invariance"><i class="fa fa-check"></i><b>4.5.5</b> Minimum Variance Unbiased Estimation: Lack of Invariance</a></li>
+<li class="chapter" data-level="4.5.6" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#gamma-distribution-method-of-moments-estimation"><i class="fa fa-check"></i><b>4.5.6</b> Gamma Distribution: Method of Moments Estimation</a></li>
+<li class="chapter" data-level="4.5.7" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#gamma-distribution-numerical-maximum-likelihood-estimation"><i class="fa fa-check"></i><b>4.5.7</b> Gamma Distribution: Numerical Maximum Likelihood Estimation</a></li>
 </ul></li>
 <li class="chapter" data-level="4.6" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#confidence-intervals-3"><i class="fa fa-check"></i><b>4.6</b> Confidence Intervals</a>
 <ul>
-<li class="chapter" data-level="4.6.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#confidence-interval-for-the-poisson-parameter-lambda"><i class="fa fa-check"></i><b>4.6.1</b> Confidence Interval for the Poisson Parameter <span class="math inline">\(\lambda\)</span></a></li>
-<li class="chapter" data-level="4.6.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#revisiting-the-death-by-horse-kick-example-1"><i class="fa fa-check"></i><b>4.6.2</b> Revisiting the Death-by-Horse-Kick Example</a></li>
-<li class="chapter" data-level="4.6.3" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#determining-a-confidence-interval-using-the-bootstrap"><i class="fa fa-check"></i><b>4.6.3</b> Determining a Confidence Interval Using the Bootstrap</a></li>
-<li class="chapter" data-level="4.6.4" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#the-proportion-of-observed-data-in-a-bootstrap-sample"><i class="fa fa-check"></i><b>4.6.4</b> The Proportion of Observed Data in a Bootstrap Sample</a></li>
-<li class="chapter" data-level="4.6.5" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#confidence-interval-estimation-via-simulation"><i class="fa fa-check"></i><b>4.6.5</b> Confidence Interval Estimation via Simulation</a></li>
+<li class="chapter" data-level="4.6.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#poisson-expected-counts-confidence-interval"><i class="fa fa-check"></i><b>4.6.1</b> Poisson Expected Counts: Confidence Interval</a></li>
+<li class="chapter" data-level="4.6.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#death-by-horse-kick-confidence-interval"><i class="fa fa-check"></i><b>4.6.2</b> Death-by-Horse-Kick: Confidence Interval</a></li>
+<li class="chapter" data-level="4.6.3" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#death-by-horse-kick-nonparametric-bootstrap-confidence-interval"><i class="fa fa-check"></i><b>4.6.3</b> Death-by-Horse-Kick: Nonparametric Bootstrap Confidence Interval</a></li>
+<li class="chapter" data-level="4.6.4" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#bootstrap-sample-proportion-of-observed-data"><i class="fa fa-check"></i><b>4.6.4</b> Bootstrap Sample: Proportion of Observed Data</a></li>
+<li class="chapter" data-level="4.6.5" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#death-by-horse-kick-simulation-based-confidence-interval"><i class="fa fa-check"></i><b>4.6.5</b> Death-by-Horse Kick: Simulation-Based Confidence Interval</a></li>
+<li class="chapter" data-level="4.6.6" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#zero-truncated-poisson-expected-counts-simulation-based-confidence-interval"><i class="fa fa-check"></i><b>4.6.6</b> Zero-Truncated Poisson Expected Counts: Simulation-Based Confidence Interval</a></li>
 </ul></li>
-<li class="chapter" data-level="4.7" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#hypothesis-testing-3"><i class="fa fa-check"></i><b>4.7</b> Hypothesis Testing</a>
+<li class="chapter" data-level="4.7" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#hypothesis-testing-2"><i class="fa fa-check"></i><b>4.7</b> Hypothesis Testing</a>
 <ul>
-<li class="chapter" data-level="4.7.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#the-uniformly-most-powerful-test-of-poisson-lambda"><i class="fa fa-check"></i><b>4.7.1</b> The Uniformly Most Powerful Test of Poisson <span class="math inline">\(\lambda\)</span></a></li>
-<li class="chapter" data-level="4.7.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#likelihood-ratio-test-of-the-poisson-parameter-lambda"><i class="fa fa-check"></i><b>4.7.2</b> Likelihood Ratio Test of the Poisson Parameter <span class="math inline">\(\lambda\)</span></a></li>
-<li class="chapter" data-level="4.7.3" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#using-wilks-theorem-to-test-hypotheses-about-the-normal-mean"><i class="fa fa-check"></i><b>4.7.3</b> Using Wilks’ Theorem to Test Hypotheses About the Normal Mean</a></li>
-<li class="chapter" data-level="4.7.4" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#simulating-the-likelihood-ratio-test"><i class="fa fa-check"></i><b>4.7.4</b> Simulating the Likelihood Ratio Test</a></li>
+<li class="chapter" data-level="4.7.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#poisson-expected-counts-uniformly-most-powerful-test"><i class="fa fa-check"></i><b>4.7.1</b> Poisson Expected Counts: Uniformly Most Powerful Test</a></li>
+<li class="chapter" data-level="4.7.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#poisson-expected-counts-likelihood-ratio-test"><i class="fa fa-check"></i><b>4.7.2</b> Poisson Expected Counts: Likelihood Ratio Test</a></li>
+<li class="chapter" data-level="4.7.3" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#normal-population-mean-lrt-with-wilks-theorem"><i class="fa fa-check"></i><b>4.7.3</b> Normal Population Mean: LRT With Wilks’ Theorem</a></li>
+<li class="chapter" data-level="4.7.4" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#normal-population-mean-lrt-via-simulation"><i class="fa fa-check"></i><b>4.7.4</b> Normal Population Mean: LRT Via Simulation</a></li>
+<li class="chapter" data-level="4.7.5" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#score-and-wald-tests"><i class="fa fa-check"></i><b>4.7.5</b> Score and Wald Tests</a></li>
+<li class="chapter" data-level="4.7.6" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#poisson-distribution-chi-square-based-hypothesis-testing"><i class="fa fa-check"></i><b>4.7.6</b> Poisson Distribution: Chi-Square-Based Hypothesis Testing</a></li>
+<li class="chapter" data-level="4.7.7" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#death-by-horse-kick-are-the-data-poisson-distributed"><i class="fa fa-check"></i><b>4.7.7</b> Death-by-Horse-Kick: Are the Data Poisson Distributed?</a></li>
 </ul></li>
-<li class="chapter" data-level="4.8" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#the-gamma-distribution"><i class="fa fa-check"></i><b>4.8</b> The Gamma Distribution</a>
+<li class="chapter" data-level="4.8" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#poisson-and-negative-binomial-regression"><i class="fa fa-check"></i><b>4.8</b> Poisson and Negative Binomial Regression</a>
 <ul>
-<li class="chapter" data-level="4.8.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#the-expected-value-of-a-gamma-random-variable"><i class="fa fa-check"></i><b>4.8.1</b> The Expected Value of a Gamma Random Variable</a></li>
-<li class="chapter" data-level="4.8.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#the-distribution-of-the-sum-of-exponential-random-variables"><i class="fa fa-check"></i><b>4.8.2</b> The Distribution of the Sum of Exponential Random Variables</a></li>
-<li class="chapter" data-level="4.8.3" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#memorylessness-and-the-exponential-distribution"><i class="fa fa-check"></i><b>4.8.3</b> Memorylessness and the Exponential Distribution</a></li>
+<li class="chapter" data-level="4.8.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#poisson-regression-example"><i class="fa fa-check"></i><b>4.8.1</b> Poisson Regression: Example</a></li>
+<li class="chapter" data-level="4.8.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#negative-binomial-regression-example"><i class="fa fa-check"></i><b>4.8.2</b> Negative Binomial Regression: Example</a></li>
 </ul></li>
-<li class="chapter" data-level="4.9" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#poisson-regression"><i class="fa fa-check"></i><b>4.9</b> Poisson Regression</a>
+<li class="chapter" data-level="4.9" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#exercises-3"><i class="fa fa-check"></i><b>4.9</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html"><i class="fa fa-check"></i><b>5</b> Distributions with Domain-Specifying Parameters</a>
 <ul>
-<li class="chapter" data-level="4.9.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#revisiting-the-death-by-horse-kick-example-2"><i class="fa fa-check"></i><b>4.9.1</b> Revisiting the Death-by-Horse-Kick Example</a></li>
-<li class="chapter" data-level="4.9.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#negative-binomial-regression-example"><i class="fa fa-check"></i><b>4.9.2</b> Negative Binomial Regression Example</a></li>
-</ul></li>
-<li class="chapter" data-level="4.10" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#chi-square-based-hypothesis-testing-1"><i class="fa fa-check"></i><b>4.10</b> Chi-Square-Based Hypothesis Testing</a>
+<li class="chapter" data-level="5.1" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#distribution-examples"><i class="fa fa-check"></i><b>5.1</b> Distribution Examples</a>
 <ul>
-<li class="chapter" data-level="4.10.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#revisiting-the-death-by-horse-kick-example-3"><i class="fa fa-check"></i><b>4.10.1</b> Revisiting the Death-by-Horse-Kick Example</a></li>
+<li class="chapter" data-level="5.1.1" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#uniform-random-variable-expected-value-and-variance"><i class="fa fa-check"></i><b>5.1.1</b> Uniform Random Variable: Expected Value and Variance</a></li>
+<li class="chapter" data-level="5.1.2" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#uniform-distribution-order-statistics"><i class="fa fa-check"></i><b>5.1.2</b> Uniform Distribution: Order Statistics</a></li>
+<li class="chapter" data-level="5.1.3" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#pareto-random-variable-expected-value"><i class="fa fa-check"></i><b>5.1.3</b> Pareto Random Variable: Expected Value</a></li>
+<li class="chapter" data-level="5.1.4" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#discrete-uniform-distribution"><i class="fa fa-check"></i><b>5.1.4</b> Discrete Uniform Distribution</a></li>
 </ul></li>
-<li class="chapter" data-level="4.11" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#exercises-3"><i class="fa fa-check"></i><b>4.11</b> Exercises</a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html"><i class="fa fa-check"></i><b>5</b> The Uniform Distribution</a>
+<li class="chapter" data-level="5.2" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#linear-functions-of-random-variables"><i class="fa fa-check"></i><b>5.2</b> Linear Functions of Random Variables</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#properties"><i class="fa fa-check"></i><b>5.1</b> Properties</a>
-<ul>
-<li class="chapter" data-level="5.1.1" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#the-expected-value-and-variance-of-a-uniform-random-variable"><i class="fa fa-check"></i><b>5.1.1</b> The Expected Value and Variance of a Uniform Random Variable</a></li>
-<li class="chapter" data-level="5.1.2" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#coding-r-style-functions-for-the-discrete-uniform-distribution"><i class="fa fa-check"></i><b>5.1.2</b> Coding R-Style Functions for the Discrete Uniform Distribution</a></li>
+<li class="chapter" data-level="5.2.1" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#uniform-data-sample-sum-and-mean-distributions"><i class="fa fa-check"></i><b>5.2.1</b> Uniform Data: Sample Sum and Mean Distributions</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#linear-functions-of-uniform-random-variables"><i class="fa fa-check"></i><b>5.2</b> Linear Functions of Uniform Random Variables</a>
+<li class="chapter" data-level="5.3" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#point-estimation-4"><i class="fa fa-check"></i><b>5.3</b> Point Estimation</a>
 <ul>
-<li class="chapter" data-level="5.2.1" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#the-moment-generating-function-for-a-discrete-uniform-distribution"><i class="fa fa-check"></i><b>5.2.1</b> The Moment-Generating Function for a Discrete Uniform Distribution</a></li>
+<li class="chapter" data-level="5.3.1" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#uniform-domain-parameter-mle"><i class="fa fa-check"></i><b>5.3.1</b> Uniform Domain Parameter: MLE</a></li>
+<li class="chapter" data-level="5.3.2" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#pareto-domain-parameter-mle"><i class="fa fa-check"></i><b>5.3.2</b> Pareto Domain Parameter: MLE</a></li>
+<li class="chapter" data-level="5.3.3" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#uniform-domain-parameter-mvue"><i class="fa fa-check"></i><b>5.3.3</b> Uniform Domain Parameter: MVUE</a></li>
+<li class="chapter" data-level="5.3.4" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#pareto-domain-parameter-mvue"><i class="fa fa-check"></i><b>5.3.4</b> Pareto Domain Parameter: MVUE</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#sufficient-statistics-and-the-minimum-variance-unbiased-estimator"><i class="fa fa-check"></i><b>5.3</b> Sufficient Statistics and the Minimum Variance Unbiased Estimator</a>
+<li class="chapter" data-level="5.4" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#confidence-intervals-4"><i class="fa fa-check"></i><b>5.4</b> Confidence Intervals</a>
 <ul>
-<li class="chapter" data-level="5.3.1" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#sufficient-statistics-for-the-pareto-domain-parameter"><i class="fa fa-check"></i><b>5.3.1</b> Sufficient Statistics for the Pareto Domain Parameter</a></li>
-<li class="chapter" data-level="5.3.2" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#mvue-properties-for-uniform-distribution-bounds"><i class="fa fa-check"></i><b>5.3.2</b> MVUE Properties for Uniform Distribution Bounds</a></li>
+<li class="chapter" data-level="5.4.1" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#uniform-domain-parameter-interval-estimation"><i class="fa fa-check"></i><b>5.4.1</b> Uniform Domain Parameter: Interval Estimation</a></li>
+<li class="chapter" data-level="5.4.2" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#uniform-domain-parameter-confidence-coefficient"><i class="fa fa-check"></i><b>5.4.2</b> Uniform Domain Parameter: Confidence Coefficient</a></li>
+<li class="chapter" data-level="5.4.3" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#pareto-domain-parameter-interval-estimation"><i class="fa fa-check"></i><b>5.4.3</b> Pareto Domain Parameter: Interval Estimation</a></li>
 </ul></li>
-<li class="chapter" data-level="5.4" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#maximum-likelihood-estimation"><i class="fa fa-check"></i><b>5.4</b> Maximum Likelihood Estimation</a>
+<li class="chapter" data-level="5.5" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#hypothesis-testing-3"><i class="fa fa-check"></i><b>5.5</b> Hypothesis Testing</a>
 <ul>
-<li class="chapter" data-level="5.4.1" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#the-mle-for-the-pareto-domain-parameter"><i class="fa fa-check"></i><b>5.4.1</b> The MLE for the Pareto Domain Parameter</a></li>
-<li class="chapter" data-level="5.4.2" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#mle-properties-for-uniform-distribution-bounds"><i class="fa fa-check"></i><b>5.4.2</b> MLE Properties for Uniform Distribution Bounds</a></li>
+<li class="chapter" data-level="5.5.1" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#uniform-domain-parameter-hypothesis-test"><i class="fa fa-check"></i><b>5.5.1</b> Uniform Domain Parameter: Hypothesis Test</a></li>
 </ul></li>
-<li class="chapter" data-level="5.5" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#confidence-intervals-4"><i class="fa fa-check"></i><b>5.5</b> Confidence Intervals</a>
-<ul>
-<li class="chapter" data-level="5.5.1" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#interval-estimation-using-an-order-statistic"><i class="fa fa-check"></i><b>5.5.1</b> Interval Estimation Using an Order Statistic</a></li>
-<li class="chapter" data-level="5.5.2" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#confidence-coefficient-for-a-uniform-based-interval-estimator"><i class="fa fa-check"></i><b>5.5.2</b> Confidence Coefficient for a Uniform-Based Interval Estimator</a></li>
-</ul></li>
-<li class="chapter" data-level="5.6" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#hypothesis-testing-4"><i class="fa fa-check"></i><b>5.6</b> Hypothesis Testing</a>
-<ul>
-<li class="chapter" data-level="5.6.1" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#hypothesis-test-for-the-uniform-distribution-upper-bound"><i class="fa fa-check"></i><b>5.6.1</b> Hypothesis Test for the Uniform Distribution Upper Bound</a></li>
-</ul></li>
-<li class="chapter" data-level="5.7" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#exercises-4"><i class="fa fa-check"></i><b>5.7</b> Exercises</a></li>
+<li class="chapter" data-level="5.6" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#exercises-4"><i class="fa fa-check"></i><b>5.6</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html"><i class="fa fa-check"></i><b>6</b> Multivariate Distributions</a>
 <ul>
@@ -551,8 +558,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.6.1" data-path="further-conceptual-details-optional.html"><a href="further-conceptual-details-optional.html#an-illustration-of-multiple-comparisons-when-testing-for-the-normal-mean"><i class="fa fa-check"></i><b>7.6.1</b> An Illustration of Multiple Comparisons When Testing for the Normal Mean</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="appendix-a-table-of-symbols.html"><a href="appendix-a-table-of-symbols.html"><i class="fa fa-check"></i>Appendix A: Table of Symbols</a></li>
-<li class="chapter" data-level="" data-path="appendix-b-confidence-interval-and-hypothesis-test-reference-tables.html"><a href="appendix-b-confidence-interval-and-hypothesis-test-reference-tables.html"><i class="fa fa-check"></i>Appendix B: Confidence Interval and Hypothesis Test Reference Tables</a></li>
+<li class="chapter" data-level="" data-path="appendix-table-of-symbols.html"><a href="appendix-table-of-symbols.html"><i class="fa fa-check"></i>Appendix: Table of Symbols</a></li>
 <li class="chapter" data-level="" data-path="bibliography.html"><a href="bibliography.html"><i class="fa fa-check"></i>Bibliography</a></li>
 <li class="chapter" data-level="" data-path="chapter-exercises-solutions.html"><a href="chapter-exercises-solutions.html"><i class="fa fa-check"></i>Chapter Exercises: Solutions</a>
 <ul>
@@ -582,6 +588,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="multivariate-distributions" class="section level1 hasAnchor" number="6">
 <h1><span class="header-section-number">6</span> Multivariate Distributions<a href="multivariate-distributions.html#multivariate-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div class="bluebox">
+<p>In this chapter, we move away from independent and identically distributed data to examining the situation in which <span class="math inline">\(\{X_1,\ldots,X_p\}\)</span> are <span class="math inline">\(p\)</span> random variables that are <em>jointly</em> sampled according to some <em>multivariate distribution</em> <span class="math inline">\(P\)</span>. Our focus will not be on statistical inference, but on how one works with (specifically) bivariate probability distributions: assessing the independence of random variables, computing the covariance and correlation between them, deriving marginal and conditional distributions, and working with conditional expected value and variance. (While noting that any results that we write down for bivariate distributions can be generalized to higher-dimensional ones as well.)</p>
+</div>
+<p><br></p>
 <p>Thus far we have looked at <em>univariate probability distributions</em>, i.e.,
 we have assumed that there is a single random variable <span class="math inline">\(X\)</span> that maps the
 events in a sample space to the real-number line. The quantity represented
@@ -592,6 +602,9 @@ representing, e.g., height <em>and</em> weight (if <span class="math inline">\(p
 a set of <span class="math inline">\(p\)</span> random variables, they are sampled from a joint <span class="math inline">\(p\)</span>-dimensional
 probability mass or density function that encapsulates how the random
 variables are jointly distributed.
+(It can be the case that the set can contain both discrete <em>and</em>
+continuous random variables,
+but for simplicity we will ignore that possibility here.)
 Both joint pmfs <span class="math inline">\(p_{X_1,\ldots,X_p}(x_1,\ldots,x_p)\)</span> and joint pdfs
 <span class="math inline">\(f_{X_1,\ldots,X_p}(x_1,\ldots,x_p)\)</span> have
 similar properties as their univariate counterparts: they are non-negative
@@ -631,6 +644,17 @@ understanding. The one exception to this is in the last section, where we
 discuss the multivariate normal distribution.</p>
 <div id="independence-of-random-variables" class="section level2 hasAnchor" number="6.1">
 <h2><span class="header-section-number">6.1</span> Independence of Random Variables<a href="multivariate-distributions.html#independence-of-random-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="graybox">
+<p>What to take away from this section:</p>
+<ul>
+<li><p>Two random variables <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> that are sampled according to a bivariate probability density function <span class="math inline">\(f_{X_1,X_2}(x_1,x_2)\)</span> are <em>independent</em> random variables if…</p>
+<ul>
+<li><p>no part of the boundary of the domain of <span class="math inline">\(f_{X_1,X_2}(x_1,x_2)\)</span> depends on both the coordinates <span class="math inline">\(x_1\)</span> <em>and</em> <span class="math inline">\(x_2\)</span>; and</p></li>
+<li><p>if <span class="math inline">\(f_{X_1,X_2}(x_1,x_2)\)</span> can be factored into two functions, one that is only a function of <span class="math inline">\(x_1\)</span> and one that is only a function of <span class="math inline">\(x_2\)</span>.</p></li>
+</ul></li>
+</ul>
+</div>
+<p><br></p>
 <p>In Chapter 1, we describe at a high level the concept of two or more
 random variables being independent of each other. In that chapter, we
 give the example of a <em>bivariate probability density function</em>, i.e.,
@@ -703,6 +727,13 @@ depend only on <span class="math inline">\(x_1\)</span> or only on <span class="
 </div>
 <div id="properties-of-multivariate-distributions" class="section level2 hasAnchor" number="6.2">
 <h2><span class="header-section-number">6.2</span> Properties of Multivariate Distributions<a href="multivariate-distributions.html#properties-of-multivariate-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="graybox">
+<p>What to take away from this section:</p>
+<ul>
+<li>The probability mass and density functions of bivariate (and more generally, multivariate) distributions have the same properties as their univariate counterparts: they are non-negative, sum or integrate to one over their domains, can be characterized via expected value and variance, and have cumulative distribution functions. They simply are defined along more than one coordinate axis.</li>
+</ul>
+</div>
+<p><br></p>
 <p>As stated in Chapter 1, a probability distribution is a mapping
 <span class="math inline">\(P : \Omega \rightarrow \mathbb{R}^n\)</span>, where <span class="math inline">\(\Omega\)</span> is the sample
 space for an experiment. This mapping describes how probabilities
@@ -783,22 +814,20 @@ are independent, but not generally.</p>
 <span class="math inline">\(p_{X_1,X_2}(x_1,x_2)\)</span>:</p>
 </blockquote>
 <table>
-<thead>
-<tr class="header">
-<th align="center"></th>
-<th align="center"><span class="math inline">\(x_2 = 0\)</span></th>
-<th align="center"><span class="math inline">\(x_2 = 1\)</span></th>
-<th align="center"><span class="math inline">\(x_2 = 2\)</span></th>
-</tr>
-</thead>
 <tbody>
 <tr class="odd">
+<td align="center"></td>
+<td align="center"><span class="math inline">\(x_2 = 0\)</span></td>
+<td align="center"><span class="math inline">\(x_2 = 1\)</span></td>
+<td align="center"><span class="math inline">\(x_2 = 2\)</span></td>
+</tr>
+<tr class="even">
 <td align="center"><span class="math inline">\(x_1 = 1\)</span></td>
 <td align="center">0.20</td>
 <td align="center">0.30</td>
 <td align="center">0.00</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="center"><span class="math inline">\(x_1 = 2\)</span></td>
 <td align="center">0.40</td>
 <td align="center">0.00</td>
@@ -895,34 +924,34 @@ value <span class="math inline">\(c\)</span> and the expected value and variance
 Here, we demonstrate how the <code>integral2()</code> function of the <code>pracma</code>
 package can help us perform the same calculations numerically.</p>
 </blockquote>
-<div class="sourceCode" id="cb312"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb312-1"><a href="multivariate-distributions.html#cb312-1" tabindex="-1"></a><span class="fu">library</span>(pracma)</span>
-<span id="cb312-2"><a href="multivariate-distributions.html#cb312-2" tabindex="-1"></a></span>
-<span id="cb312-3"><a href="multivariate-distributions.html#cb312-3" tabindex="-1"></a><span class="co"># Define the (finite) domain</span></span>
-<span id="cb312-4"><a href="multivariate-distributions.html#cb312-4" tabindex="-1"></a>x1min <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb312-5"><a href="multivariate-distributions.html#cb312-5" tabindex="-1"></a>x1max <span class="ot">&lt;-</span> <span class="dv">1</span> </span>
-<span id="cb312-6"><a href="multivariate-distributions.html#cb312-6" tabindex="-1"></a>x2min <span class="ot">&lt;-</span> <span class="cf">function</span>(x1) { x1 } <span class="co"># the lower bound for x2 is the line x2=x1</span></span>
-<span id="cb312-7"><a href="multivariate-distributions.html#cb312-7" tabindex="-1"></a>x2max <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb312-8"><a href="multivariate-distributions.html#cb312-8" tabindex="-1"></a></span>
-<span id="cb312-9"><a href="multivariate-distributions.html#cb312-9" tabindex="-1"></a><span class="co"># Determine c</span></span>
-<span id="cb312-10"><a href="multivariate-distributions.html#cb312-10" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x1,x2) {</span>
-<span id="cb312-11"><a href="multivariate-distributions.html#cb312-11" tabindex="-1"></a>  <span class="dv">1</span><span class="sc">-</span>x2</span>
-<span id="cb312-12"><a href="multivariate-distributions.html#cb312-12" tabindex="-1"></a>}</span>
-<span id="cb312-13"><a href="multivariate-distributions.html#cb312-13" tabindex="-1"></a>I <span class="ot">&lt;-</span> <span class="fu">integral2</span>(f,x1min,x1max,x2min,x2max)<span class="sc">$</span>Q</span>
-<span id="cb312-14"><a href="multivariate-distributions.html#cb312-14" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The value of c is&quot;</span>,<span class="dv">1</span><span class="sc">/</span>I,<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb374"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb374-1"><a href="multivariate-distributions.html#cb374-1" tabindex="-1"></a><span class="fu">library</span>(pracma)</span>
+<span id="cb374-2"><a href="multivariate-distributions.html#cb374-2" tabindex="-1"></a></span>
+<span id="cb374-3"><a href="multivariate-distributions.html#cb374-3" tabindex="-1"></a><span class="co"># Define the (finite) domain</span></span>
+<span id="cb374-4"><a href="multivariate-distributions.html#cb374-4" tabindex="-1"></a>x1min <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb374-5"><a href="multivariate-distributions.html#cb374-5" tabindex="-1"></a>x1max <span class="ot">&lt;-</span> <span class="dv">1</span> </span>
+<span id="cb374-6"><a href="multivariate-distributions.html#cb374-6" tabindex="-1"></a>x2min <span class="ot">&lt;-</span> <span class="cf">function</span>(x1) { x1 } <span class="co"># the lower bound for x2 is the line x2=x1</span></span>
+<span id="cb374-7"><a href="multivariate-distributions.html#cb374-7" tabindex="-1"></a>x2max <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb374-8"><a href="multivariate-distributions.html#cb374-8" tabindex="-1"></a></span>
+<span id="cb374-9"><a href="multivariate-distributions.html#cb374-9" tabindex="-1"></a><span class="co"># Determine c</span></span>
+<span id="cb374-10"><a href="multivariate-distributions.html#cb374-10" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x1,x2) {</span>
+<span id="cb374-11"><a href="multivariate-distributions.html#cb374-11" tabindex="-1"></a>  <span class="dv">1</span><span class="sc">-</span>x2</span>
+<span id="cb374-12"><a href="multivariate-distributions.html#cb374-12" tabindex="-1"></a>}</span>
+<span id="cb374-13"><a href="multivariate-distributions.html#cb374-13" tabindex="-1"></a>I <span class="ot">&lt;-</span> <span class="fu">integral2</span>(f,x1min,x1max,x2min,x2max)<span class="sc">$</span>Q</span>
+<span id="cb374-14"><a href="multivariate-distributions.html#cb374-14" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The value of c is&quot;</span>,<span class="dv">1</span><span class="sc">/</span>I,<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## The value of c is 6</code></pre>
-<div class="sourceCode" id="cb314"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb314-1"><a href="multivariate-distributions.html#cb314-1" tabindex="-1"></a><span class="co"># Determine E[X2]</span></span>
-<span id="cb314-2"><a href="multivariate-distributions.html#cb314-2" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x1,x2) {</span>
-<span id="cb314-3"><a href="multivariate-distributions.html#cb314-3" tabindex="-1"></a>  <span class="dv">6</span><span class="sc">*</span>x2<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>x2)</span>
-<span id="cb314-4"><a href="multivariate-distributions.html#cb314-4" tabindex="-1"></a>}</span>
-<span id="cb314-5"><a href="multivariate-distributions.html#cb314-5" tabindex="-1"></a>I <span class="ot">&lt;-</span> <span class="fu">integral2</span>(f,x1min,x1max,x2min,x2max)<span class="sc">$</span>Q</span>
-<span id="cb314-6"><a href="multivariate-distributions.html#cb314-6" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;E[X2] =&quot;</span>,I,<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb376"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb376-1"><a href="multivariate-distributions.html#cb376-1" tabindex="-1"></a><span class="co"># Determine E[X2]</span></span>
+<span id="cb376-2"><a href="multivariate-distributions.html#cb376-2" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x1,x2) {</span>
+<span id="cb376-3"><a href="multivariate-distributions.html#cb376-3" tabindex="-1"></a>  <span class="dv">6</span><span class="sc">*</span>x2<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>x2)</span>
+<span id="cb376-4"><a href="multivariate-distributions.html#cb376-4" tabindex="-1"></a>}</span>
+<span id="cb376-5"><a href="multivariate-distributions.html#cb376-5" tabindex="-1"></a>I <span class="ot">&lt;-</span> <span class="fu">integral2</span>(f,x1min,x1max,x2min,x2max)<span class="sc">$</span>Q</span>
+<span id="cb376-6"><a href="multivariate-distributions.html#cb376-6" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;E[X2] =&quot;</span>,I,<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## E[X2] = 0.5</code></pre>
-<div class="sourceCode" id="cb316"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb316-1"><a href="multivariate-distributions.html#cb316-1" tabindex="-1"></a><span class="co"># Determine E[X2^2], and the variance</span></span>
-<span id="cb316-2"><a href="multivariate-distributions.html#cb316-2" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x1,x2) {</span>
-<span id="cb316-3"><a href="multivariate-distributions.html#cb316-3" tabindex="-1"></a>  <span class="dv">6</span><span class="sc">*</span>x2<span class="sc">^</span><span class="dv">2</span><span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>x2)</span>
-<span id="cb316-4"><a href="multivariate-distributions.html#cb316-4" tabindex="-1"></a>}</span>
-<span id="cb316-5"><a href="multivariate-distributions.html#cb316-5" tabindex="-1"></a>J <span class="ot">&lt;-</span> <span class="fu">integral2</span>(f,x1min,x1max,x2min,x2max)<span class="sc">$</span>Q</span>
-<span id="cb316-6"><a href="multivariate-distributions.html#cb316-6" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;V[X2] =&quot;</span>,J<span class="sc">-</span>I<span class="sc">^</span><span class="dv">2</span>,<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb378"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb378-1"><a href="multivariate-distributions.html#cb378-1" tabindex="-1"></a><span class="co"># Determine E[X2^2], and the variance</span></span>
+<span id="cb378-2"><a href="multivariate-distributions.html#cb378-2" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x1,x2) {</span>
+<span id="cb378-3"><a href="multivariate-distributions.html#cb378-3" tabindex="-1"></a>  <span class="dv">6</span><span class="sc">*</span>x2<span class="sc">^</span><span class="dv">2</span><span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>x2)</span>
+<span id="cb378-4"><a href="multivariate-distributions.html#cb378-4" tabindex="-1"></a>}</span>
+<span id="cb378-5"><a href="multivariate-distributions.html#cb378-5" tabindex="-1"></a>J <span class="ot">&lt;-</span> <span class="fu">integral2</span>(f,x1min,x1max,x2min,x2max)<span class="sc">$</span>Q</span>
+<span id="cb378-6"><a href="multivariate-distributions.html#cb378-6" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;V[X2] =&quot;</span>,J<span class="sc">-</span>I<span class="sc">^</span><span class="dv">2</span>,<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## V[X2] = 0.05</code></pre>
 <hr />
 </div>
@@ -962,8 +991,17 @@ Figure 6.3: The domain of the bivariate uniform distribution with bounds 0 and 1
 </div>
 <div id="covariance-and-correlation" class="section level2 hasAnchor" number="6.3">
 <h2><span class="header-section-number">6.3</span> Covariance and Correlation<a href="multivariate-distributions.html#covariance-and-correlation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="graybox">
+<p>What to take away from this section:</p>
+<ul>
+<li><p>The <em>covariance</em> between two random variables <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> is a metric that quantifies the amount of <em>linear dependence</em> between them.</p></li>
+<li><p>The <em>correlation</em> between two random variables is the value of the covariance rescaled so as to lie between <span class="math inline">\(-1\)</span> and 1; the rescaling aids interpretation.</p></li>
+<li><p>Uncorrelated random variables (ones for which the value of the correlation is zero) are not necessarily independent random variables, but independent random variables are uncorrelated.</p></li>
+</ul>
+</div>
+<p><br></p>
 <p>The <em>covariance</em> between two random variables <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> is a metric
-that quantifies the amount of <em>linear dependence</em> between them.
+that quantifies the amount of <em>linear dependence</em> between them. (Other metrics of dependence, such as mutual information, are beyond the scope of this book.)
 It is defined as
 <span class="math display">\[
 {\rm Cov}(X_1,X_2) = E[(X_1-\mu_1)(X_2-\mu_2)] \,,
@@ -1113,22 +1151,20 @@ V[Y] &amp;= E\left[ \left(\sum_{i=1}^n a_i(X_i - \mu_i) \right)^2 \right] \\
 <span class="math inline">\(p_{X_1,X_2}(x_1,x_2)\)</span>:</p>
 </blockquote>
 <table>
-<thead>
-<tr class="header">
-<th align="center"></th>
-<th align="center"><span class="math inline">\(x_2 = 0\)</span></th>
-<th align="center"><span class="math inline">\(x_2 = 1\)</span></th>
-<th align="center"><span class="math inline">\(x_2 = 2\)</span></th>
-</tr>
-</thead>
 <tbody>
 <tr class="odd">
+<td align="center"></td>
+<td align="center"><span class="math inline">\(x_2 = 0\)</span></td>
+<td align="center"><span class="math inline">\(x_2 = 1\)</span></td>
+<td align="center"><span class="math inline">\(x_2 = 2\)</span></td>
+</tr>
+<tr class="even">
 <td align="center"><span class="math inline">\(x_1 = 1\)</span></td>
 <td align="center">0.20</td>
 <td align="center">0.30</td>
 <td align="center">0.00</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="center"><span class="math inline">\(x_1 = 2\)</span></td>
 <td align="center">0.40</td>
 <td align="center">0.00</td>
@@ -1189,9 +1225,9 @@ V[Y] &amp;= \sum_{i=1}^n a_i^2 V[X_i] + 2\sum_{i=1}^{n-1} \sum_{j=i+1}^n a_i a_j
 <blockquote>
 <p>Here is the same calculation using <code>R</code>.</p>
 </blockquote>
-<div class="sourceCode" id="cb318"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb318-1"><a href="multivariate-distributions.html#cb318-1" tabindex="-1"></a>a     <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="sc">-</span><span class="dv">1</span>)</span>
-<span id="cb318-2"><a href="multivariate-distributions.html#cb318-2" tabindex="-1"></a>Sigma <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="fl">0.25</span>,<span class="sc">-</span><span class="fl">0.05</span>,<span class="sc">-</span><span class="fl">0.05</span>,<span class="fl">0.45</span>),<span class="at">nrow=</span><span class="dv">2</span>) <span class="co"># fill column-by-column</span></span>
-<span id="cb318-3"><a href="multivariate-distributions.html#cb318-3" tabindex="-1"></a><span class="fu">t</span>(a) <span class="sc">%*%</span> Sigma <span class="sc">%*%</span> a</span></code></pre></div>
+<div class="sourceCode" id="cb380"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb380-1"><a href="multivariate-distributions.html#cb380-1" tabindex="-1"></a>a     <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="sc">-</span><span class="dv">1</span>)</span>
+<span id="cb380-2"><a href="multivariate-distributions.html#cb380-2" tabindex="-1"></a>Sigma <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="fl">0.25</span>,<span class="sc">-</span><span class="fl">0.05</span>,<span class="sc">-</span><span class="fl">0.05</span>,<span class="fl">0.45</span>),<span class="at">nrow=</span><span class="dv">2</span>) <span class="co"># fill column-by-column</span></span>
+<span id="cb380-3"><a href="multivariate-distributions.html#cb380-3" tabindex="-1"></a><span class="fu">t</span>(a) <span class="sc">%*%</span> Sigma <span class="sc">%*%</span> a</span></code></pre></div>
 <pre><code>##      [,1]
 ## [1,]  0.8</code></pre>
 <blockquote>
@@ -1343,11 +1379,11 @@ know this quantity, so we plug in <span class="math inline">\(\widehat{\sigma^2}
 <p>Let’s demonstrate how this works using the same data as we used to
 talk through the output from the <code>R</code> function <code>lm()</code> in Chapter 2.</p>
 </blockquote>
-<div class="sourceCode" id="cb320"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb320-1"><a href="multivariate-distributions.html#cb320-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">202</span>)</span>
-<span id="cb320-2"><a href="multivariate-distributions.html#cb320-2" tabindex="-1"></a>x      <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">40</span>,<span class="at">min=</span><span class="dv">0</span>,<span class="at">max=</span><span class="dv">10</span>)</span>
-<span id="cb320-3"><a href="multivariate-distributions.html#cb320-3" tabindex="-1"></a>Y      <span class="ot">&lt;-</span> <span class="dv">4</span> <span class="sc">+</span> <span class="fl">0.5</span><span class="sc">*</span>x <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">40</span>)</span>
-<span id="cb320-4"><a href="multivariate-distributions.html#cb320-4" tabindex="-1"></a>lm.out <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y<span class="sc">~</span>x)</span>
-<span id="cb320-5"><a href="multivariate-distributions.html#cb320-5" tabindex="-1"></a><span class="fu">summary</span>(lm.out)</span></code></pre></div>
+<div class="sourceCode" id="cb382"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb382-1"><a href="multivariate-distributions.html#cb382-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">202</span>)</span>
+<span id="cb382-2"><a href="multivariate-distributions.html#cb382-2" tabindex="-1"></a>x      <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">40</span>,<span class="at">min=</span><span class="dv">0</span>,<span class="at">max=</span><span class="dv">10</span>)</span>
+<span id="cb382-3"><a href="multivariate-distributions.html#cb382-3" tabindex="-1"></a>Y      <span class="ot">&lt;-</span> <span class="dv">4</span> <span class="sc">+</span> <span class="fl">0.5</span><span class="sc">*</span>x <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">40</span>)</span>
+<span id="cb382-4"><a href="multivariate-distributions.html#cb382-4" tabindex="-1"></a>lm.out <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y<span class="sc">~</span>x)</span>
+<span id="cb382-5"><a href="multivariate-distributions.html#cb382-5" tabindex="-1"></a><span class="fu">summary</span>(lm.out)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = Y ~ x)
@@ -1372,8 +1408,8 @@ talk through the output from the <code>R</code> function <code>lm()</code> in Ch
 <span class="math inline">\(\widehat{\sigma^2} = 0.9587\)</span>. We can extract this from the
 object <code>lm.out</code>:</p>
 </blockquote>
-<div class="sourceCode" id="cb322"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb322-1"><a href="multivariate-distributions.html#cb322-1" tabindex="-1"></a>hat.sigma  <span class="ot">&lt;-</span> <span class="fu">summary</span>(lm.out)<span class="sc">$</span>sigma</span>
-<span id="cb322-2"><a href="multivariate-distributions.html#cb322-2" tabindex="-1"></a>hat.sigma2 <span class="ot">&lt;-</span> hat.sigma<span class="sc">^</span><span class="dv">2</span></span></code></pre></div>
+<div class="sourceCode" id="cb384"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb384-1"><a href="multivariate-distributions.html#cb384-1" tabindex="-1"></a>hat.sigma  <span class="ot">&lt;-</span> <span class="fu">summary</span>(lm.out)<span class="sc">$</span>sigma</span>
+<span id="cb384-2"><a href="multivariate-distributions.html#cb384-2" tabindex="-1"></a>hat.sigma2 <span class="ot">&lt;-</span> hat.sigma<span class="sc">^</span><span class="dv">2</span></span></code></pre></div>
 <blockquote>
 <p>(To determine what quantities are available in an <code>R</code> list
 output by a function such as <code>summary(lm)</code>, we can type
@@ -1381,14 +1417,14 @@ output by a function such as <code>summary(lm)</code>, we can type
 is an accessible list element.)
 We can set up the design matrix as follows:</p>
 </blockquote>
-<div class="sourceCode" id="cb323"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb323-1"><a href="multivariate-distributions.html#cb323-1" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">40</span>),x)</span></code></pre></div>
+<div class="sourceCode" id="cb385"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb385-1"><a href="multivariate-distributions.html#cb385-1" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">40</span>),x)</span></code></pre></div>
 <blockquote>
 <p>“cbind” means “column bind”: the first argument is a vector of 1’s
 that is bound to the second argument, which is the vector of <span class="math inline">\(x_i\)</span>’s,
 thus creating a matrix with 40 rows and 2 columns. We can now compute
 the variance-covariance matrix:</p>
 </blockquote>
-<div class="sourceCode" id="cb324"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb324-1"><a href="multivariate-distributions.html#cb324-1" tabindex="-1"></a>hat.sigma2 <span class="sc">*</span> <span class="fu">solve</span>(<span class="fu">t</span>(X) <span class="sc">%*%</span> X)</span></code></pre></div>
+<div class="sourceCode" id="cb386"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb386-1"><a href="multivariate-distributions.html#cb386-1" tabindex="-1"></a>hat.sigma2 <span class="sc">*</span> <span class="fu">solve</span>(<span class="fu">t</span>(X) <span class="sc">%*%</span> X)</span></code></pre></div>
 <pre><code>##                         x
 ##    0.10344444 -0.01652116
 ## x -0.01652116  0.00343436</code></pre>
@@ -1421,11 +1457,11 @@ negatively) correlated.</p>
 computations we carry out above? No…because <code>R</code> provides wrapper
 functions to help us:</p>
 </blockquote>
-<div class="sourceCode" id="cb326"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb326-1"><a href="multivariate-distributions.html#cb326-1" tabindex="-1"></a>(Sigma <span class="ot">&lt;-</span> <span class="fu">vcov</span>(lm.out)) <span class="co"># compute the variance-covariance matrix</span></span></code></pre></div>
+<div class="sourceCode" id="cb388"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb388-1"><a href="multivariate-distributions.html#cb388-1" tabindex="-1"></a>(Sigma <span class="ot">&lt;-</span> <span class="fu">vcov</span>(lm.out)) <span class="co"># compute the variance-covariance matrix</span></span></code></pre></div>
 <pre><code>##             (Intercept)           x
 ## (Intercept)  0.10344444 -0.01652116
 ## x           -0.01652116  0.00343436</code></pre>
-<div class="sourceCode" id="cb328"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb328-1"><a href="multivariate-distributions.html#cb328-1" tabindex="-1"></a><span class="fu">cov2cor</span>(Sigma)          <span class="co"># convert the covariance to correlation</span></span></code></pre></div>
+<div class="sourceCode" id="cb390"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb390-1"><a href="multivariate-distributions.html#cb390-1" tabindex="-1"></a><span class="fu">cov2cor</span>(Sigma)          <span class="co"># convert the covariance to correlation</span></span></code></pre></div>
 <pre><code>##             (Intercept)          x
 ## (Intercept)   1.0000000 -0.8765245
 ## x            -0.8765245  1.0000000</code></pre>
@@ -1460,9 +1496,9 @@ Note that if we were to replace every non-zero matrix entry above with
 <p>Below, we show how to populate the <span class="math inline">\(\mathbf{W}\)</span> matrix and use it to determine
 the variance-covariance matrix.</p>
 </blockquote>
-<div class="sourceCode" id="cb330"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb330-1"><a href="multivariate-distributions.html#cb330-1" tabindex="-1"></a><span class="co"># run simple logistic regression on training dataset</span></span>
-<span id="cb330-2"><a href="multivariate-distributions.html#cb330-2" tabindex="-1"></a>log.out <span class="ot">&lt;-</span> <span class="fu">glm</span>(class<span class="sc">~</span>col.iz,<span class="at">data=</span>df.train,<span class="at">family=</span>binomial)</span>
-<span id="cb330-3"><a href="multivariate-distributions.html#cb330-3" tabindex="-1"></a><span class="fu">summary</span>(log.out)</span></code></pre></div>
+<div class="sourceCode" id="cb392"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb392-1"><a href="multivariate-distributions.html#cb392-1" tabindex="-1"></a><span class="co"># run simple logistic regression on training dataset</span></span>
+<span id="cb392-2"><a href="multivariate-distributions.html#cb392-2" tabindex="-1"></a>log.out <span class="ot">&lt;-</span> <span class="fu">glm</span>(class<span class="sc">~</span>col.iz,<span class="at">data=</span>df.train,<span class="at">family=</span>binomial)</span>
+<span id="cb392-3"><a href="multivariate-distributions.html#cb392-3" tabindex="-1"></a><span class="fu">summary</span>(log.out)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## glm(formula = class ~ col.iz, family = binomial, data = df.train)
@@ -1481,25 +1517,25 @@ the variance-covariance matrix.</p>
 ## AIC: 962.16
 ## 
 ## Number of Fisher Scoring iterations: 4</code></pre>
-<div class="sourceCode" id="cb332"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb332-1"><a href="multivariate-distributions.html#cb332-1" tabindex="-1"></a>hat.beta0 <span class="ot">&lt;-</span> log.out<span class="sc">$</span>coefficients[<span class="dv">1</span>]</span>
-<span id="cb332-2"><a href="multivariate-distributions.html#cb332-2" tabindex="-1"></a>hat.beta1 <span class="ot">&lt;-</span> log.out<span class="sc">$</span>coefficients[<span class="dv">2</span>]</span>
-<span id="cb332-3"><a href="multivariate-distributions.html#cb332-3" tabindex="-1"></a>e         <span class="ot">&lt;-</span> <span class="fu">exp</span>(hat.beta0 <span class="sc">+</span> hat.beta1<span class="sc">*</span>df.train<span class="sc">$</span>col.iz)</span>
-<span id="cb332-4"><a href="multivariate-distributions.html#cb332-4" tabindex="-1"></a>W         <span class="ot">&lt;-</span> <span class="fu">diag</span>(e<span class="sc">/</span>(<span class="dv">1</span><span class="sc">+</span>e)<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb332-5"><a href="multivariate-distributions.html#cb332-5" tabindex="-1"></a>X         <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="fu">rep</span>(<span class="dv">1</span>,<span class="fu">nrow</span>(df.train)),df.train<span class="sc">$</span>col.iz)</span>
-<span id="cb332-6"><a href="multivariate-distributions.html#cb332-6" tabindex="-1"></a>(Sigma    <span class="ot">&lt;-</span> <span class="fu">solve</span>(<span class="fu">t</span>(X) <span class="sc">%*%</span> W <span class="sc">%*%</span> X))</span></code></pre></div>
+<div class="sourceCode" id="cb394"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb394-1"><a href="multivariate-distributions.html#cb394-1" tabindex="-1"></a>hat.beta0 <span class="ot">&lt;-</span> log.out<span class="sc">$</span>coefficients[<span class="dv">1</span>]</span>
+<span id="cb394-2"><a href="multivariate-distributions.html#cb394-2" tabindex="-1"></a>hat.beta1 <span class="ot">&lt;-</span> log.out<span class="sc">$</span>coefficients[<span class="dv">2</span>]</span>
+<span id="cb394-3"><a href="multivariate-distributions.html#cb394-3" tabindex="-1"></a>e         <span class="ot">&lt;-</span> <span class="fu">exp</span>(hat.beta0 <span class="sc">+</span> hat.beta1<span class="sc">*</span>df.train<span class="sc">$</span>col.iz)</span>
+<span id="cb394-4"><a href="multivariate-distributions.html#cb394-4" tabindex="-1"></a>W         <span class="ot">&lt;-</span> <span class="fu">diag</span>(e<span class="sc">/</span>(<span class="dv">1</span><span class="sc">+</span>e)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb394-5"><a href="multivariate-distributions.html#cb394-5" tabindex="-1"></a>X         <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="fu">rep</span>(<span class="dv">1</span>,<span class="fu">nrow</span>(df.train)),df.train<span class="sc">$</span>col.iz)</span>
+<span id="cb394-6"><a href="multivariate-distributions.html#cb394-6" tabindex="-1"></a>(Sigma    <span class="ot">&lt;-</span> <span class="fu">solve</span>(<span class="fu">t</span>(X) <span class="sc">%*%</span> W <span class="sc">%*%</span> X))</span></code></pre></div>
 <pre><code>##              [,1]        [,2]
 ## [1,]  0.008584293 -0.01635715
 ## [2,] -0.016357147  0.09641920</code></pre>
-<div class="sourceCode" id="cb334"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb334-1"><a href="multivariate-distributions.html#cb334-1" tabindex="-1"></a><span class="fu">sqrt</span>(Sigma[<span class="dv">1</span>,<span class="dv">1</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb396"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb396-1"><a href="multivariate-distributions.html#cb396-1" tabindex="-1"></a><span class="fu">sqrt</span>(Sigma[<span class="dv">1</span>,<span class="dv">1</span>])</span></code></pre></div>
 <pre><code>## [1] 0.09265146</code></pre>
-<div class="sourceCode" id="cb336"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb336-1"><a href="multivariate-distributions.html#cb336-1" tabindex="-1"></a><span class="fu">sqrt</span>(Sigma[<span class="dv">2</span>,<span class="dv">2</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb398"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb398-1"><a href="multivariate-distributions.html#cb398-1" tabindex="-1"></a><span class="fu">sqrt</span>(Sigma[<span class="dv">2</span>,<span class="dv">2</span>])</span></code></pre></div>
 <pre><code>## [1] 0.3105144</code></pre>
 <blockquote>
 <p>We see that the diagonal elements match the standard errors output
 by the <code>summary()</code> function. We can find the correlation between
 <span class="math inline">\(\hat{\beta}_0\)</span> and <span class="math inline">\(\hat{\beta}_1\)</span> by using the function <code>cov2cor()</code>:</p>
 </blockquote>
-<div class="sourceCode" id="cb338"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb338-1"><a href="multivariate-distributions.html#cb338-1" tabindex="-1"></a><span class="fu">cov2cor</span>(Sigma)</span></code></pre></div>
+<div class="sourceCode" id="cb400"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb400-1"><a href="multivariate-distributions.html#cb400-1" tabindex="-1"></a><span class="fu">cov2cor</span>(Sigma)</span></code></pre></div>
 <pre><code>##            [,1]       [,2]
 ## [1,]  1.0000000 -0.5685564
 ## [2,] -0.5685564  1.0000000</code></pre>
@@ -1513,6 +1549,14 @@ correlated.</p>
 </div>
 <div id="marginal-and-conditional-distributions" class="section level2 hasAnchor" number="6.4">
 <h2><span class="header-section-number">6.4</span> Marginal and Conditional Distributions<a href="multivariate-distributions.html#marginal-and-conditional-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="graybox">
+<p>What to take away from this section:</p>
+<ul>
+<li><p>In a bivariate setting, a <em>marginal distribution</em> is the distribution of the random variable <span class="math inline">\(X_1\)</span> (or <span class="math inline">\(X_2\)</span>), irrespective of the value of the other random variable.</p></li>
+<li><p>In the same setting, a <em>conditional distribution</em> is the distribution of the random variable <span class="math inline">\(X_1\)</span> (or <span class="math inline">\(X_2\)</span>) given specific conditions on the value of the other random variable.</p></li>
+</ul>
+</div>
+<p><br></p>
 <p>Let’s say that we perform an experiment where we sample
 a pair of random variables <span class="math inline">\((X_1,X_2)\)</span> from a bivariate distribution,
 where <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> are dependent random variables.
@@ -1591,22 +1635,20 @@ to determine if we can factorize it into separate functions of <span class="math
 <span class="math inline">\(p_{X_1,X_2}(x_1,x_2)\)</span>:</p>
 </blockquote>
 <table>
-<thead>
-<tr class="header">
-<th align="center"></th>
-<th align="center"><span class="math inline">\(x_2 = 0\)</span></th>
-<th align="center"><span class="math inline">\(x_2 = 1\)</span></th>
-<th align="center"><span class="math inline">\(x_2 = 2\)</span></th>
-</tr>
-</thead>
 <tbody>
 <tr class="odd">
+<td align="center"></td>
+<td align="center"><span class="math inline">\(x_2 = 0\)</span></td>
+<td align="center"><span class="math inline">\(x_2 = 1\)</span></td>
+<td align="center"><span class="math inline">\(x_2 = 2\)</span></td>
+</tr>
+<tr class="even">
 <td align="center"><span class="math inline">\(x_1 = 1\)</span></td>
 <td align="center">0.20</td>
 <td align="center">0.30</td>
 <td align="center">0.00</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="center"><span class="math inline">\(x_1 = 2\)</span></td>
 <td align="center">0.40</td>
 <td align="center">0.00</td>
@@ -1628,15 +1670,13 @@ For this problem, the summation can be done by inspection, yielding the
 following marginal distribution:</p>
 </blockquote>
 <table>
-<thead>
-<tr class="header">
-<th align="center"><span class="math inline">\(x_2 = 0\)</span></th>
-<th align="center"><span class="math inline">\(x_2 = 1\)</span></th>
-<th align="center"><span class="math inline">\(x_2 = 2\)</span></th>
-</tr>
-</thead>
 <tbody>
 <tr class="odd">
+<td align="center"><span class="math inline">\(x_2 = 0\)</span></td>
+<td align="center"><span class="math inline">\(x_2 = 1\)</span></td>
+<td align="center"><span class="math inline">\(x_2 = 2\)</span></td>
+</tr>
+<tr class="even">
 <td align="center">0.60</td>
 <td align="center">0.30</td>
 <td align="center">0.10</td>
@@ -1659,22 +1699,20 @@ or divide each column by the marginal for <span class="math inline">\(x_1\)</spa
 on <span class="math inline">\(x_1\)</span>. Here, we condition on <span class="math inline">\(x_2\)</span>, so our result is</p>
 </blockquote>
 <table>
-<thead>
-<tr class="header">
-<th align="center"></th>
-<th align="center"><span class="math inline">\(x_2 = 0\)</span></th>
-<th align="center"><span class="math inline">\(x_2 = 1\)</span></th>
-<th align="center"><span class="math inline">\(x_2 = 2\)</span></th>
-</tr>
-</thead>
 <tbody>
 <tr class="odd">
+<td align="center"></td>
+<td align="center"><span class="math inline">\(x_2 = 0\)</span></td>
+<td align="center"><span class="math inline">\(x_2 = 1\)</span></td>
+<td align="center"><span class="math inline">\(x_2 = 2\)</span></td>
+</tr>
+<tr class="even">
 <td align="center"><span class="math inline">\(x_1 = 1\)</span></td>
 <td align="center">0.20/0.60 = 0.33</td>
 <td align="center">0.30/0.30 = 1.00</td>
 <td align="center">0.00/0.10 = 0.00</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="center"><span class="math inline">\(x_1 = 2\)</span></td>
 <td align="center">0.40/0.60 = 0.67</td>
 <td align="center">0.00/0.30 = 0.00</td>
@@ -1773,20 +1811,20 @@ f_{X_2}(x_2) &amp;= 6x_2(1-x_2) \,.
 \end{align*}\]</span>
 Then the mutual information is thus</p>
 </blockquote>
-<div class="sourceCode" id="cb340"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb340-1"><a href="multivariate-distributions.html#cb340-1" tabindex="-1"></a><span class="fu">library</span>(pracma)</span>
-<span id="cb340-2"><a href="multivariate-distributions.html#cb340-2" tabindex="-1"></a></span>
-<span id="cb340-3"><a href="multivariate-distributions.html#cb340-3" tabindex="-1"></a><span class="co"># Define the (finite) domain</span></span>
-<span id="cb340-4"><a href="multivariate-distributions.html#cb340-4" tabindex="-1"></a>x1min <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb340-5"><a href="multivariate-distributions.html#cb340-5" tabindex="-1"></a>x1max <span class="ot">&lt;-</span> <span class="dv">1</span> </span>
-<span id="cb340-6"><a href="multivariate-distributions.html#cb340-6" tabindex="-1"></a>x2min <span class="ot">&lt;-</span> <span class="cf">function</span>(x1) { x1 } <span class="co"># the lower bound for x2 is the line x2=x1</span></span>
-<span id="cb340-7"><a href="multivariate-distributions.html#cb340-7" tabindex="-1"></a>x2max <span class="ot">&lt;-</span> <span class="dv">1</span> </span>
-<span id="cb340-8"><a href="multivariate-distributions.html#cb340-8" tabindex="-1"></a></span>
-<span id="cb340-9"><a href="multivariate-distributions.html#cb340-9" tabindex="-1"></a><span class="co"># Determine I(X1,X2)</span></span>
-<span id="cb340-10"><a href="multivariate-distributions.html#cb340-10" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x1,x2) {</span>
-<span id="cb340-11"><a href="multivariate-distributions.html#cb340-11" tabindex="-1"></a>  <span class="sc">-</span><span class="dv">6</span><span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>x2)<span class="sc">*</span><span class="fu">log</span>(<span class="dv">3</span><span class="sc">*</span>x2<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>x1)<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb340-12"><a href="multivariate-distributions.html#cb340-12" tabindex="-1"></a>} </span>
-<span id="cb340-13"><a href="multivariate-distributions.html#cb340-13" tabindex="-1"></a>I <span class="ot">&lt;-</span> <span class="fu">integral2</span>(f,x1min,x1max,x2min,x2max)<span class="sc">$</span>Q</span>
-<span id="cb340-14"><a href="multivariate-distributions.html#cb340-14" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The value of I(X1,X2) is&quot;</span>,I,<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb402"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb402-1"><a href="multivariate-distributions.html#cb402-1" tabindex="-1"></a><span class="fu">library</span>(pracma)</span>
+<span id="cb402-2"><a href="multivariate-distributions.html#cb402-2" tabindex="-1"></a></span>
+<span id="cb402-3"><a href="multivariate-distributions.html#cb402-3" tabindex="-1"></a><span class="co"># Define the (finite) domain</span></span>
+<span id="cb402-4"><a href="multivariate-distributions.html#cb402-4" tabindex="-1"></a>x1min <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb402-5"><a href="multivariate-distributions.html#cb402-5" tabindex="-1"></a>x1max <span class="ot">&lt;-</span> <span class="dv">1</span> </span>
+<span id="cb402-6"><a href="multivariate-distributions.html#cb402-6" tabindex="-1"></a>x2min <span class="ot">&lt;-</span> <span class="cf">function</span>(x1) { x1 } <span class="co"># the lower bound for x2 is the line x2=x1</span></span>
+<span id="cb402-7"><a href="multivariate-distributions.html#cb402-7" tabindex="-1"></a>x2max <span class="ot">&lt;-</span> <span class="dv">1</span> </span>
+<span id="cb402-8"><a href="multivariate-distributions.html#cb402-8" tabindex="-1"></a></span>
+<span id="cb402-9"><a href="multivariate-distributions.html#cb402-9" tabindex="-1"></a><span class="co"># Determine I(X1,X2)</span></span>
+<span id="cb402-10"><a href="multivariate-distributions.html#cb402-10" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x1,x2) {</span>
+<span id="cb402-11"><a href="multivariate-distributions.html#cb402-11" tabindex="-1"></a>  <span class="sc">-</span><span class="dv">6</span><span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>x2)<span class="sc">*</span><span class="fu">log</span>(<span class="dv">3</span><span class="sc">*</span>x2<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>x1)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb402-12"><a href="multivariate-distributions.html#cb402-12" tabindex="-1"></a>} </span>
+<span id="cb402-13"><a href="multivariate-distributions.html#cb402-13" tabindex="-1"></a>I <span class="ot">&lt;-</span> <span class="fu">integral2</span>(f,x1min,x1max,x2min,x2max)<span class="sc">$</span>Q</span>
+<span id="cb402-14"><a href="multivariate-distributions.html#cb402-14" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The value of I(X1,X2) is&quot;</span>,I,<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## The value of I(X1,X2) is 0.4013877</code></pre>
 <blockquote>
 <p>Unlike the correlation coefficient <span class="math inline">\(\rho_{X_1,X_2}\)</span>, a mutual information
@@ -1799,6 +1837,14 @@ and joint entropies of pairs of random variables.</p>
 </div>
 <div id="conditional-expected-value-and-variance" class="section level2 hasAnchor" number="6.5">
 <h2><span class="header-section-number">6.5</span> Conditional Expected Value and Variance<a href="multivariate-distributions.html#conditional-expected-value-and-variance" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="graybox">
+<p>What to take away from this section:</p>
+<ul>
+<li><p>In a bivariate setting, the <em>conditional expected value</em> and <em>conditional variance</em> are the expected value of and variance of, e.g., <span class="math inline">\(X_1\)</span> given a conditional distribution <span class="math inline">\(f_{X_1 \vert X_2}(x_1,x_2)\)</span>.</p></li>
+<li><p>The laws to total expectation and of total variance allow us to derive unconditional expected values and variances given their conditional counterparts.</p></li>
+</ul>
+</div>
+<p><br></p>
 <p>As was stated above, a conditional pdf or pmf is a pdf or pmf…meaning
 that like a pdf or pmf, it has an expected value and a variance.
 For instance, the expected value of a conditional pdf
@@ -1959,6 +2005,15 @@ is <span class="math inline">\(\alpha\beta\lambda\)</span> on average, with stan
 </div>
 <div id="the-multivariate-normal-distribution" class="section level2 hasAnchor" number="6.6">
 <h2><span class="header-section-number">6.6</span> The Multivariate Normal Distribution<a href="multivariate-distributions.html#the-multivariate-normal-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="graybox">
+<p>What to take away from this section:</p>
+<ul>
+<li><p>The <em>multivariate normal distribution</em> is the multivariate analogue of the normal distribution, and it is parameterized by a mean vector <span class="math inline">\(\boldsymbol{\mu} = \{\mu_1,\ldots,\mu_p\}\)</span> and a <em>covariance matrix</em> <span class="math inline">\(\boldsymbol{\Sigma}\)</span>.</p></li>
+<li><p>A <em>marginal distribution</em> for a multivariate normal is derived by simply keeping the elements of the mean vector <span class="math inline">\(\boldsymbol{\mu}\)</span>, and the rows and columns of the covariance matrix <span class="math inline">\(\boldsymbol{\Sigma}\)</span>, that are associated with the axes we are retaining; the marginal is itself a multivariate normal.</p></li>
+<li><p>A <em>conditional distribution</em> for a multivariate normal is, like the marginal distribution, itself a multivariate normal, but with transformed mean vector <span class="math inline">\(\boldsymbol{\mu}\)</span> and covariance matrix <span class="math inline">\(\boldsymbol{\Sigma}\)</span>.</p></li>
+</ul>
+</div>
+<p><br></p>
 <p>The multivariate normal distribution is the most important one in
 multivariate settings, due in part to its role in the multivariate
 analogue of the central limit theorem: if we have a collection of
@@ -2080,28 +2135,28 @@ the marginal distribution is a bivariate normal with means
 <blockquote>
 <p>In <code>R</code>, we might visualize the result using the following code:</p>
 </blockquote>
-<div class="sourceCode" id="cb342"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb342-1"><a href="multivariate-distributions.html#cb342-1" tabindex="-1"></a>mu     <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>)</span>
-<span id="cb342-2"><a href="multivariate-distributions.html#cb342-2" tabindex="-1"></a>(Sigma <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">2</span>,<span class="fl">0.5</span>,<span class="fl">1.2</span>,<span class="fl">0.5</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="fl">1.2</span>,<span class="dv">1</span>,<span class="dv">2</span>),<span class="at">nrow=</span><span class="dv">3</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb404"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb404-1"><a href="multivariate-distributions.html#cb404-1" tabindex="-1"></a>mu     <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>)</span>
+<span id="cb404-2"><a href="multivariate-distributions.html#cb404-2" tabindex="-1"></a>(Sigma <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">2</span>,<span class="fl">0.5</span>,<span class="fl">1.2</span>,<span class="fl">0.5</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="fl">1.2</span>,<span class="dv">1</span>,<span class="dv">2</span>),<span class="at">nrow=</span><span class="dv">3</span>))</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]  2.0  0.5  1.2
 ## [2,]  0.5  2.0  1.0
 ## [3,]  1.2  1.0  2.0</code></pre>
-<div class="sourceCode" id="cb344"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb344-1"><a href="multivariate-distributions.html#cb344-1" tabindex="-1"></a>keep       <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)</span>
-<span id="cb344-2"><a href="multivariate-distributions.html#cb344-2" tabindex="-1"></a>mu.marg    <span class="ot">&lt;-</span> mu[keep]</span>
-<span id="cb344-3"><a href="multivariate-distributions.html#cb344-3" tabindex="-1"></a>Sigma.marg <span class="ot">&lt;-</span> Sigma[keep,keep]</span>
-<span id="cb344-4"><a href="multivariate-distributions.html#cb344-4" tabindex="-1"></a></span>
-<span id="cb344-5"><a href="multivariate-distributions.html#cb344-5" tabindex="-1"></a>x1.plot   <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">1.5</span>,<span class="fl">5.5</span>,<span class="at">by=</span><span class="fl">0.05</span>)</span>
-<span id="cb344-6"><a href="multivariate-distributions.html#cb344-6" tabindex="-1"></a>x2.plot   <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">0.5</span>,<span class="fl">7.5</span>,<span class="at">by=</span><span class="fl">0.05</span>)</span>
-<span id="cb344-7"><a href="multivariate-distributions.html#cb344-7" tabindex="-1"></a>x.plot    <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="at">x1=</span>x1.plot,<span class="at">x2=</span>x2.plot)</span>
-<span id="cb344-8"><a href="multivariate-distributions.html#cb344-8" tabindex="-1"></a></span>
-<span id="cb344-9"><a href="multivariate-distributions.html#cb344-9" tabindex="-1"></a><span class="fu">library</span>(mvtnorm)</span>
-<span id="cb344-10"><a href="multivariate-distributions.html#cb344-10" tabindex="-1"></a><span class="fu">library</span>(metR)</span>
-<span id="cb344-11"><a href="multivariate-distributions.html#cb344-11" tabindex="-1"></a>x.plot<span class="sc">$</span>fx <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">dmvnorm</span>(x.plot,mu.marg,Sigma.marg),<span class="at">ncol=</span><span class="dv">1</span>)</span>
-<span id="cb344-12"><a href="multivariate-distributions.html#cb344-12" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>x.plot,<span class="fu">aes</span>(<span class="at">x=</span>x1,<span class="at">y=</span>x2)) <span class="sc">+</span></span>
-<span id="cb344-13"><a href="multivariate-distributions.html#cb344-13" tabindex="-1"></a>  <span class="fu">geom_contour</span>(<span class="fu">aes</span>(<span class="at">z=</span>fx),<span class="at">col=</span><span class="st">&quot;turquoise&quot;</span>,<span class="at">breaks=</span><span class="fu">seq</span>(<span class="fl">0.01</span>,<span class="fl">0.08</span>,<span class="at">by=</span><span class="fl">0.01</span>)) <span class="sc">+</span></span>
-<span id="cb344-14"><a href="multivariate-distributions.html#cb344-14" tabindex="-1"></a>  <span class="fu">geom_text_contour</span>(<span class="fu">aes</span>(<span class="at">z=</span>fx),<span class="at">skip=</span><span class="fl">0.75</span>,<span class="at">col=</span><span class="st">&quot;turquoise&quot;</span>,<span class="at">stroke=</span><span class="fl">0.2</span>,<span class="at">stroke.color=</span><span class="st">&quot;azure2&quot;</span>) <span class="sc">+</span></span>
-<span id="cb344-15"><a href="multivariate-distributions.html#cb344-15" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="fu">expression</span>(x[<span class="dv">1</span>]),<span class="at">y=</span><span class="fu">expression</span>(x[<span class="dv">2</span>])) <span class="sc">+</span></span>
-<span id="cb344-16"><a href="multivariate-distributions.html#cb344-16" tabindex="-1"></a>  base_theme</span></code></pre></div>
+<div class="sourceCode" id="cb406"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb406-1"><a href="multivariate-distributions.html#cb406-1" tabindex="-1"></a>keep       <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)</span>
+<span id="cb406-2"><a href="multivariate-distributions.html#cb406-2" tabindex="-1"></a>mu.marg    <span class="ot">&lt;-</span> mu[keep]</span>
+<span id="cb406-3"><a href="multivariate-distributions.html#cb406-3" tabindex="-1"></a>Sigma.marg <span class="ot">&lt;-</span> Sigma[keep,keep]</span>
+<span id="cb406-4"><a href="multivariate-distributions.html#cb406-4" tabindex="-1"></a></span>
+<span id="cb406-5"><a href="multivariate-distributions.html#cb406-5" tabindex="-1"></a>x1.plot   <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">1.5</span>,<span class="fl">5.5</span>,<span class="at">by=</span><span class="fl">0.05</span>)</span>
+<span id="cb406-6"><a href="multivariate-distributions.html#cb406-6" tabindex="-1"></a>x2.plot   <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">0.5</span>,<span class="fl">7.5</span>,<span class="at">by=</span><span class="fl">0.05</span>)</span>
+<span id="cb406-7"><a href="multivariate-distributions.html#cb406-7" tabindex="-1"></a>x.plot    <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="at">x1=</span>x1.plot,<span class="at">x2=</span>x2.plot)</span>
+<span id="cb406-8"><a href="multivariate-distributions.html#cb406-8" tabindex="-1"></a></span>
+<span id="cb406-9"><a href="multivariate-distributions.html#cb406-9" tabindex="-1"></a><span class="fu">library</span>(mvtnorm)</span>
+<span id="cb406-10"><a href="multivariate-distributions.html#cb406-10" tabindex="-1"></a><span class="fu">library</span>(metR)</span>
+<span id="cb406-11"><a href="multivariate-distributions.html#cb406-11" tabindex="-1"></a>x.plot<span class="sc">$</span>fx <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">dmvnorm</span>(x.plot,mu.marg,Sigma.marg),<span class="at">ncol=</span><span class="dv">1</span>)</span>
+<span id="cb406-12"><a href="multivariate-distributions.html#cb406-12" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>x.plot,<span class="fu">aes</span>(<span class="at">x=</span>x1,<span class="at">y=</span>x2)) <span class="sc">+</span></span>
+<span id="cb406-13"><a href="multivariate-distributions.html#cb406-13" tabindex="-1"></a>  <span class="fu">geom_contour</span>(<span class="fu">aes</span>(<span class="at">z=</span>fx),<span class="at">col=</span><span class="st">&quot;turquoise&quot;</span>,<span class="at">breaks=</span><span class="fu">seq</span>(<span class="fl">0.01</span>,<span class="fl">0.08</span>,<span class="at">by=</span><span class="fl">0.01</span>)) <span class="sc">+</span></span>
+<span id="cb406-14"><a href="multivariate-distributions.html#cb406-14" tabindex="-1"></a>  <span class="fu">geom_text_contour</span>(<span class="fu">aes</span>(<span class="at">z=</span>fx),<span class="at">skip=</span><span class="fl">0.75</span>,<span class="at">col=</span><span class="st">&quot;turquoise&quot;</span>,<span class="at">stroke=</span><span class="fl">0.2</span>,<span class="at">stroke.color=</span><span class="st">&quot;azure2&quot;</span>) <span class="sc">+</span></span>
+<span id="cb406-15"><a href="multivariate-distributions.html#cb406-15" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="fu">expression</span>(x[<span class="dv">1</span>]),<span class="at">y=</span><span class="fu">expression</span>(x[<span class="dv">2</span>])) <span class="sc">+</span></span>
+<span id="cb406-16"><a href="multivariate-distributions.html#cb406-16" tabindex="-1"></a>  base_theme</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:mvmarg"></span>
 <img src="_main_files/figure-html/mvmarg-1.png" alt="\label{fig:margnorm}Contour plot indicating the location and orientation of a bivariate normal distribution with mean $\boldsymbol{\mu} = \{2,4\}$ and covariance matrix as given in the example. The numbers along each contour indicate the amplitude of the pdf, whose maximum point is in the center." width="45%" />
 <p class="caption">
@@ -2121,36 +2176,36 @@ the conditional distribution of <span class="math inline">\(X_1\)</span> and <sp
 question using <code>R</code> code only, following the mathematical prescription given
 in the text above.</p>
 </blockquote>
-<div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb345-1"><a href="multivariate-distributions.html#cb345-1" tabindex="-1"></a>mu    <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>)</span>
-<span id="cb345-2"><a href="multivariate-distributions.html#cb345-2" tabindex="-1"></a>Sigma <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">2</span>,<span class="fl">0.5</span>,<span class="fl">1.2</span>,<span class="fl">0.5</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="fl">1.2</span>,<span class="dv">1</span>,<span class="dv">2</span>),<span class="at">nrow=</span><span class="dv">3</span>)</span>
-<span id="cb345-3"><a href="multivariate-distributions.html#cb345-3" tabindex="-1"></a></span>
-<span id="cb345-4"><a href="multivariate-distributions.html#cb345-4" tabindex="-1"></a>u        <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>)</span>
-<span id="cb345-5"><a href="multivariate-distributions.html#cb345-5" tabindex="-1"></a>v        <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>)</span>
-<span id="cb345-6"><a href="multivariate-distributions.html#cb345-6" tabindex="-1"></a>v.coord  <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>)</span>
-<span id="cb345-7"><a href="multivariate-distributions.html#cb345-7" tabindex="-1"></a>mu.u     <span class="ot">&lt;-</span> mu[u]</span>
-<span id="cb345-8"><a href="multivariate-distributions.html#cb345-8" tabindex="-1"></a>mu.v     <span class="ot">&lt;-</span> mu[v]</span>
-<span id="cb345-9"><a href="multivariate-distributions.html#cb345-9" tabindex="-1"></a>Sigma.uu <span class="ot">&lt;-</span> Sigma[u,u]</span>
-<span id="cb345-10"><a href="multivariate-distributions.html#cb345-10" tabindex="-1"></a>Sigma.uv <span class="ot">&lt;-</span> Sigma[u,v]</span>
-<span id="cb345-11"><a href="multivariate-distributions.html#cb345-11" tabindex="-1"></a>Sigma.vu <span class="ot">&lt;-</span> Sigma[v,u]</span>
-<span id="cb345-12"><a href="multivariate-distributions.html#cb345-12" tabindex="-1"></a>Sigma.vv <span class="ot">&lt;-</span> Sigma[v,v]</span>
-<span id="cb345-13"><a href="multivariate-distributions.html#cb345-13" tabindex="-1"></a></span>
-<span id="cb345-14"><a href="multivariate-distributions.html#cb345-14" tabindex="-1"></a>mu.c     <span class="ot">&lt;-</span> mu.u <span class="sc">+</span> Sigma.uv <span class="sc">%*%</span> <span class="fu">solve</span>(Sigma.vv) <span class="sc">%*%</span> (v.coord <span class="sc">-</span> mu.v)</span>
-<span id="cb345-15"><a href="multivariate-distributions.html#cb345-15" tabindex="-1"></a>(Sigma.c <span class="ot">&lt;-</span> Sigma.uu <span class="sc">-</span> Sigma.uv <span class="sc">%*%</span> <span class="fu">solve</span>(Sigma.vv) <span class="sc">%*%</span> Sigma.vu)</span></code></pre></div>
+<div class="sourceCode" id="cb407"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb407-1"><a href="multivariate-distributions.html#cb407-1" tabindex="-1"></a>mu    <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>)</span>
+<span id="cb407-2"><a href="multivariate-distributions.html#cb407-2" tabindex="-1"></a>Sigma <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">2</span>,<span class="fl">0.5</span>,<span class="fl">1.2</span>,<span class="fl">0.5</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="fl">1.2</span>,<span class="dv">1</span>,<span class="dv">2</span>),<span class="at">nrow=</span><span class="dv">3</span>)</span>
+<span id="cb407-3"><a href="multivariate-distributions.html#cb407-3" tabindex="-1"></a></span>
+<span id="cb407-4"><a href="multivariate-distributions.html#cb407-4" tabindex="-1"></a>u        <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>)</span>
+<span id="cb407-5"><a href="multivariate-distributions.html#cb407-5" tabindex="-1"></a>v        <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>)</span>
+<span id="cb407-6"><a href="multivariate-distributions.html#cb407-6" tabindex="-1"></a>v.coord  <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>)</span>
+<span id="cb407-7"><a href="multivariate-distributions.html#cb407-7" tabindex="-1"></a>mu.u     <span class="ot">&lt;-</span> mu[u]</span>
+<span id="cb407-8"><a href="multivariate-distributions.html#cb407-8" tabindex="-1"></a>mu.v     <span class="ot">&lt;-</span> mu[v]</span>
+<span id="cb407-9"><a href="multivariate-distributions.html#cb407-9" tabindex="-1"></a>Sigma.uu <span class="ot">&lt;-</span> Sigma[u,u]</span>
+<span id="cb407-10"><a href="multivariate-distributions.html#cb407-10" tabindex="-1"></a>Sigma.uv <span class="ot">&lt;-</span> Sigma[u,v]</span>
+<span id="cb407-11"><a href="multivariate-distributions.html#cb407-11" tabindex="-1"></a>Sigma.vu <span class="ot">&lt;-</span> Sigma[v,u]</span>
+<span id="cb407-12"><a href="multivariate-distributions.html#cb407-12" tabindex="-1"></a>Sigma.vv <span class="ot">&lt;-</span> Sigma[v,v]</span>
+<span id="cb407-13"><a href="multivariate-distributions.html#cb407-13" tabindex="-1"></a></span>
+<span id="cb407-14"><a href="multivariate-distributions.html#cb407-14" tabindex="-1"></a>mu.c     <span class="ot">&lt;-</span> mu.u <span class="sc">+</span> Sigma.uv <span class="sc">%*%</span> <span class="fu">solve</span>(Sigma.vv) <span class="sc">%*%</span> (v.coord <span class="sc">-</span> mu.v)</span>
+<span id="cb407-15"><a href="multivariate-distributions.html#cb407-15" tabindex="-1"></a>(Sigma.c <span class="ot">&lt;-</span> Sigma.uu <span class="sc">-</span> Sigma.uv <span class="sc">%*%</span> <span class="fu">solve</span>(Sigma.vv) <span class="sc">%*%</span> Sigma.vu)</span></code></pre></div>
 <pre><code>##       [,1] [,2]
 ## [1,] 1.875 0.95
 ## [2,] 0.950 1.50</code></pre>
-<div class="sourceCode" id="cb347"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb347-1"><a href="multivariate-distributions.html#cb347-1" tabindex="-1"></a>x1.plot   <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">1.5</span>,<span class="fl">5.5</span>,<span class="at">by=</span><span class="fl">0.05</span>)</span>
-<span id="cb347-2"><a href="multivariate-distributions.html#cb347-2" tabindex="-1"></a>x2.plot   <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">3</span>,<span class="dv">10</span>,<span class="at">by=</span><span class="fl">0.05</span>)</span>
-<span id="cb347-3"><a href="multivariate-distributions.html#cb347-3" tabindex="-1"></a>x.plot    <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="at">x1=</span>x1.plot,<span class="at">x2=</span>x2.plot)</span>
-<span id="cb347-4"><a href="multivariate-distributions.html#cb347-4" tabindex="-1"></a></span>
-<span id="cb347-5"><a href="multivariate-distributions.html#cb347-5" tabindex="-1"></a><span class="fu">library</span>(mvtnorm)</span>
-<span id="cb347-6"><a href="multivariate-distributions.html#cb347-6" tabindex="-1"></a><span class="fu">library</span>(metR)</span>
-<span id="cb347-7"><a href="multivariate-distributions.html#cb347-7" tabindex="-1"></a>x.plot<span class="sc">$</span>fx <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">dmvnorm</span>(x.plot,mu.c,Sigma.c),<span class="at">ncol=</span><span class="dv">1</span>)</span>
-<span id="cb347-8"><a href="multivariate-distributions.html#cb347-8" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>x.plot,<span class="fu">aes</span>(<span class="at">x=</span>x1,<span class="at">y=</span>x2)) <span class="sc">+</span></span>
-<span id="cb347-9"><a href="multivariate-distributions.html#cb347-9" tabindex="-1"></a>  <span class="fu">geom_contour</span>(<span class="fu">aes</span>(<span class="at">z=</span>fx),<span class="at">col=</span><span class="st">&quot;turquoise&quot;</span>,<span class="at">breaks=</span><span class="fu">seq</span>(<span class="fl">0.01</span>,<span class="fl">0.11</span>,<span class="at">by=</span><span class="fl">0.01</span>)) <span class="sc">+</span></span>
-<span id="cb347-10"><a href="multivariate-distributions.html#cb347-10" tabindex="-1"></a>  <span class="fu">geom_text_contour</span>(<span class="fu">aes</span>(<span class="at">z=</span>fx),<span class="at">skip=</span><span class="fl">0.8</span>,<span class="at">col=</span><span class="st">&quot;turquoise&quot;</span>,<span class="at">stroke=</span><span class="fl">0.2</span>,<span class="at">stroke.color=</span><span class="st">&quot;azure2&quot;</span>) <span class="sc">+</span></span>
-<span id="cb347-11"><a href="multivariate-distributions.html#cb347-11" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="fu">expression</span>(x[<span class="dv">1</span>]),<span class="at">y=</span><span class="fu">expression</span>(x[<span class="dv">3</span>])) <span class="sc">+</span></span>
-<span id="cb347-12"><a href="multivariate-distributions.html#cb347-12" tabindex="-1"></a>  base_theme</span></code></pre></div>
+<div class="sourceCode" id="cb409"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb409-1"><a href="multivariate-distributions.html#cb409-1" tabindex="-1"></a>x1.plot   <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">1.5</span>,<span class="fl">5.5</span>,<span class="at">by=</span><span class="fl">0.05</span>)</span>
+<span id="cb409-2"><a href="multivariate-distributions.html#cb409-2" tabindex="-1"></a>x2.plot   <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">3</span>,<span class="dv">10</span>,<span class="at">by=</span><span class="fl">0.05</span>)</span>
+<span id="cb409-3"><a href="multivariate-distributions.html#cb409-3" tabindex="-1"></a>x.plot    <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="at">x1=</span>x1.plot,<span class="at">x2=</span>x2.plot)</span>
+<span id="cb409-4"><a href="multivariate-distributions.html#cb409-4" tabindex="-1"></a></span>
+<span id="cb409-5"><a href="multivariate-distributions.html#cb409-5" tabindex="-1"></a><span class="fu">library</span>(mvtnorm)</span>
+<span id="cb409-6"><a href="multivariate-distributions.html#cb409-6" tabindex="-1"></a><span class="fu">library</span>(metR)</span>
+<span id="cb409-7"><a href="multivariate-distributions.html#cb409-7" tabindex="-1"></a>x.plot<span class="sc">$</span>fx <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">dmvnorm</span>(x.plot,mu.c,Sigma.c),<span class="at">ncol=</span><span class="dv">1</span>)</span>
+<span id="cb409-8"><a href="multivariate-distributions.html#cb409-8" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>x.plot,<span class="fu">aes</span>(<span class="at">x=</span>x1,<span class="at">y=</span>x2)) <span class="sc">+</span></span>
+<span id="cb409-9"><a href="multivariate-distributions.html#cb409-9" tabindex="-1"></a>  <span class="fu">geom_contour</span>(<span class="fu">aes</span>(<span class="at">z=</span>fx),<span class="at">col=</span><span class="st">&quot;turquoise&quot;</span>,<span class="at">breaks=</span><span class="fu">seq</span>(<span class="fl">0.01</span>,<span class="fl">0.11</span>,<span class="at">by=</span><span class="fl">0.01</span>)) <span class="sc">+</span></span>
+<span id="cb409-10"><a href="multivariate-distributions.html#cb409-10" tabindex="-1"></a>  <span class="fu">geom_text_contour</span>(<span class="fu">aes</span>(<span class="at">z=</span>fx),<span class="at">skip=</span><span class="fl">0.8</span>,<span class="at">col=</span><span class="st">&quot;turquoise&quot;</span>,<span class="at">stroke=</span><span class="fl">0.2</span>,<span class="at">stroke.color=</span><span class="st">&quot;azure2&quot;</span>) <span class="sc">+</span></span>
+<span id="cb409-11"><a href="multivariate-distributions.html#cb409-11" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="fu">expression</span>(x[<span class="dv">1</span>]),<span class="at">y=</span><span class="fu">expression</span>(x[<span class="dv">3</span>])) <span class="sc">+</span></span>
+<span id="cb409-12"><a href="multivariate-distributions.html#cb409-12" tabindex="-1"></a>  base_theme</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:mvcond"></span>
 <img src="_main_files/figure-html/mvcond-1.png" alt="\label{fig:condnorm}Contour plot indicating the location and orientation of a bivariate normal distribution with conditional mean $\boldsymbol{\mu} = \{2.25,6.50\}$ and conditional covariance matrix as given in the example. The numbers along each contour indicate the amplitude of the pdf, whose maximum point is in the center." width="45%" />
 <p class="caption">
@@ -2171,21 +2226,21 @@ covariance matrix
 Furthermore, we assume that the covariance matrix is unknown to us. How
 would we estimate this matrix?</p>
 </blockquote>
-<div class="sourceCode" id="cb348"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb348-1"><a href="multivariate-distributions.html#cb348-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
-<span id="cb348-2"><a href="multivariate-distributions.html#cb348-2" tabindex="-1"></a>n     <span class="ot">&lt;-</span> <span class="dv">40</span></span>
-<span id="cb348-3"><a href="multivariate-distributions.html#cb348-3" tabindex="-1"></a>mu    <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">1</span>)</span>
-<span id="cb348-4"><a href="multivariate-distributions.html#cb348-4" tabindex="-1"></a>Sigma <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="fl">0.5</span>,<span class="fl">0.5</span>,<span class="dv">2</span>),<span class="at">nrow=</span><span class="dv">2</span>)</span>
-<span id="cb348-5"><a href="multivariate-distributions.html#cb348-5" tabindex="-1"></a>X     <span class="ot">&lt;-</span> <span class="fu">rmvnorm</span>(n,mu,Sigma)</span>
-<span id="cb348-6"><a href="multivariate-distributions.html#cb348-6" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">round</span>(X,<span class="dv">3</span>),<span class="dv">3</span>) <span class="co"># x1: column 1 | x2: column2</span></span></code></pre></div>
+<div class="sourceCode" id="cb410"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb410-1"><a href="multivariate-distributions.html#cb410-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
+<span id="cb410-2"><a href="multivariate-distributions.html#cb410-2" tabindex="-1"></a>n     <span class="ot">&lt;-</span> <span class="dv">40</span></span>
+<span id="cb410-3"><a href="multivariate-distributions.html#cb410-3" tabindex="-1"></a>mu    <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">1</span>)</span>
+<span id="cb410-4"><a href="multivariate-distributions.html#cb410-4" tabindex="-1"></a>Sigma <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="fl">0.5</span>,<span class="fl">0.5</span>,<span class="dv">2</span>),<span class="at">nrow=</span><span class="dv">2</span>)</span>
+<span id="cb410-5"><a href="multivariate-distributions.html#cb410-5" tabindex="-1"></a>X     <span class="ot">&lt;-</span> <span class="fu">rmvnorm</span>(n,mu,Sigma)</span>
+<span id="cb410-6"><a href="multivariate-distributions.html#cb410-6" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">round</span>(X,<span class="dv">3</span>),<span class="dv">3</span>) <span class="co"># x1: column 1 | x2: column2</span></span></code></pre></div>
 <pre><code>##       [,1]  [,2]
 ## [1,] 1.798 1.704
 ## [2,] 1.385 1.158
 ## [3,] 2.551 2.707</code></pre>
-<div class="sourceCode" id="cb350"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb350-1"><a href="multivariate-distributions.html#cb350-1" tabindex="-1"></a>df    <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x=</span>X[,<span class="dv">1</span>],<span class="at">y=</span>X[,<span class="dv">2</span>])</span>
-<span id="cb350-2"><a href="multivariate-distributions.html#cb350-2" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>df,<span class="fu">aes</span>(<span class="at">x=</span>x,<span class="at">y=</span>y)) <span class="sc">+</span></span>
-<span id="cb350-3"><a href="multivariate-distributions.html#cb350-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">col=</span><span class="st">&quot;blue&quot;</span>,<span class="at">size=</span><span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb350-4"><a href="multivariate-distributions.html#cb350-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="fu">expression</span>(x[<span class="dv">1</span>]),<span class="at">y=</span><span class="fu">expression</span>(x[<span class="dv">2</span>])) <span class="sc">+</span></span>
-<span id="cb350-5"><a href="multivariate-distributions.html#cb350-5" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">1.25</span>)))</span></code></pre></div>
+<div class="sourceCode" id="cb412"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb412-1"><a href="multivariate-distributions.html#cb412-1" tabindex="-1"></a>df    <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x=</span>X[,<span class="dv">1</span>],<span class="at">y=</span>X[,<span class="dv">2</span>])</span>
+<span id="cb412-2"><a href="multivariate-distributions.html#cb412-2" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>df,<span class="fu">aes</span>(<span class="at">x=</span>x,<span class="at">y=</span>y)) <span class="sc">+</span></span>
+<span id="cb412-3"><a href="multivariate-distributions.html#cb412-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">col=</span><span class="st">&quot;blue&quot;</span>,<span class="at">size=</span><span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb412-4"><a href="multivariate-distributions.html#cb412-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="fu">expression</span>(x[<span class="dv">1</span>]),<span class="at">y=</span><span class="fu">expression</span>(x[<span class="dv">2</span>])) <span class="sc">+</span></span>
+<span id="cb412-5"><a href="multivariate-distributions.html#cb412-5" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">1.25</span>)))</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:sampx"></span>
 <img src="_main_files/figure-html/sampx-1.png" alt="\label{fig:sampx}Sample of $n = 40$ iid data drawn from a bivariate normal distribution with means $\boldsymbol{\mu} = \{2,1\}$ and covariance matrix $\boldsymbol{\Sigma}$ given in the main body of the text." width="50%" />
 <p class="caption">
@@ -2201,12 +2256,12 @@ C_{jk} = \frac{1}{n-1} \sum_{i=1}^n (X_{ji} - \bar{X}_j)(X_{ki} - \bar{X}_k) \,.
 So, for instance, for our data we would determine <span class="math inline">\(C_{12}\)</span> in <code>R</code> as
 follows:</p>
 </blockquote>
-<div class="sourceCode" id="cb351"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb351-1"><a href="multivariate-distributions.html#cb351-1" tabindex="-1"></a>(<span class="dv">1</span><span class="sc">/</span>(n<span class="dv">-1</span>))<span class="sc">*</span><span class="fu">sum</span>((X[,<span class="dv">1</span>]<span class="sc">-</span><span class="fu">mean</span>(X[,<span class="dv">1</span>]))<span class="sc">*</span>(X[,<span class="dv">2</span>]<span class="sc">-</span><span class="fu">mean</span>(X[,<span class="dv">2</span>])))</span></code></pre></div>
+<div class="sourceCode" id="cb413"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb413-1"><a href="multivariate-distributions.html#cb413-1" tabindex="-1"></a>(<span class="dv">1</span><span class="sc">/</span>(n<span class="dv">-1</span>))<span class="sc">*</span><span class="fu">sum</span>((X[,<span class="dv">1</span>]<span class="sc">-</span><span class="fu">mean</span>(X[,<span class="dv">1</span>]))<span class="sc">*</span>(X[,<span class="dv">2</span>]<span class="sc">-</span><span class="fu">mean</span>(X[,<span class="dv">2</span>])))</span></code></pre></div>
 <pre><code>## [1] 0.389421</code></pre>
 <blockquote>
 <p>This calculation matches that done by the <code>R</code> function <code>cov()</code>:</p>
 </blockquote>
-<div class="sourceCode" id="cb353"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb353-1"><a href="multivariate-distributions.html#cb353-1" tabindex="-1"></a><span class="fu">cov</span>(X)</span></code></pre></div>
+<div class="sourceCode" id="cb415"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb415-1"><a href="multivariate-distributions.html#cb415-1" tabindex="-1"></a><span class="fu">cov</span>(X)</span></code></pre></div>
 <pre><code>##           [,1]     [,2]
 ## [1,] 0.8057418 0.389421
 ## [2,] 0.3894210 1.653003</code></pre>
@@ -2232,20 +2287,18 @@ probability density function <span class="math inline">\(f_{X_1|X_2}(x_1|x_2)\)<
 <li><p>We are given the probability mass function shown below. (a) Compute Cov(<span class="math inline">\(X_1,X_2\)</span>). (b) Compute <span class="math inline">\(\rho_{X_1,X_2}\)</span>. (c) Write down the conditional expected value <span class="math inline">\(E[X_1 \vert X_2 &lt; 1]\)</span>. (This can be done by inspection.) (d) Write down the conditional variance <span class="math inline">\(V[X_2 \vert X_1 = 1]\)</span>. (This can also be done by inspection.)</p></li>
 </ol>
 <table>
-<thead>
-<tr class="header">
-<th align="center"></th>
-<th align="center"><span class="math inline">\(x_1 = 0\)</span></th>
-<th align="center"><span class="math inline">\(x_1 = 1\)</span></th>
-</tr>
-</thead>
 <tbody>
 <tr class="odd">
+<td align="center"></td>
+<td align="center"><span class="math inline">\(x_1 = 0\)</span></td>
+<td align="center"><span class="math inline">\(x_1 = 1\)</span></td>
+</tr>
+<tr class="even">
 <td align="center"><span class="math inline">\(x_2 = 0\)</span></td>
 <td align="center">0.1</td>
 <td align="center">0.4</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="center"><span class="math inline">\(x_2 = 1\)</span></td>
 <td align="center">0.4</td>
 <td align="center">0.1</td>
@@ -2262,31 +2315,29 @@ f_{X_1,X_2}(x_1,x_2) = \left\{ \begin{array}{cl} k x_1^2 x_2 &amp; x_1 \geq 0,\,
 <li><p>We are given the probability mass function shown below. (a) Write down the marginal probability mass function <span class="math inline">\(p_{X_2}(x_2)\)</span>. (b) Using our answer from (a), write down the marginal cdf <span class="math inline">\(F_{X_2}(x_2)\)</span>. (c) Assume <span class="math inline">\(p_X(x) = p_{X_2}(x_2)\)</span> (i.e., forget the table exists…all we have now is a univariate pmf). Compute the mean and standard deviation of <span class="math inline">\(p_X(x)\)</span>.</p></li>
 </ol>
 <table>
-<thead>
-<tr class="header">
-<th align="center"></th>
-<th align="center"></th>
-<th align="center"><span class="math inline">\(x_1 = 0\)</span></th>
-<th align="center"><span class="math inline">\(x_1 = 1\)</span></th>
-<th align="center"><span class="math inline">\(x_1 = 2\)</span></th>
-</tr>
-</thead>
 <tbody>
 <tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><span class="math inline">\(x_1 = 0\)</span></td>
+<td align="center"><span class="math inline">\(x_1 = 1\)</span></td>
+<td align="center"><span class="math inline">\(x_1 = 2\)</span></td>
+</tr>
+<tr class="even">
 <td align="center"><span class="math inline">\(x_2 = 0\)</span></td>
 <td align="center">0</td>
 <td align="center">0.2</td>
 <td align="center">0.1</td>
 <td align="center">0.1</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="center"><span class="math inline">\(x_2 = 1\)</span></td>
 <td align="center">1</td>
 <td align="center">0.1</td>
 <td align="center">0.3</td>
 <td align="center">0</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="center"><span class="math inline">\(x_2 = 2\)</span></td>
 <td align="center">2</td>
 <td align="center">0.05</td>
@@ -2355,28 +2406,26 @@ Compute the variance of <span class="math inline">\(X_1\)</span>.</p></li>
 <li><p>We are given the probability mass function shown below. Compute the variance of <span class="math inline">\(X_1-X_2\)</span>. It may help to know that <span class="math inline">\(E[X_1^2] = 8/9\)</span>, <span class="math inline">\(E[X_2^2] = 6/9\)</span>, and <span class="math inline">\(E[X_1X_2] = 4/9\)</span>.</p></li>
 </ol>
 <table>
-<thead>
-<tr class="header">
-<th align="center"></th>
-<th align="center"></th>
-<th align="center"><span class="math inline">\(x_2 = 0\)</span></th>
-<th align="center"><span class="math inline">\(x_2 = 1\)</span></th>
-</tr>
-</thead>
 <tbody>
 <tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><span class="math inline">\(x_2 = 0\)</span></td>
+<td align="center"><span class="math inline">\(x_2 = 1\)</span></td>
+</tr>
+<tr class="even">
 <td align="center"><span class="math inline">\(x_1 = 0\)</span></td>
 <td align="center">0</td>
 <td align="center">1/9</td>
 <td align="center">3/9</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="center"><span class="math inline">\(x_1 = 1\)</span></td>
 <td align="center">1</td>
 <td align="center">2/9</td>
 <td align="center">2/9</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="center"><span class="math inline">\(x_1 = 2\)</span></td>
 <td align="center">2</td>
 <td align="center">0</td>
@@ -2397,20 +2446,18 @@ f_{X_1,X_2}(x_1,x_2) = \left\{ \begin{array}{cc} k e^{-x_1/2} &amp; x_1 \geq 0 ~
 <li><p>We are given the probability mass function shown below. (a) Compute the conditional expected value <span class="math inline">\(E[X_1 \vert X_2=1]\)</span>. (b) Compute the conditional variance <span class="math inline">\(V[X_1 \vert X_2=1]\)</span>.</p></li>
 </ol>
 <table>
-<thead>
-<tr class="header">
-<th align="center"></th>
-<th align="center"><span class="math inline">\(x_2 = 0\)</span></th>
-<th align="center"><span class="math inline">\(x_2=1\)</span></th>
-</tr>
-</thead>
 <tbody>
 <tr class="odd">
+<td align="center"></td>
+<td align="center"><span class="math inline">\(x_2 = 0\)</span></td>
+<td align="center"><span class="math inline">\(x_2=1\)</span></td>
+</tr>
+<tr class="even">
 <td align="center"><span class="math inline">\(x_1 = 0\)</span></td>
 <td align="center">0.2</td>
 <td align="center">0.3</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="center"><span class="math inline">\(x_1 = 1\)</span></td>
 <td align="center">0.4</td>
 <td align="center">0.1</td>
@@ -2427,20 +2474,18 @@ where <span class="math inline">\(x_1 \geq 0\)</span>, <span class="math inline"
 <li><p>We are given the bivariate probability mass function shown below. (a) What is Cov(<span class="math inline">\(X_1,X_2\)</span>)? (b) What is <span class="math inline">\(\rho_{X_1,X_2}\)</span>? (c) Let <span class="math inline">\(Y = 2X_1 - X_2\)</span>. Derive <span class="math inline">\(V[Y]\)</span>.</p></li>
 </ol>
 <table>
-<thead>
-<tr class="header">
-<th align="center"></th>
-<th align="center"><span class="math inline">\(x_2 = 0\)</span></th>
-<th align="center"><span class="math inline">\(x_2 = 1\)</span></th>
-</tr>
-</thead>
 <tbody>
 <tr class="odd">
+<td align="center"></td>
+<td align="center"><span class="math inline">\(x_2 = 0\)</span></td>
+<td align="center"><span class="math inline">\(x_2 = 1\)</span></td>
+</tr>
+<tr class="even">
 <td align="center"><span class="math inline">\(x_1 = 0\)</span></td>
 <td align="center">0.3</td>
 <td align="center">0.1</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="center"><span class="math inline">\(x_1 = 1\)</span></td>
 <td align="center">0.1</td>
 <td align="center">0.5</td>
@@ -2456,7 +2501,7 @@ where <span class="math inline">\(x_1 \geq 0\)</span>, <span class="math inline"
           </div>
         </div>
       </div>
-<a href="the-uniform-distribution.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="distributions-with-domain-specifying-parameters.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="further-conceptual-details-optional.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>

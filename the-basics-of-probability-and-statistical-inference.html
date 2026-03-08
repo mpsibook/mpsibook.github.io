@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>1 The Basics of Probability and Statistical Inference | Modern Probability and Statistical Inference</title>
   <meta name="description" content="1 The Basics of Probability and Statistical Inference | Modern Probability and Statistical Inference" />
-  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
   <meta property="og:title" content="1 The Basics of Probability and Statistical Inference | Modern Probability and Statistical Inference" />
   <meta property="og:type" content="book" />
@@ -54,9 +54,8 @@
 
 
 <style type="text/css">
-html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -66,7 +65,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -247,7 +246,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.3.2" data-path="the-normal-and-related-distributions.html"><a href="the-normal-and-related-distributions.html#mgf-probability-density-function"><i class="fa fa-check"></i><b>2.3.2</b> MGF: Probability Density Function</a></li>
 <li class="chapter" data-level="2.3.3" data-path="the-normal-and-related-distributions.html"><a href="the-normal-and-related-distributions.html#mgf-normal-distribution"><i class="fa fa-check"></i><b>2.3.3</b> MGF: Normal Distribution</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="the-normal-and-related-distributions.html"><a href="the-normal-and-related-distributions.html#normal-distribution-sample-mean"><i class="fa fa-check"></i><b>2.4</b> Normal Distribution: Sample Mean</a>
+<li class="chapter" data-level="2.4" data-path="the-normal-and-related-distributions.html"><a href="the-normal-and-related-distributions.html#normal-distribution-linear-functions-of-random-variables"><i class="fa fa-check"></i><b>2.4</b> Normal Distribution: Linear Functions of Random Variables</a>
 <ul>
 <li class="chapter" data-level="2.4.1" data-path="the-normal-and-related-distributions.html"><a href="the-normal-and-related-distributions.html#computing-probabilities-2"><i class="fa fa-check"></i><b>2.4.1</b> Computing Probabilities</a></li>
 <li class="chapter" data-level="2.4.2" data-path="the-normal-and-related-distributions.html"><a href="the-normal-and-related-distributions.html#sample-sum"><i class="fa fa-check"></i><b>2.4.2</b> Sample Sum</a></li>
@@ -408,92 +407,96 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html"><i class="fa fa-check"></i><b>4</b> The Poisson (and Related) Distributions</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#motivation"><i class="fa fa-check"></i><b>4.1</b> Motivation</a></li>
-<li class="chapter" data-level="4.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#probability-mass-function"><i class="fa fa-check"></i><b>4.2</b> Probability Mass Function</a>
+<li class="chapter" data-level="4.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#probability-mass-function"><i class="fa fa-check"></i><b>4.1</b> Probability Mass Function</a>
 <ul>
-<li class="chapter" data-level="4.2.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#the-poisson-distribution-as-part-of-the-exponential-family"><i class="fa fa-check"></i><b>4.2.1</b> The Poisson Distribution as Part of the Exponential Family</a></li>
-<li class="chapter" data-level="4.2.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#the-expected-value-of-a-poisson-random-variable"><i class="fa fa-check"></i><b>4.2.2</b> The Expected Value of a Poisson Random Variable</a></li>
+<li class="chapter" data-level="4.1.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#poisson-random-variable-expected-value"><i class="fa fa-check"></i><b>4.1.1</b> Poisson Random Variable: Expected Value</a></li>
+<li class="chapter" data-level="4.1.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#poisson-distribution-normal-approximation"><i class="fa fa-check"></i><b>4.1.2</b> Poisson Distribution: Normal Approximation</a></li>
+<li class="chapter" data-level="4.1.3" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#poisson-distribution-exponential-family"><i class="fa fa-check"></i><b>4.1.3</b> Poisson Distribution: Exponential Family</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#cumulative-distribution-function"><i class="fa fa-check"></i><b>4.3</b> Cumulative Distribution Function</a>
+<li class="chapter" data-level="4.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#poisson-distribution-cumulative-distribution-function"><i class="fa fa-check"></i><b>4.2</b> Poisson Distribution: Cumulative Distribution Function</a>
 <ul>
-<li class="chapter" data-level="4.3.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#computing-probabilities-9"><i class="fa fa-check"></i><b>4.3.1</b> Computing Probabilities</a></li>
+<li class="chapter" data-level="4.2.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#computing-probabilities-9"><i class="fa fa-check"></i><b>4.2.1</b> Computing Probabilities</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#linear-functions-of-random-variables"><i class="fa fa-check"></i><b>4.4</b> Linear Functions of Random Variables</a>
+<li class="chapter" data-level="4.3" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#poisson-related-distributions"><i class="fa fa-check"></i><b>4.3</b> Poisson-Related Distributions</a>
 <ul>
-<li class="chapter" data-level="4.4.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#the-moment-generating-function-of-a-poisson-random-variable"><i class="fa fa-check"></i><b>4.4.1</b> The Moment-Generating Function of a Poisson Random Variable</a></li>
-<li class="chapter" data-level="4.4.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#the-distribution-of-the-difference-of-two-poisson-random-variables"><i class="fa fa-check"></i><b>4.4.2</b> The Distribution of the Difference of Two Poisson Random Variables</a></li>
+<li class="chapter" data-level="4.3.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#zero-inflated-poisson-random-variable-expected-value"><i class="fa fa-check"></i><b>4.3.1</b> Zero-Inflated Poisson Random Variable: Expected Value</a></li>
+<li class="chapter" data-level="4.3.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#zero-truncated-poisson-random-variable-expected-value"><i class="fa fa-check"></i><b>4.3.2</b> Zero-Truncated Poisson Random Variable: Expected Value</a></li>
+<li class="chapter" data-level="4.3.3" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#gamma-random-variable-expected-value"><i class="fa fa-check"></i><b>4.3.3</b> Gamma Random Variable: Expected Value</a></li>
+<li class="chapter" data-level="4.3.4" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#exponential-distribution-memorylessness"><i class="fa fa-check"></i><b>4.3.4</b> Exponential Distribution: Memorylessness</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#linear-functions-of-poisson-random-variables"><i class="fa fa-check"></i><b>4.4</b> Linear Functions of Poisson Random Variables</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#two-poisson-random-variables-difference-distribution"><i class="fa fa-check"></i><b>4.4.1</b> Two Poisson Random Variables: Difference Distribution</a></li>
+<li class="chapter" data-level="4.4.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#zero-inflated-poisson-distribution-moment-generating-function"><i class="fa fa-check"></i><b>4.4.2</b> Zero-Inflated Poisson Distribution: Moment-Generating Function</a></li>
+<li class="chapter" data-level="4.4.3" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#exponential-data-sample-sum-distribution"><i class="fa fa-check"></i><b>4.4.3</b> Exponential Data: Sample Sum Distribution</a></li>
 </ul></li>
 <li class="chapter" data-level="4.5" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#point-estimation-3"><i class="fa fa-check"></i><b>4.5</b> Point Estimation</a>
 <ul>
-<li class="chapter" data-level="4.5.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#revisiting-the-death-by-horse-kick-example"><i class="fa fa-check"></i><b>4.5.1</b> Revisiting the Death-by-Horse-Kick Example</a></li>
-<li class="chapter" data-level="4.5.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#the-crlb-on-the-variance-of-lambda-estimators"><i class="fa fa-check"></i><b>4.5.2</b> The CRLB on the Variance of <span class="math inline">\(\lambda\)</span> Estimators</a></li>
-<li class="chapter" data-level="4.5.3" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#minimum-variance-unbiased-estimation-and-the-invariance-property"><i class="fa fa-check"></i><b>4.5.3</b> Minimum Variance Unbiased Estimation and the Invariance Property</a></li>
-<li class="chapter" data-level="4.5.4" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#method-of-moments-estimation-for-the-gamma-distribution"><i class="fa fa-check"></i><b>4.5.4</b> Method of Moments Estimation for the Gamma Distribution</a></li>
-<li class="chapter" data-level="4.5.5" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#maximum-likelihood-estimation-via-numerical-optimization"><i class="fa fa-check"></i><b>4.5.5</b> Maximum Likelihood Estimation via Numerical Optimization</a></li>
+<li class="chapter" data-level="4.5.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#poisson-expected-counts-maximum-likelihood-estimator"><i class="fa fa-check"></i><b>4.5.1</b> Poisson Expected Counts: Maximum Likelihood Estimator</a></li>
+<li class="chapter" data-level="4.5.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#poisson-expected-counts-minimum-variance-unbiased-estimator"><i class="fa fa-check"></i><b>4.5.2</b> Poisson Expected Counts: Minimum Variance Unbiased Estimator</a></li>
+<li class="chapter" data-level="4.5.3" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#death-by-horse-kick-point-estimate"><i class="fa fa-check"></i><b>4.5.3</b> Death-by-Horse-Kick: Point Estimate</a></li>
+<li class="chapter" data-level="4.5.4" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#the-crlb-for-the-variance-of-expected-counts-estimators"><i class="fa fa-check"></i><b>4.5.4</b> The CRLB for the Variance of Expected Counts Estimators</a></li>
+<li class="chapter" data-level="4.5.5" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#minimum-variance-unbiased-estimation-lack-of-invariance"><i class="fa fa-check"></i><b>4.5.5</b> Minimum Variance Unbiased Estimation: Lack of Invariance</a></li>
+<li class="chapter" data-level="4.5.6" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#gamma-distribution-method-of-moments-estimation"><i class="fa fa-check"></i><b>4.5.6</b> Gamma Distribution: Method of Moments Estimation</a></li>
+<li class="chapter" data-level="4.5.7" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#gamma-distribution-numerical-maximum-likelihood-estimation"><i class="fa fa-check"></i><b>4.5.7</b> Gamma Distribution: Numerical Maximum Likelihood Estimation</a></li>
 </ul></li>
 <li class="chapter" data-level="4.6" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#confidence-intervals-3"><i class="fa fa-check"></i><b>4.6</b> Confidence Intervals</a>
 <ul>
-<li class="chapter" data-level="4.6.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#confidence-interval-for-the-poisson-parameter-lambda"><i class="fa fa-check"></i><b>4.6.1</b> Confidence Interval for the Poisson Parameter <span class="math inline">\(\lambda\)</span></a></li>
-<li class="chapter" data-level="4.6.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#revisiting-the-death-by-horse-kick-example-1"><i class="fa fa-check"></i><b>4.6.2</b> Revisiting the Death-by-Horse-Kick Example</a></li>
-<li class="chapter" data-level="4.6.3" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#determining-a-confidence-interval-using-the-bootstrap"><i class="fa fa-check"></i><b>4.6.3</b> Determining a Confidence Interval Using the Bootstrap</a></li>
-<li class="chapter" data-level="4.6.4" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#the-proportion-of-observed-data-in-a-bootstrap-sample"><i class="fa fa-check"></i><b>4.6.4</b> The Proportion of Observed Data in a Bootstrap Sample</a></li>
-<li class="chapter" data-level="4.6.5" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#confidence-interval-estimation-via-simulation"><i class="fa fa-check"></i><b>4.6.5</b> Confidence Interval Estimation via Simulation</a></li>
+<li class="chapter" data-level="4.6.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#poisson-expected-counts-confidence-interval"><i class="fa fa-check"></i><b>4.6.1</b> Poisson Expected Counts: Confidence Interval</a></li>
+<li class="chapter" data-level="4.6.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#death-by-horse-kick-confidence-interval"><i class="fa fa-check"></i><b>4.6.2</b> Death-by-Horse-Kick: Confidence Interval</a></li>
+<li class="chapter" data-level="4.6.3" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#death-by-horse-kick-nonparametric-bootstrap-confidence-interval"><i class="fa fa-check"></i><b>4.6.3</b> Death-by-Horse-Kick: Nonparametric Bootstrap Confidence Interval</a></li>
+<li class="chapter" data-level="4.6.4" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#bootstrap-sample-proportion-of-observed-data"><i class="fa fa-check"></i><b>4.6.4</b> Bootstrap Sample: Proportion of Observed Data</a></li>
+<li class="chapter" data-level="4.6.5" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#death-by-horse-kick-simulation-based-confidence-interval"><i class="fa fa-check"></i><b>4.6.5</b> Death-by-Horse Kick: Simulation-Based Confidence Interval</a></li>
+<li class="chapter" data-level="4.6.6" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#zero-truncated-poisson-expected-counts-simulation-based-confidence-interval"><i class="fa fa-check"></i><b>4.6.6</b> Zero-Truncated Poisson Expected Counts: Simulation-Based Confidence Interval</a></li>
 </ul></li>
 <li class="chapter" data-level="4.7" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#hypothesis-testing-2"><i class="fa fa-check"></i><b>4.7</b> Hypothesis Testing</a>
 <ul>
-<li class="chapter" data-level="4.7.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#the-uniformly-most-powerful-test-of-poisson-lambda"><i class="fa fa-check"></i><b>4.7.1</b> The Uniformly Most Powerful Test of Poisson <span class="math inline">\(\lambda\)</span></a></li>
-<li class="chapter" data-level="4.7.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#likelihood-ratio-test-of-the-poisson-parameter-lambda"><i class="fa fa-check"></i><b>4.7.2</b> Likelihood Ratio Test of the Poisson Parameter <span class="math inline">\(\lambda\)</span></a></li>
-<li class="chapter" data-level="4.7.3" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#using-wilks-theorem-to-test-hypotheses-about-the-normal-mean"><i class="fa fa-check"></i><b>4.7.3</b> Using Wilks’ Theorem to Test Hypotheses About the Normal Mean</a></li>
-<li class="chapter" data-level="4.7.4" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#simulating-the-likelihood-ratio-test"><i class="fa fa-check"></i><b>4.7.4</b> Simulating the Likelihood Ratio Test</a></li>
+<li class="chapter" data-level="4.7.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#poisson-expected-counts-uniformly-most-powerful-test"><i class="fa fa-check"></i><b>4.7.1</b> Poisson Expected Counts: Uniformly Most Powerful Test</a></li>
+<li class="chapter" data-level="4.7.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#poisson-expected-counts-likelihood-ratio-test"><i class="fa fa-check"></i><b>4.7.2</b> Poisson Expected Counts: Likelihood Ratio Test</a></li>
+<li class="chapter" data-level="4.7.3" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#normal-population-mean-lrt-with-wilks-theorem"><i class="fa fa-check"></i><b>4.7.3</b> Normal Population Mean: LRT With Wilks’ Theorem</a></li>
+<li class="chapter" data-level="4.7.4" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#normal-population-mean-lrt-via-simulation"><i class="fa fa-check"></i><b>4.7.4</b> Normal Population Mean: LRT Via Simulation</a></li>
+<li class="chapter" data-level="4.7.5" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#score-and-wald-tests"><i class="fa fa-check"></i><b>4.7.5</b> Score and Wald Tests</a></li>
+<li class="chapter" data-level="4.7.6" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#poisson-distribution-chi-square-based-hypothesis-testing"><i class="fa fa-check"></i><b>4.7.6</b> Poisson Distribution: Chi-Square-Based Hypothesis Testing</a></li>
+<li class="chapter" data-level="4.7.7" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#death-by-horse-kick-are-the-data-poisson-distributed"><i class="fa fa-check"></i><b>4.7.7</b> Death-by-Horse-Kick: Are the Data Poisson Distributed?</a></li>
 </ul></li>
-<li class="chapter" data-level="4.8" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#the-gamma-distribution"><i class="fa fa-check"></i><b>4.8</b> The Gamma Distribution</a>
+<li class="chapter" data-level="4.8" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#poisson-and-negative-binomial-regression"><i class="fa fa-check"></i><b>4.8</b> Poisson and Negative Binomial Regression</a>
 <ul>
-<li class="chapter" data-level="4.8.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#the-expected-value-of-a-gamma-random-variable"><i class="fa fa-check"></i><b>4.8.1</b> The Expected Value of a Gamma Random Variable</a></li>
-<li class="chapter" data-level="4.8.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#the-distribution-of-the-sum-of-exponential-random-variables"><i class="fa fa-check"></i><b>4.8.2</b> The Distribution of the Sum of Exponential Random Variables</a></li>
-<li class="chapter" data-level="4.8.3" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#memorylessness-and-the-exponential-distribution"><i class="fa fa-check"></i><b>4.8.3</b> Memorylessness and the Exponential Distribution</a></li>
+<li class="chapter" data-level="4.8.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#poisson-regression-example"><i class="fa fa-check"></i><b>4.8.1</b> Poisson Regression: Example</a></li>
+<li class="chapter" data-level="4.8.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#negative-binomial-regression-example"><i class="fa fa-check"></i><b>4.8.2</b> Negative Binomial Regression: Example</a></li>
 </ul></li>
-<li class="chapter" data-level="4.9" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#poisson-regression"><i class="fa fa-check"></i><b>4.9</b> Poisson Regression</a>
+<li class="chapter" data-level="4.9" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#exercises-3"><i class="fa fa-check"></i><b>4.9</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html"><i class="fa fa-check"></i><b>5</b> Distributions with Domain-Specifying Parameters</a>
 <ul>
-<li class="chapter" data-level="4.9.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#revisiting-the-death-by-horse-kick-example-2"><i class="fa fa-check"></i><b>4.9.1</b> Revisiting the Death-by-Horse-Kick Example</a></li>
-<li class="chapter" data-level="4.9.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#negative-binomial-regression-example"><i class="fa fa-check"></i><b>4.9.2</b> Negative Binomial Regression Example</a></li>
-</ul></li>
-<li class="chapter" data-level="4.10" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#chi-square-based-hypothesis-testing"><i class="fa fa-check"></i><b>4.10</b> Chi-Square-Based Hypothesis Testing</a>
+<li class="chapter" data-level="5.1" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#distribution-examples"><i class="fa fa-check"></i><b>5.1</b> Distribution Examples</a>
 <ul>
-<li class="chapter" data-level="4.10.1" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#revisiting-the-death-by-horse-kick-example-3"><i class="fa fa-check"></i><b>4.10.1</b> Revisiting the Death-by-Horse-Kick Example</a></li>
+<li class="chapter" data-level="5.1.1" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#uniform-random-variable-expected-value-and-variance"><i class="fa fa-check"></i><b>5.1.1</b> Uniform Random Variable: Expected Value and Variance</a></li>
+<li class="chapter" data-level="5.1.2" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#uniform-distribution-order-statistics"><i class="fa fa-check"></i><b>5.1.2</b> Uniform Distribution: Order Statistics</a></li>
+<li class="chapter" data-level="5.1.3" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#pareto-random-variable-expected-value"><i class="fa fa-check"></i><b>5.1.3</b> Pareto Random Variable: Expected Value</a></li>
+<li class="chapter" data-level="5.1.4" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#discrete-uniform-distribution"><i class="fa fa-check"></i><b>5.1.4</b> Discrete Uniform Distribution</a></li>
 </ul></li>
-<li class="chapter" data-level="4.11" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#exercises-3"><i class="fa fa-check"></i><b>4.11</b> Exercises</a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html"><i class="fa fa-check"></i><b>5</b> The Uniform Distribution</a>
+<li class="chapter" data-level="5.2" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#linear-functions-of-random-variables"><i class="fa fa-check"></i><b>5.2</b> Linear Functions of Random Variables</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#properties"><i class="fa fa-check"></i><b>5.1</b> Properties</a>
-<ul>
-<li class="chapter" data-level="5.1.1" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#the-expected-value-and-variance-of-a-uniform-random-variable"><i class="fa fa-check"></i><b>5.1.1</b> The Expected Value and Variance of a Uniform Random Variable</a></li>
-<li class="chapter" data-level="5.1.2" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#coding-r-style-functions-for-the-discrete-uniform-distribution"><i class="fa fa-check"></i><b>5.1.2</b> Coding R-Style Functions for the Discrete Uniform Distribution</a></li>
+<li class="chapter" data-level="5.2.1" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#uniform-data-sample-sum-and-mean-distributions"><i class="fa fa-check"></i><b>5.2.1</b> Uniform Data: Sample Sum and Mean Distributions</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#linear-functions-of-uniform-random-variables"><i class="fa fa-check"></i><b>5.2</b> Linear Functions of Uniform Random Variables</a>
+<li class="chapter" data-level="5.3" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#point-estimation-4"><i class="fa fa-check"></i><b>5.3</b> Point Estimation</a>
 <ul>
-<li class="chapter" data-level="5.2.1" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#the-moment-generating-function-for-a-discrete-uniform-distribution"><i class="fa fa-check"></i><b>5.2.1</b> The Moment-Generating Function for a Discrete Uniform Distribution</a></li>
+<li class="chapter" data-level="5.3.1" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#uniform-domain-parameter-mle"><i class="fa fa-check"></i><b>5.3.1</b> Uniform Domain Parameter: MLE</a></li>
+<li class="chapter" data-level="5.3.2" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#pareto-domain-parameter-mle"><i class="fa fa-check"></i><b>5.3.2</b> Pareto Domain Parameter: MLE</a></li>
+<li class="chapter" data-level="5.3.3" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#uniform-domain-parameter-mvue"><i class="fa fa-check"></i><b>5.3.3</b> Uniform Domain Parameter: MVUE</a></li>
+<li class="chapter" data-level="5.3.4" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#pareto-domain-parameter-mvue"><i class="fa fa-check"></i><b>5.3.4</b> Pareto Domain Parameter: MVUE</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#sufficient-statistics-and-the-minimum-variance-unbiased-estimator"><i class="fa fa-check"></i><b>5.3</b> Sufficient Statistics and the Minimum Variance Unbiased Estimator</a>
+<li class="chapter" data-level="5.4" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#confidence-intervals-4"><i class="fa fa-check"></i><b>5.4</b> Confidence Intervals</a>
 <ul>
-<li class="chapter" data-level="5.3.1" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#sufficient-statistics-for-the-pareto-domain-parameter"><i class="fa fa-check"></i><b>5.3.1</b> Sufficient Statistics for the Pareto Domain Parameter</a></li>
-<li class="chapter" data-level="5.3.2" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#mvue-properties-for-uniform-distribution-bounds"><i class="fa fa-check"></i><b>5.3.2</b> MVUE Properties for Uniform Distribution Bounds</a></li>
+<li class="chapter" data-level="5.4.1" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#uniform-domain-parameter-interval-estimation"><i class="fa fa-check"></i><b>5.4.1</b> Uniform Domain Parameter: Interval Estimation</a></li>
+<li class="chapter" data-level="5.4.2" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#uniform-domain-parameter-confidence-coefficient"><i class="fa fa-check"></i><b>5.4.2</b> Uniform Domain Parameter: Confidence Coefficient</a></li>
+<li class="chapter" data-level="5.4.3" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#pareto-domain-parameter-interval-estimation"><i class="fa fa-check"></i><b>5.4.3</b> Pareto Domain Parameter: Interval Estimation</a></li>
 </ul></li>
-<li class="chapter" data-level="5.4" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#maximum-likelihood-estimation"><i class="fa fa-check"></i><b>5.4</b> Maximum Likelihood Estimation</a>
+<li class="chapter" data-level="5.5" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#hypothesis-testing-3"><i class="fa fa-check"></i><b>5.5</b> Hypothesis Testing</a>
 <ul>
-<li class="chapter" data-level="5.4.1" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#the-mle-for-the-pareto-domain-parameter"><i class="fa fa-check"></i><b>5.4.1</b> The MLE for the Pareto Domain Parameter</a></li>
-<li class="chapter" data-level="5.4.2" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#mle-properties-for-uniform-distribution-bounds"><i class="fa fa-check"></i><b>5.4.2</b> MLE Properties for Uniform Distribution Bounds</a></li>
+<li class="chapter" data-level="5.5.1" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#uniform-domain-parameter-hypothesis-test"><i class="fa fa-check"></i><b>5.5.1</b> Uniform Domain Parameter: Hypothesis Test</a></li>
 </ul></li>
-<li class="chapter" data-level="5.5" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#confidence-intervals-4"><i class="fa fa-check"></i><b>5.5</b> Confidence Intervals</a>
-<ul>
-<li class="chapter" data-level="5.5.1" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#interval-estimation-using-an-order-statistic"><i class="fa fa-check"></i><b>5.5.1</b> Interval Estimation Using an Order Statistic</a></li>
-<li class="chapter" data-level="5.5.2" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#confidence-coefficient-for-a-uniform-based-interval-estimator"><i class="fa fa-check"></i><b>5.5.2</b> Confidence Coefficient for a Uniform-Based Interval Estimator</a></li>
-</ul></li>
-<li class="chapter" data-level="5.6" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#hypothesis-testing-3"><i class="fa fa-check"></i><b>5.6</b> Hypothesis Testing</a>
-<ul>
-<li class="chapter" data-level="5.6.1" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#hypothesis-test-for-the-uniform-distribution-upper-bound"><i class="fa fa-check"></i><b>5.6.1</b> Hypothesis Test for the Uniform Distribution Upper Bound</a></li>
-</ul></li>
-<li class="chapter" data-level="5.7" data-path="the-uniform-distribution.html"><a href="the-uniform-distribution.html#exercises-4"><i class="fa fa-check"></i><b>5.7</b> Exercises</a></li>
+<li class="chapter" data-level="5.6" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#exercises-4"><i class="fa fa-check"></i><b>5.6</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html"><i class="fa fa-check"></i><b>6</b> Multivariate Distributions</a>
 <ul>
@@ -555,8 +558,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.6.1" data-path="further-conceptual-details-optional.html"><a href="further-conceptual-details-optional.html#an-illustration-of-multiple-comparisons-when-testing-for-the-normal-mean"><i class="fa fa-check"></i><b>7.6.1</b> An Illustration of Multiple Comparisons When Testing for the Normal Mean</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="appendix-a-table-of-symbols.html"><a href="appendix-a-table-of-symbols.html"><i class="fa fa-check"></i>Appendix A: Table of Symbols</a></li>
-<li class="chapter" data-level="" data-path="appendix-b-confidence-interval-and-hypothesis-test-reference-tables.html"><a href="appendix-b-confidence-interval-and-hypothesis-test-reference-tables.html"><i class="fa fa-check"></i>Appendix B: Confidence Interval and Hypothesis Test Reference Tables</a></li>
+<li class="chapter" data-level="" data-path="appendix-table-of-symbols.html"><a href="appendix-table-of-symbols.html"><i class="fa fa-check"></i>Appendix: Table of Symbols</a></li>
 <li class="chapter" data-level="" data-path="bibliography.html"><a href="bibliography.html"><i class="fa fa-check"></i>Bibliography</a></li>
 <li class="chapter" data-level="" data-path="chapter-exercises-solutions.html"><a href="chapter-exercises-solutions.html"><i class="fa fa-check"></i>Chapter Exercises: Solutions</a>
 <ul>
@@ -586,8 +588,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="the-basics-of-probability-and-statistical-inference" class="section level1 hasAnchor" number="1">
 <h1><span class="header-section-number">1</span> The Basics of Probability and Statistical Inference<a href="the-basics-of-probability-and-statistical-inference.html#the-basics-of-probability-and-statistical-inference" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div class="bluebox">
+<p>In this chapter, we introduce the concept of <em>statistical inference</em>, in which we use functions of the data we observe (i.e., <em>statistics</em>) to infer the properties of the population from which they were drawn. However, we cannot work with statistics without adopting a “language” that “encodes” the random variation that is inherent in these data: that language is <em>probability</em>.</p>
+</div>
 <div id="data-and-statistical-populations" class="section level2 hasAnchor" number="1.1">
 <h2><span class="header-section-number">1.1</span> Data and Statistical Populations<a href="the-basics-of-probability-and-statistical-inference.html#data-and-statistical-populations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="graybox">
+<p>What to take away from this section:</p>
+<ul>
+<li><p>The act of data generation is an <em>experiment</em>, and the data we generate are drawn from a <em>population</em>. These data may be <em>quantitative</em> (i.e., numbers), or <em>qualitative</em> (i.e., words).</p></li>
+<li><p>The goal of a statistician is to summarize the observed data using a <em>statistic</em> and then to use that statistic to infer properties of the population.</p></li>
+</ul>
+</div>
+<p><br></p>
 <p>Data surround us, in the form of numbers, texts, images, and more that
 are collected and analyzed across disciplines. Tweets contain data about
 user sentiments. Receipts contain data about people’s buying habits.
@@ -658,6 +671,18 @@ mathematically.</p>
 </div>
 <div id="sample-spaces-and-the-axioms-of-probability" class="section level2 hasAnchor" number="1.2">
 <h2><span class="header-section-number">1.2</span> Sample Spaces and the Axioms of Probability<a href="the-basics-of-probability-and-statistical-inference.html#sample-spaces-and-the-axioms-of-probability" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="graybox">
+<p>What to take away from this section:</p>
+<ul>
+<li><p>The set of all experimental outcomes is a <em>sample space</em> (denoted <span class="math inline">\(\Omega\)</span>).</p></li>
+<li><p>While in real-life analysis situations we rarely work with sample spaces and their contents directly…</p>
+<ul>
+<li>…if the data-generating process is relatively simple (e.g., if we flip a coin two times and record the number of heads) <em>and</em> if the experimental outcomes are discretely valued, there is value in directly examining sample space contents.</li>
+</ul></li>
+<li><p>The long-term frequency of the occurrence of an experiment outcome is its <em>probability</em>.</p></li>
+</ul>
+</div>
+<p><br></p>
 <p>Probability is the long-term frequency of the occurrence of an event. For instance, what is the probability of flipping a coin
 and observing heads? (Intuitively, this probability is 1/2, if the coin is fair.) Or: what is the probability that a student finishes a particular
 test in between 30 and 40 minutes? Etc.</p>
@@ -864,6 +889,14 @@ the row for <span class="math inline">\(B\)</span> or the column for <span class
 </div>
 <div id="conditional-probability-and-the-independence-of-events" class="section level2 hasAnchor" number="1.3">
 <h2><span class="header-section-number">1.3</span> Conditional Probability and the Independence of Events<a href="the-basics-of-probability-and-statistical-inference.html#conditional-probability-and-the-independence-of-events" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="graybox">
+<p>What to take away from this section:</p>
+<ul>
+<li><p>The probabilities of simple and compound events can be affected by invoking <em>conditions</em>.</p></li>
+<li><p>If invoking a condition does not change the probability of an event, then that event is said to be <em>independent</em> of that conditioning event.</p></li>
+</ul>
+</div>
+<p><br></p>
 <p>Intuitively, we can picture a sample space <span class="math inline">\(\Omega\)</span> and two of its constituent events as looking something like what we show in Figure <a href="the-basics-of-probability-and-statistical-inference.html#fig:nondj">1.3</a>.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:nondj"></span>
 <img src="figures/conditional_event.png" alt="\label{fig:nondj}A sample space with non-disjoint events $A$ and $B$." width="27.5%" />
@@ -1027,6 +1060,19 @@ why this would be true…)</p>
 </div>
 <div id="further-laws-of-probability" class="section level2 hasAnchor" number="1.4">
 <h2><span class="header-section-number">1.4</span> Further Laws of Probability<a href="the-basics-of-probability-and-statistical-inference.html#further-laws-of-probability" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="graybox">
+<p>What to take away from this section:</p>
+<ul>
+<li><p>The four core tools for solving conditional probability problems are…</p>
+<ul>
+<li><p>the <em>multiplicative law</em>;</p></li>
+<li><p>the <em>additive law</em>;</p></li>
+<li><p>the <em>law of total probability</em>; and</p></li>
+<li><p><em>Bayes’ rule</em>.</p></li>
+</ul></li>
+</ul>
+</div>
+<p><br></p>
 <p>Now that we have learned about the concepts of conditional probabilities and independence, we can write down some useful laws that one can use to solve an array of probability-based problems.</p>
 <ul>
 <li><em>Multiplicative Law</em>. This follows simply from rearranging the definition of conditional probability:
@@ -1235,6 +1281,15 @@ ending up with two blue socks.</p>
 </div>
 <div id="random-variables" class="section level2 hasAnchor" number="1.5">
 <h2><span class="header-section-number">1.5</span> Random Variables<a href="the-basics-of-probability-and-statistical-inference.html#random-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="graybox">
+<p>What to take away from this section:</p>
+<ul>
+<li><p>Working directly with sample space contents only works in limited situations (such as having a small number of discrete experiment outcomes).</p></li>
+<li><p>We can shift our focus from sample spaces to, e.g., the real-number line by encapsulating the contents of the former as <em>random variables</em>.</p></li>
+<li><p>Random variables themselves do not contain information about the probability of the events they represent…for that, we will need to pair random variables with <em>probability distributions</em>, as we will show in the next section.</p></li>
+</ul>
+</div>
+<p><br></p>
 <p>Let’s say that we perform an experiment in which we flip a fair coin
 three times. Let <span class="math inline">\(H\)</span> denote observing heads, and <span class="math inline">\(T\)</span> tails.
 The sample space of outcomes <span class="math inline">\(\Omega\)</span> is
@@ -1294,6 +1349,25 @@ outcome that is uncountably infinite (e.g., <span class="math inline">\([0,1]\)<
 </div>
 <div id="probability-distributions" class="section level2 hasAnchor" number="1.6">
 <h2><span class="header-section-number">1.6</span> Probability Distributions<a href="the-basics-of-probability-and-statistical-inference.html#probability-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="graybox">
+<p>What to take away from this section:</p>
+<ul>
+<li><p>To quantify the probability associated with a random variable, we utilize <em>probability distributions</em>.</p></li>
+<li><p>The fundamental way by which we encapsulate the probabilities of…</p>
+<ul>
+<li><p>discrete experimental outcomes is the <em>probability mass function</em> or <em>pmf</em></p></li>
+<li><p>continuous experimental outcomes is the <em>probability density function</em> or <em>pdf</em></p></li>
+</ul></li>
+<li><p>Probability mass (or density) functions are simply mathematical functions that are non-negative and sum (or integrate) to one.</p></li>
+<li><p>Probability mass and density functions can contain <em>parameters</em>, collectively denoted <span class="math inline">\(\theta\)</span>, which are constants that dictate their shapes and/or locations along the real-number line.</p></li>
+<li><p>The set of all shapes and/or locations for a pmf or pdf comprises a <em>family of distributions</em>.</p></li>
+<li><p>In an experiment, we sample data according to a probability distribution, whose identity and/or properties may or may not be known…</p>
+<ul>
+<li>foreshadowing: <em>statistical inference</em> is the act of inferring what we do not know, given a sample of data</li>
+</ul></li>
+</ul>
+</div>
+<p><br></p>
 <p>A <em>probability distribution</em> is a mapping
 <span class="math inline">\(P: \Omega \rightarrow \mathbb{R}^n\)</span> that describes how probabilities are
 distributed across the values of a random variable.
@@ -1521,6 +1595,17 @@ domain(s) where masses are defined. Done!</p>
 </div>
 <div id="characterizing-probability-distributions" class="section level2 hasAnchor" number="1.7">
 <h2><span class="header-section-number">1.7</span> Characterizing Probability Distributions<a href="the-basics-of-probability-and-statistical-inference.html#characterizing-probability-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="graybox">
+<p>What to take away from this section:</p>
+<ul>
+<li><p>To characterize (or summarize the information contained in) a probability distribution, we can report…</p>
+<ul>
+<li><p>the average value of a set of data sampled according to that distribution, i.e., the <em>expected value</em> (or <em>expectation</em>)</p></li>
+<li><p>the width of the region of the real-number line in which data sampled according to a distribution are concentrated, i.e., the <em>standard deviation</em> (or relatedly, the <em>variance</em>)</p></li>
+</ul></li>
+</ul>
+</div>
+<p><br></p>
 <p>A probability distribution represents the rates of occurrence of different experimental outcomes. Can we determine an “average” outcome? In other words, can we determine what value
 to expect when we next run the experiment? The answer is yes: this is the <em>expected value</em> of a random variable (or <em>expectation</em>) and it is the
 weighted average of all possible experimental outcomes:
@@ -1564,9 +1649,9 @@ Note that because the variance is the expected value of a squared quantity,
 it is always non-negative. (And like the expected value, it is a <em>constant</em>.)
 See Figure <a href="the-basics-of-probability-and-statistical-inference.html#fig:exvx">1.12</a>.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:exvx"></span>
-&lt;img src=“_main_files/figure-html/exvx-1.png” alt=“Examples of a probability mass function (left) and a probability density function (right), with the expected values <span class="math inline">\(E[X]\)</span> indicated by the vertical lines and the distribution”widths” (here, <span class="math inline">\(E[X]-\sqrt{V[X]}\)</span> to <span class="math inline">\(E[X]+\sqrt{V[X]}\)</span>) indicated by the horizontal lines.” width=“45%” /&gt;&lt;img src=“_main_files/figure-html/exvx-2.png” alt=“Examples of a probability mass function (left) and a probability density function (right), with the expected values <span class="math inline">\(E[X]\)</span> indicated by the vertical lines and the distribution”widths” (here, <span class="math inline">\(E[X]-\sqrt{V[X]}\)</span> to <span class="math inline">\(E[X]+\sqrt{V[X]}\)</span>) indicated by the horizontal lines.” width=“45%” /&gt;
+<img src="_main_files/figure-html/exvx-1.png" alt="\label{fig:exvx}Examples of a probability mass function (left) and a probability density function (right), with the expected values $E[X]$ indicated by the vertical lines and the distribution widths (here, $E[X]-\sqrt{V[X]}$ to $E[X]+\sqrt{V[X]}$) indicated by the horizontal lines." width="45%" /><img src="_main_files/figure-html/exvx-2.png" alt="\label{fig:exvx}Examples of a probability mass function (left) and a probability density function (right), with the expected values $E[X]$ indicated by the vertical lines and the distribution widths (here, $E[X]-\sqrt{V[X]}$ to $E[X]+\sqrt{V[X]}$) indicated by the horizontal lines." width="45%" />
 <p class="caption">
-Figure 1.12: Examples of a probability mass function (left) and a probability density function (right), with the expected values <span class="math inline">\(E[X]\)</span> indicated by the vertical lines and the distribution “widths” (here, <span class="math inline">\(E[X]-\sqrt{V[X]}\)</span> to <span class="math inline">\(E[X]+\sqrt{V[X]}\)</span>) indicated by the horizontal lines.
+Figure 1.12: Examples of a probability mass function (left) and a probability density function (right), with the expected values <span class="math inline">\(E[X]\)</span> indicated by the vertical lines and the distribution widths (here, <span class="math inline">\(E[X]-\sqrt{V[X]}\)</span> to <span class="math inline">\(E[X]+\sqrt{V[X]}\)</span>) indicated by the horizontal lines.
 </p>
 </div>
 <p>Both the expected value and variance are examples of <em>moments</em> of
@@ -1694,6 +1779,17 @@ V[X] = E[X^2] - (E[X])^2 = \frac{\theta}{\theta+2} - \frac{\theta^2}{(\theta+1)^
 </div>
 <div id="working-with-r-probability-distributions" class="section level2 hasAnchor" number="1.8">
 <h2><span class="header-section-number">1.8</span> Working With R: Probability Distributions<a href="the-basics-of-probability-and-statistical-inference.html#working-with-r-probability-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="graybox">
+<p>What to take away from this section:</p>
+<ul>
+<li><p>The programming language <code>R</code> is a tool by which the reader can, e.g.,</p>
+<ul>
+<li><p>visualize probability mass and density functions; and</p></li>
+<li><p>utilize numerical integration to carry out probability calculations.</p></li>
+</ul></li>
+</ul>
+</div>
+<p><br></p>
 <p>In this section, we introduce <code>R</code> as a tool with which to, e.g.,
 visualize and numerically manipulate probability distributions.</p>
 <p>We start with the concept of the <em>vector</em>:</p>
@@ -1871,6 +1967,14 @@ to distribution. What is the value here?</p>
 </div>
 <div id="cumulative-distribution-functions" class="section level2 hasAnchor" number="1.9">
 <h2><span class="header-section-number">1.9</span> Cumulative Distribution Functions<a href="the-basics-of-probability-and-statistical-inference.html#cumulative-distribution-functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="graybox">
+<p>What to take away from this section:</p>
+<ul>
+<li><p>An alternative means by which to encapsulate the information contained in a probability distribution is the <em>cumulative distribution function</em> or <em>cdf</em>.</p></li>
+<li><p>Foreshadowing: cumulative distribution functions play a fundamental role in statistical inference, particularly when we construct <em>confidence intervals</em> and perform <em>hypothesis tests</em>.</p></li>
+</ul>
+</div>
+<p><br></p>
 <p>A cumulative distribution function (a cdf) is another means by which to
 mathematically
 express a probability distribution, which is to say, if we have a cdf, we
@@ -2139,6 +2243,13 @@ Figure 1.20: The cdf for our mathematically discontinuous pdf.
 </div>
 <div id="the-law-of-total-probability" class="section level2 hasAnchor" number="1.10">
 <h2><span class="header-section-number">1.10</span> The Law of Total Probability<a href="the-basics-of-probability-and-statistical-inference.html#the-law-of-total-probability" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="graybox">
+<p>What to take away from this section:</p>
+<ul>
+<li>When a parameter of a probability distribution is not actually a constant, but is itself a random variable, we utilize the <em>law of total probability</em> so as to determine the distributions of observed data irrespective of the sampled value of the parameter.</li>
+</ul>
+</div>
+<p><br></p>
 <p>One of the laws of probability that we introduce earlier in this chapter
 is the Law of Total Probability, or LoTP: if we partition a sample space
 <span class="math inline">\(\Omega\)</span> into <span class="math inline">\(k\)</span> disjoint events <span class="math inline">\(\{B_1,\ldots,B_k\}\)</span>, then for any event
@@ -2401,6 +2512,17 @@ f_X(x) &amp;= \frac{1}{(x+1)^2} \Gamma(1) = \frac{1}{(x+1)^2} 0! = \frac{1}{(x+1
 </div>
 <div id="data-sampling" class="section level2 hasAnchor" number="1.11">
 <h2><span class="header-section-number">1.11</span> Data Sampling<a href="the-basics-of-probability-and-statistical-inference.html#data-sampling" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="graybox">
+<p>What to take away from this section:</p>
+<ul>
+<li><p>If we want to create datasets via <em>simulation</em>, we can either…</p>
+<ul>
+<li><p>utilize an existing <code>R</code> code; or, if such a code does not exist,</p></li>
+<li><p>create our own <code>R</code> code in which we implement <em>inverse-transform</em> or <em>rejection</em> sampling (with the former being preferred)</p></li>
+</ul></li>
+</ul>
+</div>
+<p><br></p>
 <p>One of the primary uses of <code>R</code> is to perform <em>simulations</em> in which
 we repeatedly create mock datasets and analyze them. A natural first question
 would then be: how do we create such datasets?</p>
@@ -2614,6 +2736,24 @@ Figure 1.23: <span class="math inline">\(n = 1000\)</span> data sampled from the
 </div>
 <div id="statistics-and-sampling-distributions" class="section level2 hasAnchor" number="1.12">
 <h2><span class="header-section-number">1.12</span> Statistics and Sampling Distributions<a href="the-basics-of-probability-and-statistical-inference.html#statistics-and-sampling-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="graybox">
+<p>What to take away from this section:</p>
+<ul>
+<li><p>A <em>statistic</em> is a function of observed data…</p>
+<ul>
+<li>…hence a statistic is a random variable</li>
+</ul></li>
+<li><p>As a random variable, a statistic is sampled according to a <em>sampling distribution</em>, which despite the name is just a probability distribution with an associated mass or density function.</p></li>
+<li><p>While the “width” of the mass or density function associated with an individual datum is dubbed the standard deviation, the analogous quantity for a sampling distribution is called the <em>standard error</em>.</p></li>
+<li><p>Foreshadowing: if the observed data are sampled according to a probability distribution with a parameter <span class="math inline">\(\theta\)</span>, and if the value of <span class="math inline">\(\theta\)</span> is unknown, then we would want to define a statistic that would help us infer the true value of <span class="math inline">\(\theta\)</span>, through…</p>
+<ul>
+<li><p>point estimation;</p></li>
+<li><p>confidence interval estimation; or</p></li>
+<li><p>hypothesis testing.</p></li>
+</ul></li>
+</ul>
+</div>
+<p><br></p>
 <p>Let’s say that we run an experiment in which we randomly sample many data from
 some distribution <span class="math inline">\(P\)</span>:
 <span class="math display">\[
@@ -2648,7 +2788,9 @@ more informative than others: for instance, if we are trying to infer what
 sin<span class="math inline">\((X_1) + \pi X_2\)</span>. But it may not (nay, will not) be the most useful
 quantity when the sample size <span class="math inline">\(n &gt; 1\)</span>. We could say that much of what we do
 as statisticians is to pick appropriate (and optimal!) statistics to
-perform inference.</p>
+perform inference. (Which would be true, if not for all the data
+pre-processing, exploratory data analysis, coding, and interpretation we also
+do as part of the job.)</p>
 <p>What are some common statistics?</p>
 <ol style="list-style-type: decimal">
 <li>The <em>sample mean</em>:
@@ -2951,6 +3093,14 @@ Figure 1.26: The empirical distribution of the sample median for the pdf <span c
 </div>
 <div id="the-likelihood-function" class="section level2 hasAnchor" number="1.13">
 <h2><span class="header-section-number">1.13</span> The Likelihood Function<a href="the-basics-of-probability-and-statistical-inference.html#the-likelihood-function" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="graybox">
+<p>What to take away from this section:</p>
+<ul>
+<li><p>When we attempt to infer the true value of a distribution parameter <span class="math inline">\(\theta\)</span>, it can be helpful to quantify how “likely” a particular value of <span class="math inline">\(\theta\)</span> is, given the data we observe, i.e., to define a <em>likelihood function</em>.</p></li>
+<li><p>Foreshadowing: a likelihood function can help us <em>define</em> an appropriate statistic to use when performing inference.</p></li>
+</ul>
+</div>
+<p><br></p>
 <p>Assume we are given iid data <span class="math inline">\(\mathbf{X} = \{X_1,\ldots,X_n\}\)</span>,
 with each datum sampled from a continuous distribution <span class="math inline">\(f_X(x \vert \theta)\)</span>.
 (Recall that <span class="math inline">\(\theta\)</span> is the conventionally
@@ -3157,6 +3307,22 @@ Figure 1.29: The log-likelihood function <span class="math inline">\(\ell(\theta
 </div>
 <div id="point-estimation" class="section level2 hasAnchor" number="1.14">
 <h2><span class="header-section-number">1.14</span> Point Estimation<a href="the-basics-of-probability-and-statistical-inference.html#point-estimation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="graybox">
+<p>What to take away from this section:</p>
+<ul>
+<li><p>To infer the value of a probability distribution parameter <span class="math inline">\(\theta\)</span>, we
+define a statistic that is informative about <span class="math inline">\(\theta\)</span>: a <em>point estimator</em>.</p></li>
+<li><p>We do not need to know the sampling distribution of the defined statistic to carry out point estimation.</p></li>
+<li><p>To compare competing point estimators, we evaluate their long-term performances via the metrics of…</p>
+<ul>
+<li><p><em>bias</em>;</p></li>
+<li><p><em>variance</em>; and</p></li>
+<li><p><em>mean-squared error</em>.</p></li>
+</ul></li>
+<li><p>To circumvent the guesswork that can be involved in defining an informative statistic, we can derive <em>maximum likelihood estimates</em> or <em>MLEs</em>.</p></li>
+</ul>
+</div>
+<p><br></p>
 <p>Let’s suppose we are given a sample of iid data <span class="math inline">\(\{X_1,\ldots,X_n\}\)</span>, sampled
 from some distribution with mean <span class="math inline">\(E[X]\)</span> and finite variance <span class="math inline">\(V[X]\)</span>.
 As we started
@@ -3463,6 +3629,13 @@ Figure 1.31: The empirical distribution of maximum likelihood estimates for <spa
 </div>
 <div id="statistical-inference-with-sampling-distributions" class="section level2 hasAnchor" number="1.15">
 <h2><span class="header-section-number">1.15</span> Statistical Inference with Sampling Distributions<a href="the-basics-of-probability-and-statistical-inference.html#statistical-inference-with-sampling-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="graybox">
+<p>What to take away from this section:</p>
+<ul>
+<li>How the sampling distribution of a defined statistic can help us infer plausible ranges for a distribution parameter <span class="math inline">\(\theta\)</span>, or allow us to test whether a proposed value for <span class="math inline">\(\theta\)</span> is plausible.</li>
+</ul>
+</div>
+<p><br></p>
 <p>A fundamental issue with point estimation is that, e.g., it does not
 provide a notion of how uncertain the estimate is. By this, we do not
 mean the standard error of the sampling distribution for the statistic
@@ -3626,6 +3799,18 @@ what values are fixed and what values we are solving for!</p>
 </div>
 <div id="confidence-intervals" class="section level2 hasAnchor" number="1.16">
 <h2><span class="header-section-number">1.16</span> Confidence Intervals<a href="the-basics-of-probability-and-statistical-inference.html#confidence-intervals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="graybox">
+<p>What to take away from this section:</p>
+<ul>
+<li><p>The sampling distribution of a defined statistic can help us construct a <em>confidence interval</em> for a distribution parameter <span class="math inline">\(\theta\)</span>, that has a long-term probabilistic guarantee of overlapping, or <em>covering</em>, <span class="math inline">\(\theta\)</span>’s true value.</p></li>
+<li><p>The fundamental equation underlying interval estimation is
+<span class="math display">\[
+F_Y(y_{\rm obs} \vert \theta) - q = 0 \,,
+\]</span>
+which we solve for <span class="math inline">\(\theta\)</span>; <span class="math inline">\(Y\)</span> is our defined statistic, <span class="math inline">\(y_{\rm obs}\)</span> is the observed value of <span class="math inline">\(Y\)</span>, and <span class="math inline">\(q\)</span> is an appropriately chosen distribution quantile.</p></li>
+</ul>
+</div>
+<p><br></p>
 <p><em>Interval estimation</em> is a mechanism to determine a range of possible
 values for a distribution parameter <span class="math inline">\(\theta\)</span> that
 overlaps the true but unknown value with some stated probability.
@@ -3635,6 +3820,11 @@ P\left( \hat{\theta}_L \leq \theta \leq \hat{\theta}_U \right) = 1 - \alpha \,,
 \]</span>
 where <span class="math inline">\(1 - \alpha\)</span> is the user-set <em>confidence coefficient</em>, which
 typically has the value 0.95 (or <span class="math inline">\(\alpha = 0.05\)</span>).
+(Technically, the confidence coefficient is the infimum
+(i.e., the minimum value) of the coverage probabilities for a particular
+interval estimator. This nuance is not important if we utilize
+the general root-finding algorithm laid out in the last section to determine
+interval bounds. We will return to this point in Chapter 5.)
 One can also define one-sided intervals:
 <span class="math display">\[
 P\left( \hat{\theta}_L \leq \theta \right) = 1 - \alpha ~~\mbox{and}~~ P\left( \theta \leq \hat{\theta}_U \right) = 1 - \alpha \,.
@@ -3954,6 +4144,15 @@ something more firmly quantitative!)</p>
 </div>
 <div id="hypothesis-testing" class="section level2 hasAnchor" number="1.17">
 <h2><span class="header-section-number">1.17</span> Hypothesis Testing<a href="the-basics-of-probability-and-statistical-inference.html#hypothesis-testing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="graybox">
+<p>What to take away from this section:</p>
+<ul>
+<li><p>The sampling distribution of a defined statistic can help us perform a <em>hypothesis test</em> in which we determine whether a proposed value for a distribution parameter <span class="math inline">\(\theta\)</span> (the <em>null hypothesis</em>) is plausible.</p></li>
+<li><p>A <em>p-value</em> is the probability that we would observe the statistic value we observe, or one that is more “extreme,” if the null hypothesis is correct.</p></li>
+<li><p>A hypothesis test is a framework for making a decision, and not for (dis)proving a hypothesis; the decision that we make, given the observed data, can be wrong.</p></li>
+</ul>
+</div>
+<p><br></p>
 <p>Hypothesis testing is, in short, an inference mechanism that takes a
 pre-conceived notion about <span class="math inline">\(\theta\)</span> into account. This is in contrast to
 both point estimation and interval estimation, where we derive <span class="math inline">\(\hat{\theta}\)</span>
