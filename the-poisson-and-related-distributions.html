@@ -2220,10 +2220,14 @@ given the composite nature of one (or both) of the hypotheses
 it comes with no guarantee of being the most powerful test.
 For instance, perhaps an alternative like the score test (also known as
 the Lagrange multiplier test) or the Wald test
-would provide the most powerful test in a given analysis situation. In an
+would provide the most powerful test in a given analysis situation, although
+one should keep in mind that it is usually the case that the
+power of these tests are effectively identical. In an
 example below, we outline how to implement these alternative tests via
 simulation frameworks. A reader who is interested in learning more about
-them should start by looking at Buse (1982).</p>
+them should look at section 10.3 of Casella and Berger (2002) and at
+Buse (1982), while noting that the latter implicitly describes two-tail
+tests only.</p>
 <p>How does using the likelihood ratio test play out in practice? Let’s
 look at some possible use cases. For simplicity, below we will assume
 that we have sampled data from an exponential-family distribution, and
@@ -2552,16 +2556,16 @@ rejection-region boundary is</p>
 <p>and thus the test power is</p>
 </blockquote>
 <div class="sourceCode" id="cb320"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb320-1"><a href="the-poisson-and-related-distributions.html#cb320-1" tabindex="-1"></a>b.a   <span class="ot">&lt;-</span> <span class="dv">3</span></span>
-<span id="cb320-2"><a href="the-poisson-and-related-distributions.html#cb320-2" tabindex="-1"></a><span class="fu">round</span>(<span class="dv">1</span> <span class="sc">-</span> <span class="fu">pgamma</span>(y.rr, <span class="at">shape=</span>n<span class="sc">*</span>a, <span class="at">scale=</span>b.a<span class="sc">/</span>n), <span class="dv">3</span>)</span></code></pre></div>
-<pre><code>## [1] 0.83</code></pre>
+<span id="cb320-2"><a href="the-poisson-and-related-distributions.html#cb320-2" tabindex="-1"></a><span class="fu">round</span>(<span class="dv">1</span> <span class="sc">-</span> <span class="fu">pgamma</span>(y.rr, <span class="at">shape=</span>n<span class="sc">*</span>a, <span class="at">scale=</span>b.a<span class="sc">/</span>n), <span class="dv">4</span>)</span></code></pre></div>
+<pre><code>## [1] 0.8301</code></pre>
 <blockquote>
-<p>The power for the LRT is 0.830.</p>
+<p>The power for the LRT is 0.8301.</p>
 </blockquote>
 <blockquote>
 <p>Now let’s look at the other two tests. First we will examine the score
 test; the statistic for this test is
 <span class="math display">\[
-Y = [\ell&#39;(\theta_o)]^2 I_n(\theta_o)^{-1} \rightarrow [\ell&#39;(b_o)]^2 I_n(b_o)^{-1} \,,
+Y = [\ell&#39;(\theta_o)] I_n(\theta_o)^{-1/2} \rightarrow [\ell&#39;(b_o)] I_n(b_o)^{-1/2} \,,
 \]</span>
 where <span class="math inline">\(I_n(b_o) = n I(b_o)\)</span> is the Fisher information evaluated at the
 null hypothesis value and
@@ -2571,15 +2575,12 @@ null hypothesis value and
 is the first derivative of log-likelihood function evaluated at <span class="math inline">\(b_o\)</span>.
 This statistic is not sampled from an analytically specifiable sampling
 distribution (unless the data are normally distributed);
-the conventional assumption is that <span class="math inline">\(Y \sim \chi_1^2\)</span> under
-the null and that we reject the null if the observed value of <span class="math inline">\(Y\)</span> is
-greater than
-<span class="math inline">\(F_Y^{-1}(1-\alpha \vert b_o)\)</span> (or <code>qchisq(0.95, 1)</code>, which is 3.841).
-(The number of degrees of freedom reflects the number of parameters
-fixed under the null hypothesis versus the alternative, as we saw
-when we discussed the implementation of Wilks’ theorem.) However, we
-know that <span class="math inline">\(Y \sim \chi_1^2\)</span> is just a large-sample approximation when we
-are dealing with non-normal data, so rather
+the conventional assumption is that <span class="math inline">\(Y \sim \mathcal{N}(0,1)\)</span> under
+the null and that, here, we would reject the null if the observed
+value of <span class="math inline">\(Y\)</span> is greater than
+<span class="math inline">\(F_Y^{-1}(1-\alpha \vert b_o)\)</span> (or <code>qnorm(0.95)</code>, which is 1.645).
+However, we know that the normal approximation is just a large-sample
+approximation, so rather
 than utilizing it, we will run simulations to determine the empirical
 distribution of <span class="math inline">\(Y\)</span>. Once we have that, we can determine the true
 rejection-region boundary and then the test power.</p>
@@ -2602,7 +2603,10 @@ I_n(b) = -E[\ell&#39;&#39;(b \vert a,\mathbf{x})] = -\frac{na}{b^2} + \frac{2}{b
 \]</span></p>
 </blockquote>
 <blockquote>
-<p>Now we are in a position to simulate:</p>
+<p>Now we are in a position to simulate. Before doing so, we note for
+completeness that if we cannot analytically derive either piece of
+the statistic, we can always implement numerical differentiation to estimate
+<span class="math inline">\(\ell&#39;\)</span> and/or <span class="math inline">\(I_n\)</span>.</p>
 </blockquote>
 <div class="sourceCode" id="cb322"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb322-1"><a href="the-poisson-and-related-distributions.html#cb322-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">236</span>)</span>
 <span id="cb322-2"><a href="the-poisson-and-related-distributions.html#cb322-2" tabindex="-1"></a></span>
@@ -2615,14 +2619,14 @@ I_n(b) = -E[\ell&#39;&#39;(b \vert a,\mathbf{x})] = -\frac{na}{b^2} + \frac{2}{b
 <span id="cb322-9"><a href="the-poisson-and-related-distributions.html#cb322-9" tabindex="-1"></a>X       <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">rgamma</span>(num.sim<span class="sc">*</span>n, <span class="at">shape=</span>a, <span class="at">scale=</span>b.o), <span class="at">nrow=</span>num.sim)</span>
 <span id="cb322-10"><a href="the-poisson-and-related-distributions.html#cb322-10" tabindex="-1"></a>S       <span class="ot">&lt;-</span> <span class="fu">rowSums</span>(X)</span>
 <span id="cb322-11"><a href="the-poisson-and-related-distributions.html#cb322-11" tabindex="-1"></a>l.prime <span class="ot">&lt;-</span> <span class="sc">-</span>n<span class="sc">*</span>a<span class="sc">/</span>b.o <span class="sc">+</span> (<span class="dv">1</span><span class="sc">/</span>b.o<span class="sc">^</span><span class="dv">2</span>)<span class="sc">*</span>S</span>
-<span id="cb322-12"><a href="the-poisson-and-related-distributions.html#cb322-12" tabindex="-1"></a>Y       <span class="ot">&lt;-</span> l.prime<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> (b.o<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>(n<span class="sc">*</span>a))</span>
+<span id="cb322-12"><a href="the-poisson-and-related-distributions.html#cb322-12" tabindex="-1"></a>Y       <span class="ot">&lt;-</span> l.prime <span class="sc">*</span> b.o<span class="sc">/</span><span class="fu">sqrt</span>(n<span class="sc">*</span>a)</span>
 <span id="cb322-13"><a href="the-poisson-and-related-distributions.html#cb322-13" tabindex="-1"></a>y.rr    <span class="ot">&lt;-</span> <span class="fu">quantile</span>(Y, <span class="at">probs=</span><span class="fu">c</span>(<span class="fl">0.95</span>))</span>
 <span id="cb322-14"><a href="the-poisson-and-related-distributions.html#cb322-14" tabindex="-1"></a><span class="fu">round</span>(y.rr, <span class="dv">3</span>)</span></code></pre></div>
 <pre><code>##   95% 
-## 3.784</code></pre>
+## 1.729</code></pre>
 <blockquote>
-<p>The rejection-region boundary is nearly equal to the value we would compute
-under the large-sample approximation, 3.841.</p>
+<p>The rejection-region boundary is close but not equal to the value we would
+compute under the large-sample approximation, 1.645.</p>
 </blockquote>
 <blockquote>
 <p>Given <span class="math inline">\(y_{\rm RR}\)</span>, we can now simulate again under the alternative
@@ -2639,19 +2643,18 @@ hypothesis to compute the test power:</p>
 <span id="cb324-9"><a href="the-poisson-and-related-distributions.html#cb324-9" tabindex="-1"></a>X       <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">rgamma</span>(num.sim<span class="sc">*</span>n, <span class="at">shape=</span>a, <span class="at">scale=</span>b.a), <span class="at">nrow=</span>num.sim)</span>
 <span id="cb324-10"><a href="the-poisson-and-related-distributions.html#cb324-10" tabindex="-1"></a>S       <span class="ot">&lt;-</span> <span class="fu">rowSums</span>(X)</span>
 <span id="cb324-11"><a href="the-poisson-and-related-distributions.html#cb324-11" tabindex="-1"></a>l.prime <span class="ot">&lt;-</span> <span class="sc">-</span>n<span class="sc">*</span>a<span class="sc">/</span>b.o <span class="sc">+</span> (<span class="dv">1</span><span class="sc">/</span>b.o<span class="sc">^</span><span class="dv">2</span>)<span class="sc">*</span>S</span>
-<span id="cb324-12"><a href="the-poisson-and-related-distributions.html#cb324-12" tabindex="-1"></a>Y       <span class="ot">&lt;-</span> l.prime<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> (b.o<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>(n<span class="sc">*</span>a))</span>
-<span id="cb324-13"><a href="the-poisson-and-related-distributions.html#cb324-13" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">sum</span>(Y <span class="sc">&gt;</span> y.rr)<span class="sc">/</span>num.sim, <span class="dv">3</span>)</span></code></pre></div>
-<pre><code>## [1] 0.786</code></pre>
+<span id="cb324-12"><a href="the-poisson-and-related-distributions.html#cb324-12" tabindex="-1"></a>Y       <span class="ot">&lt;-</span> l.prime <span class="sc">*</span> b.o<span class="sc">/</span><span class="fu">sqrt</span>(n<span class="sc">*</span>a)</span>
+<span id="cb324-13"><a href="the-poisson-and-related-distributions.html#cb324-13" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">sum</span>(Y <span class="sc">&gt;</span> y.rr)<span class="sc">/</span>num.sim, <span class="dv">4</span>)</span></code></pre></div>
+<pre><code>## [1] 0.8299</code></pre>
 <blockquote>
-<p>The test power for the score test is 0.786…it appears
-that the LRT is the more powerful test in the context of the present
-experiment. Let’s move on to the Wald test.</p>
+<p>We estimate the test power for the score test to be 0.8299…effectively
+the same value that for the LRT. Let’s move on to the Wald test.</p>
 </blockquote>
 <blockquote>
 <p>The framework for carrying out the Wald test is very similar to that for
 carrying out the score test…all we do is change the test statistic to
 <span class="math display">\[
-Y = \left(\hat{\theta}_{MLE} - \theta_o\right)^2 I\left(\hat{\theta}_{MLE}\right) \rightarrow \left(\hat{b}_{MLE} - b_o\right)^2 I\left(\hat{b}_{MLE}\right) \,.
+Y = \left(\hat{\theta}_{MLE} - \theta_o\right) \sqrt{I\left(\hat{\theta}_{MLE}\right)} \rightarrow \left(\hat{b}_{MLE} - b_o\right) \sqrt{I\left(\hat{b}_{MLE}\right)} \,.
 \]</span>
 Using the result for <span class="math inline">\(\ell&#39;\)</span> given above, we can determine immediately that
 <span class="math display">\[
@@ -2670,24 +2673,26 @@ into one chunk in which we ultimately compute the test power.</p>
 <span id="cb326-8"><a href="the-poisson-and-related-distributions.html#cb326-8" tabindex="-1"></a>a       <span class="ot">&lt;-</span> <span class="dv">4</span></span>
 <span id="cb326-9"><a href="the-poisson-and-related-distributions.html#cb326-9" tabindex="-1"></a>X       <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">rgamma</span>(num.sim<span class="sc">*</span>n, <span class="at">shape=</span>a, <span class="at">scale=</span>b.o), <span class="at">nrow=</span>num.sim)</span>
 <span id="cb326-10"><a href="the-poisson-and-related-distributions.html#cb326-10" tabindex="-1"></a>hat.b   <span class="ot">&lt;-</span> <span class="fu">rowSums</span>(X)<span class="sc">/</span>(n<span class="sc">*</span>a)</span>
-<span id="cb326-11"><a href="the-poisson-and-related-distributions.html#cb326-11" tabindex="-1"></a>Y       <span class="ot">&lt;-</span> (hat.b <span class="sc">-</span> b.o)<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> (n<span class="sc">*</span>a)<span class="sc">/</span>(hat.b<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb326-11"><a href="the-poisson-and-related-distributions.html#cb326-11" tabindex="-1"></a>Y       <span class="ot">&lt;-</span> (hat.b <span class="sc">-</span> b.o) <span class="sc">*</span> <span class="fu">sqrt</span>(n<span class="sc">*</span>a)<span class="sc">/</span>hat.b</span>
 <span id="cb326-12"><a href="the-poisson-and-related-distributions.html#cb326-12" tabindex="-1"></a>y.rr    <span class="ot">&lt;-</span> <span class="fu">quantile</span>(Y, <span class="at">probs=</span><span class="fu">c</span>(<span class="fl">0.95</span>))</span>
 <span id="cb326-13"><a href="the-poisson-and-related-distributions.html#cb326-13" tabindex="-1"></a><span class="fu">round</span>(y.rr, <span class="dv">3</span>)</span></code></pre></div>
 <pre><code>##   95% 
-## 4.375</code></pre>
+## 1.358</code></pre>
 <div class="sourceCode" id="cb328"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb328-1"><a href="the-poisson-and-related-distributions.html#cb328-1" tabindex="-1"></a><span class="co"># Simulate num.sim datasets under the alternative</span></span>
 <span id="cb328-2"><a href="the-poisson-and-related-distributions.html#cb328-2" tabindex="-1"></a>b.a     <span class="ot">&lt;-</span> <span class="dv">3</span></span>
 <span id="cb328-3"><a href="the-poisson-and-related-distributions.html#cb328-3" tabindex="-1"></a>X       <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">rgamma</span>(num.sim<span class="sc">*</span>n, <span class="at">shape=</span>a, <span class="at">scale=</span>b.a), <span class="at">nrow=</span>num.sim)</span>
 <span id="cb328-4"><a href="the-poisson-and-related-distributions.html#cb328-4" tabindex="-1"></a>hat.b   <span class="ot">&lt;-</span> <span class="fu">rowSums</span>(X)<span class="sc">/</span>(n<span class="sc">*</span>a)</span>
-<span id="cb328-5"><a href="the-poisson-and-related-distributions.html#cb328-5" tabindex="-1"></a>Y       <span class="ot">&lt;-</span> (hat.b <span class="sc">-</span> b.o)<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> (n<span class="sc">*</span>a)<span class="sc">/</span>(hat.b<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb328-6"><a href="the-poisson-and-related-distributions.html#cb328-6" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">sum</span>(Y <span class="sc">&gt;</span> y.rr)<span class="sc">/</span>num.sim, <span class="dv">3</span>)</span></code></pre></div>
-<pre><code>## [1] 0.489</code></pre>
+<span id="cb328-5"><a href="the-poisson-and-related-distributions.html#cb328-5" tabindex="-1"></a>Y       <span class="ot">&lt;-</span> (hat.b <span class="sc">-</span> b.o) <span class="sc">*</span> <span class="fu">sqrt</span>(n<span class="sc">*</span>a)<span class="sc">/</span>hat.b</span>
+<span id="cb328-6"><a href="the-poisson-and-related-distributions.html#cb328-6" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">sum</span>(Y <span class="sc">&gt;</span> y.rr)<span class="sc">/</span>num.sim, <span class="dv">4</span>)</span></code></pre></div>
+<pre><code>## [1] 0.8307</code></pre>
 <blockquote>
-<p>The test power for the score test is 0.489, which is a substantially smaller
-value than observed for both the LRT and score tests.
-We conclude that in the context of the present
-experiment, the LRT is the most powerful of the three
-classical tests.</p>
+<p>We note that the rejection-region boundary is substantially different
+from what we would compute under the large-sample approximation!
+The test power for the score test is 0.8307, which is effectively the
+same value observed for both the LRT and score tests. (Note that the
+standard error on the power is <span class="math inline">\(\approx\)</span> 0.0004, which means that even
+with one million simulated datasets, we cannot clearly determine which
+of the three tests is the most powerful one for this particular setting.)</p>
 </blockquote>
 <hr />
 </div>
