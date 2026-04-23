@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>2 The Normal (and Related) Distributions | Modern Probability and Statistical Inference</title>
   <meta name="description" content="2 The Normal (and Related) Distributions | Modern Probability and Statistical Inference" />
-  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
   <meta property="og:title" content="2 The Normal (and Related) Distributions | Modern Probability and Statistical Inference" />
   <meta property="og:type" content="book" />
@@ -54,8 +54,9 @@
 
 
 <style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -65,7 +66,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -455,9 +456,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.7.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#poisson-expected-counts-likelihood-ratio-test"><i class="fa fa-check"></i><b>4.7.2</b> Poisson Expected Counts: Likelihood Ratio Test</a></li>
 <li class="chapter" data-level="4.7.3" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#normal-population-mean-lrt-with-wilks-theorem"><i class="fa fa-check"></i><b>4.7.3</b> Normal Population Mean: LRT With Wilks’ Theorem</a></li>
 <li class="chapter" data-level="4.7.4" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#normal-population-mean-lrt-via-simulation"><i class="fa fa-check"></i><b>4.7.4</b> Normal Population Mean: LRT Via Simulation</a></li>
-<li class="chapter" data-level="4.7.5" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#score-and-wald-tests"><i class="fa fa-check"></i><b>4.7.5</b> Score and Wald Tests</a></li>
-<li class="chapter" data-level="4.7.6" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#poisson-distribution-chi-square-based-hypothesis-testing"><i class="fa fa-check"></i><b>4.7.6</b> Poisson Distribution: Chi-Square-Based Hypothesis Testing</a></li>
-<li class="chapter" data-level="4.7.7" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#death-by-horse-kick-are-the-data-poisson-distributed"><i class="fa fa-check"></i><b>4.7.7</b> Death-by-Horse-Kick: Are the Data Poisson Distributed?</a></li>
+<li class="chapter" data-level="4.7.5" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#poisson-distribution-chi-square-based-hypothesis-testing"><i class="fa fa-check"></i><b>4.7.5</b> Poisson Distribution: Chi-Square-Based Hypothesis Testing</a></li>
+<li class="chapter" data-level="4.7.6" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#death-by-horse-kick-are-the-data-poisson-distributed"><i class="fa fa-check"></i><b>4.7.6</b> Death-by-Horse-Kick: Are the Data Poisson Distributed?</a></li>
 </ul></li>
 <li class="chapter" data-level="4.8" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#poisson-and-negative-binomial-regression"><i class="fa fa-check"></i><b>4.8</b> Poisson and Negative Binomial Regression</a>
 <ul>
@@ -494,7 +494,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="5.5" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#hypothesis-testing-3"><i class="fa fa-check"></i><b>5.5</b> Hypothesis Testing</a>
 <ul>
-<li class="chapter" data-level="5.5.1" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#uniform-domain-parameter-hypothesis-test"><i class="fa fa-check"></i><b>5.5.1</b> Uniform Domain Parameter: Hypothesis Test</a></li>
+<li class="chapter" data-level="5.5.1" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#pareto-domain-parameter-hypothesis-test"><i class="fa fa-check"></i><b>5.5.1</b> Pareto Domain Parameter: Hypothesis Test</a></li>
 </ul></li>
 <li class="chapter" data-level="5.6" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#exercises-4"><i class="fa fa-check"></i><b>5.6</b> Exercises</a></li>
 </ul></li>
@@ -3228,42 +3228,6 @@ in section 17 of Chapter 1 to compute <span class="math inline">\(p\)</span>-val
 situations, noting that because <span class="math inline">\(E[\bar{X}]\)</span> and <span class="math inline">\(E[S^2]\)</span> increase
 with <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma^2\)</span>, respectively, we always utilize formulas
 on the “yes” lines of the table.</p>
-<!--
-%---
-%
-%```{r normrr,echo=FALSE,fig.align='center',out.width='30%',fig.cap='\\label{fig:normrr}Illustration of rejection regions (shaded in red) for two-tail (left), lower-tail (center), and upper-tail (right) population mean tests (with $\\mu_o = 0$ and $s_{\\rm obs}^2 = 1$), assuming $\\alpha = 0.05$ and $n-1 = 5$ degrees of freedom.',fig.show='hold'}
-%n <- 6
-%s <- 1
-%y <- seq(-2,2,by=0.02)
-%t <- y/(s/sqrt(n))
-%f.y <- sqrt(n)*dt(t,n-1)/s
-%
-%df.normrr.base <- data.frame(y=y,f.y=f.y)
-%df.normrr.2sideleft <- subset(df.normrr.base,(y>sqrt(s/n)*qt(0.975,n-1)))
-%df.normrr.2sideright <- subset(df.normrr.base,y<sqrt(s/n)*qt(0.025,n-1))
-%df.normrr.left <- subset(df.normrr.base,(y<sqrt(s/n)*qt(0.05,n-1)))
-%df.normrr.right <- subset(df.normrr.base,(y>sqrt(s/n)*qt(0.95,n-1)))
-%ggplot(df.normrr.base,aes(x=y,y=f.y)) +
-%  geom_line(col="blue",lwd=1) +
-%  geom_area(data=df.normrr.2sideleft,aes(x=y,y=f.y),fill="red",outline.type="full",col="blue") +
-%  geom_area(data=df.normrr.2sideright,aes(x=y,y=f.y),fill="red",outline.type="full",col="blue") +
-%  geom_hline(yintercept=0,lwd=1) + 
-%  labs(y=expression(f[Y]*"(y)")) +
-%  base_theme
-%ggplot(df.normrr.base,aes(x=y,y=f.y)) +
-%  geom_line(col="blue",lwd=1) +
-%  geom_area(data=df.normrr.left,aes(x=y,y=f.y),fill="red",outline.type="full",col="blue") +
-%  geom_hline(yintercept=0,lwd=1) + 
-%  labs(y=expression(f[Y]*"(y)")) +
-%  base_theme
-%ggplot(df.normrr.base,aes(x=y,y=f.y)) +
-%  geom_line(col="blue",lwd=1) +
-%  geom_area(data=df.normrr.right,aes(x=y,y=f.y),fill="red",outline.type="full",col="blue") +
-%  geom_hline(yintercept=0,lwd=1) + 
-%  labs(y=expression(f[Y]*"(y)")) +
-%  base_theme
-%```
--->
 <p>Before we transition to examples,
 there are two new hypothesis-test-related concepts that we
 will introduce here.
@@ -3275,14 +3239,26 @@ given an arbitrary parameter value <span class="math inline">\(\theta\)</span>:
 \]</span>
 The power is a function of <span class="math inline">\(\theta\)</span>, and its value is
 <span class="math inline">\(1-\beta(\theta,\alpha)\)</span>, where <span class="math inline">\(\beta(\theta,\alpha)\)</span> is the Type II error.
-We note that if we set <span class="math inline">\(\theta = \theta_o\)</span>, the null hypothesis value,
-then the test power is by definition <span class="math inline">\(\alpha\)</span> (the probability of rejecting
-the null if the null is indeed correct).</p>
-<p>However, in order to compute test power, we need to first determine those
+A <em>power curve</em> is an often-used visualization that indicates how
+power varies as a function of <span class="math inline">\(\theta\)</span>, with all other quantities (the
+sample size <span class="math inline">\(n\)</span>, the null hypothesis value <span class="math inline">\(\theta_o\)</span>, etc.) remaining fixed.
+An example for a two-tail test is shown in Figure <a href="the-normal-and-related-distributions.html#fig:zpowcurve">2.16</a>.
+This figure shows how if we set <span class="math inline">\(\theta = \theta_o\)</span>, the null hypothesis value,
+then the power will by definition be <span class="math inline">\(\alpha\)</span> (the probability of rejecting
+the null if the null is indeed correct). To increase the test power (e.g.,
+to make the curve thinner and sharper in Figure <a href="the-normal-and-related-distributions.html#fig:zpowcurve">2.16</a>), we
+would increase the sample size. There are two other things to note about
+power curves: (1) the minimum power value for a two-tail test will be less
+than <span class="math inline">\(\alpha\)</span> if we are working with a sampling distribution that has an
+asymmetric probability density or mass function, and (2) while it is
+convention to only show power curves to the relevant side of the null in
+one-tail tests, we can compute power for <em>all</em> values of <span class="math inline">\(\theta\)</span>; such curves
+will monotonically rise from 0 to 1 (upper-tail tests) or descend from 1 to 0
+(lower-tail tests).</p>
+<p>Before we can compute test power, however, we need to first determine those
 values of <span class="math inline">\(Y\)</span> for which we would reject the null hypothesis, i.e., we need to
-determine the <em>rejection region(s)</em> associated with a defined test.
-(But to be more precise, we need to determine the boundary or boundaries
-of these regions.) To show how we would do this, we will start with a
+determine the <em>rejection region</em> boundary or boundaries
+associated with the test. To show how we would do this, we will start with a
 statement: if our
 observed statistic value is equal to a rejection-region boundary value, i.e.,
 if <span class="math inline">\(y_{\rm obs} = y_{\rm RR}\)</span>, then the observed <span class="math inline">\(p\)</span>-value will be exactly
@@ -3300,13 +3276,14 @@ or by using a <code>R</code> code such as <code>qnorm()</code>.</p>
 <p>Below, we provide a second hypothesis test reference table, one that
 contains details on the computations that one needs to compute
 rejection regions and test power. Like the table in Chapter 1,
-this is <em>not</em> a table to memorize!</p>
+this is <em>not</em> a table to memorize, but rather to refer back to when solving
+problems!</p>
 <table>
 <colgroup>
-<col width="21%" />
-<col width="21%" />
-<col width="34%" />
-<col width="21%" />
+<col width="18%" />
+<col width="18%" />
+<col width="37%" />
+<col width="24%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -3320,37 +3297,37 @@ this is <em>not</em> a table to memorize!</p>
 <tr class="odd">
 <td align="right">two-tail</td>
 <td align="right">N/A</td>
-<td align="center"><span class="math inline">\(y_{\rm RR,lo} = F_Y^{-1}(\alpha/2 \vert \theta_o)\)</span></td>
+<td align="center"><span class="math inline">\(\{y_{\rm obs} : y_{\rm obs} &lt; y_{\rm RR,lo} = F_Y^{-1}(\alpha/2 \vert \theta_o)\}\)</span> and</td>
 <td align="center"><span class="math inline">\(F_Y(y_{\rm RR,lo} \vert \theta) +\)</span></td>
 </tr>
 <tr class="even">
 <td align="right"></td>
 <td align="right"></td>
-<td align="center"><span class="math inline">\(y_{\rm RR,hi} = F_Y^{-1}(1-\alpha/2 \vert \theta_o)\)</span></td>
+<td align="center"><span class="math inline">\(\{y_{\rm obs} : y_{\rm obs} &gt; y_{\rm RR,hi} = F_Y^{-1}(1-\alpha/2 \vert \theta_o)\}\)</span></td>
 <td align="center"><span class="math inline">\(1 - F_Y(y_{\rm RR,hi} \vert \theta)\)</span></td>
 </tr>
 <tr class="odd">
 <td align="right">lower-tail</td>
 <td align="right">yes</td>
-<td align="center"><span class="math inline">\(y_{\rm RR} = F_Y^{-1}(\alpha \vert \theta_o)\)</span></td>
+<td align="center"><span class="math inline">\(\{y_{\rm obs} : y_{\rm obs} &lt; y_{\rm RR} = F_Y^{-1}(\alpha \vert \theta_o)\}\)</span></td>
 <td align="center"><span class="math inline">\(F_Y(y_{\rm RR} \vert \theta)\)</span></td>
 </tr>
 <tr class="even">
 <td align="right"></td>
 <td align="right">no</td>
-<td align="center"><span class="math inline">\(y_{\rm RR} = F_Y^{-1}(1-\alpha \vert \theta_o)\)</span></td>
+<td align="center"><span class="math inline">\(\{y_{\rm obs} : y_{\rm obs} &gt; y_{\rm RR} = F_Y^{-1}(1-\alpha \vert \theta_o)\}\)</span></td>
 <td align="center"><span class="math inline">\(1-F_Y(y_{\rm RR} \vert \theta)\)</span></td>
 </tr>
 <tr class="odd">
 <td align="right">upper-tail</td>
 <td align="right">yes</td>
-<td align="center"><span class="math inline">\(y_{\rm RR} = F_Y^{-1}(1-\alpha \vert \theta_o)\)</span></td>
+<td align="center"><span class="math inline">\(\{y_{\rm obs} : y_{\rm obs} &lt; y_{\rm RR} = F_Y^{-1}(1-\alpha \vert \theta_o)\}\)</span></td>
 <td align="center"><span class="math inline">\(1-F_Y(y_{\rm RR} \vert \theta)\)</span></td>
 </tr>
 <tr class="even">
 <td align="right"></td>
 <td align="right">no</td>
-<td align="center"><span class="math inline">\(y_{\rm RR} = F_Y^{-1}(\alpha \vert \theta_o)\)</span></td>
+<td align="center"><span class="math inline">\(\{y_{\rm obs} : y_{\rm obs} &gt; y_{\rm RR} = F_Y^{-1}(\alpha \vert \theta_o)\}\)</span></td>
 <td align="center"><span class="math inline">\(F_Y(y_{\rm RR} \vert \theta)\)</span></td>
 </tr>
 </tbody>

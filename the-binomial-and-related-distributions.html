@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>3 The Binomial (and Related) Distributions | Modern Probability and Statistical Inference</title>
   <meta name="description" content="3 The Binomial (and Related) Distributions | Modern Probability and Statistical Inference" />
-  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
   <meta property="og:title" content="3 The Binomial (and Related) Distributions | Modern Probability and Statistical Inference" />
   <meta property="og:type" content="book" />
@@ -54,8 +54,9 @@
 
 
 <style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -65,7 +66,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -455,9 +456,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.7.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#poisson-expected-counts-likelihood-ratio-test"><i class="fa fa-check"></i><b>4.7.2</b> Poisson Expected Counts: Likelihood Ratio Test</a></li>
 <li class="chapter" data-level="4.7.3" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#normal-population-mean-lrt-with-wilks-theorem"><i class="fa fa-check"></i><b>4.7.3</b> Normal Population Mean: LRT With Wilks’ Theorem</a></li>
 <li class="chapter" data-level="4.7.4" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#normal-population-mean-lrt-via-simulation"><i class="fa fa-check"></i><b>4.7.4</b> Normal Population Mean: LRT Via Simulation</a></li>
-<li class="chapter" data-level="4.7.5" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#score-and-wald-tests"><i class="fa fa-check"></i><b>4.7.5</b> Score and Wald Tests</a></li>
-<li class="chapter" data-level="4.7.6" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#poisson-distribution-chi-square-based-hypothesis-testing"><i class="fa fa-check"></i><b>4.7.6</b> Poisson Distribution: Chi-Square-Based Hypothesis Testing</a></li>
-<li class="chapter" data-level="4.7.7" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#death-by-horse-kick-are-the-data-poisson-distributed"><i class="fa fa-check"></i><b>4.7.7</b> Death-by-Horse-Kick: Are the Data Poisson Distributed?</a></li>
+<li class="chapter" data-level="4.7.5" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#poisson-distribution-chi-square-based-hypothesis-testing"><i class="fa fa-check"></i><b>4.7.5</b> Poisson Distribution: Chi-Square-Based Hypothesis Testing</a></li>
+<li class="chapter" data-level="4.7.6" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#death-by-horse-kick-are-the-data-poisson-distributed"><i class="fa fa-check"></i><b>4.7.6</b> Death-by-Horse-Kick: Are the Data Poisson Distributed?</a></li>
 </ul></li>
 <li class="chapter" data-level="4.8" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#poisson-and-negative-binomial-regression"><i class="fa fa-check"></i><b>4.8</b> Poisson and Negative Binomial Regression</a>
 <ul>
@@ -494,7 +494,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="5.5" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#hypothesis-testing-3"><i class="fa fa-check"></i><b>5.5</b> Hypothesis Testing</a>
 <ul>
-<li class="chapter" data-level="5.5.1" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#uniform-domain-parameter-hypothesis-test"><i class="fa fa-check"></i><b>5.5.1</b> Uniform Domain Parameter: Hypothesis Test</a></li>
+<li class="chapter" data-level="5.5.1" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#pareto-domain-parameter-hypothesis-test"><i class="fa fa-check"></i><b>5.5.1</b> Pareto Domain Parameter: Hypothesis Test</a></li>
 </ul></li>
 <li class="chapter" data-level="5.6" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#exercises-4"><i class="fa fa-check"></i><b>5.6</b> Exercises</a></li>
 </ul></li>
@@ -4790,7 +4790,7 @@ where <span class="math inline">\(x \geq 0\)</span>, <span class="math inline">\
 <li><p>Let’s assume that we have sampled <span class="math inline">\(n\)</span> iid data from a Binom(<span class="math inline">\(k,p\)</span>) distribution, and that we wish to test <span class="math inline">\(H_o: p = p_o\)</span> versus <span class="math inline">\(H_a: p &gt; p_o\)</span>. For our statistic, we will use <span class="math inline">\(Y = \sum_{i=1}^n X_i\)</span>. (a) What is the sampling distribution for <span class="math inline">\(Y\)</span>? Provide the name and the value(s) of the parameters. (b) You code elements of the test in <code>R</code>. Assume you have the initialized variables <code>alpha</code>, <code>n</code>, <code>k</code>, <code>y.obs</code>, <code>p.o</code>, and <code>p.a</code> at your disposal. Write out the (one-line!) function call you’d use to compute the rejection region boundary. (c) Now provide code of the <span class="math inline">\(p\)</span>-value. Include a discreteness correction factor if it is needed.</p></li>
 <li><p>The negative inverse link function is <span class="math inline">\(-(Y \vert x)^{-1}\)</span>. Assume that we are in a simple setting (i.e., that there is one predictor variable), and write the regression line formula <span class="math inline">\(Y \vert x\)</span> as a function of <span class="math inline">\(\beta_0\)</span>, <span class="math inline">\(\beta_1\)</span>, and <span class="math inline">\(x\)</span>.</p></li>
 <li><p>You use <code>R</code> to learn a logistic regression model, and you observe the output shown below: (a) What is the sample size <span class="math inline">\(n\)</span>? (Hint: take into account how many parameter values are being estimated to convert a number shown in the output to the sample size.) (b) What is the value of <span class="math inline">\(-2\log\mathcal{L}_{\rm max}\)</span> for the model in which <span class="math inline">\(\beta_1\)</span> is set to zero? (c) What is the value of <span class="math inline">\(O(x)\)</span> for <span class="math inline">\(x = 0\)</span>? You may leave your answer in the form <span class="math inline">\(e^a\)</span> or <span class="math inline">\(\log(a)\)</span> or <span class="math inline">\(\sqrt{a}\)</span>, etc., while being sure to fill in the value of the constant <span class="math inline">\(a\)</span>. (d) Do the odds <em>increase</em> as <span class="math inline">\(x\)</span> increases, or do the odds <em>decrease</em> as <span class="math inline">\(x\)</span> increases?
-<img src="figures/logreg.png" width="60%" style="display: block; margin: auto;" /></p></li>
+<img src="figures/logreg.png" alt="" width="60%" style="display: block; margin: auto;" /></p></li>
 <li><p>Below is the observed output from <code>R</code>’s <code>glm()</code> function when learning a logistic regression model. For these data, Class 0 is <code>No</code> (not a student) and Class 1 is <code>Yes</code> (is a student). (a) If the balance is $589, then the predicted probability that the datum belongs to the <code>Yes</code> class is 0.1. What is the odds ratio for $589 dollars? (b) What is the odds ratio if the balance is $689? (c) For the first datum, the observed response is <code>No</code> and the predicted probability that the datum is of the <code>Yes</code> class is 0.07. Compute the deviance for this datum. (d) Whoops…the null deviance value got expunged from the output. Would this value be higher or lower than the observed residual deviance value?</p></li>
 </ol>
 <pre><code>Deviance Residuals:
@@ -4808,7 +4808,7 @@ Residual deviance: 221.47  on 308  degrees of freedom
 AIC: 225.47 </code></pre>
 <ol start="26" style="list-style-type: decimal">
 <li><p>Refer to the displayed data below. Here, <code>x1</code> and <code>x2</code> are the two predictor variables, and <span class="math inline">\(Y\)</span> is the response variable. Use these data to learn a Naive Bayes model and use that model to compute <span class="math inline">\(p(0 \vert \mbox{Yes},\mbox{False}) = p(0 \vert \mbox{Y},\mbox{F})\)</span>. Leave your answer as a fraction. Assume that <span class="math inline">\(p(C_k) = n_k/n\)</span>, and that you would estimate <span class="math inline">\(p(x \vert C_k)\)</span> as the proportion of times you observe a particular datum value <span class="math inline">\(x\)</span> (e.g., True) given <span class="math inline">\(C_k\)</span>.
-<img src="figures/nb.png" width="35%" style="display: block; margin: auto;" /></p></li>
+<img src="figures/nb.png" alt="" width="35%" style="display: block; margin: auto;" /></p></li>
 <li><p>You are given the following pdf:
 <span class="math display">\[\begin{eqnarray*}
 f_X(x) = \left\{ \begin{array}{cc} 2(1-x) &amp; 0 \leq x \leq 1 \\ 0 &amp; \mbox{otherwise} \end{array} \right. \,.

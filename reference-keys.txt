@@ -94,6 +94,7 @@ fig:parpdf
 fig:uniflik
 fig:parlik
 fig:unifci
+fig:uhyppow12
 fig:uhyppow
 fig:uhyppow2
 fig:mulfig1
@@ -320,7 +321,6 @@ poisson-expected-counts-uniformly-most-powerful-test
 poisson-expected-counts-likelihood-ratio-test
 normal-population-mean-lrt-with-wilks-theorem
 normal-population-mean-lrt-via-simulation
-score-and-wald-tests
 poisson-distribution-chi-square-based-hypothesis-testing
 death-by-horse-kick-are-the-data-poisson-distributed
 poisson-and-negative-binomial-regression
@@ -345,7 +345,7 @@ uniform-domain-parameter-interval-estimation
 uniform-domain-parameter-confidence-coefficient
 pareto-domain-parameter-interval-estimation
 hypothesis-testing-3
-uniform-domain-parameter-hypothesis-test
+pareto-domain-parameter-hypothesis-test
 exercises-4
 multivariate-distributions
 independence-of-random-variables

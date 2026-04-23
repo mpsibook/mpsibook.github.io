@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>5 Distributions with Domain-Specifying Parameters | Modern Probability and Statistical Inference</title>
   <meta name="description" content="5 Distributions with Domain-Specifying Parameters | Modern Probability and Statistical Inference" />
-  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
   <meta property="og:title" content="5 Distributions with Domain-Specifying Parameters | Modern Probability and Statistical Inference" />
   <meta property="og:type" content="book" />
@@ -54,8 +54,9 @@
 
 
 <style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -65,7 +66,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -455,9 +456,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.7.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#poisson-expected-counts-likelihood-ratio-test"><i class="fa fa-check"></i><b>4.7.2</b> Poisson Expected Counts: Likelihood Ratio Test</a></li>
 <li class="chapter" data-level="4.7.3" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#normal-population-mean-lrt-with-wilks-theorem"><i class="fa fa-check"></i><b>4.7.3</b> Normal Population Mean: LRT With Wilks’ Theorem</a></li>
 <li class="chapter" data-level="4.7.4" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#normal-population-mean-lrt-via-simulation"><i class="fa fa-check"></i><b>4.7.4</b> Normal Population Mean: LRT Via Simulation</a></li>
-<li class="chapter" data-level="4.7.5" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#score-and-wald-tests"><i class="fa fa-check"></i><b>4.7.5</b> Score and Wald Tests</a></li>
-<li class="chapter" data-level="4.7.6" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#poisson-distribution-chi-square-based-hypothesis-testing"><i class="fa fa-check"></i><b>4.7.6</b> Poisson Distribution: Chi-Square-Based Hypothesis Testing</a></li>
-<li class="chapter" data-level="4.7.7" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#death-by-horse-kick-are-the-data-poisson-distributed"><i class="fa fa-check"></i><b>4.7.7</b> Death-by-Horse-Kick: Are the Data Poisson Distributed?</a></li>
+<li class="chapter" data-level="4.7.5" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#poisson-distribution-chi-square-based-hypothesis-testing"><i class="fa fa-check"></i><b>4.7.5</b> Poisson Distribution: Chi-Square-Based Hypothesis Testing</a></li>
+<li class="chapter" data-level="4.7.6" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#death-by-horse-kick-are-the-data-poisson-distributed"><i class="fa fa-check"></i><b>4.7.6</b> Death-by-Horse-Kick: Are the Data Poisson Distributed?</a></li>
 </ul></li>
 <li class="chapter" data-level="4.8" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#poisson-and-negative-binomial-regression"><i class="fa fa-check"></i><b>4.8</b> Poisson and Negative Binomial Regression</a>
 <ul>
@@ -494,7 +494,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="5.5" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#hypothesis-testing-3"><i class="fa fa-check"></i><b>5.5</b> Hypothesis Testing</a>
 <ul>
-<li class="chapter" data-level="5.5.1" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#uniform-domain-parameter-hypothesis-test"><i class="fa fa-check"></i><b>5.5.1</b> Uniform Domain Parameter: Hypothesis Test</a></li>
+<li class="chapter" data-level="5.5.1" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#pareto-domain-parameter-hypothesis-test"><i class="fa fa-check"></i><b>5.5.1</b> Pareto Domain Parameter: Hypothesis Test</a></li>
 </ul></li>
 <li class="chapter" data-level="5.6" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#exercises-4"><i class="fa fa-check"></i><b>5.6</b> Exercises</a></li>
 </ul></li>
@@ -773,9 +773,9 @@ Immediately, we can identify that <span class="math inline">\(a = j\)</span> and
 e.g., the probability that the fourth smallest of nine Uniform(0,1) random
 variables has a value between 0.3 and 0.4:</p>
 </blockquote>
-<div class="sourceCode" id="cb360"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb360-1"><a href="distributions-with-domain-specifying-parameters.html#cb360-1" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">9</span></span>
-<span id="cb360-2"><a href="distributions-with-domain-specifying-parameters.html#cb360-2" tabindex="-1"></a>j <span class="ot">&lt;-</span> <span class="dv">4</span></span>
-<span id="cb360-3"><a href="distributions-with-domain-specifying-parameters.html#cb360-3" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">pbeta</span>(<span class="fl">0.4</span>, <span class="at">shape1=</span>j, <span class="at">shape2=</span>n<span class="sc">-</span>j<span class="sc">+</span><span class="dv">1</span>) <span class="sc">-</span> <span class="fu">pbeta</span>(<span class="fl">0.3</span>, <span class="at">shape1=</span>j, <span class="at">shape2=</span>n<span class="sc">-</span>j<span class="sc">+</span><span class="dv">1</span>), <span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb348"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb348-1"><a href="distributions-with-domain-specifying-parameters.html#cb348-1" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">9</span></span>
+<span id="cb348-2"><a href="distributions-with-domain-specifying-parameters.html#cb348-2" tabindex="-1"></a>j <span class="ot">&lt;-</span> <span class="dv">4</span></span>
+<span id="cb348-3"><a href="distributions-with-domain-specifying-parameters.html#cb348-3" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">pbeta</span>(<span class="fl">0.4</span>, <span class="at">shape1=</span>j, <span class="at">shape2=</span>n<span class="sc">-</span>j<span class="sc">+</span><span class="dv">1</span>) <span class="sc">-</span> <span class="fu">pbeta</span>(<span class="fl">0.3</span>, <span class="at">shape1=</span>j, <span class="at">shape2=</span>n<span class="sc">-</span>j<span class="sc">+</span><span class="dv">1</span>), <span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## [1] 0.247</code></pre>
 <hr />
 </div>
@@ -846,52 +846,52 @@ of the cumulative distribution function, given <span class="math inline">\(x\)</
 <p>For the discrete uniform distribution, one can code the
 probability mass function as follows:</p>
 </blockquote>
-<div class="sourceCode" id="cb362"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb362-1"><a href="distributions-with-domain-specifying-parameters.html#cb362-1" tabindex="-1"></a>ddiscunif <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">min=</span><span class="dv">0</span>, <span class="at">max=</span><span class="dv">1</span>, <span class="at">step=</span><span class="dv">1</span>)</span>
-<span id="cb362-2"><a href="distributions-with-domain-specifying-parameters.html#cb362-2" tabindex="-1"></a>{</span>
-<span id="cb362-3"><a href="distributions-with-domain-specifying-parameters.html#cb362-3" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">seq</span>(min, max, <span class="at">by=</span>step)</span>
-<span id="cb362-4"><a href="distributions-with-domain-specifying-parameters.html#cb362-4" tabindex="-1"></a>  <span class="cf">if</span> ( x <span class="sc">%in%</span> y ) <span class="fu">return</span>(<span class="dv">1</span><span class="sc">/</span><span class="fu">length</span>(y))</span>
-<span id="cb362-5"><a href="distributions-with-domain-specifying-parameters.html#cb362-5" tabindex="-1"></a>  <span class="fu">return</span>(<span class="dv">0</span>)</span>
-<span id="cb362-6"><a href="distributions-with-domain-specifying-parameters.html#cb362-6" tabindex="-1"></a>}</span>
-<span id="cb362-7"><a href="distributions-with-domain-specifying-parameters.html#cb362-7" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">ddiscunif</span>(<span class="dv">4</span>, <span class="at">min=</span><span class="dv">1</span>, <span class="at">max=</span><span class="dv">6</span>), <span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb350"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb350-1"><a href="distributions-with-domain-specifying-parameters.html#cb350-1" tabindex="-1"></a>ddiscunif <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">min=</span><span class="dv">0</span>, <span class="at">max=</span><span class="dv">1</span>, <span class="at">step=</span><span class="dv">1</span>)</span>
+<span id="cb350-2"><a href="distributions-with-domain-specifying-parameters.html#cb350-2" tabindex="-1"></a>{</span>
+<span id="cb350-3"><a href="distributions-with-domain-specifying-parameters.html#cb350-3" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">seq</span>(min, max, <span class="at">by=</span>step)</span>
+<span id="cb350-4"><a href="distributions-with-domain-specifying-parameters.html#cb350-4" tabindex="-1"></a>  <span class="cf">if</span> ( x <span class="sc">%in%</span> y ) <span class="fu">return</span>(<span class="dv">1</span><span class="sc">/</span><span class="fu">length</span>(y))</span>
+<span id="cb350-5"><a href="distributions-with-domain-specifying-parameters.html#cb350-5" tabindex="-1"></a>  <span class="fu">return</span>(<span class="dv">0</span>)</span>
+<span id="cb350-6"><a href="distributions-with-domain-specifying-parameters.html#cb350-6" tabindex="-1"></a>}</span>
+<span id="cb350-7"><a href="distributions-with-domain-specifying-parameters.html#cb350-7" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">ddiscunif</span>(<span class="dv">4</span>, <span class="at">min=</span><span class="dv">1</span>, <span class="at">max=</span><span class="dv">6</span>), <span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## [1] 0.167</code></pre>
 <blockquote>
 <p>As for the cumulative distribution function:</p>
 </blockquote>
-<div class="sourceCode" id="cb364"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb364-1"><a href="distributions-with-domain-specifying-parameters.html#cb364-1" tabindex="-1"></a>pdiscunif <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">min=</span><span class="dv">0</span>, <span class="at">max=</span><span class="dv">1</span>, <span class="at">step=</span><span class="dv">1</span>)</span>
-<span id="cb364-2"><a href="distributions-with-domain-specifying-parameters.html#cb364-2" tabindex="-1"></a>{</span>
-<span id="cb364-3"><a href="distributions-with-domain-specifying-parameters.html#cb364-3" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">seq</span>(min, max, <span class="at">by=</span>step)</span>
-<span id="cb364-4"><a href="distributions-with-domain-specifying-parameters.html#cb364-4" tabindex="-1"></a>  w <span class="ot">&lt;-</span> <span class="fu">which</span>(y<span class="sc">&lt;=</span>x)</span>
-<span id="cb364-5"><a href="distributions-with-domain-specifying-parameters.html#cb364-5" tabindex="-1"></a>  <span class="cf">if</span> ( <span class="fu">length</span>(w) <span class="sc">==</span> <span class="dv">0</span> ) <span class="fu">return</span>(<span class="dv">0</span>)</span>
-<span id="cb364-6"><a href="distributions-with-domain-specifying-parameters.html#cb364-6" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">length</span>(w)<span class="sc">/</span><span class="fu">length</span>(y))</span>
-<span id="cb364-7"><a href="distributions-with-domain-specifying-parameters.html#cb364-7" tabindex="-1"></a>}</span>
-<span id="cb364-8"><a href="distributions-with-domain-specifying-parameters.html#cb364-8" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">pdiscunif</span>(<span class="dv">4</span>, <span class="at">min=</span><span class="dv">1</span>, <span class="at">max=</span><span class="dv">6</span>), <span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb352"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb352-1"><a href="distributions-with-domain-specifying-parameters.html#cb352-1" tabindex="-1"></a>pdiscunif <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">min=</span><span class="dv">0</span>, <span class="at">max=</span><span class="dv">1</span>, <span class="at">step=</span><span class="dv">1</span>)</span>
+<span id="cb352-2"><a href="distributions-with-domain-specifying-parameters.html#cb352-2" tabindex="-1"></a>{</span>
+<span id="cb352-3"><a href="distributions-with-domain-specifying-parameters.html#cb352-3" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">seq</span>(min, max, <span class="at">by=</span>step)</span>
+<span id="cb352-4"><a href="distributions-with-domain-specifying-parameters.html#cb352-4" tabindex="-1"></a>  w <span class="ot">&lt;-</span> <span class="fu">which</span>(y<span class="sc">&lt;=</span>x)</span>
+<span id="cb352-5"><a href="distributions-with-domain-specifying-parameters.html#cb352-5" tabindex="-1"></a>  <span class="cf">if</span> ( <span class="fu">length</span>(w) <span class="sc">==</span> <span class="dv">0</span> ) <span class="fu">return</span>(<span class="dv">0</span>)</span>
+<span id="cb352-6"><a href="distributions-with-domain-specifying-parameters.html#cb352-6" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">length</span>(w)<span class="sc">/</span><span class="fu">length</span>(y))</span>
+<span id="cb352-7"><a href="distributions-with-domain-specifying-parameters.html#cb352-7" tabindex="-1"></a>}</span>
+<span id="cb352-8"><a href="distributions-with-domain-specifying-parameters.html#cb352-8" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">pdiscunif</span>(<span class="dv">4</span>, <span class="at">min=</span><span class="dv">1</span>, <span class="at">max=</span><span class="dv">6</span>), <span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## [1] 0.667</code></pre>
 <blockquote>
 <p>The inverse cdf implements the generalized inverse algorithm:</p>
 </blockquote>
-<div class="sourceCode" id="cb366"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb366-1"><a href="distributions-with-domain-specifying-parameters.html#cb366-1" tabindex="-1"></a>qdiscunif <span class="ot">&lt;-</span> <span class="cf">function</span>(q, <span class="at">min=</span><span class="dv">0</span>, <span class="at">max=</span><span class="dv">1</span>, <span class="at">step=</span><span class="dv">1</span>)</span>
-<span id="cb366-2"><a href="distributions-with-domain-specifying-parameters.html#cb366-2" tabindex="-1"></a>{</span>
-<span id="cb366-3"><a href="distributions-with-domain-specifying-parameters.html#cb366-3" tabindex="-1"></a>  y   <span class="ot">&lt;-</span> <span class="fu">seq</span>(min, max, <span class="at">by=</span>step)</span>
-<span id="cb366-4"><a href="distributions-with-domain-specifying-parameters.html#cb366-4" tabindex="-1"></a>  <span class="cf">if</span> ( q <span class="sc">==</span> <span class="dv">0</span> ) <span class="fu">return</span>(<span class="fu">min</span>(y))</span>
-<span id="cb366-5"><a href="distributions-with-domain-specifying-parameters.html#cb366-5" tabindex="-1"></a>  <span class="cf">if</span> ( q <span class="sc">==</span> <span class="dv">1</span> ) <span class="fu">return</span>(<span class="fu">max</span>(y))</span>
-<span id="cb366-6"><a href="distributions-with-domain-specifying-parameters.html#cb366-6" tabindex="-1"></a>  cdf <span class="ot">&lt;-</span> (<span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(y))<span class="sc">/</span><span class="fu">length</span>(y)</span>
-<span id="cb366-7"><a href="distributions-with-domain-specifying-parameters.html#cb366-7" tabindex="-1"></a>  w   <span class="ot">&lt;-</span> <span class="fu">which</span>(cdf<span class="sc">&gt;=</span>q)</span>
-<span id="cb366-8"><a href="distributions-with-domain-specifying-parameters.html#cb366-8" tabindex="-1"></a>  <span class="cf">if</span> ( <span class="fu">length</span>(w) <span class="sc">==</span> <span class="dv">0</span> ) <span class="fu">return</span>(<span class="fu">max</span>(y))</span>
-<span id="cb366-9"><a href="distributions-with-domain-specifying-parameters.html#cb366-9" tabindex="-1"></a>  <span class="fu">return</span>(y[<span class="fu">min</span>(w)])</span>
-<span id="cb366-10"><a href="distributions-with-domain-specifying-parameters.html#cb366-10" tabindex="-1"></a>}</span>
-<span id="cb366-11"><a href="distributions-with-domain-specifying-parameters.html#cb366-11" tabindex="-1"></a><span class="fu">qdiscunif</span>(<span class="fl">0.55</span>, <span class="at">min=</span><span class="dv">1</span>, <span class="at">max=</span><span class="dv">6</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb354"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb354-1"><a href="distributions-with-domain-specifying-parameters.html#cb354-1" tabindex="-1"></a>qdiscunif <span class="ot">&lt;-</span> <span class="cf">function</span>(q, <span class="at">min=</span><span class="dv">0</span>, <span class="at">max=</span><span class="dv">1</span>, <span class="at">step=</span><span class="dv">1</span>)</span>
+<span id="cb354-2"><a href="distributions-with-domain-specifying-parameters.html#cb354-2" tabindex="-1"></a>{</span>
+<span id="cb354-3"><a href="distributions-with-domain-specifying-parameters.html#cb354-3" tabindex="-1"></a>  y   <span class="ot">&lt;-</span> <span class="fu">seq</span>(min, max, <span class="at">by=</span>step)</span>
+<span id="cb354-4"><a href="distributions-with-domain-specifying-parameters.html#cb354-4" tabindex="-1"></a>  <span class="cf">if</span> ( q <span class="sc">==</span> <span class="dv">0</span> ) <span class="fu">return</span>(<span class="fu">min</span>(y))</span>
+<span id="cb354-5"><a href="distributions-with-domain-specifying-parameters.html#cb354-5" tabindex="-1"></a>  <span class="cf">if</span> ( q <span class="sc">==</span> <span class="dv">1</span> ) <span class="fu">return</span>(<span class="fu">max</span>(y))</span>
+<span id="cb354-6"><a href="distributions-with-domain-specifying-parameters.html#cb354-6" tabindex="-1"></a>  cdf <span class="ot">&lt;-</span> (<span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(y))<span class="sc">/</span><span class="fu">length</span>(y)</span>
+<span id="cb354-7"><a href="distributions-with-domain-specifying-parameters.html#cb354-7" tabindex="-1"></a>  w   <span class="ot">&lt;-</span> <span class="fu">which</span>(cdf<span class="sc">&gt;=</span>q)</span>
+<span id="cb354-8"><a href="distributions-with-domain-specifying-parameters.html#cb354-8" tabindex="-1"></a>  <span class="cf">if</span> ( <span class="fu">length</span>(w) <span class="sc">==</span> <span class="dv">0</span> ) <span class="fu">return</span>(<span class="fu">max</span>(y))</span>
+<span id="cb354-9"><a href="distributions-with-domain-specifying-parameters.html#cb354-9" tabindex="-1"></a>  <span class="fu">return</span>(y[<span class="fu">min</span>(w)])</span>
+<span id="cb354-10"><a href="distributions-with-domain-specifying-parameters.html#cb354-10" tabindex="-1"></a>}</span>
+<span id="cb354-11"><a href="distributions-with-domain-specifying-parameters.html#cb354-11" tabindex="-1"></a><span class="fu">qdiscunif</span>(<span class="fl">0.55</span>, <span class="at">min=</span><span class="dv">1</span>, <span class="at">max=</span><span class="dv">6</span>)</span></code></pre></div>
 <pre><code>## [1] 4</code></pre>
 <blockquote>
 <p>And last, the random data generator:</p>
 </blockquote>
-<div class="sourceCode" id="cb368"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb368-1"><a href="distributions-with-domain-specifying-parameters.html#cb368-1" tabindex="-1"></a>rdiscunif <span class="ot">&lt;-</span> <span class="cf">function</span>(n, <span class="at">min=</span><span class="dv">0</span>, <span class="at">max=</span><span class="dv">1</span>, <span class="at">step=</span><span class="dv">1</span>)</span>
-<span id="cb368-2"><a href="distributions-with-domain-specifying-parameters.html#cb368-2" tabindex="-1"></a>{</span>
-<span id="cb368-3"><a href="distributions-with-domain-specifying-parameters.html#cb368-3" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">seq</span>(min, max, <span class="at">by=</span>step)</span>
-<span id="cb368-4"><a href="distributions-with-domain-specifying-parameters.html#cb368-4" tabindex="-1"></a>  s <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">length</span>(y), n, <span class="at">replace=</span><span class="cn">TRUE</span>)</span>
-<span id="cb368-5"><a href="distributions-with-domain-specifying-parameters.html#cb368-5" tabindex="-1"></a>  <span class="fu">return</span>(y[s])</span>
-<span id="cb368-6"><a href="distributions-with-domain-specifying-parameters.html#cb368-6" tabindex="-1"></a>}</span>
-<span id="cb368-7"><a href="distributions-with-domain-specifying-parameters.html#cb368-7" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">236</span>) <span class="co"># set to ensure consistent output</span></span>
-<span id="cb368-8"><a href="distributions-with-domain-specifying-parameters.html#cb368-8" tabindex="-1"></a><span class="fu">rdiscunif</span>(<span class="dv">10</span>,<span class="at">min=</span><span class="dv">1</span>,<span class="at">max=</span><span class="dv">6</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb356"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb356-1"><a href="distributions-with-domain-specifying-parameters.html#cb356-1" tabindex="-1"></a>rdiscunif <span class="ot">&lt;-</span> <span class="cf">function</span>(n, <span class="at">min=</span><span class="dv">0</span>, <span class="at">max=</span><span class="dv">1</span>, <span class="at">step=</span><span class="dv">1</span>)</span>
+<span id="cb356-2"><a href="distributions-with-domain-specifying-parameters.html#cb356-2" tabindex="-1"></a>{</span>
+<span id="cb356-3"><a href="distributions-with-domain-specifying-parameters.html#cb356-3" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">seq</span>(min, max, <span class="at">by=</span>step)</span>
+<span id="cb356-4"><a href="distributions-with-domain-specifying-parameters.html#cb356-4" tabindex="-1"></a>  s <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">length</span>(y), n, <span class="at">replace=</span><span class="cn">TRUE</span>)</span>
+<span id="cb356-5"><a href="distributions-with-domain-specifying-parameters.html#cb356-5" tabindex="-1"></a>  <span class="fu">return</span>(y[s])</span>
+<span id="cb356-6"><a href="distributions-with-domain-specifying-parameters.html#cb356-6" tabindex="-1"></a>}</span>
+<span id="cb356-7"><a href="distributions-with-domain-specifying-parameters.html#cb356-7" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">236</span>) <span class="co"># set to ensure consistent output</span></span>
+<span id="cb356-8"><a href="distributions-with-domain-specifying-parameters.html#cb356-8" tabindex="-1"></a><span class="fu">rdiscunif</span>(<span class="dv">10</span>,<span class="at">min=</span><span class="dv">1</span>,<span class="at">max=</span><span class="dv">6</span>)</span></code></pre></div>
 <pre><code>##  [1] 6 6 6 3 3 4 1 1 5 4</code></pre>
 </div>
 </div>
@@ -1446,7 +1446,7 @@ certainly do know the cdf of the sampling distribution for that:
 <span class="math display">\[\begin{align*}
 F_{(1)}(x) &amp;= \int_b^x \frac{n a b^{na}}{y^{na+1}} dy = n a b^{na} \int_b^x y^{-na-1} dy \\
 &amp;= n a b^{na} \frac{1}{-na} \left. y^{-na} \right|_b^x = - b^{na} \left( x^{-na} - b^{-na} \right) \\
-%= 1 - \left(\frac{b}{x}\right)^{na} \,.
+&amp;= 1 - \left(\frac{b}{x}\right)^{na} \,.
 \end{align*}\]</span>
 If we solve the general equation <span class="math inline">\(F_Y(y_{\rm obs} \vert \theta) - q = 0\)</span>,
 we find that
@@ -1463,28 +1463,28 @@ upper bound for <span class="math inline">\(b\)</span>, given that <span class="
 expected value of <span class="math inline">\(\bar{X}\)</span> increases with <span class="math inline">\(b\)</span>, as the reader can verify,
 so <span class="math inline">\(q = \alpha = 0.05\)</span>.</p>
 </blockquote>
-<div class="sourceCode" id="cb370"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb370-1"><a href="distributions-with-domain-specifying-parameters.html#cb370-1" tabindex="-1"></a><span class="co"># generate data</span></span>
-<span id="cb370-2"><a href="distributions-with-domain-specifying-parameters.html#cb370-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">236</span>)</span>
-<span id="cb370-3"><a href="distributions-with-domain-specifying-parameters.html#cb370-3" tabindex="-1"></a>num.sim <span class="ot">&lt;-</span> <span class="dv">100000</span></span>
-<span id="cb370-4"><a href="distributions-with-domain-specifying-parameters.html#cb370-4" tabindex="-1"></a>n       <span class="ot">&lt;-</span> <span class="dv">8</span></span>
-<span id="cb370-5"><a href="distributions-with-domain-specifying-parameters.html#cb370-5" tabindex="-1"></a>a       <span class="ot">&lt;-</span> <span class="dv">3</span></span>
-<span id="cb370-6"><a href="distributions-with-domain-specifying-parameters.html#cb370-6" tabindex="-1"></a>b       <span class="ot">&lt;-</span> <span class="fl">1.5</span></span>
-<span id="cb370-7"><a href="distributions-with-domain-specifying-parameters.html#cb370-7" tabindex="-1"></a>X.obs   <span class="ot">&lt;-</span> extraDistr<span class="sc">::</span><span class="fu">rpareto</span>(n, <span class="at">a=</span>a, <span class="at">b=</span>b) <span class="co"># avoid namespace conflict</span></span>
-<span id="cb370-8"><a href="distributions-with-domain-specifying-parameters.html#cb370-8" tabindex="-1"></a>y.obs   <span class="ot">&lt;-</span> <span class="fu">mean</span>(X.obs)</span>
-<span id="cb370-9"><a href="distributions-with-domain-specifying-parameters.html#cb370-9" tabindex="-1"></a></span>
-<span id="cb370-10"><a href="distributions-with-domain-specifying-parameters.html#cb370-10" tabindex="-1"></a><span class="fu">min</span>(X.obs)</span></code></pre></div>
+<div class="sourceCode" id="cb358"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb358-1"><a href="distributions-with-domain-specifying-parameters.html#cb358-1" tabindex="-1"></a><span class="co"># generate data</span></span>
+<span id="cb358-2"><a href="distributions-with-domain-specifying-parameters.html#cb358-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">236</span>)</span>
+<span id="cb358-3"><a href="distributions-with-domain-specifying-parameters.html#cb358-3" tabindex="-1"></a>num.sim <span class="ot">&lt;-</span> <span class="dv">100000</span></span>
+<span id="cb358-4"><a href="distributions-with-domain-specifying-parameters.html#cb358-4" tabindex="-1"></a>n       <span class="ot">&lt;-</span> <span class="dv">8</span></span>
+<span id="cb358-5"><a href="distributions-with-domain-specifying-parameters.html#cb358-5" tabindex="-1"></a>a       <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb358-6"><a href="distributions-with-domain-specifying-parameters.html#cb358-6" tabindex="-1"></a>b       <span class="ot">&lt;-</span> <span class="fl">1.5</span></span>
+<span id="cb358-7"><a href="distributions-with-domain-specifying-parameters.html#cb358-7" tabindex="-1"></a>X.obs   <span class="ot">&lt;-</span> extraDistr<span class="sc">::</span><span class="fu">rpareto</span>(n, <span class="at">a=</span>a, <span class="at">b=</span>b) <span class="co"># avoid namespace conflict</span></span>
+<span id="cb358-8"><a href="distributions-with-domain-specifying-parameters.html#cb358-8" tabindex="-1"></a>y.obs   <span class="ot">&lt;-</span> <span class="fu">mean</span>(X.obs)</span>
+<span id="cb358-9"><a href="distributions-with-domain-specifying-parameters.html#cb358-9" tabindex="-1"></a></span>
+<span id="cb358-10"><a href="distributions-with-domain-specifying-parameters.html#cb358-10" tabindex="-1"></a><span class="fu">min</span>(X.obs)</span></code></pre></div>
 <pre><code>## [1] 1.582117</code></pre>
-<div class="sourceCode" id="cb372"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb372-1"><a href="distributions-with-domain-specifying-parameters.html#cb372-1" tabindex="-1"></a><span class="co"># now find a 95% upper bound</span></span>
-<span id="cb372-2"><a href="distributions-with-domain-specifying-parameters.html#cb372-2" tabindex="-1"></a></span>
-<span id="cb372-3"><a href="distributions-with-domain-specifying-parameters.html#cb372-3" tabindex="-1"></a>alpha   <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
-<span id="cb372-4"><a href="distributions-with-domain-specifying-parameters.html#cb372-4" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(b, a, n, y.obs, q, <span class="at">num.sim=</span><span class="dv">1000000</span>, <span class="at">seed=</span><span class="dv">236</span>)</span>
-<span id="cb372-5"><a href="distributions-with-domain-specifying-parameters.html#cb372-5" tabindex="-1"></a>{</span>
-<span id="cb372-6"><a href="distributions-with-domain-specifying-parameters.html#cb372-6" tabindex="-1"></a>  <span class="fu">set.seed</span>(seed)</span>
-<span id="cb372-7"><a href="distributions-with-domain-specifying-parameters.html#cb372-7" tabindex="-1"></a>  X <span class="ot">&lt;-</span> <span class="fu">matrix</span>(extraDistr<span class="sc">::</span><span class="fu">rpareto</span>(num.sim<span class="sc">*</span>n, <span class="at">a=</span>a, <span class="at">b=</span>b), <span class="at">nrow=</span>num.sim)</span>
-<span id="cb372-8"><a href="distributions-with-domain-specifying-parameters.html#cb372-8" tabindex="-1"></a>  Y <span class="ot">&lt;-</span> <span class="fu">rowMeans</span>(X)</span>
-<span id="cb372-9"><a href="distributions-with-domain-specifying-parameters.html#cb372-9" tabindex="-1"></a>  <span class="fu">sum</span>(Y <span class="sc">&lt;=</span> y.obs)<span class="sc">/</span>num.sim <span class="sc">-</span> q</span>
-<span id="cb372-10"><a href="distributions-with-domain-specifying-parameters.html#cb372-10" tabindex="-1"></a>}</span>
-<span id="cb372-11"><a href="distributions-with-domain-specifying-parameters.html#cb372-11" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">uniroot</span>(f, <span class="fu">c</span>(<span class="fl">0.001</span>, <span class="dv">1000</span>), <span class="at">a=</span>a, <span class="at">n=</span>n, <span class="at">y.obs=</span>y.obs, <span class="at">q=</span>alpha)<span class="sc">$</span>root, <span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb360"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb360-1"><a href="distributions-with-domain-specifying-parameters.html#cb360-1" tabindex="-1"></a><span class="co"># now find a 95% upper bound</span></span>
+<span id="cb360-2"><a href="distributions-with-domain-specifying-parameters.html#cb360-2" tabindex="-1"></a></span>
+<span id="cb360-3"><a href="distributions-with-domain-specifying-parameters.html#cb360-3" tabindex="-1"></a>alpha   <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb360-4"><a href="distributions-with-domain-specifying-parameters.html#cb360-4" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(b, a, n, y.obs, q, <span class="at">num.sim=</span><span class="dv">1000000</span>, <span class="at">seed=</span><span class="dv">236</span>)</span>
+<span id="cb360-5"><a href="distributions-with-domain-specifying-parameters.html#cb360-5" tabindex="-1"></a>{</span>
+<span id="cb360-6"><a href="distributions-with-domain-specifying-parameters.html#cb360-6" tabindex="-1"></a>  <span class="fu">set.seed</span>(seed)</span>
+<span id="cb360-7"><a href="distributions-with-domain-specifying-parameters.html#cb360-7" tabindex="-1"></a>  X <span class="ot">&lt;-</span> <span class="fu">matrix</span>(extraDistr<span class="sc">::</span><span class="fu">rpareto</span>(num.sim<span class="sc">*</span>n, <span class="at">a=</span>a, <span class="at">b=</span>b), <span class="at">nrow=</span>num.sim)</span>
+<span id="cb360-8"><a href="distributions-with-domain-specifying-parameters.html#cb360-8" tabindex="-1"></a>  Y <span class="ot">&lt;-</span> <span class="fu">rowMeans</span>(X)</span>
+<span id="cb360-9"><a href="distributions-with-domain-specifying-parameters.html#cb360-9" tabindex="-1"></a>  <span class="fu">sum</span>(Y <span class="sc">&lt;=</span> y.obs)<span class="sc">/</span>num.sim <span class="sc">-</span> q</span>
+<span id="cb360-10"><a href="distributions-with-domain-specifying-parameters.html#cb360-10" tabindex="-1"></a>}</span>
+<span id="cb360-11"><a href="distributions-with-domain-specifying-parameters.html#cb360-11" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">uniroot</span>(f, <span class="fu">c</span>(<span class="fl">0.001</span>, <span class="dv">1000</span>), <span class="at">a=</span>a, <span class="at">n=</span>n, <span class="at">y.obs=</span>y.obs, <span class="at">q=</span>alpha)<span class="sc">$</span>root, <span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## [1] 1.666</code></pre>
 <blockquote>
 <p>The upper bound is 1.666. We can immediately see that this is problematic
@@ -1506,7 +1506,7 @@ and a valid interval.</p>
 <div class="graybox">
 <p>What to take away from this section:</p>
 <ul>
-<li><p>When conducting hypothesis tests concerning distribution bounds, one cannot define two-tail tests: if the null hypothesis is correct, it is impossible to sample data with values smaller than a hypothesized lower bound, or larger than a hypothesized upper bound.</p></li>
+<li><p>When conducting hypothesis tests concerning distribution bounds, one can define two-tail tests, but from the perspective of power, it is preferable to define one-tail tests only.</p></li>
 <li><p>When computing the test power for a hypothesis test, one must take into account the two ways in which one can reject the null hypothesis; for instance, if <span class="math inline">\(H_o : \theta = \theta_o\)</span> is an upper distribution bound, and we wish to compute the test power given <span class="math inline">\(\theta &gt; \theta_o\)</span>, then we would reject the null if <span class="math inline">\(X_{(n)}\)</span> fall into the rejection region defined under the null <em>and</em> if <span class="math inline">\(X_{(n)} &gt; \theta_o\)</span>.</p></li>
 </ul>
 </div>
@@ -1518,111 +1518,205 @@ F_Y(y_{RR} \vert \theta_o) - q = 0 \,,
 \]</span>
 <em>where <span class="math inline">\(F_Y(\cdot)\)</span> is the cumulative distribution function for the statistic <span class="math inline">\(Y\)</span> and <span class="math inline">\(q\)</span> is an appropriate quantile value that is determined using the hypothesis test reference table introduced in section 17 of Chapter 1. Note that the hypothesis test framework only allows us to make a decision about a null hypothesis; nothing is proven.</em></p>
 </blockquote>
-<p>One aspect of hypothesis testing that we reiterate here is that the hypotheses
-are always to be established, along with the level of the test,
-<em>before</em> we collect data. This should be obvious<span class="math inline">\(-\)</span>looking at the data
+<p>Let’s suppose that we sample <span class="math inline">\(n\)</span> iid data according to a Uniform(0,<span class="math inline">\(\theta\)</span>)
+and that we wish to construct a two-tail hypothesis test using the sufficient
+statistic <span class="math inline">\(Y = X_{(n)}\)</span>. From examples above, we know that
+<span class="math inline">\(F_Y(y) = (x/\theta)^n\)</span> and that we are working on the “yes” line of the
+reference table…so the rejection-region boundaries are given by
+<span class="math display">\[\begin{align*}
+F_{(n)}(x_{\rm RR,lo} \vert \theta_o) - \frac{\alpha}{2} = 0 ~~~ &amp;\Rightarrow ~~~ x_{\rm RR,lo} = \theta_o \left( \frac{\alpha}{2} \right)^{1/n} \\
+F_{(n)}(x_{\rm RR,hi} \vert \theta_o) - \left(1 - \frac{\alpha}{2}\right) = 0 ~~~ &amp;\Rightarrow ~~~ x_{\rm RR,hi} = \theta_o \left( 1 - \frac{\alpha}{2} \right)^{1/n} \,.
+\end{align*}\]</span>
+If <span class="math inline">\(\theta &gt; x_{\rm RR,hi}\)</span>, the power of the test is
+<span class="math display">\[\begin{align*}
+power(\theta) &amp;= F_{(n)}(x_{\rm RR,lo} \vert \theta) + \left[ 1 - F_{(n)}(x_{\rm RR,hi} \vert \theta) \right] \\
+\Rightarrow ~~~ power(\theta) &amp;= \left(\frac{\theta_o}{\theta}\right)^n \frac{\alpha}{2} + 1 - \left(\frac{\theta_o}{\theta}\right)^n \left(1-\frac{\alpha}{2}\right) = 1 - \left(\frac{\theta_o}{\theta}\right)^n(1-\alpha) \,.
+\end{align*}\]</span>
+So far, so good. But what would happen if we were to define a lower-tail test
+instead? The rejection-region boundary would be given by
+<span class="math display">\[\begin{align*}
+F_{(n)}(x_{\rm RR} \vert \theta_o) - \alpha = 0 ~~~ \Rightarrow ~~~ x_{\rm RR} = \theta_o \alpha^{1/n} \,.
+\end{align*}\]</span>
+Also so far, so good. But
+in a power calculation, we would need to take into account that if
+<span class="math inline">\(\theta &gt; \theta_o\)</span>, there are there are <em>two possible ways to reject the
+null</em>…by observing</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(x_{(n),\rm obs} &lt; y_{\rm RR}\)</span> (“traditional rejection”), or</li>
+<li><span class="math inline">\(x_{(n),\rm obs} &gt; \theta_o\)</span> (“trivial rejection”).</li>
+</ol>
+<p>We dub the second possibility “trivial rejection” since if the null is
+correct, it is impossible to sample a datum with a value larger than
+<span class="math inline">\(\theta_o\)</span>, and thus there is no need to computationally derive a boundary
+for this part of the rejection region.</p>
+<p>So, despite the fact that we are intending to define a one-tail test, we have,
+in the context of power calculations, effectively defined a two-tail test! The
+question then arises: from the point of view of test power, which of these
+defined tests is better for us to use?
+Let’s examine the difference in power between the one-tail and two-tail tests
+in three different regimes: <span class="math inline">\(\theta \leq x_{\rm RR,hi}\)</span>,
+<span class="math inline">\(x_{\rm RR,hi} &lt; \theta \leq \theta_o\)</span>, and <span class="math inline">\(\theta &gt; \theta_o\)</span>.</p>
+<ol style="list-style-type: decimal">
+<li>If <span class="math inline">\(\theta \leq x_{\rm RR,hi}\)</span>, then the difference in power is
+<span class="math display">\[\begin{align*}
+power_1(\theta) - power_2(\theta) &amp;= F_{(n)}(x_{\rm RR} \vert \theta) - F_{(n)}(x_{\rm RR,lo} \vert \theta) \\
+&amp;= \left(\frac{x_{\rm RR}}{\theta}\right)^n - \left(\frac{x_{\rm RR,hi}}{\theta}\right)^n \\
+&amp;= \left(\frac{\theta_o}{\theta}\right)^n \left(\alpha - \frac{\alpha}{2}\right)\\
+&amp;= \frac{\alpha}{2}\left(\frac{\theta_o}{\theta}\right)^n &gt; 0 \,.
+\end{align*}\]</span>
+In this regime, the one-tail test is more powerful.</li>
+<li>If <span class="math inline">\(x_{\rm RR,hi} &lt; \theta \leq \theta_o\)</span>, then the difference in power is
+<span class="math display">\[\begin{align*}
+power_1(\theta) - power_2(\theta) &amp;= F_{(n)}(x_{\rm RR} \vert \theta) - \left[ F_{(n)}(x_{\rm RR,lo} \vert \theta) + 1 - F_{(n)}(x_{\rm RR,hi} \vert \theta) \right] \\
+&amp;= \left(\frac{\theta_o}{\theta}\right)^n \alpha - \left[ \left(\frac{\theta_o}{\theta}\right)^n \frac{\alpha}{2} + 1 - \left(\frac{\theta_o}{\theta}\right)^n \left(1 - \frac{\alpha}{2}\right) \right] \\
+&amp;= \left(\frac{\theta_o}{\theta}\right)^n - 1 \geq 0 \,.
+\end{align*}\]</span>
+In this regime, the one-tail test is more powerful, unless <span class="math inline">\(\theta = \theta_o\)</span>,
+where both power values are <span class="math inline">\(\alpha\)</span>.</li>
+<li>If <span class="math inline">\(\theta &gt; \theta_o\)</span>, then the difference in power is
+<span class="math display">\[\begin{align*}
+power_1(\theta) - power_2(\theta) &amp;= \left[ F_{(n)}(x_{\rm RR} \vert \theta) + 1 - F_{(n)}(\theta_o \vert \theta) \right] - \left[ F_{(n)}(x_{\rm RR,lo} \vert \theta) + 1 - F_{(n)}(x_{\rm RR,hi} \vert \theta) \right] \\
+&amp;= \left[ F_{(n)}(x_{\rm RR} \vert \theta) - F_{(n)}(\theta_o \vert \theta) \right] - \left[ F_{(n)}(x_{\rm RR,lo} \vert \theta) - F_{(n)}(x_{\rm RR,hi} \vert \theta) \right] \\
+&amp;= \left[ \left(\frac{\theta_o}{\theta}\right)^n \alpha - \left(\frac{\theta_o}{\theta}\right)^n \right] - \left[ \left(\frac{\theta_o}{\theta}\right)^n \frac{\alpha}{2} - \left(\frac{\theta_o}{\theta}\right)^n \left(1 - \frac{\alpha}{2}\right) \right] \\
+&amp;= 0 \,.
+\end{align*}\]</span>
+In this regime, the test power values are identical!</li>
+</ol>
+<p>Given the results above, we conclude that <strong>the lower-tail test is to be
+preferred over the two-tail test</strong>: it is an equally powerful (if
+<span class="math inline">\(\theta \geq \theta_o\)</span>) or more powerful (if <span class="math inline">\(\theta &lt; \theta_o\)</span>) test
+of <span class="math inline">\(\theta\)</span>. (We note that in a sense the fact that the tests are
+equally powerful if <span class="math inline">\(\theta \geq \theta_o\)</span> does not matter, since it is
+general convention to only display power curves for one-tail tests that
+are computed on the relevant side of the null value, which here would be
+for <span class="math inline">\(\theta &lt; \theta_o\)</span>. Regardless, we extend the curves here, to illustrate
+their behavior.)
+This result is one last “quirk” that arises when we are working
+with domain-specifying parameters, and is entirely due to the fact that
+we can only sample data to one side of a specified domain boundary.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:uhyppow12"></span>
+<img src="_main_files/figure-html/uhyppow12-1.png" alt="\label{fig:uhyppow12}The power curves for tests of $H_o : \theta = \theta_o = 1$ versus $H_a : \theta \neq \theta_o$ (red dotted line) and versus $H_a : \theta \leq \theta_o$ (blue solid line), assuming $n = 10$. We observe that the one-tail test is more powerful than the two-tail test if $\theta &lt; \theta_o$, and that the tests are equally powerful if $\theta \geq \theta_o$." width="50%" />
+<p class="caption">
+Figure 5.6: The power curves for tests of <span class="math inline">\(H_o : \theta = \theta_o = 1\)</span> versus <span class="math inline">\(H_a : \theta \neq \theta_o\)</span> (red dotted line) and versus <span class="math inline">\(H_a : \theta \leq \theta_o\)</span> (blue solid line), assuming <span class="math inline">\(n = 10\)</span>. We observe that the one-tail test is more powerful than the two-tail test if <span class="math inline">\(\theta &lt; \theta_o\)</span>, and that the tests are equally powerful if <span class="math inline">\(\theta \geq \theta_o\)</span>.
+</p>
+</div>
+<!--
+One aspect of hypothesis testing that we reiterate here is that the hypotheses
+are always to be established, along with the level of the test, 
+*before* we collect data. This should be obvious$-$looking at the data
 prior to establishing hypotheses and test levels can (and often will) lead
-to biased outcomes<span class="math inline">\(-\)</span>so why are we reiterating this now?
+to biased outcomes$-$so why are we reiterating this now?
 Because when we perform tests involving domain-specifying parameters, there
 is a quirk that we (sometimes) observe when we attempt to
-establish rejection-region boundaries.</p>
-<p>For instance, let’s say that we sample <span class="math inline">\(n\)</span> iid data according to
-a Uniform(<span class="math inline">\(0,\theta\)</span>) distribution, and that we have previously decided
+establish rejection-region boundaries.
+
+For instance, let's say that we sample $n$ iid data according to
+a Uniform($0,\theta$) distribution, and that we have previously decided
 to use these data to test the hypothesis
-<span class="math inline">\(H_o : \theta = \theta_o\)</span> versus the hypothesis <span class="math inline">\(H_a : \theta \neq \theta_o\)</span>
-at level <span class="math inline">\(\alpha\)</span>. We know that the sufficient statistic upon which we
-will build our test is <span class="math inline">\(X_{(n)}\)</span>.</p>
-<p>Given this, what can we say about the rejection regions?</p>
-<p>The first thing that we can say that we will reject the null
-if <span class="math inline">\(X_{(n)} &gt; \theta_o\)</span>; if the null is correct, it is <em>impossible</em> to
+$H_o : \theta = \theta_o$ versus the hypothesis $H_a : \theta \neq \theta_o$
+at level $\alpha$. We know that the sufficient statistic upon which we
+will build our test is $X_{(n)}$. 
+
+Given this, what can we say about the rejection regions?
+
+The first thing that we can say that we will reject the null 
+if $X_{(n)} > \theta_o$; if the null is correct, it is *impossible* to
 sample a datum with a larger value. This rejection region is what we
-call the “trivial” rejection region…it is trivial in the sense that we need
-not use any mathematics to establish a boundary.</p>
-<p>So…how then do we establish the “other” rejection-region boundary, the
-one with value <span class="math inline">\(&lt; \theta_o\)</span>? Do we derive that boundary using the
-value <span class="math inline">\(\alpha/2\)</span> in our calculations, as we have in the past when working
-through the definition of two-tail tests? Or would we use <span class="math inline">\(\alpha\)</span> instead? The answer lies in the idea of test power. If the null hypothesis is correct, then
-the probability of rejecting it is, by definition, <span class="math inline">\(\alpha\)</span>.
-(That’s the power of the test when <span class="math inline">\(\theta = \theta_o\)</span>.)
-However, if the
-null is correct, then it is also impossible to sample values of <span class="math inline">\(X_{(n)}\)</span> that
-are larger than <span class="math inline">\(\theta\)</span>…we can only sample values that are <span class="math inline">\(\leq \theta\)</span>,
-and thus we can only reject the null when <span class="math inline">\(X_{(n)} \ll \theta\)</span>.
-Hence we would use <span class="math inline">\(\alpha\)</span> in our derivation, not <span class="math inline">\(\alpha/2\)</span>, to ensure
-that the power of the test when <span class="math inline">\(\theta = \theta_o\)</span> is indeed <span class="math inline">\(\alpha\)</span>.</p>
-<p>Another way of stating this result is that <strong>there really is no such thing as a two-tail test for a domain-specifying parameter</strong>: if the parameter specifies an upper bound, then the only test we can define is a lower-tail test, and if the parameter specifies a lower bound, then the only test we can define is an upper-tail test.</p>
-<p>However, there is yet one more quirk to discuss, and that is how we would
-compute the power of the test for values <span class="math inline">\(\theta &gt; \theta_o\)</span>. In this
-situation, there are <em>two</em> possible ways to reject the null:</p>
-<ol style="list-style-type: decimal">
-<li>by observing <span class="math inline">\(x_{(n),\rm obs} &lt; x_{\rm RR}\)</span> (traditional rejection), and</li>
-<li>by observing <span class="math inline">\(\theta_o &lt; x_{(n),\rm obs} \leq \theta\)</span> (trivial rejection).</li>
-</ol>
-<p>We work out the mathematics of the power calculation in an example below.</p>
+call the "trivial" rejection region...it is trivial in the sense that we need
+not use any mathematics to establish a boundary.
+
+So...how then do we establish the "other" rejection-region boundary, the
+one with value $< \theta_o$? Do we derive that boundary using the
+value $\alpha/2$ in our calculations, as we have in the past when working
+through the definition of two-tail tests? Or would we use $\alpha$ instead? The answer lies in the idea of test power. If the null hypothesis is correct, then
+the probability of rejecting it is, by definition, $\alpha$. 
+(That's the power of the test when $\theta = \theta_o$.)
+However, if the 
+null is correct, then it is also impossible to sample values of $X_{(n)}$ that
+are larger than $\theta$...we can only sample values that are $\leq \theta$,
+and thus we can only reject the null when $X_{(n)} \ll \theta$.
+Hence we would use $\alpha$ in our derivation, not $\alpha/2$, to ensure
+that the power of the test when $\theta = \theta_o$ is indeed $\alpha$.
+
+Another way of stating this result is that **there really is no such thing as a two-tail test for a domain-specifying parameter**: if the parameter specifies an upper bound, then the only test we can define is a lower-tail test, and if the parameter specifies a lower bound, then the only test we can define is an upper-tail test.
+
+However, there is yet one more quirk to discuss, and that is how we would
+compute the power of the test for values $\theta > \theta_o$. In this
+situation, there are *two* possible ways to reject the null:
+
+1. by observing $x_{(n),\rm obs} < x_{\rm RR}$ (traditional rejection), and
+2. by observing $\theta_o < x_{(n),\rm obs} \leq \theta$ (trivial rejection).
+
+We work out the mathematics of the power calculation in an example below.
+-->
 <hr />
-<div id="uniform-domain-parameter-hypothesis-test" class="section level3 hasAnchor" number="5.5.1">
-<h3><span class="header-section-number">5.5.1</span> Uniform Domain Parameter: Hypothesis Test<a href="distributions-with-domain-specifying-parameters.html#uniform-domain-parameter-hypothesis-test" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="pareto-domain-parameter-hypothesis-test" class="section level3 hasAnchor" number="5.5.1">
+<h3><span class="header-section-number">5.5.1</span> Pareto Domain Parameter: Hypothesis Test<a href="distributions-with-domain-specifying-parameters.html#pareto-domain-parameter-hypothesis-test" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <blockquote>
-<p>We sample <span class="math inline">\(n\)</span> iid data according to a Uniform(<span class="math inline">\(0,\theta\)</span>) distribution,
-and we use these data to test
+<p>We sample <span class="math inline">\(n\)</span> iid data according to a Pareto(<span class="math inline">\(a,b\)</span>) distribution,
+with <span class="math inline">\(a\)</span> fixed. We use these data to test
 <span class="math display">\[
-H_o: \theta = \theta_o ~~\mbox{versus}~~ H_a: \theta &lt; \theta_o \,.
+H_o: b = b_o ~~\mbox{versus}~~ H_a: b &gt; b_o \,.
 \]</span>
-The sufficient statistic is the maximum datum <span class="math inline">\(X_{(n)}\)</span>; as stated previously,
+The sufficient statistic is the minimum datum <span class="math inline">\(X_{(1)}\)</span>;
 we can appeal to reason to state that the expected value of this quantity
-must increase as <span class="math inline">\(\theta\)</span> increases, so we know that we are using the
-“yes” line of the hypothesis test reference tables and thus that <span class="math inline">\(q = \alpha\)</span>:
+must increase as <span class="math inline">\(b\)</span> increases, so we know that we are using the
+“yes” line of the hypothesis test reference tables and
+thus that <span class="math inline">\(q = 1 - \alpha\)</span>.
+Borrowing from a previous example, we know that
+<span class="math inline">\(F_{(1)}(x) = 1 - (b/x)^{na}\)</span>, hence
 <span class="math display">\[\begin{align*}
-F_Y(y \vert \theta) - q = 0 ~~~ \Rightarrow ~~~ F_{(n)}(x_{\rm RR} \vert \theta_o) - \alpha = 0 ~~~ \Rightarrow ~~~ \left(\frac{x_{\rm RR}}{\theta_o}\right)^n - \alpha = 0 \,.
+F_Y(y \vert \theta) - q = 0 ~~~ &amp;\Rightarrow ~~~ F_{(1)}(x_{\rm RR} \vert b_o) - (1-\alpha) = 0 \\
+&amp;\Rightarrow ~~~ 1 - \left(\frac{b_o}{x_{\rm RR}}\right)^{na} - (1 - \alpha) = \alpha - \left(\frac{b_o}{x_{\rm RR}}\right)^{na} = 0 \,.
 \end{align*}\]</span>
 Solving for <span class="math inline">\(x_{\rm RR}\)</span>, we find that
 <span class="math display">\[
-x_{\rm RR} = \theta_o \alpha^{1/n} \,.
+x_{\rm RR} = b_o \alpha^{-1/na} \,.
 \]</span></p>
 </blockquote>
 <blockquote>
 <p>The <span class="math inline">\(p\)</span>-value is straightforward to compute: according to the reference tables, it is
 <span class="math display">\[\begin{align*}
-F_Y(y_{\rm obs} \vert \theta_o) ~~~ \Rightarrow ~~~ F_{(n)}(x_{(n),\rm obs} \vert \theta_o) ~~~ \Rightarrow ~~~ \left(\frac{x_{(n),\rm obs}}{\theta_o}\right)^n \,.
+1 - F_Y(y_{\rm obs} \vert \theta_o) ~~~ \Rightarrow ~~~ 1 - F_{(1)}(x_{(1),\rm obs} \vert b_o) ~~~ \Rightarrow ~~~ \left(\frac{b_o}{x_{(1),\rm obs}}\right)^{na} \,.
 \end{align*}\]</span></p>
 </blockquote>
 <blockquote>
-<p>However, as first mentioned above, the test power is less straightforward
+<p>However, as detailed mentioned above, the test power is less straightforward
 to compute.</p>
 </blockquote>
 <blockquote>
-<p>If <span class="math inline">\(\theta &lt; \theta_o\)</span>, then we can utilize the reference tables
+<p>If <span class="math inline">\(b &gt; b_o\)</span>, then we can utilize the reference tables
 directly to write that the power is
 <span class="math display">\[\begin{align*}
-F_Y(y_{\rm RR} \vert \theta) ~~~ \Rightarrow ~~~ F_{(n)}(x_{\rm RR} \vert \theta) ~~~ \Rightarrow ~~~ \left(\frac{x_{\rm RR}}{\theta}\right)^n \,.
+1 - F_Y(y_{\rm RR} \vert \theta) ~~~ \Rightarrow ~~~ 1 - F_{(1)}(x_{\rm RR} \vert b) ~~~ \Rightarrow ~~~ \left(\frac{b}{x_{\rm RR}}\right)^{na} \,.
 \end{align*}\]</span>
-The power rises from <span class="math inline">\(\alpha\)</span> to 1 as <span class="math inline">\(\theta\)</span> decreases from <span class="math inline">\(\theta_o\)</span>
-to <span class="math inline">\(x_{\rm RR}\)</span>, and for smaller values of <span class="math inline">\(\theta\)</span> it is 1 by definition
+The power rises from <span class="math inline">\(\alpha\)</span> to 1 as <span class="math inline">\(b\)</span> decreases from <span class="math inline">\(b_o\)</span>
+to <span class="math inline">\(x_{\rm RR}\)</span>, and for larger values of <span class="math inline">\(b\)</span> it is 1 by definition
 (as it becomes impossible to sample a datum outside of the rejection
-region). (See the left-hand side of Figure <a href="distributions-with-domain-specifying-parameters.html#fig:uhyppow">5.6</a> and
-the left panel of Figure <a href="distributions-with-domain-specifying-parameters.html#fig:uhyppow2">5.7</a>.)</p>
+region). (See the left-hand side of Figure <a href="distributions-with-domain-specifying-parameters.html#fig:uhyppow">5.7</a> and
+the left panel of Figure <a href="distributions-with-domain-specifying-parameters.html#fig:uhyppow2">5.8</a>.)</p>
 </blockquote>
 <blockquote>
-<p>If <span class="math inline">\(\theta &gt; \theta_o\)</span>, then we would reject the null hypothesis if
-<span class="math inline">\(x_{(n),\rm obs} &lt; x_{\rm RR}\)</span> <em>or</em> <span class="math inline">\(x_{(n),\rm obs} &gt; \theta_o\)</span>. Thus
+<p>If <span class="math inline">\(b &lt; b_o\)</span>, then we would reject the null hypothesis if
+<span class="math inline">\(x_{(1),\rm obs} &gt; x_{\rm RR}\)</span> <em>or</em> <span class="math inline">\(x_{(1),\rm obs} &lt; b_o\)</span>. Thus
 <span class="math display">\[\begin{align*}
-P(\mbox{reject}~\mbox{null} \vert \theta) &amp;= P(X_{(n)} &lt; x_{\rm RR} \cup X_{(n)} &gt; \theta_o \vert \theta) \\
-&amp;= F_{(n)}(x_{\rm RR} \vert \theta) + [1 - F_{(n)}(\theta_o \vert \theta)] \\
-&amp;= \left(\frac{x_\alpha}{\theta}\right)^n + \left( 1 - \left(\frac{\theta_o}{\theta}\right)^n \right) \,.
+P(\mbox{reject}~\mbox{null} \vert b) &amp;= P(X_{(1)} &gt; x_{\rm RR} \cup X_{(1)} &lt; b_o \vert b) \\
+&amp;= \left[ 1 - F_{(1)}(x_{\rm RR} \vert b)\right] + F_{(1)}(b_o \vert b)] \\
+&amp;= \left(\frac{b}{x_{\rm RR}}\right)^{na} + \left( 1 - \left(\frac{b}{b_o}\right)^{na} \right) \,.
 \end{align*}\]</span>
-(See the right-hand side of Figure <a href="distributions-with-domain-specifying-parameters.html#fig:uhyppow">5.6</a> and
-the right panel of Figure <a href="distributions-with-domain-specifying-parameters.html#fig:uhyppow2">5.7</a>.)</p>
+(See the right-hand side of Figure <a href="distributions-with-domain-specifying-parameters.html#fig:uhyppow">5.7</a> and
+the right panel of Figure <a href="distributions-with-domain-specifying-parameters.html#fig:uhyppow2">5.8</a>.)</p>
 </blockquote>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:uhyppow"></span>
-<img src="_main_files/figure-html/uhyppow-1.png" alt="\label{fig:uhyppow}The power curve for the test of $H_o : \theta = \theta_o = 1$ versus $H_a : \theta \neq \theta_o$, assuming $n = 10$. The curve displays three discrete segments whose functional forms are given in the body of the text, and it achieves its minimum value, $\alpha = 0.05$, at $\theta = 1$." width="50%" />
+<img src="_main_files/figure-html/uhyppow-1.png" alt="\label{fig:uhyppow}The power curve for the test of $H_o : b = b_o = 1$ versus $H_a : b &gt; b_o$, assuming $a = 2$ and $n = 10$. The curve displays two segments, and it achieves its minimum value, $\alpha = 0.05$, at $b = 1$." width="50%" />
 <p class="caption">
-Figure 5.6: The power curve for the test of <span class="math inline">\(H_o : \theta = \theta_o = 1\)</span> versus <span class="math inline">\(H_a : \theta \neq \theta_o\)</span>, assuming <span class="math inline">\(n = 10\)</span>. The curve displays three discrete segments whose functional forms are given in the body of the text, and it achieves its minimum value, <span class="math inline">\(\alpha = 0.05\)</span>, at <span class="math inline">\(\theta = 1\)</span>.
+Figure 5.7: The power curve for the test of <span class="math inline">\(H_o : b = b_o = 1\)</span> versus <span class="math inline">\(H_a : b &gt; b_o\)</span>, assuming <span class="math inline">\(a = 2\)</span> and <span class="math inline">\(n = 10\)</span>. The curve displays two segments, and it achieves its minimum value, <span class="math inline">\(\alpha = 0.05\)</span>, at <span class="math inline">\(b = 1\)</span>.
 </p>
 </div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:uhyppow2"></span>
-<img src="_main_files/figure-html/uhyppow2-1.png" alt="\label{fig:uhyppow2}The rejection regions that inform the power curve calculation shown in Figure \@ref(fig:uhyppow). To the left: if $\theta &lt; \theta_o$, then we reject the null hypothesis if $x_{(n),\rm obs} &lt; x_{\rm RR}$. The power is thus the area under the curve shown in red. To the right: if $\theta &gt; \theta_o$, then we reject the null hypothesis if $x_{(n),\rm obs} &lt; x_{\rm RR}$ or if $x_{(n),\rm obs} &gt; \theta_o = 1$. The power is thus the sum of the two areas under the curve shown in red." width="50%" /><img src="_main_files/figure-html/uhyppow2-2.png" alt="\label{fig:uhyppow2}The rejection regions that inform the power curve calculation shown in Figure \@ref(fig:uhyppow). To the left: if $\theta &lt; \theta_o$, then we reject the null hypothesis if $x_{(n),\rm obs} &lt; x_{\rm RR}$. The power is thus the area under the curve shown in red. To the right: if $\theta &gt; \theta_o$, then we reject the null hypothesis if $x_{(n),\rm obs} &lt; x_{\rm RR}$ or if $x_{(n),\rm obs} &gt; \theta_o = 1$. The power is thus the sum of the two areas under the curve shown in red." width="50%" />
+<img src="_main_files/figure-html/uhyppow2-1.png" alt="\label{fig:uhyppow2}The rejection regions that inform the power curve calculation shown in Figure \@ref(fig:uhyppow). To the left: if $b &gt; b_o$, then we reject the null hypothesis if $x_{(1),\rm obs} &gt; x_{\rm RR}$. The power is thus the area under the curve shown in red. To the right: if $b &lt; b_o$, then we reject the null hypothesis if $x_{(1),\rm obs} &gt; x_{\rm RR}$ or if $x_{(1),\rm obs} &lt; b_o = 1$. The power is thus the sum of the two areas under the curve shown in red." width="50%" /><img src="_main_files/figure-html/uhyppow2-2.png" alt="\label{fig:uhyppow2}The rejection regions that inform the power curve calculation shown in Figure \@ref(fig:uhyppow). To the left: if $b &gt; b_o$, then we reject the null hypothesis if $x_{(1),\rm obs} &gt; x_{\rm RR}$. The power is thus the area under the curve shown in red. To the right: if $b &lt; b_o$, then we reject the null hypothesis if $x_{(1),\rm obs} &gt; x_{\rm RR}$ or if $x_{(1),\rm obs} &lt; b_o = 1$. The power is thus the sum of the two areas under the curve shown in red." width="50%" />
 <p class="caption">
-Figure 5.7: The rejection regions that inform the power curve calculation shown in Figure <a href="distributions-with-domain-specifying-parameters.html#fig:uhyppow">5.6</a>. To the left: if <span class="math inline">\(\theta &lt; \theta_o\)</span>, then we reject the null hypothesis if <span class="math inline">\(x_{(n),\rm obs} &lt; x_{\rm RR}\)</span>. The power is thus the area under the curve shown in red. To the right: if <span class="math inline">\(\theta &gt; \theta_o\)</span>, then we reject the null hypothesis if <span class="math inline">\(x_{(n),\rm obs} &lt; x_{\rm RR}\)</span> or if <span class="math inline">\(x_{(n),\rm obs} &gt; \theta_o = 1\)</span>. The power is thus the sum of the two areas under the curve shown in red.
+Figure 5.8: The rejection regions that inform the power curve calculation shown in Figure <a href="distributions-with-domain-specifying-parameters.html#fig:uhyppow">5.7</a>. To the left: if <span class="math inline">\(b &gt; b_o\)</span>, then we reject the null hypothesis if <span class="math inline">\(x_{(1),\rm obs} &gt; x_{\rm RR}\)</span>. The power is thus the area under the curve shown in red. To the right: if <span class="math inline">\(b &lt; b_o\)</span>, then we reject the null hypothesis if <span class="math inline">\(x_{(1),\rm obs} &gt; x_{\rm RR}\)</span> or if <span class="math inline">\(x_{(1),\rm obs} &lt; b_o = 1\)</span>. The power is thus the sum of the two areas under the curve shown in red.
 </p>
 </div>
 <hr />

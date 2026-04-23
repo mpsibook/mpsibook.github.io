@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>7 Further Conceptual Details (Optional) | Modern Probability and Statistical Inference</title>
   <meta name="description" content="7 Further Conceptual Details (Optional) | Modern Probability and Statistical Inference" />
-  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
   <meta property="og:title" content="7 Further Conceptual Details (Optional) | Modern Probability and Statistical Inference" />
   <meta property="og:type" content="book" />
@@ -54,8 +54,9 @@
 
 
 <style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -65,7 +66,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -455,9 +456,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.7.2" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#poisson-expected-counts-likelihood-ratio-test"><i class="fa fa-check"></i><b>4.7.2</b> Poisson Expected Counts: Likelihood Ratio Test</a></li>
 <li class="chapter" data-level="4.7.3" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#normal-population-mean-lrt-with-wilks-theorem"><i class="fa fa-check"></i><b>4.7.3</b> Normal Population Mean: LRT With Wilks’ Theorem</a></li>
 <li class="chapter" data-level="4.7.4" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#normal-population-mean-lrt-via-simulation"><i class="fa fa-check"></i><b>4.7.4</b> Normal Population Mean: LRT Via Simulation</a></li>
-<li class="chapter" data-level="4.7.5" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#score-and-wald-tests"><i class="fa fa-check"></i><b>4.7.5</b> Score and Wald Tests</a></li>
-<li class="chapter" data-level="4.7.6" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#poisson-distribution-chi-square-based-hypothesis-testing"><i class="fa fa-check"></i><b>4.7.6</b> Poisson Distribution: Chi-Square-Based Hypothesis Testing</a></li>
-<li class="chapter" data-level="4.7.7" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#death-by-horse-kick-are-the-data-poisson-distributed"><i class="fa fa-check"></i><b>4.7.7</b> Death-by-Horse-Kick: Are the Data Poisson Distributed?</a></li>
+<li class="chapter" data-level="4.7.5" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#poisson-distribution-chi-square-based-hypothesis-testing"><i class="fa fa-check"></i><b>4.7.5</b> Poisson Distribution: Chi-Square-Based Hypothesis Testing</a></li>
+<li class="chapter" data-level="4.7.6" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#death-by-horse-kick-are-the-data-poisson-distributed"><i class="fa fa-check"></i><b>4.7.6</b> Death-by-Horse-Kick: Are the Data Poisson Distributed?</a></li>
 </ul></li>
 <li class="chapter" data-level="4.8" data-path="the-poisson-and-related-distributions.html"><a href="the-poisson-and-related-distributions.html#poisson-and-negative-binomial-regression"><i class="fa fa-check"></i><b>4.8</b> Poisson and Negative Binomial Regression</a>
 <ul>
@@ -494,7 +494,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="5.5" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#hypothesis-testing-3"><i class="fa fa-check"></i><b>5.5</b> Hypothesis Testing</a>
 <ul>
-<li class="chapter" data-level="5.5.1" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#uniform-domain-parameter-hypothesis-test"><i class="fa fa-check"></i><b>5.5.1</b> Uniform Domain Parameter: Hypothesis Test</a></li>
+<li class="chapter" data-level="5.5.1" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#pareto-domain-parameter-hypothesis-test"><i class="fa fa-check"></i><b>5.5.1</b> Pareto Domain Parameter: Hypothesis Test</a></li>
 </ul></li>
 <li class="chapter" data-level="5.6" data-path="distributions-with-domain-specifying-parameters.html"><a href="distributions-with-domain-specifying-parameters.html#exercises-4"><i class="fa fa-check"></i><b>5.6</b> Exercises</a></li>
 </ul></li>
@@ -1139,41 +1139,41 @@ size <span class="math inline">\(n = 40\)</span>; for <span class="math inline">
 to one. For each dataset, we test the hypotheses <span class="math inline">\(H_o : \mu = 0\)</span>
 versus <span class="math inline">\(H_a : \mu &gt; 0\)</span>.</p>
 </blockquote>
-<div class="sourceCode" id="cb417"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb417-1"><a href="further-conceptual-details-optional.html#cb417-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
-<span id="cb417-2"><a href="further-conceptual-details-optional.html#cb417-2" tabindex="-1"></a></span>
-<span id="cb417-3"><a href="further-conceptual-details-optional.html#cb417-3" tabindex="-1"></a>n      <span class="ot">&lt;-</span> <span class="dv">40</span></span>
-<span id="cb417-4"><a href="further-conceptual-details-optional.html#cb417-4" tabindex="-1"></a>k      <span class="ot">&lt;-</span> <span class="dv">100</span></span>
-<span id="cb417-5"><a href="further-conceptual-details-optional.html#cb417-5" tabindex="-1"></a>k.p    <span class="ot">&lt;-</span> <span class="dv">80</span></span>
-<span id="cb417-6"><a href="further-conceptual-details-optional.html#cb417-6" tabindex="-1"></a>mu     <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">0</span>,k.p),<span class="fu">rep</span>(<span class="fl">0.5</span>,k<span class="sc">-</span>k.p))</span>
-<span id="cb417-7"><a href="further-conceptual-details-optional.html#cb417-7" tabindex="-1"></a>mu.o   <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb417-8"><a href="further-conceptual-details-optional.html#cb417-8" tabindex="-1"></a>sigma2 <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb417-9"><a href="further-conceptual-details-optional.html#cb417-9" tabindex="-1"></a></span>
-<span id="cb417-10"><a href="further-conceptual-details-optional.html#cb417-10" tabindex="-1"></a>p      <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>,k)</span>
-<span id="cb417-11"><a href="further-conceptual-details-optional.html#cb417-11" tabindex="-1"></a><span class="cf">for</span> ( ii <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>k ) {</span>
-<span id="cb417-12"><a href="further-conceptual-details-optional.html#cb417-12" tabindex="-1"></a>  X     <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n,<span class="at">mean=</span>mu[ii],<span class="at">sd=</span>sigma2)</span>
-<span id="cb417-13"><a href="further-conceptual-details-optional.html#cb417-13" tabindex="-1"></a>  p[ii] <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="fu">mean</span>(X),<span class="at">mean=</span>mu.o,<span class="at">sd=</span><span class="fu">sqrt</span>(sigma2<span class="sc">/</span>n))</span>
-<span id="cb417-14"><a href="further-conceptual-details-optional.html#cb417-14" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb405"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb405-1"><a href="further-conceptual-details-optional.html#cb405-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
+<span id="cb405-2"><a href="further-conceptual-details-optional.html#cb405-2" tabindex="-1"></a></span>
+<span id="cb405-3"><a href="further-conceptual-details-optional.html#cb405-3" tabindex="-1"></a>n      <span class="ot">&lt;-</span> <span class="dv">40</span></span>
+<span id="cb405-4"><a href="further-conceptual-details-optional.html#cb405-4" tabindex="-1"></a>k      <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb405-5"><a href="further-conceptual-details-optional.html#cb405-5" tabindex="-1"></a>k.p    <span class="ot">&lt;-</span> <span class="dv">80</span></span>
+<span id="cb405-6"><a href="further-conceptual-details-optional.html#cb405-6" tabindex="-1"></a>mu     <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">0</span>,k.p),<span class="fu">rep</span>(<span class="fl">0.5</span>,k<span class="sc">-</span>k.p))</span>
+<span id="cb405-7"><a href="further-conceptual-details-optional.html#cb405-7" tabindex="-1"></a>mu.o   <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb405-8"><a href="further-conceptual-details-optional.html#cb405-8" tabindex="-1"></a>sigma2 <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb405-9"><a href="further-conceptual-details-optional.html#cb405-9" tabindex="-1"></a></span>
+<span id="cb405-10"><a href="further-conceptual-details-optional.html#cb405-10" tabindex="-1"></a>p      <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>,k)</span>
+<span id="cb405-11"><a href="further-conceptual-details-optional.html#cb405-11" tabindex="-1"></a><span class="cf">for</span> ( ii <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>k ) {</span>
+<span id="cb405-12"><a href="further-conceptual-details-optional.html#cb405-12" tabindex="-1"></a>  X     <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n,<span class="at">mean=</span>mu[ii],<span class="at">sd=</span>sigma2)</span>
+<span id="cb405-13"><a href="further-conceptual-details-optional.html#cb405-13" tabindex="-1"></a>  p[ii] <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="fu">mean</span>(X),<span class="at">mean=</span>mu.o,<span class="at">sd=</span><span class="fu">sqrt</span>(sigma2<span class="sc">/</span>n))</span>
+<span id="cb405-14"><a href="further-conceptual-details-optional.html#cb405-14" tabindex="-1"></a>}</span></code></pre></div>
 <blockquote>
 <p>Below, we try two separate corrections for multiple comparisons: the
 Bonferroni correction (controlling FWER), and the Benjamini-Hochberg
 procedure (controlling FDR).</p>
 </blockquote>
-<div class="sourceCode" id="cb418"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb418-1"><a href="further-conceptual-details-optional.html#cb418-1" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
-<span id="cb418-2"><a href="further-conceptual-details-optional.html#cb418-2" tabindex="-1"></a></span>
-<span id="cb418-3"><a href="further-conceptual-details-optional.html#cb418-3" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The number of rejected null hypotheses for Bonferroni: &quot;</span>,</span>
-<span id="cb418-4"><a href="further-conceptual-details-optional.html#cb418-4" tabindex="-1"></a>    <span class="fu">sum</span>(p <span class="sc">&lt;</span> alpha<span class="sc">/</span>k),<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb406"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb406-1"><a href="further-conceptual-details-optional.html#cb406-1" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb406-2"><a href="further-conceptual-details-optional.html#cb406-2" tabindex="-1"></a></span>
+<span id="cb406-3"><a href="further-conceptual-details-optional.html#cb406-3" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The number of rejected null hypotheses for Bonferroni: &quot;</span>,</span>
+<span id="cb406-4"><a href="further-conceptual-details-optional.html#cb406-4" tabindex="-1"></a>    <span class="fu">sum</span>(p <span class="sc">&lt;</span> alpha<span class="sc">/</span>k),<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## The number of rejected null hypotheses for Bonferroni:  9</code></pre>
-<div class="sourceCode" id="cb420"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb420-1"><a href="further-conceptual-details-optional.html#cb420-1" tabindex="-1"></a>w <span class="ot">&lt;-</span> <span class="fu">which</span>(p <span class="sc">&lt;</span> alpha<span class="sc">/</span>k)</span>
-<span id="cb420-2"><a href="further-conceptual-details-optional.html#cb420-2" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The number of falsely rejected null hypotheses is:     &quot;</span>,<span class="fu">sum</span>(w<span class="sc">&lt;=</span>k.p),<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb408"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb408-1"><a href="further-conceptual-details-optional.html#cb408-1" tabindex="-1"></a>w <span class="ot">&lt;-</span> <span class="fu">which</span>(p <span class="sc">&lt;</span> alpha<span class="sc">/</span>k)</span>
+<span id="cb408-2"><a href="further-conceptual-details-optional.html#cb408-2" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The number of falsely rejected null hypotheses is:     &quot;</span>,<span class="fu">sum</span>(w<span class="sc">&lt;=</span>k.p),<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## The number of falsely rejected null hypotheses is:      0</code></pre>
-<div class="sourceCode" id="cb422"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb422-1"><a href="further-conceptual-details-optional.html#cb422-1" tabindex="-1"></a>p.sort <span class="ot">&lt;-</span> <span class="fu">sort</span>(p)</span>
-<span id="cb422-2"><a href="further-conceptual-details-optional.html#cb422-2" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The number of rejected null hypotheses for FDR:        &quot;</span>,</span>
-<span id="cb422-3"><a href="further-conceptual-details-optional.html#cb422-3" tabindex="-1"></a>    <span class="fu">sum</span>(p.sort <span class="sc">&lt;</span> (<span class="dv">1</span><span class="sc">:</span>k)<span class="sc">*</span>alpha<span class="sc">/</span>k),<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb410"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb410-1"><a href="further-conceptual-details-optional.html#cb410-1" tabindex="-1"></a>p.sort <span class="ot">&lt;-</span> <span class="fu">sort</span>(p)</span>
+<span id="cb410-2"><a href="further-conceptual-details-optional.html#cb410-2" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The number of rejected null hypotheses for FDR:        &quot;</span>,</span>
+<span id="cb410-3"><a href="further-conceptual-details-optional.html#cb410-3" tabindex="-1"></a>    <span class="fu">sum</span>(p.sort <span class="sc">&lt;</span> (<span class="dv">1</span><span class="sc">:</span>k)<span class="sc">*</span>alpha<span class="sc">/</span>k),<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## The number of rejected null hypotheses for FDR:         17</code></pre>
-<div class="sourceCode" id="cb424"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb424-1"><a href="further-conceptual-details-optional.html#cb424-1" tabindex="-1"></a>p.rej <span class="ot">&lt;-</span> p.sort[p.sort<span class="sc">&lt;</span>(<span class="dv">1</span><span class="sc">:</span>k)<span class="sc">*</span>alpha<span class="sc">/</span>k]</span>
-<span id="cb424-2"><a href="further-conceptual-details-optional.html#cb424-2" tabindex="-1"></a>w <span class="ot">&lt;-</span> p <span class="sc">%in%</span> p.rej</span>
-<span id="cb424-3"><a href="further-conceptual-details-optional.html#cb424-3" tabindex="-1"></a>w <span class="ot">&lt;-</span> <span class="fu">which</span>(w<span class="sc">==</span><span class="cn">TRUE</span>)</span>
-<span id="cb424-4"><a href="further-conceptual-details-optional.html#cb424-4" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The number of falsely rejected null hypotheses is:     &quot;</span>,<span class="fu">sum</span>(w<span class="sc">&lt;=</span>k.p),<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb412"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb412-1"><a href="further-conceptual-details-optional.html#cb412-1" tabindex="-1"></a>p.rej <span class="ot">&lt;-</span> p.sort[p.sort<span class="sc">&lt;</span>(<span class="dv">1</span><span class="sc">:</span>k)<span class="sc">*</span>alpha<span class="sc">/</span>k]</span>
+<span id="cb412-2"><a href="further-conceptual-details-optional.html#cb412-2" tabindex="-1"></a>w <span class="ot">&lt;-</span> p <span class="sc">%in%</span> p.rej</span>
+<span id="cb412-3"><a href="further-conceptual-details-optional.html#cb412-3" tabindex="-1"></a>w <span class="ot">&lt;-</span> <span class="fu">which</span>(w<span class="sc">==</span><span class="cn">TRUE</span>)</span>
+<span id="cb412-4"><a href="further-conceptual-details-optional.html#cb412-4" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The number of falsely rejected null hypotheses is:     &quot;</span>,<span class="fu">sum</span>(w<span class="sc">&lt;=</span>k.p),<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## The number of falsely rejected null hypotheses is:      0</code></pre>
 <blockquote>
 <p>With the Bonferroni correction, we reject nine null hypotheses (with the
