@@ -364,6 +364,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.6.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#sufficiency-when-we-cannot-reduce-data"><i class="fa fa-check"></i><b>3.6.3</b> Sufficiency: When We Cannot Reduce Data</a></li>
 <li class="chapter" data-level="3.6.4" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#exponential-distribution-mvue-for-population-mean"><i class="fa fa-check"></i><b>3.6.4</b> Exponential Distribution: MVUE for Population Mean</a></li>
 <li class="chapter" data-level="3.6.5" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#geometric-distribution-mvue-for-number-of-failures"><i class="fa fa-check"></i><b>3.6.5</b> Geometric Distribution: MVUE for Number of Failures</a></li>
+<li class="chapter" data-level="3.6.6" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#order-statistics-distribution-free-percentile-estimate"><i class="fa fa-check"></i><b>3.6.6</b> Order Statistics: Distribution-Free Percentile Estimate</a></li>
 </ul></li>
 <li class="chapter" data-level="3.7" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#confidence-intervals-2"><i class="fa fa-check"></i><b>3.7</b> Confidence Intervals</a>
 <ul>
@@ -372,6 +373,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.7.3" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#negative-binomial-probability-confidence-interval"><i class="fa fa-check"></i><b>3.7.3</b> Negative Binomial Probability: Confidence Interval</a></li>
 <li class="chapter" data-level="3.7.4" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#hypergeometric-distribution-number-of-successes"><i class="fa fa-check"></i><b>3.7.4</b> Hypergeometric Distribution: Number of Successes</a></li>
 <li class="chapter" data-level="3.7.5" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#order-statistic-confidence-interval"><i class="fa fa-check"></i><b>3.7.5</b> Order Statistic: Confidence Interval</a></li>
+<li class="chapter" data-level="3.7.6" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#order-statistics-distribution-free-confidence-interval-for-percentiles"><i class="fa fa-check"></i><b>3.7.6</b> Order Statistics: Distribution-Free Confidence Interval for Percentiles</a></li>
 </ul></li>
 <li class="chapter" data-level="3.8" data-path="the-binomial-and-related-distributions.html"><a href="the-binomial-and-related-distributions.html#hypothesis-testing-neyman-pearson-lemma"><i class="fa fa-check"></i><b>3.8</b> Hypothesis Testing: Neyman-Pearson Lemma</a>
 <ul>
@@ -773,9 +775,9 @@ Immediately, we can identify that <span class="math inline">\(a = j\)</span> and
 e.g., the probability that the fourth smallest of nine Uniform(0,1) random
 variables has a value between 0.3 and 0.4:</p>
 </blockquote>
-<div class="sourceCode" id="cb348"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb348-1"><a href="distributions-with-domain-specifying-parameters.html#cb348-1" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">9</span></span>
-<span id="cb348-2"><a href="distributions-with-domain-specifying-parameters.html#cb348-2" tabindex="-1"></a>j <span class="ot">&lt;-</span> <span class="dv">4</span></span>
-<span id="cb348-3"><a href="distributions-with-domain-specifying-parameters.html#cb348-3" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">pbeta</span>(<span class="fl">0.4</span>, <span class="at">shape1=</span>j, <span class="at">shape2=</span>n<span class="sc">-</span>j<span class="sc">+</span><span class="dv">1</span>) <span class="sc">-</span> <span class="fu">pbeta</span>(<span class="fl">0.3</span>, <span class="at">shape1=</span>j, <span class="at">shape2=</span>n<span class="sc">-</span>j<span class="sc">+</span><span class="dv">1</span>), <span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb358"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb358-1"><a href="distributions-with-domain-specifying-parameters.html#cb358-1" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">9</span></span>
+<span id="cb358-2"><a href="distributions-with-domain-specifying-parameters.html#cb358-2" tabindex="-1"></a>j <span class="ot">&lt;-</span> <span class="dv">4</span></span>
+<span id="cb358-3"><a href="distributions-with-domain-specifying-parameters.html#cb358-3" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">pbeta</span>(<span class="fl">0.4</span>, <span class="at">shape1=</span>j, <span class="at">shape2=</span>n<span class="sc">-</span>j<span class="sc">+</span><span class="dv">1</span>) <span class="sc">-</span> <span class="fu">pbeta</span>(<span class="fl">0.3</span>, <span class="at">shape1=</span>j, <span class="at">shape2=</span>n<span class="sc">-</span>j<span class="sc">+</span><span class="dv">1</span>), <span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## [1] 0.247</code></pre>
 <hr />
 </div>
@@ -846,52 +848,52 @@ of the cumulative distribution function, given <span class="math inline">\(x\)</
 <p>For the discrete uniform distribution, one can code the
 probability mass function as follows:</p>
 </blockquote>
-<div class="sourceCode" id="cb350"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb350-1"><a href="distributions-with-domain-specifying-parameters.html#cb350-1" tabindex="-1"></a>ddiscunif <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">min=</span><span class="dv">0</span>, <span class="at">max=</span><span class="dv">1</span>, <span class="at">step=</span><span class="dv">1</span>)</span>
-<span id="cb350-2"><a href="distributions-with-domain-specifying-parameters.html#cb350-2" tabindex="-1"></a>{</span>
-<span id="cb350-3"><a href="distributions-with-domain-specifying-parameters.html#cb350-3" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">seq</span>(min, max, <span class="at">by=</span>step)</span>
-<span id="cb350-4"><a href="distributions-with-domain-specifying-parameters.html#cb350-4" tabindex="-1"></a>  <span class="cf">if</span> ( x <span class="sc">%in%</span> y ) <span class="fu">return</span>(<span class="dv">1</span><span class="sc">/</span><span class="fu">length</span>(y))</span>
-<span id="cb350-5"><a href="distributions-with-domain-specifying-parameters.html#cb350-5" tabindex="-1"></a>  <span class="fu">return</span>(<span class="dv">0</span>)</span>
-<span id="cb350-6"><a href="distributions-with-domain-specifying-parameters.html#cb350-6" tabindex="-1"></a>}</span>
-<span id="cb350-7"><a href="distributions-with-domain-specifying-parameters.html#cb350-7" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">ddiscunif</span>(<span class="dv">4</span>, <span class="at">min=</span><span class="dv">1</span>, <span class="at">max=</span><span class="dv">6</span>), <span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb360"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb360-1"><a href="distributions-with-domain-specifying-parameters.html#cb360-1" tabindex="-1"></a>ddiscunif <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">min=</span><span class="dv">0</span>, <span class="at">max=</span><span class="dv">1</span>, <span class="at">step=</span><span class="dv">1</span>)</span>
+<span id="cb360-2"><a href="distributions-with-domain-specifying-parameters.html#cb360-2" tabindex="-1"></a>{</span>
+<span id="cb360-3"><a href="distributions-with-domain-specifying-parameters.html#cb360-3" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">seq</span>(min, max, <span class="at">by=</span>step)</span>
+<span id="cb360-4"><a href="distributions-with-domain-specifying-parameters.html#cb360-4" tabindex="-1"></a>  <span class="cf">if</span> ( x <span class="sc">%in%</span> y ) <span class="fu">return</span>(<span class="dv">1</span><span class="sc">/</span><span class="fu">length</span>(y))</span>
+<span id="cb360-5"><a href="distributions-with-domain-specifying-parameters.html#cb360-5" tabindex="-1"></a>  <span class="fu">return</span>(<span class="dv">0</span>)</span>
+<span id="cb360-6"><a href="distributions-with-domain-specifying-parameters.html#cb360-6" tabindex="-1"></a>}</span>
+<span id="cb360-7"><a href="distributions-with-domain-specifying-parameters.html#cb360-7" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">ddiscunif</span>(<span class="dv">4</span>, <span class="at">min=</span><span class="dv">1</span>, <span class="at">max=</span><span class="dv">6</span>), <span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## [1] 0.167</code></pre>
 <blockquote>
 <p>As for the cumulative distribution function:</p>
 </blockquote>
-<div class="sourceCode" id="cb352"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb352-1"><a href="distributions-with-domain-specifying-parameters.html#cb352-1" tabindex="-1"></a>pdiscunif <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">min=</span><span class="dv">0</span>, <span class="at">max=</span><span class="dv">1</span>, <span class="at">step=</span><span class="dv">1</span>)</span>
-<span id="cb352-2"><a href="distributions-with-domain-specifying-parameters.html#cb352-2" tabindex="-1"></a>{</span>
-<span id="cb352-3"><a href="distributions-with-domain-specifying-parameters.html#cb352-3" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">seq</span>(min, max, <span class="at">by=</span>step)</span>
-<span id="cb352-4"><a href="distributions-with-domain-specifying-parameters.html#cb352-4" tabindex="-1"></a>  w <span class="ot">&lt;-</span> <span class="fu">which</span>(y<span class="sc">&lt;=</span>x)</span>
-<span id="cb352-5"><a href="distributions-with-domain-specifying-parameters.html#cb352-5" tabindex="-1"></a>  <span class="cf">if</span> ( <span class="fu">length</span>(w) <span class="sc">==</span> <span class="dv">0</span> ) <span class="fu">return</span>(<span class="dv">0</span>)</span>
-<span id="cb352-6"><a href="distributions-with-domain-specifying-parameters.html#cb352-6" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">length</span>(w)<span class="sc">/</span><span class="fu">length</span>(y))</span>
-<span id="cb352-7"><a href="distributions-with-domain-specifying-parameters.html#cb352-7" tabindex="-1"></a>}</span>
-<span id="cb352-8"><a href="distributions-with-domain-specifying-parameters.html#cb352-8" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">pdiscunif</span>(<span class="dv">4</span>, <span class="at">min=</span><span class="dv">1</span>, <span class="at">max=</span><span class="dv">6</span>), <span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb362"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb362-1"><a href="distributions-with-domain-specifying-parameters.html#cb362-1" tabindex="-1"></a>pdiscunif <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">min=</span><span class="dv">0</span>, <span class="at">max=</span><span class="dv">1</span>, <span class="at">step=</span><span class="dv">1</span>)</span>
+<span id="cb362-2"><a href="distributions-with-domain-specifying-parameters.html#cb362-2" tabindex="-1"></a>{</span>
+<span id="cb362-3"><a href="distributions-with-domain-specifying-parameters.html#cb362-3" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">seq</span>(min, max, <span class="at">by=</span>step)</span>
+<span id="cb362-4"><a href="distributions-with-domain-specifying-parameters.html#cb362-4" tabindex="-1"></a>  w <span class="ot">&lt;-</span> <span class="fu">which</span>(y<span class="sc">&lt;=</span>x)</span>
+<span id="cb362-5"><a href="distributions-with-domain-specifying-parameters.html#cb362-5" tabindex="-1"></a>  <span class="cf">if</span> ( <span class="fu">length</span>(w) <span class="sc">==</span> <span class="dv">0</span> ) <span class="fu">return</span>(<span class="dv">0</span>)</span>
+<span id="cb362-6"><a href="distributions-with-domain-specifying-parameters.html#cb362-6" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">length</span>(w)<span class="sc">/</span><span class="fu">length</span>(y))</span>
+<span id="cb362-7"><a href="distributions-with-domain-specifying-parameters.html#cb362-7" tabindex="-1"></a>}</span>
+<span id="cb362-8"><a href="distributions-with-domain-specifying-parameters.html#cb362-8" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">pdiscunif</span>(<span class="dv">4</span>, <span class="at">min=</span><span class="dv">1</span>, <span class="at">max=</span><span class="dv">6</span>), <span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## [1] 0.667</code></pre>
 <blockquote>
 <p>The inverse cdf implements the generalized inverse algorithm:</p>
 </blockquote>
-<div class="sourceCode" id="cb354"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb354-1"><a href="distributions-with-domain-specifying-parameters.html#cb354-1" tabindex="-1"></a>qdiscunif <span class="ot">&lt;-</span> <span class="cf">function</span>(q, <span class="at">min=</span><span class="dv">0</span>, <span class="at">max=</span><span class="dv">1</span>, <span class="at">step=</span><span class="dv">1</span>)</span>
-<span id="cb354-2"><a href="distributions-with-domain-specifying-parameters.html#cb354-2" tabindex="-1"></a>{</span>
-<span id="cb354-3"><a href="distributions-with-domain-specifying-parameters.html#cb354-3" tabindex="-1"></a>  y   <span class="ot">&lt;-</span> <span class="fu">seq</span>(min, max, <span class="at">by=</span>step)</span>
-<span id="cb354-4"><a href="distributions-with-domain-specifying-parameters.html#cb354-4" tabindex="-1"></a>  <span class="cf">if</span> ( q <span class="sc">==</span> <span class="dv">0</span> ) <span class="fu">return</span>(<span class="fu">min</span>(y))</span>
-<span id="cb354-5"><a href="distributions-with-domain-specifying-parameters.html#cb354-5" tabindex="-1"></a>  <span class="cf">if</span> ( q <span class="sc">==</span> <span class="dv">1</span> ) <span class="fu">return</span>(<span class="fu">max</span>(y))</span>
-<span id="cb354-6"><a href="distributions-with-domain-specifying-parameters.html#cb354-6" tabindex="-1"></a>  cdf <span class="ot">&lt;-</span> (<span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(y))<span class="sc">/</span><span class="fu">length</span>(y)</span>
-<span id="cb354-7"><a href="distributions-with-domain-specifying-parameters.html#cb354-7" tabindex="-1"></a>  w   <span class="ot">&lt;-</span> <span class="fu">which</span>(cdf<span class="sc">&gt;=</span>q)</span>
-<span id="cb354-8"><a href="distributions-with-domain-specifying-parameters.html#cb354-8" tabindex="-1"></a>  <span class="cf">if</span> ( <span class="fu">length</span>(w) <span class="sc">==</span> <span class="dv">0</span> ) <span class="fu">return</span>(<span class="fu">max</span>(y))</span>
-<span id="cb354-9"><a href="distributions-with-domain-specifying-parameters.html#cb354-9" tabindex="-1"></a>  <span class="fu">return</span>(y[<span class="fu">min</span>(w)])</span>
-<span id="cb354-10"><a href="distributions-with-domain-specifying-parameters.html#cb354-10" tabindex="-1"></a>}</span>
-<span id="cb354-11"><a href="distributions-with-domain-specifying-parameters.html#cb354-11" tabindex="-1"></a><span class="fu">qdiscunif</span>(<span class="fl">0.55</span>, <span class="at">min=</span><span class="dv">1</span>, <span class="at">max=</span><span class="dv">6</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb364"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb364-1"><a href="distributions-with-domain-specifying-parameters.html#cb364-1" tabindex="-1"></a>qdiscunif <span class="ot">&lt;-</span> <span class="cf">function</span>(q, <span class="at">min=</span><span class="dv">0</span>, <span class="at">max=</span><span class="dv">1</span>, <span class="at">step=</span><span class="dv">1</span>)</span>
+<span id="cb364-2"><a href="distributions-with-domain-specifying-parameters.html#cb364-2" tabindex="-1"></a>{</span>
+<span id="cb364-3"><a href="distributions-with-domain-specifying-parameters.html#cb364-3" tabindex="-1"></a>  y   <span class="ot">&lt;-</span> <span class="fu">seq</span>(min, max, <span class="at">by=</span>step)</span>
+<span id="cb364-4"><a href="distributions-with-domain-specifying-parameters.html#cb364-4" tabindex="-1"></a>  <span class="cf">if</span> ( q <span class="sc">==</span> <span class="dv">0</span> ) <span class="fu">return</span>(<span class="fu">min</span>(y))</span>
+<span id="cb364-5"><a href="distributions-with-domain-specifying-parameters.html#cb364-5" tabindex="-1"></a>  <span class="cf">if</span> ( q <span class="sc">==</span> <span class="dv">1</span> ) <span class="fu">return</span>(<span class="fu">max</span>(y))</span>
+<span id="cb364-6"><a href="distributions-with-domain-specifying-parameters.html#cb364-6" tabindex="-1"></a>  cdf <span class="ot">&lt;-</span> (<span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(y))<span class="sc">/</span><span class="fu">length</span>(y)</span>
+<span id="cb364-7"><a href="distributions-with-domain-specifying-parameters.html#cb364-7" tabindex="-1"></a>  w   <span class="ot">&lt;-</span> <span class="fu">which</span>(cdf<span class="sc">&gt;=</span>q)</span>
+<span id="cb364-8"><a href="distributions-with-domain-specifying-parameters.html#cb364-8" tabindex="-1"></a>  <span class="cf">if</span> ( <span class="fu">length</span>(w) <span class="sc">==</span> <span class="dv">0</span> ) <span class="fu">return</span>(<span class="fu">max</span>(y))</span>
+<span id="cb364-9"><a href="distributions-with-domain-specifying-parameters.html#cb364-9" tabindex="-1"></a>  <span class="fu">return</span>(y[<span class="fu">min</span>(w)])</span>
+<span id="cb364-10"><a href="distributions-with-domain-specifying-parameters.html#cb364-10" tabindex="-1"></a>}</span>
+<span id="cb364-11"><a href="distributions-with-domain-specifying-parameters.html#cb364-11" tabindex="-1"></a><span class="fu">qdiscunif</span>(<span class="fl">0.55</span>, <span class="at">min=</span><span class="dv">1</span>, <span class="at">max=</span><span class="dv">6</span>)</span></code></pre></div>
 <pre><code>## [1] 4</code></pre>
 <blockquote>
 <p>And last, the random data generator:</p>
 </blockquote>
-<div class="sourceCode" id="cb356"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb356-1"><a href="distributions-with-domain-specifying-parameters.html#cb356-1" tabindex="-1"></a>rdiscunif <span class="ot">&lt;-</span> <span class="cf">function</span>(n, <span class="at">min=</span><span class="dv">0</span>, <span class="at">max=</span><span class="dv">1</span>, <span class="at">step=</span><span class="dv">1</span>)</span>
-<span id="cb356-2"><a href="distributions-with-domain-specifying-parameters.html#cb356-2" tabindex="-1"></a>{</span>
-<span id="cb356-3"><a href="distributions-with-domain-specifying-parameters.html#cb356-3" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">seq</span>(min, max, <span class="at">by=</span>step)</span>
-<span id="cb356-4"><a href="distributions-with-domain-specifying-parameters.html#cb356-4" tabindex="-1"></a>  s <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">length</span>(y), n, <span class="at">replace=</span><span class="cn">TRUE</span>)</span>
-<span id="cb356-5"><a href="distributions-with-domain-specifying-parameters.html#cb356-5" tabindex="-1"></a>  <span class="fu">return</span>(y[s])</span>
-<span id="cb356-6"><a href="distributions-with-domain-specifying-parameters.html#cb356-6" tabindex="-1"></a>}</span>
-<span id="cb356-7"><a href="distributions-with-domain-specifying-parameters.html#cb356-7" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">236</span>) <span class="co"># set to ensure consistent output</span></span>
-<span id="cb356-8"><a href="distributions-with-domain-specifying-parameters.html#cb356-8" tabindex="-1"></a><span class="fu">rdiscunif</span>(<span class="dv">10</span>,<span class="at">min=</span><span class="dv">1</span>,<span class="at">max=</span><span class="dv">6</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb366"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb366-1"><a href="distributions-with-domain-specifying-parameters.html#cb366-1" tabindex="-1"></a>rdiscunif <span class="ot">&lt;-</span> <span class="cf">function</span>(n, <span class="at">min=</span><span class="dv">0</span>, <span class="at">max=</span><span class="dv">1</span>, <span class="at">step=</span><span class="dv">1</span>)</span>
+<span id="cb366-2"><a href="distributions-with-domain-specifying-parameters.html#cb366-2" tabindex="-1"></a>{</span>
+<span id="cb366-3"><a href="distributions-with-domain-specifying-parameters.html#cb366-3" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">seq</span>(min, max, <span class="at">by=</span>step)</span>
+<span id="cb366-4"><a href="distributions-with-domain-specifying-parameters.html#cb366-4" tabindex="-1"></a>  s <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">length</span>(y), n, <span class="at">replace=</span><span class="cn">TRUE</span>)</span>
+<span id="cb366-5"><a href="distributions-with-domain-specifying-parameters.html#cb366-5" tabindex="-1"></a>  <span class="fu">return</span>(y[s])</span>
+<span id="cb366-6"><a href="distributions-with-domain-specifying-parameters.html#cb366-6" tabindex="-1"></a>}</span>
+<span id="cb366-7"><a href="distributions-with-domain-specifying-parameters.html#cb366-7" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">236</span>) <span class="co"># set to ensure consistent output</span></span>
+<span id="cb366-8"><a href="distributions-with-domain-specifying-parameters.html#cb366-8" tabindex="-1"></a><span class="fu">rdiscunif</span>(<span class="dv">10</span>,<span class="at">min=</span><span class="dv">1</span>,<span class="at">max=</span><span class="dv">6</span>)</span></code></pre></div>
 <pre><code>##  [1] 6 6 6 3 3 4 1 1 5 4</code></pre>
 </div>
 </div>
@@ -1308,6 +1310,7 @@ and that
 <p>What to take away from this section:</p>
 <ul>
 <li>Interval estimates for distribution bounds generated using sufficient statistics (i.e., order statistics) behave “properly” in that they do not overlap the value of the statistic itself.</li>
+<li>Constructing one-sided confidence intervals is superior to constructing two-sided confidence intervals when we wish to make inferences about domain-specifying parameters.</li>
 </ul>
 </div>
 <p><br></p>
@@ -1324,6 +1327,19 @@ F_Y(y_{\rm obs} \vert \theta) - q = 0 \,,
 \]</span>
 <em>where <span class="math inline">\(F_Y(\cdot)\)</span> is the cumulative distribution function for the statistic <span class="math inline">\(Y\)</span>, <span class="math inline">\(y_{\rm obs}\)</span> is the observed value of the statistic, and <span class="math inline">\(q\)</span> is an appropriate quantile value that is determined using the confidence interval reference table introduced in section 16 of Chapter 1.</em></p>
 </blockquote>
+<p>Our coverage, so to speak, of confidence intervals in very nearly complete
+and there is little for us to add to the discussion now…<em>except</em>…</p>
+<p>In the first example below, we demonstrate that one of the quirks of
+statistical inference with domain-specifying parameters is that, regardless
+of any research questions we are trying to answer when we analyze data,
+constructing <span class="math inline">\(100(1-\alpha)\)</span>-percent one-sided intervals is
+superior to constructing <span class="math inline">\(100(1-\alpha)\)</span>-percent two-sided intervals.
+And in the second example, we circle back around to a point made back in
+Chapter 1: <span class="math inline">\(1-\alpha\)</span> is technically the infimum, or minimum value, of
+<span class="math inline">\(P\left( \hat{\theta}_L \leq \theta \leq \hat{\theta}_U \right)\)</span>, even though
+throughout the book we have treated it as a user-specified constant. How
+might we define confidence intervals such that their coverage is technically
+zero?</p>
 <div id="uniform-domain-parameter-interval-estimation" class="section level3 hasAnchor" number="5.4.1">
 <h3><span class="header-section-number">5.4.1</span> Uniform Domain Parameter: Interval Estimation<a href="distributions-with-domain-specifying-parameters.html#uniform-domain-parameter-interval-estimation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <blockquote>
@@ -1376,6 +1392,37 @@ bound is the true value.)</p>
 Figure 5.5: Ten 90 percent confidence intervals, generated using data from 10 separate datasets of size <span class="math inline">\(n = 10\)</span> sampled according to a Uniform(<span class="math inline">\(0,\theta\)</span>) distribution. (Here, <span class="math inline">\(\theta = 1\)</span>.) The observed statistic values <span class="math inline">\(X_{(n)}\)</span> are shown as red crosses; in each case, the values lie outside the derived intervals.
 </p>
 </div>
+<blockquote>
+<p>Now, let’s take one of the datasets used to construct
+Figure <a href="distributions-with-domain-specifying-parameters.html#fig:unifci">5.5</a>, and look at its associated confidence interval:</p>
+</blockquote>
+<div class="sourceCode" id="cb368"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb368-1"><a href="distributions-with-domain-specifying-parameters.html#cb368-1" tabindex="-1"></a><span class="fu">round</span>(X, <span class="dv">3</span>)</span></code></pre></div>
+<pre><code>##  [1] 0.335 0.494 0.613 0.672 0.687 0.764 0.797 0.842 0.888 0.920</code></pre>
+<div class="sourceCode" id="cb370"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb370-1"><a href="distributions-with-domain-specifying-parameters.html#cb370-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The maximum value is                      &quot;</span>, <span class="fu">round</span>(<span class="fu">max</span>(X), <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## The maximum value is                       0.92</code></pre>
+<div class="sourceCode" id="cb372"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb372-1"><a href="distributions-with-domain-specifying-parameters.html#cb372-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The two-sided 90% confidence interval is [&quot;</span>, <span class="fu">round</span>(hat.theta.L,<span class="dv">3</span>), <span class="st">&quot;,&quot;</span>,</span>
+<span id="cb372-2"><a href="distributions-with-domain-specifying-parameters.html#cb372-2" tabindex="-1"></a>     <span class="fu">round</span>(hat.theta.U, <span class="dv">3</span>), <span class="st">&quot;]</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## The two-sided 90% confidence interval is [ 0.925 , 1.242 ]</code></pre>
+<blockquote>
+<p>What do we observe? On one side of our two-sided interval, there is a
+small gap between the value of the maximum datum (0.920) and the value
+of <span class="math inline">\(\hat{\theta}_L\)</span> (0.925). We also observe the width of the interval
+to be <span class="math inline">\(1.242 - 0.925 = 0.317\)</span>.</p>
+</blockquote>
+<blockquote>
+<p>What would happen if we were to construct a 90% one-sided upper bound
+on <span class="math inline">\(\theta\)</span> instead? The lower bound would effectively shift very little,
+from 0.925 to 0.920, while the upper bound would shift from 1.242 to
+<span class="math display">\[
+\hat{\theta}_U = \frac{X_{(n)}}{\alpha^{1/n}} = \frac{0.920}{(0.1)^{1/10}} = 1.158 \,.
+\]</span>
+The interval width changes from 0.317 to 0.238, a decrease of nearly
+25%! In the end, when attempting to quantify our uncertainty about
+the value of <span class="math inline">\(\theta\)</span>, we become slightly more uncertain in one direction
+(adding the range <span class="math inline">\([0.920,0.925)\)</span> to our interval) but substantially less
+uncertain in the other (removing the range <span class="math inline">\((1.158,1.242]\)</span> from our
+interval). We thus find that <em>one-sided confidence intervals are superior to two-sided ones when we are trying to infer domain-specifying parameters</em>.</p>
+</blockquote>
 <hr />
 </div>
 <div id="uniform-domain-parameter-confidence-coefficient" class="section level3 hasAnchor" number="5.4.2">
@@ -1459,45 +1506,62 @@ we find that
 mean as our interval-constructing statistic. (We shouldn’t, because it is
 not a sufficient statistic for <span class="math inline">\(b\)</span>, but we are headstrong and are going to
 plow ahead.) Below we show a simulation framework for estimating a 95%
-upper bound for <span class="math inline">\(b\)</span>, given that <span class="math inline">\(a = 3\)</span> and <span class="math inline">\(n = 8\)</span>. Note that the
+lower bound for <span class="math inline">\(b\)</span>, given that <span class="math inline">\(a = 3\)</span> and <span class="math inline">\(n = 8\)</span>. Note that the
 expected value of <span class="math inline">\(\bar{X}\)</span> increases with <span class="math inline">\(b\)</span>, as the reader can verify,
-so <span class="math inline">\(q = \alpha = 0.05\)</span>.</p>
+so <span class="math inline">\(q = 1-\alpha = 0.95\)</span>.</p>
 </blockquote>
-<div class="sourceCode" id="cb358"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb358-1"><a href="distributions-with-domain-specifying-parameters.html#cb358-1" tabindex="-1"></a><span class="co"># generate data</span></span>
-<span id="cb358-2"><a href="distributions-with-domain-specifying-parameters.html#cb358-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">236</span>)</span>
-<span id="cb358-3"><a href="distributions-with-domain-specifying-parameters.html#cb358-3" tabindex="-1"></a>num.sim <span class="ot">&lt;-</span> <span class="dv">100000</span></span>
-<span id="cb358-4"><a href="distributions-with-domain-specifying-parameters.html#cb358-4" tabindex="-1"></a>n       <span class="ot">&lt;-</span> <span class="dv">8</span></span>
-<span id="cb358-5"><a href="distributions-with-domain-specifying-parameters.html#cb358-5" tabindex="-1"></a>a       <span class="ot">&lt;-</span> <span class="dv">3</span></span>
-<span id="cb358-6"><a href="distributions-with-domain-specifying-parameters.html#cb358-6" tabindex="-1"></a>b       <span class="ot">&lt;-</span> <span class="fl">1.5</span></span>
-<span id="cb358-7"><a href="distributions-with-domain-specifying-parameters.html#cb358-7" tabindex="-1"></a>X.obs   <span class="ot">&lt;-</span> extraDistr<span class="sc">::</span><span class="fu">rpareto</span>(n, <span class="at">a=</span>a, <span class="at">b=</span>b) <span class="co"># avoid namespace conflict</span></span>
-<span id="cb358-8"><a href="distributions-with-domain-specifying-parameters.html#cb358-8" tabindex="-1"></a>y.obs   <span class="ot">&lt;-</span> <span class="fu">mean</span>(X.obs)</span>
-<span id="cb358-9"><a href="distributions-with-domain-specifying-parameters.html#cb358-9" tabindex="-1"></a></span>
-<span id="cb358-10"><a href="distributions-with-domain-specifying-parameters.html#cb358-10" tabindex="-1"></a><span class="fu">min</span>(X.obs)</span></code></pre></div>
+<div class="sourceCode" id="cb374"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb374-1"><a href="distributions-with-domain-specifying-parameters.html#cb374-1" tabindex="-1"></a><span class="co"># generate data</span></span>
+<span id="cb374-2"><a href="distributions-with-domain-specifying-parameters.html#cb374-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">236</span>)</span>
+<span id="cb374-3"><a href="distributions-with-domain-specifying-parameters.html#cb374-3" tabindex="-1"></a>num.sim <span class="ot">&lt;-</span> <span class="dv">100000</span></span>
+<span id="cb374-4"><a href="distributions-with-domain-specifying-parameters.html#cb374-4" tabindex="-1"></a>n       <span class="ot">&lt;-</span> <span class="dv">8</span></span>
+<span id="cb374-5"><a href="distributions-with-domain-specifying-parameters.html#cb374-5" tabindex="-1"></a>a       <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb374-6"><a href="distributions-with-domain-specifying-parameters.html#cb374-6" tabindex="-1"></a>b       <span class="ot">&lt;-</span> <span class="fl">1.5</span></span>
+<span id="cb374-7"><a href="distributions-with-domain-specifying-parameters.html#cb374-7" tabindex="-1"></a>X.obs   <span class="ot">&lt;-</span> extraDistr<span class="sc">::</span><span class="fu">rpareto</span>(n, <span class="at">a=</span>a, <span class="at">b=</span>b) <span class="co"># avoid namespace conflict</span></span>
+<span id="cb374-8"><a href="distributions-with-domain-specifying-parameters.html#cb374-8" tabindex="-1"></a>y.obs   <span class="ot">&lt;-</span> <span class="fu">mean</span>(X.obs)</span>
+<span id="cb374-9"><a href="distributions-with-domain-specifying-parameters.html#cb374-9" tabindex="-1"></a>alpha   <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb374-10"><a href="distributions-with-domain-specifying-parameters.html#cb374-10" tabindex="-1"></a></span>
+<span id="cb374-11"><a href="distributions-with-domain-specifying-parameters.html#cb374-11" tabindex="-1"></a><span class="fu">min</span>(X.obs)</span></code></pre></div>
 <pre><code>## [1] 1.582117</code></pre>
-<div class="sourceCode" id="cb360"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb360-1"><a href="distributions-with-domain-specifying-parameters.html#cb360-1" tabindex="-1"></a><span class="co"># now find a 95% upper bound</span></span>
-<span id="cb360-2"><a href="distributions-with-domain-specifying-parameters.html#cb360-2" tabindex="-1"></a></span>
-<span id="cb360-3"><a href="distributions-with-domain-specifying-parameters.html#cb360-3" tabindex="-1"></a>alpha   <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
-<span id="cb360-4"><a href="distributions-with-domain-specifying-parameters.html#cb360-4" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(b, a, n, y.obs, q, <span class="at">num.sim=</span><span class="dv">1000000</span>, <span class="at">seed=</span><span class="dv">236</span>)</span>
-<span id="cb360-5"><a href="distributions-with-domain-specifying-parameters.html#cb360-5" tabindex="-1"></a>{</span>
-<span id="cb360-6"><a href="distributions-with-domain-specifying-parameters.html#cb360-6" tabindex="-1"></a>  <span class="fu">set.seed</span>(seed)</span>
-<span id="cb360-7"><a href="distributions-with-domain-specifying-parameters.html#cb360-7" tabindex="-1"></a>  X <span class="ot">&lt;-</span> <span class="fu">matrix</span>(extraDistr<span class="sc">::</span><span class="fu">rpareto</span>(num.sim<span class="sc">*</span>n, <span class="at">a=</span>a, <span class="at">b=</span>b), <span class="at">nrow=</span>num.sim)</span>
-<span id="cb360-8"><a href="distributions-with-domain-specifying-parameters.html#cb360-8" tabindex="-1"></a>  Y <span class="ot">&lt;-</span> <span class="fu">rowMeans</span>(X)</span>
-<span id="cb360-9"><a href="distributions-with-domain-specifying-parameters.html#cb360-9" tabindex="-1"></a>  <span class="fu">sum</span>(Y <span class="sc">&lt;=</span> y.obs)<span class="sc">/</span>num.sim <span class="sc">-</span> q</span>
-<span id="cb360-10"><a href="distributions-with-domain-specifying-parameters.html#cb360-10" tabindex="-1"></a>}</span>
-<span id="cb360-11"><a href="distributions-with-domain-specifying-parameters.html#cb360-11" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">uniroot</span>(f, <span class="fu">c</span>(<span class="fl">0.001</span>, <span class="dv">1000</span>), <span class="at">a=</span>a, <span class="at">n=</span>n, <span class="at">y.obs=</span>y.obs, <span class="at">q=</span>alpha)<span class="sc">$</span>root, <span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb376"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb376-1"><a href="distributions-with-domain-specifying-parameters.html#cb376-1" tabindex="-1"></a><span class="co"># the 95% lower bound given X_(1)</span></span>
+<span id="cb376-2"><a href="distributions-with-domain-specifying-parameters.html#cb376-2" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">min</span>(X.obs) <span class="sc">*</span> alpha<span class="sc">^</span>(<span class="dv">1</span><span class="sc">/</span>(n<span class="sc">*</span>a)), <span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## [1] 1.396</code></pre>
+<div class="sourceCode" id="cb378"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb378-1"><a href="distributions-with-domain-specifying-parameters.html#cb378-1" tabindex="-1"></a><span class="co"># the 95% lower bound given X.bar</span></span>
+<span id="cb378-2"><a href="distributions-with-domain-specifying-parameters.html#cb378-2" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(b, a, n, y.obs, q, <span class="at">num.sim=</span><span class="dv">1000000</span>, <span class="at">seed=</span><span class="dv">236</span>)</span>
+<span id="cb378-3"><a href="distributions-with-domain-specifying-parameters.html#cb378-3" tabindex="-1"></a>{</span>
+<span id="cb378-4"><a href="distributions-with-domain-specifying-parameters.html#cb378-4" tabindex="-1"></a>  <span class="fu">set.seed</span>(seed)</span>
+<span id="cb378-5"><a href="distributions-with-domain-specifying-parameters.html#cb378-5" tabindex="-1"></a>  X <span class="ot">&lt;-</span> <span class="fu">matrix</span>(extraDistr<span class="sc">::</span><span class="fu">rpareto</span>(num.sim<span class="sc">*</span>n, <span class="at">a=</span>a, <span class="at">b=</span>b), <span class="at">nrow=</span>num.sim)</span>
+<span id="cb378-6"><a href="distributions-with-domain-specifying-parameters.html#cb378-6" tabindex="-1"></a>  Y <span class="ot">&lt;-</span> <span class="fu">rowMeans</span>(X)</span>
+<span id="cb378-7"><a href="distributions-with-domain-specifying-parameters.html#cb378-7" tabindex="-1"></a>  <span class="fu">sum</span>(Y <span class="sc">&lt;=</span> y.obs)<span class="sc">/</span>num.sim <span class="sc">-</span> q</span>
+<span id="cb378-8"><a href="distributions-with-domain-specifying-parameters.html#cb378-8" tabindex="-1"></a>}</span>
+<span id="cb378-9"><a href="distributions-with-domain-specifying-parameters.html#cb378-9" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">uniroot</span>(f, <span class="fu">c</span>(<span class="fl">0.001</span>, <span class="dv">1000</span>), <span class="at">a=</span>a, <span class="at">n=</span>n, <span class="at">y.obs=</span>y.obs, <span class="at">q=</span><span class="dv">1</span><span class="sc">-</span>alpha)<span class="sc">$</span>root, <span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## [1] 0.989</code></pre>
+<blockquote>
+<p>The lower bound found given the sufficient statistic <span class="math inline">\(X_{(1)}\)</span> is
+1.396, while the lower bound found given <span class="math inline">\(\bar{X}\)</span> is 0.989. This result
+demonstrates that the utilization of sufficient statistics results
+in superior inferences (meaning, here, smaller intervals).</p>
+</blockquote>
+<blockquote>
+<p>But let’s take this example just a little farther: let’s compute a
+95% <em>upper bound</em> while utilizing the sample mean. (We utilize the
+same code as above, but we change <code>q=1-alpha</code> to <code>q=alpha</code> in the
+call to <code>uniroot()</code>.)</p>
+</blockquote>
+<div class="sourceCode" id="cb380"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb380-1"><a href="distributions-with-domain-specifying-parameters.html#cb380-1" tabindex="-1"></a><span class="co"># the 95% upper bound given X.bar</span></span>
+<span id="cb380-2"><a href="distributions-with-domain-specifying-parameters.html#cb380-2" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(b, a, n, y.obs, q, <span class="at">num.sim=</span><span class="dv">1000000</span>, <span class="at">seed=</span><span class="dv">236</span>)</span>
+<span id="cb380-3"><a href="distributions-with-domain-specifying-parameters.html#cb380-3" tabindex="-1"></a>{</span>
+<span id="cb380-4"><a href="distributions-with-domain-specifying-parameters.html#cb380-4" tabindex="-1"></a>  <span class="fu">set.seed</span>(seed)</span>
+<span id="cb380-5"><a href="distributions-with-domain-specifying-parameters.html#cb380-5" tabindex="-1"></a>  X <span class="ot">&lt;-</span> <span class="fu">matrix</span>(extraDistr<span class="sc">::</span><span class="fu">rpareto</span>(num.sim<span class="sc">*</span>n, <span class="at">a=</span>a, <span class="at">b=</span>b), <span class="at">nrow=</span>num.sim)</span>
+<span id="cb380-6"><a href="distributions-with-domain-specifying-parameters.html#cb380-6" tabindex="-1"></a>  Y <span class="ot">&lt;-</span> <span class="fu">rowMeans</span>(X)</span>
+<span id="cb380-7"><a href="distributions-with-domain-specifying-parameters.html#cb380-7" tabindex="-1"></a>  <span class="fu">sum</span>(Y <span class="sc">&lt;=</span> y.obs)<span class="sc">/</span>num.sim <span class="sc">-</span> q</span>
+<span id="cb380-8"><a href="distributions-with-domain-specifying-parameters.html#cb380-8" tabindex="-1"></a>}</span>
+<span id="cb380-9"><a href="distributions-with-domain-specifying-parameters.html#cb380-9" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">uniroot</span>(f, <span class="fu">c</span>(<span class="fl">0.001</span>, <span class="dv">1000</span>), <span class="at">a=</span>a, <span class="at">n=</span>n, <span class="at">y.obs=</span>y.obs, <span class="at">q=</span>alpha)<span class="sc">$</span>root, <span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## [1] 1.666</code></pre>
 <blockquote>
 <p>The upper bound is 1.666. We can immediately see that this is problematic
 since the smallest value among our eight data is <span class="math inline">\(x_{(1),{\rm obs}} = 1.582\)</span>:
-we should not have an upper bound on <span class="math inline">\(b\)</span> that exceeds any data values we
-observe!
-We can compare the sample mean upper bound against the value we would
-derive using <span class="math inline">\(x_{(1),{\rm obs}}\)</span>:
-<span class="math display">\[
-x_{(1),\rm obs} (1 - q)^{1/na} = (1.582) (0.95)^{1/24} = 1.578 \,.
-\]</span>
-We see that utilizing the sufficient statistic gives both a shorter interval
-and a valid interval.</p>
+we should not infer an upper bound on <span class="math inline">\(b\)</span> that exceeds any of the
+data values we observe!</p>
 </blockquote>
 </div>
 </div>
