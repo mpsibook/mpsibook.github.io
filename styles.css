@@ -1,0 +1,25 @@
+.bluebox {
+  padding: 1em;
+  background-color: #f0f8ff;
+  border: 1px solid #007bff;
+  border-left: 6px solid #007bff;
+  border-radius: 4px;
+}
+
+/* FIX: Removes default paragraph margin at the bottom of the box */
+.bluebox > p:last-child {
+  margin-bottom: 0;
+}
+
+.graybox {
+  padding: 1em;
+  background-color: #f1f1f1;
+  border: 1px solid #d3d3d3;
+  border-left: 6px solid #d3d3d3;
+  border-radius: 4px;
+}
+
+/* FIX: Removes default paragraph margin at the bottom of the box */
+.graybox > p:last-child {
+  margin-bottom: 0;
+}

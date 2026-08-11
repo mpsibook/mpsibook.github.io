@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Peter Freeman">
-<meta name="dcterms.date" content="2026-08-01">
 
-<title>Modern Probability and Statistical Inference</title>
+<title>Appendix: Table of Symbols – Modern Probability and Statistical Inference</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -35,7 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01-probability.html" rel="next">
+<link href="./09-references.html" rel="next">
+<link href="./07-optional.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -74,6 +73,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -87,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Preface</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08-appendixA.html">Appendix: Table of Symbols</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -114,7 +142,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
@@ -162,7 +190,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-appendixA.html" class="sidebar-item-text sidebar-link">
+  <a href="./08-appendixA.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Appendix: Table of Symbols</span></a>
   </div>
 </li>
@@ -183,44 +211,22 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a>
-  <ul class="collapse">
-  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements">Acknowledgements</a></li>
-  </ul></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Modern Probability and Statistical Inference</h1>
-<p class="subtitle lead">Illustrated with R</p>
+<h1 class="title">Appendix: Table of Symbols</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Peter Freeman </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">August 1, 2026</p>
-    </div>
-  </div>
   
     
   </div>
@@ -230,23 +236,214 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="preface" class="level1 unnumbered">
-<h1 class="unnumbered">Preface</h1>
-<p>I have developed this textbook for a new mathematical statistics course sequence for statistics students at Carnegie Mellon University (numbered 36-235 and 36-236), first piloted in Fall 2022 and Spring 2023. <em>The primary difference between it and others that are commonly used in math-stat classes is that I explicitly implement a</em> <strong>spiral-learning</strong> <em>framework, with concepts that are usually covered in relative isolation elsewhere being repeatedly covered here (such as, e.g., point estimation).</em></p>
-<p>My use of a spiral-learning framework is motivated by the observation that many students fixate on mathematics and coding and pay less attention to statistical concepts, with the details of concepts that are seen once often quickly forgotten. The spiral approach is meant to result in enhanced conceptual retention.</p>
-<p>To build the spiral structure, I have rather radically revised the order in which I cover topics, relative to the order one usually sees in a classic math-stat textbook. That textbook might have one chapter that illustrates the properties of discrete probability distributions using, e.g., the binomial, geometric, and Poisson distributions, then a second chapter that illustrates the properties of continuous distributions such as, e.g., the normal and gamma distributions, with neither chapter showing how these distributions are applied in statistical inference. Here, major distributions are broken out into their own chapters, and within each I revisit fundamental concepts: probability mass and density functions, cumulative distribution functions, statistics, sampling distibutions, point estimation, interval estimation, and hypothesis testing, etc. Then, as I move from chapter to chapter, I cover concepts at greater depth. As a concrete example: when discussing point estimation in Chapter 1, I introduce the concepts of bias, variance, and using the likelihood function to define estimators; when I return to point estimation in Chapter 2, I review these concepts (and derive the MLEs for normal distribution parameters), then add the concepts of consistency, Fisher information, the Cramer-Rao lower bound, and the asymptotic distribution of maximum likelihood estimates. Then in Chapter 3, I add in sufficient statistics and likelihood factorization, along with the minimum variance unbiased estimator. Etc.</p>
-<p>Another important difference between this textbook and older, more established math-stat textbooks is that I utilize <code>R</code> for coding visualizations, analyses, and simulations. It is expected that this will help students understand concepts more readily; it also allows me to broaden the “problem space” beyond typically used, analytically tractable distributions. (But I note that the newest generation of textbooks often employ enhanced computation…so it is really the spiral structure that makes this textbook fundamentally different.)</p>
-<p>If you are an instructor, feel free to utilize aspects of this book for your own class(es), but please do not share this document without my expressed consent. If you have comments or questions (or you want an updated version), please send email to the address given below.</p>
-<p>Peter Freeman</p>
-<p><code>pfreeman@cmu.edu</code></p>
-<p>August 2026</p>
-<section id="acknowledgements" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="acknowledgements">Acknowledgements</h2>
-<p>I would like to thank Eileen Xiao, who converted the original base-<code>R</code> graphics in the book to <code>ggplot()</code>-based graphics during the summer of 2023.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 86%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Symbol</th>
+<th>What the Symbol Represents</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\theta\)</span></td>
+<td>parameter(s) that dictate the shape/location of a distribution</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\hat{\theta}\)</span></td>
+<td>parameter estimate(s)</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\alpha\)</span></td>
+<td>one minus the confidence coefficient, or the hypothesis test Type I error</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\beta_i\)</span></td>
+<td>the <span class="math inline">\(i^{\rm th}\)</span> coefficient in a regression model</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\Gamma(x)\)</span></td>
+<td>the gamma function <span class="math inline">\((= (x-1)!\)</span> if <span class="math inline">\(x\)</span> is an integer)</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\epsilon\)</span></td>
+<td>the error term in a linear regression model</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\mu\)</span></td>
+<td>the distribution mean (or population mean) <span class="math inline">\((= E[X])\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\mu_k'\)</span></td>
+<td>the <span class="math inline">\(k^{\rm th}\)</span> distribution moment <span class="math inline">\((= E[X^k])\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\nu\)</span></td>
+<td>the number of degrees of freedom</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\sigma\)</span></td>
+<td>the distribution standard deviation (or population standard deviation)</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\sigma^2\)</span></td>
+<td>the distribution variance (or population variance) <span class="math inline">\((= V[X])\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\boldsymbol{\Sigma}\)</span></td>
+<td>the covariance matrix</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\Omega\)</span></td>
+<td>the sample space corresponding to an experiment</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(A\)</span>,<span class="math inline">\(B\)</span></td>
+<td>generic symbols for events in a sample space</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(B(\alpha,\beta)\)</span></td>
+<td>the beta function</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(B[\hat{\theta}]\)</span></td>
+<td>the bias of the estimator <span class="math inline">\(\hat{\theta}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(E[X]\)</span></td>
+<td>the expected value of the random variable <span class="math inline">\(X\)</span> <span class="math inline">\((= \mu)\)</span></td>
+</tr>
+<tr class="even">
+<td>erf(<span class="math inline">\(x\)</span>)</td>
+<td>the error function</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(f_X(x)\)</span></td>
+<td>the probability density function for the continuous random variable <span class="math inline">\(X\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(F_X(x)\)</span></td>
+<td>the cumulative distribution function for the random variable <span class="math inline">\(X\)</span></td>
+</tr>
+<tr class="odd">
+<td>iid</td>
+<td>independent and identically distributed random variables</td>
+</tr>
+<tr class="even">
+<td>MSE</td>
+<td>mean-squared error (<span class="math inline">\(V[\hat{\theta}] + B[\hat{\theta}]^2\)</span>)</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(P(a \leq X \leq b)\)</span></td>
+<td>the probability that <span class="math inline">\(X \in [a,b]\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(p_X(x)\)</span></td>
+<td>the probability mass function for the discrete random variable <span class="math inline">\(X\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(S\)</span></td>
+<td>the standard deviation of <span class="math inline">\(n\)</span> sampled data</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(S^2\)</span></td>
+<td>the variance of <span class="math inline">\(n\)</span> sampled data</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(T\)</span></td>
+<td>a datum sampled from a <span class="math inline">\(t\)</span> distribution</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(U\)</span></td>
+<td>a sufficient statistic, found via likelihood factorization</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(V[X]\)</span></td>
+<td>the variance of the random variable <span class="math inline">\(X\)</span> <span class="math inline">\((= \sigma^2)\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(W\)</span></td>
+<td>a datum sampled from a chi-square distribution</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(X\)</span></td>
+<td>a single datum (or random variable), sampled from a pmf or pdf</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(X_i\)</span></td>
+<td>the <span class="math inline">\(i^{\rm th}\)</span> datum of <span class="math inline">\(n\)</span> sampled data</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(X_{(i)}\)</span></td>
+<td>the <span class="math inline">\(i^{\rm th}\)</span> smallest datum of <span class="math inline">\(n\)</span> sampled data</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\bar{X}\)</span></td>
+<td>the mean of <span class="math inline">\(n\)</span> sample</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(Y\)</span></td>
+<td>a statistic, a function of the data in a data sample</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\mathcal{L}(\theta \vert \mathbf{x}\)</span>)</td>
+<td>the likelihood of <span class="math inline">\(\theta\)</span> given data coordinates <span class="math inline">\(\mathbf{x}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\ell(\theta \vert \mathbf{x}\)</span>)</td>
+<td>the log-likelihood <span class="math inline">\(\log \mathcal{L}(\theta \vert \mathbf{x})\)</span></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\cup\)</span></td>
+<td>“or” in a probability statment</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\cap\)</span></td>
+<td>“and” in a probability statment</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(|\)</span></td>
+<td>a condition, stated to the right of <span class="math inline">\(|\)</span>, in a probability statement</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\in\)</span></td>
+<td>“in,” as in <span class="math inline">\(x \in [a,b]\)</span> or “<span class="math inline">\(x\)</span> is in the range <span class="math inline">\(a\)</span> to <span class="math inline">\(b\)</span>”</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\prod_{i=1}^n x_i\)</span></td>
+<td>the product <span class="math inline">\(x_1 \cdot x_2 \cdot \cdots \cdot x_n\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\sum_{i=1}^n x_i\)</span></td>
+<td>the summation <span class="math inline">\(x_1 \cdot x_2 \cdot \cdots \cdot x_n\)</span></td>
+</tr>
+</tbody>
+</table>
 
 
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -651,10 +848,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./07-optional.html" class="pagination-link" aria-label="Further Conceptual Details (Optional)">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Further Conceptual Details (Optional)</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01-probability.html" class="pagination-link" aria-label="The Basics of Probability and Statistical Inference">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The Basics of Probability and Statistical Inference</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./09-references.html" class="pagination-link" aria-label="Bibliography">
+        <span class="nav-page-text">Bibliography</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

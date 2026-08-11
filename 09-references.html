@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Peter Freeman">
-<meta name="dcterms.date" content="2026-08-01">
 
-<title>Modern Probability and Statistical Inference</title>
+<title>Bibliography – Modern Probability and Statistical Inference</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -25,7 +23,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -35,7 +52,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01-probability.html" rel="next">
+<link href="./10-solutions.html" rel="next">
+<link href="./08-appendixA.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -87,7 +105,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Preface</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./09-references.html">Bibliography</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -114,7 +132,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
@@ -168,7 +186,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09-references.html" class="sidebar-item-text sidebar-link">
+  <a href="./09-references.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Bibliography</span></a>
   </div>
 </li>
@@ -183,44 +201,22 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a>
-  <ul class="collapse">
-  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements">Acknowledgements</a></li>
-  </ul></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Modern Probability and Statistical Inference</h1>
-<p class="subtitle lead">Illustrated with R</p>
+<h1 class="title">Bibliography</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Peter Freeman </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">August 1, 2026</p>
-    </div>
-  </div>
   
     
   </div>
@@ -230,23 +226,74 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="preface" class="level1 unnumbered">
-<h1 class="unnumbered">Preface</h1>
-<p>I have developed this textbook for a new mathematical statistics course sequence for statistics students at Carnegie Mellon University (numbered 36-235 and 36-236), first piloted in Fall 2022 and Spring 2023. <em>The primary difference between it and others that are commonly used in math-stat classes is that I explicitly implement a</em> <strong>spiral-learning</strong> <em>framework, with concepts that are usually covered in relative isolation elsewhere being repeatedly covered here (such as, e.g., point estimation).</em></p>
-<p>My use of a spiral-learning framework is motivated by the observation that many students fixate on mathematics and coding and pay less attention to statistical concepts, with the details of concepts that are seen once often quickly forgotten. The spiral approach is meant to result in enhanced conceptual retention.</p>
-<p>To build the spiral structure, I have rather radically revised the order in which I cover topics, relative to the order one usually sees in a classic math-stat textbook. That textbook might have one chapter that illustrates the properties of discrete probability distributions using, e.g., the binomial, geometric, and Poisson distributions, then a second chapter that illustrates the properties of continuous distributions such as, e.g., the normal and gamma distributions, with neither chapter showing how these distributions are applied in statistical inference. Here, major distributions are broken out into their own chapters, and within each I revisit fundamental concepts: probability mass and density functions, cumulative distribution functions, statistics, sampling distibutions, point estimation, interval estimation, and hypothesis testing, etc. Then, as I move from chapter to chapter, I cover concepts at greater depth. As a concrete example: when discussing point estimation in Chapter 1, I introduce the concepts of bias, variance, and using the likelihood function to define estimators; when I return to point estimation in Chapter 2, I review these concepts (and derive the MLEs for normal distribution parameters), then add the concepts of consistency, Fisher information, the Cramer-Rao lower bound, and the asymptotic distribution of maximum likelihood estimates. Then in Chapter 3, I add in sufficient statistics and likelihood factorization, along with the minimum variance unbiased estimator. Etc.</p>
-<p>Another important difference between this textbook and older, more established math-stat textbooks is that I utilize <code>R</code> for coding visualizations, analyses, and simulations. It is expected that this will help students understand concepts more readily; it also allows me to broaden the “problem space” beyond typically used, analytically tractable distributions. (But I note that the newest generation of textbooks often employ enhanced computation…so it is really the spiral structure that makes this textbook fundamentally different.)</p>
-<p>If you are an instructor, feel free to utilize aspects of this book for your own class(es), but please do not share this document without my expressed consent. If you have comments or questions (or you want an updated version), please send email to the address given below.</p>
-<p>Peter Freeman</p>
-<p><code>pfreeman@cmu.edu</code></p>
-<p>August 2026</p>
-<section id="acknowledgements" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="acknowledgements">Acknowledgements</h2>
-<p>I would like to thank Eileen Xiao, who converted the original base-<code>R</code> graphics in the book to <code>ggplot()</code>-based graphics during the summer of 2023.</p>
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-bh1995" class="csl-entry" role="listitem">
+Benjamini, Y., and Y. Hochberg. 1995. <span>“Controlling the False
+Discovery Rate: A Practical and Powerful Approach to Multiple
+Testing.”</span> <em>Journal of the Royal Statistical Society, Series
+B</em> 57: 289–300.
+</div>
+<div id="ref-buse1982" class="csl-entry" role="listitem">
+Buse, A. 1982. <span>“The Likelihood Ratio, Wald, and Lagrange
+Multiplier Tests: An Expository Note.”</span> <em>The American
+Statistician</em> 36: 153–57.
+</div>
+<div id="ref-casella2002" class="csl-entry" role="listitem">
+Casella, G., and R. L. Berger. 2002. <em>Statistical Inference</em>. 2nd
+ed. Duxbury Belmont, CA.
+</div>
+<div id="ref-efron1979" class="csl-entry" role="listitem">
+Efron, B. 1979. <span>“Bootstrap Methods: Another Look at the
+Jackknife.”</span> <em>The Annals of Statistics</em> 7: 1–26.
+</div>
+<div id="ref-fisher1925" class="csl-entry" role="listitem">
+Fisher, R. A. 1925. <em>Statistical Methods for Research Workers</em>.
+Oliver; Boyd Edinburgh, UK.
+</div>
+<div id="ref-freeman2026" class="csl-entry" role="listitem">
+Freeman, P. E. 2026. <span>“Modernizing How Students Compute Interval
+Estimates in Mathematical Statistics Courses.”</span> <em>Journal of
+Statistics and Data Science Education</em>.
+</div>
+<div id="ref-hesterberg2015" class="csl-entry" role="listitem">
+Hesterberg, T. 2015. <span>“What Teachers Should Know about the
+Bootstrap: Resampling in the Undergraduate Statistics
+Curriculum.”</span> <em>The American Statistician</em> 69: 371–86.
+</div>
+<div id="ref-hogg2019" class="csl-entry" role="listitem">
+Hogg, R. V, J. W. McKean, and A. T. Craig. 2019. <em>Introduction to
+Mathematical Statistics</em>. 8th ed. Pearson Boston, MA.
+</div>
+<div id="ref-james2021r" class="csl-entry" role="listitem">
+James, G., D. Witten, T. Hastie, and R. Tibshirani. 2021. <em>An
+Introduction to Statistical Learning: With Applications in r</em>. 2nd
+ed. Springer New York, NY.
+</div>
+<div id="ref-jamshidian2026" class="csl-entry" role="listitem">
+Jamshidian, M., and P. Jamshidian. 2026. <span>“Unraveling the Mystery
+of Equality in the Null Hypothesis: How Using Inequality Enhances
+Conceptual Understanding of Hypothesis Testing for Our Introductory
+Students.”</span> <em>Journal of Statistics and Data Science
+Education</em>.
+</div>
+<div id="ref-kolmogorov1933" class="csl-entry" role="listitem">
+Kolmogorov, A. 1933. <em>Grundbegriffe Der Wahrscheinlichkeitsrechnung
+(Foundations of the Theory of Probability)</em>. Julius Springer Berlin,
+Germany.
+</div>
+<div id="ref-pearson1900" class="csl-entry" role="listitem">
+Pearson, K. 1900. <span>“On the Criterion That a Given System of
+Deviations from the Probable in the Case of a Correlated System of
+Variables Is Such That It Can Be Reasonably Supposed to Have Arisen from
+Random Sampling.”</span> <em>Philosophical Magazine</em> 50: 157–75.
+</div>
+<div id="ref-ross1988" class="csl-entry" role="listitem">
+Ross, S. 1988. <em>A First Course in Probability</em>. 3rd ed. Macmillan
+New York, NY.
+</div>
+</div>
 
 
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -651,10 +698,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./08-appendixA.html" class="pagination-link" aria-label="Appendix: Table of Symbols">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Appendix: Table of Symbols</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01-probability.html" class="pagination-link" aria-label="The Basics of Probability and Statistical Inference">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The Basics of Probability and Statistical Inference</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./10-solutions.html" class="pagination-link" aria-label="Chapter Exercises: Solutions">
+        <span class="nav-page-text">Chapter Exercises: Solutions</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

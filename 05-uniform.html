@@ -1,0 +1,1617 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>5&nbsp; Distributions with Domain-Specifying Parameters – Modern Probability and Statistical Inference</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./06-multivariate.html" rel="next">
+<link href="./04-poisson.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05-uniform.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Distributions with Domain-Specifying Parameters</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Modern Probability and Statistical Inference</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-probability.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The Basics of Probability and Statistical Inference</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-normal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Normal (and Related) Distributions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-binomial.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Binomial (and Related) Distributions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-poisson.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The Poisson (and Related) Distributions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-uniform.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Distributions with Domain-Specifying Parameters</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-multivariate.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Multivariate Distributions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-optional.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Further Conceptual Details (Optional)</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-appendixA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Appendix: Table of Symbols</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bibliography</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Chapter Exercises: Solutions</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#distribution-examples" id="toc-distribution-examples" class="nav-link active" data-scroll-target="#distribution-examples"><span class="header-section-number">5.1</span> Distribution Examples</a>
+  <ul class="collapse">
+  <li><a href="#uniform-random-variable-expected-value-and-variance" id="toc-uniform-random-variable-expected-value-and-variance" class="nav-link" data-scroll-target="#uniform-random-variable-expected-value-and-variance"><span class="header-section-number">5.1.1</span> Uniform Random Variable: Expected Value and Variance</a></li>
+  <li><a href="#uniform-distribution-order-statistics" id="toc-uniform-distribution-order-statistics" class="nav-link" data-scroll-target="#uniform-distribution-order-statistics"><span class="header-section-number">5.1.2</span> Uniform Distribution: Order Statistics</a></li>
+  <li><a href="#pareto-random-variable-expected-value" id="toc-pareto-random-variable-expected-value" class="nav-link" data-scroll-target="#pareto-random-variable-expected-value"><span class="header-section-number">5.1.3</span> Pareto Random Variable: Expected Value</a></li>
+  <li><a href="#discrete-uniform-distribution" id="toc-discrete-uniform-distribution" class="nav-link" data-scroll-target="#discrete-uniform-distribution"><span class="header-section-number">5.1.4</span> Discrete Uniform Distribution</a></li>
+  </ul></li>
+  <li><a href="#linear-functions-of-random-variables" id="toc-linear-functions-of-random-variables" class="nav-link" data-scroll-target="#linear-functions-of-random-variables"><span class="header-section-number">5.2</span> Linear Functions of Random Variables</a>
+  <ul class="collapse">
+  <li><a href="#uniform-data-sample-sum-and-mean-distributions" id="toc-uniform-data-sample-sum-and-mean-distributions" class="nav-link" data-scroll-target="#uniform-data-sample-sum-and-mean-distributions"><span class="header-section-number">5.2.1</span> Uniform Data: Sample Sum and Mean Distributions</a></li>
+  </ul></li>
+  <li><a href="#point-estimation" id="toc-point-estimation" class="nav-link" data-scroll-target="#point-estimation"><span class="header-section-number">5.3</span> Point Estimation</a>
+  <ul class="collapse">
+  <li><a href="#uniform-domain-parameter-mle" id="toc-uniform-domain-parameter-mle" class="nav-link" data-scroll-target="#uniform-domain-parameter-mle"><span class="header-section-number">5.3.1</span> Uniform Domain Parameter: MLE</a></li>
+  <li><a href="#pareto-domain-parameter-mle" id="toc-pareto-domain-parameter-mle" class="nav-link" data-scroll-target="#pareto-domain-parameter-mle"><span class="header-section-number">5.3.2</span> Pareto Domain Parameter: MLE</a></li>
+  <li><a href="#uniform-domain-parameter-mvue" id="toc-uniform-domain-parameter-mvue" class="nav-link" data-scroll-target="#uniform-domain-parameter-mvue"><span class="header-section-number">5.3.3</span> Uniform Domain Parameter: MVUE</a></li>
+  <li><a href="#pareto-domain-parameter-mvue" id="toc-pareto-domain-parameter-mvue" class="nav-link" data-scroll-target="#pareto-domain-parameter-mvue"><span class="header-section-number">5.3.4</span> Pareto Domain Parameter: MVUE</a></li>
+  </ul></li>
+  <li><a href="#confidence-intervals" id="toc-confidence-intervals" class="nav-link" data-scroll-target="#confidence-intervals"><span class="header-section-number">5.4</span> Confidence Intervals</a>
+  <ul class="collapse">
+  <li><a href="#uniform-domain-parameter-interval-estimation" id="toc-uniform-domain-parameter-interval-estimation" class="nav-link" data-scroll-target="#uniform-domain-parameter-interval-estimation"><span class="header-section-number">5.4.1</span> Uniform Domain Parameter: Interval Estimation</a></li>
+  <li><a href="#uniform-domain-parameter-confidence-coefficient" id="toc-uniform-domain-parameter-confidence-coefficient" class="nav-link" data-scroll-target="#uniform-domain-parameter-confidence-coefficient"><span class="header-section-number">5.4.2</span> Uniform Domain Parameter: Confidence Coefficient</a></li>
+  <li><a href="#pareto-domain-parameter-interval-estimation" id="toc-pareto-domain-parameter-interval-estimation" class="nav-link" data-scroll-target="#pareto-domain-parameter-interval-estimation"><span class="header-section-number">5.4.3</span> Pareto Domain Parameter: Interval Estimation</a></li>
+  </ul></li>
+  <li><a href="#hypothesis-testing" id="toc-hypothesis-testing" class="nav-link" data-scroll-target="#hypothesis-testing"><span class="header-section-number">5.5</span> Hypothesis Testing</a>
+  <ul class="collapse">
+  <li><a href="#pareto-domain-parameter-hypothesis-test" id="toc-pareto-domain-parameter-hypothesis-test" class="nav-link" data-scroll-target="#pareto-domain-parameter-hypothesis-test"><span class="header-section-number">5.5.1</span> Pareto Domain Parameter: Hypothesis Test</a></li>
+  </ul></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">5.6</span> Exercises</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Distributions with Domain-Specifying Parameters</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="bluebox">
+<p>Let <span class="math inline">\(\{X_1,\ldots,X_n\}\)</span> be <span class="math inline">\(n\)</span> independent and identically distributed data sampled according to a distribution <span class="math inline">\(P(\theta)\)</span>.</p>
+<ul>
+<li><span class="math inline">\(\theta\)</span> is a <em>domain-specifying parameter</em> if, e.g., all the sampled data have values <span class="math inline">\(\leq \theta\)</span>.</li>
+</ul>
+<p>This chapter is all about the quirks that we observe when we work with domain-specifying parameters, ones that affect the determination of maximum-likelihood and minimum-variance unbiased estimators, how we go about constructing hypothesis tests, etc.</p>
+</div>
+<p><br></p>
+<section id="distribution-examples" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="distribution-examples"><span class="header-section-number">5.1</span> Distribution Examples</h2>
+<div class="graybox">
+<p>What to take away from this section:</p>
+<ul>
+<li><p>While there are many distributions that feature domain-specifying parameters, in this chapter we will focus our attention on two:</p>
+<ul>
+<li><p>the <em>uniform</em> distribution, a finite distribution whose probability density function has the domain <span class="math inline">\([a,b]\)</span>; and</p></li>
+<li><p>the <em>Pareto</em> distribution, a semi-infinite distribution whose pdf has the domain <span class="math inline">\([b,\infty)\)</span>.</p></li>
+</ul></li>
+</ul>
+</div>
+<p><br></p>
+<p>Many probability distributions have parameters that bound their domain. In this chapter, we will concentrate on two in particular that are often used in inferential analyses:</p>
+<ul>
+<li>the <em>uniform</em> distribution; and</li>
+<li>the <em>Pareto</em> distribution.</li>
+</ul>
+<p><strong>Uniform Distribution.</strong> The uniform distribution is often used within the realm of probability, in part because of its utility and in part because of its simplicity. We have touched upon this distribution previously, such as when we discussed how hypothesis test <span class="math inline">\(p\)</span>-values are distributed uniformly between 0 and 1 when the null hypothesis is correct. Why do we return to the uniform distribution now? Because it is slightly different from other distributions: its two parameters, often denoted <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> (where <span class="math inline">\(b &gt; a\)</span>), do not dictate the shape of its probability density function, but rather its domain.</p>
+<blockquote class="blockquote">
+<p><strong>Recall</strong>: <em>a probability density function is one way to represent a continuous probablity distribution, and it has the properties (a) <span class="math inline">\(f_X(x) \geq 0\)</span> and (b) <span class="math inline">\(\int_x f_X(x) dx = 1\)</span>, where the integral is over all values of <span class="math inline">\(x\)</span> in the distribution’s domain.</em></p>
+</blockquote>
+<p>The uniform pdf is defined as <span class="math display">\[
+f_X(x) = \frac{1}{b-a} \,,
+\]</span> where <span class="math inline">\(x \in [a,b]\)</span>; <span class="math inline">\(f_X(x)\)</span> is thus constant between <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>. (See <a href="#fig-unifpdf" class="quarto-xref">Figure&nbsp;<span>5.1</span></a>).) This means that we can think of the uniform distribution “geometrically,” as the following is true: <span class="math display">\[
+\underbrace{(b-a)}_{\mbox{domain}} \cdot \underbrace{\frac{1}{b-a}}_{f_X(x)} = 1
+\]</span> If we know the domain of the pdf, we immediately know <span class="math inline">\(f_X(x)\)</span>; conversely, if we know <span class="math inline">\(f_X(x)\)</span>, we immediately know the width of the domain (but not <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> themselves).</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-unifpdf" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-unifpdf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="05-uniform_files/figure-html/fig-unifpdf-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="384">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-unifpdf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.1: Three examples of uniform probability density functions: Uniform(0,1) (solid red line), Uniform(0.5,2) (dashed green line), and Uniform(-1.5,1.5) (dotted blue line).
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<blockquote class="blockquote">
+<p><strong>Recall</strong>: <em>the cumulative distribution function, or cdf, is another means by which to encapsulate information about a probability distribution. For a continuous distribution, it is defined as <span class="math inline">\(F_X(x) = \int_{y \leq x} f_Y(y) dy\)</span>, and it is defined for all values <span class="math inline">\(x \in (-\infty,\infty)\)</span>, with <span class="math inline">\(F_X(-\infty) = 0\)</span> and <span class="math inline">\(F_X(\infty) = 1\)</span>.</em></p>
+</blockquote>
+<p>The cdf for a uniformly distributed random variable is <span class="math display">\[
+F_X(x) = \int_a^x f_Y(y) dy = \int_a^x \frac{1}{b-a} dy = \frac{x-a}{b-a} ~~ x \in [a,b] \,,
+\]</span> with a value of 0 for <span class="math inline">\(x &lt; a\)</span> and 1 for <span class="math inline">\(x &gt; b\)</span>. (We can quickly confirm that the derivative of the cdf yields the pdf. Recall that for continuous distributions, <span class="math inline">\(f_X(x) = dF_X(x)/dx\)</span>.)</p>
+<blockquote class="blockquote">
+<p><strong>Recall</strong>: <em>an inverse cdf function <span class="math inline">\(F_X^{-1}(q)\)</span> takes as input a distribution quantile <span class="math inline">\(q \in [0,1]\)</span> and returns the value of <span class="math inline">\(x\)</span> such that <span class="math inline">\(q = F_X(x)\)</span>.</em></p>
+</blockquote>
+<p>The inverse cdf is exceptionally simple to compute: <span class="math display">\[
+q = \frac{x-a}{b-a} ~~ \Rightarrow ~~ x = (b-a)q + a \,.
+\]</span></p>
+<p><strong>Pareto Distribution</strong>. The Pareto [puh-RAY-toh] distribution, also known as the power-law distribution, has the probability density function <span class="math display">\[
+f_X(x) = \frac{a b^a}{x^{a+1}} \,,
+\]</span> where <span class="math inline">\(a &gt; 0\)</span> and <span class="math inline">\(x \in [b,\infty)\)</span>. <span class="math inline">\(b\)</span> is thus a domain-specifying parameter. See <a href="#fig-parpdf" class="quarto-xref">Figure&nbsp;<span>5.2</span></a>. Many phenomena are linked to this distribution<span class="math inline">\(-\)</span>the sizes of asteroids in the Solar System, the sizes of human settlements, personal wealth, etc.<span class="math inline">\(-\)</span>and it is popularly known for spawning the so-called “80-20 rule”: e.g., 80% of wealth is tied to 20% of the population. (Note that this rule is linked to a specific value of <span class="math inline">\(a\)</span> and is not meant to be taken as an iron-clad law that spans across disciplines.)</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-parpdf" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-parpdf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="05-uniform_files/figure-html/fig-parpdf-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="336">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-parpdf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.2: Three examples of Pareto probability density functions: Pareto(<span class="math inline">\(a\)</span>=2, <span class="math inline">\(b\)</span>=1) (solid red line), Pareto(<span class="math inline">\(a\)</span>=3, <span class="math inline">\(b\)</span>=1) (dashed green line), and Pareto(<span class="math inline">\(a\)</span>=2, <span class="math inline">\(b\)</span>=2) (dotted blue line). Note that the pdfs are displayed on a log-log scale, given how quickly they decrease towards zero.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The cdf for a Pareto distribution is derived in an example later in this chapter; for completeness, it is <span class="math display">\[
+F_X(x) = 1 - \left(\frac{x}{b}\right)^a \,,
+\]</span> and thus the inverse cdf is <span class="math display">\[
+x = \frac{b}{(1-q)^{1/a}} \,.
+\]</span></p>
+<hr>
+<section id="uniform-random-variable-expected-value-and-variance" class="level3" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="uniform-random-variable-expected-value-and-variance"><span class="header-section-number">5.1.1</span> Uniform Random Variable: Expected Value and Variance</h3>
+<blockquote class="blockquote">
+<p><strong>Recall:</strong> <em>the expected value of a continuously distributed random variable is</em> <span class="math display">\[
+E[X] = \int_x x f_X(x) dx\,,
+\]</span> <em>where the integral is over all values of <span class="math inline">\(x\)</span> within the domain of the pdf <span class="math inline">\(f_X(x)\)</span>. The expected value is equivalent to a weighted average, with the weight for each possible value of <span class="math inline">\(x\)</span> given by <span class="math inline">\(f_X(x)\)</span>.</em></p>
+</blockquote>
+<blockquote class="blockquote">
+<p>The expected value of a random variable drawn from a Uniform(<span class="math inline">\(a,b\)</span>) distribution is <span class="math display">\[\begin{align*}
+E[X] &amp;= \int_a^b x f_X(x) dx = \int_a^b \frac{x}{b-a} dx \\
+&amp;= \frac{1}{b-a} \left. \frac{x^2}{2} \right|_a^b = \frac{1}{b-a} \frac{b^2-a^2}{2} = \frac{1}{b-a} \frac{(b-a)(b+a)}{2} = \frac{a+b}{2} \,.
+\end{align*}\]</span></p>
+</blockquote>
+<blockquote class="blockquote">
+<p><strong>Recall:</strong> <em>the variance of a continuously distributed random variable is</em> <span class="math display">\[
+V[X] = \int_x (x-\mu)^2 f_X(x) dx = E[X^2] - (E[X])^2\,,
+\]</span> <em>where the integral is over all values of <span class="math inline">\(x\)</span> within the domain of the pdf <span class="math inline">\(f_X(x)\)</span>. The variance represents the square of the “width” of a probability density function, where by “width” we mean the range of values of <span class="math inline">\(x\)</span> for which <span class="math inline">\(f_X(x)\)</span> is effectively non-zero.</em></p>
+</blockquote>
+<blockquote class="blockquote">
+<p>To find the variance, we work with the shortcut formula: <span class="math inline">\(V[X] = E[X^2] - (E[X])^2\)</span>. We know <span class="math inline">\(E[X]\)</span> already; as for <span class="math inline">\(E[X^2]\)</span>, we utilize the Law of the Unconscious Statistician: <span class="math display">\[\begin{align*}
+E[X^2] = \int_a^b x^2 f_X(x) dx &amp;= \int_a^b \frac{x^2}{b-a} dx = \frac{1}{b-a} \left. \frac{x^3}{3} \right|_a^b = \frac{b^3-a^3}{3(b-a)} \\
+&amp;= \frac{(b-a)(a^2+ab+b^2)}{3(b-a)} = \frac{1}{3}\left(a^2 + ab + b^2\right) \,.
+\end{align*}\]</span> Thus <span class="math display">\[\begin{align*}
+V[X] &amp;= \frac{1}{3}\left(a^2 + ab + b^2\right) - \left(\frac{a+b}{2}\right)^2 = \frac{1}{3}\left(a^2 + ab + b^2\right) - \frac{1}{4}\left(a^2+2ab+b^2\right) \\
+&amp;= \frac{1}{12}\left(4a^2 + 4ab + 4b^2 - 3a^2 - 6ab - 3b^2\right) = \frac{1}{12}\left(a^2 - 2ab + b^2 \right) = \frac{(a-b)^2}{12} \,.
+\end{align*}\]</span></p>
+</blockquote>
+<hr>
+</section>
+<section id="uniform-distribution-order-statistics" class="level3" data-number="5.1.2">
+<h3 data-number="5.1.2" class="anchored" data-anchor-id="uniform-distribution-order-statistics"><span class="header-section-number">5.1.2</span> Uniform Distribution: Order Statistics</h3>
+<blockquote class="blockquote">
+<p><strong>Recall</strong>: <em>order statistics are observed data ranked in ascending order (e.g., <span class="math inline">\(X_{(1)}\)</span> is the minimum observed value in a set of <span class="math inline">\(n\)</span> iid data, while <span class="math inline">\(X_{(n)}\)</span> is the maximum observed value). For a continuous distribution, the probability density function for <span class="math inline">\(X_{(j)}\)</span> is</em> <span class="math display">\[
+f_{(j)}(x) = \frac{d}{dx}F_{(j)}(x) = \frac{n!}{(j-1)!(n-j)!} f_X(x) [F_X(x)]^{j-1} [1 - F_X(x)]^{n-j} \,.
+\]</span></p>
+</blockquote>
+<blockquote class="blockquote">
+<p>In an example in Chapter 3, we showed that given a set of <span class="math inline">\(n\)</span> iid data sampled according to a Uniform(0,1) distribution, where <span class="math inline">\(n\)</span> is an odd number, the sample median is sampled according to a Beta<span class="math inline">\(((n+1)/2,(n+1)/2)\)</span> distribution. For completeness, we will show here that <em>all</em> the order statistics are beta-distributed. We recall that within the domain of the Uniform(0,1) distribution, <span class="math inline">\(f_X(x) = 1\)</span> and <span class="math inline">\(F_X(x) = x\)</span>, and write down the order statistic and beta pdfs side-by-side: <span class="math display">\[
+\frac{n!}{(j-1)!(n-j)!} x^{j-1} (1 - x)^{n-j} = \frac{\Gamma(n+1)}{\Gamma(j) \Gamma(n-j+1)} x^{j-1} (1 - x)^{n-j} ~~~ \leftrightarrow ~~~ \frac{\Gamma(a+b)}{\Gamma(a) \Gamma(b)} x^{a-1} (1-x)^{b-1} \,.
+\]</span> Immediately, we can identify that <span class="math inline">\(a = j\)</span> and <span class="math inline">\(b-1 = n-j\)</span>, or that <span class="math inline">\(b = n-j+1\)</span>. Hence <span class="math inline">\(X_{(j)} \sim \mbox{Beta}(j,n-j+1)\)</span>.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>As a small illustration, we can use this information to easily determine, e.g., the probability that the fourth smallest of nine Uniform(0,1) random variables has a value between 0.3 and 0.4:</p>
+</blockquote>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">9</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>j <span class="ot">&lt;-</span> <span class="dv">4</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">pbeta</span>(<span class="fl">0.4</span>, <span class="at">shape1 =</span> j, <span class="at">shape2 =</span> n <span class="sc">-</span> j <span class="sc">+</span> <span class="dv">1</span>) <span class="sc">-</span> <span class="fu">pbeta</span>(<span class="fl">0.3</span>, <span class="at">shape1 =</span> j, <span class="at">shape2 =</span> n <span class="sc">-</span> j <span class="sc">+</span> <span class="dv">1</span>), <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.247</code></pre>
+</div>
+</div>
+<hr>
+</section>
+<section id="pareto-random-variable-expected-value" class="level3" data-number="5.1.3">
+<h3 data-number="5.1.3" class="anchored" data-anchor-id="pareto-random-variable-expected-value"><span class="header-section-number">5.1.3</span> Pareto Random Variable: Expected Value</h3>
+<blockquote class="blockquote">
+<p>The expected value of a Pareto random variable is <span class="math display">\[\begin{align*}
+E[X] = \int_b^\infty x \frac{a b^a}{x^{a+1}} dx &amp;= a b^a \int_b^\infty \frac{x}{x^{a+1}} dx = a b^a \int_b^\infty x^{-a} dx \\
+&amp;= a b^a \left. \frac{1}{-a+1} x^{-a+1} \right|_b^\infty \\
+&amp;= \frac{a b^a}{1-a} \left( 0 - b^{1-a} \right) \\
+&amp;= \frac{a b}{a-1} \,.
+\end{align*}\]</span> However, note how the integral is that of <span class="math inline">\(1/x^a\)</span>: the integral diverges if <span class="math inline">\(a \leq 1\)</span>. So in the regime <span class="math inline">\(a \in (0,1]\)</span>, <span class="math inline">\(E[X] = \infty\)</span>.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>We leave it as an exercise to the reader to show that the variance of the Pareto distribution is <span class="math display">\[
+V[X] = \frac{a b^2}{(a-1)^2 (a-2)}
+\]</span> for <span class="math inline">\(a &gt; 2\)</span>, and is infinite otherwise.</p>
+</blockquote>
+<hr>
+</section>
+<section id="discrete-uniform-distribution" class="level3" data-number="5.1.4">
+<h3 data-number="5.1.4" class="anchored" data-anchor-id="discrete-uniform-distribution"><span class="header-section-number">5.1.4</span> Discrete Uniform Distribution</h3>
+<blockquote class="blockquote">
+<p>In this chapter, we will be concentrating on continuous distributions that have domain-specifying parameters (specifically, the uniform and Pareto distributions). However, for completeness we will touch upon the commonly used discrete analogue to the uniform distribution.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>The <em>discrete uniform distribution</em> is technically defined as having the domain <span class="math inline">\(\{x_1,\ldots,x_m\}\)</span>, with the probability masses at each value being <span class="math inline">\(p_X(x) = 1/m\)</span>, but in common usage it is defined over a sequence of non-negative integers, from <span class="math inline">\(a\)</span> to <span class="math inline">\(b\)</span>. (The rolls of a fair, six-sided die, where <span class="math inline">\(a = 1\)</span> and <span class="math inline">\(b = 6\)</span>, would be governed by the discrete uniform distribution.) When we assume a sequence of integers, the cumulative distribution function within the domain is <span class="math display">\[
+F_X(x) = \frac{\lfloor x \rfloor - a + 1}{n} \,,
+\]</span> where <span class="math inline">\(x \in [a,b]\)</span>, and <span class="math inline">\(\lfloor x \rfloor\)</span> is the largest integer that is smaller than or equal to <span class="math inline">\(x\)</span>, while the inverse cdf is given by the generalized inverse cdf formalism that we’ve previously seen for discrete distributions.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Note that there are no standard <code>R</code> functions of the form <code>xdiscunif()</code> for computing the pmf or cdf of the discrete uniform distribution, or for sampling from it. (See, however, the <code>xdunif()</code> functions defined within the contributed <code>extraDistr</code> package.) However, the reader should hopefully realize that it is simple enough to create such functions for one’s own use. There are four standard functions associated with any distribution: the one prefaced by <code>d</code> that returns the value of the probability mass function or probability density function, given a coordinate <span class="math inline">\(x\)</span>; the one prefaced by <code>p</code> that returns the output of the cumulative distribution function, given <span class="math inline">\(x\)</span>; the one prefaced <code>q</code> that returns the output of the inverse cdf, given a quantile <span class="math inline">\(q \in [0,1]\)</span>; and the random sampler, a function prefaced by <code>r</code>.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>For the discrete uniform distribution, one can code the probability mass function as follows:</p>
+</blockquote>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ddiscunif <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">1</span>, <span class="at">step =</span> <span class="dv">1</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">seq</span>(min, max, <span class="at">by =</span> step)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> ( x <span class="sc">%in%</span> y ) <span class="fu">return</span>(<span class="dv">1</span> <span class="sc">/</span> <span class="fu">length</span>(y))</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="dv">0</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">ddiscunif</span>(<span class="dv">4</span>, <span class="at">min =</span> <span class="dv">1</span>, <span class="at">max =</span> <span class="dv">6</span>), <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.167</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>As for the cumulative distribution function:</p>
+</blockquote>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>pdiscunif <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">1</span>, <span class="at">step =</span> <span class="dv">1</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">seq</span>(min, max, <span class="at">by =</span> step)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  w <span class="ot">&lt;-</span> <span class="fu">which</span>(y <span class="sc">&lt;=</span> x)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> ( <span class="fu">length</span>(w) <span class="sc">==</span> <span class="dv">0</span> ) <span class="fu">return</span>(<span class="dv">0</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">length</span>(w) <span class="sc">/</span> <span class="fu">length</span>(y))</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">pdiscunif</span>(<span class="dv">4</span>, <span class="at">min =</span> <span class="dv">1</span>, <span class="at">max =</span> <span class="dv">6</span>), <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.667</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>The inverse cdf implements the generalized inverse algorithm:</p>
+</blockquote>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>qdiscunif <span class="ot">&lt;-</span> <span class="cf">function</span>(q, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">1</span>, <span class="at">step =</span> <span class="dv">1</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  y   <span class="ot">&lt;-</span> <span class="fu">seq</span>(min, max, <span class="at">by =</span> step)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> ( q <span class="sc">==</span> <span class="dv">0</span> ) <span class="fu">return</span>(<span class="fu">min</span>(y))</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> ( q <span class="sc">==</span> <span class="dv">1</span> ) <span class="fu">return</span>(<span class="fu">max</span>(y))</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  cdf <span class="ot">&lt;-</span> (<span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(y)) <span class="sc">/</span> <span class="fu">length</span>(y)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  w   <span class="ot">&lt;-</span> <span class="fu">which</span>(cdf <span class="sc">&gt;=</span> q)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> ( <span class="fu">length</span>(w) <span class="sc">==</span> <span class="dv">0</span> ) <span class="fu">return</span>(<span class="fu">max</span>(y))</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(y[<span class="fu">min</span>(w)])</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="fu">qdiscunif</span>(<span class="fl">0.55</span>, <span class="at">min =</span> <span class="dv">1</span>, <span class="at">max =</span> <span class="dv">6</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>And last, the random data generator:</p>
+</blockquote>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>rdiscunif <span class="ot">&lt;-</span> <span class="cf">function</span>(n, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">1</span>, <span class="at">step =</span> <span class="dv">1</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">seq</span>(min, max, <span class="at">by =</span> step)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  s <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">length</span>(y), n, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(y[s])</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">236</span>) <span class="co"># set to ensure consistent output</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="fu">rdiscunif</span>(<span class="dv">10</span>, <span class="at">min =</span> <span class="dv">1</span>, <span class="at">max =</span> <span class="dv">6</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 6 6 6 3 3 4 1 1 5 4</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="linear-functions-of-random-variables" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="linear-functions-of-random-variables"><span class="header-section-number">5.2</span> Linear Functions of Random Variables</h2>
+<div class="graybox">
+<p>What to take away from this section:</p>
+<ul>
+<li><p>The <em>method of moment-generating functions</em> allows us to determine that…</p>
+<ul>
+<li><p>the sum of <span class="math inline">\(n\)</span> iid Uniform(0,1) random variables is sampled according to an <em>Irwin-Hall</em> distribution;</p></li>
+<li><p>the mean of <span class="math inline">\(n\)</span> iid Uniform(0,1) random variables is sampled according to an <em>Bates</em> distribution; and</p></li>
+<li><p>we cannot use the method of mgfs to say anything about functions of Pareto random variables.</p></li>
+</ul></li>
+<li><p>Foreshadowing: these results are shown for completeness but they do not actually help us make optimal statistical inferences about distribution bounds; as we will see in the next section, a sufficient statistic for a distribution bound is actually an <em>order statistic</em>, and that is what we would use for optimal inference.</p></li>
+</ul>
+</div>
+<p><br></p>
+<p>Let’s assume we are given <span class="math inline">\(n\)</span> iid random variables <span class="math inline">\(\{X_1,\ldots,X_n\}\)</span> sampled according to some distribution that has a domain-specifying parameter. What is the distribution of <span class="math inline">\(Y = \sum_{i=1}^n a_i X_i\)</span>?</p>
+<blockquote class="blockquote">
+<p><strong>Recall</strong>: <em>the moment-generating function, or mgf, is a means by which to encapsulate information about a probability distribution. When it exists, the mgf is given by <span class="math inline">\(E[e^{tX}]\)</span>. If <span class="math inline">\(Y = \sum_{i=1}^n a_iX_i\)</span>, then <span class="math inline">\(m_Y(t) = m_{X_1}(a_1t) m_{X_2}(a_2t) \cdots m_{X_n}(a_nt)\)</span>; if we can identify <span class="math inline">\(m_Y(t)\)</span> os the mgf for a known family of distributions, then we can immediately identify the distribution of <span class="math inline">\(Y\)</span> and the parameters of that distribution.</em></p>
+</blockquote>
+<p>Below we discuss the distributions of the sample sum and sample mean for uniformly distributed data. Note that for the Pareto distribution, the mgf does not exist, and so to perform statistical inference with Pareto-distributed data with, e.g., the sample sum or the sample mean, we would have no choice but to utilize a simulation framework.</p>
+<hr>
+<section id="uniform-data-sample-sum-and-mean-distributions" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="uniform-data-sample-sum-and-mean-distributions"><span class="header-section-number">5.2.1</span> Uniform Data: Sample Sum and Mean Distributions</h3>
+<blockquote class="blockquote">
+<p>Let’s assume that we are given <span class="math inline">\(n\)</span> iid Uniform random variables: <span class="math inline">\(X_1,X_2,\ldots,X_n \sim\)</span> Uniform(<span class="math inline">\(a,b\)</span>). What is, e.g., the distribution of the sum <span class="math inline">\(Y = \sum_{i=1}^n X_i\)</span>?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>We start by deriving the moment-generating function for the uniform distribution: <span class="math display">\[\begin{align*}
+m_X(t) = E[e^{tX}] &amp;= \int_a^b \frac{e^{tx}}{b-a} dx = \frac{1}{b-a} \left. \frac{1}{t}e^{tx} \right|_a^b = \frac{e^{tb}-e^{ta}}{t(b-a)} \,.
+\end{align*}\]</span> Thus the mgf for the sum <span class="math inline">\(Y = \sum_{i=1}^n X_i\)</span> is <span class="math display">\[
+m_Y(t) = \prod_{i=1}^n m_{X_i}(t) = \left( \frac{e^{tb}-e^{ta}}{t(b-a)} \right)^n \,.
+\]</span> This expression does not simplify such that we recognize the distribution of <span class="math inline">\(Y\)</span>. If <span class="math inline">\(a = 0\)</span> and <span class="math inline">\(b = 1\)</span>, it turns out that the mgf does take on the form of that for an <em>Irwin-Hall distribution</em>. An Irwin-Hall random variable converges in distribution to a normal random variable as <span class="math inline">\(n \rightarrow \infty\)</span>.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>We find ourselves in a similar situation if we look at the sample mean <span class="math inline">\(\bar{X} = Y/n\)</span>: <span class="math display">\[
+m_{\bar{X}}(t) = \prod_{i=1}^n m_{X_i}\left(\frac{t}{n}\right) = \left( \frac{n(e^{tb/n}-e^{ta/n})}{t(b-a)} \right)^n \,.
+\]</span> If <span class="math inline">\(a = 0\)</span> and <span class="math inline">\(b = 1\)</span>, <span class="math inline">\(\bar{X}\)</span> is sampled from a <em>Bates distribution</em>. A Bates random variable converges in distribution to a normal random variable as <span class="math inline">\(n \rightarrow \infty\)</span>. For all other combinations of <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, we cannot write down a specific functional form for the sampling distribution of <span class="math inline">\(\bar{X}\)</span> and thus we would have to perform simulations to test hypotheses, etc. (However, we note that because statistical inference for a uniform distribution involves determining the lower and/or upper bounds, we can utilize order statistics for inference instead of <span class="math inline">\(\bar{X}\)</span>. See the next section below.)</p>
+</blockquote>
+</section>
+</section>
+<section id="point-estimation" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="point-estimation"><span class="header-section-number">5.3</span> Point Estimation</h2>
+<div class="graybox">
+<p>What to take away from this section:</p>
+<ul>
+<li><p>A sufficient statistic for a distribution lower bound is the smallest-observed datum, <span class="math inline">\(X_{(1)}\)</span>, while for an upper bound, it is the largest-observed datum, <span class="math inline">\(X_{(n)}\)</span>.</p></li>
+<li><p>Sufficient statistics provide both the MLE and the MVUE for a distribution bound.</p></li>
+</ul>
+</div>
+<p><br></p>
+<p>Previously, we described two commonly used point estimators: the maximum likelihood estimator (or MLE) and the minimum variance unbiased estimator (or MVUE). Below, we show how one would work with both in the context of estimating domain-specifying parameters.</p>
+<blockquote class="blockquote">
+<p><strong>Recall</strong>: <em>the value of <span class="math inline">\(\theta\)</span> that maximizes the likelihood function is the maximum likelihood estimate, or MLE, for <span class="math inline">\(\theta\)</span>. The maximum is,</em> <strong>thus far,</strong> <em>found by taking the (partial) derivative of the (log-)likelihood function with respect to <span class="math inline">\(\theta\)</span>, setting the result to zero, and solving for <span class="math inline">\(\theta\)</span>. That solution is the maximum likelihood estimate <span class="math inline">\(\hat{\theta}_{MLE}\)</span>. Also recall the invariance property of the MLE: if <span class="math inline">\(\hat{\theta}_{MLE}\)</span> is the MLE for <span class="math inline">\(\theta\)</span>, then <span class="math inline">\(g(\hat{\theta}_{MLE})\)</span> is the MLE for <span class="math inline">\(g(\theta)\)</span>.</em></p>
+</blockquote>
+<p>Now that we have recalled how maximum likelihood estimation works, we can state that this is <em>not</em> how the MLE is found for a domain-affecting parameter! (Hence the “thus far” in the recall statement above.) Let’s assume, for instance, that we sample <span class="math inline">\(n\)</span> iid random variables from a Uniform(<span class="math inline">\(0,\theta\)</span>) distribution. The likelihood is <span class="math display">\[
+\mathcal{L}(\theta \vert \mathbf{x}) = \frac{1}{\theta^n} \,.
+\]</span> This means that the smaller the value of <span class="math inline">\(\theta\)</span> is, the larger the likelihood will be. So how small can <span class="math inline">\(\theta\)</span> be? We can answer this intuitively: the domain <span class="math inline">\([0,\theta]\)</span> has to just encompass all the observed data, i.e., <span class="math display">\[
+\hat{\theta}_{MLE} = X_{(n)} \,.
+\]</span> If <span class="math inline">\(\theta\)</span> were smaller, <span class="math inline">\(X_{(n)}\)</span> would lie outside the domain. It is fine for <span class="math inline">\(\theta\)</span> to be larger, since then all the data lie in the domain <span class="math inline">\([0,\theta]\)</span>…but the larger <span class="math inline">\(\theta\)</span> is, the smaller the likelihood.</p>
+<p>We plot an example likelihood function in <a href="#fig-uniflik" class="quarto-xref">Figure&nbsp;<span>5.3</span></a>. We observe immediately that the usual MLE algorithm will not work here, as the likelihood function is not differentiable at <span class="math inline">\(\theta = X_{(n)}\)</span>. All we can do is, e.g., plot the likelihood and identify the MLE as that value for which the likelihood is maximized (or identify the value intuitively as we do above).</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-uniflik" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-uniflik-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="05-uniform_files/figure-html/fig-uniflik-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="336">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-uniflik-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.3: The likelihood function given <span class="math inline">\(n=5\)</span> data drawn from a Uniform(0,<span class="math inline">\(\theta\)</span>) distribution, with <span class="math inline">\(\theta = 1\)</span>. As <span class="math inline">\(\theta\)</span> cannot be smaller than the maximum observed value, the likelihood is zero for <span class="math inline">\(\theta &lt; X_{(n)}\)</span>; it is <span class="math inline">\(1/\theta^n\)</span> for <span class="math inline">\(\theta \geq X_{(n)}\)</span>. The maximum likelihood estimate is thus <span class="math inline">\(X_{(n)}\)</span> itself; as the likelihood function is not differentiable at this point, the MLE cannot be found via the algorithm that we have used previously.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<blockquote class="blockquote">
+<p><strong>Recall</strong>: <em>a sufficient statistic for a population parameter <span class="math inline">\(\theta\)</span> captures all information about <span class="math inline">\(\theta\)</span> contained in a data sample; no additional statistic will provide more information about <span class="math inline">\(\theta\)</span>. Sufficient statistics are not unique: one-to-one functions of sufficient statistics are themselves sufficient statistics.</em></p>
+</blockquote>
+<p>Before we discuss sufficient statistics in the context of working with domain-specifying parameters, it is useful to (re-)introduce the <em>indicator function</em>. This function, mentioned briefly in Chapter 1, takes on the value 1 if a specified condition is met and 0 otherwise. For instance, <span class="math display">\[
+\mathbb{I}_{x_i \in [0,1]} = \left\{ \begin{array}{cl} 1 &amp; x_i \in [0,1] \\ 0 &amp; \mbox{otherwise} \end{array} \right. \,.
+\]</span> One use for the indicator function is to, well, <em>indicate</em> the domain of a pmf or pdf. For instance, we can write <span class="math display">\[
+f_X(x) = \left\{ \begin{array}{ll} e^{-x} &amp; x \geq 0 \\ 0 &amp; \mbox{otherwise} \end{array} \right.
+\]</span> to express that the exponential distribution with rate <span class="math inline">\(\theta = 1\)</span> is defined within the domain <span class="math inline">\(x \in [0,\infty)\)</span>, or, equivalently, we can write <span class="math display">\[
+f_X(x) = e^{-x} \mathbb{I}_{x \in [0,\infty)} \,.
+\]</span> The latter form expresses the same information in a more condensed fashion.</p>
+<p>So…why would we use indicator functions now?</p>
+<p>Let’s suppose we sample <span class="math inline">\(n\)</span> iid data <span class="math inline">\(\{X_1,\ldots,X_n\}\)</span> from a uniform distribution with lower bound 0 and upper bound <span class="math inline">\(\theta\)</span>, and our goal is to define a sufficient statistic for <span class="math inline">\(\theta\)</span>. Let’s work with the factorization criterion: <span class="math display">\[
+\mathcal{L}(\theta \vert \mathbf{x}) = g(\mathbf{x},\theta) \cdot h(\mathbf{x}) \,.
+\]</span> The likelihood is <span class="math display">\[
+\mathcal{L}(\theta \vert \mathbf{x}) = \prod_{i=1}^n f_X(x_i \vert \theta) = \prod_{i=1}^n \frac{1}{\theta} = \frac{1}{\theta^n} \,.
+\]</span> OK…no…wait: there are no data in this expression, so we cannot (yet) read off a sufficient statistic for <span class="math inline">\(\theta\)</span>. Let’s re-express the pdf as <span class="math display">\[
+f_X(x) = \frac{1}{\theta} \mathbb{I}_{x \in [0,\theta]}
+\]</span> and rewrite the likelihood as <span class="math display">\[
+\mathcal{L}(\theta \vert \mathbf{x}) = \prod_{i=1}^n f_X(x_i \vert \theta) = \frac{1}{\theta^n} \prod_{i=1}^n \mathbb{I}_{x_i \in [0,\theta]} \,.
+\]</span> The product of indicator functions will equal 1 if and only if <em>all</em> data lie in the domain <span class="math inline">\(x \in [0,\theta]\)</span>. This is equivalent to saying that <span class="math inline">\(\theta \geq X_{(n)}\)</span>, the order statistic representing the maximum observed datum. Thus <span class="math inline">\(X_{(n)}\)</span> is a sufficient statistic for <span class="math inline">\(\theta\)</span>: we know <span class="math inline">\(\theta\)</span> is greater than this statistic’s value, and none of the data aside from <span class="math inline">\(X_{(n)}\)</span> provide additional information about <span class="math inline">\(\theta\)</span>.</p>
+<p>The upshot: when <span class="math inline">\(\theta\)</span> is a domain-specifying parameter, a sufficient statistic for <span class="math inline">\(\theta\)</span> will be an order statistic (or any one-to-one function of that order statistic).</p>
+<p>When we first introduced the factorization criterion and sufficient statistics in Chapter 3, we did it so that ultimately we could write down the minimum variance unbiased estimator (or MVUE).</p>
+<blockquote class="blockquote">
+<p><strong>Recall</strong>: <em>the bias of an estimator is the difference between the average value of the estimates it generates and the true parameter value. If <span class="math inline">\(E[\hat{\theta}-\theta] = 0\)</span>, then the estimator <span class="math inline">\(\hat{\theta}\)</span> is said to be unbiased.</em></p>
+</blockquote>
+<blockquote class="blockquote">
+<p><strong>Recall</strong>: <em>deriving the minimum variance unbiased estimator involves two steps:</em></p>
+</blockquote>
+<blockquote class="blockquote">
+<ol type="1">
+<li><em>factorizing the likelihood function to uncover a sufficient statistic <span class="math inline">\(U\)</span> (that we assume is both minimal and complete); and</em></li>
+<li><em>finding a function <span class="math inline">\(h(U)\)</span> such that <span class="math inline">\(E[h(U)] = \theta\)</span>.</em></li>
+</ol>
+</blockquote>
+<p>For instance, if <span class="math inline">\(\{X_1,\ldots,X_n\}\)</span> are iid data sampled according to a Uniform(<span class="math inline">\(0,\theta\)</span>) distribution, can we define an MVUE for <span class="math inline">\(\theta\)</span>? The answer is yes…as we will show in an example below.</p>
+<p>(For completeness, we should mention that the method of moments estimator for <span class="math inline">\(\theta\)</span> can <em>never</em> be a sufficient statistic, since MoM estimators are not constructed from order statistics.)</p>
+<hr>
+<section id="uniform-domain-parameter-mle" class="level3" data-number="5.3.1">
+<h3 data-number="5.3.1" class="anchored" data-anchor-id="uniform-domain-parameter-mle"><span class="header-section-number">5.3.1</span> Uniform Domain Parameter: MLE</h3>
+<blockquote class="blockquote">
+<p>Let <span class="math inline">\(\{X_1,\ldots,X_n\}\)</span> be <span class="math inline">\(n\)</span> iid data sampled according to a Uniform(<span class="math inline">\(0,\theta\)</span>) distribution. As shown above, the MLE for <span class="math inline">\(\theta\)</span> is <span class="math inline">\(X_{(n)}\)</span>, the maximum observed datum. The properties of estimators that we have examined thus far include the bias (are our estimates offset from the truth, on average?), the variance (over how large a range do our estimates vary?), etc. Let’s look at these properties here.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p><strong>Recall</strong>: <em>the maximum of <span class="math inline">\(n\)</span> iid random variables sampled from a pdf <span class="math inline">\(f_X(x)\)</span> has a sampling distribution given by</em> <span class="math display">\[
+f_{(n)}(x) = n f_X(x) [ F_X(x) ]^{n-1} \,,
+\]</span> <em>where <span class="math inline">\(F_X(x)\)</span> is the associated cdf.</em></p>
+</blockquote>
+<blockquote class="blockquote">
+<p>For the Uniform(<span class="math inline">\(0,\theta\)</span>) distribution, <span class="math display">\[
+f_X(x) = \frac{1}{\theta} ~~\mbox{and}~~ F_X(x) = \int_0^x f_Y(y) dy = \int_0^x \frac{1}{\theta} dy = \frac{x}{\theta} \,,
+\]</span> so <span class="math display">\[
+f_{(n)}(x) = n \frac{1}{\theta} \left[ \frac{x}{\theta} \right]^{n-1} = n \frac{x^{n-1}}{\theta^n} \,.
+\]</span> The expected value of <span class="math inline">\(X_{(n)}\)</span> is thus <span class="math display">\[
+E[X_{(n)}] = \int_0^\theta x n \frac{x^{n-1}}{\theta^n} dx = \left. \frac{n}{(n+1)\theta^n} x^{n+1} \right|_0^\theta = \frac{n}{n+1} \theta \,,
+\]</span> and the bias of the MLE for <span class="math inline">\(\theta\)</span> is thus <span class="math display">\[
+B[\hat{\theta}_{MLE}] = E[\hat{\theta}_{MLE}] - \theta = \frac{n}{n+1}\theta - \theta = -\frac{1}{n+1}\theta \,.
+\]</span> The MLE is biased, but as we expect it is at least asymptotically unbiased, as the bias goes to zero as <span class="math inline">\(n \rightarrow \infty\)</span>.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p><strong>Recall</strong>: <em>an estimator is consistent if its mean-squared error, <span class="math inline">\(B[\hat{\theta}]^2 + V[\hat{\theta}]\)</span>, goes to zero as the sample size <span class="math inline">\(n\)</span> goes to infinity.</em></p>
+</blockquote>
+<blockquote class="blockquote">
+<p>The variance of the MLE is <span class="math display">\[
+V[\hat{\theta}_{MLE}] = E[\hat{\theta}_{MLE}^2] - \left(E[\hat{\theta}_{MLE}\right)^2 = E[X_{(n)}^2] - (E[X_{(n)}])^2 \,.
+\]</span> To derive the variance, we need to determine <span class="math inline">\(E[X_{(n)}^2]\)</span>: <span class="math display">\[
+E[X_{(n)}^2] = \int_0^\theta x^2 n \frac{x^{n-1}}{\theta^n} dx = \left. \frac{n}{(n+2)\theta^n} x^{n+2} \right|_0^\theta = \frac{n}{n+2} \theta^2 \,.
+\]</span> So now we can write down that <span class="math display">\[
+V[\hat{\theta}_{MLE}] = \frac{n}{n+2}\theta^2 - \left( \frac{n}{n+1}\theta\right)^2 = \frac{n}{(n+2)(n+1)^2}\theta^2 \rightarrow \frac{\theta^2}{n^2} ~~\mbox{as}~~ n \rightarrow \infty\,.
+\]</span> We observe that because the variance goes to zero as <span class="math inline">\(n \rightarrow \infty\)</span>, the mean-squared error does as well…and thus the MLE for <span class="math inline">\(\theta\)</span> is a consistent estimator.</p>
+</blockquote>
+<hr>
+</section>
+<section id="pareto-domain-parameter-mle" class="level3" data-number="5.3.2">
+<h3 data-number="5.3.2" class="anchored" data-anchor-id="pareto-domain-parameter-mle"><span class="header-section-number">5.3.2</span> Pareto Domain Parameter: MLE</h3>
+<blockquote class="blockquote">
+<p>Recall that the Pareto distribution has the probability density function <span class="math display">\[
+f_X(x) = \frac{a b^a}{x^{a+1}} \,,
+\]</span> where <span class="math inline">\(a &gt; 0\)</span> and <span class="math inline">\(x \in [b,\infty)\)</span>. Because <span class="math inline">\(b\)</span> is a domain-specifying parameter, we find the MLE not via differentiation but rather by identifying that the likelihood is maximized when <span class="math inline">\(b\)</span> is exactly equal to <span class="math inline">\(X_{(1)}\)</span>, i.e., <span class="math inline">\(\hat{b}_{MLE} = X_{(1)}\)</span>. See Figure <a href="#fig-parlik" class="quarto-xref">Figure&nbsp;<span>5.4</span></a>.</p>
+</blockquote>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-parlik" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-parlik-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="05-uniform_files/figure-html/fig-parlik-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="336">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-parlik-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.4: The likelihood function given <span class="math inline">\(n=5\)</span> data drawn from a Pareto(1,<span class="math inline">\(b\)</span>) distribution, with <span class="math inline">\(b = 1\)</span>. As <span class="math inline">\(b\)</span> cannot be larger than the minimum observed value, the likelihood is zero for <span class="math inline">\(b \geq X_{(1)}\)</span>; it is <span class="math inline">\(\theta^n(1/\prod_{i=1}^n x_i)^2\)</span> for <span class="math inline">\(b &lt; X_{(n)}\)</span>. The maximum likelihood estimate is thus <span class="math inline">\(X_{(1)}\)</span> itself; as the likelihood function is not differentiable at this point, the MLE cannot be found via the algorithm we have used previously.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="uniform-domain-parameter-mvue" class="level3" data-number="5.3.3">
+<h3 data-number="5.3.3" class="anchored" data-anchor-id="uniform-domain-parameter-mvue"><span class="header-section-number">5.3.3</span> Uniform Domain Parameter: MVUE</h3>
+<blockquote class="blockquote">
+<p>Above, we determined that if we sample <span class="math inline">\(n\)</span> iid data according to a Uniform<span class="math inline">\((0,\theta)\)</span> distribution, a sufficient statistic for <span class="math inline">\(\theta\)</span> is <span class="math inline">\(X_{(n)}\)</span> and the expected value of <span class="math inline">\(X_{(n)}\)</span> is <span class="math inline">\(n\theta/(n+1)\)</span>. Given this information, it is trivial to rearrange terms and to write down the MVUE for <span class="math inline">\(\theta\)</span>: <span class="math display">\[
+E\left[\frac{n+1}{n}X_{(n)}\right] = \theta ~~~ \Rightarrow ~~~ \hat{\theta}_{MVUE} = \frac{n+1}{n}X_{(n)} \,.
+\]</span> The variance of <span class="math inline">\(\hat{\theta}_{MVUE}\)</span> is <span class="math display">\[\begin{align*}
+V[\hat{\theta}_{MVUE}] &amp;= E\left[\left(\hat{\theta}_{MVUE}\right)^2\right] - \left( E\left[ \hat{\theta}_{MVUE} \right] \right)^2 \\
+&amp;= \frac{(n+1)^2}{n^2} \left( E[X_{(n)}^2] - (E[X_{(n)}])^2 \right) \,,
+\end{align*}\]</span> where <span class="math display">\[
+E[X_{(n)}^2] = \int_0^\theta x^2 n \frac{x^{n-1}}{\theta^n} dx = \left. \frac{n}{(n+2)\theta^n} x^{n+2} \right|_0^\theta = \frac{n}{n+2} \theta^2 \,.
+\]</span> Thus <span class="math display">\[\begin{align*}
+V[\hat{\theta}_{MVUE}] &amp;= \frac{(n+1)^2}{n^2} \left( \frac{n}{n+2} \theta^2 - \frac{n^2}{(n+1)^2} \theta^2 \right) \\
+&amp;= \frac{(n+1)^2}{n^2} \left( \frac{n(n+1)^2 - n^2(n+2)}{(n+2)(n+1)^2} \theta^2 \right) \\
+&amp;= \frac{(n+1)^2}{n^2} \left( \frac{n}{(n+2)(n+1)^2} \theta^2 \right) \\
+&amp;= \frac{1}{n(n+2)} \theta^2 \rightarrow \frac{\theta^2}{n^2} ~~\mbox{as}~~ n \rightarrow \infty \,.
+\end{align*}\]</span> We observe that since the variance goes to zero as <span class="math inline">\(n \rightarrow \infty\)</span>, the MVUE is a consistent estimator…but does it achieve the Cramer-Rao Lower Bound (CRLB), the theoretical lower bound on the variance of unbiased estimators?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p><strong>Recall</strong>: <em>the Cramer-Rao Lower Bound (or CRLB) is the lower bound on the variance of any unbiased estimator. If an unbiased estimator achieves the CRLB, it is the MVUE…but it can be the case that the MVUE does not achieve the CRLB. For a discrete distribution, the CRLB is given by</em> <span class="math display">\[
+V_{\rm CRLB}[\hat{\theta}] = -\left(nE\left[\frac{d^2}{d\theta^2} \log p_X(X \vert p) \right]\right)^{-1} = \frac{1}{nI(\theta)}
+\]</span> <em>where <span class="math inline">\(I(\theta)\)</span> is the Fisher information:</em> <span class="math display">\[
+I(\theta) = -E\left[ \frac{\partial^2}{\partial \theta^2} \log f_X(x \vert \theta) \right] \,.
+\]</span></p>
+</blockquote>
+<blockquote class="blockquote">
+<p>It turns out that not only does it achieve the lower bound (which one can show equals <span class="math inline">\(\theta^2/n\)</span>), but it even surpasses that bound, as <span class="math display">\[
+\frac{1}{n(n+2)} \theta^2 &lt; \frac{1}{n} \theta^2 \,.
+\]</span> Ultimately, we need not worry about this seemingly worrisome result, because one of the so-called regularity conditions that must hold for the bound calculation to be valid is that the log-likelihood is differentiable everywhere within a distribution’s domain…but this condition does <em>not</em> hold when we are working with domain-specifying parameters.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>The variance of the MLE is similar to, but not exactly the same as, the variance for the MVUE, although the two variances converge to the same value in as <span class="math inline">\(n \rightarrow \infty\)</span>.</p>
+</blockquote>
+<hr>
+</section>
+<section id="pareto-domain-parameter-mvue" class="level3" data-number="5.3.4">
+<h3 data-number="5.3.4" class="anchored" data-anchor-id="pareto-domain-parameter-mvue"><span class="header-section-number">5.3.4</span> Pareto Domain Parameter: MVUE</h3>
+<blockquote class="blockquote">
+<p>The Pareto probability density function is <span class="math display">\[
+f_X(x) = \frac{a b^a}{x^{a+1}} \,,
+\]</span> where <span class="math inline">\(a &gt; 0\)</span> and <span class="math inline">\(x \in [b,\infty)\)</span>. Let’s assume <span class="math inline">\(a\)</span> is fixed. A sufficient statistic for <span class="math inline">\(b\)</span>, found via likelihood factorization, is <span class="math display">\[
+\mathcal{L}(b \vert \mathbf{x}) = \prod_{i=1}^n f_X(x_i) = \underbrace{b^{na}}_{g(\mathbf{x},b)} \cdot \underbrace{\frac{a^n}{(\prod_{i=1}^n x_i)^{a+1}}}_{h(\mathbf{x})} \,.
+\]</span> Wait…again, as is the case for the uniform distribution, no data appear in the expression <span class="math inline">\(g(\cdot)\)</span>. So we would go back and introduce an indicator function into the pdf; it should be clear that when we do so, <span class="math inline">\(g(\mathbf{x},b)\)</span> changes to <span class="math display">\[
+g(\mathbf{x},b) = b^{na} \prod_{i=1}^n \mathbb{I}_{x_i \in [b,\infty)}
+\]</span> and thus that because all data have to be larger than <span class="math inline">\(b\)</span>, a sufficient statistic will be the minimum observed datum, <span class="math inline">\(X_{(1)}\)</span>.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>To go from here to finding the MVUE, we need to derive a number of quantities:</p>
+</blockquote>
+<blockquote class="blockquote">
+<ul>
+<li>the cumulative distribution function for a Pareto distribution;</li>
+<li>the probability density function for the smallest-valued of <span class="math inline">\(n\)</span> Pareto random variables; and</li>
+<li>the expected value of this smallest-valued random variable.</li>
+</ul>
+</blockquote>
+<blockquote class="blockquote">
+<p>Let’s do each in turn.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>As for the cdf: <span class="math display">\[\begin{align*}
+F_X(x) = \int_b^x \frac{a b^a}{y^{a+1}} dy &amp;= a b^a \int y^{-a-1} dy = a b^a \left. \frac{1}{-a} y^{-a} \right|_b^x \\
+&amp;= b^a \left. y^{-a} \right|_x^b = b^a \left( b^{-a} - x^{-a} \right) = 1 - \left(\frac{b}{x}\right)^a \,.
+\end{align*}\]</span> The pdf for the smallest-valued of <span class="math inline">\(n\)</span> iid Pareto data is given by <span class="math display">\[\begin{align*}
+f_{(1)}(x) &amp;= n f_X(x) \left[ 1 - F_X(x) \right]^{n-1} \\
+&amp;= n \frac{a b^a}{x^{a+1}} \left[ 1 - \left( 1 - \left[\frac{b}{x}\right]^a \right) \right]^{n-1} \\
+&amp;= n \frac{a b^a}{x^{a+1}} \left(\frac{b}{x}\right)^{na-a} \\
+&amp;= n \frac{a b^{na}}{x^{na+1}} \,.
+\end{align*}\]</span> Last, the expected value of this datum is <span class="math display">\[\begin{align*}
+E[X_{(1)}] &amp;= \int_b^\infty n x \frac{a b^{na}}{x^{na+1}} = n a b^{na} \int_b^\infty x^{-na} dx \\
+&amp;= n a b^{na} \frac{1}{-na+1} \left. x^{-na+1} \right|_b^\infty \\
+&amp;= n a b^{na} \frac{1}{-na+1} \left( 0 - b^{-na+1} \right) \\
+&amp;= \frac{n a b}{na-1} \,.
+\end{align*}\]</span> Hence we see that <span class="math display">\[
+E\left[\frac{na-1}{na} X_{(1)}\right] = b
+\]</span> and that <span class="math display">\[
+\hat{b}_{\rm MVUE} = \frac{na-1}{na} X_{(1)} \,.
+\]</span></p>
+</blockquote>
+</section>
+</section>
+<section id="confidence-intervals" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="confidence-intervals"><span class="header-section-number">5.4</span> Confidence Intervals</h2>
+<div class="graybox">
+<p>What to take away from this section:</p>
+<ul>
+<li>Interval estimates for distribution bounds generated using sufficient statistics (i.e., order statistics) behave “properly” in that they do not overlap the value of the statistic itself.</li>
+<li>Constructing one-sided confidence intervals is superior to constructing two-sided confidence intervals when we wish to make inferences about domain-specifying parameters.</li>
+</ul>
+</div>
+<p><br></p>
+<blockquote class="blockquote">
+<p><strong>Recall:</strong> <em>a confidence interval is a random interval <span class="math inline">\([\hat{\theta}_L,\hat{\theta}_U]\)</span> that overlaps (or covers) the true value <span class="math inline">\(\theta\)</span> with probability</em> <span class="math display">\[
+P\left( \hat{\theta}_L \leq \theta \leq \hat{\theta}_U \right) = 1 - \alpha \,,
+\]</span> <em>where <span class="math inline">\(1 - \alpha\)</span> is the confidence coefficient. Note that this is a long-term probabilistic statement that is not to be applied to any one numerically evaluated interval: an evaluated interval either overlaps the true value, or it does not (and thus we cannot say there is a <span class="math inline">\(100(1-\alpha)\)</span>-percent chance that <span class="math inline">\(\theta\)</span> lies within the interval). We determine <span class="math inline">\(\hat{\theta}\)</span> by solving the following equation:</em> <span class="math display">\[
+F_Y(y_{\rm obs} \vert \theta) - q = 0 \,,
+\]</span> <em>where <span class="math inline">\(F_Y(\cdot)\)</span> is the cumulative distribution function for the statistic <span class="math inline">\(Y\)</span>, <span class="math inline">\(y_{\rm obs}\)</span> is the observed value of the statistic, and <span class="math inline">\(q\)</span> is an appropriate quantile value that is determined using the confidence interval reference table introduced in section 16 of Chapter 1.</em></p>
+</blockquote>
+<p>Our coverage, so to speak, of confidence intervals in very nearly complete and there is little for us to add to the discussion now…<em>except</em>…</p>
+<p>In the first example below, we demonstrate that one of the quirks of statistical inference with domain-specifying parameters is that, regardless of any research questions we are trying to answer when we analyze data, constructing <span class="math inline">\(100(1-\alpha)\)</span>-percent one-sided intervals is superior to constructing <span class="math inline">\(100(1-\alpha)\)</span>-percent two-sided intervals. And in the second example, we circle back around to a point made back in Chapter 1: <span class="math inline">\(1-\alpha\)</span> is technically the infimum, or minimum value, of <span class="math inline">\(P\left( \hat{\theta}_L \leq \theta \leq \hat{\theta}_U \right)\)</span>, even though throughout the book we have treated it as a user-specified constant. How might we define confidence intervals such that their coverage is technically zero?</p>
+<section id="uniform-domain-parameter-interval-estimation" class="level3" data-number="5.4.1">
+<h3 data-number="5.4.1" class="anchored" data-anchor-id="uniform-domain-parameter-interval-estimation"><span class="header-section-number">5.4.1</span> Uniform Domain Parameter: Interval Estimation</h3>
+<blockquote class="blockquote">
+<p>Recall that when we sample <span class="math inline">\(n\)</span> iid data according to a Uniform(<span class="math inline">\(0,\theta\)</span>) distribution, a sufficient statistic is <span class="math inline">\(Y = X_{(n)}\)</span>, which has probability density function <span class="math display">\[
+f_Y(y) = f_{(n)}(x) = n \frac{x^{n-1}}{\theta^n} \,,
+\]</span> cumulative distribution function <span class="math display">\[
+F_Y(y) = F_{(n)}(x) = (x/\theta)^n \,,
+\]</span> and expected value <span class="math display">\[
+E[Y] = E[X_{(n)}] = \frac{n}{n+1} \theta \,.
+\]</span> Given that <span class="math inline">\(E[Y]\)</span> increases with <span class="math inline">\(\theta\)</span>, we know that we will be working with quantities on the “yes” line of the confidence interval reference table.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>To find the lower and upper bounds on <span class="math inline">\(\theta\)</span>, respectively, for a two-sided interval, we solve for <span class="math inline">\(\theta\)</span> in the expressions <span class="math display">\[\begin{align*}
+\left(\frac{X_{(n)}}{\theta}\right)^n - \left(1 - \frac{\alpha}{2}\right) &amp;= 0 ~~~ \mbox{(lower)} \\
+\left(\frac{X_{(n)}}{\theta}\right)^n - \frac{\alpha}{2} &amp;= 0 ~~~ \mbox{(upper)} \,,
+\end{align*}\]</span> and we find that <span class="math display">\[
+\hat{\theta}_L = \frac{X_{(n)}}{(1-\alpha/2)^{1/n}} ~~\mbox{and}~~ \hat{\theta}_U = \frac{X_{(n)}}{(\alpha/2)^{1/n}} \,.
+\]</span></p>
+</blockquote>
+<blockquote class="blockquote">
+<p>In <a href="#fig-unifci" class="quarto-xref">Figure&nbsp;<span>5.5</span></a>, we display 10 separate 90 percent confidence intervals generated using data sampled according to a Uniform(0,1) distribution. In this figure, the maximum observed values for each dataset are shown as red crosses, while the intervals are displayed as blue lines. We immediately see one of the quirks associated with domain-specifying parameters: the observed data do not lie within the intervals (as they have previously) but rather outside of them. This is good: no observed value of <span class="math inline">\(X_{(n)}\)</span> should be larger than the derived lower bound! (Otherwise it would be impossible to observe that value, if indeed the derived lower bound is the true value.)</p>
+</blockquote>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-unifci" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-unifci-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="05-uniform_files/figure-html/fig-unifci-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="336">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-unifci-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.5: Ten 90 percent confidence intervals, generated using data from 10 separate datasets of size <span class="math inline">\(n = 10\)</span> sampled according to a Uniform(<span class="math inline">\(0,\theta\)</span>) distribution. (Here, <span class="math inline">\(\theta = 1\)</span>.) The observed statistic values <span class="math inline">\(X_{(n)}\)</span> are shown as red crosses; in each case, the values lie outside the derived intervals.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>Now, let’s take one of the datasets used to construct <a href="#fig-unifci" class="quarto-xref">Figure&nbsp;<span>5.5</span></a>, and look at its associated confidence interval:</p>
+</blockquote>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(X, <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 0.335 0.494 0.613 0.672 0.687 0.764 0.797 0.842 0.888 0.920</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"The maximum value is                      "</span>, <span class="fu">round</span>(<span class="fu">max</span>(X), <span class="dv">3</span>), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>The maximum value is                       0.92 </code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"The two-sided 90% confidence interval is ["</span>, <span class="fu">round</span>(hat.theta.L, <span class="dv">3</span>), <span class="st">","</span>,</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>     <span class="fu">round</span>(hat.theta.U, <span class="dv">3</span>), <span class="st">"]</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>The two-sided 90% confidence interval is [ 0.925 , 1.242 ]</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>What do we observe? On one side of our two-sided interval, there is a small gap between the value of the maximum datum (0.920) and the value of <span class="math inline">\(\hat{\theta}_L\)</span> (0.925). We also observe the width of the interval to be <span class="math inline">\(1.242 - 0.925 = 0.317\)</span>.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>What would happen if we were to construct a 90% one-sided upper bound on <span class="math inline">\(\theta\)</span> instead? The lower bound would effectively shift very little, from 0.925 to 0.920, while the upper bound would shift from 1.242 to <span class="math display">\[
+\hat{\theta}_U = \frac{X_{(n)}}{\alpha^{1/n}} = \frac{0.920}{(0.1)^{1/10}} = 1.158 \,.
+\]</span> The interval width changes from 0.317 to 0.238, a decrease of nearly 25%! In the end, when attempting to quantify our uncertainty about the value of <span class="math inline">\(\theta\)</span>, we become slightly more uncertain in one direction (adding the range <span class="math inline">\([0.920,0.925)\)</span> to our interval) but substantially less uncertain in the other (removing the range <span class="math inline">\((1.158,1.242]\)</span> from our interval). We thus find that <em>one-sided confidence intervals are superior to two-sided ones when we are trying to infer domain-specifying parameters</em>.</p>
+</blockquote>
+<hr>
+</section>
+<section id="uniform-domain-parameter-confidence-coefficient" class="level3" data-number="5.4.2">
+<h3 data-number="5.4.2" class="anchored" data-anchor-id="uniform-domain-parameter-confidence-coefficient"><span class="header-section-number">5.4.2</span> Uniform Domain Parameter: Confidence Coefficient</h3>
+<blockquote class="blockquote">
+<p>A confidence interval is a random interval <span class="math inline">\([\hat{\theta}_L,\hat{\theta}_U]\)</span> that covers the true value <span class="math inline">\(\theta\)</span> with probability <span class="math display">\[
+P\left( \hat{\theta}_L \leq \theta \leq \hat{\theta}_U \right) = 1 - \alpha \,,
+\]</span> where <span class="math inline">\(1 - \alpha\)</span> is the confidence coefficient. In Chapter 1, we make the point that technically, the confidence coefficient is the infimum, or minimum value, of <span class="math inline">\(P(\hat{\theta}_L \leq \theta \leq \hat{\theta}_U)\)</span>. What does this actually mean in practice?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>In the example above, we show that the interval estimate with confidence coefficient <span class="math inline">\(1-\alpha\)</span> for the uniform upper bound <span class="math inline">\(\theta\)</span> has the form <span class="math inline">\([aX_{(n)},bX_{(n)}]\)</span>. Can we also define an appropriate interval estimator if, for instance, it has the form <span class="math inline">\([X_{(n)} + a,X_{(n)} + b]\)</span>? The short answer is no…because the confidence coefficient will be <em>zero</em>! To see why, let’s work directly with the probability statement that defines the confidence coefficient: <span class="math display">\[\begin{align*}
+P(X_{(n)} + a \leq \theta \leq X_{(n)} + b) &amp;= P(\theta - b \leq X_{(n)} \leq \theta - a)\\
+&amp;= P(X_{(n)} \leq \theta - a) - P(X_{(n)} \leq \theta - b)\\
+&amp;= F_{(n)}(\theta-a) - F_{(n)}(\theta-b)\\
+&amp;= \left(\frac{\theta-a}{\theta}\right)^2 - \left(\frac{\theta-b}{\theta}\right)^2\\
+&amp;= \left(1-\frac{a}{\theta}\right)^2 - \left(1-\frac{b}{\theta}\right)^2 \,.
+\end{align*}\]</span> The key to interpreting the last line above is that <span class="math inline">\(\theta\)</span> is <em>unknown</em> (otherwise, why would we be constructing a confidence interval for it in the first place?), and thus can take on any allowable value. For an interval of the form <span class="math inline">\([aX_{(n)},bX_{(n)}]\)</span>, <span class="math inline">\(\theta\)</span> does not appear, and thus the confidence coefficient is the user-set constant <span class="math inline">\(1 - \alpha\)</span>. Here, however, <span class="math display">\[
+\lim_{\theta \to \infty} P(X_{(n)} + a \leq \theta \leq X_{(n)} + b) = 0 \,,
+\]</span> and thus the confidence coefficient (or the proportion of computed intervals that overlap the true value <span class="math inline">\(\theta\)</span>) goes to zero. Thus an interval estimator of the form <span class="math inline">\([aX_{(n)},bX_{(n)}]\)</span> is a better one than one of the form <span class="math inline">\([X_{(n)} + a,X_{(n)} + b]\)</span>.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>The upshot: one cannot just write down any interval and assume that it comes with a guarantee of non-zero coverage! It turns out that by working with the sampling distributions of statistics, useful interval estimators are naturally defined for us.</p>
+</blockquote>
+<hr>
+</section>
+<section id="pareto-domain-parameter-interval-estimation" class="level3" data-number="5.4.3">
+<h3 data-number="5.4.3" class="anchored" data-anchor-id="pareto-domain-parameter-interval-estimation"><span class="header-section-number">5.4.3</span> Pareto Domain Parameter: Interval Estimation</h3>
+<blockquote class="blockquote">
+<p>As was mentioned earlier in this chapter, a moment-generating function does not exist for the Pareto distribution. Thus if we sample <span class="math inline">\(n &gt; 1\)</span> iid data according to this distribution (with fixed parameter <span class="math inline">\(a\)</span>), we cannot begin to analytically identify the sampling distribution for, e.g., <span class="math inline">\(Y = \sum_{i=1}^n X_i\)</span>…so we would have to utilize a simulation framework to construct intervals with this statistic. But it turns out that this doesn’t actually matter to us, as we have since found out that a sufficient statistic for the Pareto <span class="math inline">\(b\)</span> parameter is <span class="math inline">\(X_{(1)}\)</span>, and we certainly do know the cdf of the sampling distribution for that: <span class="math display">\[\begin{align*}
+F_{(1)}(x) &amp;= \int_b^x \frac{n a b^{na}}{y^{na+1}} dy = n a b^{na} \int_b^x y^{-na-1} dy \\
+&amp;= n a b^{na} \frac{1}{-na} \left. y^{-na} \right|_b^x = - b^{na} \left( x^{-na} - b^{-na} \right) \\
+&amp;= 1 - \left(\frac{b}{x}\right)^{na} \,.
+\end{align*}\]</span> If we solve the general equation <span class="math inline">\(F_Y(y_{\rm obs} \vert \theta) - q = 0\)</span>, we find that <span class="math display">\[
+\hat{b}(q) = x_{(1),\rm obs} (1 - q)^{1/na} \,.
+\]</span></p>
+</blockquote>
+<blockquote class="blockquote">
+<p>But, for review purposes, let’s say we really want to utilize the sample mean as our interval-constructing statistic. (We shouldn’t, because it is not a sufficient statistic for <span class="math inline">\(b\)</span>, but we are headstrong and are going to plow ahead.) Below we show a simulation framework for estimating a 95% lower bound for <span class="math inline">\(b\)</span>, given that <span class="math inline">\(a = 3\)</span> and <span class="math inline">\(n = 8\)</span>. Note that the expected value of <span class="math inline">\(\bar{X}\)</span> increases with <span class="math inline">\(b\)</span>, as the reader can verify, so <span class="math inline">\(q = 1-\alpha = 0.95\)</span>.</p>
+</blockquote>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># generate data</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">236</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>num.sim <span class="ot">&lt;-</span> <span class="dv">100000</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>n       <span class="ot">&lt;-</span> <span class="dv">8</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>a       <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>b       <span class="ot">&lt;-</span> <span class="fl">1.5</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>X.obs   <span class="ot">&lt;-</span> extraDistr<span class="sc">::</span><span class="fu">rpareto</span>(n, <span class="at">a =</span> a, <span class="at">b =</span> b) <span class="co"># coded to avoid namespace conflict</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>y.obs   <span class="ot">&lt;-</span> <span class="fu">mean</span>(X.obs)</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>alpha   <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(X.obs)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.582117</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># the 95% lower bound given X_(1)</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">min</span>(X.obs) <span class="sc">*</span> alpha<span class="sc">^</span>(<span class="dv">1</span> <span class="sc">/</span> (n <span class="sc">*</span> a)), <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.396</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># the 95% lower bound given X.bar</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(b, a, n, y.obs, q, <span class="at">num.sim =</span> <span class="dv">1000000</span>, <span class="at">seed =</span> <span class="dv">236</span>)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set.seed</span>(seed)</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  X <span class="ot">&lt;-</span> <span class="fu">matrix</span>(extraDistr<span class="sc">::</span><span class="fu">rpareto</span>(num.sim <span class="sc">*</span> n, <span class="at">a =</span> a, <span class="at">b =</span> b), <span class="at">nrow =</span> num.sim)</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>  Y <span class="ot">&lt;-</span> <span class="fu">rowMeans</span>(X)</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sum</span>(Y <span class="sc">&lt;=</span> y.obs) <span class="sc">/</span> num.sim <span class="sc">-</span> q</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">uniroot</span>(f, <span class="at">interval =</span> <span class="fu">c</span>(<span class="fl">0.001</span>, <span class="dv">1000</span>), <span class="at">a =</span> a, <span class="at">n =</span> n, <span class="at">y.obs =</span> y.obs, <span class="at">q =</span> <span class="dv">1</span> <span class="sc">-</span> alpha)<span class="sc">$</span>root, <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.989</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>The lower bound found given the sufficient statistic <span class="math inline">\(X_{(1)}\)</span> is 1.396, while the lower bound found given <span class="math inline">\(\bar{X}\)</span> is 0.989. This result demonstrates that the utilization of sufficient statistics results in superior inferences (meaning, here, smaller intervals).</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>But let’s take this example just a little farther: let’s compute a 95% <em>upper bound</em> while utilizing the sample mean. (We utilize the same code as above, but we change <code>q=1-alpha</code> to <code>q=alpha</code> in the call to <code>uniroot()</code>.)</p>
+</blockquote>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># the 95% upper bound given X.bar</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(b, a, n, y.obs, q, <span class="at">num.sim =</span> <span class="dv">1000000</span>, <span class="at">seed =</span> <span class="dv">236</span>)</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set.seed</span>(seed)</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>  X <span class="ot">&lt;-</span> <span class="fu">matrix</span>(extraDistr<span class="sc">::</span><span class="fu">rpareto</span>(num.sim <span class="sc">*</span> n, <span class="at">a =</span> a, <span class="at">b =</span> b), <span class="at">nrow =</span> num.sim)</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>  Y <span class="ot">&lt;-</span> <span class="fu">rowMeans</span>(X)</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sum</span>(Y <span class="sc">&lt;=</span> y.obs) <span class="sc">/</span> num.sim <span class="sc">-</span> q</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">uniroot</span>(f, <span class="at">interval =</span> <span class="fu">c</span>(<span class="fl">0.001</span>, <span class="dv">1000</span>), <span class="at">a =</span> a, <span class="at">n =</span> n, <span class="at">y.obs =</span> y.obs, <span class="at">q =</span> alpha)<span class="sc">$</span>root, <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.666</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>The upper bound is 1.666. We can immediately see that this is problematic since the smallest value among our eight data is <span class="math inline">\(x_{(1),{\rm obs}} = 1.582\)</span>: we should not infer an upper bound on <span class="math inline">\(b\)</span> that exceeds any of the data values we observe!</p>
+</blockquote>
+</section>
+</section>
+<section id="hypothesis-testing" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="hypothesis-testing"><span class="header-section-number">5.5</span> Hypothesis Testing</h2>
+<div class="graybox">
+<p>What to take away from this section:</p>
+<ul>
+<li><p>When conducting hypothesis tests concerning distribution bounds, one can define two-tail tests, but from the perspective of power, it is preferable to define one-tail tests only.</p></li>
+<li><p>When computing the test power for a hypothesis test, one must take into account the two ways in which one can reject the null hypothesis; for instance, if <span class="math inline">\(H_o : \theta = \theta_o\)</span> is an upper distribution bound, and we wish to compute the test power given <span class="math inline">\(\theta &gt; \theta_o\)</span>, then we would reject the null if <span class="math inline">\(X_{(n)}\)</span> fall into the rejection region defined under the null <em>and</em> if <span class="math inline">\(X_{(n)} &gt; \theta_o\)</span>.</p></li>
+</ul>
+</div>
+<p><br></p>
+<blockquote class="blockquote">
+<p><strong>Recall</strong>: <em>a hypothesis test is a framework to make an inference about the value of a population parameter <span class="math inline">\(\theta\)</span>. The null hypothesis <span class="math inline">\(H_o\)</span> is that <span class="math inline">\(\theta = \theta_o\)</span>, while possible alternatives <span class="math inline">\(H_a\)</span> are <span class="math inline">\(\theta \neq \theta_o\)</span> (two-tail test), <span class="math inline">\(\theta &gt; \theta_o\)</span> (upper-tail test), and <span class="math inline">\(\theta &lt; \theta_o\)</span> (lower-tail test). For, e.g., a one-tail test, we reject the null hypothesis if the observed test statistic <span class="math inline">\(y_{\rm obs}\)</span> falls outside the bound given by <span class="math inline">\(y_{RR}\)</span>, which is a solution to the equation</em> <span class="math display">\[
+F_Y(y_{RR} \vert \theta_o) - q = 0 \,,
+\]</span> <em>where <span class="math inline">\(F_Y(\cdot)\)</span> is the cumulative distribution function for the statistic <span class="math inline">\(Y\)</span> and <span class="math inline">\(q\)</span> is an appropriate quantile value that is determined using the hypothesis test reference table introduced in section 17 of Chapter 1. Note that the hypothesis test framework only allows us to make a decision about a null hypothesis; nothing is proven.</em></p>
+</blockquote>
+<p>Let’s suppose that we sample <span class="math inline">\(n\)</span> iid data according to a Uniform(0,<span class="math inline">\(\theta\)</span>) and that we wish to construct a two-tail hypothesis test using the sufficient statistic <span class="math inline">\(Y = X_{(n)}\)</span>. From examples above, we know that <span class="math inline">\(F_Y(y) = (x/\theta)^n\)</span> and that we are working on the “yes” line of the reference table…so the rejection-region boundaries are given by <span class="math display">\[\begin{align*}
+F_{(n)}(x_{\rm RR,lo} \vert \theta_o) - \frac{\alpha}{2} = 0 ~~~ &amp;\Rightarrow ~~~ x_{\rm RR,lo} = \theta_o \left( \frac{\alpha}{2} \right)^{1/n} \\
+F_{(n)}(x_{\rm RR,hi} \vert \theta_o) - \left(1 - \frac{\alpha}{2}\right) = 0 ~~~ &amp;\Rightarrow ~~~ x_{\rm RR,hi} = \theta_o \left( 1 - \frac{\alpha}{2} \right)^{1/n} \,.
+\end{align*}\]</span> If <span class="math inline">\(\theta &gt; x_{\rm RR,hi}\)</span>, the power of the test is <span class="math display">\[\begin{align*}
+power(\theta) &amp;= F_{(n)}(x_{\rm RR,lo} \vert \theta) + \left[ 1 - F_{(n)}(x_{\rm RR,hi} \vert \theta) \right] \\
+\Rightarrow ~~~ power(\theta) &amp;= \left(\frac{\theta_o}{\theta}\right)^n \frac{\alpha}{2} + 1 - \left(\frac{\theta_o}{\theta}\right)^n \left(1-\frac{\alpha}{2}\right) = 1 - \left(\frac{\theta_o}{\theta}\right)^n(1-\alpha) \,.
+\end{align*}\]</span> So far, so good. But what would happen if we were to define a lower-tail test instead? The rejection-region boundary would be given by <span class="math display">\[\begin{align*}
+F_{(n)}(x_{\rm RR} \vert \theta_o) - \alpha = 0 ~~~ \Rightarrow ~~~ x_{\rm RR} = \theta_o \alpha^{1/n} \,.
+\end{align*}\]</span> Also so far, so good. But in a power calculation, we would need to take into account that if <span class="math inline">\(\theta &gt; \theta_o\)</span>, there are there are <em>two possible ways to reject the null</em>…by observing</p>
+<ol type="1">
+<li><span class="math inline">\(x_{(n),\rm obs} &lt; y_{\rm RR}\)</span> (“traditional rejection”), or</li>
+<li><span class="math inline">\(x_{(n),\rm obs} &gt; \theta_o\)</span> (“trivial rejection”).</li>
+</ol>
+<p>We dub the second possibility “trivial rejection” since if the null is correct, it is impossible to sample a datum with a value larger than <span class="math inline">\(\theta_o\)</span>, and thus there is no need to computationally derive a boundary for this part of the rejection region.</p>
+<p>So, despite the fact that we are intending to define a one-tail test, we have, in the context of power calculations, effectively defined a two-tail test! The question then arises: from the point of view of test power, which of these defined tests is better for us to use? Let’s examine the difference in power between the one-tail and two-tail tests in three different regimes: <span class="math inline">\(\theta \leq x_{\rm RR,hi}\)</span>, <span class="math inline">\(x_{\rm RR,hi} &lt; \theta \leq \theta_o\)</span>, and <span class="math inline">\(\theta &gt; \theta_o\)</span>.</p>
+<ol type="1">
+<li>If <span class="math inline">\(\theta \leq x_{\rm RR,hi}\)</span>, then the difference in power is <span class="math display">\[\begin{align*}
+power_1(\theta) - power_2(\theta) &amp;= F_{(n)}(x_{\rm RR} \vert \theta) - F_{(n)}(x_{\rm RR,lo} \vert \theta) \\
+&amp;= \left(\frac{x_{\rm RR}}{\theta}\right)^n - \left(\frac{x_{\rm RR,hi}}{\theta}\right)^n \\
+&amp;= \left(\frac{\theta_o}{\theta}\right)^n \left(\alpha - \frac{\alpha}{2}\right)\\
+&amp;= \frac{\alpha}{2}\left(\frac{\theta_o}{\theta}\right)^n &gt; 0 \,.
+\end{align*}\]</span> In this regime, the one-tail test is more powerful.</li>
+<li>If <span class="math inline">\(x_{\rm RR,hi} &lt; \theta \leq \theta_o\)</span>, then the difference in power is <span class="math display">\[\begin{align*}
+power_1(\theta) - power_2(\theta) &amp;= F_{(n)}(x_{\rm RR} \vert \theta) - \left[ F_{(n)}(x_{\rm RR,lo} \vert \theta) + 1 - F_{(n)}(x_{\rm RR,hi} \vert \theta) \right] \\
+&amp;= \left(\frac{\theta_o}{\theta}\right)^n \alpha - \left[ \left(\frac{\theta_o}{\theta}\right)^n \frac{\alpha}{2} + 1 - \left(\frac{\theta_o}{\theta}\right)^n \left(1 - \frac{\alpha}{2}\right) \right] \\
+&amp;= \left(\frac{\theta_o}{\theta}\right)^n - 1 \geq 0 \,.
+\end{align*}\]</span> In this regime, the one-tail test is more powerful, unless <span class="math inline">\(\theta = \theta_o\)</span>, where both power values are <span class="math inline">\(\alpha\)</span>.</li>
+<li>If <span class="math inline">\(\theta &gt; \theta_o\)</span>, then the difference in power is <span class="math display">\[\begin{align*}
+power_1(\theta) - power_2(\theta) &amp;= \left[ F_{(n)}(x_{\rm RR} \vert \theta) + 1 - F_{(n)}(\theta_o \vert \theta) \right] - \left[ F_{(n)}(x_{\rm RR,lo} \vert \theta) + 1 - F_{(n)}(x_{\rm RR,hi} \vert \theta) \right] \\
+&amp;= \left[ F_{(n)}(x_{\rm RR} \vert \theta) - F_{(n)}(\theta_o \vert \theta) \right] - \left[ F_{(n)}(x_{\rm RR,lo} \vert \theta) - F_{(n)}(x_{\rm RR,hi} \vert \theta) \right] \\
+&amp;= \left[ \left(\frac{\theta_o}{\theta}\right)^n \alpha - \left(\frac{\theta_o}{\theta}\right)^n \right] - \left[ \left(\frac{\theta_o}{\theta}\right)^n \frac{\alpha}{2} - \left(\frac{\theta_o}{\theta}\right)^n \left(1 - \frac{\alpha}{2}\right) \right] \\
+&amp;= 0 \,.
+\end{align*}\]</span> In this regime, the test power values are identical!</li>
+</ol>
+<p>Given the results above, we conclude that <strong>the lower-tail test is to be preferred over the two-tail test</strong>: it is an equally powerful (if <span class="math inline">\(\theta \geq \theta_o\)</span>) or more powerful (if <span class="math inline">\(\theta &lt; \theta_o\)</span>) test of <span class="math inline">\(\theta\)</span>. (See <a href="#fig-uhyppow12" class="quarto-xref">Figure&nbsp;<span>5.6</span></a>. We note that in a sense the fact that the tests are equally powerful if <span class="math inline">\(\theta \geq \theta_o\)</span> does not matter, since it is general convention to only display power curves for one-tail tests that are computed on the relevant side of the null value, which here would be for <span class="math inline">\(\theta &lt; \theta_o\)</span>. Regardless, we extend the curves here, to illustrate their behavior.) This result is one last “quirk” that arises when we are working with domain-specifying parameters, and is entirely due to the fact that we can only sample data to one side of a specified domain boundary.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-uhyppow12" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-uhyppow12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="05-uniform_files/figure-html/fig-uhyppow12-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="336">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-uhyppow12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.6: The power curves for tests of <span class="math inline">\(H_o : \theta = \theta_o = 1\)</span> versus <span class="math inline">\(H_a : \theta \neq \theta_o\)</span> (red dotted line) and versus <span class="math inline">\(H_a : \theta \leq \theta_o\)</span> (blue solid line), assuming <span class="math inline">\(n = 10\)</span>. We observe that the one-tail test is more powerful than the two-tail test if <span class="math inline">\(\theta &lt; \theta_o\)</span>, and that the tests are equally powerful if <span class="math inline">\(\theta \geq \theta_o\)</span>.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<hr>
+<section id="pareto-domain-parameter-hypothesis-test" class="level3" data-number="5.5.1">
+<h3 data-number="5.5.1" class="anchored" data-anchor-id="pareto-domain-parameter-hypothesis-test"><span class="header-section-number">5.5.1</span> Pareto Domain Parameter: Hypothesis Test</h3>
+<blockquote class="blockquote">
+<p>We sample <span class="math inline">\(n\)</span> iid data according to a Pareto(<span class="math inline">\(a,b\)</span>) distribution, with <span class="math inline">\(a\)</span> fixed. We use these data to test <span class="math display">\[
+H_o: b = b_o ~~\mbox{versus}~~ H_a: b &gt; b_o \,.
+\]</span> The sufficient statistic is the minimum datum <span class="math inline">\(X_{(1)}\)</span>; we can appeal to reason to state that the expected value of this quantity must increase as <span class="math inline">\(b\)</span> increases, so we know that we are using the “yes” line of the hypothesis test reference tables and thus that <span class="math inline">\(q = 1 - \alpha\)</span>. Borrowing from a previous example, we know that <span class="math inline">\(F_{(1)}(x) = 1 - (b/x)^{na}\)</span>, hence <span class="math display">\[\begin{align*}
+F_Y(y \vert \theta) - q = 0 ~~~ &amp;\Rightarrow ~~~ F_{(1)}(x_{\rm RR} \vert b_o) - (1-\alpha) = 0 \\
+&amp;\Rightarrow ~~~ 1 - \left(\frac{b_o}{x_{\rm RR}}\right)^{na} - (1 - \alpha) = \alpha - \left(\frac{b_o}{x_{\rm RR}}\right)^{na} = 0 \,.
+\end{align*}\]</span> Solving for <span class="math inline">\(x_{\rm RR}\)</span>, we find that <span class="math display">\[
+x_{\rm RR} = b_o \alpha^{-1/na} \,.
+\]</span></p>
+</blockquote>
+<blockquote class="blockquote">
+<p>The <span class="math inline">\(p\)</span>-value is straightforward to compute: according to the reference tables, it is <span class="math display">\[\begin{align*}
+1 - F_Y(y_{\rm obs} \vert \theta_o) ~~~ \Rightarrow ~~~ 1 - F_{(1)}(x_{(1),\rm obs} \vert b_o) ~~~ \Rightarrow ~~~ \left(\frac{b_o}{x_{(1),\rm obs}}\right)^{na} \,.
+\end{align*}\]</span></p>
+</blockquote>
+<blockquote class="blockquote">
+<p>However, as detailed mentioned above, the test power is less straightforward to compute.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>If <span class="math inline">\(b &gt; b_o\)</span>, then we can utilize the reference tables directly to write that the power is <span class="math display">\[\begin{align*}
+1 - F_Y(y_{\rm RR} \vert \theta) ~~~ \Rightarrow ~~~ 1 - F_{(1)}(x_{\rm RR} \vert b) ~~~ \Rightarrow ~~~ \left(\frac{b}{x_{\rm RR}}\right)^{na} \,.
+\end{align*}\]</span> The power rises from <span class="math inline">\(\alpha\)</span> to 1 as <span class="math inline">\(b\)</span> decreases from <span class="math inline">\(b_o\)</span> to <span class="math inline">\(x_{\rm RR}\)</span>, and for larger values of <span class="math inline">\(b\)</span> it is 1 by definition (as it becomes impossible to sample a datum outside of the rejection region). (See the left-hand side of <a href="#fig-uhyppow" class="quarto-xref">Figure&nbsp;<span>5.7</span></a> and the left panel of <a href="#fig-uhyppow2" class="quarto-xref">Figure&nbsp;<span>5.8</span></a>.)</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>If <span class="math inline">\(b &lt; b_o\)</span>, then we would reject the null hypothesis if <span class="math inline">\(x_{(1),\rm obs} &gt; x_{\rm RR}\)</span> <em>or</em> <span class="math inline">\(x_{(1),\rm obs} &lt; b_o\)</span>. Thus <span class="math display">\[\begin{align*}
+P(\mbox{reject}~\mbox{null} \vert b) &amp;= P(X_{(1)} &gt; x_{\rm RR} \cup X_{(1)} &lt; b_o \vert b) \\
+&amp;= \left[ 1 - F_{(1)}(x_{\rm RR} \vert b)\right] + F_{(1)}(b_o \vert b)] \\
+&amp;= \left(\frac{b}{x_{\rm RR}}\right)^{na} + \left( 1 - \left(\frac{b}{b_o}\right)^{na} \right) \,.
+\end{align*}\]</span> (See the right-hand side of <a href="#fig-uhyppow" class="quarto-xref">Figure&nbsp;<span>5.7</span></a> and the right panel of <a href="#fig-uhyppow2" class="quarto-xref">Figure&nbsp;<span>5.8</span></a>.)</p>
+</blockquote>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-uhyppow" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-uhyppow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="05-uniform_files/figure-html/fig-uhyppow-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="336">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-uhyppow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.7: The power curve for the test of <span class="math inline">\(H_o : b = b_o = 1\)</span> versus <span class="math inline">\(H_a : b &gt; b_o\)</span>, assuming <span class="math inline">\(a = 2\)</span> and <span class="math inline">\(n = 10\)</span>. The curve displays two segments, and it achieves its minimum value, <span class="math inline">\(\alpha = 0.05\)</span>, at <span class="math inline">\(b = 1\)</span>.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div id="fig-uhyppow2" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-uhyppow2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-uhyppow2" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-uhyppow2-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="288">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-uhyppow2-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="05-uniform_files/figure-html/fig-uhyppow2-1.png" id="fig-uhyppow2-1" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-uhyppow2" width="288">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-uhyppow2-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a)
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-uhyppow2" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-uhyppow2-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="288">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-uhyppow2-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="05-uniform_files/figure-html/fig-uhyppow2-2.png" id="fig-uhyppow2-2" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-uhyppow2" width="288">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-uhyppow2-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b)
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-uhyppow2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.8: The rejection regions that inform the power curve calculation shown in <a href="#fig-uhyppow" class="quarto-xref">Figure&nbsp;<span>5.7</span></a>. (a) If <span class="math inline">\(b &gt; b_o\)</span>, then we reject the null hypothesis if <span class="math inline">\(x_{(1),\rm obs} &gt; x_{\rm RR}\)</span>. The power is thus the area under the curve shown in red. (b) If <span class="math inline">\(b &lt; b_o\)</span>, then we reject the null hypothesis if <span class="math inline">\(x_{(1),\rm obs} &gt; x_{\rm RR}\)</span> or if <span class="math inline">\(x_{(1),\rm obs} &lt; b_o = 1\)</span>. The power is thus the sum of the two areas under the curve shown in red.
+</figcaption>
+</figure>
+</div>
+<hr>
+</section>
+</section>
+<section id="exercises" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="exercises"><span class="header-section-number">5.6</span> Exercises</h2>
+<ol type="1">
+<li><p>Let <span class="math inline">\(X_1, X_2, \ldots, X_n\)</span> denote independent and identically distributed uniform random variables on the interval <span class="math inline">\([0, 3\theta]\)</span>. Derive the method-of-moments estimator for <span class="math inline">\(\theta\)</span>.</p></li>
+<li><p>Compute <span class="math inline">\(P(X &gt; a+b \vert X &gt; b)\)</span> for a Uniform(0,1) distribution. (Assume <span class="math inline">\(0 &lt; b &lt; a+b &lt; 1\)</span>.) Does the Uniform(0,1) distribution exhibit the property of memorylessness? Why or why not?</p></li>
+<li><p>A woman goes to her local bus stop every day at a random time between noon and 1 PM, for five days total. If a bus doesn’t appear to pick her up within 10 minutes, she immediately hops into a waiting Uber and is driven off. On every day, there is only one bus that will arrive between noon and 1:10 PM, and it will arrive at a random time <span class="math inline">\(X\)</span> minutes after noon. <span class="math inline">\(X\)</span> is sampled from the following distribution: <span class="math display">\[\begin{eqnarray*}
+f_X(x) = \left\{ \begin{array}{ll} 1/70 &amp; x \in [0,70] \\ 0 &amp; \mbox{otherwise} \end{array} \right. \,.
+\end{eqnarray*}\]</span> (a) On any one day, what is the probability that the woman catches the bus? (b) Over the five days, what is the probability that the woman catches the bus one or more times? (You may leave fractions raised to powers in your final answer, such as <span class="math inline">\((3/4)^3\)</span> or <span class="math inline">\((7/15)^5\)</span>, if they are part of your answer.) (Also, if you are in doubt about your answer to (a), just use the variable <span class="math inline">\(p\)</span> in place of your answer for (a) in part (b).)</p></li>
+<li><p>You sample a datum <span class="math inline">\(X\)</span> from a Uniform(0,1) distribution. What is <span class="math inline">\(P(X \leq 2u \vert X \geq u])\)</span>, where <span class="math inline">\(0 \leq u \leq 0.5\)</span>?</p></li>
+<li><p>Let <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> be two iid random variables sampled from a Uniform(0,1) distribution. What is <span class="math inline">\(P(X_1 &lt; 2X_2 \vert X_2 &lt; 1/2)\)</span>? (Note: <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> are <em>not</em> order statistics, so do not treat them as such!)</p></li>
+<li><p>Assume that we have sampled <span class="math inline">\(n\)</span> iid random variables from a Uniform(<span class="math inline">\(\theta,0\)</span>) distribution, where <span class="math inline">\(\theta &lt; 0\)</span>. (a) What is a sufficient statistic for <span class="math inline">\(\theta\)</span>? (b) What is the cdf for this sufficient statistic? Be careful when deriving <span class="math inline">\(F_X(x)\)</span>: the pdf <span class="math inline">\(f_X(x)\)</span> is <span class="math inline">\(1/(0-\theta) = -1/\theta\)</span> and not <span class="math inline">\(1/\theta\)</span>. Also, take care when writing down the integral bounds. (c) We wish to test <span class="math inline">\(H_o : \theta = \theta_o\)</span> versus <span class="math inline">\(H_a : \theta \neq \theta_o\)</span>. Recall that hypothesis tests are written down (in theory!) before the collection of data. Given that factoid, write down the trivial part of the test rejection region, i.e., the part of the overall rejection region that one can write down without having to work with the sufficient statistic cdf. (d) To derive the other part of the rejection region, do we set the cdf for the sufficient statistic to <span class="math inline">\(1-\alpha\)</span> or <span class="math inline">\(1-\alpha/2\)</span>? Choose one and write it in the answer box. Recall that the power of the hypothesis test when <span class="math inline">\(\theta = \theta_o\)</span> is exactly <span class="math inline">\(\alpha\)</span>. (e) Given your answers for (b) and (d), derive the boundary of the other part of the rejection region (the non-trivial part).</p></li>
+<li><p>You sample <span class="math inline">\(n\)</span> iid data from the following (unnamed) distribution: <span class="math display">\[\begin{eqnarray*}
+f_X(x) = \frac{2}{\theta^2} x  ~~~ x \in [0,\theta] \,.
+\end{eqnarray*}\]</span> The cdf for this distribution is <span class="math inline">\(F_X(x) = (x/\theta)^2\)</span>. (a) What is the MLE for <span class="math inline">\(\theta\)</span>? (b) What is <span class="math inline">\(E[X_{(n)}]\)</span>? (c) What is the MVUE for <span class="math inline">\(\theta\)</span>?</p></li>
+<li><p>Let’s assume we have sampled <span class="math inline">\(n\)</span> iid data from the following distribution: <span class="math display">\[\begin{align*}
+f_X(x) = e^{-(x-\theta)} ~~~ x \in [\theta,\infty)
+\end{align*}\]</span> where <span class="math inline">\(\theta &gt; 0\)</span>. The cdf for this distribution, for <span class="math inline">\(x \geq \theta\)</span>, is <span class="math display">\[\begin{align*}
+F_X(x) = 1-e^{-(x-\theta)} \,.
+\end{align*}\]</span> (a) Identify a sufficient statistic for <span class="math inline">\(\theta\)</span>. (b) Identify the maximum likelihood estimator for <span class="math inline">\(\theta\)</span>. No work need be shown. (c) Determine the sampling distribution (specifically, the pdf, and not the cdf) for the sufficient statistic identified in part (a). (d) Determine the minimum variance unbiased estimator for <span class="math inline">\(\theta\)</span>. You will want to utilize a variable subsitution here. Recall that <span class="math display">\[\begin{align*}
+\Gamma(a+1) = a! = \int_0^\infty u^a e^{-u} du \,,
+\end{align*}\]</span> assuming that <span class="math inline">\(a\)</span> is a non-negative integer. (Also recall that 0! = 1.)</p></li>
+<li><p>We sample two iid data, <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span>, from a Uniform(0,1) distribution. (a) What is <span class="math inline">\(P(X_1 &gt; 1/2 \vert X_2 &lt; 1/2)\)</span>? (b) What is <span class="math inline">\(P(X_1 &gt; 1/2 \vert X_1 &lt; 3/4)\)</span>? (c) What is <span class="math inline">\(P(X_1 &lt; 3X_2)\)</span>? (Hint: draw this out in a 1 <span class="math inline">\(\times\)</span> 1 box. Do the same for (d).) (d) What is <span class="math inline">\(P(X_2 &lt; X_1 \vert X_2 &lt; 1/2)\)</span>?</p></li>
+<li><p>Let’s assume that we have sampled <span class="math inline">\(n\)</span> iid data from a particular distribution with domain <span class="math inline">\([\theta,\infty)\)</span>, and let the cdf of the sampling distribution of the appropriate statistic <span class="math inline">\(Y\)</span> to use to construct confidence intervals and perform hypothesis tests be <span class="math display">\[\begin{align*}
+F_Y(y) = 1 - e^{-n(y-\theta)} \,.
+\end{align*}\]</span> Assume the observed statistic value is <span class="math inline">\(y_{\rm obs}\)</span>, and that <span class="math inline">\(E[Y] = \theta + 1/n\)</span>. (Note that it is not necessary to know what <span class="math inline">\(Y\)</span> actually represents to answer the questions below.) (a) Determine a <span class="math inline">\(100(1-\alpha)\)</span>-percent lower bound on <span class="math inline">\(\theta\)</span>. (b) Assume we wish to test <span class="math inline">\(H_o : \theta = \theta_o\)</span> versus <span class="math inline">\(H_a : \theta \neq \theta_o\)</span>. Derive the rejection-region boundary (or boundaries) <span class="math inline">\(y_{\rm RR}\)</span> in terms of <span class="math inline">\(\theta_o\)</span>, the Type I error <span class="math inline">\(\alpha\)</span>, and <span class="math inline">\(n\)</span>.</p></li>
+<li><p>We are given the following probability mass function (which is an example of a discrete uniform distribution): <span class="math display">\[\begin{align*}
+p_X(x) = 1/2
+\end{align*}\]</span> for <span class="math inline">\(x \in \{1,2\}\)</span>. (a) Compute the moment-generating function for this distribution. (b) Using the mgf, compute the variance of <span class="math inline">\(X\)</span>. Do not compute <span class="math inline">\(V[X]\)</span> by any other method!</p></li>
+<li><p>We sample a random variable <span class="math inline">\(X\)</span> from a Uniform(0,1) distribution. Let <span class="math inline">\(U = \sqrt{X}\)</span>. (a) Write down the pdf for <span class="math inline">\(U\)</span>. (b) Identify the distribution of <span class="math inline">\(U\)</span>, if it is known. Include the name and any parameter values.</p></li>
+<li><p>Let <span class="math inline">\(X \sim\)</span> Uniform(0,1), i.e., <span class="math display">\[\begin{eqnarray*}
+f_X(x) = 1
+\end{eqnarray*}\]</span> for <span class="math inline">\(x \in [0,1]\)</span>. Now, let <span class="math inline">\(U = X^2\)</span>. (a) We will derive <span class="math inline">\(f_U(u)\)</span> in part (c). For now: what is the domain of this probability density function? (b) What is the functional form of <span class="math inline">\(F_U(u)\)</span> within the domain of <span class="math inline">\(f_U(u)\)</span>? (c) What is the functional form of <span class="math inline">\(f_U(u)\)</span> within its domain? (d) What is <span class="math inline">\(E[U]\)</span>?</p></li>
+<li><p>In an experiment, we sample <em>one datum</em> according to the cumulative distribution function <span class="math display">\[\begin{eqnarray*}
+F_X(x) = c\left( 1 - e^{-x/\theta} \right) \,,
+\end{eqnarray*}\]</span> where <span class="math inline">\(x \in [0,-\theta\log(1-1/c)]\)</span> (and where <span class="math inline">\(\theta\)</span> is a known positive constant). One may picture this as a distribution that is truncated at the coordinate <span class="math inline">\(x_c = -\theta\log(1-1/c)\)</span>, with the unknown parameter <span class="math inline">\(c &gt; 0\)</span> having a value such that the integral of <span class="math inline">\(f_X(x)\)</span> over the whole domain is 1. (a) What is the functional form of <span class="math inline">\(f_X(x)\)</span>? (b) We wish to test the hypothesis <span class="math inline">\(H_o : c = c_o\)</span> versus <span class="math inline">\(H_a : c &gt; c_o\)</span>. What is the rejection region boundary <span class="math inline">\(x_{\rm RR}\)</span> for this test? The answer should be in terms of <span class="math inline">\(\theta\)</span>, <span class="math inline">\(c_o\)</span>, and the level of the test <span class="math inline">\(\alpha\)</span>. (c) What is the power of the test given an arbitrary value <span class="math inline">\(c\)</span>, where <span class="math inline">\(c_o &lt; c &lt; c'\)</span> and where <span class="math inline">\(c'\)</span> is the value of <span class="math inline">\(c\)</span> where the power achieves the value 1? Leave the answer in terms of <span class="math inline">\(c\)</span> and <span class="math inline">\(x_{\rm RR}\)</span>. (d) Over what range of observed values of <span class="math inline">\(X\)</span> would we trivially reject the null hypothesis, since if the null is correct, it would be impossible to observe values in this range? (e) If instead of sampling one datum, we sample <span class="math inline">\(n\)</span> iid data, what would be a sufficient statistic for <span class="math inline">\(c\)</span>?</p></li>
+<li><p>In an experiment, we sample <em>one datum</em> <span class="math inline">\(X\)</span> according to the distribution <span class="math display">\[\begin{eqnarray*}
+f_X(x) = \frac{2}{\theta}\left(1-\frac{x}{\theta}\right) ~~~~~~ x \in [0,\theta] \,.
+\end{eqnarray*}\]</span> (a) What is the maximum likelihood estimate for <span class="math inline">\(\theta\)</span>? (b) What is the expected value <span class="math inline">\(E[X]\)</span>? (c) What is the bias of the MLE? (d) What is the minimum variance unbiased estimator for <span class="math inline">\(\theta\)</span>? (e) One can compute that <span class="math inline">\(V[X] = \theta^2/18\)</span>. It turns out that the mean-squared errors for the MLE and the MVUE are the same, as a function of <span class="math inline">\(\theta\)</span>. Write down an expression for the MSE.</p></li>
+</ol>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./04-poisson.html" class="pagination-link" aria-label="The Poisson (and Related) Distributions">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The Poisson (and Related) Distributions</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./06-multivariate.html" class="pagination-link" aria-label="Multivariate Distributions">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Multivariate Distributions</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
