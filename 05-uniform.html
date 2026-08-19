@@ -220,7 +220,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./07-optional.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Further Conceptual Details (Optional)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Additional Concepts (Optional)</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -251,35 +251,52 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#distribution-examples" id="toc-distribution-examples" class="nav-link active" data-scroll-target="#distribution-examples"><span class="header-section-number">5.1</span> Distribution Examples</a>
+  <li><a href="#sec-chap5examples" id="toc-sec-chap5examples" class="nav-link active" data-scroll-target="#sec-chap5examples"><span class="header-section-number">5.1</span> Distribution Examples</a>
+  <ul>
+  <li><a href="#sec-chap5uniform" id="toc-sec-chap5uniform" class="nav-link" data-scroll-target="#sec-chap5uniform"><span class="header-section-number">5.1.1</span> Uniform Distribution</a></li>
+  <li><a href="#sec-chap5pareto" id="toc-sec-chap5pareto" class="nav-link" data-scroll-target="#sec-chap5pareto"><span class="header-section-number">5.1.2</span> Pareto Distribution</a></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">5.1.3</span> Examples</a>
   <ul class="collapse">
-  <li><a href="#uniform-random-variable-expected-value-and-variance" id="toc-uniform-random-variable-expected-value-and-variance" class="nav-link" data-scroll-target="#uniform-random-variable-expected-value-and-variance"><span class="header-section-number">5.1.1</span> Uniform Random Variable: Expected Value and Variance</a></li>
-  <li><a href="#uniform-distribution-order-statistics" id="toc-uniform-distribution-order-statistics" class="nav-link" data-scroll-target="#uniform-distribution-order-statistics"><span class="header-section-number">5.1.2</span> Uniform Distribution: Order Statistics</a></li>
-  <li><a href="#pareto-random-variable-expected-value" id="toc-pareto-random-variable-expected-value" class="nav-link" data-scroll-target="#pareto-random-variable-expected-value"><span class="header-section-number">5.1.3</span> Pareto Random Variable: Expected Value</a></li>
-  <li><a href="#discrete-uniform-distribution" id="toc-discrete-uniform-distribution" class="nav-link" data-scroll-target="#discrete-uniform-distribution"><span class="header-section-number">5.1.4</span> Discrete Uniform Distribution</a></li>
+  <li><a href="#uniform-random-variable-expected-value-and-variance" id="toc-uniform-random-variable-expected-value-and-variance" class="nav-link" data-scroll-target="#uniform-random-variable-expected-value-and-variance"><span class="header-section-number">5.1.3.1</span> Uniform Random Variable: Expected Value and Variance</a></li>
+  <li><a href="#uniform-distribution-order-statistics" id="toc-uniform-distribution-order-statistics" class="nav-link" data-scroll-target="#uniform-distribution-order-statistics"><span class="header-section-number">5.1.3.2</span> Uniform Distribution: Order Statistics</a></li>
+  <li><a href="#pareto-random-variable-expected-value" id="toc-pareto-random-variable-expected-value" class="nav-link" data-scroll-target="#pareto-random-variable-expected-value"><span class="header-section-number">5.1.3.3</span> Pareto Random Variable: Expected Value</a></li>
+  <li><a href="#discrete-uniform-distribution" id="toc-discrete-uniform-distribution" class="nav-link" data-scroll-target="#discrete-uniform-distribution"><span class="header-section-number">5.1.3.4</span> Discrete Uniform Distribution</a></li>
   </ul></li>
-  <li><a href="#linear-functions-of-random-variables" id="toc-linear-functions-of-random-variables" class="nav-link" data-scroll-target="#linear-functions-of-random-variables"><span class="header-section-number">5.2</span> Linear Functions of Random Variables</a>
+  </ul></li>
+  <li><a href="#sec-chap5linear" id="toc-sec-chap5linear" class="nav-link" data-scroll-target="#sec-chap5linear"><span class="header-section-number">5.2</span> Linear Functions of Random Variables</a>
+  <ul>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">5.2.1</span> Example</a>
   <ul class="collapse">
-  <li><a href="#uniform-data-sample-sum-and-mean-distributions" id="toc-uniform-data-sample-sum-and-mean-distributions" class="nav-link" data-scroll-target="#uniform-data-sample-sum-and-mean-distributions"><span class="header-section-number">5.2.1</span> Uniform Data: Sample Sum and Mean Distributions</a></li>
+  <li><a href="#uniform-data-sample-sum-and-mean-distributions" id="toc-uniform-data-sample-sum-and-mean-distributions" class="nav-link" data-scroll-target="#uniform-data-sample-sum-and-mean-distributions"><span class="header-section-number">5.2.1.1</span> Uniform Data: Sample Sum and Mean Distributions</a></li>
   </ul></li>
-  <li><a href="#point-estimation" id="toc-point-estimation" class="nav-link" data-scroll-target="#point-estimation"><span class="header-section-number">5.3</span> Point Estimation</a>
+  </ul></li>
+  <li><a href="#sec-chap5point" id="toc-sec-chap5point" class="nav-link" data-scroll-target="#sec-chap5point"><span class="header-section-number">5.3</span> Point Estimation</a>
+  <ul>
+  <li><a href="#examples-1" id="toc-examples-1" class="nav-link" data-scroll-target="#examples-1"><span class="header-section-number">5.3.1</span> Examples</a>
   <ul class="collapse">
-  <li><a href="#uniform-domain-parameter-mle" id="toc-uniform-domain-parameter-mle" class="nav-link" data-scroll-target="#uniform-domain-parameter-mle"><span class="header-section-number">5.3.1</span> Uniform Domain Parameter: MLE</a></li>
-  <li><a href="#pareto-domain-parameter-mle" id="toc-pareto-domain-parameter-mle" class="nav-link" data-scroll-target="#pareto-domain-parameter-mle"><span class="header-section-number">5.3.2</span> Pareto Domain Parameter: MLE</a></li>
-  <li><a href="#uniform-domain-parameter-mvue" id="toc-uniform-domain-parameter-mvue" class="nav-link" data-scroll-target="#uniform-domain-parameter-mvue"><span class="header-section-number">5.3.3</span> Uniform Domain Parameter: MVUE</a></li>
-  <li><a href="#pareto-domain-parameter-mvue" id="toc-pareto-domain-parameter-mvue" class="nav-link" data-scroll-target="#pareto-domain-parameter-mvue"><span class="header-section-number">5.3.4</span> Pareto Domain Parameter: MVUE</a></li>
+  <li><a href="#uniform-domain-parameter-mle" id="toc-uniform-domain-parameter-mle" class="nav-link" data-scroll-target="#uniform-domain-parameter-mle"><span class="header-section-number">5.3.1.1</span> Uniform Domain Parameter: MLE</a></li>
+  <li><a href="#pareto-domain-parameter-mle" id="toc-pareto-domain-parameter-mle" class="nav-link" data-scroll-target="#pareto-domain-parameter-mle"><span class="header-section-number">5.3.1.2</span> Pareto Domain Parameter: MLE</a></li>
+  <li><a href="#uniform-domain-parameter-mvue" id="toc-uniform-domain-parameter-mvue" class="nav-link" data-scroll-target="#uniform-domain-parameter-mvue"><span class="header-section-number">5.3.1.3</span> Uniform Domain Parameter: MVUE</a></li>
+  <li><a href="#pareto-domain-parameter-mvue" id="toc-pareto-domain-parameter-mvue" class="nav-link" data-scroll-target="#pareto-domain-parameter-mvue"><span class="header-section-number">5.3.1.4</span> Pareto Domain Parameter: MVUE</a></li>
   </ul></li>
-  <li><a href="#confidence-intervals" id="toc-confidence-intervals" class="nav-link" data-scroll-target="#confidence-intervals"><span class="header-section-number">5.4</span> Confidence Intervals</a>
+  </ul></li>
+  <li><a href="#sec-chap5confidence" id="toc-sec-chap5confidence" class="nav-link" data-scroll-target="#sec-chap5confidence"><span class="header-section-number">5.4</span> Confidence Intervals</a>
+  <ul>
+  <li><a href="#examples-2" id="toc-examples-2" class="nav-link" data-scroll-target="#examples-2"><span class="header-section-number">5.4.1</span> Examples</a>
   <ul class="collapse">
-  <li><a href="#uniform-domain-parameter-interval-estimation" id="toc-uniform-domain-parameter-interval-estimation" class="nav-link" data-scroll-target="#uniform-domain-parameter-interval-estimation"><span class="header-section-number">5.4.1</span> Uniform Domain Parameter: Interval Estimation</a></li>
-  <li><a href="#uniform-domain-parameter-confidence-coefficient" id="toc-uniform-domain-parameter-confidence-coefficient" class="nav-link" data-scroll-target="#uniform-domain-parameter-confidence-coefficient"><span class="header-section-number">5.4.2</span> Uniform Domain Parameter: Confidence Coefficient</a></li>
-  <li><a href="#pareto-domain-parameter-interval-estimation" id="toc-pareto-domain-parameter-interval-estimation" class="nav-link" data-scroll-target="#pareto-domain-parameter-interval-estimation"><span class="header-section-number">5.4.3</span> Pareto Domain Parameter: Interval Estimation</a></li>
+  <li><a href="#uniform-domain-parameter-interval-estimation" id="toc-uniform-domain-parameter-interval-estimation" class="nav-link" data-scroll-target="#uniform-domain-parameter-interval-estimation"><span class="header-section-number">5.4.1.1</span> Uniform Domain Parameter: Interval Estimation</a></li>
+  <li><a href="#uniform-domain-parameter-confidence-coefficient" id="toc-uniform-domain-parameter-confidence-coefficient" class="nav-link" data-scroll-target="#uniform-domain-parameter-confidence-coefficient"><span class="header-section-number">5.4.1.2</span> Uniform Domain Parameter: Confidence Coefficient</a></li>
+  <li><a href="#pareto-domain-parameter-interval-estimation" id="toc-pareto-domain-parameter-interval-estimation" class="nav-link" data-scroll-target="#pareto-domain-parameter-interval-estimation"><span class="header-section-number">5.4.1.3</span> Pareto Domain Parameter: Interval Estimation</a></li>
   </ul></li>
-  <li><a href="#hypothesis-testing" id="toc-hypothesis-testing" class="nav-link" data-scroll-target="#hypothesis-testing"><span class="header-section-number">5.5</span> Hypothesis Testing</a>
+  </ul></li>
+  <li><a href="#sec-chap5hypothesis" id="toc-sec-chap5hypothesis" class="nav-link" data-scroll-target="#sec-chap5hypothesis"><span class="header-section-number">5.5</span> Hypothesis Testing</a>
+  <ul>
+  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1"><span class="header-section-number">5.5.1</span> Example</a>
   <ul class="collapse">
-  <li><a href="#pareto-domain-parameter-hypothesis-test" id="toc-pareto-domain-parameter-hypothesis-test" class="nav-link" data-scroll-target="#pareto-domain-parameter-hypothesis-test"><span class="header-section-number">5.5.1</span> Pareto Domain Parameter: Hypothesis Test</a></li>
+  <li><a href="#pareto-domain-parameter-hypothesis-test" id="toc-pareto-domain-parameter-hypothesis-test" class="nav-link" data-scroll-target="#pareto-domain-parameter-hypothesis-test"><span class="header-section-number">5.5.1.1</span> Pareto Domain Parameter: Hypothesis Test</a></li>
   </ul></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">5.6</span> Exercises</a></li>
+  </ul></li>
+  <li><a href="#sec-chap5exercises" id="toc-sec-chap5exercises" class="nav-link" data-scroll-target="#sec-chap5exercises"><span class="header-section-number">5.6</span> Exercises</a></li>
   </ul>
 </nav>
     </div>
@@ -288,7 +305,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Distributions with Domain-Specifying Parameters</span></h1>
+<h1 class="title"><span id="sec-chap5" class="quarto-section-identifier"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Distributions with Domain-Specifying Parameters</span></span></h1>
 </div>
 
 
@@ -313,8 +330,8 @@ window.Quarto = {
 <p>This chapter is all about the quirks that we observe when we work with domain-specifying parameters, ones that affect the determination of maximum-likelihood and minimum-variance unbiased estimators, how we go about constructing hypothesis tests, etc.</p>
 </div>
 <p><br></p>
-<section id="distribution-examples" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="distribution-examples"><span class="header-section-number">5.1</span> Distribution Examples</h2>
+<section id="sec-chap5examples" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="sec-chap5examples"><span class="header-section-number">5.1</span> Distribution Examples</h2>
 <div class="graybox">
 <p>What to take away from this section:</p>
 <ul>
@@ -331,7 +348,9 @@ window.Quarto = {
 <li>the <em>uniform</em> distribution; and</li>
 <li>the <em>Pareto</em> distribution.</li>
 </ul>
-<p><strong>Uniform Distribution.</strong> The uniform distribution is often used within the realm of probability, in part because of its utility and in part because of its simplicity. We have touched upon this distribution previously, such as when we discussed how hypothesis test <span class="math inline">\(p\)</span>-values are distributed uniformly between 0 and 1 when the null hypothesis is correct. Why do we return to the uniform distribution now? Because it is slightly different from other distributions: its two parameters, often denoted <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> (where <span class="math inline">\(b &gt; a\)</span>), do not dictate the shape of its probability density function, but rather its domain.</p>
+<section id="sec-chap5uniform" class="level3" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="sec-chap5uniform"><span class="header-section-number">5.1.1</span> Uniform Distribution</h3>
+<p>The uniform distribution is often used within the realm of probability, in part because of its utility and in part because of its simplicity. We have touched upon this distribution previously, such as when we discussed how hypothesis test <span class="math inline">\(p\)</span>-values are distributed uniformly between 0 and 1 when the null hypothesis is correct. Why do we return to the uniform distribution now? Because it is slightly different from other distributions: its two parameters, often denoted <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> (where <span class="math inline">\(b &gt; a\)</span>), do not dictate the shape of its probability density function, but rather its domain.</p>
 <blockquote class="blockquote">
 <p><strong>Recall</strong>: <em>a probability density function is one way to represent a continuous probablity distribution, and it has the properties (a) <span class="math inline">\(f_X(x) \geq 0\)</span> and (b) <span class="math inline">\(\int_x f_X(x) dx = 1\)</span>, where the integral is over all values of <span class="math inline">\(x\)</span> in the distribution’s domain.</em></p>
 </blockquote>
@@ -366,7 +385,10 @@ F_X(x) = \int_a^x f_Y(y) dy = \int_a^x \frac{1}{b-a} dy = \frac{x-a}{b-a} ~~ x \
 <p>The inverse cdf is exceptionally simple to compute: <span class="math display">\[
 q = \frac{x-a}{b-a} ~~ \Rightarrow ~~ x = (b-a)q + a \,.
 \]</span></p>
-<p><strong>Pareto Distribution</strong>. The Pareto [puh-RAY-toh] distribution, also known as the power-law distribution, has the probability density function <span class="math display">\[
+</section>
+<section id="sec-chap5pareto" class="level3" data-number="5.1.2">
+<h3 data-number="5.1.2" class="anchored" data-anchor-id="sec-chap5pareto"><span class="header-section-number">5.1.2</span> Pareto Distribution</h3>
+<p>The Pareto [puh-RAY-toh] distribution, also known as the power-law distribution, has the probability density function <span class="math display">\[
 f_X(x) = \frac{a b^a}{x^{a+1}} \,,
 \]</span> where <span class="math inline">\(a &gt; 0\)</span> and <span class="math inline">\(x \in [b,\infty)\)</span>. <span class="math inline">\(b\)</span> is thus a domain-specifying parameter. See <a href="#fig-parpdf" class="quarto-xref">Figure&nbsp;<span>5.2</span></a>. Many phenomena are linked to this distribution<span class="math inline">\(-\)</span>the sizes of asteroids in the Solar System, the sizes of human settlements, personal wealth, etc.<span class="math inline">\(-\)</span>and it is popularly known for spawning the so-called “80-20 rule”: e.g., 80% of wealth is tied to 20% of the population. (Note that this rule is linked to a specific value of <span class="math inline">\(a\)</span> and is not meant to be taken as an iron-clad law that spans across disciplines.)</p>
 <div class="cell" data-layout-align="center">
@@ -383,14 +405,16 @@ Figure&nbsp;5.2: Three examples of Pareto probability density functions: Pareto(
 </div>
 </div>
 </div>
-<p>The cdf for a Pareto distribution is derived in an example later in this chapter; for completeness, it is <span class="math display">\[
+<p>The cdf for a Pareto distribution is <span class="math display">\[
 F_X(x) = 1 - \left(\frac{x}{b}\right)^a \,,
 \]</span> and thus the inverse cdf is <span class="math display">\[
 x = \frac{b}{(1-q)^{1/a}} \,.
 \]</span></p>
-<hr>
-<section id="uniform-random-variable-expected-value-and-variance" class="level3" data-number="5.1.1">
-<h3 data-number="5.1.1" class="anchored" data-anchor-id="uniform-random-variable-expected-value-and-variance"><span class="header-section-number">5.1.1</span> Uniform Random Variable: Expected Value and Variance</h3>
+</section>
+<section id="examples" class="level3" data-number="5.1.3">
+<h3 data-number="5.1.3" class="anchored" data-anchor-id="examples"><span class="header-section-number">5.1.3</span> Examples</h3>
+<section id="uniform-random-variable-expected-value-and-variance" class="level4" data-number="5.1.3.1">
+<h4 data-number="5.1.3.1" class="anchored" data-anchor-id="uniform-random-variable-expected-value-and-variance"><span class="header-section-number">5.1.3.1</span> Uniform Random Variable: Expected Value and Variance</h4>
 <blockquote class="blockquote">
 <p><strong>Recall:</strong> <em>the expected value of a continuously distributed random variable is</em> <span class="math display">\[
 E[X] = \int_x x f_X(x) dx\,,
@@ -416,17 +440,16 @@ V[X] &amp;= \frac{1}{3}\left(a^2 + ab + b^2\right) - \left(\frac{a+b}{2}\right)^
 &amp;= \frac{1}{12}\left(4a^2 + 4ab + 4b^2 - 3a^2 - 6ab - 3b^2\right) = \frac{1}{12}\left(a^2 - 2ab + b^2 \right) = \frac{(a-b)^2}{12} \,.
 \end{align*}\]</span></p>
 </blockquote>
-<hr>
 </section>
-<section id="uniform-distribution-order-statistics" class="level3" data-number="5.1.2">
-<h3 data-number="5.1.2" class="anchored" data-anchor-id="uniform-distribution-order-statistics"><span class="header-section-number">5.1.2</span> Uniform Distribution: Order Statistics</h3>
+<section id="uniform-distribution-order-statistics" class="level4" data-number="5.1.3.2">
+<h4 data-number="5.1.3.2" class="anchored" data-anchor-id="uniform-distribution-order-statistics"><span class="header-section-number">5.1.3.2</span> Uniform Distribution: Order Statistics</h4>
 <blockquote class="blockquote">
 <p><strong>Recall</strong>: <em>order statistics are observed data ranked in ascending order (e.g., <span class="math inline">\(X_{(1)}\)</span> is the minimum observed value in a set of <span class="math inline">\(n\)</span> iid data, while <span class="math inline">\(X_{(n)}\)</span> is the maximum observed value). For a continuous distribution, the probability density function for <span class="math inline">\(X_{(j)}\)</span> is</em> <span class="math display">\[
 f_{(j)}(x) = \frac{d}{dx}F_{(j)}(x) = \frac{n!}{(j-1)!(n-j)!} f_X(x) [F_X(x)]^{j-1} [1 - F_X(x)]^{n-j} \,.
 \]</span></p>
 </blockquote>
 <blockquote class="blockquote">
-<p>In an example in Chapter 3, we showed that given a set of <span class="math inline">\(n\)</span> iid data sampled according to a Uniform(0,1) distribution, where <span class="math inline">\(n\)</span> is an odd number, the sample median is sampled according to a Beta<span class="math inline">\(((n+1)/2,(n+1)/2)\)</span> distribution. For completeness, we will show here that <em>all</em> the order statistics are beta-distributed. We recall that within the domain of the Uniform(0,1) distribution, <span class="math inline">\(f_X(x) = 1\)</span> and <span class="math inline">\(F_X(x) = x\)</span>, and write down the order statistic and beta pdfs side-by-side: <span class="math display">\[
+<p>In an example in <a href="03-binomial.html#sec-chap3order" class="quarto-xref"><span>Section 3.5</span></a>, we showed that given a set of <span class="math inline">\(n\)</span> iid data sampled according to a Uniform(0,1) distribution, where <span class="math inline">\(n\)</span> is an odd number, the sample median is sampled according to a Beta<span class="math inline">\(((n+1)/2,(n+1)/2)\)</span> distribution. For completeness, we will show here that <em>all</em> the order statistics are beta-distributed. We recall that within the domain of the Uniform(0,1) distribution, <span class="math inline">\(f_X(x) = 1\)</span> and <span class="math inline">\(F_X(x) = x\)</span>, and write down the order statistic and beta pdfs side-by-side: <span class="math display">\[
 \frac{n!}{(j-1)!(n-j)!} x^{j-1} (1 - x)^{n-j} = \frac{\Gamma(n+1)}{\Gamma(j) \Gamma(n-j+1)} x^{j-1} (1 - x)^{n-j} ~~~ \leftrightarrow ~~~ \frac{\Gamma(a+b)}{\Gamma(a) \Gamma(b)} x^{a-1} (1-x)^{b-1} \,.
 \]</span> Immediately, we can identify that <span class="math inline">\(a = j\)</span> and <span class="math inline">\(b-1 = n-j\)</span>, or that <span class="math inline">\(b = n-j+1\)</span>. Hence <span class="math inline">\(X_{(j)} \sim \mbox{Beta}(j,n-j+1)\)</span>.</p>
 </blockquote>
@@ -444,10 +467,9 @@ f_{(j)}(x) = \frac{d}{dx}F_{(j)}(x) = \frac{n!}{(j-1)!(n-j)!} f_X(x) [F_X(x)]^{j
 <pre><code>[1] 0.247</code></pre>
 </div>
 </div>
-<hr>
 </section>
-<section id="pareto-random-variable-expected-value" class="level3" data-number="5.1.3">
-<h3 data-number="5.1.3" class="anchored" data-anchor-id="pareto-random-variable-expected-value"><span class="header-section-number">5.1.3</span> Pareto Random Variable: Expected Value</h3>
+<section id="pareto-random-variable-expected-value" class="level4" data-number="5.1.3.3">
+<h4 data-number="5.1.3.3" class="anchored" data-anchor-id="pareto-random-variable-expected-value"><span class="header-section-number">5.1.3.3</span> Pareto Random Variable: Expected Value</h4>
 <blockquote class="blockquote">
 <p>The expected value of a Pareto random variable is <span class="math display">\[\begin{align*}
 E[X] = \int_b^\infty x \frac{a b^a}{x^{a+1}} dx &amp;= a b^a \int_b^\infty \frac{x}{x^{a+1}} dx = a b^a \int_b^\infty x^{-a} dx \\
@@ -461,10 +483,9 @@ E[X] = \int_b^\infty x \frac{a b^a}{x^{a+1}} dx &amp;= a b^a \int_b^\infty \frac
 V[X] = \frac{a b^2}{(a-1)^2 (a-2)}
 \]</span> for <span class="math inline">\(a &gt; 2\)</span>, and is infinite otherwise.</p>
 </blockquote>
-<hr>
 </section>
-<section id="discrete-uniform-distribution" class="level3" data-number="5.1.4">
-<h3 data-number="5.1.4" class="anchored" data-anchor-id="discrete-uniform-distribution"><span class="header-section-number">5.1.4</span> Discrete Uniform Distribution</h3>
+<section id="discrete-uniform-distribution" class="level4" data-number="5.1.3.4">
+<h4 data-number="5.1.3.4" class="anchored" data-anchor-id="discrete-uniform-distribution"><span class="header-section-number">5.1.3.4</span> Discrete Uniform Distribution</h4>
 <blockquote class="blockquote">
 <p>In this chapter, we will be concentrating on continuous distributions that have domain-specifying parameters (specifically, the uniform and Pareto distributions). However, for completeness we will touch upon the commonly used discrete analogue to the uniform distribution.</p>
 </blockquote>
@@ -556,8 +577,9 @@ F_X(x) = \frac{\lfloor x \rfloor - a + 1}{n} \,,
 </div>
 </section>
 </section>
-<section id="linear-functions-of-random-variables" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="linear-functions-of-random-variables"><span class="header-section-number">5.2</span> Linear Functions of Random Variables</h2>
+</section>
+<section id="sec-chap5linear" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="sec-chap5linear"><span class="header-section-number">5.2</span> Linear Functions of Random Variables</h2>
 <div class="graybox">
 <p>What to take away from this section:</p>
 <ul>
@@ -569,6 +591,7 @@ F_X(x) = \frac{\lfloor x \rfloor - a + 1}{n} \,,
 </ul></li>
 <li><p>Foreshadowing: these results are shown for completeness but they do not actually help us make optimal statistical inferences about distribution bounds; as we will see in the next section, a sufficient statistic for a distribution bound is actually an <em>order statistic</em>, and that is what we would use for optimal inference.</p></li>
 </ul>
+<p>For previous material on sampling distributions, see <a href="02-normal.html#sec-chap2methodmgf" class="quarto-xref"><span>Section 2.3</span></a>.</p>
 </div>
 <p><br></p>
 <p>Let’s assume we are given <span class="math inline">\(n\)</span> iid random variables <span class="math inline">\(\{X_1,\ldots,X_n\}\)</span> sampled according to some distribution that has a domain-specifying parameter. What is the distribution of <span class="math inline">\(Y = \sum_{i=1}^n a_i X_i\)</span>?</p>
@@ -576,9 +599,10 @@ F_X(x) = \frac{\lfloor x \rfloor - a + 1}{n} \,,
 <p><strong>Recall</strong>: <em>the moment-generating function, or mgf, is a means by which to encapsulate information about a probability distribution. When it exists, the mgf is given by <span class="math inline">\(E[e^{tX}]\)</span>. If <span class="math inline">\(Y = \sum_{i=1}^n a_iX_i\)</span>, then <span class="math inline">\(m_Y(t) = m_{X_1}(a_1t) m_{X_2}(a_2t) \cdots m_{X_n}(a_nt)\)</span>; if we can identify <span class="math inline">\(m_Y(t)\)</span> os the mgf for a known family of distributions, then we can immediately identify the distribution of <span class="math inline">\(Y\)</span> and the parameters of that distribution.</em></p>
 </blockquote>
 <p>Below we discuss the distributions of the sample sum and sample mean for uniformly distributed data. Note that for the Pareto distribution, the mgf does not exist, and so to perform statistical inference with Pareto-distributed data with, e.g., the sample sum or the sample mean, we would have no choice but to utilize a simulation framework.</p>
-<hr>
-<section id="uniform-data-sample-sum-and-mean-distributions" class="level3" data-number="5.2.1">
-<h3 data-number="5.2.1" class="anchored" data-anchor-id="uniform-data-sample-sum-and-mean-distributions"><span class="header-section-number">5.2.1</span> Uniform Data: Sample Sum and Mean Distributions</h3>
+<section id="example" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="example"><span class="header-section-number">5.2.1</span> Example</h3>
+<section id="uniform-data-sample-sum-and-mean-distributions" class="level4" data-number="5.2.1.1">
+<h4 data-number="5.2.1.1" class="anchored" data-anchor-id="uniform-data-sample-sum-and-mean-distributions"><span class="header-section-number">5.2.1.1</span> Uniform Data: Sample Sum and Mean Distributions</h4>
 <blockquote class="blockquote">
 <p>Let’s assume that we are given <span class="math inline">\(n\)</span> iid Uniform random variables: <span class="math inline">\(X_1,X_2,\ldots,X_n \sim\)</span> Uniform(<span class="math inline">\(a,b\)</span>). What is, e.g., the distribution of the sum <span class="math inline">\(Y = \sum_{i=1}^n X_i\)</span>?</p>
 </blockquote>
@@ -596,14 +620,16 @@ m_{\bar{X}}(t) = \prod_{i=1}^n m_{X_i}\left(\frac{t}{n}\right) = \left( \frac{n(
 </blockquote>
 </section>
 </section>
-<section id="point-estimation" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="point-estimation"><span class="header-section-number">5.3</span> Point Estimation</h2>
+</section>
+<section id="sec-chap5point" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="sec-chap5point"><span class="header-section-number">5.3</span> Point Estimation</h2>
 <div class="graybox">
 <p>What to take away from this section:</p>
 <ul>
 <li><p>A sufficient statistic for a distribution lower bound is the smallest-observed datum, <span class="math inline">\(X_{(1)}\)</span>, while for an upper bound, it is the largest-observed datum, <span class="math inline">\(X_{(n)}\)</span>.</p></li>
 <li><p>Sufficient statistics provide both the MLE and the MVUE for a distribution bound.</p></li>
 </ul>
+<p>For previous material on point estimation, see <a href="04-poisson.html#sec-chap4point" class="quarto-xref"><span>Section 4.5</span></a>.</p>
 </div>
 <p><br></p>
 <p>Previously, we described two commonly used point estimators: the maximum likelihood estimator (or MLE) and the minimum variance unbiased estimator (or MVUE). Below, we show how one would work with both in the context of estimating domain-specifying parameters.</p>
@@ -633,7 +659,7 @@ Figure&nbsp;5.3: The likelihood function given <span class="math inline">\(n=5\)
 <blockquote class="blockquote">
 <p><strong>Recall</strong>: <em>a sufficient statistic for a population parameter <span class="math inline">\(\theta\)</span> captures all information about <span class="math inline">\(\theta\)</span> contained in a data sample; no additional statistic will provide more information about <span class="math inline">\(\theta\)</span>. Sufficient statistics are not unique: one-to-one functions of sufficient statistics are themselves sufficient statistics.</em></p>
 </blockquote>
-<p>Before we discuss sufficient statistics in the context of working with domain-specifying parameters, it is useful to (re-)introduce the <em>indicator function</em>. This function, mentioned briefly in Chapter 1, takes on the value 1 if a specified condition is met and 0 otherwise. For instance, <span class="math display">\[
+<p>Before we discuss sufficient statistics in the context of working with domain-specifying parameters, it is useful to introduce the <em>indicator function</em>. This function takes on the value 1 if a specified condition is met and 0 otherwise. For instance, <span class="math display">\[
 \mathbb{I}_{x_i \in [0,1]} = \left\{ \begin{array}{cl} 1 &amp; x_i \in [0,1] \\ 0 &amp; \mbox{otherwise} \end{array} \right. \,.
 \]</span> One use for the indicator function is to, well, <em>indicate</em> the domain of a pmf or pdf. For instance, we can write <span class="math display">\[
 f_X(x) = \left\{ \begin{array}{ll} e^{-x} &amp; x \geq 0 \\ 0 &amp; \mbox{otherwise} \end{array} \right.
@@ -651,7 +677,7 @@ f_X(x) = \frac{1}{\theta} \mathbb{I}_{x \in [0,\theta]}
 \mathcal{L}(\theta \vert \mathbf{x}) = \prod_{i=1}^n f_X(x_i \vert \theta) = \frac{1}{\theta^n} \prod_{i=1}^n \mathbb{I}_{x_i \in [0,\theta]} \,.
 \]</span> The product of indicator functions will equal 1 if and only if <em>all</em> data lie in the domain <span class="math inline">\(x \in [0,\theta]\)</span>. This is equivalent to saying that <span class="math inline">\(\theta \geq X_{(n)}\)</span>, the order statistic representing the maximum observed datum. Thus <span class="math inline">\(X_{(n)}\)</span> is a sufficient statistic for <span class="math inline">\(\theta\)</span>: we know <span class="math inline">\(\theta\)</span> is greater than this statistic’s value, and none of the data aside from <span class="math inline">\(X_{(n)}\)</span> provide additional information about <span class="math inline">\(\theta\)</span>.</p>
 <p>The upshot: when <span class="math inline">\(\theta\)</span> is a domain-specifying parameter, a sufficient statistic for <span class="math inline">\(\theta\)</span> will be an order statistic (or any one-to-one function of that order statistic).</p>
-<p>When we first introduced the factorization criterion and sufficient statistics in Chapter 3, we did it so that ultimately we could write down the minimum variance unbiased estimator (or MVUE).</p>
+<p>When we first introduced the factorization criterion and sufficient statistics in <a href="03-binomial.html#sec-chap3point" class="quarto-xref"><span>Section 3.6</span></a>, we did it so that ultimately we could write down the minimum variance unbiased estimator (or MVUE).</p>
 <blockquote class="blockquote">
 <p><strong>Recall</strong>: <em>the bias of an estimator is the difference between the average value of the estimates it generates and the true parameter value. If <span class="math inline">\(E[\hat{\theta}-\theta] = 0\)</span>, then the estimator <span class="math inline">\(\hat{\theta}\)</span> is said to be unbiased.</em></p>
 </blockquote>
@@ -666,9 +692,10 @@ f_X(x) = \frac{1}{\theta} \mathbb{I}_{x \in [0,\theta]}
 </blockquote>
 <p>For instance, if <span class="math inline">\(\{X_1,\ldots,X_n\}\)</span> are iid data sampled according to a Uniform(<span class="math inline">\(0,\theta\)</span>) distribution, can we define an MVUE for <span class="math inline">\(\theta\)</span>? The answer is yes…as we will show in an example below.</p>
 <p>(For completeness, we should mention that the method of moments estimator for <span class="math inline">\(\theta\)</span> can <em>never</em> be a sufficient statistic, since MoM estimators are not constructed from order statistics.)</p>
-<hr>
-<section id="uniform-domain-parameter-mle" class="level3" data-number="5.3.1">
-<h3 data-number="5.3.1" class="anchored" data-anchor-id="uniform-domain-parameter-mle"><span class="header-section-number">5.3.1</span> Uniform Domain Parameter: MLE</h3>
+<section id="examples-1" class="level3" data-number="5.3.1">
+<h3 data-number="5.3.1" class="anchored" data-anchor-id="examples-1"><span class="header-section-number">5.3.1</span> Examples</h3>
+<section id="uniform-domain-parameter-mle" class="level4" data-number="5.3.1.1">
+<h4 data-number="5.3.1.1" class="anchored" data-anchor-id="uniform-domain-parameter-mle"><span class="header-section-number">5.3.1.1</span> Uniform Domain Parameter: MLE</h4>
 <blockquote class="blockquote">
 <p>Let <span class="math inline">\(\{X_1,\ldots,X_n\}\)</span> be <span class="math inline">\(n\)</span> iid data sampled according to a Uniform(<span class="math inline">\(0,\theta\)</span>) distribution. As shown above, the MLE for <span class="math inline">\(\theta\)</span> is <span class="math inline">\(X_{(n)}\)</span>, the maximum observed datum. The properties of estimators that we have examined thus far include the bias (are our estimates offset from the truth, on average?), the variance (over how large a range do our estimates vary?), etc. Let’s look at these properties here.</p>
 </blockquote>
@@ -700,10 +727,9 @@ E[X_{(n)}^2] = \int_0^\theta x^2 n \frac{x^{n-1}}{\theta^n} dx = \left. \frac{n}
 V[\hat{\theta}_{MLE}] = \frac{n}{n+2}\theta^2 - \left( \frac{n}{n+1}\theta\right)^2 = \frac{n}{(n+2)(n+1)^2}\theta^2 \rightarrow \frac{\theta^2}{n^2} ~~\mbox{as}~~ n \rightarrow \infty\,.
 \]</span> We observe that because the variance goes to zero as <span class="math inline">\(n \rightarrow \infty\)</span>, the mean-squared error does as well…and thus the MLE for <span class="math inline">\(\theta\)</span> is a consistent estimator.</p>
 </blockquote>
-<hr>
 </section>
-<section id="pareto-domain-parameter-mle" class="level3" data-number="5.3.2">
-<h3 data-number="5.3.2" class="anchored" data-anchor-id="pareto-domain-parameter-mle"><span class="header-section-number">5.3.2</span> Pareto Domain Parameter: MLE</h3>
+<section id="pareto-domain-parameter-mle" class="level4" data-number="5.3.1.2">
+<h4 data-number="5.3.1.2" class="anchored" data-anchor-id="pareto-domain-parameter-mle"><span class="header-section-number">5.3.1.2</span> Pareto Domain Parameter: MLE</h4>
 <blockquote class="blockquote">
 <p>Recall that the Pareto distribution has the probability density function <span class="math display">\[
 f_X(x) = \frac{a b^a}{x^{a+1}} \,,
@@ -723,10 +749,9 @@ Figure&nbsp;5.4: The likelihood function given <span class="math inline">\(n=5\)
 </div>
 </div>
 </div>
-<hr>
 </section>
-<section id="uniform-domain-parameter-mvue" class="level3" data-number="5.3.3">
-<h3 data-number="5.3.3" class="anchored" data-anchor-id="uniform-domain-parameter-mvue"><span class="header-section-number">5.3.3</span> Uniform Domain Parameter: MVUE</h3>
+<section id="uniform-domain-parameter-mvue" class="level4" data-number="5.3.1.3">
+<h4 data-number="5.3.1.3" class="anchored" data-anchor-id="uniform-domain-parameter-mvue"><span class="header-section-number">5.3.1.3</span> Uniform Domain Parameter: MVUE</h4>
 <blockquote class="blockquote">
 <p>Above, we determined that if we sample <span class="math inline">\(n\)</span> iid data according to a Uniform<span class="math inline">\((0,\theta)\)</span> distribution, a sufficient statistic for <span class="math inline">\(\theta\)</span> is <span class="math inline">\(X_{(n)}\)</span> and the expected value of <span class="math inline">\(X_{(n)}\)</span> is <span class="math inline">\(n\theta/(n+1)\)</span>. Given this information, it is trivial to rearrange terms and to write down the MVUE for <span class="math inline">\(\theta\)</span>: <span class="math display">\[
 E\left[\frac{n+1}{n}X_{(n)}\right] = \theta ~~~ \Rightarrow ~~~ \hat{\theta}_{MVUE} = \frac{n+1}{n}X_{(n)} \,.
@@ -757,10 +782,9 @@ I(\theta) = -E\left[ \frac{\partial^2}{\partial \theta^2} \log f_X(x \vert \thet
 <blockquote class="blockquote">
 <p>The variance of the MLE is similar to, but not exactly the same as, the variance for the MVUE, although the two variances converge to the same value in as <span class="math inline">\(n \rightarrow \infty\)</span>.</p>
 </blockquote>
-<hr>
 </section>
-<section id="pareto-domain-parameter-mvue" class="level3" data-number="5.3.4">
-<h3 data-number="5.3.4" class="anchored" data-anchor-id="pareto-domain-parameter-mvue"><span class="header-section-number">5.3.4</span> Pareto Domain Parameter: MVUE</h3>
+<section id="pareto-domain-parameter-mvue" class="level4" data-number="5.3.1.4">
+<h4 data-number="5.3.1.4" class="anchored" data-anchor-id="pareto-domain-parameter-mvue"><span class="header-section-number">5.3.1.4</span> Pareto Domain Parameter: MVUE</h4>
 <blockquote class="blockquote">
 <p>The Pareto probability density function is <span class="math display">\[
 f_X(x) = \frac{a b^a}{x^{a+1}} \,,
@@ -805,14 +829,16 @@ E\left[\frac{na-1}{na} X_{(1)}\right] = b
 </blockquote>
 </section>
 </section>
-<section id="confidence-intervals" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="confidence-intervals"><span class="header-section-number">5.4</span> Confidence Intervals</h2>
+</section>
+<section id="sec-chap5confidence" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="sec-chap5confidence"><span class="header-section-number">5.4</span> Confidence Intervals</h2>
 <div class="graybox">
 <p>What to take away from this section:</p>
 <ul>
-<li>Interval estimates for distribution bounds generated using sufficient statistics (i.e., order statistics) behave “properly” in that they do not overlap the value of the statistic itself.</li>
-<li>Constructing one-sided confidence intervals is superior to constructing two-sided confidence intervals when we wish to make inferences about domain-specifying parameters.</li>
+<li><p>Interval estimates for distribution bounds generated using sufficient statistics (i.e., order statistics) behave “properly” in that they do not overlap the value of the statistic itself.</p></li>
+<li><p>Constructing one-sided confidence intervals is superior to constructing two-sided confidence intervals when we wish to make inferences about domain-specifying parameters.</p></li>
 </ul>
+<p>For previous material on confidence intervals, see <a href="04-poisson.html#sec-chap4confidence" class="quarto-xref"><span>Section 4.6</span></a>.</p>
 </div>
 <p><br></p>
 <blockquote class="blockquote">
@@ -820,12 +846,14 @@ E\left[\frac{na-1}{na} X_{(1)}\right] = b
 P\left( \hat{\theta}_L \leq \theta \leq \hat{\theta}_U \right) = 1 - \alpha \,,
 \]</span> <em>where <span class="math inline">\(1 - \alpha\)</span> is the confidence coefficient. Note that this is a long-term probabilistic statement that is not to be applied to any one numerically evaluated interval: an evaluated interval either overlaps the true value, or it does not (and thus we cannot say there is a <span class="math inline">\(100(1-\alpha)\)</span>-percent chance that <span class="math inline">\(\theta\)</span> lies within the interval). We determine <span class="math inline">\(\hat{\theta}\)</span> by solving the following equation:</em> <span class="math display">\[
 F_Y(y_{\rm obs} \vert \theta) - q = 0 \,,
-\]</span> <em>where <span class="math inline">\(F_Y(\cdot)\)</span> is the cumulative distribution function for the statistic <span class="math inline">\(Y\)</span>, <span class="math inline">\(y_{\rm obs}\)</span> is the observed value of the statistic, and <span class="math inline">\(q\)</span> is an appropriate quantile value that is determined using the confidence interval reference table introduced in section 16 of Chapter 1.</em></p>
+\]</span> <em>where <span class="math inline">\(F_Y(\cdot)\)</span> is the cumulative distribution function for the statistic <span class="math inline">\(Y\)</span>, <span class="math inline">\(y_{\rm obs}\)</span> is the observed value of the statistic, and <span class="math inline">\(q\)</span> is an appropriate quantile value that is determined using the confidence interval reference table introduced in <a href="01-probability.html#sec-chap1confref" class="quarto-xref"><span>Section 1.16.1</span></a>.</em></p>
 </blockquote>
 <p>Our coverage, so to speak, of confidence intervals in very nearly complete and there is little for us to add to the discussion now…<em>except</em>…</p>
-<p>In the first example below, we demonstrate that one of the quirks of statistical inference with domain-specifying parameters is that, regardless of any research questions we are trying to answer when we analyze data, constructing <span class="math inline">\(100(1-\alpha)\)</span>-percent one-sided intervals is superior to constructing <span class="math inline">\(100(1-\alpha)\)</span>-percent two-sided intervals. And in the second example, we circle back around to a point made back in Chapter 1: <span class="math inline">\(1-\alpha\)</span> is technically the infimum, or minimum value, of <span class="math inline">\(P\left( \hat{\theta}_L \leq \theta \leq \hat{\theta}_U \right)\)</span>, even though throughout the book we have treated it as a user-specified constant. How might we define confidence intervals such that their coverage is technically zero?</p>
-<section id="uniform-domain-parameter-interval-estimation" class="level3" data-number="5.4.1">
-<h3 data-number="5.4.1" class="anchored" data-anchor-id="uniform-domain-parameter-interval-estimation"><span class="header-section-number">5.4.1</span> Uniform Domain Parameter: Interval Estimation</h3>
+<p>In the first example below, we demonstrate that one of the quirks of statistical inference with domain-specifying parameters is that, regardless of any research questions we are trying to answer when we analyze data, constructing <span class="math inline">\(100(1-\alpha)\)</span>-percent one-sided intervals is superior to constructing <span class="math inline">\(100(1-\alpha)\)</span>-percent two-sided intervals. And in the second example, we circle back around to a point made back in <a href="01-probability.html#sec-chap1confidence" class="quarto-xref"><span>Section 1.16</span></a>: <span class="math inline">\(1-\alpha\)</span> is technically the infimum, or minimum value, of <span class="math inline">\(P\left( \hat{\theta}_L \leq \theta \leq \hat{\theta}_U \right)\)</span>, even though throughout the book we have treated it as a user-specified constant. How might we define confidence intervals such that their coverage is technically zero?</p>
+<section id="examples-2" class="level3" data-number="5.4.1">
+<h3 data-number="5.4.1" class="anchored" data-anchor-id="examples-2"><span class="header-section-number">5.4.1</span> Examples</h3>
+<section id="uniform-domain-parameter-interval-estimation" class="level4" data-number="5.4.1.1">
+<h4 data-number="5.4.1.1" class="anchored" data-anchor-id="uniform-domain-parameter-interval-estimation"><span class="header-section-number">5.4.1.1</span> Uniform Domain Parameter: Interval Estimation</h4>
 <blockquote class="blockquote">
 <p>Recall that when we sample <span class="math inline">\(n\)</span> iid data according to a Uniform(<span class="math inline">\(0,\theta\)</span>) distribution, a sufficient statistic is <span class="math inline">\(Y = X_{(n)}\)</span>, which has probability density function <span class="math display">\[
 f_Y(y) = f_{(n)}(x) = n \frac{x^{n-1}}{\theta^n} \,,
@@ -895,14 +923,13 @@ Figure&nbsp;5.5: Ten 90 percent confidence intervals, generated using data from 
 \hat{\theta}_U = \frac{X_{(n)}}{\alpha^{1/n}} = \frac{0.920}{(0.1)^{1/10}} = 1.158 \,.
 \]</span> The interval width changes from 0.317 to 0.238, a decrease of nearly 25%! In the end, when attempting to quantify our uncertainty about the value of <span class="math inline">\(\theta\)</span>, we become slightly more uncertain in one direction (adding the range <span class="math inline">\([0.920,0.925)\)</span> to our interval) but substantially less uncertain in the other (removing the range <span class="math inline">\((1.158,1.242]\)</span> from our interval). We thus find that <em>one-sided confidence intervals are superior to two-sided ones when we are trying to infer domain-specifying parameters</em>.</p>
 </blockquote>
-<hr>
 </section>
-<section id="uniform-domain-parameter-confidence-coefficient" class="level3" data-number="5.4.2">
-<h3 data-number="5.4.2" class="anchored" data-anchor-id="uniform-domain-parameter-confidence-coefficient"><span class="header-section-number">5.4.2</span> Uniform Domain Parameter: Confidence Coefficient</h3>
+<section id="uniform-domain-parameter-confidence-coefficient" class="level4" data-number="5.4.1.2">
+<h4 data-number="5.4.1.2" class="anchored" data-anchor-id="uniform-domain-parameter-confidence-coefficient"><span class="header-section-number">5.4.1.2</span> Uniform Domain Parameter: Confidence Coefficient</h4>
 <blockquote class="blockquote">
 <p>A confidence interval is a random interval <span class="math inline">\([\hat{\theta}_L,\hat{\theta}_U]\)</span> that covers the true value <span class="math inline">\(\theta\)</span> with probability <span class="math display">\[
 P\left( \hat{\theta}_L \leq \theta \leq \hat{\theta}_U \right) = 1 - \alpha \,,
-\]</span> where <span class="math inline">\(1 - \alpha\)</span> is the confidence coefficient. In Chapter 1, we make the point that technically, the confidence coefficient is the infimum, or minimum value, of <span class="math inline">\(P(\hat{\theta}_L \leq \theta \leq \hat{\theta}_U)\)</span>. What does this actually mean in practice?</p>
+\]</span> where <span class="math inline">\(1 - \alpha\)</span> is the confidence coefficient. In <a href="01-probability.html#sec-chap1confidence" class="quarto-xref"><span>Section 1.16</span></a>, we make the point that technically, the confidence coefficient is the infimum, or minimum value, of <span class="math inline">\(P(\hat{\theta}_L \leq \theta \leq \hat{\theta}_U)\)</span>. What does this actually mean in practice?</p>
 </blockquote>
 <blockquote class="blockquote">
 <p>In the example above, we show that the interval estimate with confidence coefficient <span class="math inline">\(1-\alpha\)</span> for the uniform upper bound <span class="math inline">\(\theta\)</span> has the form <span class="math inline">\([aX_{(n)},bX_{(n)}]\)</span>. Can we also define an appropriate interval estimator if, for instance, it has the form <span class="math inline">\([X_{(n)} + a,X_{(n)} + b]\)</span>? The short answer is no…because the confidence coefficient will be <em>zero</em>! To see why, let’s work directly with the probability statement that defines the confidence coefficient: <span class="math display">\[\begin{align*}
@@ -918,12 +945,11 @@ P(X_{(n)} + a \leq \theta \leq X_{(n)} + b) &amp;= P(\theta - b \leq X_{(n)} \le
 <blockquote class="blockquote">
 <p>The upshot: one cannot just write down any interval and assume that it comes with a guarantee of non-zero coverage! It turns out that by working with the sampling distributions of statistics, useful interval estimators are naturally defined for us.</p>
 </blockquote>
-<hr>
 </section>
-<section id="pareto-domain-parameter-interval-estimation" class="level3" data-number="5.4.3">
-<h3 data-number="5.4.3" class="anchored" data-anchor-id="pareto-domain-parameter-interval-estimation"><span class="header-section-number">5.4.3</span> Pareto Domain Parameter: Interval Estimation</h3>
+<section id="pareto-domain-parameter-interval-estimation" class="level4" data-number="5.4.1.3">
+<h4 data-number="5.4.1.3" class="anchored" data-anchor-id="pareto-domain-parameter-interval-estimation"><span class="header-section-number">5.4.1.3</span> Pareto Domain Parameter: Interval Estimation</h4>
 <blockquote class="blockquote">
-<p>As was mentioned earlier in this chapter, a moment-generating function does not exist for the Pareto distribution. Thus if we sample <span class="math inline">\(n &gt; 1\)</span> iid data according to this distribution (with fixed parameter <span class="math inline">\(a\)</span>), we cannot begin to analytically identify the sampling distribution for, e.g., <span class="math inline">\(Y = \sum_{i=1}^n X_i\)</span>…so we would have to utilize a simulation framework to construct intervals with this statistic. But it turns out that this doesn’t actually matter to us, as we have since found out that a sufficient statistic for the Pareto <span class="math inline">\(b\)</span> parameter is <span class="math inline">\(X_{(1)}\)</span>, and we certainly do know the cdf of the sampling distribution for that: <span class="math display">\[\begin{align*}
+<p>As was mentioned earlier in <a href="#sec-chap5linear" class="quarto-xref"><span>Section 5.2</span></a>, a moment-generating function does not exist for the Pareto distribution. Thus if we sample <span class="math inline">\(n &gt; 1\)</span> iid data according to this distribution (with fixed parameter <span class="math inline">\(a\)</span>), we cannot begin to analytically identify the sampling distribution for, e.g., <span class="math inline">\(Y = \sum_{i=1}^n X_i\)</span>…so we would have to utilize a simulation framework to construct intervals with this statistic. But it turns out that this doesn’t actually matter to us, as we have since found out that a sufficient statistic for the Pareto <span class="math inline">\(b\)</span> parameter is <span class="math inline">\(X_{(1)}\)</span>, and we certainly do know the cdf of the sampling distribution for that: <span class="math display">\[\begin{align*}
 F_{(1)}(x) &amp;= \int_b^x \frac{n a b^{na}}{y^{na+1}} dy = n a b^{na} \int_b^x y^{-na-1} dy \\
 &amp;= n a b^{na} \frac{1}{-na} \left. y^{-na} \right|_b^x = - b^{na} \left( x^{-na} - b^{-na} \right) \\
 &amp;= 1 - \left(\frac{b}{x}\right)^{na} \,.
@@ -980,7 +1006,7 @@ F_{(1)}(x) &amp;= \int_b^x \frac{n a b^{na}}{y^{na+1}} dy = n a b^{na} \int_b^x 
 <p>The lower bound found given the sufficient statistic <span class="math inline">\(X_{(1)}\)</span> is 1.396, while the lower bound found given <span class="math inline">\(\bar{X}\)</span> is 0.989. This result demonstrates that the utilization of sufficient statistics results in superior inferences (meaning, here, smaller intervals).</p>
 </blockquote>
 <blockquote class="blockquote">
-<p>But let’s take this example just a little farther: let’s compute a 95% <em>upper bound</em> while utilizing the sample mean. (We utilize the same code as above, but we change <code>q=1-alpha</code> to <code>q=alpha</code> in the call to <code>uniroot()</code>.)</p>
+<p>But let’s take this example just a little farther: let’s compute a 95% <em>upper bound</em> while utilizing the sample mean. (We utilize the same code as above, but we change <code>q = 1 - alpha</code> to <code>q = alpha</code> in the call to <code>uniroot()</code>.)</p>
 </blockquote>
 <div class="cell">
 <details class="code-fold">
@@ -1004,20 +1030,22 @@ F_{(1)}(x) &amp;= \int_b^x \frac{n a b^{na}}{y^{na+1}} dy = n a b^{na} \int_b^x 
 </blockquote>
 </section>
 </section>
-<section id="hypothesis-testing" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="hypothesis-testing"><span class="header-section-number">5.5</span> Hypothesis Testing</h2>
+</section>
+<section id="sec-chap5hypothesis" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="sec-chap5hypothesis"><span class="header-section-number">5.5</span> Hypothesis Testing</h2>
 <div class="graybox">
 <p>What to take away from this section:</p>
 <ul>
 <li><p>When conducting hypothesis tests concerning distribution bounds, one can define two-tail tests, but from the perspective of power, it is preferable to define one-tail tests only.</p></li>
 <li><p>When computing the test power for a hypothesis test, one must take into account the two ways in which one can reject the null hypothesis; for instance, if <span class="math inline">\(H_o : \theta = \theta_o\)</span> is an upper distribution bound, and we wish to compute the test power given <span class="math inline">\(\theta &gt; \theta_o\)</span>, then we would reject the null if <span class="math inline">\(X_{(n)}\)</span> fall into the rejection region defined under the null <em>and</em> if <span class="math inline">\(X_{(n)} &gt; \theta_o\)</span>.</p></li>
 </ul>
+<p>For previous material on hypothesis testing, see <a href="04-poisson.html#sec-chap4hypothesis" class="quarto-xref"><span>Section 4.7</span></a>.</p>
 </div>
 <p><br></p>
 <blockquote class="blockquote">
 <p><strong>Recall</strong>: <em>a hypothesis test is a framework to make an inference about the value of a population parameter <span class="math inline">\(\theta\)</span>. The null hypothesis <span class="math inline">\(H_o\)</span> is that <span class="math inline">\(\theta = \theta_o\)</span>, while possible alternatives <span class="math inline">\(H_a\)</span> are <span class="math inline">\(\theta \neq \theta_o\)</span> (two-tail test), <span class="math inline">\(\theta &gt; \theta_o\)</span> (upper-tail test), and <span class="math inline">\(\theta &lt; \theta_o\)</span> (lower-tail test). For, e.g., a one-tail test, we reject the null hypothesis if the observed test statistic <span class="math inline">\(y_{\rm obs}\)</span> falls outside the bound given by <span class="math inline">\(y_{RR}\)</span>, which is a solution to the equation</em> <span class="math display">\[
 F_Y(y_{RR} \vert \theta_o) - q = 0 \,,
-\]</span> <em>where <span class="math inline">\(F_Y(\cdot)\)</span> is the cumulative distribution function for the statistic <span class="math inline">\(Y\)</span> and <span class="math inline">\(q\)</span> is an appropriate quantile value that is determined using the hypothesis test reference table introduced in section 17 of Chapter 1. Note that the hypothesis test framework only allows us to make a decision about a null hypothesis; nothing is proven.</em></p>
+\]</span> <em>where <span class="math inline">\(F_Y(\cdot)\)</span> is the cumulative distribution function for the statistic <span class="math inline">\(Y\)</span> and <span class="math inline">\(q\)</span> is an appropriate quantile value that is determined using the hypothesis test reference table introduced in <a href="01-probability.html#sec-chap1hypref" class="quarto-xref"><span>Section 1.17.2</span></a>. Note that the hypothesis test framework only allows us to make a decision about a null hypothesis; nothing is proven.</em></p>
 </blockquote>
 <p>Let’s suppose that we sample <span class="math inline">\(n\)</span> iid data according to a Uniform(0,<span class="math inline">\(\theta\)</span>) and that we wish to construct a two-tail hypothesis test using the sufficient statistic <span class="math inline">\(Y = X_{(n)}\)</span>. From examples above, we know that <span class="math inline">\(F_Y(y) = (x/\theta)^n\)</span> and that we are working on the “yes” line of the reference table…so the rejection-region boundaries are given by <span class="math display">\[\begin{align*}
 F_{(n)}(x_{\rm RR,lo} \vert \theta_o) - \frac{\alpha}{2} = 0 ~~~ &amp;\Rightarrow ~~~ x_{\rm RR,lo} = \theta_o \left( \frac{\alpha}{2} \right)^{1/n} \\
@@ -1068,9 +1096,10 @@ Figure&nbsp;5.6: The power curves for tests of <span class="math inline">\(H_o :
 </div>
 </div>
 </div>
-<hr>
-<section id="pareto-domain-parameter-hypothesis-test" class="level3" data-number="5.5.1">
-<h3 data-number="5.5.1" class="anchored" data-anchor-id="pareto-domain-parameter-hypothesis-test"><span class="header-section-number">5.5.1</span> Pareto Domain Parameter: Hypothesis Test</h3>
+<section id="example-1" class="level3" data-number="5.5.1">
+<h3 data-number="5.5.1" class="anchored" data-anchor-id="example-1"><span class="header-section-number">5.5.1</span> Example</h3>
+<section id="pareto-domain-parameter-hypothesis-test" class="level4" data-number="5.5.1.1">
+<h4 data-number="5.5.1.1" class="anchored" data-anchor-id="pareto-domain-parameter-hypothesis-test"><span class="header-section-number">5.5.1.1</span> Pareto Domain Parameter: Hypothesis Test</h4>
 <blockquote class="blockquote">
 <p>We sample <span class="math inline">\(n\)</span> iid data according to a Pareto(<span class="math inline">\(a,b\)</span>) distribution, with <span class="math inline">\(a\)</span> fixed. We use these data to test <span class="math display">\[
 H_o: b = b_o ~~\mbox{versus}~~ H_a: b &gt; b_o \,.
@@ -1153,8 +1182,9 @@ Figure&nbsp;5.8: The rejection regions that inform the power curve calculation s
 <hr>
 </section>
 </section>
-<section id="exercises" class="level2" data-number="5.6">
-<h2 data-number="5.6" class="anchored" data-anchor-id="exercises"><span class="header-section-number">5.6</span> Exercises</h2>
+</section>
+<section id="sec-chap5exercises" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="sec-chap5exercises"><span class="header-section-number">5.6</span> Exercises</h2>
 <ol type="1">
 <li><p>Let <span class="math inline">\(X_1, X_2, \ldots, X_n\)</span> denote independent and identically distributed uniform random variables on the interval <span class="math inline">\([0, 3\theta]\)</span>. Derive the method-of-moments estimator for <span class="math inline">\(\theta\)</span>.</p></li>
 <li><p>Compute <span class="math inline">\(P(X &gt; a+b \vert X &gt; b)\)</span> for a Uniform(0,1) distribution. (Assume <span class="math inline">\(0 &lt; b &lt; a+b &lt; 1\)</span>.) Does the Uniform(0,1) distribution exhibit the property of memorylessness? Why or why not?</p></li>

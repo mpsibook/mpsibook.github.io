@@ -270,20 +270,23 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#types-of-convergence" id="toc-types-of-convergence" class="nav-link active" data-scroll-target="#types-of-convergence"><span class="header-section-number">7.1</span> Types of Convergence</a></li>
-  <li><a href="#the-central-limit-theorem" id="toc-the-central-limit-theorem" class="nav-link" data-scroll-target="#the-central-limit-theorem"><span class="header-section-number">7.2</span> The Central Limit Theorem</a></li>
-  <li><a href="#asymptotic-normality-of-maximum-likelihood-estimates" id="toc-asymptotic-normality-of-maximum-likelihood-estimates" class="nav-link" data-scroll-target="#asymptotic-normality-of-maximum-likelihood-estimates"><span class="header-section-number">7.3</span> Asymptotic Normality of Maximum Likelihood Estimates</a></li>
-  <li><a href="#point-estimation-relative-efficiency" id="toc-point-estimation-relative-efficiency" class="nav-link" data-scroll-target="#point-estimation-relative-efficiency"><span class="header-section-number">7.4</span> Point Estimation: (Relative) Efficiency</a></li>
-  <li><a href="#sufficient-statistics" id="toc-sufficient-statistics" class="nav-link" data-scroll-target="#sufficient-statistics"><span class="header-section-number">7.5</span> Sufficient Statistics</a>
-  <ul class="collapse">
-  <li><a href="#a-formal-definition-of-sufficiency" id="toc-a-formal-definition-of-sufficiency" class="nav-link" data-scroll-target="#a-formal-definition-of-sufficiency"><span class="header-section-number">7.5.1</span> A Formal Definition of Sufficiency</a></li>
-  <li><a href="#minimal-sufficiency" id="toc-minimal-sufficiency" class="nav-link" data-scroll-target="#minimal-sufficiency"><span class="header-section-number">7.5.2</span> Minimal Sufficiency</a></li>
-  <li><a href="#completeness" id="toc-completeness" class="nav-link" data-scroll-target="#completeness"><span class="header-section-number">7.5.3</span> Completeness</a></li>
-  <li><a href="#the-rao-blackwell-theorem" id="toc-the-rao-blackwell-theorem" class="nav-link" data-scroll-target="#the-rao-blackwell-theorem"><span class="header-section-number">7.5.4</span> The Rao-Blackwell Theorem</a></li>
+  <li><a href="#sec-chap7convergence" id="toc-sec-chap7convergence" class="nav-link active" data-scroll-target="#sec-chap7convergence"><span class="header-section-number">7.1</span> Types of Convergence</a></li>
+  <li><a href="#sec-chap7cltproof" id="toc-sec-chap7cltproof" class="nav-link" data-scroll-target="#sec-chap7cltproof"><span class="header-section-number">7.2</span> The Central Limit Theorem: Proof</a></li>
+  <li><a href="#sec-chap7asymmleproof" id="toc-sec-chap7asymmleproof" class="nav-link" data-scroll-target="#sec-chap7asymmleproof"><span class="header-section-number">7.3</span> Asymptotic Normality of Maximum Likelihood Estimates: Proof</a></li>
+  <li><a href="#sec-chap7efficiency" id="toc-sec-chap7efficiency" class="nav-link" data-scroll-target="#sec-chap7efficiency"><span class="header-section-number">7.4</span> Point Estimation: (Relative) Efficiency</a></li>
+  <li><a href="#sec-chap7suffdeep" id="toc-sec-chap7suffdeep" class="nav-link" data-scroll-target="#sec-chap7suffdeep"><span class="header-section-number">7.5</span> Sufficient Statistics: a Deeper Dive</a>
+  <ul>
+  <li><a href="#sec-chap7suffformal" id="toc-sec-chap7suffformal" class="nav-link" data-scroll-target="#sec-chap7suffformal"><span class="header-section-number">7.5.1</span> A Formal Definition of Sufficiency</a></li>
+  <li><a href="#sec-chap7suffminimal" id="toc-sec-chap7suffminimal" class="nav-link" data-scroll-target="#sec-chap7suffminimal"><span class="header-section-number">7.5.2</span> Minimal Sufficiency</a></li>
+  <li><a href="#sec-chap7suffcomplete" id="toc-sec-chap7suffcomplete" class="nav-link" data-scroll-target="#sec-chap7suffcomplete"><span class="header-section-number">7.5.3</span> Completeness</a></li>
+  <li><a href="#sec-chap7rao" id="toc-sec-chap7rao" class="nav-link" data-scroll-target="#sec-chap7rao"><span class="header-section-number">7.5.4</span> The Rao-Blackwell Theorem</a></li>
   </ul></li>
-  <li><a href="#multiple-comparisons" id="toc-multiple-comparisons" class="nav-link" data-scroll-target="#multiple-comparisons"><span class="header-section-number">7.6</span> Multiple Comparisons</a>
+  <li><a href="#sec-chap7multiple" id="toc-sec-chap7multiple" class="nav-link" data-scroll-target="#sec-chap7multiple"><span class="header-section-number">7.6</span> Hypothesis Testing: Multiple Comparisons</a>
+  <ul>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">7.6.1</span> Examples</a>
   <ul class="collapse">
-  <li><a href="#an-illustration-of-multiple-comparisons-when-testing-for-the-normal-mean" id="toc-an-illustration-of-multiple-comparisons-when-testing-for-the-normal-mean" class="nav-link" data-scroll-target="#an-illustration-of-multiple-comparisons-when-testing-for-the-normal-mean"><span class="header-section-number">7.6.1</span> An Illustration of Multiple Comparisons When Testing for the Normal Mean</a></li>
+  <li><a href="#an-illustration-of-multiple-comparisons-when-testing-for-the-normal-mean" id="toc-an-illustration-of-multiple-comparisons-when-testing-for-the-normal-mean" class="nav-link" data-scroll-target="#an-illustration-of-multiple-comparisons-when-testing-for-the-normal-mean"><span class="header-section-number">7.6.1.1</span> An Illustration of Multiple Comparisons When Testing for the Normal Mean</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -293,7 +296,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Additional Concepts (Optional)</span></h1>
+<h1 class="title"><span id="sec-chap7" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Additional Concepts (Optional)</span></span></h1>
 </div>
 
 
@@ -310,8 +313,8 @@ window.Quarto = {
 </header>
 
 
-<section id="types-of-convergence" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="types-of-convergence"><span class="header-section-number">7.1</span> Types of Convergence</h2>
+<section id="sec-chap7convergence" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="sec-chap7convergence"><span class="header-section-number">7.1</span> Types of Convergence</h2>
 <p>There are two primary types of convergence which interest us in this book: <em>convergence in probability</em> and <em>convergence in distribution</em>.</p>
 <p>Let <span class="math inline">\(X_1,X_2,\ldots\)</span> be a sequence of random variables, and let <span class="math inline">\(Y\)</span> be some other random variable. (We note that the concept of a sequence can be initially confusing for students: here, <span class="math inline">\(X_n\)</span> is a statistic formed from a set of data with sample size <span class="math inline">\(n\)</span>. A classic example of a sequence is <span class="math inline">\(\bar{X}_1,\bar{X}_2,...\)</span>; the first element is the mean for a sample of size 1 (the datum itself!), the second element is the mean that we compute after we independently sample a second datum from the same underlying distribution to go along with the first, etc.) In addition, let <span class="math inline">\(F_{X_n}\)</span> denote the cumulative distribution function for <span class="math inline">\(X_n\)</span> and <span class="math inline">\(F_Y\)</span> denote the cdf for <span class="math inline">\(Y\)</span>. We say that</p>
 <ul>
@@ -324,9 +327,9 @@ P(\vert X_n - Y \vert &gt; \epsilon) \rightarrow 0
 </ul>
 <p>An example of convergence in probability is the <em>weak law of large numbers</em>, which states that <span class="math inline">\(\bar{X}_n \overset{p}{\rightarrow} \mu\)</span>. (This is a “weak” statement because it does not invoke “almost sure” convergence, a concept beyond the scope of this book.) What is “weak” about this statement? The statement <span class="math inline">\(P(\vert \bar{X}_n - Y \vert &gt; \epsilon) \rightarrow 0\)</span>, where <span class="math inline">\(Y\)</span> has mean <span class="math inline">\(\mu\)</span>, is not as restrictive a statement as others that one can make; for any chosen value of <span class="math inline">\(\epsilon\)</span>, <span class="math inline">\(\vert \bar{X}_n - Y \vert\)</span> can stray so as to be greater than <span class="math inline">\(\epsilon\)</span> an infinite amount of times as <span class="math inline">\(n \rightarrow \infty\)</span>. In other words, <span class="math inline">\(\bar{X}\)</span> asymptotically approaches <span class="math inline">\(\mu\)</span>, but is still “allowed” to substantially deviate from that value for any finite <span class="math inline">\(n\)</span>.</p>
 </section>
-<section id="the-central-limit-theorem" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="the-central-limit-theorem"><span class="header-section-number">7.2</span> The Central Limit Theorem</h2>
-<p>We introduce the Central Limit Theorem in Chapter 2. It states that if we have <span class="math inline">\(n\)</span> iid random variables <span class="math inline">\(\{X_1,\ldots,X_n\}\)</span> with mean <span class="math inline">\(E[X_i] = \mu\)</span> and finite variance <span class="math inline">\(V[X_i] = \sigma^2 &lt; \infty\)</span>, and if <span class="math inline">\(n\)</span> is sufficiently large, then <span class="math inline">\(\bar{X}\)</span> converges in distribution to a standard normal random variable: <span class="math display">\[
+<section id="sec-chap7cltproof" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="sec-chap7cltproof"><span class="header-section-number">7.2</span> The Central Limit Theorem: Proof</h2>
+<p>We introduce the Central Limit Theorem in <a href="02-normal.html#sec-chap2clt" class="quarto-xref"><span>Section 2.6</span></a>. It states that if we have <span class="math inline">\(n\)</span> iid random variables <span class="math inline">\(\{X_1,\ldots,X_n\}\)</span> with mean <span class="math inline">\(E[X_i] = \mu\)</span> and finite variance <span class="math inline">\(V[X_i] = \sigma^2 &lt; \infty\)</span>, and if <span class="math inline">\(n\)</span> is sufficiently large, then <span class="math inline">\(\bar{X}\)</span> converges in distribution to a standard normal random variable: <span class="math display">\[
 \lim_{n \rightarrow \infty} P\left(\frac{\bar{X}-\mu}{\sigma/\sqrt{n}} \leq z \right) = \Phi(z) \,.
 \]</span> We can prove this using moment-generating functions.</p>
 <p>Let <span class="math inline">\(X_i \overset{iid}{\sim} P(\mu,\sigma^2)\)</span>, where <span class="math inline">\(P\)</span> is some distribution with finite variance, and let <span class="math display">\[\begin{align*}
@@ -351,11 +354,11 @@ m_Y(t) \approx \left[ 1 + \frac{t^2}{2n} \right]^n = \left[ 1 + \frac{t^2/2}{n} 
 \lim_{n \rightarrow \infty} \left[ 1 + \frac{t^2/2}{n} \right]^n = \exp\left(\frac{t^2}{2}\right) \,.
 \]</span> This is the moment-generating function for a standard normal…hence <span class="math inline">\(Y\)</span> converges in distribution to a standard normal random variable and <span class="math inline">\(\bar{X}\)</span> converges in distribution to normal random variable with mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2/n\)</span>.</p>
 </section>
-<section id="asymptotic-normality-of-maximum-likelihood-estimates" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="asymptotic-normality-of-maximum-likelihood-estimates"><span class="header-section-number">7.3</span> Asymptotic Normality of Maximum Likelihood Estimates</h2>
-<p>When discussing point estimation in Chapter 2, we declared that as <span class="math inline">\(n \rightarrow \infty\)</span>, the maximum likelihood estimate for a parameter <span class="math inline">\(\theta\)</span> converges in distribution to a normal random variable: <span class="math display">\[
+<section id="sec-chap7asymmleproof" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="sec-chap7asymmleproof"><span class="header-section-number">7.3</span> Asymptotic Normality of Maximum Likelihood Estimates: Proof</h2>
+<p>When discussing point estimation in <a href="02-normal.html#sec-chap2point" class="quarto-xref"><span>Section 2.11</span></a>, we declared that as <span class="math inline">\(n \rightarrow \infty\)</span>, the maximum likelihood estimate for a parameter <span class="math inline">\(\theta\)</span> converges in distribution to a normal random variable: <span class="math display">\[
 \sqrt{n}(\hat{\theta}_{MLE}-\theta) \overset{d}{\rightarrow} Y \sim \mathcal{N}\left(0,\frac{1}{I(\theta)}\right) ~\mbox{or}~ (\hat{\theta}_{MLE}-\theta) \overset{d}{\rightarrow} Y' \sim \mathcal{N}\left(0,\frac{1}{nI(\theta)}\right) \,.
-\]</span> Here, we sketch out why this is true. As we will see, this result rests upon fundamental concepts covered earlier in this book and chapter: the weak law of large numbers (aka, convergence in probability), and the central limit theorem.</p>
+\]</span> Here, we sketch out why this is true. As we will see, this result rests upon fundamental concepts covered earlier in this book and chapter: the <a href="#sec-chap7convergence">weak law of large numbers</a> (aka, convergence in probability), and the <a href="02-normal.html#sec-chap2clt">central limit theorem</a>.</p>
 <p>We start with the log-likelihood function <span class="math inline">\(\ell(\theta \vert \mathbf{x})\)</span>. (However, to simplify the notation in what follows, we will drop the <span class="math inline">\(\mathbf{x}\)</span> for now.) By definition, the MLE for <span class="math inline">\(\theta\)</span> is that value for which <span class="math inline">\(\ell'(\theta) =
 \ell'(\hat{\theta}_{MLE}) = 0\)</span>. The Taylor expansion of <span class="math inline">\(\ell'(\theta)\)</span> around <span class="math inline">\(\hat{\theta}_{MLE}\)</span> is <span class="math display">\[
 \ell'(\theta) \approx \ell'(\hat{\theta}_{MLE}) + (\theta - \hat{\theta}_{MLE})\ell''(\theta) + \cdots = (\theta - \hat{\theta}_{MLE})\ell''(\theta) + \cdots \,.
@@ -386,8 +389,8 @@ m_Y(t) \approx \left[ 1 + \frac{t^2}{2n} \right]^n = \left[ 1 + \frac{t^2/2}{n} 
 \sqrt{n}(\hat{\theta}_{MLE}-\theta) \overset{d}{\rightarrow} Y \sim \mathcal{N}\left(0,\frac{1}{I(\theta)}\right) \,.
 \]</span></p>
 </section>
-<section id="point-estimation-relative-efficiency" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="point-estimation-relative-efficiency"><span class="header-section-number">7.4</span> Point Estimation: (Relative) Efficiency</h2>
+<section id="sec-chap7efficiency" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="sec-chap7efficiency"><span class="header-section-number">7.4</span> Point Estimation: (Relative) Efficiency</h2>
 <p>The efficiency of an unbiased estimator of a parameter <span class="math inline">\(\theta\)</span> is <span class="math display">\[
 e(\hat{\theta}) = \frac{1/I(\theta)}{V[\hat{\theta}]} \,,
 \]</span> i.e., the ratio of the minimum possible variance for an unbiased estimator of <span class="math inline">\(\theta\)</span> (the Cramer-Rao lower bound) to the variance for the estimator in question. If an unbiased estimator attains <span class="math inline">\(e(\hat{\theta})\)</span> for all possible values of <span class="math inline">\(\theta\)</span>, the estimator is <em>efficient</em>. (It is also the MVUE!)</p>
@@ -401,14 +404,14 @@ V[\bar{X}] = \sigma^2/n\)</span>, and we know that <span class="math inline">\(\
 e(\hat{\mu}_1,\hat{\mu}_2) = \frac{V[\hat{\mu}_2]}{V[\hat{\mu}_1]} = \frac{\sigma^2/2}{\sigma^2/n} = \frac{n}{2} \,.
 \]</span> This value is <span class="math inline">\(&gt; 1\)</span> for all <span class="math inline">\(n &gt; 2\)</span>, and it is never less than 1, so we would choose to use <span class="math inline">\(\hat{\mu}_1 = \bar{X}\)</span> as our estimator of the population mean.</p>
 </section>
-<section id="sufficient-statistics" class="level2" data-number="7.5">
-<h2 data-number="7.5" class="anchored" data-anchor-id="sufficient-statistics"><span class="header-section-number">7.5</span> Sufficient Statistics</h2>
+<section id="sec-chap7suffdeep" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="sec-chap7suffdeep"><span class="header-section-number">7.5</span> Sufficient Statistics: a Deeper Dive</h2>
 <p>Let us assume that we are given <span class="math inline">\(n\)</span> independent and identically distributed (iid) data sampled from some distribution <span class="math inline">\(P\)</span> whose shape is (without loss of generality) governed by a single parameter <span class="math inline">\(\theta\)</span>: <span class="math display">\[
 \{X_1,\ldots,X_n\} \overset{iid}{\sim} P(\theta)
 \]</span> A sufficient statistic <span class="math inline">\(U\)</span> is a function of <span class="math inline">\(\mathbf{X}\)</span> that encapsulates all the information needed to estimate <span class="math inline">\(\theta\)</span>, i.e., if <span class="math inline">\(U\)</span> is sufficient, no other computed statistic would provide any additional information that would help us estimate <span class="math inline">\(\theta\)</span>. Sufficient statistics are not unique: if <span class="math inline">\(U\)</span> is a sufficient statistic, then every one-to-one function <span class="math inline">\(f(U)\)</span> is as well, so long as <span class="math inline">\(f(U)\)</span> does not depend on <span class="math inline">\(\theta\)</span>.</p>
-<p>In Chapter 3 we show how one finds a sufficient statistic by factorizing the likelihood function, and uses it to define the minimum variance unbiased estimator (the MVUE). In that chapter, we sweep a number of things under the metaphorical rug, such as the fact that to be used to determine the MVUE, a sufficient statistic has to be both minimal and complete. We elaborate on those points below. However, we start by providing an alternate means by which to determine a sufficient statistic.</p>
-<section id="a-formal-definition-of-sufficiency" class="level3" data-number="7.5.1">
-<h3 data-number="7.5.1" class="anchored" data-anchor-id="a-formal-definition-of-sufficiency"><span class="header-section-number">7.5.1</span> A Formal Definition of Sufficiency</h3>
+<p>In <a href="03-binomial.html#sec-chap3point" class="quarto-xref"><span>Section 3.6</span></a> we show how one finds a sufficient statistic by factorizing the likelihood function, and uses it to define the minimum variance unbiased estimator (the MVUE). In our demonstration, we sweep a number of things under the metaphorical rug, such as the fact that to be used to determine the MVUE, a sufficient statistic has to be both minimal and complete. We elaborate on those points below. However, we start by providing an alternate means by which to determine a sufficient statistic.</p>
+<section id="sec-chap7suffformal" class="level3" data-number="7.5.1">
+<h3 data-number="7.5.1" class="anchored" data-anchor-id="sec-chap7suffformal"><span class="header-section-number">7.5.1</span> A Formal Definition of Sufficiency</h3>
 <p>A statistic <span class="math inline">\(U(\mathbf{X})\)</span> is a sufficient statistic for the parameter <span class="math inline">\(\theta\)</span> if the conditional distribution of <span class="math inline">\(\mathbf{X}\)</span> given <span class="math inline">\(U(\mathbf{X})\)</span> does not depend on <span class="math inline">\(\theta\)</span>, i.e., if <span class="math inline">\(P(X_1=x_1,\ldots,X_n=x_n \vert U(\mathbf{X}) = k)\)</span> does not depend on <span class="math inline">\(\theta\)</span>.</p>
 <p>As an example, let <span class="math inline">\(\{X_1,\ldots,X_n\} \overset{iid}{\sim}\)</span> Bernoulli(<span class="math inline">\(p\)</span>), and let us propose <span class="math inline">\(U(\mathbf{X}) = \sum_{i=1}^n X_i\)</span> as a sufficient ststistic. To determine if it is, we need to determine if <span class="math display">\[
 P(X_1=x_1,\ldots,X_n=x_n \vert U(\mathbf{X}=k) = \frac{P(X_1=x_1,\ldots,X_n=x_n,U(\mathbf{X})=k}{P(U(\mathbf{X}=k)}
@@ -427,8 +430,8 @@ P(X_1=x_1,\ldots,X_n=x_n \vert U(\mathbf{X}=k) = \frac{p^k(1-p)^{n-k}}{\binom{n}
 \]</span> which does not depend on the parameter <span class="math inline">\(p\)</span>. Thus <span class="math inline">\(U(\mathbf{X}) = \sum_{i=1}^n X_i\)</span> is indeed a sufficient statistic for <span class="math inline">\(p\)</span>.</p>
 <p>(The foregoing clearly illustrates why factorization is a preferred means by which to determine sufficient statistics!)</p>
 </section>
-<section id="minimal-sufficiency" class="level3" data-number="7.5.2">
-<h3 data-number="7.5.2" class="anchored" data-anchor-id="minimal-sufficiency"><span class="header-section-number">7.5.2</span> Minimal Sufficiency</h3>
+<section id="sec-chap7suffminimal" class="level3" data-number="7.5.2">
+<h3 data-number="7.5.2" class="anchored" data-anchor-id="sec-chap7suffminimal"><span class="header-section-number">7.5.2</span> Minimal Sufficiency</h3>
 <p>A question that naturally arises when dealing with sufficient statistics is: if we have many sufficient statistics, which one is the best one? It would be the one that “reduces” the data the most. In a given context, <span class="math inline">\(U(\mathbf{X})\)</span> is minimal sufficient if, given any another sufficient statistic <span class="math inline">\(T(\mathbf{X})\)</span>, <span class="math inline">\(U(\mathbf{X}) = f(T(\mathbf{X}))\)</span>.</p>
 <p>To generate a minimal sufficient statistic, one can make use of the Lehmann-Scheffe theorem. If we have two iid samples of data of the same size, <span class="math inline">\(\{X_1,\ldots,X_n\}\)</span> and <span class="math inline">\(\{Y_1,\ldots,Y_n\}\)</span>, then, if the ratio of likelihoods <span class="math display">\[
 \frac{\mathcal{L}(x_1,\ldots,x_n \vert \theta)}{\mathcal{L}(y_1,\ldots,y_n \vert \theta)}
@@ -441,8 +444,8 @@ g(y_1,\ldots,y_n)\)</span> for a function <span class="math inline">\(g(\cdot)\)
 <p>Note that in the context of the present course, any and all sufficient statistics that we define via, e.g., factorization are minimal sufficient.</p>
 <p>One might ask “what is an example of a sufficient statistic that is not minimally sufficient?” The answer is simple but may not initially be intuitive, in that we naturally think of a statistic as being a single number (the output from applying a given function to a full dataset). However, e.g., a full dataset is a statistic, and it is a sufficient statistic: there is sufficient information in a full dataset so as to compute the likelihood of a population parameter <span class="math inline">\(\theta\)</span>. However, a full dataset is not minimally sufficient! If <span class="math inline">\(T(\mathbf{X}) = \bar{X}\)</span>, and <span class="math inline">\(U(\mathbf{X}) = \{X_1,\ldots,X_n\}\)</span>, then we cannot define a function <span class="math inline">\(f\)</span> such that <span class="math inline">\(\{X_1,\ldots,X_n\} = f(\bar{X})\)</span>.</p>
 </section>
-<section id="completeness" class="level3" data-number="7.5.3">
-<h3 data-number="7.5.3" class="anchored" data-anchor-id="completeness"><span class="header-section-number">7.5.3</span> Completeness</h3>
+<section id="sec-chap7suffcomplete" class="level3" data-number="7.5.3">
+<h3 data-number="7.5.3" class="anchored" data-anchor-id="sec-chap7suffcomplete"><span class="header-section-number">7.5.3</span> Completeness</h3>
 <p>The concept of the completeness of a statistic is a general concept, i.e., it is not limited to sufficient statistics. One can think of it as the idea that each value of <span class="math inline">\(\theta\)</span> in a distribution maps to a distinct pmf or pdf. We bring up completeness here because the concept appears in the context of determining an MVUE: the sufficient statistic that we find via, e.g., factorization technically needs to be both minimal and complete.</p>
 <p>Let <span class="math inline">\(f_U(u \vert \theta)\)</span> be the family of pmfs or pdfs for the statistic <span class="math inline">\(U(\mathbf{X})\)</span>. <span class="math inline">\(U\)</span> is dubbed a <em>complete</em> statistic if <span class="math inline">\(E[g(U)] = 0\)</span> for all <span class="math inline">\(\theta\)</span> implies <span class="math inline">\(P(g(U) = 0) = 1\)</span> for all <span class="math inline">\(\theta\)</span>.</p>
 <p>As an example, let <span class="math inline">\(U \sim\)</span> Binomial(<span class="math inline">\(n,p\)</span>), with <span class="math inline">\(0 &lt; p &lt; 1\)</span>, and let <span class="math inline">\(g(\cdot)\)</span> be a function such that <span class="math inline">\(E[g(U)] = 0\)</span>. Then <span class="math display">\[
@@ -450,9 +453,9 @@ g(y_1,\ldots,y_n)\)</span> for a function <span class="math inline">\(g(\cdot)\)
 \]</span> For any choice of <span class="math inline">\(u\)</span> and <span class="math inline">\(n\)</span>, <span class="math inline">\(\binom{n}{u} [p/(1-p)]^u &gt; 0\)</span>. So, in order to have <span class="math inline">\(E[g(U)] = 0\)</span> for all <span class="math inline">\(p\)</span>, <span class="math inline">\(g(u) = 0\)</span> for all <span class="math inline">\(u\)</span>, i.e., <span class="math inline">\(P(g(U) = 0) = 1\)</span>. Therefore <span class="math inline">\(U\)</span> is a complete statistic.</p>
 <p>Note that a complete statistic is also minimal sufficient, but the converse is not necessarily true: a minimal sufficient statistic may not be complete.</p>
 </section>
-<section id="the-rao-blackwell-theorem" class="level3" data-number="7.5.4">
-<h3 data-number="7.5.4" class="anchored" data-anchor-id="the-rao-blackwell-theorem"><span class="header-section-number">7.5.4</span> The Rao-Blackwell Theorem</h3>
-<p>The Rao-Blackwell theorem implies that an unbiased estimator for <span class="math inline">\(\theta\)</span> with a small variance is, or can be made to be, a function of a sufficient statistic: if we have an unbiased estimator for <span class="math inline">\(\theta\)</span>, we might be able to improve it using the prescription of the theorem. In the end, the theorem provides a mathematically more challenging route to defining a minimum variance unbiased estimator than what we show in the main text<span class="math inline">\(-\)</span>likelihood factorization followed by the “de-biasing” of a sufficient statistic<span class="math inline">\(-\)</span>and hence we relegate it here, to the chapter of optional material.</p>
+<section id="sec-chap7rao" class="level3" data-number="7.5.4">
+<h3 data-number="7.5.4" class="anchored" data-anchor-id="sec-chap7rao"><span class="header-section-number">7.5.4</span> The Rao-Blackwell Theorem</h3>
+<p>The Rao-Blackwell theorem implies that an unbiased estimator for <span class="math inline">\(\theta\)</span> with a small variance is, or can be made to be, a function of a sufficient statistic: if we have an unbiased estimator for <span class="math inline">\(\theta\)</span>, we might be able to improve it using the prescription of the theorem. In the end, the theorem provides a mathematically more challenging route to defining a minimum variance unbiased estimator than what we show in the main text<span class="math inline">\(-\)</span>likelihood factorization followed by the “de-biasing” of a sufficient statistic<span class="math inline">\(-\)</span>and hence we relegate it here.</p>
 <p>Let <span class="math inline">\(\hat\theta\)</span> be an unbiased estimator for <span class="math inline">\(\theta\)</span> such that <span class="math inline">\(V[\hat\theta] &lt; \infty\)</span>. If <span class="math inline">\(U\)</span> is a sufficient statistic for <span class="math inline">\(\theta\)</span>, define <span class="math inline">\(\hat\theta^* = E[\hat\theta \vert U]\)</span>. Then, for all <span class="math inline">\(\theta\)</span>, <span class="math display">\[
 E[\hat\theta^*] = \theta ~~~ \text{and} ~~~ V[\hat\theta^*] \leq V[\hat\theta] \,.
 \]</span></p>
@@ -465,8 +468,8 @@ E[\hat{p}-p] = E\left[\frac{X_1}{k}\right] - p = \frac{1}{k}E[X_1] - p = \frac{1
 \]</span> is the MVUE for <span class="math inline">\(p\)</span>.</p>
 </section>
 </section>
-<section id="multiple-comparisons" class="level2" data-number="7.6">
-<h2 data-number="7.6" class="anchored" data-anchor-id="multiple-comparisons"><span class="header-section-number">7.6</span> Multiple Comparisons</h2>
+<section id="sec-chap7multiple" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="sec-chap7multiple"><span class="header-section-number">7.6</span> Hypothesis Testing: Multiple Comparisons</h2>
 <p><em>Multiple comparisons</em> is a somewhat opaque term that denotes the situation in which we perform many hypothesis tests <em>simultaneously</em> and need to correct for the fact that if the null is correct in all cases, it becomes more and more likely that we will observe (multiple) instances in which we decide to reject the null. We can illustrate this using the binomial distribution: if we collect <span class="math inline">\(k\)</span> sets of data (e.g., <span class="math inline">\(k\)</span> separate sets of <span class="math inline">\(n\)</span> iid data sampled from a Uniform(0,<span class="math inline">\(\theta\)</span>) distribution), and perform level-<span class="math inline">\(\alpha\)</span> hypothesis tests for each, then the number of tests results in which we reject the null is <span class="math display">\[
 X \sim \mbox{Binom}(k,\alpha) \,,
 \]</span> The expected value of <span class="math inline">\(X\)</span> is <span class="math inline">\(E[X] = k\alpha\)</span>, which increases with <span class="math inline">\(k\)</span>. The <em>family-wise error rate</em>, or <em>FWER</em>, is the probability that at least one test will result in a rejection when the null is correct: <span class="math display">\[
@@ -525,9 +528,10 @@ E\left[\frac{V}{V+S}\right] = E\left[\frac{V}{R}\right] \leq \frac{\alpha k'}{k}
 \]</span> The FWER procedure, on the other hand, focuses on the first <em>column</em>, with <span class="math display">\[
 E\left[\frac{V}{V+U}\right] = \frac{\alpha k'}{k'} = \alpha \,.
 \]</span></p>
-<hr>
-<section id="an-illustration-of-multiple-comparisons-when-testing-for-the-normal-mean" class="level3" data-number="7.6.1">
-<h3 data-number="7.6.1" class="anchored" data-anchor-id="an-illustration-of-multiple-comparisons-when-testing-for-the-normal-mean"><span class="header-section-number">7.6.1</span> An Illustration of Multiple Comparisons When Testing for the Normal Mean</h3>
+<section id="examples" class="level3" data-number="7.6.1">
+<h3 data-number="7.6.1" class="anchored" data-anchor-id="examples"><span class="header-section-number">7.6.1</span> Examples</h3>
+<section id="an-illustration-of-multiple-comparisons-when-testing-for-the-normal-mean" class="level4" data-number="7.6.1.1">
+<h4 data-number="7.6.1.1" class="anchored" data-anchor-id="an-illustration-of-multiple-comparisons-when-testing-for-the-normal-mean"><span class="header-section-number">7.6.1.1</span> An Illustration of Multiple Comparisons When Testing for the Normal Mean</h4>
 <blockquote class="blockquote">
 <p>In the code chunk below, we generate <span class="math inline">\(k = 100\)</span> independent datasets of size <span class="math inline">\(n = 40\)</span>; for <span class="math inline">\(k' = 80\)</span> datasets, <span class="math inline">\(\mu = 0\)</span>, and for the remainder, <span class="math inline">\(\mu = 0.5\)</span>. For simplicity, we assume <span class="math inline">\(\sigma^2\)</span> is known and is equal to one. For each dataset, we test the hypotheses <span class="math inline">\(H_o : \mu = 0\)</span> versus <span class="math inline">\(H_a : \mu &gt; 0\)</span>.</p>
 </blockquote>
@@ -619,6 +623,7 @@ Figure&nbsp;7.1: An illustration of the difference between the Bonferroni correc
 Benjamini, Y., and Y. Hochberg. 1995. <span>“Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing.”</span> <em>Journal of the Royal Statistical Society, Series B</em> 57: 289–300.
 </div>
 </div>
+</section>
 </section>
 </section>
 

@@ -239,7 +239,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./07-optional.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Further Conceptual Details (Optional)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Additional Concepts (Optional)</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -270,63 +270,94 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#probability-mass-function" id="toc-probability-mass-function" class="nav-link active" data-scroll-target="#probability-mass-function"><span class="header-section-number">4.1</span> Probability Mass Function</a>
+  <li><a href="#sec-chap4pmf" id="toc-sec-chap4pmf" class="nav-link active" data-scroll-target="#sec-chap4pmf"><span class="header-section-number">4.1</span> Poisson Distribution: Probability Mass Function</a>
+  <ul>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">4.1.1</span> Examples</a>
   <ul class="collapse">
-  <li><a href="#poisson-random-variable-expected-value" id="toc-poisson-random-variable-expected-value" class="nav-link" data-scroll-target="#poisson-random-variable-expected-value"><span class="header-section-number">4.1.1</span> Poisson Random Variable: Expected Value</a></li>
-  <li><a href="#poisson-distribution-normal-approximation" id="toc-poisson-distribution-normal-approximation" class="nav-link" data-scroll-target="#poisson-distribution-normal-approximation"><span class="header-section-number">4.1.2</span> Poisson Distribution: Normal Approximation</a></li>
-  <li><a href="#poisson-distribution-exponential-family" id="toc-poisson-distribution-exponential-family" class="nav-link" data-scroll-target="#poisson-distribution-exponential-family"><span class="header-section-number">4.1.3</span> Poisson Distribution: Exponential Family</a></li>
+  <li><a href="#poisson-random-variable-expected-value" id="toc-poisson-random-variable-expected-value" class="nav-link" data-scroll-target="#poisson-random-variable-expected-value"><span class="header-section-number">4.1.1.1</span> Poisson Random Variable: Expected Value</a></li>
+  <li><a href="#poisson-distribution-normal-approximation" id="toc-poisson-distribution-normal-approximation" class="nav-link" data-scroll-target="#poisson-distribution-normal-approximation"><span class="header-section-number">4.1.1.2</span> Poisson Distribution: Normal Approximation</a></li>
+  <li><a href="#poisson-distribution-exponential-family" id="toc-poisson-distribution-exponential-family" class="nav-link" data-scroll-target="#poisson-distribution-exponential-family"><span class="header-section-number">4.1.1.3</span> Poisson Distribution: Exponential Family</a></li>
   </ul></li>
-  <li><a href="#poisson-distribution-cumulative-distribution-function" id="toc-poisson-distribution-cumulative-distribution-function" class="nav-link" data-scroll-target="#poisson-distribution-cumulative-distribution-function"><span class="header-section-number">4.2</span> Poisson Distribution: Cumulative Distribution Function</a>
+  </ul></li>
+  <li><a href="#sec-chap4cdf" id="toc-sec-chap4cdf" class="nav-link" data-scroll-target="#sec-chap4cdf"><span class="header-section-number">4.2</span> Poisson Distribution: Cumulative Distribution Function</a>
+  <ul>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">4.2.1</span> Example</a>
   <ul class="collapse">
-  <li><a href="#computing-probabilities" id="toc-computing-probabilities" class="nav-link" data-scroll-target="#computing-probabilities"><span class="header-section-number">4.2.1</span> Computing Probabilities</a></li>
+  <li><a href="#computing-probabilities" id="toc-computing-probabilities" class="nav-link" data-scroll-target="#computing-probabilities"><span class="header-section-number">4.2.1.1</span> Computing Probabilities</a></li>
   </ul></li>
-  <li><a href="#poisson-related-distributions" id="toc-poisson-related-distributions" class="nav-link" data-scroll-target="#poisson-related-distributions"><span class="header-section-number">4.3</span> Poisson-Related Distributions</a>
+  </ul></li>
+  <li><a href="#sec-chap4related" id="toc-sec-chap4related" class="nav-link" data-scroll-target="#sec-chap4related"><span class="header-section-number">4.3</span> Poisson-Related Distributions</a>
+  <ul>
+  <li><a href="#sec-chap4zeroinf" id="toc-sec-chap4zeroinf" class="nav-link" data-scroll-target="#sec-chap4zeroinf"><span class="header-section-number">4.3.1</span> Zero-Inflated Poisson Distribution</a></li>
+  <li><a href="#sec-chap4zerotrunc" id="toc-sec-chap4zerotrunc" class="nav-link" data-scroll-target="#sec-chap4zerotrunc"><span class="header-section-number">4.3.2</span> Zero-Truncated Poisson Distribution</a></li>
+  <li><a href="#sec-chap4gamma" id="toc-sec-chap4gamma" class="nav-link" data-scroll-target="#sec-chap4gamma"><span class="header-section-number">4.3.3</span> Gamma Distribution</a></li>
+  <li><a href="#examples-1" id="toc-examples-1" class="nav-link" data-scroll-target="#examples-1"><span class="header-section-number">4.3.4</span> Examples</a>
   <ul class="collapse">
-  <li><a href="#zero-inflated-poisson-random-variable-expected-value" id="toc-zero-inflated-poisson-random-variable-expected-value" class="nav-link" data-scroll-target="#zero-inflated-poisson-random-variable-expected-value"><span class="header-section-number">4.3.1</span> Zero-Inflated Poisson Random Variable: Expected Value</a></li>
-  <li><a href="#zero-truncated-poisson-random-variable-expected-value" id="toc-zero-truncated-poisson-random-variable-expected-value" class="nav-link" data-scroll-target="#zero-truncated-poisson-random-variable-expected-value"><span class="header-section-number">4.3.2</span> Zero-Truncated Poisson Random Variable: Expected Value</a></li>
-  <li><a href="#gamma-random-variable-expected-value" id="toc-gamma-random-variable-expected-value" class="nav-link" data-scroll-target="#gamma-random-variable-expected-value"><span class="header-section-number">4.3.3</span> Gamma Random Variable: Expected Value</a></li>
-  <li><a href="#exponential-distribution-memorylessness" id="toc-exponential-distribution-memorylessness" class="nav-link" data-scroll-target="#exponential-distribution-memorylessness"><span class="header-section-number">4.3.4</span> Exponential Distribution: Memorylessness</a></li>
+  <li><a href="#zero-inflated-poisson-random-variable-expected-value" id="toc-zero-inflated-poisson-random-variable-expected-value" class="nav-link" data-scroll-target="#zero-inflated-poisson-random-variable-expected-value"><span class="header-section-number">4.3.4.1</span> Zero-Inflated Poisson Random Variable: Expected Value</a></li>
+  <li><a href="#zero-truncated-poisson-random-variable-expected-value" id="toc-zero-truncated-poisson-random-variable-expected-value" class="nav-link" data-scroll-target="#zero-truncated-poisson-random-variable-expected-value"><span class="header-section-number">4.3.4.2</span> Zero-Truncated Poisson Random Variable: Expected Value</a></li>
+  <li><a href="#gamma-random-variable-expected-value" id="toc-gamma-random-variable-expected-value" class="nav-link" data-scroll-target="#gamma-random-variable-expected-value"><span class="header-section-number">4.3.4.3</span> Gamma Random Variable: Expected Value</a></li>
+  <li><a href="#exponential-distribution-memorylessness" id="toc-exponential-distribution-memorylessness" class="nav-link" data-scroll-target="#exponential-distribution-memorylessness"><span class="header-section-number">4.3.4.4</span> Exponential Distribution: Memorylessness</a></li>
   </ul></li>
-  <li><a href="#linear-functions-of-poisson-random-variables" id="toc-linear-functions-of-poisson-random-variables" class="nav-link" data-scroll-target="#linear-functions-of-poisson-random-variables"><span class="header-section-number">4.4</span> Linear Functions of Poisson Random Variables</a>
+  </ul></li>
+  <li><a href="#sec-chap4linear" id="toc-sec-chap4linear" class="nav-link" data-scroll-target="#sec-chap4linear"><span class="header-section-number">4.4</span> Linear Functions of Poisson Random Variables</a>
+  <ul>
+  <li><a href="#examples-2" id="toc-examples-2" class="nav-link" data-scroll-target="#examples-2"><span class="header-section-number">4.4.1</span> Examples</a>
   <ul class="collapse">
-  <li><a href="#two-poisson-random-variables-difference-distribution" id="toc-two-poisson-random-variables-difference-distribution" class="nav-link" data-scroll-target="#two-poisson-random-variables-difference-distribution"><span class="header-section-number">4.4.1</span> Two Poisson Random Variables: Difference Distribution</a></li>
-  <li><a href="#zero-inflated-poisson-distribution-moment-generating-function" id="toc-zero-inflated-poisson-distribution-moment-generating-function" class="nav-link" data-scroll-target="#zero-inflated-poisson-distribution-moment-generating-function"><span class="header-section-number">4.4.2</span> Zero-Inflated Poisson Distribution: Moment-Generating Function</a></li>
-  <li><a href="#exponential-data-sample-sum-distribution" id="toc-exponential-data-sample-sum-distribution" class="nav-link" data-scroll-target="#exponential-data-sample-sum-distribution"><span class="header-section-number">4.4.3</span> Exponential Data: Sample Sum Distribution</a></li>
+  <li><a href="#two-poisson-random-variables-difference-distribution" id="toc-two-poisson-random-variables-difference-distribution" class="nav-link" data-scroll-target="#two-poisson-random-variables-difference-distribution"><span class="header-section-number">4.4.1.1</span> Two Poisson Random Variables: Difference Distribution</a></li>
+  <li><a href="#zero-inflated-poisson-distribution-moment-generating-function" id="toc-zero-inflated-poisson-distribution-moment-generating-function" class="nav-link" data-scroll-target="#zero-inflated-poisson-distribution-moment-generating-function"><span class="header-section-number">4.4.1.2</span> Zero-Inflated Poisson Distribution: Moment-Generating Function</a></li>
+  <li><a href="#exponential-data-sample-sum-distribution" id="toc-exponential-data-sample-sum-distribution" class="nav-link" data-scroll-target="#exponential-data-sample-sum-distribution"><span class="header-section-number">4.4.1.3</span> Exponential Data: Sample Sum Distribution</a></li>
   </ul></li>
-  <li><a href="#point-estimation" id="toc-point-estimation" class="nav-link" data-scroll-target="#point-estimation"><span class="header-section-number">4.5</span> Point Estimation</a>
+  </ul></li>
+  <li><a href="#sec-chap4point" id="toc-sec-chap4point" class="nav-link" data-scroll-target="#sec-chap4point"><span class="header-section-number">4.5</span> Point Estimation</a>
+  <ul>
+  <li><a href="#sec-chap4moments" id="toc-sec-chap4moments" class="nav-link" data-scroll-target="#sec-chap4moments"><span class="header-section-number">4.5.1</span> Method of Moments Estimation</a></li>
+  <li><a href="#examples-3" id="toc-examples-3" class="nav-link" data-scroll-target="#examples-3"><span class="header-section-number">4.5.2</span> Examples</a>
   <ul class="collapse">
-  <li><a href="#poisson-expected-counts-maximum-likelihood-estimator" id="toc-poisson-expected-counts-maximum-likelihood-estimator" class="nav-link" data-scroll-target="#poisson-expected-counts-maximum-likelihood-estimator"><span class="header-section-number">4.5.1</span> Poisson Expected Counts: Maximum Likelihood Estimator</a></li>
-  <li><a href="#poisson-expected-counts-minimum-variance-unbiased-estimator" id="toc-poisson-expected-counts-minimum-variance-unbiased-estimator" class="nav-link" data-scroll-target="#poisson-expected-counts-minimum-variance-unbiased-estimator"><span class="header-section-number">4.5.2</span> Poisson Expected Counts: Minimum Variance Unbiased Estimator</a></li>
-  <li><a href="#death-by-horse-kick-point-estimate" id="toc-death-by-horse-kick-point-estimate" class="nav-link" data-scroll-target="#death-by-horse-kick-point-estimate"><span class="header-section-number">4.5.3</span> Death-by-Horse-Kick: Point Estimate</a></li>
-  <li><a href="#the-crlb-for-the-variance-of-expected-counts-estimators" id="toc-the-crlb-for-the-variance-of-expected-counts-estimators" class="nav-link" data-scroll-target="#the-crlb-for-the-variance-of-expected-counts-estimators"><span class="header-section-number">4.5.4</span> The CRLB for the Variance of Expected Counts Estimators</a></li>
-  <li><a href="#minimum-variance-unbiased-estimation-lack-of-invariance" id="toc-minimum-variance-unbiased-estimation-lack-of-invariance" class="nav-link" data-scroll-target="#minimum-variance-unbiased-estimation-lack-of-invariance"><span class="header-section-number">4.5.5</span> Minimum Variance Unbiased Estimation: Lack of Invariance</a></li>
-  <li><a href="#gamma-distribution-method-of-moments-estimation" id="toc-gamma-distribution-method-of-moments-estimation" class="nav-link" data-scroll-target="#gamma-distribution-method-of-moments-estimation"><span class="header-section-number">4.5.6</span> Gamma Distribution: Method of Moments Estimation</a></li>
-  <li><a href="#gamma-distribution-numerical-maximum-likelihood-estimation" id="toc-gamma-distribution-numerical-maximum-likelihood-estimation" class="nav-link" data-scroll-target="#gamma-distribution-numerical-maximum-likelihood-estimation"><span class="header-section-number">4.5.7</span> Gamma Distribution: Numerical Maximum Likelihood Estimation</a></li>
+  <li><a href="#poisson-expected-counts-maximum-likelihood-estimator" id="toc-poisson-expected-counts-maximum-likelihood-estimator" class="nav-link" data-scroll-target="#poisson-expected-counts-maximum-likelihood-estimator"><span class="header-section-number">4.5.2.1</span> Poisson Expected Counts: Maximum Likelihood Estimator</a></li>
+  <li><a href="#poisson-expected-counts-minimum-variance-unbiased-estimator" id="toc-poisson-expected-counts-minimum-variance-unbiased-estimator" class="nav-link" data-scroll-target="#poisson-expected-counts-minimum-variance-unbiased-estimator"><span class="header-section-number">4.5.2.2</span> Poisson Expected Counts: Minimum Variance Unbiased Estimator</a></li>
+  <li><a href="#death-by-horse-kick-point-estimate" id="toc-death-by-horse-kick-point-estimate" class="nav-link" data-scroll-target="#death-by-horse-kick-point-estimate"><span class="header-section-number">4.5.2.3</span> Death-by-Horse-Kick: Point Estimate</a></li>
+  <li><a href="#the-crlb-for-the-variance-of-expected-counts-estimators" id="toc-the-crlb-for-the-variance-of-expected-counts-estimators" class="nav-link" data-scroll-target="#the-crlb-for-the-variance-of-expected-counts-estimators"><span class="header-section-number">4.5.2.4</span> The CRLB for the Variance of Expected Counts Estimators</a></li>
+  <li><a href="#minimum-variance-unbiased-estimation-lack-of-invariance" id="toc-minimum-variance-unbiased-estimation-lack-of-invariance" class="nav-link" data-scroll-target="#minimum-variance-unbiased-estimation-lack-of-invariance"><span class="header-section-number">4.5.2.5</span> Minimum Variance Unbiased Estimation: Lack of Invariance</a></li>
+  <li><a href="#gamma-distribution-method-of-moments-estimation" id="toc-gamma-distribution-method-of-moments-estimation" class="nav-link" data-scroll-target="#gamma-distribution-method-of-moments-estimation"><span class="header-section-number">4.5.2.6</span> Gamma Distribution: Method of Moments Estimation</a></li>
+  <li><a href="#gamma-distribution-numerical-maximum-likelihood-estimation" id="toc-gamma-distribution-numerical-maximum-likelihood-estimation" class="nav-link" data-scroll-target="#gamma-distribution-numerical-maximum-likelihood-estimation"><span class="header-section-number">4.5.2.7</span> Gamma Distribution: Numerical Maximum Likelihood Estimation</a></li>
   </ul></li>
-  <li><a href="#confidence-intervals" id="toc-confidence-intervals" class="nav-link" data-scroll-target="#confidence-intervals"><span class="header-section-number">4.6</span> Confidence Intervals</a>
+  </ul></li>
+  <li><a href="#sec-chap4confidence" id="toc-sec-chap4confidence" class="nav-link" data-scroll-target="#sec-chap4confidence"><span class="header-section-number">4.6</span> Confidence Intervals</a>
+  <ul>
+  <li><a href="#sec-chap4bootstrap" id="toc-sec-chap4bootstrap" class="nav-link" data-scroll-target="#sec-chap4bootstrap"><span class="header-section-number">4.6.1</span> Simulation and the Bootstrap</a></li>
+  <li><a href="#examples-4" id="toc-examples-4" class="nav-link" data-scroll-target="#examples-4"><span class="header-section-number">4.6.2</span> Examples</a>
   <ul class="collapse">
-  <li><a href="#poisson-expected-counts-confidence-interval" id="toc-poisson-expected-counts-confidence-interval" class="nav-link" data-scroll-target="#poisson-expected-counts-confidence-interval"><span class="header-section-number">4.6.1</span> Poisson Expected Counts: Confidence Interval</a></li>
-  <li><a href="#death-by-horse-kick-confidence-interval" id="toc-death-by-horse-kick-confidence-interval" class="nav-link" data-scroll-target="#death-by-horse-kick-confidence-interval"><span class="header-section-number">4.6.2</span> Death-by-Horse-Kick: Confidence Interval</a></li>
-  <li><a href="#death-by-horse-kick-nonparametric-bootstrap-confidence-interval" id="toc-death-by-horse-kick-nonparametric-bootstrap-confidence-interval" class="nav-link" data-scroll-target="#death-by-horse-kick-nonparametric-bootstrap-confidence-interval"><span class="header-section-number">4.6.3</span> Death-by-Horse-Kick: Nonparametric Bootstrap Confidence Interval</a></li>
-  <li><a href="#bootstrap-sample-proportion-of-observed-data" id="toc-bootstrap-sample-proportion-of-observed-data" class="nav-link" data-scroll-target="#bootstrap-sample-proportion-of-observed-data"><span class="header-section-number">4.6.4</span> Bootstrap Sample: Proportion of Observed Data</a></li>
-  <li><a href="#death-by-horse-kick-simulation-based-confidence-interval" id="toc-death-by-horse-kick-simulation-based-confidence-interval" class="nav-link" data-scroll-target="#death-by-horse-kick-simulation-based-confidence-interval"><span class="header-section-number">4.6.5</span> Death-by-Horse Kick: Simulation-Based Confidence Interval</a></li>
-  <li><a href="#zero-truncated-poisson-expected-counts-simulation-based-confidence-interval" id="toc-zero-truncated-poisson-expected-counts-simulation-based-confidence-interval" class="nav-link" data-scroll-target="#zero-truncated-poisson-expected-counts-simulation-based-confidence-interval"><span class="header-section-number">4.6.6</span> Zero-Truncated Poisson Expected Counts: Simulation-Based Confidence Interval</a></li>
+  <li><a href="#poisson-expected-counts-confidence-interval" id="toc-poisson-expected-counts-confidence-interval" class="nav-link" data-scroll-target="#poisson-expected-counts-confidence-interval"><span class="header-section-number">4.6.2.1</span> Poisson Expected Counts: Confidence Interval</a></li>
+  <li><a href="#death-by-horse-kick-confidence-interval" id="toc-death-by-horse-kick-confidence-interval" class="nav-link" data-scroll-target="#death-by-horse-kick-confidence-interval"><span class="header-section-number">4.6.2.2</span> Death-by-Horse-Kick: Confidence Interval</a></li>
+  <li><a href="#death-by-horse-kick-nonparametric-bootstrap-confidence-interval" id="toc-death-by-horse-kick-nonparametric-bootstrap-confidence-interval" class="nav-link" data-scroll-target="#death-by-horse-kick-nonparametric-bootstrap-confidence-interval"><span class="header-section-number">4.6.2.3</span> Death-by-Horse-Kick: Nonparametric Bootstrap Confidence Interval</a></li>
+  <li><a href="#bootstrap-sample-proportion-of-observed-data" id="toc-bootstrap-sample-proportion-of-observed-data" class="nav-link" data-scroll-target="#bootstrap-sample-proportion-of-observed-data"><span class="header-section-number">4.6.2.4</span> Bootstrap Sample: Proportion of Observed Data</a></li>
+  <li><a href="#death-by-horse-kick-simulation-based-confidence-interval" id="toc-death-by-horse-kick-simulation-based-confidence-interval" class="nav-link" data-scroll-target="#death-by-horse-kick-simulation-based-confidence-interval"><span class="header-section-number">4.6.2.5</span> Death-by-Horse Kick: Simulation-Based Confidence Interval</a></li>
+  <li><a href="#zero-truncated-poisson-expected-counts-simulation-based-confidence-interval" id="toc-zero-truncated-poisson-expected-counts-simulation-based-confidence-interval" class="nav-link" data-scroll-target="#zero-truncated-poisson-expected-counts-simulation-based-confidence-interval"><span class="header-section-number">4.6.2.6</span> Zero-Truncated Poisson Expected Counts: Simulation-Based Confidence Interval</a></li>
   </ul></li>
-  <li><a href="#hypothesis-testing" id="toc-hypothesis-testing" class="nav-link" data-scroll-target="#hypothesis-testing"><span class="header-section-number">4.7</span> Hypothesis Testing</a>
+  </ul></li>
+  <li><a href="#sec-chap4hypothesis" id="toc-sec-chap4hypothesis" class="nav-link" data-scroll-target="#sec-chap4hypothesis"><span class="header-section-number">4.7</span> Hypothesis Testing: Likelihood Ratio Test</a>
+  <ul>
+  <li><a href="#examples-5" id="toc-examples-5" class="nav-link" data-scroll-target="#examples-5"><span class="header-section-number">4.7.1</span> Examples</a>
   <ul class="collapse">
-  <li><a href="#poisson-expected-counts-uniformly-most-powerful-test" id="toc-poisson-expected-counts-uniformly-most-powerful-test" class="nav-link" data-scroll-target="#poisson-expected-counts-uniformly-most-powerful-test"><span class="header-section-number">4.7.1</span> Poisson Expected Counts: Uniformly Most Powerful Test</a></li>
-  <li><a href="#poisson-expected-counts-likelihood-ratio-test" id="toc-poisson-expected-counts-likelihood-ratio-test" class="nav-link" data-scroll-target="#poisson-expected-counts-likelihood-ratio-test"><span class="header-section-number">4.7.2</span> Poisson Expected Counts: Likelihood Ratio Test</a></li>
-  <li><a href="#normal-population-mean-lrt-with-wilks-theorem" id="toc-normal-population-mean-lrt-with-wilks-theorem" class="nav-link" data-scroll-target="#normal-population-mean-lrt-with-wilks-theorem"><span class="header-section-number">4.7.3</span> Normal Population Mean: LRT With Wilks’ Theorem</a></li>
-  <li><a href="#normal-population-mean-lrt-via-simulation" id="toc-normal-population-mean-lrt-via-simulation" class="nav-link" data-scroll-target="#normal-population-mean-lrt-via-simulation"><span class="header-section-number">4.7.4</span> Normal Population Mean: LRT Via Simulation</a></li>
-  <li><a href="#poisson-distribution-chi-square-based-hypothesis-testing" id="toc-poisson-distribution-chi-square-based-hypothesis-testing" class="nav-link" data-scroll-target="#poisson-distribution-chi-square-based-hypothesis-testing"><span class="header-section-number">4.7.5</span> Poisson Distribution: Chi-Square-Based Hypothesis Testing</a></li>
-  <li><a href="#death-by-horse-kick-are-the-data-poisson-distributed" id="toc-death-by-horse-kick-are-the-data-poisson-distributed" class="nav-link" data-scroll-target="#death-by-horse-kick-are-the-data-poisson-distributed"><span class="header-section-number">4.7.6</span> Death-by-Horse-Kick: Are the Data Poisson Distributed?</a></li>
+  <li><a href="#poisson-expected-counts-uniformly-most-powerful-test" id="toc-poisson-expected-counts-uniformly-most-powerful-test" class="nav-link" data-scroll-target="#poisson-expected-counts-uniformly-most-powerful-test"><span class="header-section-number">4.7.1.1</span> Poisson Expected Counts: Uniformly Most Powerful Test</a></li>
+  <li><a href="#poisson-expected-counts-likelihood-ratio-test" id="toc-poisson-expected-counts-likelihood-ratio-test" class="nav-link" data-scroll-target="#poisson-expected-counts-likelihood-ratio-test"><span class="header-section-number">4.7.1.2</span> Poisson Expected Counts: Likelihood Ratio Test</a></li>
+  <li><a href="#normal-population-mean-lrt-with-wilks-theorem" id="toc-normal-population-mean-lrt-with-wilks-theorem" class="nav-link" data-scroll-target="#normal-population-mean-lrt-with-wilks-theorem"><span class="header-section-number">4.7.1.3</span> Normal Population Mean: LRT With Wilks’ Theorem</a></li>
+  <li><a href="#normal-population-mean-lrt-via-simulation" id="toc-normal-population-mean-lrt-via-simulation" class="nav-link" data-scroll-target="#normal-population-mean-lrt-via-simulation"><span class="header-section-number">4.7.1.4</span> Normal Population Mean: LRT Via Simulation</a></li>
+  <li><a href="#poisson-distribution-chi-square-based-hypothesis-testing" id="toc-poisson-distribution-chi-square-based-hypothesis-testing" class="nav-link" data-scroll-target="#poisson-distribution-chi-square-based-hypothesis-testing"><span class="header-section-number">4.7.1.5</span> Poisson Distribution: Chi-Square-Based Hypothesis Testing</a></li>
+  <li><a href="#death-by-horse-kick-are-the-data-poisson-distributed" id="toc-death-by-horse-kick-are-the-data-poisson-distributed" class="nav-link" data-scroll-target="#death-by-horse-kick-are-the-data-poisson-distributed"><span class="header-section-number">4.7.1.6</span> Death-by-Horse-Kick: Are the Data Poisson Distributed?</a></li>
   </ul></li>
-  <li><a href="#poisson-and-negative-binomial-regression" id="toc-poisson-and-negative-binomial-regression" class="nav-link" data-scroll-target="#poisson-and-negative-binomial-regression"><span class="header-section-number">4.8</span> Poisson and Negative Binomial Regression</a>
+  </ul></li>
+  <li><a href="#sec-chap4poireg" id="toc-sec-chap4poireg" class="nav-link" data-scroll-target="#sec-chap4poireg"><span class="header-section-number">4.8</span> Poisson and Negative Binomial Regression</a>
+  <ul>
+  <li><a href="#poisson-regression" id="toc-poisson-regression" class="nav-link" data-scroll-target="#poisson-regression"><span class="header-section-number">4.8.1</span> Poisson Regression</a></li>
+  <li><a href="#negative-binomial-regression" id="toc-negative-binomial-regression" class="nav-link" data-scroll-target="#negative-binomial-regression"><span class="header-section-number">4.8.2</span> Negative Binomial Regression</a></li>
+  <li><a href="#examples-6" id="toc-examples-6" class="nav-link" data-scroll-target="#examples-6"><span class="header-section-number">4.8.3</span> Examples</a>
   <ul class="collapse">
-  <li><a href="#poisson-regression-example" id="toc-poisson-regression-example" class="nav-link" data-scroll-target="#poisson-regression-example"><span class="header-section-number">4.8.1</span> Poisson Regression: Example</a></li>
-  <li><a href="#negative-binomial-regression-example" id="toc-negative-binomial-regression-example" class="nav-link" data-scroll-target="#negative-binomial-regression-example"><span class="header-section-number">4.8.2</span> Negative Binomial Regression: Example</a></li>
+  <li><a href="#poisson-regression-example" id="toc-poisson-regression-example" class="nav-link" data-scroll-target="#poisson-regression-example"><span class="header-section-number">4.8.3.1</span> Poisson Regression: Example</a></li>
+  <li><a href="#negative-binomial-regression-example" id="toc-negative-binomial-regression-example" class="nav-link" data-scroll-target="#negative-binomial-regression-example"><span class="header-section-number">4.8.3.2</span> Negative Binomial Regression: Example</a></li>
   </ul></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">4.9</span> Exercises</a></li>
+  </ul></li>
+  <li><a href="#sec-chap4exercises" id="toc-sec-chap4exercises" class="nav-link" data-scroll-target="#sec-chap4exercises"><span class="header-section-number">4.9</span> Exercises</a></li>
   </ul>
 </nav>
     </div>
@@ -335,7 +366,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The Poisson (and Related) Distributions</span></h1>
+<h1 class="title"><span id="sec-chap4" class="quarto-section-identifier"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The Poisson (and Related) Distributions</span></span></h1>
 </div>
 
 
@@ -392,8 +423,8 @@ window.Quarto = {
 <p><span class="math inline">\(x\)</span> is the number of deaths observed in any one Prussian army corp in any one year, and <span class="math inline">\(N(x)\)</span> is the number of corps-years in which <span class="math inline">\(x\)</span> deaths were observed. (<span class="math inline">\(N(x)\)</span> sums to <span class="math inline">\(20 \cdot 10 = 200\)</span>, reflecting that the compiled data represent 10 army corps observed over a 20-year period.)</p>
 <p>These data are an example of a process, i.e., a sequence of observations, but we can immediately see that unlike the case with coin flips, this process is <em>not</em> a Bernoulli process. That’s because the number of possible outcomes is greater than two (0 and 1); in fact, the number of possible outcomes is countably infinite, so we could not even call this a multinomial process. Well, the reader might say, we <em>could</em> simply discretize the data more finely, so that the number of possible outcomes is at least finite (multinomial) or better yet falls to two (Bernoulli). Let’s get monthly data, or daily data, or hourly data. However, there is no time period <span class="math inline">\(\Delta t\)</span> for which the number of possible outcomes is limited to some maximum value: in theory, an infinite number of soldiers could die in the same second, or even the same nanosecond.</p>
 <p>But let’s keep playing with this idea of making the time periods smaller and smaller. Let the number of time periods into which we divide our observation interval, <span class="math inline">\(k\)</span>, go to infinity such that the probability of observing a horse-kick death <span class="math inline">\(p\)</span> goes to zero, but in such a way that <span class="math inline">\(kp \rightarrow \lambda\)</span>, where <span class="math inline">\(\lambda\)</span> is a constant. Under these conditions, the binomial distribution transforms into the Poisson distribution, which Bortkiewicz dubbed the <em>law of small numbers</em>. This distribution gives the probability of observing a particular number of events (“counts”) in a fixed interval of space and/or time, given some expected number of events in that interval, and is the one that is most commonly applied in practice to model counts-based data.</p>
-<section id="probability-mass-function" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="probability-mass-function"><span class="header-section-number">4.1</span> Probability Mass Function</h2>
+<section id="sec-chap4pmf" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="sec-chap4pmf"><span class="header-section-number">4.1</span> Poisson Distribution: Probability Mass Function</h2>
 <div class="graybox">
 <p>What to take away from this section:</p>
 <ul>
@@ -432,9 +463,10 @@ Figure&nbsp;4.1: Poisson probability mass functions for <span class="math inline
 </div>
 </div>
 </div>
-<hr>
-<section id="poisson-random-variable-expected-value" class="level3" data-number="4.1.1">
-<h3 data-number="4.1.1" class="anchored" data-anchor-id="poisson-random-variable-expected-value"><span class="header-section-number">4.1.1</span> Poisson Random Variable: Expected Value</h3>
+<section id="examples" class="level3" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="examples"><span class="header-section-number">4.1.1</span> Examples</h3>
+<section id="poisson-random-variable-expected-value" class="level4" data-number="4.1.1.1">
+<h4 data-number="4.1.1.1" class="anchored" data-anchor-id="poisson-random-variable-expected-value"><span class="header-section-number">4.1.1.1</span> Poisson Random Variable: Expected Value</h4>
 <blockquote class="blockquote">
 <p><strong>Recall:</strong> <em>the expected value of a discretely distributed random variable is</em> <span class="math display">\[
 E[X] = \sum_x x p_X(x) \,,
@@ -455,10 +487,9 @@ V[X] = \sum_x (x-\mu)^2 p_X(x) = E[X^2] - (E[X])^2\,,
 <blockquote class="blockquote">
 <p>A similar calculation to the one above, but that starts with the derivation of the factorial moment <span class="math inline">\(E[X(X-1)]\)</span>, eventually yields the Poisson variance, which is also <span class="math inline">\(\lambda\)</span>.</p>
 </blockquote>
-<hr>
 </section>
-<section id="poisson-distribution-normal-approximation" class="level3" data-number="4.1.2">
-<h3 data-number="4.1.2" class="anchored" data-anchor-id="poisson-distribution-normal-approximation"><span class="header-section-number">4.1.2</span> Poisson Distribution: Normal Approximation</h3>
+<section id="poisson-distribution-normal-approximation" class="level4" data-number="4.1.1.2">
+<h4 data-number="4.1.1.2" class="anchored" data-anchor-id="poisson-distribution-normal-approximation"><span class="header-section-number">4.1.1.2</span> Poisson Distribution: Normal Approximation</h4>
 <blockquote class="blockquote">
 <p>As the expected number of counts, <span class="math inline">\(\lambda\)</span>, increases, a Poisson random variable will converge in distribution to a normal random variable. Here, we show mathematically why this is the case.</p>
 </blockquote>
@@ -484,10 +515,9 @@ p_X(x \vert \lambda) \approx \frac{\lambda^x}{\sqrt{2 \pi x}} x^{-x} e^{x-\lambd
 p_X(x \vert \lambda) \approx \frac{1}{\sqrt{2 \pi x}} \exp\left( -\frac{\delta^2}{2} \right) = \frac{1}{\sqrt{2 \pi x}} \exp\left( -\frac{(x-\lambda)^2}{2\sqrt{\lambda}} \right) \,.
 \]</span> This has the (approximate) form of a normal pdf, at least for values <span class="math inline">\(x \approx \lambda\)</span>. So, in the end, the Poisson probability mass function <span class="math inline">\(p_X(x \vert \lambda)\)</span> has approximately the same shape as the normal probability density function <span class="math inline">\(f_X(x \vert \mu=\lambda,\sigma^2=\lambda)\)</span> for <span class="math inline">\(x \gg 1\)</span> and <span class="math inline">\(x \approx \lambda\)</span>.</p>
 </blockquote>
-<hr>
 </section>
-<section id="poisson-distribution-exponential-family" class="level3" data-number="4.1.3">
-<h3 data-number="4.1.3" class="anchored" data-anchor-id="poisson-distribution-exponential-family"><span class="header-section-number">4.1.3</span> Poisson Distribution: Exponential Family</h3>
+<section id="poisson-distribution-exponential-family" class="level4" data-number="4.1.1.3">
+<h4 data-number="4.1.1.3" class="anchored" data-anchor-id="poisson-distribution-exponential-family"><span class="header-section-number">4.1.1.3</span> Poisson Distribution: Exponential Family</h4>
 <blockquote class="blockquote">
 <p><strong>Recall:</strong> <em>the exponential family of distributions is the set of distributions whose probability mass or density functions can be expressed as</em> <span class="math display">\[
 h(x) \exp\left[\left(\sum_{i=1}^p \eta_i(\boldsymbol{\theta}) T_i(x)\right) - A(\boldsymbol{\theta})\right] \,,
@@ -504,8 +534,9 @@ h(x) &amp;= \frac{1}{x!} ~~~~~~ \eta(\lambda) = \log \lambda ~~~~~~ T(x) = x ~~~
 </blockquote>
 </section>
 </section>
-<section id="poisson-distribution-cumulative-distribution-function" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="poisson-distribution-cumulative-distribution-function"><span class="header-section-number">4.2</span> Poisson Distribution: Cumulative Distribution Function</h2>
+</section>
+<section id="sec-chap4cdf" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="sec-chap4cdf"><span class="header-section-number">4.2</span> Poisson Distribution: Cumulative Distribution Function</h2>
 <div class="graybox">
 <p>What to take away from this section:</p>
 <ul>
@@ -532,7 +563,7 @@ x = \mbox{inf}\{x : F_X(x) \geq q\} \,,
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-poicdf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="fig-poicdf-1" class="quarto-float quarto-figure quarto-figure-center anchored" width="288" data-fig-align="center">
+<div id="fig-poicdf-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="288">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-poicdf-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="04-poisson_files/figure-html/fig-poicdf-1.png" id="fig-poicdf-1" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-poicdf" width="288">
@@ -544,7 +575,7 @@ x = \mbox{inf}\{x : F_X(x) \geq q\} \,,
 </div>
 </div>
 <div class="cell-output-display">
-<div id="fig-poicdf-2" class="quarto-float quarto-figure quarto-figure-center anchored" width="288" data-fig-align="center">
+<div id="fig-poicdf-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="288">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-poicdf-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="04-poisson_files/figure-html/fig-poicdf-2.png" id="fig-poicdf-2" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-poicdf" width="288">
@@ -562,9 +593,10 @@ Figure&nbsp;4.2: Illustration of the cumulative distribution function <span clas
 </figure>
 </div>
 </div>
-<hr>
-<section id="computing-probabilities" class="level3" data-number="4.2.1">
-<h3 data-number="4.2.1" class="anchored" data-anchor-id="computing-probabilities"><span class="header-section-number">4.2.1</span> Computing Probabilities</h3>
+<section id="example" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="example"><span class="header-section-number">4.2.1</span> Example</h3>
+<section id="computing-probabilities" class="level4" data-number="4.2.1.1">
+<h4 data-number="4.2.1.1" class="anchored" data-anchor-id="computing-probabilities"><span class="header-section-number">4.2.1.1</span> Computing Probabilities</h4>
 <blockquote class="blockquote">
 <ol type="1">
 <li>If <span class="math inline">\(X \sim\)</span> Poisson(5), which is <span class="math inline">\(P(4 \leq X &lt; 6)\)</span>?</li>
@@ -635,8 +667,9 @@ P(X \leq a) = F_X(a) = 0.9 ~~~ \Rightarrow ~~~ a = F_X^{-1}(0.9)
 </div>
 </section>
 </section>
-<section id="poisson-related-distributions" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="poisson-related-distributions"><span class="header-section-number">4.3</span> Poisson-Related Distributions</h2>
+</section>
+<section id="sec-chap4related" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="sec-chap4related"><span class="header-section-number">4.3</span> Poisson-Related Distributions</h2>
 <div class="graybox">
 <p>What to take away from this section:</p>
 <ul>
@@ -656,7 +689,9 @@ P(X \leq a) = F_X(a) = 0.9 ~~~ \Rightarrow ~~~ a = F_X^{-1}(0.9)
 <li>the <em>gamma</em> distribution.</li>
 </ul>
 <p>Below, we introduce each in turn.</p>
-<p><strong>Zero-Inflated Poisson Distribution.</strong> The experimental setting for this distribution is a simple one: when counting the numbers of a particular object (like an animal species) that exist at different locations and/or times, it can be the case that the object in question only exists in a subset of those locations/times…meaning that we might record a larger number of zeros than we might expect, and thus that we should not model the data with a conventional Poisson distribution. In a zero-inflated Poisson (or ZIP) process, data are assumed to be sampled according to a mixture of <em>two</em> distributions:</p>
+<section id="sec-chap4zeroinf" class="level3" data-number="4.3.1">
+<h3 data-number="4.3.1" class="anchored" data-anchor-id="sec-chap4zeroinf"><span class="header-section-number">4.3.1</span> Zero-Inflated Poisson Distribution</h3>
+<p>The experimental setting for this distribution is a simple one: when counting the numbers of a particular object (like an animal species) that exist at different locations and/or times, it can be the case that the object in question only exists in a subset of those locations/times…meaning that we might record a larger number of zeros than we might expect, and thus that we should not model the data with a conventional Poisson distribution. In a zero-inflated Poisson (or ZIP) process, data are assumed to be sampled according to a mixture of <em>two</em> distributions:</p>
 <ol type="1">
 <li>a distribution that generates only zeros; and</li>
 <li>a Poisson distribution</li>
@@ -664,8 +699,10 @@ P(X \leq a) = F_X(a) = 0.9 ~~~ \Rightarrow ~~~ a = F_X^{-1}(0.9)
 <p>The probability mass function for the ZIP distribution is <span class="math display">\[
 p_X(x) = \left\{ \begin{array}{ll} \theta + (1-\theta) e^{-\lambda} &amp; x = 0 \\ (1 - \theta) \frac{\lambda^x}{x!} e^{-\lambda} &amp; x \in \{1,2,\ldots\} \end{array} \right. \,,
 \]</span> where <span class="math inline">\(\lambda &gt; 0\)</span> and <span class="math inline">\(\theta \in [0,1]\)</span>.</p>
-<hr>
-<p><strong>Zero-Truncated Poisson Distribution.</strong> In contrast to situations in which we might invoke the zero-inflated Poisson distribution, there can be experimental settings in which the data are counts but zero is not a possibility. For instance, if our data are the number of items purchased across <span class="math inline">\(n\)</span> separate online orders, presumably none of the <span class="math inline">\(n\)</span> values will be zero: one cannot make a purchase without at least one item in the cart!</p>
+</section>
+<section id="sec-chap4zerotrunc" class="level3" data-number="4.3.2">
+<h3 data-number="4.3.2" class="anchored" data-anchor-id="sec-chap4zerotrunc"><span class="header-section-number">4.3.2</span> Zero-Truncated Poisson Distribution</h3>
+<p>In contrast to situations in which we might invoke the zero-inflated Poisson distribution, there can be experimental settings in which the data are counts but zero is not a possibility. For instance, if our data are the number of items purchased across <span class="math inline">\(n\)</span> separate online orders, presumably none of the <span class="math inline">\(n\)</span> values will be zero: one cannot make a purchase without at least one item in the cart!</p>
 <p>The zero-truncated Poisson distribution is also known as the conditional Poisson distribution, and that alternative name makes sense, as we can derive the probability mass function for the ZTP distribution by computing <span class="math inline">\(P(X = x \vert X &gt; 0)\)</span>, where <span class="math inline">\(X\)</span> is a(n uncoditional) Poisson random variable: <span class="math display">\[\begin{align*}
 p_X(x) = P(X = x \vert X &gt; 0) &amp;= \frac{P(X = x \cap X &gt; 0)}{P(X &gt; 0)} \\
 &amp;= \frac{P(X = x \cap X &gt; 0)}{1 - P(X = 0)} \\
@@ -673,8 +710,10 @@ p_X(x) = P(X = x \vert X &gt; 0) &amp;= \frac{P(X = x \cap X &gt; 0)}{P(X &gt; 0
 &amp;= \frac{\lambda^x}{x!}e^{-\lambda}\frac{1}{1 - e^{-\lambda}} \\
 &amp;= \frac{\lambda^x}{x! (e^\lambda - 1)} \,,
 \end{align*}\]</span> where <span class="math inline">\(x \in \{1,\ldots\}\)</span> and <span class="math inline">\(\lambda &gt; 0\)</span>.</p>
-<hr>
-<p><strong>Gamma Distribution.</strong> The gamma distribution is a continuous distribution that is commonly used to, e.g., model the waiting times between discrete events. (Recall that we have previously encountered this distribution: given <span class="math inline">\(n\)</span> iid normal random variables, <span class="math inline">\(S^2\)</span> is a gamma-distributed random variable.) Its probability density function is given by <span class="math display">\[
+</section>
+<section id="sec-chap4gamma" class="level3" data-number="4.3.3">
+<h3 data-number="4.3.3" class="anchored" data-anchor-id="sec-chap4gamma"><span class="header-section-number">4.3.3</span> Gamma Distribution</h3>
+<p>The gamma distribution is a continuous distribution that is commonly used to, e.g., model the waiting times between discrete events. (Recall that we have previously encountered this distribution: given <span class="math inline">\(n\)</span> iid normal random variables, <span class="math inline">\(S^2\)</span> is a gamma-distributed random variable.) Its probability density function is given by <span class="math display">\[
 f_X(x) = \frac{x^{a-1}}{b^a} \frac{\exp\left(-x/b\right)}{\Gamma(a)} \,,
 \]</span> where <span class="math inline">\(x \in [0,\infty)\)</span>, <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are both <span class="math inline">\(&gt;\)</span> 0, and <span class="math inline">\(\Gamma(a)\)</span> is the gamma function: <span class="math display">\[
 \Gamma(a) = \int_0^\infty u^{a-1} e^{-u} du \,.
@@ -709,7 +748,7 @@ f_X(x) = \frac{1}{b} \exp\left(-\frac{x}{b}\right) \,,
 </tbody>
 </table>
 </div>
-<p>Let’s conclude this section by repeating the exercise we did in the last chapter while discussing the beta distribution, the one in which we examined the functional form of the likelihood function <span class="math inline">\(\mathcal{L}(p \vert k,x)\)</span>. Here, we write down the Poisson likelihood function <span class="math display">\[
+<p>Let’s conclude this section by repeating the exercise we performed in <a href="03-binomial.html#sec-chap3beta" class="quarto-xref"><span>Section 3.3.4</span></a> when discussing the beta distribution, the one in which we examined the functional form of the likelihood function <span class="math inline">\(\mathcal{L}(p \vert k,x)\)</span>. Here, we write down the Poisson likelihood function <span class="math display">\[
 \mathcal{L}(\lambda \vert x) = \frac{\lambda^x}{x!} e^{-\lambda}
 \]</span> and compare it with the gamma pdf. We can match the gamma pdf if we map the Poisson <span class="math inline">\(\lambda\)</span> to the gamma <span class="math inline">\(x\)</span>, the Poisson <span class="math inline">\(x\)</span> to the gamma <span class="math inline">\(a-1\)</span>, and we set <span class="math inline">\(b\)</span> to 1. But because the Poisson <span class="math inline">\(x\)</span> is an integer with values <span class="math inline">\(\{0,1,2,\ldots\}\)</span>, we find that the integrand specifically matches the Erlang pdf, for which <span class="math inline">\(a = \{1,2,3,\ldots\}\)</span>. So, if we observe a random variable <span class="math inline">\(X \sim\)</span> Poisson(<span class="math inline">\(\lambda\)</span>), then the likelihood function <span class="math inline">\(\mathcal{L}(\lambda \vert x)\)</span> has the shape (and normalization!) of a Gamma(<span class="math inline">\(x+1,1\)</span>) (or Erlang(<span class="math inline">\(x+1\)</span>)) distribution.</p>
 <p>(About the normalization: if we integrate the likelihood function over its domain, we find that <span class="math display">\[
@@ -729,9 +768,11 @@ Figure&nbsp;4.3: Three examples of gamma probability density functions: Gamma(2,
 </div>
 </div>
 </div>
-<hr>
-<section id="zero-inflated-poisson-random-variable-expected-value" class="level3" data-number="4.3.1">
-<h3 data-number="4.3.1" class="anchored" data-anchor-id="zero-inflated-poisson-random-variable-expected-value"><span class="header-section-number">4.3.1</span> Zero-Inflated Poisson Random Variable: Expected Value</h3>
+</section>
+<section id="examples-1" class="level3" data-number="4.3.4">
+<h3 data-number="4.3.4" class="anchored" data-anchor-id="examples-1"><span class="header-section-number">4.3.4</span> Examples</h3>
+<section id="zero-inflated-poisson-random-variable-expected-value" class="level4" data-number="4.3.4.1">
+<h4 data-number="4.3.4.1" class="anchored" data-anchor-id="zero-inflated-poisson-random-variable-expected-value"><span class="header-section-number">4.3.4.1</span> Zero-Inflated Poisson Random Variable: Expected Value</h4>
 <blockquote class="blockquote">
 <p>The zero-inflated Poisson, or ZIP, distribution has probability mass function <span class="math display">\[
 p_X(x) = \left\{ \begin{array}{ll} \theta + (1-\theta) e^{-\lambda} &amp; x = 0 \\ (1 - \theta) \frac{\lambda^x}{x!} e^{-\lambda} &amp; x = \{1,2,\ldots\} \end{array} \right.
@@ -743,10 +784,9 @@ E[X] = \sum_{x=0}^\infty x p_X(x) &amp;= 0 + \sum_{x=1}^\infty x(1-\theta)\frac{
 &amp;= \lambda (1-\theta) \,.
 \end{align*}\]</span> The variance, which one can derive by working with the second factorial moment <span class="math inline">\(E[X(X-1)]\)</span>, is <span class="math inline">\(\lambda (1-\theta) (1 + \lambda\theta)\)</span>.</p>
 </blockquote>
-<hr>
 </section>
-<section id="zero-truncated-poisson-random-variable-expected-value" class="level3" data-number="4.3.2">
-<h3 data-number="4.3.2" class="anchored" data-anchor-id="zero-truncated-poisson-random-variable-expected-value"><span class="header-section-number">4.3.2</span> Zero-Truncated Poisson Random Variable: Expected Value</h3>
+<section id="zero-truncated-poisson-random-variable-expected-value" class="level4" data-number="4.3.4.2">
+<h4 data-number="4.3.4.2" class="anchored" data-anchor-id="zero-truncated-poisson-random-variable-expected-value"><span class="header-section-number">4.3.4.2</span> Zero-Truncated Poisson Random Variable: Expected Value</h4>
 <blockquote class="blockquote">
 <p>The zero-truncated Poisson, or ZTP, distribution has probability mass function <span class="math display">\[
 p_X(x) = \frac{\lambda^x}{x! (e^\lambda-1)} \,,
@@ -762,10 +802,9 @@ E[X] &amp;= \sum_{x=1}^\infty x p_X(x) \\
 V[X] = \frac{\lambda [ 1 - (\lambda+1) e^{-\lambda} ]}{(1-e^{-\lambda})^2} \,.
 \]</span></p>
 </blockquote>
-<hr>
 </section>
-<section id="gamma-random-variable-expected-value" class="level3" data-number="4.3.3">
-<h3 data-number="4.3.3" class="anchored" data-anchor-id="gamma-random-variable-expected-value"><span class="header-section-number">4.3.3</span> Gamma Random Variable: Expected Value</h3>
+<section id="gamma-random-variable-expected-value" class="level4" data-number="4.3.4.3">
+<h4 data-number="4.3.4.3" class="anchored" data-anchor-id="gamma-random-variable-expected-value"><span class="header-section-number">4.3.4.3</span> Gamma Random Variable: Expected Value</h4>
 <blockquote class="blockquote">
 <p>The expected value of a gamma random variable is found by introducing constants into the expected value integral so that a gamma pdf integrand is formed. Specifically <span class="math display">\[\begin{align*}
 E[X] = \int_0^\infty x f_X(x) dx &amp;= \int_0^\infty x \frac{x^{a-1}}{b^a} \frac{\exp(-x/b)}{\Gamma(a)} dx \\
@@ -780,10 +819,9 @@ E[X] = \int_0^\infty x f_X(x) dx &amp;= \int_0^\infty x \frac{x^{a-1}}{b^a} \fra
 <blockquote class="blockquote">
 <p>A similar calculation involving the derivation of <span class="math inline">\(E[X^2]\)</span> allows us to determine that the variance of a gamma random variable is <span class="math inline">\(V[X] = a b^2\)</span>.</p>
 </blockquote>
-<hr>
 </section>
-<section id="exponential-distribution-memorylessness" class="level3" data-number="4.3.4">
-<h3 data-number="4.3.4" class="anchored" data-anchor-id="exponential-distribution-memorylessness"><span class="header-section-number">4.3.4</span> Exponential Distribution: Memorylessness</h3>
+<section id="exponential-distribution-memorylessness" class="level4" data-number="4.3.4.4">
+<h4 data-number="4.3.4.4" class="anchored" data-anchor-id="exponential-distribution-memorylessness"><span class="header-section-number">4.3.4.4</span> Exponential Distribution: Memorylessness</h4>
 <blockquote class="blockquote">
 <p>An important feature of the exponential distribution is that when we use it to model, e.g., the lifetimes of components in a system, it exhibits <em>memorylessness</em>. In other words, if <span class="math inline">\(T\)</span> is the random variable representing a component’s lifetime, where <span class="math inline">\(T \sim\)</span> Exponential(<span class="math inline">\(b\)</span>) and where <span class="math inline">\(E[T] = b\)</span>, it doesn’t matter how old the component is when we first examine it: <em>from that point onward</em>, the average lifetime will be <span class="math inline">\(b\)</span>.</p>
 </blockquote>
@@ -801,8 +839,9 @@ P(T \geq t_2-t_0 \vert T \geq t_1-t_0) &amp;= \frac{P(T \geq t_2-t_0 \cap T \geq
 </blockquote>
 </section>
 </section>
-<section id="linear-functions-of-poisson-random-variables" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="linear-functions-of-poisson-random-variables"><span class="header-section-number">4.4</span> Linear Functions of Poisson Random Variables</h2>
+</section>
+<section id="sec-chap4linear" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="sec-chap4linear"><span class="header-section-number">4.4</span> Linear Functions of Poisson Random Variables</h2>
 <div class="graybox">
 <p>What to take away from this section:</p>
 <ul>
@@ -813,6 +852,7 @@ P(T \geq t_2-t_0 \vert T \geq t_1-t_0) &amp;= \frac{P(T \geq t_2-t_0 \cap T \geq
 </ul></li>
 <li><p>Foreshadowing: the sample sum result will allow us to make statistical inferences about the Poisson expected counts parameter <span class="math inline">\(\lambda\)</span>, given <span class="math inline">\(n\)</span> iid normal random variables.</p></li>
 </ul>
+<p>For previous material on sampling distributions, see <a href="02-normal.html#sec-chap2methodmgf" class="quarto-xref"><span>Section 2.3</span></a>.</p>
 </div>
 <p><br></p>
 <p>Let’s assume we are given <span class="math inline">\(n\)</span> iid Poisson random variables: <span class="math inline">\(X_1,X_2,\ldots,X_n \sim\)</span> Poisson(<span class="math inline">\(\lambda\)</span>). What is the distribution of <span class="math inline">\(Y = \sum_{i=1}^n a_i X_i\)</span>?</p>
@@ -828,9 +868,10 @@ m_Y(t) &amp;= \exp\left[\lambda\left(e^t-1\right)\right] \cdots \exp\left[\lambd
 &amp;= \exp\left[(\lambda+\cdots+\lambda)(e^t-1)\right] = \exp\left[n\lambda(e^t-1)\right] \,.
 \end{align*}\]</span> This mgf retains the form of a Poisson mgf. We thus see that the sum of <span class="math inline">\(n\)</span> iid Poisson-distributed random variables is itself Poisson distributed with parameter <span class="math inline">\(n\lambda\)</span>, i.e., <span class="math inline">\(Y = \sum_{i=1}^n X_i \sim\)</span> Poisson(<span class="math inline">\(n\lambda\)</span>).</p>
 <p>As was the case for the binomial distribution, the sample mean of <span class="math inline">\(n\)</span> iid Poisson-distributed random variables has a sampling distribution whose masses are identical to those observed for the sample sum, but whose domain shifts from <span class="math inline">\(\{0,1,\cdots\}\)</span> to <span class="math inline">\(\{0,1/n,\cdots\}\)</span>. (As a reminder, we can derive this result mathematically by making the general transformation <span class="math inline">\(\sum_{i=1}^n X_i \rightarrow (\sum_{i=1}^n X_i)/n\)</span>.) While we could define, e.g., the sample mean pmf ourselves using our own <code>R</code> function, there is no real need to: e.g., if we wish to construct a confidence interval for <span class="math inline">\(\lambda\)</span>, we can simply construct one for <span class="math inline">\(n\lambda\)</span> using the sum of the data as a statistic, and then divide each bound by <span class="math inline">\(n\)</span>. (We could also, in theory, utilize the Central Limit Theorem if <span class="math inline">\(n \gtrsim 30\)</span>, but there is absolutely no reason to do that to make inferences about <span class="math inline">\(\lambda\)</span>: we know the distribution of the sum of the data exactly, and thus there is no need to fall back upon approximations.)</p>
-<hr>
-<section id="two-poisson-random-variables-difference-distribution" class="level3" data-number="4.4.1">
-<h3 data-number="4.4.1" class="anchored" data-anchor-id="two-poisson-random-variables-difference-distribution"><span class="header-section-number">4.4.1</span> Two Poisson Random Variables: Difference Distribution</h3>
+<section id="examples-2" class="level3" data-number="4.4.1">
+<h3 data-number="4.4.1" class="anchored" data-anchor-id="examples-2"><span class="header-section-number">4.4.1</span> Examples</h3>
+<section id="two-poisson-random-variables-difference-distribution" class="level4" data-number="4.4.1.1">
+<h4 data-number="4.4.1.1" class="anchored" data-anchor-id="two-poisson-random-variables-difference-distribution"><span class="header-section-number">4.4.1.1</span> Two Poisson Random Variables: Difference Distribution</h4>
 <blockquote class="blockquote">
 <p>Let’s assume that we are pointing a camera at an object, such as a star. A star gives off photons at a particular average rate <span class="math inline">\(r_S\)</span> (with units of, e.g., photons per second). Thus if we open the shutter for a length of time <span class="math inline">\(t\)</span>, the number of photons we observe from the star is a Poisson random variable <span class="math inline">\(S \sim\)</span> Poisson(<span class="math inline">\(\lambda_S=r_St\)</span>). But the star is not the only object in the field of view; there may be other objects in the background that give off photons at a rate <span class="math inline">\(r_B\)</span>, and the number of photons we observe from the background will be <span class="math inline">\(B \sim\)</span> Poisson(<span class="math inline">\(\lambda_B=r_Bt\)</span>). Thus what we record is not <span class="math inline">\(S\)</span>, but <span class="math inline">\(T = S+B\)</span>…so how can we make statistical inferences about <span class="math inline">\(S\)</span> itself?</p>
 </blockquote>
@@ -844,10 +885,9 @@ m_S(t) = m_T(t) m_B(-t) &amp;= \exp[\lambda_T(e^t-1)] \exp[\lambda_B(e^{-t}-1)] 
 &amp;= \exp[-(\lambda_T+\lambda_B) + \lambda_Te^t + \lambda_Be^{-t}] \,,
 \end{align*}\]</span> where <span class="math inline">\(\lambda_T = \lambda_S+\lambda_B = (r_S+r_B)t\)</span>. At first, utilizing the method of mgfs appears to be a fool’s errand: this is not an mgf we know. But it turns out that the family of distributions associated with this mgf <em>does</em> have a name: <span class="math inline">\(S = T-B\)</span> is a random variable sampled according to a <em>Skellam distribution</em>, with mean <span class="math inline">\(\lambda_T-\lambda_B\)</span> and variance <span class="math inline">\(\lambda_T+\lambda_B\)</span>. We can work with this distribution to, e.g., construct confidence intervals for <span class="math inline">\(\mu_S\)</span>, etc., if we so choose. (Note, however, that in order to do this we would need to fix <span class="math inline">\(\mu_B\)</span>…or we would have to move into the realm of numerical confidence <em>region</em> construction, which is beyond the scope of this book.)</p>
 </blockquote>
-<hr>
 </section>
-<section id="zero-inflated-poisson-distribution-moment-generating-function" class="level3" data-number="4.4.2">
-<h3 data-number="4.4.2" class="anchored" data-anchor-id="zero-inflated-poisson-distribution-moment-generating-function"><span class="header-section-number">4.4.2</span> Zero-Inflated Poisson Distribution: Moment-Generating Function</h3>
+<section id="zero-inflated-poisson-distribution-moment-generating-function" class="level4" data-number="4.4.1.2">
+<h4 data-number="4.4.1.2" class="anchored" data-anchor-id="zero-inflated-poisson-distribution-moment-generating-function"><span class="header-section-number">4.4.1.2</span> Zero-Inflated Poisson Distribution: Moment-Generating Function</h4>
 <blockquote class="blockquote">
 <p>Recall that the zero-inflated Poisson, or ZIP, distribution has probability mass function <span class="math display">\[
 p_X(x) = \left\{ \begin{array}{ll} \theta + (1-\theta) e^{-\lambda} &amp; x = 0 \\ (1 - \theta) \frac{\lambda^x}{x!} e^{-\lambda} &amp; x = \{1,2,\ldots\} \end{array} \right.
@@ -865,17 +905,16 @@ m_X(t) = E[e^{tX}] &amp;= \sum_{x=0}^\infty e^{tx} p_X(x) \\
 <blockquote class="blockquote">
 <p>The mgf for, e.g., the sample sum is <span class="math display">\[
 m_Y(t) = \prod_{i=1}^n m_{X_i}(t) = \left[ m_X(t) \right]^n = \left[ \theta + (1-\theta) \exp[\lambda(e^t-1)] \right]^n \,.
-\]</span> It is clear that this is not the mgf of a ZIP distribution (or any other distribution with which we are familiar). Hence any statistical inference that we would wish to perform given ZIP-distributed data would require us to utilize simulations. We show how to use simulations to, e.g., construct confidence intervals in an example later in this chapter.</p>
+\]</span> It is clear that this is not the mgf of a ZIP distribution (or any other distribution with which we are familiar). Hence any statistical inference that we would wish to perform given ZIP-distributed data would require us to utilize simulations. We show how to use simulations to, e.g., construct confidence intervals in an example later, in <a href="#sec-chap4confidence" class="quarto-xref"><span>Section 4.6</span></a>.</p>
 </blockquote>
 <blockquote class="blockquote">
 <p>(We note, for completeness, that we run into the same issue with the zero-truncated Poisson distribution. We can derive the mgf easily enough… <span class="math display">\[
 m_X(t) = \frac{\exp[\lambda(e^t-1)] - \exp(-\lambda)}{1 - \exp(-\lambda)}
 \]</span> …but we cannot use it to derive an exact sampling distribution for, e.g., the sample sum.)</p>
 </blockquote>
-<hr>
 </section>
-<section id="exponential-data-sample-sum-distribution" class="level3" data-number="4.4.3">
-<h3 data-number="4.4.3" class="anchored" data-anchor-id="exponential-data-sample-sum-distribution"><span class="header-section-number">4.4.3</span> Exponential Data: Sample Sum Distribution</h3>
+<section id="exponential-data-sample-sum-distribution" class="level4" data-number="4.4.1.3">
+<h4 data-number="4.4.1.3" class="anchored" data-anchor-id="exponential-data-sample-sum-distribution"><span class="header-section-number">4.4.1.3</span> Exponential Data: Sample Sum Distribution</h4>
 <blockquote class="blockquote">
 <p>As stated above, the exponential distribution, i.e., the gamma distribution with <span class="math inline">\(\alpha = 1\)</span>, is used to model the waiting time between two successive events in a Poisson process. Let’s assume that we have recorded <span class="math inline">\(n\)</span> separate times between <span class="math inline">\(n\)</span> separate pairs of events. What is the distribution of <span class="math inline">\(T = T_1 + \cdots + T_n\)</span>?</p>
 </blockquote>
@@ -888,8 +927,9 @@ m_T(t) = \prod_{i=1}^n (1-b t)^{-1} = (1-b t)^{-n} \,.
 </blockquote>
 </section>
 </section>
-<section id="point-estimation" class="level2" data-number="4.5">
-<h2 data-number="4.5" class="anchored" data-anchor-id="point-estimation"><span class="header-section-number">4.5</span> Point Estimation</h2>
+</section>
+<section id="sec-chap4point" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="sec-chap4point"><span class="header-section-number">4.5</span> Point Estimation</h2>
 <div class="graybox">
 <p>What to take away from this section:</p>
 <ul>
@@ -898,17 +938,25 @@ m_T(t) = \prod_{i=1}^n (1-b t)^{-1} = (1-b t)^{-n} \,.
 <li><p>A MoM estimator does not possess the invariance property, nor is there a guarantee that it converges in distribution to a normal random variable.</p></li>
 <li><p>In the age of computers, the method of moments has been superseded by the use of numerical optimization to estimate the MLE.</p></li>
 </ul>
+<p>For previous material on point estimation, see <a href="03-binomial.html#sec-chap3point" class="quarto-xref"><span>Section 3.6</span></a>.</p>
 </div>
 <p><br></p>
 <p>Previously, we described two commonly used point estimators: the maximum likelihood estimator (or MLE) and the minimum variance unbiased estimator (or MVUE). We review both below in examples, in the context of estimating the Poisson <span class="math inline">\(\lambda\)</span> parameter. Here, for completeness, we introduce one last, less-commonly used approach, the so-called <em>method of moments</em> estimator.</p>
+<section id="sec-chap4moments" class="level3" data-number="4.5.1">
+<h3 data-number="4.5.1" class="anchored" data-anchor-id="sec-chap4moments"><span class="header-section-number">4.5.1</span> Method of Moments Estimation</h3>
 <p>The <em>method of moments</em> (or MoM) is a classic means by which to define estimators that has been historically useful when we face with the following situation: (a) the likelihood function is not easily differentiated, because it contains terms like <span class="math inline">\(\Gamma(\theta)\)</span>; and (b) the distribution has two or more free parameters, rendering it difficult (though certainly not impossible) to define the MVUE, since we would have to work with joint sufficient statistics and their multivariate sampling distributions. Now, why do we say “historically useful”? Because in the age of computers, we can always determine MLEs (or, at least, their numerical values) via numerical optimization (as shown in an example below), which effectively eliminates any need to ever use the MoM estimator in practice.</p>
 <p>Recall that by definition, <span class="math inline">\(E[X^k]\)</span> is the <span class="math inline">\(k^{\rm th}\)</span> moment of the distribution of the random variable <span class="math inline">\(X\)</span>. We can define analagous <em>sample moments</em>, e.g., <span class="math display">\[
 m_1 = \frac{1}{n} \sum_{i=1}^n X_i = \bar{X} ~~ \mbox{and} ~~ m_2 = \frac{1}{n} \sum_{i=1}^n X_i^2 = \overline{X^2} \,.
 \]</span> (For <span class="math inline">\(m_2\)</span>: note that the average of <span class="math inline">\(X_i^2\)</span> is <em>not</em> the same as the average of <span class="math inline">\(X_i\)</span>, squared.) Let’s suppose that we have <span class="math inline">\(p\)</span> parameters that we are trying to estimate. In method of moments estimation, we generally set the first <span class="math inline">\(p\)</span> population moments equal to the first <span class="math inline">\(p\)</span> sample moments and solve the system of equations to determine parameter estimates. These estimates are generally consistent, but also may be biased. (Situations may exist where higher-order moments may be preferable to use, such as when the one parameter of a distribution is <span class="math inline">\(\sigma^2\)</span> and thus we might derive a better estimator using the second moment rather than the first, but typically we use the first <span class="math inline">\(p\)</span> moments.)</p>
 <p>For the Poisson distribution, there is one parameter to estimate and thus we set <span class="math inline">\(\mu_1' = E[X] = \lambda = m_1' = \bar{X}\)</span>. We thus find that <span class="math inline">\(\hat{\lambda}_{MoM} = \bar{X}\)</span>. For a more relevant example of method of moments usage, see below.</p>
-<hr>
-<section id="poisson-expected-counts-maximum-likelihood-estimator" class="level3" data-number="4.5.1">
-<h3 data-number="4.5.1" class="anchored" data-anchor-id="poisson-expected-counts-maximum-likelihood-estimator"><span class="header-section-number">4.5.1</span> Poisson Expected Counts: Maximum Likelihood Estimator</h3>
+<div class="graybox">
+<p>For more on point estimation, go to <a href="05-uniform.html#sec-chap5point" class="quarto-xref"><span>Section 5.3</span></a>.</p>
+</div>
+</section>
+<section id="examples-3" class="level3" data-number="4.5.2">
+<h3 data-number="4.5.2" class="anchored" data-anchor-id="examples-3"><span class="header-section-number">4.5.2</span> Examples</h3>
+<section id="poisson-expected-counts-maximum-likelihood-estimator" class="level4" data-number="4.5.2.1">
+<h4 data-number="4.5.2.1" class="anchored" data-anchor-id="poisson-expected-counts-maximum-likelihood-estimator"><span class="header-section-number">4.5.2.1</span> Poisson Expected Counts: Maximum Likelihood Estimator</h4>
 <blockquote class="blockquote">
 <p><strong>Recall</strong>: <em>the value of <span class="math inline">\(\theta\)</span> that maximizes the likelihood function is the maximum likelihood estimate, or MLE, for <span class="math inline">\(\theta\)</span>. The maximum is found by taking the (partial) derivative of the (log-)likelihood function with respect to <span class="math inline">\(\theta\)</span>, setting the result to zero, and solving for <span class="math inline">\(\theta\)</span>. That solution is the maximum likelihood estimate <span class="math inline">\(\hat{\theta}_{MLE}\)</span>. Also recall the invariance property of the MLE: if <span class="math inline">\(\hat{\theta}_{MLE}\)</span> is the MLE for <span class="math inline">\(\theta\)</span>, then <span class="math inline">\(g(\hat{\theta}_{MLE})\)</span> is the MLE for <span class="math inline">\(g(\theta)\)</span>.</em></p>
 </blockquote>
@@ -929,7 +977,7 @@ m_1 = \frac{1}{n} \sum_{i=1}^n X_i = \bar{X} ~~ \mbox{and} ~~ m_2 = \frac{1}{n} 
 <p><strong>Recall</strong>: <em>the bias of an estimator is the difference between the average value of the estimates it generates and the true parameter value. If <span class="math inline">\(E[\hat{\theta}-\theta] = 0\)</span>, then the estimator <span class="math inline">\(\hat{\theta}\)</span> is said to be unbiased.</em></p>
 </blockquote>
 <blockquote class="blockquote">
-<p>By the general rule for <span class="math inline">\(\bar{X}\)</span> introduced in Chapter 1, <span class="math inline">\(E[\hat{\lambda}_{MLE}] = E[\bar{X}] = \lambda\)</span>, so <span class="math inline">\(\hat{\lambda}_{MLE}\)</span> is an unbiased estimator. (There is no guarantee that the MLE will always be an unbiased estimator<span class="math inline">\(-\)</span>it just happens to be so here<span class="math inline">\(-\)</span>but it will always be at least asymptotically unbiased.)</p>
+<p>By the general rule for <span class="math inline">\(\bar{X}\)</span> introduced in <a href="01-probability.html#sec-chap1stat" class="quarto-xref"><span>Section 1.12.1</span></a>, <span class="math inline">\(E[\hat{\lambda}_{MLE}] = E[\bar{X}] = \lambda\)</span>, so <span class="math inline">\(\hat{\lambda}_{MLE}\)</span> is an unbiased estimator. (There is no guarantee that the MLE will always be an unbiased estimator<span class="math inline">\(-\)</span>it just happens to be so here<span class="math inline">\(-\)</span>but it will always be at least asymptotically unbiased.)</p>
 </blockquote>
 <blockquote class="blockquote">
 <p><strong>Recall</strong>: <em>an estimator is consistent if its mean-squared error, <span class="math inline">\(B[\hat{\theta}]^2 + V[\hat{\theta}]\)</span>, goes to zero as the sample size <span class="math inline">\(n\)</span> goes to infinity.</em></p>
@@ -945,10 +993,9 @@ m_1 = \frac{1}{n} \sum_{i=1}^n X_i = \bar{X} ~~ \mbox{and} ~~ m_2 = \frac{1}{n} 
 \hat{\lambda} \overset{d}{\rightarrow} Y \sim \mathcal{N}\left(\lambda,\frac{\lambda}{n}\right) \,.
 \]</span></p>
 </blockquote>
-<hr>
 </section>
-<section id="poisson-expected-counts-minimum-variance-unbiased-estimator" class="level3" data-number="4.5.2">
-<h3 data-number="4.5.2" class="anchored" data-anchor-id="poisson-expected-counts-minimum-variance-unbiased-estimator"><span class="header-section-number">4.5.2</span> Poisson Expected Counts: Minimum Variance Unbiased Estimator</h3>
+<section id="poisson-expected-counts-minimum-variance-unbiased-estimator" class="level4" data-number="4.5.2.2">
+<h4 data-number="4.5.2.2" class="anchored" data-anchor-id="poisson-expected-counts-minimum-variance-unbiased-estimator"><span class="header-section-number">4.5.2.2</span> Poisson Expected Counts: Minimum Variance Unbiased Estimator</h4>
 <blockquote class="blockquote">
 <p><strong>Recall</strong>: <em>deriving the minimum variance unbiased estimator involves two steps:</em></p>
 </blockquote>
@@ -971,12 +1018,11 @@ E[Y] = E\left[\sum_{i=1}^n X_i\right] = \sum_{i=1}^n E[X_i] = \sum_{i=1}^n \lamb
 <blockquote class="blockquote">
 <p>The next question is whether the variance of the MVUE achieves the Cramer-Rao Lower Bound on the variance of an unbiased estimator. We show that it does in an example below. However, achieving the CRLB is not a guarantee in all cases: when the MVUE does not, it simply means that there does not exist an unbiased estimator that achieves the CRLB.</p>
 </blockquote>
-<hr>
 </section>
-<section id="death-by-horse-kick-point-estimate" class="level3" data-number="4.5.3">
-<h3 data-number="4.5.3" class="anchored" data-anchor-id="death-by-horse-kick-point-estimate"><span class="header-section-number">4.5.3</span> Death-by-Horse-Kick: Point Estimate</h3>
+<section id="death-by-horse-kick-point-estimate" class="level4" data-number="4.5.2.3">
+<h4 data-number="4.5.2.3" class="anchored" data-anchor-id="death-by-horse-kick-point-estimate"><span class="header-section-number">4.5.2.3</span> Death-by-Horse-Kick: Point Estimate</h4>
 <blockquote class="blockquote">
-<p>We begin this chapter by displaying the number of deaths per Prussian army corps per year resulting from horse kicks. Leaving aside the question of whether it is plausible that these data are truly Poisson distributed (a question we answer later in this chapter), what is the estimated rate of death per corps per year?</p>
+<p>We begin this chapter by displaying the number of deaths per Prussian army corps per year resulting from horse kicks. Leaving aside the question of whether it is plausible that these data are truly Poisson distributed (a question we answer later, in <a href="#sec-chap4hypothesis" class="quarto-xref"><span>Section 4.7</span></a>), what is the estimated rate of death per corps per year?</p>
 </blockquote>
 <blockquote class="blockquote">
 <p>The total number of events observed are <span class="math display">\[
@@ -986,10 +1032,9 @@ E[Y] = E\left[\sum_{i=1}^n X_i\right] = \sum_{i=1}^n E[X_i] = \sum_{i=1}^n \lamb
 \,.
 \]</span> This is the MLE, the MVUE, and the MoM estimate for <span class="math inline">\(\lambda\)</span>. Later, we will use these data to estimate a 95% confidence interval for <span class="math inline">\(\lambda\)</span>.</p>
 </blockquote>
-<hr>
 </section>
-<section id="the-crlb-for-the-variance-of-expected-counts-estimators" class="level3" data-number="4.5.4">
-<h3 data-number="4.5.4" class="anchored" data-anchor-id="the-crlb-for-the-variance-of-expected-counts-estimators"><span class="header-section-number">4.5.4</span> The CRLB for the Variance of Expected Counts Estimators</h3>
+<section id="the-crlb-for-the-variance-of-expected-counts-estimators" class="level4" data-number="4.5.2.4">
+<h4 data-number="4.5.2.4" class="anchored" data-anchor-id="the-crlb-for-the-variance-of-expected-counts-estimators"><span class="header-section-number">4.5.2.4</span> The CRLB for the Variance of Expected Counts Estimators</h4>
 <blockquote class="blockquote">
 <p><strong>Recall</strong>: <em>the Cramer-Rao Lower Bound (or CRLB) is the lower bound on the variance of any unbiased estimator. If an unbiased estimator achieves the CRLB, it is the MVUE…but it can be the case that the MVUE does not achieve the CRLB. For a discrete distribution, the CRLB is given by</em> <span class="math display">\[
 V_{\rm CRLB}[\hat{\theta}] = -\left(nE\left[\frac{d^2}{d\theta^2} \log p_X(X \vert p) \right]\right)^{-1} = \frac{1}{nI(\theta)}
@@ -1009,10 +1054,9 @@ I(\lambda) = -E \left[ \frac{d^2}{d\lambda^2} \log p_X(X \vert \lambda) \right] 
 V_{\rm CRLB}[\hat{\lambda}] = \frac{1}{n/\lambda} = \frac{\lambda}{n} \,.
 \]</span> As we already know that <span class="math inline">\(V[\bar{X}] = V[X]/n = \lambda/n\)</span>, we can say that <span class="math inline">\(\hat{\lambda}_{MLE}\)</span>, <span class="math inline">\(\hat{\lambda}_{MVUE}\)</span>, and <span class="math inline">\(\hat{\lambda}_{MoM}\)</span> all achieve the CRLB.</p>
 </blockquote>
-<hr>
 </section>
-<section id="minimum-variance-unbiased-estimation-lack-of-invariance" class="level3" data-number="4.5.5">
-<h3 data-number="4.5.5" class="anchored" data-anchor-id="minimum-variance-unbiased-estimation-lack-of-invariance"><span class="header-section-number">4.5.5</span> Minimum Variance Unbiased Estimation: Lack of Invariance</h3>
+<section id="minimum-variance-unbiased-estimation-lack-of-invariance" class="level4" data-number="4.5.2.5">
+<h4 data-number="4.5.2.5" class="anchored" data-anchor-id="minimum-variance-unbiased-estimation-lack-of-invariance"><span class="header-section-number">4.5.2.5</span> Minimum Variance Unbiased Estimation: Lack of Invariance</h4>
 <blockquote class="blockquote">
 <p>As stated above, the MVUE does not possess the property of invariance. To demonstrate this, we define the MVUE for <span class="math inline">\(\lambda^2\)</span>.</p>
 </blockquote>
@@ -1026,10 +1070,9 @@ E[\bar{X}^2] = V[\bar{X}] + (E[\bar{X}])^2 = \frac{\lambda}{n} + \lambda^2
 E\left[\bar{X}^2 - \frac{\bar{X}}{n}\right] = E[\bar{X}^2] - \frac{1}{n}E[\bar{X}] = \frac{\lambda}{n} + \lambda^2 - \frac{\lambda}{n} = \lambda^2 \,.
 \]</span> Done! The MVUE for <span class="math inline">\(\lambda^2\)</span> is thus <span class="math inline">\(\hat{\lambda^2}_{MVUE} = \bar{X}^2-\bar{X}/n\)</span>, which is <em>not</em> equal to <span class="math inline">\(\hat{\lambda^2}_{MLE} = \bar{X}^2\)</span> (except in the limit <span class="math inline">\(n \rightarrow \infty\)</span>).</p>
 </blockquote>
-<hr>
 </section>
-<section id="gamma-distribution-method-of-moments-estimation" class="level3" data-number="4.5.6">
-<h3 data-number="4.5.6" class="anchored" data-anchor-id="gamma-distribution-method-of-moments-estimation"><span class="header-section-number">4.5.6</span> Gamma Distribution: Method of Moments Estimation</h3>
+<section id="gamma-distribution-method-of-moments-estimation" class="level4" data-number="4.5.2.6">
+<h4 data-number="4.5.2.6" class="anchored" data-anchor-id="gamma-distribution-method-of-moments-estimation"><span class="header-section-number">4.5.2.6</span> Gamma Distribution: Method of Moments Estimation</h4>
 <blockquote class="blockquote">
 <p>Recall that the probability density function for a gamma random variable <span class="math inline">\(X\)</span> is <span class="math display">\[
 f_X(x) = \frac{x^{a-1}}{b^{a}} \frac{\exp(-x/b)}{\Gamma(a)} \,,
@@ -1048,10 +1091,9 @@ a \left( \frac{\bar{X}}{a} \right)^2 + a^2 \left( \frac{\bar{X}}{a} \right)^2 &a
 \hat{b}_{MoM} = \frac{\bar{X}}{\hat{a}_{MoM}} = \frac{\overline{X^2} - (\bar{X})^2}{\bar{X}} \,.
 \]</span></p>
 </blockquote>
-<hr>
 </section>
-<section id="gamma-distribution-numerical-maximum-likelihood-estimation" class="level3" data-number="4.5.7">
-<h3 data-number="4.5.7" class="anchored" data-anchor-id="gamma-distribution-numerical-maximum-likelihood-estimation"><span class="header-section-number">4.5.7</span> Gamma Distribution: Numerical Maximum Likelihood Estimation</h3>
+<section id="gamma-distribution-numerical-maximum-likelihood-estimation" class="level4" data-number="4.5.2.7">
+<h4 data-number="4.5.2.7" class="anchored" data-anchor-id="gamma-distribution-numerical-maximum-likelihood-estimation"><span class="header-section-number">4.5.2.7</span> Gamma Distribution: Numerical Maximum Likelihood Estimation</h4>
 <blockquote class="blockquote">
 <p>As noted above, a reason to utilize method of moments estimation is that it can “work” in those situations where we cannot derive the MVUE or the MLE. For instance, let’s suppose that we draw <span class="math inline">\(n\)</span> iid data from a gamma distribution, which has the following probability density function: <span class="math display">\[\begin{align*}
 f_X(x) = \frac{x^{a-1}}{b^a} \frac{e^{-x/b}}{\Gamma(a)} \,,
@@ -1121,8 +1163,9 @@ f_X(x) = \frac{x^{a-1}}{b^a} \frac{e^{-x/b}}{\Gamma(a)} \,,
 </blockquote>
 </section>
 </section>
-<section id="confidence-intervals" class="level2" data-number="4.6">
-<h2 data-number="4.6" class="anchored" data-anchor-id="confidence-intervals"><span class="header-section-number">4.6</span> Confidence Intervals</h2>
+</section>
+<section id="sec-chap4confidence" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="sec-chap4confidence"><span class="header-section-number">4.6</span> Confidence Intervals</h2>
 <div class="graybox">
 <p>What to take away from this section:</p>
 <ul>
@@ -1130,6 +1173,7 @@ f_X(x) = \frac{x^{a-1}}{b^a} \frac{e^{-x/b}}{\Gamma(a)} \,,
 <li><p>If we do <em>not</em> know the sampling distribution for our chosen statistic <span class="math inline">\(Y\)</span>, but we <em>do</em> know (or can assume) the distribution that governs the sampling of each of our <span class="math inline">\(n\)</span> iid data, we can utilize a <em>simulation framework</em> to construct interval estimates that are exact (i.e., that match what we would find if we did know the sampling distribution of <span class="math inline">\(Y\)</span>) to within, e.g., one part in 10,000.</p></li>
 <li><p>It is only if we do not know the sampling distribution of our chosen statistic <span class="math inline">\(Y\)</span>, and we do not know (nor do we wish to assume) the distribution that governs the sampling of each of our <span class="math inline">\(n\)</span> iid data, that we would make use of <em>bootstrapping</em>, in which we would, e.g., resample the observed data with replacement so as to create an empirical sampling distribution for <span class="math inline">\(Y\)</span>.</p></li>
 </ul>
+<p>For previous material on confidence intervals, see <a href="03-binomial.html#sec-chap3confidence" class="quarto-xref"><span>Section 3.7</span></a>.</p>
 </div>
 <p><br></p>
 <blockquote class="blockquote">
@@ -1137,10 +1181,11 @@ f_X(x) = \frac{x^{a-1}}{b^a} \frac{e^{-x/b}}{\Gamma(a)} \,,
 P\left( \hat{\theta}_L \leq \theta \leq \hat{\theta}_U \right) = 1 - \alpha \,,
 \]</span> <em>where <span class="math inline">\(1 - \alpha\)</span> is the confidence coefficient. Note that this is a long-term probabilistic statement that is not to be applied to any one numerically evaluated interval: an evaluated interval either overlaps the true value, or it does not (and thus we cannot say there is a <span class="math inline">\(100(1-\alpha)\)</span>-percent chance that <span class="math inline">\(\theta\)</span> lies within the interval). We determine <span class="math inline">\(\hat{\theta}\)</span> by solving the following equation:</em> <span class="math display">\[
 F_Y(y_{\rm obs} \vert \theta) - q = 0
-\]</span> <em>for <span class="math inline">\(\theta\)</span>, where <span class="math inline">\(F_Y(\cdot)\)</span> is the cumulative distribution function for the statistic <span class="math inline">\(Y\)</span>, <span class="math inline">\(y_{\rm obs}\)</span> is the observed value of the statistic, and <span class="math inline">\(q\)</span> is an appropriate quantile value that is determined using the confidence interval reference table introduced in section 16 of Chapter 1.</em></p>
+\]</span> <em>for <span class="math inline">\(\theta\)</span>, where <span class="math inline">\(F_Y(\cdot)\)</span> is the cumulative distribution function for the statistic <span class="math inline">\(Y\)</span>, <span class="math inline">\(y_{\rm obs}\)</span> is the observed value of the statistic, and <span class="math inline">\(q\)</span> is an appropriate quantile value that is determined using the confidence interval reference table introduced in <a href="01-probability.html#sec-chap1confref" class="quarto-xref"><span>Section 1.16.1</span></a>.</em></p>
 </blockquote>
-<p>As far as the construction of confidence intervals given a discrete sampling distribution goes, nothing changes algorithmically from where we were in Chapter 3; in an example below, we review how we would construct an interval for the Poisson parameter <span class="math inline">\(\lambda\)</span>.</p>
-<hr>
+<p>As far as the construction of confidence intervals given a discrete sampling distribution goes, nothing changes algorithmically from where we were in <a href="03-binomial.html#sec-chap3confidence" class="quarto-xref"><span>Section 3.7</span></a>; in an example below, we review how we would construct an interval for the Poisson parameter <span class="math inline">\(\lambda\)</span>.</p>
+<section id="sec-chap4bootstrap" class="level3" data-number="4.6.1">
+<h3 data-number="4.6.1" class="anchored" data-anchor-id="sec-chap4bootstrap"><span class="header-section-number">4.6.1</span> Simulation and the Bootstrap</h3>
 <p>In the context of statistical inference, there is one more important question to answer. What do we do if we neither know nor are willing to assume the distribution from which our data are sampled? Our root-finding algorithm relies upon knowing the sampling distribution of an observed statistic, and that in turn relies on knowing the distribution from which we draw each of our <span class="math inline">\(n\)</span> iid data. One thing we can do is fall back upon <em>bootstrapping</em>. We demonstrate bootstrap confidence interval estimation in an example below.</p>
 <p>At this point, it is useful for us to review how we would pursue the construction of confidence intervals in different analysis situations. See <a href="#fig-ciflowchart" class="quarto-xref">Figure&nbsp;<span>4.4</span></a>. We can summarize the chart as follows: if we have <span class="math inline">\(n\)</span> iid data <span class="math inline">\(\{X_1,\ldots,X_n\}\)</span> sampled according to some distribution <span class="math inline">\(P\)</span>, and we have computed some statistic <span class="math inline">\(Y = g(X_1,\ldots,X_n)\)</span>, then…</p>
 <ol type="1">
@@ -1164,9 +1209,14 @@ Figure&nbsp;4.4: A flowchart showing how to apply our confidence interval method
 </div>
 </div>
 </div>
-<hr>
-<section id="poisson-expected-counts-confidence-interval" class="level3" data-number="4.6.1">
-<h3 data-number="4.6.1" class="anchored" data-anchor-id="poisson-expected-counts-confidence-interval"><span class="header-section-number">4.6.1</span> Poisson Expected Counts: Confidence Interval</h3>
+<div class="graybox">
+<p>For more on confidence intervals, go to <a href="05-uniform.html#sec-chap5confidence" class="quarto-xref"><span>Section 5.4</span></a>.</p>
+</div>
+</section>
+<section id="examples-4" class="level3" data-number="4.6.2">
+<h3 data-number="4.6.2" class="anchored" data-anchor-id="examples-4"><span class="header-section-number">4.6.2</span> Examples</h3>
+<section id="poisson-expected-counts-confidence-interval" class="level4" data-number="4.6.2.1">
+<h4 data-number="4.6.2.1" class="anchored" data-anchor-id="poisson-expected-counts-confidence-interval"><span class="header-section-number">4.6.2.1</span> Poisson Expected Counts: Confidence Interval</h4>
 <blockquote class="blockquote">
 <p>Assume that we sample <span class="math inline">\(n\)</span> iid data. We know that the sum <span class="math inline">\(Y = \sum_{i=1}^n X_i\)</span> is a sufficient statistic for <span class="math inline">\(\lambda\)</span> and that <span class="math inline">\(Y \sim\)</span> Poisson(<span class="math inline">\(n\lambda\)</span>). For this statistic, <span class="math inline">\(E[Y] = n\lambda\)</span>, which increases with <span class="math inline">\(\lambda\)</span>, so we know that we will utilize the “yes” lines of the confidence interval reference table. Our observed test statistic is <span class="math inline">\(y_{\rm obs} = \sum_{i=1}^n x_i\)</span>.</p>
 </blockquote>
@@ -1206,7 +1256,7 @@ Figure&nbsp;4.4: A flowchart showing how to apply our confidence interval method
 <div aria-describedby="fig-poici-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-poici" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-poici-1" class="quarto-float quarto-figure quarto-figure-center anchored" width="288" data-fig-align="center">
+<div id="fig-poici-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="288">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-poici-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="04-poisson_files/figure-html/fig-poici-1.png" id="fig-poici-1" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-poici" width="288">
@@ -1218,7 +1268,7 @@ Figure&nbsp;4.4: A flowchart showing how to apply our confidence interval method
 </div>
 </div>
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-poici" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-poici-2" class="quarto-float quarto-figure quarto-figure-center anchored" width="288" data-fig-align="center">
+<div id="fig-poici-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="288">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-poici-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="04-poisson_files/figure-html/fig-poici-2.png" id="fig-poici-2" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-poici" width="288">
@@ -1237,7 +1287,7 @@ Figure&nbsp;4.5: Probability mass functions for Poisson distributions for which 
 </figure>
 </div>
 <blockquote class="blockquote">
-<p>In Chapter 3, we discussed how when we work with discrete sampling distributions, the coverage of the confidence intervals that we construct, given a value <span class="math inline">\(\theta = \theta_o\)</span>, will be equal to the probability of sampling a datum in the acceptance region given a null hypothesis <span class="math inline">\(H_o : \theta = \theta_o\)</span>, and thus the coverage will be, in general, <span class="math inline">\(&gt; 1-\alpha\)</span>. Let’s verify that that is the case here.</p>
+<p>In <a href="03-binomial.html#sec-chap3confidence" class="quarto-xref"><span>Section 3.7</span></a>, we discussed how when we work with discrete sampling distributions, the coverage of the confidence intervals that we construct, given a value <span class="math inline">\(\theta = \theta_o\)</span>, will be equal to the probability of sampling a datum in the acceptance region given a null hypothesis <span class="math inline">\(H_o : \theta = \theta_o\)</span>, and thus the coverage will be, in general, <span class="math inline">\(&gt; 1-\alpha\)</span>. Let’s verify that that is the case here.</p>
 </blockquote>
 <div class="cell">
 <details class="code-fold">
@@ -1254,10 +1304,9 @@ Figure&nbsp;4.5: Probability mass functions for Poisson distributions for which 
 <blockquote class="blockquote">
 <p>If <span class="math inline">\(\lambda = 8\)</span>, the coverage of our interval estimates is 96.9%.</p>
 </blockquote>
-<hr>
 </section>
-<section id="death-by-horse-kick-confidence-interval" class="level3" data-number="4.6.2">
-<h3 data-number="4.6.2" class="anchored" data-anchor-id="death-by-horse-kick-confidence-interval"><span class="header-section-number">4.6.2</span> Death-by-Horse-Kick: Confidence Interval</h3>
+<section id="death-by-horse-kick-confidence-interval" class="level4" data-number="4.6.2.2">
+<h4 data-number="4.6.2.2" class="anchored" data-anchor-id="death-by-horse-kick-confidence-interval"><span class="header-section-number">4.6.2.2</span> Death-by-Horse-Kick: Confidence Interval</h4>
 <blockquote class="blockquote">
 <p>Previously, we determined that a point estimate for the expected number of deaths from horse kicks in any one Prussian army corps during any one year is <span class="math inline">\(\hat{\lambda} = 0.61\)</span>. Here, we determine a 95% two-sided interval estimate for <span class="math inline">\(\lambda\)</span>.</p>
 </blockquote>
@@ -1288,10 +1337,9 @@ Figure&nbsp;4.5: Probability mass functions for Poisson distributions for which 
 <blockquote class="blockquote">
 <p>The 95% confidence interval is <span class="math inline">\([0.507,0.728]\)</span>.</p>
 </blockquote>
-<hr>
 </section>
-<section id="death-by-horse-kick-nonparametric-bootstrap-confidence-interval" class="level3" data-number="4.6.3">
-<h3 data-number="4.6.3" class="anchored" data-anchor-id="death-by-horse-kick-nonparametric-bootstrap-confidence-interval"><span class="header-section-number">4.6.3</span> Death-by-Horse-Kick: Nonparametric Bootstrap Confidence Interval</h3>
+<section id="death-by-horse-kick-nonparametric-bootstrap-confidence-interval" class="level4" data-number="4.6.2.3">
+<h4 data-number="4.6.2.3" class="anchored" data-anchor-id="death-by-horse-kick-nonparametric-bootstrap-confidence-interval"><span class="header-section-number">4.6.2.3</span> Death-by-Horse-Kick: Nonparametric Bootstrap Confidence Interval</h4>
 <blockquote class="blockquote">
 <p>The bootstrap, introduced in <span class="citation" data-cites="efron1979">Efron (<a href="09-references.html#ref-efron1979" role="doc-biblioref">1979</a>)</span>, uses the observed data themselves to build up empirical sampling distributions for statistics. (Note that here we are specifically referring to the <em>nonparametric bootstrap</em> procedure. Other bootstrap procedures exist; see, e.g., <span class="citation" data-cites="hesterberg2015">Hesterberg (<a href="09-references.html#ref-hesterberg2015" role="doc-biblioref">2015</a>)</span> and references therein.) Let’s suppose we are handed the following data: <span class="math display">\[
 \mathbf{X} = \{X_1,X_2,\ldots,X_n\} \overset{iid}{\sim} P \,,
@@ -1323,10 +1371,9 @@ Figure&nbsp;4.5: Probability mass functions for Poisson distributions for which 
 <blockquote class="blockquote">
 <p>The estimated interval is <span class="math inline">\([0.505,0.725]\)</span>. This is on par with what we observe above, but we will note that in general the nonparametric bootstrap procedure suffers from what Hesterberg (2015) dubs a “narrowness bias”: the coverage of its intervals is smaller than <span class="math inline">\(1-\alpha/2\)</span> for small samples, converging to <span class="math inline">\(1-\alpha/2\)</span> as <span class="math inline">\(n \rightarrow \infty\)</span>. (We have <span class="math inline">\(n = 200\)</span> data here, so the narrowness bias is effectively moot.) When we can propose a plausible distribution for our data, we should do so, as we will generate more meaningful confidence intervals (even if simulations are involved) than if we lazily fall back upon bootstrapping.</p>
 </blockquote>
-<hr>
 </section>
-<section id="bootstrap-sample-proportion-of-observed-data" class="level3" data-number="4.6.4">
-<h3 data-number="4.6.4" class="anchored" data-anchor-id="bootstrap-sample-proportion-of-observed-data"><span class="header-section-number">4.6.4</span> Bootstrap Sample: Proportion of Observed Data</h3>
+<section id="bootstrap-sample-proportion-of-observed-data" class="level4" data-number="4.6.2.4">
+<h4 data-number="4.6.2.4" class="anchored" data-anchor-id="bootstrap-sample-proportion-of-observed-data"><span class="header-section-number">4.6.2.4</span> Bootstrap Sample: Proportion of Observed Data</h4>
 <blockquote class="blockquote">
 <p>Let’s assume that we sample <span class="math inline">\(n\)</span> iid data from some distribution <span class="math inline">\(P\)</span>. When we create a bootstrap sample of these data, some of the observed data appear multiple times, while other data do not appear at all. What is the average proportion of observed data in any given bootstrap sample?</p>
 </blockquote>
@@ -1335,10 +1382,9 @@ Figure&nbsp;4.5: Probability mass functions for Poisson distributions for which 
 P(X \geq 1) = 1 - P(X = 0) = 1 - (1-1/n)^n \,,
 \]</span> which, as <span class="math inline">\(n \rightarrow \infty\)</span>, approaches <span class="math inline">\(1-1/e = 0.632\)</span>. Thus, for a sufficiently large sample, 63.2% of the observed data will appear at least once in a bootstrapped dataset.</p>
 </blockquote>
-<hr>
 </section>
-<section id="death-by-horse-kick-simulation-based-confidence-interval" class="level3" data-number="4.6.5">
-<h3 data-number="4.6.5" class="anchored" data-anchor-id="death-by-horse-kick-simulation-based-confidence-interval"><span class="header-section-number">4.6.5</span> Death-by-Horse Kick: Simulation-Based Confidence Interval</h3>
+<section id="death-by-horse-kick-simulation-based-confidence-interval" class="level4" data-number="4.6.2.5">
+<h4 data-number="4.6.2.5" class="anchored" data-anchor-id="death-by-horse-kick-simulation-based-confidence-interval"><span class="header-section-number">4.6.2.5</span> Death-by-Horse Kick: Simulation-Based Confidence Interval</h4>
 <blockquote class="blockquote">
 <p>Let’s assume that we do not know that the sampling distribution for the sum of <span class="math inline">\(n\)</span> iid Poisson random variables is Poisson(<span class="math inline">\(n\lambda\)</span>), but that we can assume each datum <em>is itself</em> sampled according to a Poisson distribution. To determine a confidence interval for <span class="math inline">\(\lambda\)</span>, then, we can utilize numerical simulations, to estimate empirical sampling distributions for <span class="math inline">\(Y\)</span> given candidate values of <span class="math inline">\(\lambda\)</span>, and determining those values of <span class="math inline">\(\lambda\)</span> that make <span class="math inline">\(F_Y(y_{\rm obs} \vert \lambda)\)</span> (at least approximately) equal to 0.025 and 0.975.</p>
 </blockquote>
@@ -1384,18 +1430,17 @@ sum(Y &lt;= y.obs)/num.sim</code></pre>
 </div>
 </div>
 <blockquote class="blockquote">
-<p>Our simulation-based 95% confidence interval for <span class="math inline">\(\lambda\)</span> is [0.507,0.728], which is equivalent to the one determined using the fact that the sum of the data are Poisson-distributed with parameter <span class="math inline">\(n\lambda\)</span>. To be clear: simulation-based confidence intervals are <strong>exact</strong> to within machine tolerance (the fact that <code>sum(Y &lt;= y.obs)/num.sim</code> and <code>q</code> can differ by <span class="math inline">\(\sim 10^{-4}\)</span> by default) and any uncertainty in the value of the empirical cdf <span class="math inline">\(\hat{F}_n(y_{\rm obs} \vert \lambda)\)</span> due to our use of a finite number of simulated datasets, <code>num.sim</code>. Regarding the second point: the empirical cdf is an <em>estimate</em>, i.e., even if we hold <span class="math inline">\(\lambda\)</span> constant, <code>sum(Y &lt;= y.obs)</code> is a random variable whose value can change as we change the random number generator seed value. Let’s denote the sum as <span class="math inline">\(S \vert \lambda\)</span>, the total number of simulated datasets as <span class="math inline">\(k\)</span>, and the true cdf value (given <span class="math inline">\(y_{\rm obs}\)</span>) as <span class="math inline">\(p\)</span>. Then <span class="math display">\[\begin{align*}
+<p>Our simulation-based 95% confidence interval for <span class="math inline">\(\lambda\)</span> is [0.507,0.728], which is equivalent to the one determined using the fact that the sum of the data are Poisson-distributed with parameter <span class="math inline">\(n\lambda\)</span>. To be clear: simulation-based confidence intervals are <strong>exact</strong> to within machine tolerance (the fact that <code>sum(Y &lt;= y.obs) / num.sim</code> and <code>q</code> can differ by <span class="math inline">\(\sim 10^{-4}\)</span> by default) and any uncertainty in the value of the empirical cdf <span class="math inline">\(\hat{F}_n(y_{\rm obs} \vert \lambda)\)</span> due to our use of a finite number of simulated datasets, <code>num.sim</code>. Regarding the second point: the empirical cdf is an <em>estimate</em>, i.e., even if we hold <span class="math inline">\(\lambda\)</span> constant, <code>sum(Y &lt;= y.obs)</code> is a random variable whose value can change as we change the random number generator seed value. Let’s denote the sum as <span class="math inline">\(S \vert \lambda\)</span>, the total number of simulated datasets as <span class="math inline">\(k\)</span>, and the true cdf value (given <span class="math inline">\(y_{\rm obs}\)</span>) as <span class="math inline">\(p\)</span>. Then <span class="math display">\[\begin{align*}
 S \vert \lambda \sim \text{Binomial}(k, p) \,.
 \end{align*}\]</span> The standard error for the empirical cdf is thus <span class="math display">\[\begin{align*}
 \sqrt{V\left[\frac{1}{k}(S \vert \lambda)\right]} = \sqrt{\frac{p(1-p)}{k}} \,.
 \end{align*}\]</span> If <span class="math inline">\(k = 10^5\)</span> and, e.g., <span class="math inline">\(p = 0.025\)</span>, the standard error is <span class="math inline">\(\sim 10^{-4}\)</span>. Combining this value with the tolerance of <code>uniroot()</code>, we expect the uncertainties of our interval bound estimates to be <span class="math inline">\(\sim 10^{-4}\)</span>. (Particularly if we utilize a larger number of simulated datasets. Above, we set <code>num.sim</code> to a smaller value because, ultimately, we multiply this value by <span class="math inline">\(n\)</span>, and since <span class="math inline">\(n = 200\)</span>, we need to be mindful to not utilize too much computer memory and to not make the computation time too long. Each <code>uniroot()</code> call in the code given here generates results in <span class="math inline">\(\lesssim\)</span> 10 CPU seconds on a standard desktop or laptop computer.)</p>
 </blockquote>
-<hr>
 </section>
-<section id="zero-truncated-poisson-expected-counts-simulation-based-confidence-interval" class="level3" data-number="4.6.6">
-<h3 data-number="4.6.6" class="anchored" data-anchor-id="zero-truncated-poisson-expected-counts-simulation-based-confidence-interval"><span class="header-section-number">4.6.6</span> Zero-Truncated Poisson Expected Counts: Simulation-Based Confidence Interval</h3>
+<section id="zero-truncated-poisson-expected-counts-simulation-based-confidence-interval" class="level4" data-number="4.6.2.6">
+<h4 data-number="4.6.2.6" class="anchored" data-anchor-id="zero-truncated-poisson-expected-counts-simulation-based-confidence-interval"><span class="header-section-number">4.6.2.6</span> Zero-Truncated Poisson Expected Counts: Simulation-Based Confidence Interval</h4>
 <blockquote class="blockquote">
-<p>Earlier in this chapter, we derived the moment-generating function for the zero-inflated Poisson distribution and wrote down the mgf for the zero-truncated Poisson distribution, and indicated that we could use neither of them to determine the sampling distribution of, e.g., the sample sum given <span class="math inline">\(n\)</span> iid random variables. As indicated in <a href="#fig-ciflowchart" class="quarto-xref">Figure&nbsp;<span>4.4</span></a>, when we do not know the sampling distribution of <span class="math inline">\(Y\)</span>, but we do know the distribution for each individual datum, we can utilize simulations to derive exact confidence intervals. We will demonstrate that here for the zero-truncated distribution.</p>
+<p>In <a href="#sec-chap4linear" class="quarto-xref"><span>Section 4.4</span></a>, we derived the moment-generating function for the zero-inflated Poisson distribution and wrote down the mgf for the zero-truncated Poisson distribution, and indicated that we could use neither of them to determine the sampling distribution of, e.g., the sample sum given <span class="math inline">\(n\)</span> iid random variables. As indicated in <a href="#fig-ciflowchart" class="quarto-xref">Figure&nbsp;<span>4.4</span></a>, when we do not know the sampling distribution of <span class="math inline">\(Y\)</span>, but we do know the distribution for each individual datum, we can utilize simulations to derive exact confidence intervals. We will demonstrate that here for the zero-truncated distribution.</p>
 </blockquote>
 <blockquote class="blockquote">
 <p>Let’s assume that we conduct an experiment in which we gather the following data:</p>
@@ -1442,30 +1487,33 @@ S \vert \lambda \sim \text{Binomial}(k, p) \,.
 </blockquote>
 </section>
 </section>
-<section id="hypothesis-testing" class="level2" data-number="4.7">
-<h2 data-number="4.7" class="anchored" data-anchor-id="hypothesis-testing"><span class="header-section-number">4.7</span> Hypothesis Testing</h2>
+</section>
+<section id="sec-chap4hypothesis" class="level2" data-number="4.7">
+<h2 data-number="4.7" class="anchored" data-anchor-id="sec-chap4hypothesis"><span class="header-section-number">4.7</span> Hypothesis Testing: Likelihood Ratio Test</h2>
 <div class="graybox">
 <p>What to take away from this section:</p>
 <ul>
 <li><p>While the <em>Neyman-Pearson lemma</em> states that a ratio of likelihood functions constitutes <strong>the most powerful test</strong> of the simple hypotheses <span class="math inline">\(H_o : \theta = \theta_o\)</span> and <span class="math inline">\(H_a : \theta = \theta_a\)</span>, we cannot extend that result to state a most powerful test of composite hypotheses.</p></li>
 <li><p>A commonly used test of composite hypothesis is the <em>likelihood ratio test</em>, or <em>LRT</em>.</p></li>
-<li><p>If we are working with a member of the exponential family of distributions, then to carry out the LRT, we should simply conduct a hypothesis test in the manner described in Chapters 1 and 2 while utilizing a <em>sufficient statistic</em> for <span class="math inline">\(\theta\)</span>.</p></li>
+<li><p>If we are working with a member of the exponential family of distributions, then to carry out the LRT, we should simply conduct a hypothesis test in the manner described in <a href="01-probability.html#sec-chap1hypothesis" class="quarto-xref"><span>Section 1.17</span></a> and <a href="02-normal.html#sec-chap2hypothesis" class="quarto-xref"><span>Section 2.13</span></a> while utilizing a <em>sufficient statistic</em> for <span class="math inline">\(\theta\)</span>.</p></li>
 <li><p>Given a single vector of Poisson data <span class="math inline">\(\{X_1,\ldots,X_m\}\)</span>, where <span class="math inline">\(\sum_{i=1}^m X_i = k\)</span>, and a null hypothesis that the expected data proportions across the bins are <span class="math inline">\(\{p_{1,o},\ldots,p_{m,o}\}\)</span>, we can carry out a set of <span class="math inline">\(m\)</span> separate Poisson-based hypothesis tests and aggregate the <span class="math inline">\(m\)</span> <span class="math inline">\(p\)</span>-values into a single <span class="math inline">\(p\)</span>-value.</p></li>
 </ul>
+<p>For previous material on hypothesis testing, see <a href="03-binomial.html#sec-chap3nplemma" class="quarto-xref"><span>Section 3.8</span></a> and <a href="03-binomial.html#sec-chap3categorical" class="quarto-xref"><span>Section 3.9</span></a>.</p>
 </div>
 <p><br></p>
 <blockquote class="blockquote">
 <p><strong>Recall</strong>: <em>a hypothesis test is a framework to make an inference about the value of a population parameter <span class="math inline">\(\theta\)</span>. The null hypothesis <span class="math inline">\(H_o\)</span> is that <span class="math inline">\(\theta = \theta_o\)</span>, while possible alternatives <span class="math inline">\(H_a\)</span> are <span class="math inline">\(\theta \neq \theta_o\)</span> (two-tail test), <span class="math inline">\(\theta &gt; \theta_o\)</span> (upper-tail test), and <span class="math inline">\(\theta &lt; \theta_o\)</span> (lower-tail test). For, e.g., a one-tail test, we reject the null hypothesis if the observed test statistic <span class="math inline">\(y_{\rm obs}\)</span> falls outside the bound given by <span class="math inline">\(y_{RR}\)</span>, which is a solution to the equation</em> <span class="math display">\[
 F_Y(y_{RR} \vert \theta_o) - q = 0 \,,
-\]</span> <em>where <span class="math inline">\(F_Y(\cdot)\)</span> is the cumulative distribution function for the statistic <span class="math inline">\(Y\)</span> and <span class="math inline">\(q\)</span> is an appropriate quantile value that is determined using the hypothesis test reference table introduced in section 17 of Chapter 1. Note that the hypothesis test framework only allows us to make a decision about a null hypothesis; nothing is proven.</em></p>
+\]</span> <em>where <span class="math inline">\(F_Y(\cdot)\)</span> is the cumulative distribution function for the statistic <span class="math inline">\(Y\)</span> and <span class="math inline">\(q\)</span> is an appropriate quantile value that is determined using the hypothesis test reference table introduced in <a href="01-probability.html#sec-chap1hypref" class="quarto-xref"><span>Section 1.17.2</span></a>. Note that the hypothesis test framework only allows us to make a decision about a null hypothesis; nothing is proven.</em></p>
 </blockquote>
-<p>In Chapter 3, we built upon the framework described above by introducing the Neyman-Pearson lemma. This result allows us to bypass the “guesswork” that goes into selecting a hypothesis test statistic, by defining the most powerful test of a simple null hypothesis versus a simple specified alternative.</p>
+<p>In <a href="03-binomial.html#sec-chap3nplemma" class="quarto-xref"><span>Section 3.8</span></a>, we built upon the framework described above by introducing the Neyman-Pearson lemma. This result allows us to bypass the “guesswork” that goes into selecting a hypothesis test statistic, by defining the most powerful test of a simple null hypothesis versus a simple specified alternative.</p>
 <blockquote class="blockquote">
 <p><strong>Recall:</strong> <em>when we test the simple hypotheses <span class="math inline">\(H_o: \theta = \theta_o\)</span> versus <span class="math inline">\(H_a: \theta = \theta_a\)</span>, the Neyman-Pearson lemma allows us to state that the hypothesis test with maximum power has a rejection region of the form</em> <span class="math display">\[
 \frac{\mathcal{L}(\theta_o \vert \mathbf{x})}{\mathcal{L}(\theta_a \vert \mathbf{x})} &lt; c(\alpha) \,,
 \]</span> <em>where <span class="math inline">\(c(\alpha)\)</span> is a constant whose value depends on the specified Type I error <span class="math inline">\(\alpha\)</span>. When we sample data from an exponential-family distribution, we would simply determine a sufficient statistic <span class="math inline">\(Y\)</span>, and develop a hypothesis test as we have done previously using that statistic (or a function of it), assuming we know or can assume its sampling distribution. If the rejection region does not depend on <span class="math inline">\(\theta_a\)</span>, then the test is said to be a uniformly most powerful (UMP) test.</em></p>
 </blockquote>
-<p>In an example, we demonstrate how to apply the NP lemma to construct a hypothesis test for the Poisson parameter <span class="math inline">\(\lambda\)</span>, given a sample of <span class="math inline">\(n\)</span> iid data. Here we describe a more general hypothesis test framework, dubbed the <em>likelihood ratio test</em> (or <em>LRT</em>).</p>
+<p>In an example, we demonstrate how to apply the NP lemma to construct a hypothesis test for the Poisson parameter <span class="math inline">\(\lambda\)</span>, given a sample of <span class="math inline">\(n\)</span> iid data.</p>
+<p>Here we will build on our discussion of the Neyman-Pearson lemma and describe a more general hypothesis test framework, one dubbed the <em>likelihood ratio test</em> (or <em>LRT</em>).</p>
 <p>“Wait…the NP lemma had a likelihood ratio. How is the LRT different?”</p>
 <p>That is a good question. It differs in how we specify the null and alternative hypotheses: <span class="math display">\[
 H_o: \theta \in \Theta_o ~~\mbox{vs.}~~ H_a: \theta \in \Theta_o^c \,,
@@ -1475,7 +1523,7 @@ H_o: \theta \in \Theta_o ~~\mbox{vs.}~~ H_a: \theta \in \Theta_o^c \,,
 <p>“Since the LRT is more general, why would we ever utilize the NP lemma?”</p>
 <p>That is another good question.</p>
 <p>The primary point to make is that when we construct a test of two simple hypothesis within the framework of the NP lemma, we <em>know</em> that we are constructing the most powerful test of those hypotheses. On the other hand, while the LRT is generally a powerful test, given the composite nature of one (or both) of the hypotheses it comes with no guarantee of being the most powerful test. For instance, perhaps an alternative like the score test (also known as the Lagrange multiplier test) or the Wald test would provide the most powerful test in a given analysis situation, although one should keep in mind that it is usually the case that the power of these tests are effectively identical. A reader who is interested in learning more about them should look at section 10.3 of <span class="citation" data-cites="casella2002">Casella and Berger (<a href="09-references.html#ref-casella2002" role="doc-biblioref">2002</a>)</span> and at <span class="citation" data-cites="buse1982">Buse (<a href="09-references.html#ref-buse1982" role="doc-biblioref">1982</a>)</span>, while noting that the latter implicitly describes two-tail tests only.</p>
-<p>How does using the likelihood ratio test play out in practice? Let’s look at some possible use cases. For simplicity, below we will assume that we have sampled data from an exponential-family distribution, and thus that we can reduce the data to, e.g., a single-number sufficient statistic for <span class="math inline">\(\theta\)</span>. If we were to sample data according to a non-exponential-family distribution, we could, as we did in Chapter 3, fall back upon the use of simulations to determine the empirical distribution of the statistic <span class="math inline">\(\lambda_{LR}\)</span> (or <span class="math inline">\(\log\lambda_{LR}\)</span>) under the null and use that distribution to estimate, e.g., the <span class="math inline">\(p\)</span>-value.</p>
+<p>How does using the likelihood ratio test play out in practice? Let’s look at some possible use cases. For simplicity, below we will assume that we have sampled data from an exponential-family distribution, and thus that we can reduce the data to, e.g., a single-number sufficient statistic for <span class="math inline">\(\theta\)</span>. If we were to sample data according to a non-exponential-family distribution, we could, as we did in <a href="03-binomial.html#sec-chap3nplemma" class="quarto-xref"><span>Section 3.8</span></a>, fall back upon the use of simulations to determine the empirical distribution of the statistic <span class="math inline">\(\lambda_{LR}\)</span> (or <span class="math inline">\(\log\lambda_{LR}\)</span>) under the null and use that distribution to estimate, e.g., the <span class="math inline">\(p\)</span>-value.</p>
 <ol type="1">
 <li>We have one freely varying parameter <span class="math inline">\(\theta\)</span> and we wish to test <span class="math inline">\(H_o : \theta = \theta_o\)</span> versus <span class="math inline">\(H_a : \theta \neq \theta_o\)</span>.</li>
 </ol>
@@ -1486,7 +1534,7 @@ H_o: \theta \in \Theta_o ~~\mbox{vs.}~~ H_a: \theta \in \Theta_o^c \,,
 <p>Here, the null hypothesis would be the complement of <span class="math inline">\(H_a\)</span>, i.e., <span class="math inline">\(H_o : \theta \geq \theta_o\)</span>. The distribution of the ratio <span class="math display">\[
 \lambda_{LR} = \frac{\mbox{sup}_{\theta \geq \theta_o} \mathcal{L}(\theta \vert \mathbf{x})}{\mathcal{L}(\hat{\theta}_{MLE} \vert \mathbf{x})}
 \]</span> is thus not uniquely specifiable: it is a function of <span class="math inline">\(\theta\)</span>, and our null does not state a specific value for <span class="math inline">\(\theta\)</span>. So how would we determine <span class="math inline">\(y_{\rm RR}\)</span>? It turns out the most conservative rejection-region boundary we can specify, which would be the one that is associated with the highest <span class="math inline">\(p\)</span>-value we can observe, is the one that we would derive assuming that <span class="math inline">\(\theta = \theta_o\)</span>…which means that to define an LRT, we would simply assume <span class="math inline">\(\theta_o\)</span> as our null value, identify a sufficient statistic (or a one-to-one function of it) for which we know the sampling distribution, and define a one-tail test as we have done previously.</p>
-<p>At this point, it is important to note that the way that we have defined one-tail hypothesis tests in previous chapters (e.g., <span class="math inline">\(H_o : \theta = \theta_o\)</span> versus <span class="math inline">\(H_a : \theta &lt; \theta_o\)</span>) is the conventional way to define them but not necessarily the correct way. A more precise definition of the null would indicate that it is composite (e.g., <span class="math inline">\(H_o : \theta \geq \theta_o\)</span>), but for the reason given above we would still insert <span class="math inline">\(\theta_o\)</span> itself into the <span class="math inline">\(p\)</span>-value equation, etc. For further discussion, see <span class="citation" data-cites="jamshidian2026">Jamshidian and Jamshidian (<a href="09-references.html#ref-jamshidian2026" role="doc-biblioref">2026</a>)</span>.</p>
+<p>At this point, it is important to note that the way that we have defined one-tail hypothesis tests previously (e.g., <span class="math inline">\(H_o : \theta = \theta_o\)</span> versus <span class="math inline">\(H_a : \theta &lt; \theta_o\)</span>) is the conventional way to define them but not necessarily the correct way. A more precise definition of the null would indicate that it is composite (e.g., <span class="math inline">\(H_o : \theta \geq \theta_o\)</span>), but for the reason given above we would still insert <span class="math inline">\(\theta_o\)</span> itself into the <span class="math inline">\(p\)</span>-value equation, etc. For further discussion, see <span class="citation" data-cites="jamshidian2026">Jamshidian and Jamshidian (<a href="09-references.html#ref-jamshidian2026" role="doc-biblioref">2026</a>)</span>.</p>
 <ol start="3" type="1">
 <li>We have two (or more) freely varying parameters, or alternatively, we have one freely varying parameter for a non-exponential-family distribution.</li>
 </ol>
@@ -1495,9 +1543,13 @@ H_o: \theta \in \Theta_o ~~\mbox{vs.}~~ H_a: \theta \in \Theta_o^c \,,
 \theta_o\)</span> and not <span class="math inline">\(\theta &lt; \theta_o\)</span> or <span class="math inline">\(\theta &gt; \theta_o\)</span>.) For large <span class="math inline">\(n\)</span>, <span class="math display">\[
 -2\log \lambda_{LR} \overset{d}{\rightarrow} W \sim \chi_{r-r_o}^2 \,,
 \]</span> and we would reject the null hypothesis if <span class="math inline">\(-2\log \lambda_{LR} &gt; w_{\rm RR} = F_{W(r-r_o)}^{-1}(1-\alpha)\)</span>. Since this result is related to the Central Limit Theorem, large <span class="math inline">\(n\)</span> would be, by rule-of-thumb, 30 or more.</p>
-<hr>
-<section id="poisson-expected-counts-uniformly-most-powerful-test" class="level3" data-number="4.7.1">
-<h3 data-number="4.7.1" class="anchored" data-anchor-id="poisson-expected-counts-uniformly-most-powerful-test"><span class="header-section-number">4.7.1</span> Poisson Expected Counts: Uniformly Most Powerful Test</h3>
+<div class="graybox">
+<p>For more on hypothesis testing, go to <a href="05-uniform.html#sec-chap5hypothesis" class="quarto-xref"><span>Section 5.5</span></a>.</p>
+</div>
+<section id="examples-5" class="level3" data-number="4.7.1">
+<h3 data-number="4.7.1" class="anchored" data-anchor-id="examples-5"><span class="header-section-number">4.7.1</span> Examples</h3>
+<section id="poisson-expected-counts-uniformly-most-powerful-test" class="level4" data-number="4.7.1.1">
+<h4 data-number="4.7.1.1" class="anchored" data-anchor-id="poisson-expected-counts-uniformly-most-powerful-test"><span class="header-section-number">4.7.1.1</span> Poisson Expected Counts: Uniformly Most Powerful Test</h4>
 <blockquote class="blockquote">
 <p>Let’s say that we are counting the number of students that enter a classroom each minute. We assume that the entry of students is a homogeneous Poisson process (i.e., <span class="math inline">\(\lambda\)</span>, the expected number of entering students per time period, is constant). We think that five students, on average, will pass through the door each minute, while someone else thinks the number will be three. We collect data during five independent one-minute intervals: 4, 4, 3, 2, 3. What is the <span class="math inline">\(p\)</span>-value? Can we reject our null hypothesis at the level <span class="math inline">\(\alpha = 0.05\)</span>? And what is the power of the test for <span class="math inline">\(\lambda_a = 3\)</span>?</p>
 </blockquote>
@@ -1556,21 +1608,19 @@ H_o: \theta \in \Theta_o ~~\mbox{vs.}~~ H_a: \theta \in \Theta_o^c \,,
 <blockquote class="blockquote">
 <p>Since we are conducting a lower-tail/yes test, we <em>do</em> need to make a discreteness correction when computing the test power. The power is 0.664: if <span class="math inline">\(\lambda\)</span> is truly equal to 3, we would reject the null hypothesis that <span class="math inline">\(\lambda_o = 5\)</span> after collecting five data some two-thirds of the time.</p>
 </blockquote>
-<hr>
 </section>
-<section id="poisson-expected-counts-likelihood-ratio-test" class="level3" data-number="4.7.2">
-<h3 data-number="4.7.2" class="anchored" data-anchor-id="poisson-expected-counts-likelihood-ratio-test"><span class="header-section-number">4.7.2</span> Poisson Expected Counts: Likelihood Ratio Test</h3>
+<section id="poisson-expected-counts-likelihood-ratio-test" class="level4" data-number="4.7.1.2">
+<h4 data-number="4.7.1.2" class="anchored" data-anchor-id="poisson-expected-counts-likelihood-ratio-test"><span class="header-section-number">4.7.1.2</span> Poisson Expected Counts: Likelihood Ratio Test</h4>
 <blockquote class="blockquote">
 <p>Let’s assume the same setting as for the last example, but here, let’s say that we will test <span class="math inline">\(H_o: \lambda = \lambda_o = 5\)</span> versus <span class="math inline">\(H_a: \lambda \neq \lambda_o\)</span>. The alternative hypothesis is a composite hypothesis, because it does not uniquely specify the shape of the probability mass function. Because we know the sampling distribution for the sufficient statistic <span class="math inline">\(Y = \sum_{i=1}^n X_i\)</span> in the Poisson distribution with parameter <span class="math inline">\(n\lambda\)</span>, we can directly derive each of the two rejection region boundaries, which are <span class="math display">\[\begin{align*}
 y_{\rm RR,lo} &amp;= F_Y^{-1}(\alpha/2 \vert n\lambda_o) \\
 y_{\rm RR,hi} &amp;= F_Y^{-1}(1-\alpha/2 \vert n\lambda_o) \,.
-\end{align*}\]</span> In <code>R</code>, we determine the boundaries as <code>y.rr.lo &lt;- qpois(0.025,25)</code>, or 16, and <code>y.rr.hi &lt;- qpois(0.975,25)</code>, or 35. Our observed statistic is <span class="math inline">\(y_{\rm obs} = 16\)</span>, thus we fail to reject the null hypothesis.</p>
+\end{align*}\]</span> In <code>R</code>, we determine the boundaries as <code>y.rr.lo &lt;- qpois(0.025, 25)</code>, or 16, and <code>y.rr.hi &lt;- qpois(0.975, 25)</code>, or 35. Our observed statistic is <span class="math inline">\(y_{\rm obs} = 16\)</span>, thus we fail to reject the null hypothesis.</p>
 <p>As a reminder, because the alternative hypothesis is a composite hypothesis, the NP lemma does not apply here, and thus <em>we cannot guarantee that the test we have just constructed is the most powerful of all possible tests</em> of <span class="math inline">\(H_o: \lambda = \lambda_o\)</span> versus <span class="math inline">\(H_a: \lambda \neq \lambda_o\)</span>.</p>
 </blockquote>
-<hr>
 </section>
-<section id="normal-population-mean-lrt-with-wilks-theorem" class="level3" data-number="4.7.3">
-<h3 data-number="4.7.3" class="anchored" data-anchor-id="normal-population-mean-lrt-with-wilks-theorem"><span class="header-section-number">4.7.3</span> Normal Population Mean: LRT With Wilks’ Theorem</h3>
+<section id="normal-population-mean-lrt-with-wilks-theorem" class="level4" data-number="4.7.1.3">
+<h4 data-number="4.7.1.3" class="anchored" data-anchor-id="normal-population-mean-lrt-with-wilks-theorem"><span class="header-section-number">4.7.1.3</span> Normal Population Mean: LRT With Wilks’ Theorem</h4>
 <blockquote class="blockquote">
 <p>Let’s suppose that we have sampled <span class="math inline">\(n\)</span> iid data according to a normal distribution and we wish to test the hypothesis <span class="math inline">\(H_o: \mu = \mu_o\)</span> versus the hypothesis <span class="math inline">\(H_a: \mu \neq \mu_o\)</span> using the likelihood ratio test. (We assume the variance is unknown.)</p>
 </blockquote>
@@ -1592,12 +1642,11 @@ W = -2 \left[ \ell(\mu_o,\widehat{\sigma^2}_{MLE,o} \vert \mathbf{x}) - \ell(\ha
 \hat{\mu}_{MLE} &amp;= \bar{X} \\
 \widehat{\sigma^2}_{MLE,o} &amp;= \frac{n-1}{n}S^2 = \frac{1}{n} \sum_{i=1}^n (X_i - \mu_o)^2 \\
 \widehat{\sigma^2}_{MLE} &amp;= \frac{n-1}{n}S^2 = \frac{1}{n} \sum_{i=1}^n (X_i - \bar{X})^2 \,.
-\end{align*}\]</span> Ultimately, we compare the value of <span class="math inline">\(W\)</span> against a chi-square distribution for <span class="math inline">\(r-r_o = 1\)</span> degree of freedom, and thus we reject the null (at level <span class="math inline">\(\alpha = 0.05\)</span>) if <span class="math inline">\(W &gt; 3.841\)</span> (= <code>qchisq(0.95,1)</code>). In the next example, we see what transpires if we use this value as our rejection-region boundary as opposed to a value determined via simulations.</p>
+\end{align*}\]</span> Ultimately, we compare the value of <span class="math inline">\(W\)</span> against a chi-square distribution for <span class="math inline">\(r-r_o = 1\)</span> degree of freedom, and thus we reject the null (at level <span class="math inline">\(\alpha = 0.05\)</span>) if <span class="math inline">\(W &gt; 3.841\)</span> (= <code>qchisq(0.95, 1)</code>). In the next example, we see what transpires if we use this value as our rejection-region boundary as opposed to a value determined via simulations.</p>
 </blockquote>
-<hr>
 </section>
-<section id="normal-population-mean-lrt-via-simulation" class="level3" data-number="4.7.4">
-<h3 data-number="4.7.4" class="anchored" data-anchor-id="normal-population-mean-lrt-via-simulation"><span class="header-section-number">4.7.4</span> Normal Population Mean: LRT Via Simulation</h3>
+<section id="normal-population-mean-lrt-via-simulation" class="level4" data-number="4.7.1.4">
+<h4 data-number="4.7.1.4" class="anchored" data-anchor-id="normal-population-mean-lrt-via-simulation"><span class="header-section-number">4.7.1.4</span> Normal Population Mean: LRT Via Simulation</h4>
 <blockquote class="blockquote">
 <p>Wilks’ theorem generates an approximate result<span class="math inline">\(-\)</span>it assumes that the test statistic is chi-square-distributed<span class="math inline">\(-\)</span>and a major issue is that we do not know how good the approximation is. For instance, let’s say <span class="math inline">\(n = 20\)</span>…this might be an insufficient sample size for the Wilks’ theorem machinery to yield an accurate and precise result (at least in terms of a rejection-region boundary).</p>
 </blockquote>
@@ -1650,22 +1699,21 @@ Figure&nbsp;4.6: The empirical distribution of the statistic <span class="math i
 <blockquote class="blockquote">
 <p>In this simulation, we find that the empirical rejection-region boundary is 4.584, which is sufficiently far from the value 3.841 derived from Wilks’ theorem to be concerning. We also find that if we adopt 3.841 as our boundary value, our Type I error is actually 0.071 instead of the expected value of 0.05. The upshot: if <span class="math inline">\(n\)</span> is small, it is best <em>not</em> to assume that <span class="math inline">\(W\)</span> is chi-square-distributed; run simulations to determine rejection region boundaries and <span class="math inline">\(p\)</span>-values instead.</p>
 </blockquote>
-<hr>
 </section>
-<section id="poisson-distribution-chi-square-based-hypothesis-testing" class="level3" data-number="4.7.5">
-<h3 data-number="4.7.5" class="anchored" data-anchor-id="poisson-distribution-chi-square-based-hypothesis-testing"><span class="header-section-number">4.7.5</span> Poisson Distribution: Chi-Square-Based Hypothesis Testing</h3>
+<section id="poisson-distribution-chi-square-based-hypothesis-testing" class="level4" data-number="4.7.1.5">
+<h4 data-number="4.7.1.5" class="anchored" data-anchor-id="poisson-distribution-chi-square-based-hypothesis-testing"><span class="header-section-number">4.7.1.5</span> Poisson Distribution: Chi-Square-Based Hypothesis Testing</h4>
 <blockquote class="blockquote">
-<p>In Chapter 3, we introduced the chi-square goodness-of-fit test as a way of conducting hypothesis tests given multinomial data. Given <span class="math inline">\(k\)</span> data recorded in <span class="math inline">\(m\)</span> separate bins, we can compute the test statistic <span class="math display">\[
+<p>In <a href="03-binomial.html#sec-chap3gof" class="quarto-xref"><span>Section 3.9.2</span></a>, we introduced the chi-square goodness-of-fit test as a way of conducting hypothesis tests given multinomial data. Given <span class="math inline">\(k\)</span> data recorded in <span class="math inline">\(m\)</span> separate bins, we can compute the test statistic <span class="math display">\[
 W = \sum_{i=1}^m \frac{(X_i - kp_i)^2}{kp_i} \,,
 \]</span> where <span class="math inline">\(X_i\)</span> is the number of data observed in bin <span class="math inline">\(i\)</span>, and where <span class="math inline">\(p_i\)</span> is the probability of any one datum being observed in that bin under the null. If <span class="math inline">\(k\)</span> is sufficiently large, then <span class="math inline">\(W\)</span> converges in distribution to a chi-square random variable for <span class="math inline">\(m-1\)</span> degrees of freedom. (Hence the name of the test!)</p>
 </blockquote>
 <blockquote class="blockquote">
 <p>But: what if the overall observed number of data <span class="math inline">\(X\)</span> is a random variable instead of being a set constant <span class="math inline">\(X=k\)</span>? Imagine a very simple digital camera that has four light collecting bins, each of the same size, and we point it towards a light source that emits an average of <span class="math inline">\(\lambda\)</span> photons in a particular time period. If we open the shutter for that time period, what we would observe is <span class="math inline">\(X \sim\)</span> Poisson(<span class="math inline">\(\lambda\)</span>) photons, with the numbers in each bin being <span class="math inline">\(\{X_1,X_2,X_3,X_4\}\)</span>. Now let’s say we want to test the hypothesis that the probability of a photon falling into each bin is the same, i.e., <span class="math inline">\(H_o: p_1 = p_2 = p_3 = p_4 = 1/4\)</span>. If we were to use the chi-square GoF test directly, we would compute <span class="math display">\[
 w_{obs} = \sum_{i=1}^4 \frac{(X_i - \lambda p_i)^2}{\lambda p_i}
-\]</span> and then compute the <span class="math inline">\(p\)</span>-value <span class="math inline">\(1-F_W(w_{obs})\)</span> assume 3 degrees of freedom. (In <code>R</code>, this would be computed via <code>1 - pchisq(w.obs,3)</code>.) We can do this<span class="math inline">\(-\)</span>the computer will not stop us from doing so<span class="math inline">\(-\)</span>but is this valid?</p>
+\]</span> and then compute the <span class="math inline">\(p\)</span>-value <span class="math inline">\(1-F_W(w_{obs})\)</span> assume 3 degrees of freedom. (In <code>R</code>, this would be computed via <code>1 - pchisq(w.obs, 3)</code>.) We can do this<span class="math inline">\(-\)</span>the computer will not stop us from doing so<span class="math inline">\(-\)</span>but is this valid?</p>
 </blockquote>
 <blockquote class="blockquote">
-<p>The answer is that this <em>is</em> valid so long as each <span class="math inline">\(X_i\)</span> converges in distribution to a normal random variable. And Poisson random variables <em>do</em> converge in distribution to normal random variables, as demonstrated earlier in this chapter. Historical convention holds that so long as <span class="math inline">\(\lambda p_i \geq 5\)</span>, we can utilize the chi-square GoF test given a specific vector of proportions as a null hypothesis. However, we know that the chi-square GoF test hinges on the use of a large-sample approximation, specifically that the test statistic converges in distribution to a chi-square random variable. So…would it be better to utilize simulations, as we do when we have multinomial data, to achieve exact <span class="math inline">\(p\)</span>-values and not approximate ones? The answer to this question is not as clear-cut here as it was in Chapter 3. In a multinomial context, <em>we know the number of trials</em>, and so we specify the exact multinomial distribution according to which the data are sampled under the null hypothesis. Here, <em>we do not know the true number of expected counts</em>; we could make the principled assumption that <span class="math inline">\(\lambda = \sum_{i=1}^m X_i\)</span>, but that would just be an assumption and thus any subsequent inference would not be exact (or, more precisely stated, any inferences that we make would only be exact conditional on the truth of our assumed value for <span class="math inline">\(\lambda\)</span>, which would comprise one additional piece of our null hypothesis).</p>
+<p>The answer is that this <em>is</em> valid so long as each <span class="math inline">\(X_i\)</span> converges in distribution to a normal random variable. And Poisson random variables <em>do</em> converge in distribution to normal random variables, as demonstrated earlier in <a href="#sec-chap4pmf" class="quarto-xref"><span>Section 4.1</span></a>. Historical convention holds that so long as <span class="math inline">\(\lambda p_i \geq 5\)</span>, we can utilize the chi-square GoF test given a specific vector of proportions as a null hypothesis. However, we know that the chi-square GoF test hinges on the use of a large-sample approximation, specifically that the test statistic converges in distribution to a chi-square random variable. So…would it be better to utilize simulations, as we do when we have multinomial data, to achieve exact <span class="math inline">\(p\)</span>-values and not approximate ones? The answer to this question is not as clear-cut here as it was in <a href="03-binomial.html#sec-chap3categorical" class="quarto-xref"><span>Section 3.9</span></a>. In a multinomial context, <em>we know the number of trials</em>, and so we specify the exact multinomial distribution according to which the data are sampled under the null hypothesis. Here, <em>we do not know the true number of expected counts</em>; we could make the principled assumption that <span class="math inline">\(\lambda = \sum_{i=1}^m X_i\)</span>, but that would just be an assumption and thus any subsequent inference would not be exact (or, more precisely stated, any inferences that we make would only be exact conditional on the truth of our assumed value for <span class="math inline">\(\lambda\)</span>, which would comprise one additional piece of our null hypothesis).</p>
 </blockquote>
 <blockquote class="blockquote">
 <p>So let’s say we want to go ahead and assume a null hypothesis value for <span class="math inline">\(\lambda\)</span>. What would we do?</p>
@@ -1712,15 +1760,14 @@ W = -2 \left( \log p_1 + \cdots + \log p_m \right)
 <blockquote class="blockquote">
 <p>The overall <span class="math inline">\(p\)</span>-value is 0.569; we fail to reject the null hypothesis that <span class="math inline">\(\lambda = \lambda_o = 36\)</span> and <span class="math inline">\(p_1 = p_{1,o} = 0.25\)</span>, etc.</p>
 </blockquote>
-<hr>
 </section>
-<section id="death-by-horse-kick-are-the-data-poisson-distributed" class="level3" data-number="4.7.6">
-<h3 data-number="4.7.6" class="anchored" data-anchor-id="death-by-horse-kick-are-the-data-poisson-distributed"><span class="header-section-number">4.7.6</span> Death-by-Horse-Kick: Are the Data Poisson Distributed?</h3>
+<section id="death-by-horse-kick-are-the-data-poisson-distributed" class="level4" data-number="4.7.1.6">
+<h4 data-number="4.7.1.6" class="anchored" data-anchor-id="death-by-horse-kick-are-the-data-poisson-distributed"><span class="header-section-number">4.7.1.6</span> Death-by-Horse-Kick: Are the Data Poisson Distributed?</h4>
 <blockquote class="blockquote">
 <p>In previous examples, we have shown that over the course of 20 years, in 10 separate Prussian army corps, soldiers died as a result of horse kicks at a rate of <span class="math inline">\(\hat{\lambda} = \bar{X} = 0.61\)</span> deaths per corps per year, and that a 95% confidence interval for <span class="math inline">\(\lambda\)</span> is [0.507,0.728]. However, we never examined what is perhaps the most important question of all: is it plausible that the data are Poisson-distributed in the first place?</p>
 </blockquote>
 <blockquote class="blockquote">
-<p>In Chapter 3, we demonstrated how to utilize the chi-square GoF test as a test of distributions: if we fail to reject the null, we can assume that it is indeed plausible that a given set of discrete data are sampled according to the distribution adopted as the null distribution.</p>
+<p>In <a href="03-binomial.html#sec-chap3gof" class="quarto-xref"><span>Section 3.9.2</span></a>, we demonstrated how to utilize the chi-square GoF test as a test of distributions: if we fail to reject the null, we can assume that it is indeed plausible that a given set of discrete data are sampled according to the distribution adopted as the null distribution.</p>
 </blockquote>
 <blockquote class="blockquote">
 <p>Let’s assume <span class="math inline">\(\lambda = 0.61\)</span>. (The estimation of this quantity leads to the loss of one degree of freedom when we compute the <span class="math inline">\(p\)</span>-value below.) Then the probabilities <span class="math inline">\(P(X=x)\)</span> are as follows:</p>
@@ -1805,8 +1852,9 @@ W = \frac{(109-108.67)^2}{108.67} + \frac{(65-66.29)^2}{66.29} + \frac{(22-20.29
 </blockquote>
 </section>
 </section>
-<section id="poisson-and-negative-binomial-regression" class="level2" data-number="4.8">
-<h2 data-number="4.8" class="anchored" data-anchor-id="poisson-and-negative-binomial-regression"><span class="header-section-number">4.8</span> Poisson and Negative Binomial Regression</h2>
+</section>
+<section id="sec-chap4poireg" class="level2" data-number="4.8">
+<h2 data-number="4.8" class="anchored" data-anchor-id="sec-chap4poireg"><span class="header-section-number">4.8</span> Poisson and Negative Binomial Regression</h2>
 <div class="graybox">
 <p>What to take away from this section:</p>
 <ul>
@@ -1816,6 +1864,8 @@ W = \frac{(109-108.67)^2}{108.67} + \frac{(65-66.29)^2}{66.29} + \frac{(22-20.29
 </ul>
 </div>
 <p><br></p>
+<section id="poisson-regression" class="level3" data-number="4.8.1">
+<h3 data-number="4.8.1" class="anchored" data-anchor-id="poisson-regression"><span class="header-section-number">4.8.1</span> Poisson Regression</h3>
 <p>Suppose that for a given measurement <span class="math inline">\(x\)</span>, we record a random variable <span class="math inline">\(Y\)</span> that is a number of counts. For instance, <span class="math inline">\(x\)</span> might be the time of day, and <span class="math inline">\(Y\)</span> might be the observed number of cars parked in a lot at that time. Because <span class="math inline">\(Y\)</span> is (a) integer valued, and (b) non-negative, an appropriate distribution for the random variable <span class="math inline">\(Y\)</span> might be the Poisson distribution, and thus to model these data, we may want to pursue the use of Poisson regression.</p>
 <blockquote class="blockquote">
 <p><strong>Recall:</strong> <em>To implement a generalized linear model (or GLM), we need to do two things:</em></p>
@@ -1831,6 +1881,9 @@ g(\lambda \vert x) = \log (\lambda \vert x) = \beta_0 + \beta_1 x ~~\implies~~ \
 \]</span> Similar to logistic regression, our goal is to estimate <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span>, which is done via numerical optimization of the likelihood function <span class="math display">\[
 \mathcal{L}(\beta_0,\beta_1 \vert \mathbf{y}) = \prod_{i=1}^n p_{Y \vert \beta_0,\beta_1}(y_i \vert \beta_0,\beta_1) = \prod_{i=1}^n \frac{\exp(\beta_0+\beta_1x_i)^{x_i}}{x_i!} e^{-\exp(\beta_0+\beta_1x_i)} \,.
 \]</span></p>
+</section>
+<section id="negative-binomial-regression" class="level3" data-number="4.8.2">
+<h3 data-number="4.8.2" class="anchored" data-anchor-id="negative-binomial-regression"><span class="header-section-number">4.8.2</span> Negative Binomial Regression</h3>
 <p>For the Poisson distribution, <span class="math inline">\(E[X] = V[X] = \lambda\)</span>, so the expectation is that for any given value <span class="math inline">\(x\)</span>, <span class="math inline">\(E[Y \vert x] = V[Y \vert x] = \lambda(x)\)</span>. However, it is often observed in real-life data that the sample variance of <span class="math inline">\(Y\)</span> exceeds the sample mean. This is dubbed <em>overdispersion</em>, and it can arise when, e.g., the observed Poisson process is inhomogeneous…or differently stated, when <span class="math inline">\(\lambda(x)\)</span> varies as the data are collected. A standard way to deal with overdispersion is to move from Poisson regression to <em>negative binomial regression</em>.</p>
 <p>Before we say more, we will note that while the name “negative binomial regression” is technically correct (in the sense that the model assumes that the response data are negative binomially distributed), it can be very confusing for those new to regression, who might view the negative binomial as a distribution that is only useful when, e.g., modeling failures in Bernoulli trials. How could that distribution possibly apply here? The answer is that the negative binomial probability mass function is “just” a function (and as such, it is “allowed” to have more general use than just modeling failures), but more to the point, it is a function that arises naturally when we apply the Law of Total Probability to the Poisson pmf.</p>
 <p>Let’s suppose that <span class="math inline">\(Y \sim\)</span> Poisson(<span class="math inline">\(\lambda(x)\)</span>), but that <span class="math inline">\(\lambda(x)\)</span> itself is a random variable. There is no unique way to model its distribution, but the gamma distribution provides a flexible means by which to do so (since the family encompasses a wide variety of shapes, unlike, say, the normal distribution, which can never exhibit skewness). For simplicity, let’s assume henceforth that we are looking at one specific value of <span class="math inline">\(x\)</span> so that we can drop “<span class="math inline">\((x)\)</span>” from our notation. If we say that <span class="math inline">\(\lambda \sim\)</span> Gamma(<span class="math inline">\(\theta,p/\theta\)</span>), then we can determine the distribution of <span class="math inline">\(Y\)</span> is found with the LoTP: <span class="math display">\[\begin{align*}
@@ -1851,9 +1904,11 @@ p_{Y \vert \theta,p}(y \vert \theta,p) &amp;= \frac{1}{y!}\left(\frac{\theta}{p}
 E[Y] &amp;= p \\
 V[Y] &amp;= p + \frac{p^2}{\theta} \,.
 \end{align*}\]</span> (One can derive these quantities starting with, e.g., <span class="math inline">\(E[Y] = \theta(1-p')/p'\)</span> and <span class="math inline">\(V[Y] = \theta(1-p')/(p')^2\)</span> and plugging in <span class="math inline">\(p' = \theta/(p+\theta)\)</span>.) Varying <span class="math inline">\(\theta\)</span> thus allows us to model the overdispersion with a single variable. We assume that <span class="math inline">\(p\)</span> takes the place of <span class="math inline">\(\lambda\)</span>, in the sense that now <span class="math inline">\(p = \exp(\beta_0 + \beta_1x\)</span>) for our given specific value of <span class="math inline">\(x\)</span>. In the limit that <span class="math inline">\(\theta \rightarrow \infty\)</span>, negative binomial regression becomes Poisson regression. Because the overdispersion is represented in a single variable, we can examine the results of learning both Poisson and negative binomial regression models to determine whether or not the quality of fit improves enough to justify additional model complexity.</p>
-<hr>
-<section id="poisson-regression-example" class="level3" data-number="4.8.1">
-<h3 data-number="4.8.1" class="anchored" data-anchor-id="poisson-regression-example"><span class="header-section-number">4.8.1</span> Poisson Regression: Example</h3>
+</section>
+<section id="examples-6" class="level3" data-number="4.8.3">
+<h3 data-number="4.8.3" class="anchored" data-anchor-id="examples-6"><span class="header-section-number">4.8.3</span> Examples</h3>
+<section id="poisson-regression-example" class="level4" data-number="4.8.3.1">
+<h4 data-number="4.8.3.1" class="anchored" data-anchor-id="poisson-regression-example"><span class="header-section-number">4.8.3.1</span> Poisson Regression: Example</h4>
 <blockquote class="blockquote">
 <p>In the code chunk below, we simulate 100 data at each of four different values of <span class="math inline">\(x\)</span>: 1, 2, 3, and 4. The data are simulated with a Poisson overdispersion factor of 2.</p>
 </blockquote>
@@ -1931,7 +1986,7 @@ d_i = \mbox{sign}(Y_i - \hat{Y}_i) \sqrt{2[Y_i \log (Y_i/\hat{Y}_i) - (Y_i - \ha
 </div>
 </div>
 <blockquote class="blockquote">
-<p>As we did in the context of logistic regression, we can use the the difference in the values of the null and residual deviances (here, 1107 - 930 = 177) to test the null hypothesis that <span class="math inline">\(\beta_1 = 0\)</span>. The difference is assumed to be sampled according to a chi-square distribution for 4-3 = 1 degree of freedom. The <span class="math inline">\(p\)</span>-value is <code>1 - pchisq(177,1)</code> or effectively zero: we emphatically reject the null hypothesis that <span class="math inline">\(\beta_1 = 0\)</span>.</p>
+<p>As we did in the context of logistic regression, we can use the the difference in the values of the null and residual deviances (here, 1107 - 930 = 177) to test the null hypothesis that <span class="math inline">\(\beta_1 = 0\)</span>. The difference is assumed to be sampled according to a chi-square distribution for 4-3 = 1 degree of freedom. The <span class="math inline">\(p\)</span>-value is <code>1 - pchisq(177, 1)</code> or effectively zero: we emphatically reject the null hypothesis that <span class="math inline">\(\beta_1 = 0\)</span>.</p>
 </blockquote>
 <blockquote class="blockquote">
 <p>As a final note, unlike the case of logistic regression where determining the quality of fit of the learned model is not particularly straightforward, for Poisson regression we can simply assume that the residual deviance is chi-square-distributed for the given number of degrees of freedom. Here, the <span class="math inline">\(p\)</span>-value is</p>
@@ -1948,10 +2003,9 @@ d_i = \mbox{sign}(Y_i - \hat{Y}_i) \sqrt{2[Y_i \log (Y_i/\hat{Y}_i) - (Y_i - \ha
 <blockquote class="blockquote">
 <p>or, again, effectively zero. Because this value is less than, e.g., <span class="math inline">\(\alpha = 0.05\)</span>, we would reject the null hypothesis that the observed data are truly Poisson distributed.</p>
 </blockquote>
-<hr>
 </section>
-<section id="negative-binomial-regression-example" class="level3" data-number="4.8.2">
-<h3 data-number="4.8.2" class="anchored" data-anchor-id="negative-binomial-regression-example"><span class="header-section-number">4.8.2</span> Negative Binomial Regression: Example</h3>
+<section id="negative-binomial-regression-example" class="level4" data-number="4.8.3.2">
+<h4 data-number="4.8.3.2" class="anchored" data-anchor-id="negative-binomial-regression-example"><span class="header-section-number">4.8.3.2</span> Negative Binomial Regression: Example</h4>
 <blockquote class="blockquote">
 <p>At the conclusion of the previous example, we observed that by the metric of residual deviance, the data we are analyzing are not truly Poisson distributed. However, is it plausible that the data simply exhibit overdispersion? Here we will find out, by carrying out negative binomial regression with the <code>glm.nb()</code> function of the <code>MASS</code> package. (“MASS” stands for “Modern Applied Statistics with S”…with <code>S</code> being the precursor software to <code>R</code>.)</p>
 </blockquote>
@@ -2029,8 +2083,9 @@ AIC: 1633.9  [negative binomial regression]</code></pre>
 </blockquote>
 </section>
 </section>
-<section id="exercises" class="level2" data-number="4.9">
-<h2 data-number="4.9" class="anchored" data-anchor-id="exercises"><span class="header-section-number">4.9</span> Exercises</h2>
+</section>
+<section id="sec-chap4exercises" class="level2" data-number="4.9">
+<h2 data-number="4.9" class="anchored" data-anchor-id="sec-chap4exercises"><span class="header-section-number">4.9</span> Exercises</h2>
 <ol type="1">
 <li><p>Suppose that you receive phone calls at a rate of 2 per hour. (a) Let <span class="math inline">\(X\)</span> be the number of phone calls received in a randomly selected 15-minute period. Compute <span class="math inline">\(P(\mu \leq X \leq \mu+2\sigma)\)</span>. (b) Let <span class="math inline">\(Y\)</span> be the length of time between when the phone first rings from one call and when the phone first rings for the next call. What is <span class="math inline">\(P(Y &gt; 1/2 \, \vert \, Y &gt; 1/4)\)</span>? (c) When the phone rings, there is probability 0.2 that the caller is your friend, who you always talk to for 10 minutes. (All other calls are one minute in length.) What is the expected overall time spent on the phone during any given set of 10 phone calls?</p></li>
 <li><p>A particular basketball player shoots, <em>on average</em>, one time every two minutes, and exactly half of her shots are successful. In an upcoming game, she is to play for exactly eight minutes. (a) What is the probability that the player will have one successful shot, or less? (b) What is the probability that the number of successful shots will be within one standard deviation of the mean?</p></li>
@@ -2054,7 +2109,7 @@ uniroot(f,interval=c(0.001,1000),X=X,n=n,q=FIX)$root</code></pre>
 p_X(x) = p^x (1-p)^{1-x} \,,
 \end{align*}\]</span> where <span class="math inline">\(x \in \{0,1\}\)</span> and <span class="math inline">\(p \in (0,1)\)</span>. Assume that we draw <span class="math inline">\(n\)</span> iid data from this distribution. (a) Write down the likelihood ratio test statistic <span class="math inline">\(\lambda_{LR}\)</span> that arises when testing the hypothesis <span class="math inline">\(H_o : p = p_o\)</span> versus the hypothesis <span class="math inline">\(H_a : p \neq p_o\)</span>. (b) In this situation, is the LRT the most powerful test?</p></li>
 <li><p>In an experiment, you sample <em>one datum</em> from a Poisson distribution; the value of that datum is <span class="math inline">\(x_{\rm obs}\)</span>. You wish to test <span class="math inline">\(H_o : \lambda = \lambda_o\)</span> versus the alternative <span class="math inline">\(H_a : \lambda \neq \lambda_o\)</span>, and you will do this by utilizing the likelihood ratio test. However, instead of identifying a sufficient statistic and constructing an exact test, you decide to use Wilks’ theorem. (In real life: don’t do this…construct an exact test.) (a) Write down <span class="math inline">\(\hat{\lambda}_{MLE}\)</span>. (b) Write down an expression for <span class="math inline">\(\lambda_{LR}\)</span>. (c) Use the answer for part (a) to write down an expression for the Wilks’ theorem test statistic. (d) Regarding the statistic written down for part (c): what is its sampling distribution? Give the name and the values of its parameters.</p></li>
-<li><p>In an experiment, you sample <span class="math inline">\(n\)</span> iid data from a Poisson distribution with unknown mean <span class="math inline">\(\lambda\)</span>. You wish to conduct a likelihood-ratio test for which <span class="math inline">\(H_a : \lambda &lt; \lambda_o\)</span>. Assume <span class="math inline">\(\alpha = 0.05\)</span>. (a) Write down the sufficient statistic for <span class="math inline">\(\lambda\)</span> that appears directly in likelihood factorization. (b) Write down the sampling distribution for the statistic you found in part (a), the name and the value(s) of its parameters. (c) Write down the appropriate null hypothesis, given the stated alternative (and given that you are performing an LRT). (d) Write down the rejection region, using <code>R</code> code (e.g., <code>qnorm(0.975,mean=mu.o,sd=sqrt(sigma2))</code>). Assume the null value is to be written as <code>lambda.o</code>, and that a number should be provided for <span class="math inline">\(q\)</span>.</p></li>
+<li><p>In an experiment, you sample <span class="math inline">\(n\)</span> iid data from a Poisson distribution with unknown mean <span class="math inline">\(\lambda\)</span>. You wish to conduct a likelihood-ratio test for which <span class="math inline">\(H_a : \lambda &lt; \lambda_o\)</span>. Assume <span class="math inline">\(\alpha = 0.05\)</span>. (a) Write down the sufficient statistic for <span class="math inline">\(\lambda\)</span> that appears directly in likelihood factorization. (b) Write down the sampling distribution for the statistic you found in part (a), the name and the value(s) of its parameters. (c) Write down the appropriate null hypothesis, given the stated alternative (and given that you are performing an LRT). (d) Write down the rejection region, using <code>R</code> code (e.g., <code>qnorm(0.975, mean = mu.o, sd = sqrt(sigma2))</code>). Assume the null value is to be written as <code>lambda.o</code>, and that a number should be provided for <span class="math inline">\(q\)</span>.</p></li>
 <li><p>You are given <span class="math inline">\(n\)</span> iid data sampled according to an exponential distribution with pdf <span class="math display">\[\begin{align*}
 f_X(x \vert \beta) = \frac{1}{\beta}e^{-x/\beta} \,,
 \end{align*}\]</span> where <span class="math inline">\(x &gt; 0\)</span> and <span class="math inline">\(\beta &gt; 0\)</span>. (a) We wish to test <span class="math inline">\(H_o : \beta = 1\)</span> versus <span class="math inline">\(H_a : \beta \neq 1\)</span> at level <span class="math inline">\(\alpha = 0.05\)</span>. Write down an expression for the likelihood ratio test statistic <span class="math inline">\(\lambda\)</span>. Recall that the MLE for <span class="math inline">\(\beta\)</span> is <span class="math inline">\(\bar{X}\)</span>. (b) Assume that you do not know the sampling distribution for any sufficient statistic that you can define. Use Wilks’ theorem to write down a rejection region for this test.</p></li>

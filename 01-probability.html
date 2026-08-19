@@ -270,92 +270,141 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#data-and-statistical-populations" id="toc-data-and-statistical-populations" class="nav-link active" data-scroll-target="#data-and-statistical-populations"><span class="header-section-number">1.1</span> Data and Statistical Populations</a></li>
-  <li><a href="#sample-spaces-and-the-axioms-of-probability" id="toc-sample-spaces-and-the-axioms-of-probability" class="nav-link" data-scroll-target="#sample-spaces-and-the-axioms-of-probability"><span class="header-section-number">1.2</span> Sample Spaces and the Axioms of Probability</a>
+  <li><a href="#sec-chap1data" id="toc-sec-chap1data" class="nav-link active" data-scroll-target="#sec-chap1data"><span class="header-section-number">1.1</span> Data and Statistical Populations</a></li>
+  <li><a href="#sec-chap1sample" id="toc-sec-chap1sample" class="nav-link" data-scroll-target="#sec-chap1sample"><span class="header-section-number">1.2</span> Sample Spaces and the Axioms of Probability</a>
+  <ul>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">1.2.1</span> Examples</a>
   <ul class="collapse">
-  <li><a href="#utilizing-set-notation" id="toc-utilizing-set-notation" class="nav-link" data-scroll-target="#utilizing-set-notation"><span class="header-section-number">1.2.1</span> Utilizing Set Notation</a></li>
-  <li><a href="#working-with-contingency-tables" id="toc-working-with-contingency-tables" class="nav-link" data-scroll-target="#working-with-contingency-tables"><span class="header-section-number">1.2.2</span> Working With Contingency Tables</a></li>
+  <li><a href="#utilizing-set-notation" id="toc-utilizing-set-notation" class="nav-link" data-scroll-target="#utilizing-set-notation"><span class="header-section-number">1.2.1.1</span> Utilizing Set Notation</a></li>
+  <li><a href="#working-with-contingency-tables" id="toc-working-with-contingency-tables" class="nav-link" data-scroll-target="#working-with-contingency-tables"><span class="header-section-number">1.2.1.2</span> Working With Contingency Tables</a></li>
   </ul></li>
-  <li><a href="#conditional-probability-and-the-independence-of-events" id="toc-conditional-probability-and-the-independence-of-events" class="nav-link" data-scroll-target="#conditional-probability-and-the-independence-of-events"><span class="header-section-number">1.3</span> Conditional Probability and the Independence of Events</a>
+  </ul></li>
+  <li><a href="#sec-chap1conditional" id="toc-sec-chap1conditional" class="nav-link" data-scroll-target="#sec-chap1conditional"><span class="header-section-number">1.3</span> Conditional Probability and the Independence of Events</a>
+  <ul>
+  <li><a href="#examples-1" id="toc-examples-1" class="nav-link" data-scroll-target="#examples-1"><span class="header-section-number">1.3.1</span> Examples</a>
   <ul class="collapse">
-  <li><a href="#visualizing-conditional-probabilities-contingency-tables" id="toc-visualizing-conditional-probabilities-contingency-tables" class="nav-link" data-scroll-target="#visualizing-conditional-probabilities-contingency-tables"><span class="header-section-number">1.3.1</span> Visualizing Conditional Probabilities: Contingency Tables</a></li>
-  <li><a href="#conditional-independence" id="toc-conditional-independence" class="nav-link" data-scroll-target="#conditional-independence"><span class="header-section-number">1.3.2</span> Conditional Independence</a></li>
+  <li><a href="#visualizing-conditional-probabilities-contingency-tables" id="toc-visualizing-conditional-probabilities-contingency-tables" class="nav-link" data-scroll-target="#visualizing-conditional-probabilities-contingency-tables"><span class="header-section-number">1.3.1.1</span> Visualizing Conditional Probabilities: Contingency Tables</a></li>
+  <li><a href="#conditional-independence" id="toc-conditional-independence" class="nav-link" data-scroll-target="#conditional-independence"><span class="header-section-number">1.3.1.2</span> Conditional Independence</a></li>
   </ul></li>
-  <li><a href="#further-laws-of-probability" id="toc-further-laws-of-probability" class="nav-link" data-scroll-target="#further-laws-of-probability"><span class="header-section-number">1.4</span> Further Laws of Probability</a>
+  </ul></li>
+  <li><a href="#sec-chap1further" id="toc-sec-chap1further" class="nav-link" data-scroll-target="#sec-chap1further"><span class="header-section-number">1.4</span> Further Laws of Probability</a>
+  <ul>
+  <li><a href="#examples-2" id="toc-examples-2" class="nav-link" data-scroll-target="#examples-2"><span class="header-section-number">1.4.1</span> Examples</a>
   <ul class="collapse">
-  <li><a href="#the-additive-law-for-independent-events" id="toc-the-additive-law-for-independent-events" class="nav-link" data-scroll-target="#the-additive-law-for-independent-events"><span class="header-section-number">1.4.1</span> The Additive Law for Independent Events</a></li>
-  <li><a href="#the-monty-hall-problem" id="toc-the-monty-hall-problem" class="nav-link" data-scroll-target="#the-monty-hall-problem"><span class="header-section-number">1.4.2</span> The Monty Hall Problem</a></li>
-  <li><a href="#visualizing-conditional-probabilities-tree-diagrams" id="toc-visualizing-conditional-probabilities-tree-diagrams" class="nav-link" data-scroll-target="#visualizing-conditional-probabilities-tree-diagrams"><span class="header-section-number">1.4.3</span> Visualizing Conditional Probabilities: Tree Diagrams</a></li>
+  <li><a href="#the-additive-law-for-independent-events" id="toc-the-additive-law-for-independent-events" class="nav-link" data-scroll-target="#the-additive-law-for-independent-events"><span class="header-section-number">1.4.1.1</span> The Additive Law for Independent Events</a></li>
+  <li><a href="#the-monty-hall-problem" id="toc-the-monty-hall-problem" class="nav-link" data-scroll-target="#the-monty-hall-problem"><span class="header-section-number">1.4.1.2</span> The Monty Hall Problem</a></li>
+  <li><a href="#visualizing-conditional-probabilities-tree-diagrams" id="toc-visualizing-conditional-probabilities-tree-diagrams" class="nav-link" data-scroll-target="#visualizing-conditional-probabilities-tree-diagrams"><span class="header-section-number">1.4.1.3</span> Visualizing Conditional Probabilities: Tree Diagrams</a></li>
   </ul></li>
-  <li><a href="#random-variables" id="toc-random-variables" class="nav-link" data-scroll-target="#random-variables"><span class="header-section-number">1.5</span> Random Variables</a></li>
-  <li><a href="#probability-distributions" id="toc-probability-distributions" class="nav-link" data-scroll-target="#probability-distributions"><span class="header-section-number">1.6</span> Probability Distributions</a>
+  </ul></li>
+  <li><a href="#sec-chap1random" id="toc-sec-chap1random" class="nav-link" data-scroll-target="#sec-chap1random"><span class="header-section-number">1.5</span> Random Variables</a></li>
+  <li><a href="#sec-chap1density" id="toc-sec-chap1density" class="nav-link" data-scroll-target="#sec-chap1density"><span class="header-section-number">1.6</span> Probability Distributions: Density and Mass Functions</a>
+  <ul>
+  <li><a href="#examples-3" id="toc-examples-3" class="nav-link" data-scroll-target="#examples-3"><span class="header-section-number">1.6.1</span> Examples</a>
   <ul class="collapse">
-  <li><a href="#a-simple-probability-density-function" id="toc-a-simple-probability-density-function" class="nav-link" data-scroll-target="#a-simple-probability-density-function"><span class="header-section-number">1.6.1</span> A Simple Probability Density Function</a></li>
-  <li><a href="#shape-parameters-and-families-of-distributions" id="toc-shape-parameters-and-families-of-distributions" class="nav-link" data-scroll-target="#shape-parameters-and-families-of-distributions"><span class="header-section-number">1.6.2</span> Shape Parameters and Families of Distributions</a></li>
-  <li><a href="#a-simple-probability-mass-function" id="toc-a-simple-probability-mass-function" class="nav-link" data-scroll-target="#a-simple-probability-mass-function"><span class="header-section-number">1.6.3</span> A Simple Probability Mass Function</a></li>
-  <li><a href="#a-more-complex-example-involving-both-masses-and-densities" id="toc-a-more-complex-example-involving-both-masses-and-densities" class="nav-link" data-scroll-target="#a-more-complex-example-involving-both-masses-and-densities"><span class="header-section-number">1.6.4</span> A More Complex Example Involving Both Masses and Densities</a></li>
+  <li><a href="#a-simple-probability-density-function" id="toc-a-simple-probability-density-function" class="nav-link" data-scroll-target="#a-simple-probability-density-function"><span class="header-section-number">1.6.1.1</span> A Simple Probability Density Function</a></li>
+  <li><a href="#shape-parameters-and-families-of-distributions" id="toc-shape-parameters-and-families-of-distributions" class="nav-link" data-scroll-target="#shape-parameters-and-families-of-distributions"><span class="header-section-number">1.6.1.2</span> Shape Parameters and Families of Distributions</a></li>
+  <li><a href="#a-simple-probability-mass-function" id="toc-a-simple-probability-mass-function" class="nav-link" data-scroll-target="#a-simple-probability-mass-function"><span class="header-section-number">1.6.1.3</span> A Simple Probability Mass Function</a></li>
+  <li><a href="#a-more-complex-example-involving-both-masses-and-densities" id="toc-a-more-complex-example-involving-both-masses-and-densities" class="nav-link" data-scroll-target="#a-more-complex-example-involving-both-masses-and-densities"><span class="header-section-number">1.6.1.4</span> A More Complex Example Involving Both Masses and Densities</a></li>
   </ul></li>
-  <li><a href="#characterizing-probability-distributions" id="toc-characterizing-probability-distributions" class="nav-link" data-scroll-target="#characterizing-probability-distributions"><span class="header-section-number">1.7</span> Characterizing Probability Distributions</a>
+  </ul></li>
+  <li><a href="#sec-chap1expected" id="toc-sec-chap1expected" class="nav-link" data-scroll-target="#sec-chap1expected"><span class="header-section-number">1.7</span> Probability Distributions: Expected Value and Variance</a>
+  <ul>
+  <li><a href="#examples-4" id="toc-examples-4" class="nav-link" data-scroll-target="#examples-4"><span class="header-section-number">1.7.1</span> Examples</a>
   <ul class="collapse">
-  <li><a href="#expected-value-tricks" id="toc-expected-value-tricks" class="nav-link" data-scroll-target="#expected-value-tricks"><span class="header-section-number">1.7.1</span> Expected Value Tricks</a></li>
-  <li><a href="#variance-tricks" id="toc-variance-tricks" class="nav-link" data-scroll-target="#variance-tricks"><span class="header-section-number">1.7.2</span> Variance Tricks</a></li>
-  <li><a href="#the-shortcut-formula-for-variance" id="toc-the-shortcut-formula-for-variance" class="nav-link" data-scroll-target="#the-shortcut-formula-for-variance"><span class="header-section-number">1.7.3</span> The Shortcut Formula for Variance</a></li>
-  <li><a href="#the-expected-value-and-variance-of-a-probability-density-function" id="toc-the-expected-value-and-variance-of-a-probability-density-function" class="nav-link" data-scroll-target="#the-expected-value-and-variance-of-a-probability-density-function"><span class="header-section-number">1.7.4</span> The Expected Value and Variance of a Probability Density Function</a></li>
+  <li><a href="#expected-value-tricks" id="toc-expected-value-tricks" class="nav-link" data-scroll-target="#expected-value-tricks"><span class="header-section-number">1.7.1.1</span> Expected Value Tricks</a></li>
+  <li><a href="#variance-tricks" id="toc-variance-tricks" class="nav-link" data-scroll-target="#variance-tricks"><span class="header-section-number">1.7.1.2</span> Variance Tricks</a></li>
+  <li><a href="#the-shortcut-formula-for-variance" id="toc-the-shortcut-formula-for-variance" class="nav-link" data-scroll-target="#the-shortcut-formula-for-variance"><span class="header-section-number">1.7.1.3</span> The Shortcut Formula for Variance</a></li>
+  <li><a href="#the-expected-value-and-variance-of-a-probability-density-function" id="toc-the-expected-value-and-variance-of-a-probability-density-function" class="nav-link" data-scroll-target="#the-expected-value-and-variance-of-a-probability-density-function"><span class="header-section-number">1.7.1.4</span> The Expected Value and Variance of a Probability Density Function</a></li>
   </ul></li>
-  <li><a href="#working-with-r-probability-distributions" id="toc-working-with-r-probability-distributions" class="nav-link" data-scroll-target="#working-with-r-probability-distributions"><span class="header-section-number">1.8</span> Working With R: Probability Distributions</a>
+  </ul></li>
+  <li><a href="#sec-chap1working" id="toc-sec-chap1working" class="nav-link" data-scroll-target="#sec-chap1working"><span class="header-section-number">1.8</span> Probability Distributions: Working with R</a>
+  <ul>
+  <li><a href="#examples-5" id="toc-examples-5" class="nav-link" data-scroll-target="#examples-5"><span class="header-section-number">1.8.1</span> Examples</a>
   <ul class="collapse">
-  <li><a href="#numerical-integration-and-conditional-probability" id="toc-numerical-integration-and-conditional-probability" class="nav-link" data-scroll-target="#numerical-integration-and-conditional-probability"><span class="header-section-number">1.8.1</span> Numerical Integration and Conditional Probability</a></li>
-  <li><a href="#numerical-integration-and-variance" id="toc-numerical-integration-and-variance" class="nav-link" data-scroll-target="#numerical-integration-and-variance"><span class="header-section-number">1.8.2</span> Numerical Integration and Variance</a></li>
+  <li><a href="#numerical-integration-and-conditional-probability" id="toc-numerical-integration-and-conditional-probability" class="nav-link" data-scroll-target="#numerical-integration-and-conditional-probability"><span class="header-section-number">1.8.1.1</span> Numerical Integration and Conditional Probability</a></li>
+  <li><a href="#numerical-integration-and-variance" id="toc-numerical-integration-and-variance" class="nav-link" data-scroll-target="#numerical-integration-and-variance"><span class="header-section-number">1.8.1.2</span> Numerical Integration and Variance</a></li>
   </ul></li>
-  <li><a href="#cumulative-distribution-functions" id="toc-cumulative-distribution-functions" class="nav-link" data-scroll-target="#cumulative-distribution-functions"><span class="header-section-number">1.9</span> Cumulative Distribution Functions</a>
+  </ul></li>
+  <li><a href="#sec-chap1cumulative" id="toc-sec-chap1cumulative" class="nav-link" data-scroll-target="#sec-chap1cumulative"><span class="header-section-number">1.9</span> Probability Distributions: Cumulative Distribution Function</a>
+  <ul>
+  <li><a href="#examples-6" id="toc-examples-6" class="nav-link" data-scroll-target="#examples-6"><span class="header-section-number">1.9.1</span> Examples</a>
   <ul class="collapse">
-  <li><a href="#the-cumulative-distribution-function-for-a-probability-density-function" id="toc-the-cumulative-distribution-function-for-a-probability-density-function" class="nav-link" data-scroll-target="#the-cumulative-distribution-function-for-a-probability-density-function"><span class="header-section-number">1.9.1</span> The Cumulative Distribution Function for a Probability Density Function</a></li>
-  <li><a href="#visualizing-the-cumulative-distribution-function-in-r" id="toc-visualizing-the-cumulative-distribution-function-in-r" class="nav-link" data-scroll-target="#visualizing-the-cumulative-distribution-function-in-r"><span class="header-section-number">1.9.2</span> Visualizing the Cumulative Distribution Function in R</a></li>
-  <li><a href="#the-cdf-for-a-mathematically-discontinuous-distribution" id="toc-the-cdf-for-a-mathematically-discontinuous-distribution" class="nav-link" data-scroll-target="#the-cdf-for-a-mathematically-discontinuous-distribution"><span class="header-section-number">1.9.3</span> The CDF for a Mathematically Discontinuous Distribution</a></li>
+  <li><a href="#the-cumulative-distribution-function-for-a-probability-density-function" id="toc-the-cumulative-distribution-function-for-a-probability-density-function" class="nav-link" data-scroll-target="#the-cumulative-distribution-function-for-a-probability-density-function"><span class="header-section-number">1.9.1.1</span> The Cumulative Distribution Function for a Probability Density Function</a></li>
+  <li><a href="#visualizing-the-cumulative-distribution-function-in-r" id="toc-visualizing-the-cumulative-distribution-function-in-r" class="nav-link" data-scroll-target="#visualizing-the-cumulative-distribution-function-in-r"><span class="header-section-number">1.9.1.2</span> Visualizing the Cumulative Distribution Function in R</a></li>
+  <li><a href="#the-cdf-for-a-mathematically-discontinuous-distribution" id="toc-the-cdf-for-a-mathematically-discontinuous-distribution" class="nav-link" data-scroll-target="#the-cdf-for-a-mathematically-discontinuous-distribution"><span class="header-section-number">1.9.1.3</span> The CDF for a Mathematically Discontinuous Distribution</a></li>
   </ul></li>
-  <li><a href="#the-law-of-total-probability" id="toc-the-law-of-total-probability" class="nav-link" data-scroll-target="#the-law-of-total-probability"><span class="header-section-number">1.10</span> The Law of Total Probability</a>
+  </ul></li>
+  <li><a href="#sec-chap1lotp" id="toc-sec-chap1lotp" class="nav-link" data-scroll-target="#sec-chap1lotp"><span class="header-section-number">1.10</span> The Law of Total Probability</a>
+  <ul>
+  <li><a href="#examples-7" id="toc-examples-7" class="nav-link" data-scroll-target="#examples-7"><span class="header-section-number">1.10.1</span> Examples</a>
   <ul class="collapse">
-  <li><a href="#the-lotp-with-two-simple-discrete-distributions" id="toc-the-lotp-with-two-simple-discrete-distributions" class="nav-link" data-scroll-target="#the-lotp-with-two-simple-discrete-distributions"><span class="header-section-number">1.10.1</span> The LoTP With Two Simple Discrete Distributions</a></li>
-  <li><a href="#the-law-of-total-expectation" id="toc-the-law-of-total-expectation" class="nav-link" data-scroll-target="#the-law-of-total-expectation"><span class="header-section-number">1.10.2</span> The Law of Total Expectation</a></li>
-  <li><a href="#the-lotp-with-two-continuous-distributions" id="toc-the-lotp-with-two-continuous-distributions" class="nav-link" data-scroll-target="#the-lotp-with-two-continuous-distributions"><span class="header-section-number">1.10.3</span> The LoTP With Two Continuous Distributions</a></li>
+  <li><a href="#the-lotp-with-two-simple-discrete-distributions" id="toc-the-lotp-with-two-simple-discrete-distributions" class="nav-link" data-scroll-target="#the-lotp-with-two-simple-discrete-distributions"><span class="header-section-number">1.10.1.1</span> The LoTP With Two Simple Discrete Distributions</a></li>
+  <li><a href="#the-law-of-total-expectation" id="toc-the-law-of-total-expectation" class="nav-link" data-scroll-target="#the-law-of-total-expectation"><span class="header-section-number">1.10.1.2</span> The Law of Total Expectation</a></li>
+  <li><a href="#the-lotp-with-two-continuous-distributions" id="toc-the-lotp-with-two-continuous-distributions" class="nav-link" data-scroll-target="#the-lotp-with-two-continuous-distributions"><span class="header-section-number">1.10.1.3</span> The LoTP With Two Continuous Distributions</a></li>
   </ul></li>
-  <li><a href="#data-sampling" id="toc-data-sampling" class="nav-link" data-scroll-target="#data-sampling"><span class="header-section-number">1.11</span> Data Sampling</a>
+  </ul></li>
+  <li><a href="#sec-chap1sampling" id="toc-sec-chap1sampling" class="nav-link" data-scroll-target="#sec-chap1sampling"><span class="header-section-number">1.11</span> Data Sampling</a>
+  <ul>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">1.11.1</span> Example</a>
   <ul class="collapse">
-  <li><a href="#more-inverse-transform-sampling" id="toc-more-inverse-transform-sampling" class="nav-link" data-scroll-target="#more-inverse-transform-sampling"><span class="header-section-number">1.11.1</span> More Inverse-Transform Sampling</a></li>
+  <li><a href="#more-inverse-transform-sampling" id="toc-more-inverse-transform-sampling" class="nav-link" data-scroll-target="#more-inverse-transform-sampling"><span class="header-section-number">1.11.1.1</span> More Inverse-Transform Sampling</a></li>
   </ul></li>
-  <li><a href="#statistics-and-sampling-distributions" id="toc-statistics-and-sampling-distributions" class="nav-link" data-scroll-target="#statistics-and-sampling-distributions"><span class="header-section-number">1.12</span> Statistics and Sampling Distributions</a>
+  </ul></li>
+  <li><a href="#sec-chap1statistics" id="toc-sec-chap1statistics" class="nav-link" data-scroll-target="#sec-chap1statistics"><span class="header-section-number">1.12</span> Statistics and Sampling Distributions</a>
+  <ul>
+  <li><a href="#sec-chap1stat" id="toc-sec-chap1stat" class="nav-link" data-scroll-target="#sec-chap1stat"><span class="header-section-number">1.12.1</span> Statistics</a></li>
+  <li><a href="#sec-chap1sampdist" id="toc-sec-chap1sampdist" class="nav-link" data-scroll-target="#sec-chap1sampdist"><span class="header-section-number">1.12.2</span> Sampling Distributions</a></li>
+  <li><a href="#examples-8" id="toc-examples-8" class="nav-link" data-scroll-target="#examples-8"><span class="header-section-number">1.12.3</span> Examples</a>
   <ul class="collapse">
-  <li><a href="#expected-value-and-variance-of-the-sample-mean-for-all-distributions" id="toc-expected-value-and-variance-of-the-sample-mean-for-all-distributions" class="nav-link" data-scroll-target="#expected-value-and-variance-of-the-sample-mean-for-all-distributions"><span class="header-section-number">1.12.1</span> Expected Value and Variance of the Sample Mean (For All Distributions)</a></li>
-  <li><a href="#simulation-basic-algorithm" id="toc-simulation-basic-algorithm" class="nav-link" data-scroll-target="#simulation-basic-algorithm"><span class="header-section-number">1.12.2</span> Simulation: Basic Algorithm</a></li>
-  <li><a href="#simulation-the-sampling-distribution-of-the-sample-mean" id="toc-simulation-the-sampling-distribution-of-the-sample-mean" class="nav-link" data-scroll-target="#simulation-the-sampling-distribution-of-the-sample-mean"><span class="header-section-number">1.12.3</span> Simulation: the Sampling Distribution of the Sample Mean</a></li>
-  <li><a href="#simulation-the-sampling-distribution-of-the-sample-median" id="toc-simulation-the-sampling-distribution-of-the-sample-median" class="nav-link" data-scroll-target="#simulation-the-sampling-distribution-of-the-sample-median"><span class="header-section-number">1.12.4</span> Simulation: the Sampling Distribution of the Sample Median</a></li>
+  <li><a href="#expected-value-and-variance-of-the-sample-mean-for-all-distributions" id="toc-expected-value-and-variance-of-the-sample-mean-for-all-distributions" class="nav-link" data-scroll-target="#expected-value-and-variance-of-the-sample-mean-for-all-distributions"><span class="header-section-number">1.12.3.1</span> Expected Value and Variance of the Sample Mean (For All Distributions)</a></li>
+  <li><a href="#simulation-basic-algorithm" id="toc-simulation-basic-algorithm" class="nav-link" data-scroll-target="#simulation-basic-algorithm"><span class="header-section-number">1.12.3.2</span> Simulation: Basic Algorithm</a></li>
+  <li><a href="#simulation-the-sampling-distribution-of-the-sample-mean" id="toc-simulation-the-sampling-distribution-of-the-sample-mean" class="nav-link" data-scroll-target="#simulation-the-sampling-distribution-of-the-sample-mean"><span class="header-section-number">1.12.3.3</span> Simulation: the Sampling Distribution of the Sample Mean</a></li>
+  <li><a href="#simulation-the-sampling-distribution-of-the-sample-median" id="toc-simulation-the-sampling-distribution-of-the-sample-median" class="nav-link" data-scroll-target="#simulation-the-sampling-distribution-of-the-sample-median"><span class="header-section-number">1.12.3.4</span> Simulation: the Sampling Distribution of the Sample Median</a></li>
   </ul></li>
-  <li><a href="#the-likelihood-function" id="toc-the-likelihood-function" class="nav-link" data-scroll-target="#the-likelihood-function"><span class="header-section-number">1.13</span> The Likelihood Function</a>
+  </ul></li>
+  <li><a href="#sec-chap1likelihood" id="toc-sec-chap1likelihood" class="nav-link" data-scroll-target="#sec-chap1likelihood"><span class="header-section-number">1.13</span> The Likelihood Function</a>
+  <ul>
+  <li><a href="#examples-9" id="toc-examples-9" class="nav-link" data-scroll-target="#examples-9"><span class="header-section-number">1.13.1</span> Examples</a>
   <ul class="collapse">
-  <li><a href="#examples-of-likelihood-functions-for-iid-data" id="toc-examples-of-likelihood-functions-for-iid-data" class="nav-link" data-scroll-target="#examples-of-likelihood-functions-for-iid-data"><span class="header-section-number">1.13.1</span> Examples of Likelihood Functions for IID Data</a></li>
-  <li><a href="#coding-the-likelihood-function-in-r" id="toc-coding-the-likelihood-function-in-r" class="nav-link" data-scroll-target="#coding-the-likelihood-function-in-r"><span class="header-section-number">1.13.2</span> Coding the Likelihood Function in R</a></li>
+  <li><a href="#examples-of-likelihood-functions-for-iid-data" id="toc-examples-of-likelihood-functions-for-iid-data" class="nav-link" data-scroll-target="#examples-of-likelihood-functions-for-iid-data"><span class="header-section-number">1.13.1.1</span> Examples of Likelihood Functions for IID Data</a></li>
+  <li><a href="#coding-the-likelihood-function-in-r" id="toc-coding-the-likelihood-function-in-r" class="nav-link" data-scroll-target="#coding-the-likelihood-function-in-r"><span class="header-section-number">1.13.1.2</span> Coding the Likelihood Function in R</a></li>
   </ul></li>
-  <li><a href="#point-estimation" id="toc-point-estimation" class="nav-link" data-scroll-target="#point-estimation"><span class="header-section-number">1.14</span> Point Estimation</a>
+  </ul></li>
+  <li><a href="#sec-chap1point" id="toc-sec-chap1point" class="nav-link" data-scroll-target="#sec-chap1point"><span class="header-section-number">1.14</span> Point Estimation</a>
+  <ul>
+  <li><a href="#sec-chap1mse" id="toc-sec-chap1mse" class="nav-link" data-scroll-target="#sec-chap1mse"><span class="header-section-number">1.14.1</span> Estimator Bias, Variance, and Mean-Squared Error</a></li>
+  <li><a href="#sec-chap1mle" id="toc-sec-chap1mle" class="nav-link" data-scroll-target="#sec-chap1mle"><span class="header-section-number">1.14.2</span> Maximum Likelihood Estimation</a></li>
+  <li><a href="#examples-10" id="toc-examples-10" class="nav-link" data-scroll-target="#examples-10"><span class="header-section-number">1.14.3</span> Examples</a>
   <ul class="collapse">
-  <li><a href="#comparing-two-estimators" id="toc-comparing-two-estimators" class="nav-link" data-scroll-target="#comparing-two-estimators"><span class="header-section-number">1.14.1</span> Comparing Two Estimators</a></li>
-  <li><a href="#maximum-likelihood-estimate-of-population-parameter" id="toc-maximum-likelihood-estimate-of-population-parameter" class="nav-link" data-scroll-target="#maximum-likelihood-estimate-of-population-parameter"><span class="header-section-number">1.14.2</span> Maximum Likelihood Estimate of Population Parameter</a></li>
-  <li><a href="#simulation-sampling-distribution-of-maximum-likelihood-estimates" id="toc-simulation-sampling-distribution-of-maximum-likelihood-estimates" class="nav-link" data-scroll-target="#simulation-sampling-distribution-of-maximum-likelihood-estimates"><span class="header-section-number">1.14.3</span> Simulation: Sampling Distribution of Maximum Likelihood Estimates</a></li>
+  <li><a href="#comparing-two-estimators" id="toc-comparing-two-estimators" class="nav-link" data-scroll-target="#comparing-two-estimators"><span class="header-section-number">1.14.3.1</span> Comparing Two Estimators</a></li>
+  <li><a href="#maximum-likelihood-estimate-of-population-parameter" id="toc-maximum-likelihood-estimate-of-population-parameter" class="nav-link" data-scroll-target="#maximum-likelihood-estimate-of-population-parameter"><span class="header-section-number">1.14.3.2</span> Maximum Likelihood Estimate of Population Parameter</a></li>
+  <li><a href="#simulation-sampling-distribution-of-maximum-likelihood-estimates" id="toc-simulation-sampling-distribution-of-maximum-likelihood-estimates" class="nav-link" data-scroll-target="#simulation-sampling-distribution-of-maximum-likelihood-estimates"><span class="header-section-number">1.14.3.3</span> Simulation: Sampling Distribution of Maximum Likelihood Estimates</a></li>
   </ul></li>
-  <li><a href="#statistical-inference-with-sampling-distributions" id="toc-statistical-inference-with-sampling-distributions" class="nav-link" data-scroll-target="#statistical-inference-with-sampling-distributions"><span class="header-section-number">1.15</span> Statistical Inference with Sampling Distributions</a></li>
-  <li><a href="#confidence-intervals" id="toc-confidence-intervals" class="nav-link" data-scroll-target="#confidence-intervals"><span class="header-section-number">1.16</span> Confidence Intervals</a>
+  </ul></li>
+  <li><a href="#statistical-inference-with-sampling-distributions-sec-chap1inference" id="toc-statistical-inference-with-sampling-distributions-sec-chap1inference" class="nav-link" data-scroll-target="#statistical-inference-with-sampling-distributions-sec-chap1inference"><span class="header-section-number">1.15</span> Statistical Inference with Sampling Distributions {sec-chap1inference}</a></li>
+  <li><a href="#sec-chap1confidence" id="toc-sec-chap1confidence" class="nav-link" data-scroll-target="#sec-chap1confidence"><span class="header-section-number">1.16</span> Confidence Intervals</a>
+  <ul>
+  <li><a href="#sec-chap1confref" id="toc-sec-chap1confref" class="nav-link" data-scroll-target="#sec-chap1confref"><span class="header-section-number">1.16.1</span> Confidence Intervals: Reference Table</a></li>
+  <li><a href="#examples-11" id="toc-examples-11" class="nav-link" data-scroll-target="#examples-11"><span class="header-section-number">1.16.2</span> Examples</a>
   <ul class="collapse">
-  <li><a href="#confidence-interval-where-ey-increases-with-theta" id="toc-confidence-interval-where-ey-increases-with-theta" class="nav-link" data-scroll-target="#confidence-interval-where-ey-increases-with-theta"><span class="header-section-number">1.16.1</span> Confidence Interval Where <span class="math inline">\(E[Y]\)</span> Increases With <span class="math inline">\(\theta\)</span></a></li>
-  <li><a href="#confidence-interval-where-ey-decreases-with-theta" id="toc-confidence-interval-where-ey-decreases-with-theta" class="nav-link" data-scroll-target="#confidence-interval-where-ey-decreases-with-theta"><span class="header-section-number">1.16.2</span> Confidence Interval Where <span class="math inline">\(E[Y]\)</span> Decreases With <span class="math inline">\(\theta\)</span></a></li>
-  <li><a href="#simulation-confidence-interval-coverage" id="toc-simulation-confidence-interval-coverage" class="nav-link" data-scroll-target="#simulation-confidence-interval-coverage"><span class="header-section-number">1.16.3</span> Simulation: Confidence Interval Coverage</a></li>
+  <li><a href="#confidence-interval-where-ey-increases-with-theta" id="toc-confidence-interval-where-ey-increases-with-theta" class="nav-link" data-scroll-target="#confidence-interval-where-ey-increases-with-theta"><span class="header-section-number">1.16.2.1</span> Confidence Interval Where <span class="math inline">\(E[Y]\)</span> Increases With <span class="math inline">\(\theta\)</span></a></li>
+  <li><a href="#confidence-interval-where-ey-decreases-with-theta" id="toc-confidence-interval-where-ey-decreases-with-theta" class="nav-link" data-scroll-target="#confidence-interval-where-ey-decreases-with-theta"><span class="header-section-number">1.16.2.2</span> Confidence Interval Where <span class="math inline">\(E[Y]\)</span> Decreases With <span class="math inline">\(\theta\)</span></a></li>
+  <li><a href="#simulation-confidence-interval-coverage" id="toc-simulation-confidence-interval-coverage" class="nav-link" data-scroll-target="#simulation-confidence-interval-coverage"><span class="header-section-number">1.16.2.3</span> Simulation: Confidence Interval Coverage</a></li>
   </ul></li>
-  <li><a href="#hypothesis-testing" id="toc-hypothesis-testing" class="nav-link" data-scroll-target="#hypothesis-testing"><span class="header-section-number">1.17</span> Hypothesis Testing</a>
+  </ul></li>
+  <li><a href="#sec-chap1hypothesis" id="toc-sec-chap1hypothesis" class="nav-link" data-scroll-target="#sec-chap1hypothesis"><span class="header-section-number">1.17</span> Hypothesis Testing</a>
+  <ul>
+  <li><a href="#sec-chap1pvalue" id="toc-sec-chap1pvalue" class="nav-link" data-scroll-target="#sec-chap1pvalue"><span class="header-section-number">1.17.1</span> Hypothesis Testing: p-Value</a></li>
+  <li><a href="#sec-chap1hypref" id="toc-sec-chap1hypref" class="nav-link" data-scroll-target="#sec-chap1hypref"><span class="header-section-number">1.17.2</span> Hypothesis Testing: p-Value Reference Table</a></li>
+  <li><a href="#examples-12" id="toc-examples-12" class="nav-link" data-scroll-target="#examples-12"><span class="header-section-number">1.17.3</span> Examples</a>
   <ul class="collapse">
-  <li><a href="#hypothesis-test-where-ey-increases-with-theta" id="toc-hypothesis-test-where-ey-increases-with-theta" class="nav-link" data-scroll-target="#hypothesis-test-where-ey-increases-with-theta"><span class="header-section-number">1.17.1</span> Hypothesis Test Where <span class="math inline">\(E[Y]\)</span> Increases With <span class="math inline">\(\theta\)</span></a></li>
-  <li><a href="#hypothesis-test-where-ey-decreases-with-theta" id="toc-hypothesis-test-where-ey-decreases-with-theta" class="nav-link" data-scroll-target="#hypothesis-test-where-ey-decreases-with-theta"><span class="header-section-number">1.17.2</span> Hypothesis Test Where <span class="math inline">\(E[Y]\)</span> Decreases With <span class="math inline">\(\theta\)</span></a></li>
-  <li><a href="#more-about-p-values" id="toc-more-about-p-values" class="nav-link" data-scroll-target="#more-about-p-values"><span class="header-section-number">1.17.3</span> More About p-Values</a></li>
-  <li><a href="#simulation-estimating-a-p-value" id="toc-simulation-estimating-a-p-value" class="nav-link" data-scroll-target="#simulation-estimating-a-p-value"><span class="header-section-number">1.17.4</span> Simulation: Estimating a p-Value</a></li>
+  <li><a href="#hypothesis-test-where-ey-increases-with-theta" id="toc-hypothesis-test-where-ey-increases-with-theta" class="nav-link" data-scroll-target="#hypothesis-test-where-ey-increases-with-theta"><span class="header-section-number">1.17.3.1</span> Hypothesis Test Where <span class="math inline">\(E[Y]\)</span> Increases With <span class="math inline">\(\theta\)</span></a></li>
+  <li><a href="#hypothesis-test-where-ey-decreases-with-theta" id="toc-hypothesis-test-where-ey-decreases-with-theta" class="nav-link" data-scroll-target="#hypothesis-test-where-ey-decreases-with-theta"><span class="header-section-number">1.17.3.2</span> Hypothesis Test Where <span class="math inline">\(E[Y]\)</span> Decreases With <span class="math inline">\(\theta\)</span></a></li>
+  <li><a href="#more-about-p-values" id="toc-more-about-p-values" class="nav-link" data-scroll-target="#more-about-p-values"><span class="header-section-number">1.17.3.3</span> More About p-Values</a></li>
+  <li><a href="#simulation-estimating-a-p-value" id="toc-simulation-estimating-a-p-value" class="nav-link" data-scroll-target="#simulation-estimating-a-p-value"><span class="header-section-number">1.17.3.4</span> Simulation: Estimating a p-Value</a></li>
   </ul></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">1.18</span> Exercises</a></li>
+  </ul></li>
+  <li><a href="#sec-chap1exercises" id="toc-sec-chap1exercises" class="nav-link" data-scroll-target="#sec-chap1exercises"><span class="header-section-number">1.18</span> Exercises</a></li>
   </ul>
 </nav>
     </div>
@@ -364,7 +413,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The Basics of Probability and Statistical Inference</span></h1>
+<h1 class="title"><span id="sec-chap1" class="quarto-section-identifier"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The Basics of Probability and Statistical Inference</span></span></h1>
 </div>
 
 
@@ -385,8 +434,8 @@ window.Quarto = {
 <p>In this chapter, we introduce the concept of <em>statistical inference</em>, in which we use functions of the data we observe (i.e., <em>statistics</em>) to infer the properties of the population from which they were drawn. However, we cannot work with statistics without adopting a “language” that “encodes” the random variation that is inherent in these data: that language is <em>probability</em>.</p>
 </div>
 <p><br></p>
-<section id="data-and-statistical-populations" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="data-and-statistical-populations"><span class="header-section-number">1.1</span> Data and Statistical Populations</h2>
+<section id="sec-chap1data" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="sec-chap1data"><span class="header-section-number">1.1</span> Data and Statistical Populations</h2>
 <div class="graybox">
 <p>What to take away from this section:</p>
 <ul>
@@ -402,7 +451,7 @@ window.Quarto = {
 <pre><code>Heads Heads Tails Heads ...</code></pre>
 <p>These data are <em>categorical</em> data; each outcome is one element from a set of categories. Here that set is {Heads,Tails}.</p>
 <p>An <em>experiment</em> is the act of measuring and recording a datum (like when after each flip of a coin we record <span class="math inline">\(H\)</span> for heads and <span class="math inline">\(T\)</span> for tails). The data we generate from experiments are drawn from <em>populations</em>, the sets of all possible experimental outcomes. A population can be an existing group of objects (e.g., 52 cards in a deck, eight socks of different colors in a drawer), but it can also be hypothetical (e.g., a mathematical function, like a bell curve, which indicates the relative rates at which we would draw samples with particular values). To boil down the discipline of statistics to its essence, our goal is to use the data we have drawn from a population to say something (i.e., to <em>infer</em> something) about the population itself. If we record the heights of 100 people, we would like to say something about the average height of humans. If we record the ice-cream flavor preferences of 500 people, we would like to infer the proportion of humans that prefer chocolate to vanilla. Etc. Data surround us and the possibilities for inference are plentiful.</p>
-<p>We pictorially summarize what we write above in <a href="#fig-cycle1" class="quarto-xref">Figure&nbsp;<span>1.1</span></a>. One might immediately notice the word “statistic,” which we have yet to define. As we see later in this chapter, a statistic is simply a function of data (such as their average value) that helps reduce data volume while (hopefully!) retaining sufficient information to allow useful inferences to happen. Defining and understanding useful statistics is a <em>major</em> part of this course!</p>
+<p>We pictorially summarize what we write above in <a href="#fig-cycle1" class="quarto-xref">Figure&nbsp;<span>1.1</span></a>. One might immediately notice the word “statistic,” which we have yet to define. As we will see <a href="#sec-chap1statistics">later in this chapter</a>, a statistic is simply a function of data (such as their average value) that helps reduce data volume while (hopefully!) retaining sufficient information to allow useful inferences to happen. Defining and understanding useful statistics is a <em>major</em> part of this course!</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-cycle1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
@@ -417,10 +466,10 @@ Figure&nbsp;1.1: The canonical experiment-and-infer cycle. We gather data sample
 </div>
 </div>
 </div>
-<p>But, the reader says: the course is called <em>Modern Probability and Statistical Inference</em>. Where is probability in all of this? Probability is the so-called “language of statistics,” and it provides the mathematical framework upon which we can build statistical inference. Remember how above we say that a population might be a mathematical function indicating the relative rates of observing experimental outcomes? Those relative rates <em>are</em> probabilities (or at least probability densities). Thus the structure of this chapter (and “mathemtical statistics” courses as a whole): we discuss probability first, and then use our newfound knowledge to show how the enterprise of statistical inference works, both algorithmically and mathematically.</p>
+<p>But, the reader says: the course is called <em>Modern Probability and Statistical Inference</em>. Where is probability in all of this? Probability is the so-called “language of statistics,” and it provides the mathematical framework upon which we can build statistical inference. Remember how above we say that a population might be a mathematical function indicating the relative rates of observing experimental outcomes? Those relative rates <em>are</em> probabilities (or at least probability densities). Thus the structure of this chapter (and “mathematical statistics” courses as a whole): we discuss probability first, and then use our newfound knowledge to show how the enterprise of statistical inference works, both algorithmically and mathematically.</p>
 </section>
-<section id="sample-spaces-and-the-axioms-of-probability" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="sample-spaces-and-the-axioms-of-probability"><span class="header-section-number">1.2</span> Sample Spaces and the Axioms of Probability</h2>
+<section id="sec-chap1sample" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="sec-chap1sample"><span class="header-section-number">1.2</span> Sample Spaces and the Axioms of Probability</h2>
 <div class="graybox">
 <p>What to take away from this section:</p>
 <ul>
@@ -514,9 +563,10 @@ Figure&nbsp;1.2: This is an example of a sample space <span class="math inline">
 <li><span class="math inline">\(P(\Omega) = 1\)</span>; and</li>
 <li>if <span class="math inline">\(\{B_1,\ldots,B_k\}\)</span> is a set of mutually exclusive simple or compound events, then <span class="math inline">\(P(\bigcup_{i=1}^k B_i) = \sum_{i=1}^k P(B_i)\)</span>, where the symbol <span class="math inline">\(\bigcup\)</span> refers to the <em>union</em> of the set of events, i.e., the combination of all the events in the set into a single compound event.</li>
 </ol>
-<hr>
-<section id="utilizing-set-notation" class="level3" data-number="1.2.1">
-<h3 data-number="1.2.1" class="anchored" data-anchor-id="utilizing-set-notation"><span class="header-section-number">1.2.1</span> Utilizing Set Notation</h3>
+<section id="examples" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="examples"><span class="header-section-number">1.2.1</span> Examples</h3>
+<section id="utilizing-set-notation" class="level4" data-number="1.2.1.1">
+<h4 data-number="1.2.1.1" class="anchored" data-anchor-id="utilizing-set-notation"><span class="header-section-number">1.2.1.1</span> Utilizing Set Notation</h4>
 <blockquote class="blockquote">
 <p>Let’s suppose that we have in our hand one six-sided die, with faces numbered 1 through 6. We roll it once, and observe the value on the uppermost face. The sample space is <span class="math display">\[
 \Omega = \{1,2,3,4,5,6\} \,.
@@ -538,10 +588,9 @@ A \cup (B \cap C) = (A \cup B) \cap (A \cup C) \,,
 \overline{A \cup B} = \bar{A} \cap \bar{B} ~~\mbox{and}~~ \overline{A \cap B} = \bar{A} \cup \bar{B} \,.
 \]</span></p>
 </blockquote>
-<hr>
 </section>
-<section id="working-with-contingency-tables" class="level3" data-number="1.2.2">
-<h3 data-number="1.2.2" class="anchored" data-anchor-id="working-with-contingency-tables"><span class="header-section-number">1.2.2</span> Working With Contingency Tables</h3>
+<section id="working-with-contingency-tables" class="level4" data-number="1.2.1.2">
+<h4 data-number="1.2.1.2" class="anchored" data-anchor-id="working-with-contingency-tables"><span class="header-section-number">1.2.1.2</span> Working With Contingency Tables</h4>
 <blockquote class="blockquote">
 <p>Let’s assume that we are given the following information about two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>:</p>
 </blockquote>
@@ -582,8 +631,9 @@ P[(A \cap B) \cup (A \cap \bar{B})]\)</span>; since <span class="math inline">\(
 </blockquote>
 </section>
 </section>
-<section id="conditional-probability-and-the-independence-of-events" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="conditional-probability-and-the-independence-of-events"><span class="header-section-number">1.3</span> Conditional Probability and the Independence of Events</h2>
+</section>
+<section id="sec-chap1conditional" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="sec-chap1conditional"><span class="header-section-number">1.3</span> Conditional Probability and the Independence of Events</h2>
 <div class="graybox">
 <p>What to take away from this section:</p>
 <ul>
@@ -661,9 +711,10 @@ Figure&nbsp;1.6: <span class="math inline">\(A\)</span> and <span class="math in
 </div>
 </div>
 </div>
-<hr>
-<section id="visualizing-conditional-probabilities-contingency-tables" class="level3" data-number="1.3.1">
-<h3 data-number="1.3.1" class="anchored" data-anchor-id="visualizing-conditional-probabilities-contingency-tables"><span class="header-section-number">1.3.1</span> Visualizing Conditional Probabilities: Contingency Tables</h3>
+<section id="examples-1" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="examples-1"><span class="header-section-number">1.3.1</span> Examples</h3>
+<section id="visualizing-conditional-probabilities-contingency-tables" class="level4" data-number="1.3.1.1">
+<h4 data-number="1.3.1.1" class="anchored" data-anchor-id="visualizing-conditional-probabilities-contingency-tables"><span class="header-section-number">1.3.1.1</span> Visualizing Conditional Probabilities: Contingency Tables</h4>
 <blockquote class="blockquote">
 <p>Let’s recall the two-by-two contingency table we defined in the previous section, but with some additional information added:</p>
 </blockquote>
@@ -703,10 +754,9 @@ Figure&nbsp;1.6: <span class="math inline">\(A\)</span> and <span class="math in
 <blockquote class="blockquote">
 <p>Now, are <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> independent events? The easy way to visually infer this given a two-by-two table is to see if the rows (or columns) are multiples of each other…meaning, here, is there a number <span class="math inline">\(a\)</span> such that <span class="math inline">\(0.45 = 0.21 a\)</span> <em>and</em> <span class="math inline">\(0.12 = 0.22 a\)</span>? The answer here is no…so the events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are dependent events. (The conventional, yet longer way to determine independence is to see if, e.g., <span class="math inline">\(P(A \vert B) = P(A)\)</span>; if so, <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent.)</p>
 </blockquote>
-<hr>
 </section>
-<section id="conditional-independence" class="level3" data-number="1.3.2">
-<h3 data-number="1.3.2" class="anchored" data-anchor-id="conditional-independence"><span class="header-section-number">1.3.2</span> Conditional Independence</h3>
+<section id="conditional-independence" class="level4" data-number="1.3.1.2">
+<h4 data-number="1.3.1.2" class="anchored" data-anchor-id="conditional-independence"><span class="header-section-number">1.3.1.2</span> Conditional Independence</h4>
 <blockquote class="blockquote">
 <p>If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent events, is it automatically the case that the events <span class="math inline">\(A \vert C\)</span> and <span class="math inline">\(B \vert C\)</span> are also independent events?</p>
 </blockquote>
@@ -732,8 +782,9 @@ Figure&nbsp;1.7: <span class="math inline">\(A\)</span> and <span class="math in
 </blockquote>
 </section>
 </section>
-<section id="further-laws-of-probability" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="further-laws-of-probability"><span class="header-section-number">1.4</span> Further Laws of Probability</h2>
+</section>
+<section id="sec-chap1further" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="sec-chap1further"><span class="header-section-number">1.4</span> Further Laws of Probability</h2>
 <div class="graybox">
 <p>What to take away from this section:</p>
 <ul>
@@ -765,9 +816,10 @@ P(A) = \sum_{i=1}^k P(A \vert B_i) P(B_i) \,.
 P(B_i \vert A) = \frac{P(A \vert B_i) P(B_i)}{\sum_{j=1}^k P(A \vert B_j)P(B_j)} = \frac{P(A \vert B_i)P(B_i)}{P(A)} \,.
 \]</span></li>
 </ul>
-<hr>
-<section id="the-additive-law-for-independent-events" class="level3" data-number="1.4.1">
-<h3 data-number="1.4.1" class="anchored" data-anchor-id="the-additive-law-for-independent-events"><span class="header-section-number">1.4.1</span> The Additive Law for Independent Events</h3>
+<section id="examples-2" class="level3" data-number="1.4.1">
+<h3 data-number="1.4.1" class="anchored" data-anchor-id="examples-2"><span class="header-section-number">1.4.1</span> Examples</h3>
+<section id="the-additive-law-for-independent-events" class="level4" data-number="1.4.1.1">
+<h4 data-number="1.4.1.1" class="anchored" data-anchor-id="the-additive-law-for-independent-events"><span class="header-section-number">1.4.1.1</span> The Additive Law for Independent Events</h4>
 <blockquote class="blockquote">
 <p>Let’s assume that for a given experiment, we can define the independent events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, with <span class="math inline">\(P(A) = 0.6\)</span> and <span class="math inline">\(P(B) = 0.4\)</span>. What is <span class="math inline">\(P(A \cup B)\)</span>?</p>
 </blockquote>
@@ -781,10 +833,9 @@ P(A \cup B) &amp;= 1 - P(\overline{A \cup B}) = 1 - P(\bar{A} \cap \bar{B}) = 1 
 &amp;= 1 - P(\bar{A})P(\bar{B}) = 1 - (1-0.6)(1-0.4) = 0.76 \,.
 \end{align*}\]</span> There is no “right” way to solve a probability problem…just correct ones.</p>
 </blockquote>
-<hr>
 </section>
-<section id="the-monty-hall-problem" class="level3" data-number="1.4.2">
-<h3 data-number="1.4.2" class="anchored" data-anchor-id="the-monty-hall-problem"><span class="header-section-number">1.4.2</span> The Monty Hall Problem</h3>
+<section id="the-monty-hall-problem" class="level4" data-number="1.4.1.2">
+<h4 data-number="1.4.1.2" class="anchored" data-anchor-id="the-monty-hall-problem"><span class="header-section-number">1.4.1.2</span> The Monty Hall Problem</h4>
 <blockquote class="blockquote">
 <p><em>Let’s Make a Deal</em> is a game show that has appeared on television at various times since 1963. During one part of the show, contestants are brought on stage and presented with three closed doors; behind one is an expensize prize (say, a car or an around-the-world cruise), and behind the other two are inexpensive prizes (like a year’s supply of Turtle Wax). The contestant is asked to pick a door (say, Door #1), at which point the show’s host will open another door (say, Door #3) and show the inexpensive prize behind that door (thereby taking that door out of play). The contestant is then asked if they want to stick with the door they’ve chosen (here, Door #1), or switch their choice to the other unopened door (here, Door #2). What should we advise the constestant to do?</p>
 </blockquote>
@@ -826,10 +877,9 @@ P(C_2 \vert O_3) = \frac{1}{1 + 1/2} = \frac{2}{3} \,.
 <blockquote class="blockquote">
 <p>Confused? Think about the solution this way: the contestant has a one-third chance of correctly picking the door the car is behind, and a two-thirds chance of being wrong. Opening one of the other doors (while knowing there is no car behind it) doesn’t change these conditions at all: the contestant still has a one-third chance of having initially picked the correct door. Thus the contestant should change their pick to the other unopened door.</p>
 </blockquote>
-<hr>
 </section>
-<section id="visualizing-conditional-probabilities-tree-diagrams" class="level3" data-number="1.4.3">
-<h3 data-number="1.4.3" class="anchored" data-anchor-id="visualizing-conditional-probabilities-tree-diagrams"><span class="header-section-number">1.4.3</span> Visualizing Conditional Probabilities: Tree Diagrams</h3>
+<section id="visualizing-conditional-probabilities-tree-diagrams" class="level4" data-number="1.4.1.3">
+<h4 data-number="1.4.1.3" class="anchored" data-anchor-id="visualizing-conditional-probabilities-tree-diagrams"><span class="header-section-number">1.4.1.3</span> Visualizing Conditional Probabilities: Tree Diagrams</h4>
 <blockquote class="blockquote">
 <p>In the previous sections, we show how one can use contingency tables to aid the visualization of probabilities (and to solve for probabilities of simple and/or compound events). Here we show another, somewhat more general probability visualizer: the <em>tree diagram</em>. Why “somewhat more general”? First, a tree in a tree diagram can have arbitrary depth: if we have events <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, and <span class="math inline">\(C\)</span>, the table would be three-dimensional, with the axes representing the experimental outcome in terms of <span class="math inline">\(A\)</span> and <span class="math inline">\(\bar{A}\)</span>, <span class="math inline">\(B\)</span> and <span class="math inline">\(\bar{B}\)</span>, and <span class="math inline">\(C\)</span> and <span class="math inline">\(\bar{C}\)</span>. A table is not an optimal means to represent probabilities. And second, a tree is arguably a more natural means to represent probabilities when an experiment represents sequential outcomes, particularly when we sample <em>without</em> replacement.</p>
 </blockquote>
@@ -868,8 +918,9 @@ Figure&nbsp;1.8: An example of visualizing probabilities using a decision tree.
 </blockquote>
 </section>
 </section>
-<section id="random-variables" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="random-variables"><span class="header-section-number">1.5</span> Random Variables</h2>
+</section>
+<section id="sec-chap1random" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="sec-chap1random"><span class="header-section-number">1.5</span> Random Variables</h2>
 <div class="graybox">
 <p>What to take away from this section:</p>
 <ul>
@@ -907,8 +958,8 @@ Figure&nbsp;1.9: A random variable is a function that maps events in <span class
 <li>A continuous random variable <span class="math inline">\(X\)</span> maps the sample space <span class="math inline">\(\Omega\)</span> to an outcome that is uncountably infinite (e.g., <span class="math inline">\([0,1]\)</span> or <span class="math inline">\([0,\infty)\)</span>).</li>
 </ul>
 </section>
-<section id="probability-distributions" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="probability-distributions"><span class="header-section-number">1.6</span> Probability Distributions</h2>
+<section id="sec-chap1density" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="sec-chap1density"><span class="header-section-number">1.6</span> Probability Distributions: Density and Mass Functions</h2>
 <div class="graybox">
 <p>What to take away from this section:</p>
 <ul>
@@ -960,9 +1011,10 @@ P(a \leq X \leq b) = \int_a^b f_X(x) dx \,.
 \]</span> To drive home the point that a pdf does not itself represent probability, we note that for any value <span class="math inline">\(a\)</span>, <span class="math display">\[
 P(X = a) = \int_a^a f_X(x) dx = 0 \,.
 \]</span></p>
-<hr>
-<section id="a-simple-probability-density-function" class="level3" data-number="1.6.1">
-<h3 data-number="1.6.1" class="anchored" data-anchor-id="a-simple-probability-density-function"><span class="header-section-number">1.6.1</span> A Simple Probability Density Function</h3>
+<section id="examples-3" class="level3" data-number="1.6.1">
+<h3 data-number="1.6.1" class="anchored" data-anchor-id="examples-3"><span class="header-section-number">1.6.1</span> Examples</h3>
+<section id="a-simple-probability-density-function" class="level4" data-number="1.6.1.1">
+<h4 data-number="1.6.1.1" class="anchored" data-anchor-id="a-simple-probability-density-function"><span class="header-section-number">1.6.1.1</span> A Simple Probability Density Function</h4>
 <blockquote class="blockquote">
 <p>Let’s assume that we have defined the following pdf: <span class="math display">\[
 f_X(x) = \left\{ \begin{array}{cl} 2x &amp; 0 \leq x \leq 1 \\ 0 &amp; \mbox{otherwise} \end{array} \right. \,.
@@ -999,10 +1051,9 @@ P(1/4 \leq X \leq 1/2 \, \vert \, 0 \leq X \leq 3/4) &amp;= \frac{P(1/4 \leq X \
 P\left(X = \frac{1}{2}\right) = \int_{1/2}^{1/2} 2 x dx = \left. x^2 \right|_{1/2}^{1/2} = \frac{1}{4} - \frac{1}{4} = 0 \,.
 \]</span> What are we to make of this? Recall that a pdf is a probability <em>density</em> function, and that one can think of it as having units of probability per unit interval…so one has to integrate the pdf over an interval of length greater than zero to derive a non-zero probability value.</p>
 </blockquote>
-<hr>
 </section>
-<section id="shape-parameters-and-families-of-distributions" class="level3" data-number="1.6.2">
-<h3 data-number="1.6.2" class="anchored" data-anchor-id="shape-parameters-and-families-of-distributions"><span class="header-section-number">1.6.2</span> Shape Parameters and Families of Distributions</h3>
+<section id="shape-parameters-and-families-of-distributions" class="level4" data-number="1.6.1.2">
+<h4 data-number="1.6.1.2" class="anchored" data-anchor-id="shape-parameters-and-families-of-distributions"><span class="header-section-number">1.6.1.2</span> Shape Parameters and Families of Distributions</h4>
 <blockquote class="blockquote">
 <p>In the previous example, the stated pdf was the stated pdf: there was no means by which to change its shape. We can generalize it by utilizing a <em>shape parameter</em>: <span class="math display">\[
 f_X(x \vert \theta) = \left\{ \begin{array}{cl} \theta x^{\theta-1} &amp; 0 \leq x \leq 1 \\ 0 &amp; \mbox{otherwise} \end{array} \right. \,,
@@ -1022,10 +1073,9 @@ Figure&nbsp;1.11: Examples of the family of pdfs <span class="math inline">\(f_X
 </div>
 </div>
 </div>
-<hr>
 </section>
-<section id="a-simple-probability-mass-function" class="level3" data-number="1.6.3">
-<h3 data-number="1.6.3" class="anchored" data-anchor-id="a-simple-probability-mass-function"><span class="header-section-number">1.6.3</span> A Simple Probability Mass Function</h3>
+<section id="a-simple-probability-mass-function" class="level4" data-number="1.6.1.3">
+<h4 data-number="1.6.1.3" class="anchored" data-anchor-id="a-simple-probability-mass-function"><span class="header-section-number">1.6.1.3</span> A Simple Probability Mass Function</h4>
 <blockquote class="blockquote">
 <p>Let’s play a game: we throw a dart at a board that has ten numbers on it, 1 through 10. Assume that we are guaranteed to hit the board, and that the regions associated with each number have the exact same size. If we hit an even number, we get 0 points, while if we hit an odd number, we get 2 points. Furthermore, if we hit a prime number, we get a bonus of 1 point. What is the probability mass function for the number of points we will score given a single throw of the dart?</p>
 </blockquote>
@@ -1067,10 +1117,9 @@ P(X = 3 \vert X &gt; 0) &amp;= \frac{P(X = 3 \cap X &gt; 0)}{P(X &gt; 0)} = \fra
 &amp;= \frac{p_X(3)}{p_X(1)+p_X(2)+p_X(3)} = \frac{4}{1+1+4} = \frac{2}{3} \,.
 \end{align*}\]</span></p>
 </blockquote>
-<hr>
 </section>
-<section id="a-more-complex-example-involving-both-masses-and-densities" class="level3" data-number="1.6.4">
-<h3 data-number="1.6.4" class="anchored" data-anchor-id="a-more-complex-example-involving-both-masses-and-densities"><span class="header-section-number">1.6.4</span> A More Complex Example Involving Both Masses and Densities</h3>
+<section id="a-more-complex-example-involving-both-masses-and-densities" class="level4" data-number="1.6.1.4">
+<h4 data-number="1.6.1.4" class="anchored" data-anchor-id="a-more-complex-example-involving-both-masses-and-densities"><span class="header-section-number">1.6.1.4</span> A More Complex Example Involving Both Masses and Densities</h4>
 <blockquote class="blockquote">
 <p>There is no reason why masses and densities cannot be combined into a single probability distribution. For instance, perhaps we have the following: <span class="math display">\[
 h_X(x) = \left\{ \begin{array}{cc} 1/2 &amp; x \in [0,1] \\ 1/2 &amp; x = 2 \end{array} \right. \,.
@@ -1080,8 +1129,9 @@ P(X &gt; 3/4) = \int_{3/4}^1 h_X(x) dx + h_X(2) = \frac{1}{2} \left. x \right|_{
 </blockquote>
 </section>
 </section>
-<section id="characterizing-probability-distributions" class="level2" data-number="1.7">
-<h2 data-number="1.7" class="anchored" data-anchor-id="characterizing-probability-distributions"><span class="header-section-number">1.7</span> Characterizing Probability Distributions</h2>
+</section>
+<section id="sec-chap1expected" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="sec-chap1expected"><span class="header-section-number">1.7</span> Probability Distributions: Expected Value and Variance</h2>
 <div class="graybox">
 <p>What to take away from this section:</p>
 <ul>
@@ -1114,7 +1164,7 @@ V[X] = \sigma^2 = E[(X-\mu)^2] = E[X^2] - (E[X])^2 \,.
 <div aria-describedby="fig-exvx-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-exvx" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-exvx-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="288">
+<div id="fig-exvx-1" class="quarto-float quarto-figure quarto-figure-center anchored" width="288" data-fig-align="center">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-exvx-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="01-probability_files/figure-html/fig-exvx-1.png" id="fig-exvx-1" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-exvx" width="288">
@@ -1126,7 +1176,7 @@ V[X] = \sigma^2 = E[(X-\mu)^2] = E[X^2] - (E[X])^2 \,.
 </div>
 </div>
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-exvx" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-exvx-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="288">
+<div id="fig-exvx-2" class="quarto-float quarto-figure quarto-figure-center anchored" width="288" data-fig-align="center">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-exvx-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="01-probability_files/figure-html/fig-exvx-2.png" id="fig-exvx-2" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-exvx" width="288">
@@ -1145,9 +1195,10 @@ Figure&nbsp;1.12: Examples of a probability mass function (a) and a probability 
 </figure>
 </div>
 <p>Both the expected value and variance are examples of <em>moments</em> of probability distributions. Moments represent elements of a distribution’s location and shape. In the end, moments are “just” expected values computed via the Law of the Unconscious Statistician, ones that are defined around the coordinate origin (<span class="math inline">\(E[X^k]\)</span>), and ones that are defined around the distribution’s mean, <span class="math inline">\(\mu\)</span> (<span class="math inline">\(E[(X-\mu)^k]\)</span>). Other metrics used to describe a probability distribution, such as its <em>skewness</em>, are also related to moments. (One definition of skewness is Fisher’s moment coefficient: <span class="math inline">\(E[(X-\mu)^3]/\sigma^3\)</span>.)</p>
-<hr>
-<section id="expected-value-tricks" class="level3" data-number="1.7.1">
-<h3 data-number="1.7.1" class="anchored" data-anchor-id="expected-value-tricks"><span class="header-section-number">1.7.1</span> Expected Value Tricks</h3>
+<section id="examples-4" class="level3" data-number="1.7.1">
+<h3 data-number="1.7.1" class="anchored" data-anchor-id="examples-4"><span class="header-section-number">1.7.1</span> Examples</h3>
+<section id="expected-value-tricks" class="level4" data-number="1.7.1.1">
+<h4 data-number="1.7.1.1" class="anchored" data-anchor-id="expected-value-tricks"><span class="header-section-number">1.7.1.1</span> Expected Value Tricks</h4>
 <blockquote class="blockquote">
 <p>The expected value operator <span class="math inline">\(E[X]\)</span> has the following properties.</p>
 </blockquote>
@@ -1170,10 +1221,9 @@ E[aX - b] = E[aX] - E[b] = aE[X] - b \,.
 <blockquote class="blockquote">
 <p>Note that we have said nothing about <span class="math inline">\(E[XY]\)</span> here. In general, we cannot simplify this expression at all, <em>unless</em> <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent random variables (a concept we haven’t discussed yet), in which case <span class="math inline">\(E[XY] = E[X]E[Y]\)</span>.</p>
 </blockquote>
-<hr>
 </section>
-<section id="variance-tricks" class="level3" data-number="1.7.2">
-<h3 data-number="1.7.2" class="anchored" data-anchor-id="variance-tricks"><span class="header-section-number">1.7.2</span> Variance Tricks</h3>
+<section id="variance-tricks" class="level4" data-number="1.7.1.2">
+<h4 data-number="1.7.1.2" class="anchored" data-anchor-id="variance-tricks"><span class="header-section-number">1.7.1.2</span> Variance Tricks</h4>
 <blockquote class="blockquote">
 <p>The variance operator <span class="math inline">\(V[X]\)</span> has the following properties.</p>
 </blockquote>
@@ -1190,11 +1240,12 @@ V[aX - b] = V[aX] + V[b] = a^2V[X] + 0 = a^2V[X] \,.
 \]</span></li>
 </ol>
 </blockquote>
+<blockquote class="blockquote">
 <p>If, again, <span class="math inline">\(Y = 10X - 5\)</span>, and if <span class="math inline">\(V[X] = 2\)</span>, then <span class="math inline">\(V[Y] = 100V[X] = 200\)</span>.</p>
-<hr>
+</blockquote>
 </section>
-<section id="the-shortcut-formula-for-variance" class="level3" data-number="1.7.3">
-<h3 data-number="1.7.3" class="anchored" data-anchor-id="the-shortcut-formula-for-variance"><span class="header-section-number">1.7.3</span> The Shortcut Formula for Variance</h3>
+<section id="the-shortcut-formula-for-variance" class="level4" data-number="1.7.1.3">
+<h4 data-number="1.7.1.3" class="anchored" data-anchor-id="the-shortcut-formula-for-variance"><span class="header-section-number">1.7.1.3</span> The Shortcut Formula for Variance</h4>
 <blockquote class="blockquote">
 <p>Above, we indicate that <span class="math display">\[
 V[X] = E[(X-\mu)^2] = E[X^2] - (E[X])^2 \,.
@@ -1205,10 +1256,9 @@ V[X] = E[(X-\mu)^2] &amp;= E[X^2 - 2X\mu + \mu^2] ~~\mbox{(expand)} \\
 &amp;= E[X^2] - 2(E[X])^2 + (E[X])^2 = E[X^2] - (E[X])^2 \,,
 \end{align*}\]</span> where in the last line we make use of the fact that <span class="math inline">\(E[X] = \mu\)</span>. Note what this shortcut formula means: it means that to compute a variance, it is sufficient to compute both <span class="math inline">\(E[X]\)</span> and <span class="math inline">\(E[X^2]\)</span> and combine the results. It also means that if we are given any two of the quantities <span class="math inline">\(E[X]\)</span>, <span class="math inline">\(E[X^2]\)</span>, and <span class="math inline">\(V[X]\)</span>, we can immediately derive the third one.</p>
 </blockquote>
-<hr>
 </section>
-<section id="the-expected-value-and-variance-of-a-probability-density-function" class="level3" data-number="1.7.4">
-<h3 data-number="1.7.4" class="anchored" data-anchor-id="the-expected-value-and-variance-of-a-probability-density-function"><span class="header-section-number">1.7.4</span> The Expected Value and Variance of a Probability Density Function</h3>
+<section id="the-expected-value-and-variance-of-a-probability-density-function" class="level4" data-number="1.7.1.4">
+<h4 data-number="1.7.1.4" class="anchored" data-anchor-id="the-expected-value-and-variance-of-a-probability-density-function"><span class="header-section-number">1.7.1.4</span> The Expected Value and Variance of a Probability Density Function</h4>
 <blockquote class="blockquote">
 <p>In the last section, we define the pdf <span class="math display">\[
 f_X(x \vert \theta) = \left\{ \begin{array}{cl} \theta x^{\theta-1} &amp; 0 \leq x \leq 1 \\ 0 &amp; \mbox{otherwise} \end{array} \right. \,,
@@ -1225,8 +1275,9 @@ V[X] = E[X^2] - (E[X])^2 = \frac{\theta}{\theta+2} - \frac{\theta^2}{(\theta+1)^
 </blockquote>
 </section>
 </section>
-<section id="working-with-r-probability-distributions" class="level2" data-number="1.8">
-<h2 data-number="1.8" class="anchored" data-anchor-id="working-with-r-probability-distributions"><span class="header-section-number">1.8</span> Working With R: Probability Distributions</h2>
+</section>
+<section id="sec-chap1working" class="level2" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="sec-chap1working"><span class="header-section-number">1.8</span> Probability Distributions: Working with R</h2>
 <div class="graybox">
 <p>What to take away from this section:</p>
 <ul>
@@ -1317,7 +1368,7 @@ Figure&nbsp;1.13: The function <span class="math inline">\(x \sin x\)</span>.
 </div>
 </div>
 </div>
-<p>The <code>ggplot()</code> function puts <code>x</code> on the <span class="math inline">\(x\)</span>-axis and <code>f.x</code> on the <span class="math inline">\(y\)</span>-axis. We then connect each point with a line (<code>geom_line()</code>), make the line blue (<code>col="blue"</code>), overlay a horizontal red line at <span class="math inline">\(y = 0\)</span> (<code>geom_hline()</code>, with <code>yintercept=0</code>), and change the default <span class="math inline">\(y\)</span>-axis label to one that includes the subscript “X” (<code>labs()</code>).</p>
+<p>The <code>ggplot()</code> function puts <code>x</code> on the <span class="math inline">\(x\)</span>-axis and <code>f.x</code> on the <span class="math inline">\(y\)</span>-axis. We then connect each point with a line (<code>geom_line()</code>), make the line blue (<code>col = "blue"</code>), overlay a horizontal red line at <span class="math inline">\(y = 0\)</span> (<code>geom_hline()</code>, with <code>yintercept = 0</code>), and change the default <span class="math inline">\(y\)</span>-axis label to one that includes the subscript “X” (<code>labs()</code>).</p>
 <p>The next step is to determine the normalization constant. Let’s suppose that we have forgotten integration by parts and thus we are not sure how to integrate <span class="math inline">\(f_X(x)\)</span>. We can code numerical integration in <code>R</code> using a combination of a function that evaluates <span class="math inline">\(f_X(x)\)</span> and a call to the built-in function <code>integrate()</code>, which performs numerical integration:</p>
 <div class="cell">
 <details class="code-fold">
@@ -1364,9 +1415,10 @@ f_X(x) = \left\{ \begin{array}{cl} \frac{1}{\pi} x \sin x &amp; 0 \leq x \leq \p
 </div>
 </div>
 <p>The expected value is 1.868. Given the appearance of the pdf, this number makes sense.</p>
-<hr>
-<section id="numerical-integration-and-conditional-probability" class="level3" data-number="1.8.1">
-<h3 data-number="1.8.1" class="anchored" data-anchor-id="numerical-integration-and-conditional-probability"><span class="header-section-number">1.8.1</span> Numerical Integration and Conditional Probability</h3>
+<section id="examples-5" class="level3" data-number="1.8.1">
+<h3 data-number="1.8.1" class="anchored" data-anchor-id="examples-5"><span class="header-section-number">1.8.1</span> Examples</h3>
+<section id="numerical-integration-and-conditional-probability" class="level4" data-number="1.8.1.1">
+<h4 data-number="1.8.1.1" class="anchored" data-anchor-id="numerical-integration-and-conditional-probability"><span class="header-section-number">1.8.1.1</span> Numerical Integration and Conditional Probability</h4>
 <blockquote class="blockquote">
 <p>Let’s suppose that we would like to numerically evaluate <span class="math display">\[
 P(1 \leq X \leq 2 \vert X &gt; 0.5) = \frac{P(1 \leq X \leq 2 \cap X &gt; 0.5)}{P(X &gt; 0.5} = \frac{P(1 \leq X \leq 2)}{P(X &gt; 0.5} \,.
@@ -1408,10 +1460,9 @@ P(1 \leq X \leq 2 \vert X &gt; 0.5) = \frac{P(1 \leq X \leq 2 \cap X &gt; 0.5)}{
 <blockquote class="blockquote">
 <p>Done. Our conditional probability is 0.4645.</p>
 </blockquote>
-<hr>
 </section>
-<section id="numerical-integration-and-variance" class="level3" data-number="1.8.2">
-<h3 data-number="1.8.2" class="anchored" data-anchor-id="numerical-integration-and-variance"><span class="header-section-number">1.8.2</span> Numerical Integration and Variance</h3>
+<section id="numerical-integration-and-variance" class="level4" data-number="1.8.1.2">
+<h4 data-number="1.8.1.2" class="anchored" data-anchor-id="numerical-integration-and-variance"><span class="header-section-number">1.8.1.2</span> Numerical Integration and Variance</h4>
 <blockquote class="blockquote">
 <p>Above, we compute the expected value of <span class="math inline">\(f_X(x)\)</span>. For the variance, we adapt the same code to compute <span class="math inline">\(E[X^2]\)</span>, then utilize the shortcut formula:</p>
 </blockquote>
@@ -1460,8 +1511,9 @@ P(1 \leq X \leq 2 \vert X &gt; 0.5) = \frac{P(1 \leq X \leq 2 \cap X &gt; 0.5)}{
 </blockquote>
 </section>
 </section>
-<section id="cumulative-distribution-functions" class="level2" data-number="1.9">
-<h2 data-number="1.9" class="anchored" data-anchor-id="cumulative-distribution-functions"><span class="header-section-number">1.9</span> Cumulative Distribution Functions</h2>
+</section>
+<section id="sec-chap1cumulative" class="level2" data-number="1.9">
+<h2 data-number="1.9" class="anchored" data-anchor-id="sec-chap1cumulative"><span class="header-section-number">1.9</span> Probability Distributions: Cumulative Distribution Function</h2>
 <div class="graybox">
 <p>What to take away from this section:</p>
 <ul>
@@ -1470,9 +1522,9 @@ P(1 \leq X \leq 2 \vert X &gt; 0.5) = \frac{P(1 \leq X \leq 2 \cap X &gt; 0.5)}{
 </ul>
 </div>
 <p><br></p>
-<p>A cumulative distribution function (a cdf) is another means by which to mathematically express a probability distribution, which is to say, if we have a cdf, we can derive the associated pmf/pdf and vice-versa. A cdf is, in the discrete case, a sum of probability masses that lie to the left of a chosen coordinate <span class="math inline">\(x\)</span> on the real-number line<span class="math inline">\(-\)</span> <span class="math display">\[
-F_X(x) = \sum_{y \leq x} p_Y(y)
-\]</span> <span class="math inline">\(-\)</span>while in the continuous case it is an integral of the probability density that lies to the left of <span class="math inline">\(x\)</span><span class="math inline">\(-\)</span> <span class="math display">\[
+<p>A cumulative distribution function (a cdf) is another means by which to mathematically express a probability distribution, which is to say, if we have a cdf, we can derive the associated pmf/pdf and vice-versa. A cdf is, in the discrete case, a sum of probability masses that lie to the left of a chosen coordinate <span class="math inline">\(x\)</span> on the real-number line, <span class="math display">\[
+F_X(x) = \sum_{y \leq x} p_Y(y) \,,
+\]</span> while in the continuous case it is an integral of the probability density that lies to the left of <span class="math inline">\(x\)</span>: <span class="math display">\[
 F_X(x) = \int_{y \leq x} f_Y(y) dy \,.
 \]</span> In both cases, we utilize a dummy variable for the pmf/pdf itself because <span class="math inline">\(x\)</span> is the upper limit of summation/integration. See <a href="#fig-pdfcdf" class="quarto-xref">Figure&nbsp;<span>1.14</span></a>, which illustrates how a cdf “collects” all the probability masses or density “to the left” of a given value of <span class="math inline">\(x\)</span>. Given this figure, it should be clear that <span class="math inline">\(F_X(-\infty) = 0\)</span> (there is nothing to collect “to the left” of <span class="math inline">\(-\infty\)</span>) and <span class="math inline">\(F_X(\infty) = 1\)</span> (since, by the time we reach <span class="math inline">\(x = \infty\)</span>, <em>all</em> masses or density have been collected). Another thing to keep in mind is that even if a random variable is discrete, its associated cdf <span class="math inline">\(F_X(x)\)</span> is continuously valued, because it is defined at all values of <span class="math inline">\(x\)</span> (although it is technically not “mathematically continuous” due to the steps that <span class="math inline">\(F_X(x)\)</span> takes at each value of <span class="math inline">\(x\)</span> where there is a probability mass).</p>
 <div id="fig-pdfcdf" class="quarto-layout-panel">
@@ -1480,7 +1532,7 @@ F_X(x) = \int_{y \leq x} f_Y(y) dy \,.
 <div aria-describedby="fig-pdfcdf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-pdfcdf" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-pdfcdf-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="288">
+<div id="fig-pdfcdf-1" class="quarto-float quarto-figure quarto-figure-center anchored" width="288" data-fig-align="center">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-pdfcdf-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="01-probability_files/figure-html/fig-pdfcdf-1.png" id="fig-pdfcdf-1" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-pdfcdf" width="288">
@@ -1492,7 +1544,7 @@ F_X(x) = \int_{y \leq x} f_Y(y) dy \,.
 </div>
 </div>
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-pdfcdf" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-pdfcdf-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="288">
+<div id="fig-pdfcdf-2" class="quarto-float quarto-figure quarto-figure-center anchored" width="288" data-fig-align="center">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-pdfcdf-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="01-probability_files/figure-html/fig-pdfcdf-2.png" id="fig-pdfcdf-2" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-pdfcdf" width="288">
@@ -1515,7 +1567,7 @@ Figure&nbsp;1.14: Illustration of the relationship between a probability mass fu
 <div aria-describedby="fig-cdfs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-cdfs" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-cdfs-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="288">
+<div id="fig-cdfs-1" class="quarto-float quarto-figure quarto-figure-center anchored" width="288" data-fig-align="center">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-cdfs-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="01-probability_files/figure-html/fig-cdfs-1.png" id="fig-cdfs-1" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-cdfs" width="288">
@@ -1527,7 +1579,7 @@ Figure&nbsp;1.14: Illustration of the relationship between a probability mass fu
 </div>
 </div>
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-cdfs" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-cdfs-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="288">
+<div id="fig-cdfs-2" class="quarto-float quarto-figure quarto-figure-center anchored" width="288" data-fig-align="center">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-cdfs-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="01-probability_files/figure-html/fig-cdfs-2.png" id="fig-cdfs-2" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-cdfs" width="288">
@@ -1576,9 +1628,10 @@ f_X(x) = \frac{d}{dx}F_X(x) \,,
 <p>One issue that arises with the inverse cdf is that if <span class="math inline">\(F_X(x)\)</span> is not strictly monotonically increasing (i.e., if for some range of values, <span class="math inline">\(\frac{d}{dx}F_X(x) = 0\)</span>) then there is no unique inverse. For instance, see the left panel of <a href="#fig-cdfs" class="quarto-xref">Figure&nbsp;<span>1.15</span></a>: if we input <span class="math inline">\(F_X(x) = 0.35\)</span>, then <span class="math inline">\(x \in [2,3)\)</span>. We can circumvent this issue by utilizing the <em>generalized inverse cdf</em> instead, for which <span class="math display">\[
 x = F_X^{-1}(q) = \mbox{inf}\{ x : F_X(x) \geq q \} \,.
 \]</span> The symbol “inf” indicates that we are finding the infimum, or smallest value, of the indicated set of values. Here, the output <span class="math inline">\(x\)</span> is the smallest value for which <span class="math inline">\(F_X(x) \geq q\)</span> holds. For our given example, <span class="math inline">\(x = 2\)</span>. On the other hand, if we pick a value of <span class="math inline">\(F_X(x)\)</span> that lies <em>between</em> the steps, we would choose the smallest <span class="math inline">\(x\)</span> value associated with the next higher step. For instance, if for our example we want the inverse cdf for <span class="math inline">\(F_X(x) = 0.5\)</span>, which lies between the steps at 0.35 and 0.6, we would take the smallest value of <span class="math inline">\(x\)</span> associated with <span class="math inline">\(F_X(x) = 0.6\)</span>, which is <span class="math inline">\(x = 3\)</span>. (Note that <code>R</code> utilizes the generalized form of the inverse cdf.)</p>
-<hr>
-<section id="the-cumulative-distribution-function-for-a-probability-density-function" class="level3" data-number="1.9.1">
-<h3 data-number="1.9.1" class="anchored" data-anchor-id="the-cumulative-distribution-function-for-a-probability-density-function"><span class="header-section-number">1.9.1</span> The Cumulative Distribution Function for a Probability Density Function</h3>
+<section id="examples-6" class="level3" data-number="1.9.1">
+<h3 data-number="1.9.1" class="anchored" data-anchor-id="examples-6"><span class="header-section-number">1.9.1</span> Examples</h3>
+<section id="the-cumulative-distribution-function-for-a-probability-density-function" class="level4" data-number="1.9.1.1">
+<h4 data-number="1.9.1.1" class="anchored" data-anchor-id="the-cumulative-distribution-function-for-a-probability-density-function"><span class="header-section-number">1.9.1.1</span> The Cumulative Distribution Function for a Probability Density Function</h4>
 <blockquote class="blockquote">
 <p>We work again with our simple parameterized pdf: <span class="math display">\[
 f_X(x \vert \theta) = \left\{ \begin{array}{cl} \theta x^{\theta-1} &amp; 0 \leq x \leq 1 \\ 0 &amp; \mbox{otherwise} \end{array} \right. \,.
@@ -1606,10 +1659,9 @@ P\left(\frac{1}{4} \leq X \leq \frac{3}{4}\right) &amp;= F_X\left(\frac{3}{4} \v
 \end{align*}\]</span></li>
 </ol>
 </blockquote>
-<hr>
 </section>
-<section id="visualizing-the-cumulative-distribution-function-in-r" class="level3" data-number="1.9.2">
-<h3 data-number="1.9.2" class="anchored" data-anchor-id="visualizing-the-cumulative-distribution-function-in-r"><span class="header-section-number">1.9.2</span> Visualizing the Cumulative Distribution Function in R</h3>
+<section id="visualizing-the-cumulative-distribution-function-in-r" class="level4" data-number="1.9.1.2">
+<h4 data-number="1.9.1.2" class="anchored" data-anchor-id="visualizing-the-cumulative-distribution-function-in-r"><span class="header-section-number">1.9.1.2</span> Visualizing the Cumulative Distribution Function in R</h4>
 <blockquote class="blockquote">
 <p>We continue with the pdf we use above, with <span class="math inline">\(\theta = 3\)</span>. To show the region being integrated over to compute a cdf value, for say <span class="math inline">\(x = 0.6\)</span>, we utilize <code>R</code>’s <code>polygon()</code> function. (See <a href="#fig-cdfpoly" class="quarto-xref">Figure&nbsp;<span>1.17</span></a>.)</p>
 </blockquote>
@@ -1647,10 +1699,9 @@ Figure&nbsp;1.18: The cdf for <span class="math inline">\(f_X(x) = 3x^2\)</span>
 </div>
 </div>
 </div>
-<hr>
 </section>
-<section id="the-cdf-for-a-mathematically-discontinuous-distribution" class="level3" data-number="1.9.3">
-<h3 data-number="1.9.3" class="anchored" data-anchor-id="the-cdf-for-a-mathematically-discontinuous-distribution"><span class="header-section-number">1.9.3</span> The CDF for a Mathematically Discontinuous Distribution</h3>
+<section id="the-cdf-for-a-mathematically-discontinuous-distribution" class="level4" data-number="1.9.1.3">
+<h4 data-number="1.9.1.3" class="anchored" data-anchor-id="the-cdf-for-a-mathematically-discontinuous-distribution"><span class="header-section-number">1.9.1.3</span> The CDF for a Mathematically Discontinuous Distribution</h4>
 <blockquote class="blockquote">
 <p>Assume that we are handed the following pdf: <span class="math display">\[
 f_X(x \vert \theta) = \left\{ \begin{array}{cl} 1/2 &amp; 0 \leq x \leq 1 \\ 2-x &amp; 1 \leq x \leq 2 \\ 0 &amp; \mbox{otherwise} \end{array} \right. \,,
@@ -1697,8 +1748,9 @@ Figure&nbsp;1.20: The cdf for our mathematically discontinuous pdf.
 </div>
 </section>
 </section>
-<section id="the-law-of-total-probability" class="level2" data-number="1.10">
-<h2 data-number="1.10" class="anchored" data-anchor-id="the-law-of-total-probability"><span class="header-section-number">1.10</span> The Law of Total Probability</h2>
+</section>
+<section id="sec-chap1lotp" class="level2" data-number="1.10">
+<h2 data-number="1.10" class="anchored" data-anchor-id="sec-chap1lotp"><span class="header-section-number">1.10</span> The Law of Total Probability</h2>
 <div class="graybox">
 <p>What to take away from this section:</p>
 <ul>
@@ -1706,7 +1758,7 @@ Figure&nbsp;1.20: The cdf for our mathematically discontinuous pdf.
 </ul>
 </div>
 <p><br></p>
-<p>One of the laws of probability that we introduce earlier in this chapter is the Law of Total Probability, or LoTP: if we partition a sample space <span class="math inline">\(\Omega\)</span> into <span class="math inline">\(k\)</span> disjoint events <span class="math inline">\(\{B_1,\ldots,B_k\}\)</span>, then for any event <span class="math inline">\(A\)</span> we can write <span class="math display">\[
+<p>One of the laws of probability that we introduce in <a href="#sec-chap1further" class="quarto-xref"><span>Section 1.4</span></a> is the Law of Total Probability, or LoTP: if we partition a sample space <span class="math inline">\(\Omega\)</span> into <span class="math inline">\(k\)</span> disjoint events <span class="math inline">\(\{B_1,\ldots,B_k\}\)</span>, then for any event <span class="math inline">\(A\)</span> we can write <span class="math display">\[
 P(A) = \sum_{i=1}^k P(A \vert B_i) P(B_i) \,.
 \]</span> We are in a position now, having introduced random variables and probability distributions, to update how we think of this law: it can express the probability of a random variable <span class="math inline">\(X\)</span> when it is sampled from a discrete distribution with parameter <span class="math inline">\(\theta\)</span>…and when <span class="math inline">\(\theta\)</span> itself is not a fixed constant (as it has been up until now), but <em>is itself a discrete random variable</em>. To see this, let’s rewrite the LoTP given this description: <span class="math display">\[
 p_X(x) = \sum_\theta p_{X \vert \theta}(x \vert \theta) p_{\Theta}(\theta) \,.
@@ -1714,9 +1766,10 @@ p_X(x) = \sum_\theta p_{X \vert \theta}(x \vert \theta) p_{\Theta}(\theta) \,.
 <p>What if <span class="math inline">\(\theta\)</span> is actually a continuous random variable? We can extend the LoTP to handle that possibility by replacing the summation over a discrete random variable with an integral over a continuous one: <span class="math display">\[
 p_X(x) = \int_\theta p_{X \vert \theta}(x \vert \theta) f_{\Theta}(\theta) d\theta \,.
 \]</span> And what if the distribution of <span class="math inline">\(X \vert \theta\)</span> is continuous? We would just replace the <span class="math inline">\(p_X\)</span> and the <span class="math inline">\(p_{X \vert \theta}\)</span> in the equations above with <span class="math inline">\(f_X\)</span> and <span class="math inline">\(f_{X \vert \theta}\)</span>, i.e., we would use the LoTP to define a probability density instead of a probability mass.</p>
-<hr>
-<section id="the-lotp-with-two-simple-discrete-distributions" class="level3" data-number="1.10.1">
-<h3 data-number="1.10.1" class="anchored" data-anchor-id="the-lotp-with-two-simple-discrete-distributions"><span class="header-section-number">1.10.1</span> The LoTP With Two Simple Discrete Distributions</h3>
+<section id="examples-7" class="level3" data-number="1.10.1">
+<h3 data-number="1.10.1" class="anchored" data-anchor-id="examples-7"><span class="header-section-number">1.10.1</span> Examples</h3>
+<section id="the-lotp-with-two-simple-discrete-distributions" class="level4" data-number="1.10.1.1">
+<h4 data-number="1.10.1.1" class="anchored" data-anchor-id="the-lotp-with-two-simple-discrete-distributions"><span class="header-section-number">1.10.1.1</span> The LoTP With Two Simple Discrete Distributions</h4>
 <blockquote class="blockquote">
 <p>Let’s suppose we have two random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, where the probability mass function for <span class="math inline">\(Y\)</span> is</p>
 </blockquote>
@@ -1820,10 +1873,9 @@ p_X(1) &amp;= p_{X \vert Y}(1 \vert 0) p_{Y}(0) + p_{X \vert Y}(1 \vert 1) p_{Y}
 <blockquote class="blockquote">
 <p>The masses sum to 1, so indeed this is a proper pmf.</p>
 </blockquote>
-<hr>
 </section>
-<section id="the-law-of-total-expectation" class="level3" data-number="1.10.2">
-<h3 data-number="1.10.2" class="anchored" data-anchor-id="the-law-of-total-expectation"><span class="header-section-number">1.10.2</span> The Law of Total Expectation</h3>
+<section id="the-law-of-total-expectation" class="level4" data-number="1.10.1.2">
+<h4 data-number="1.10.1.2" class="anchored" data-anchor-id="the-law-of-total-expectation"><span class="header-section-number">1.10.1.2</span> The Law of Total Expectation</h4>
 <blockquote class="blockquote">
 <p>If we inspect the tables above, we see that, e.g., <span class="math display">\[\begin{align*}
 E[X \vert Y=0] &amp;= 0 \cdot \frac{4}{5} + 1 \cdot \frac{1}{5} = \frac{1}{5} \,.
@@ -1836,10 +1888,9 @@ E[X] = E[E[X \vert Y]] = \sum_y E[X \vert Y=y] ~ p_Y(y) \,,
 E[X] = \frac{1}{5} \cdot \frac{2}{3} + \frac{2}{5} \cdot \frac{1}{3} = \frac{4}{15} \,.
 \]</span></p>
 </blockquote>
-<hr>
 </section>
-<section id="the-lotp-with-two-continuous-distributions" class="level3" data-number="1.10.3">
-<h3 data-number="1.10.3" class="anchored" data-anchor-id="the-lotp-with-two-continuous-distributions"><span class="header-section-number">1.10.3</span> The LoTP With Two Continuous Distributions</h3>
+<section id="the-lotp-with-two-continuous-distributions" class="level4" data-number="1.10.1.3">
+<h4 data-number="1.10.1.3" class="anchored" data-anchor-id="the-lotp-with-two-continuous-distributions"><span class="header-section-number">1.10.1.3</span> The LoTP With Two Continuous Distributions</h4>
 <blockquote class="blockquote">
 <p>Let’s suppose that we have two random variables, <span class="math inline">\(X\)</span> and <span class="math inline">\(\theta\)</span>, such that <span class="math display">\[\begin{align*}
 f_{X \vert \Theta}(x \vert \theta) &amp;= \theta \exp(-\theta x) \\
@@ -1893,8 +1944,9 @@ f_X(x) &amp;= \frac{1}{(x+1)^2} \Gamma(1) = \frac{1}{(x+1)^2} 0! = \frac{1}{(x+1
 </blockquote>
 </section>
 </section>
-<section id="data-sampling" class="level2" data-number="1.11">
-<h2 data-number="1.11" class="anchored" data-anchor-id="data-sampling"><span class="header-section-number">1.11</span> Data Sampling</h2>
+</section>
+<section id="sec-chap1sampling" class="level2" data-number="1.11">
+<h2 data-number="1.11" class="anchored" data-anchor-id="sec-chap1sampling"><span class="header-section-number">1.11</span> Data Sampling</h2>
 <div class="graybox">
 <p>What to take away from this section:</p>
 <ul>
@@ -1973,9 +2025,10 @@ Figure&nbsp;1.22: <span class="math inline">\(n = 1000\)</span> data sampled fro
 </div>
 </div>
 </div>
-<hr>
-<section id="more-inverse-transform-sampling" class="level3" data-number="1.11.1">
-<h3 data-number="1.11.1" class="anchored" data-anchor-id="more-inverse-transform-sampling"><span class="header-section-number">1.11.1</span> More Inverse-Transform Sampling</h3>
+<section id="example" class="level3" data-number="1.11.1">
+<h3 data-number="1.11.1" class="anchored" data-anchor-id="example"><span class="header-section-number">1.11.1</span> Example</h3>
+<section id="more-inverse-transform-sampling" class="level4" data-number="1.11.1.1">
+<h4 data-number="1.11.1.1" class="anchored" data-anchor-id="more-inverse-transform-sampling"><span class="header-section-number">1.11.1.1</span> More Inverse-Transform Sampling</h4>
 <blockquote class="blockquote">
 <p>Let’s suppose that we are to sample <span class="math inline">\(n\)</span> data from the following distribution: <span class="math display">\[
 f_X(x) = 2(1-x) ~~~ x \in [0,1] \,.
@@ -2005,8 +2058,9 @@ Figure&nbsp;1.23: <span class="math inline">\(n = 1000\)</span> data sampled fro
 </div>
 </section>
 </section>
-<section id="statistics-and-sampling-distributions" class="level2" data-number="1.12">
-<h2 data-number="1.12" class="anchored" data-anchor-id="statistics-and-sampling-distributions"><span class="header-section-number">1.12</span> Statistics and Sampling Distributions</h2>
+</section>
+<section id="sec-chap1statistics" class="level2" data-number="1.12">
+<h2 data-number="1.12" class="anchored" data-anchor-id="sec-chap1statistics"><span class="header-section-number">1.12</span> Statistics and Sampling Distributions</h2>
 <div class="graybox">
 <p>What to take away from this section:</p>
 <ul>
@@ -2043,9 +2097,10 @@ Figure&nbsp;1.24: The canonical experiment-and-infer cycle. We gather data sampl
 </div>
 </div>
 </div>
-<p>The answer, typically, is that we would use these data to <em>infer</em> the (unknown) properties of the population from which they are drawn. A simple picture of the experiment-and-infer cycle is given in <a href="#fig-cycle2" class="quarto-xref">Figure&nbsp;<span>1.24</span></a>. Notice how in this figure we use the term “statistical inference.” (Fitting, as it is part of the name of this course!) This is an appropriate term to use because we utilize statistics when trying to infer the properties of the unknown underlying population, like its true mean <span class="math inline">\(\mu\)</span>. But this motivates a next question…</p>
-<p><em>What is a statistic?</em></p>
-<p>A statistic is simply a function of the data we observe. It can be any function of the data<span class="math inline">\(-\)</span><span class="math inline">\(X_1\)</span>, sin<span class="math inline">\((X_1) + \pi X_2\)</span>, etc.<span class="math inline">\(-\)</span>and it provides a useful means by which to summarize data (i.e., reduce <span class="math inline">\(n\)</span> numbers to a single number). But it should be intuitively obvious (we would hope!) that some statistics are going to be more informative than others: for instance, if we are trying to infer what <span class="math inline">\(\mu\)</span> might be, <span class="math inline">\(X_1\)</span> is probably going to be more useful to us than sin<span class="math inline">\((X_1) + \pi X_2\)</span>. But it may not (nay, will not) be the most useful quantity when the sample size <span class="math inline">\(n &gt; 1\)</span>. We could say that much of what we do as statisticians is to pick appropriate (and optimal!) statistics to perform inference. (Which would be true, if not for all the data pre-processing, exploratory data analysis, coding, and interpretation we also do as part of the job.)</p>
+<p>The answer, typically, is that we would use these data to <em>infer</em> the (unknown) properties of the population from which they are drawn. A simple picture of the experiment-and-infer cycle is given in <a href="#fig-cycle2" class="quarto-xref">Figure&nbsp;<span>1.24</span></a>. Notice how in this figure we use the term “statistical inference.” (Fitting, as it is part of the name of this course!) This is an appropriate term to use because we utilize statistics when trying to infer the properties of the unknown underlying population, like its true mean <span class="math inline">\(\mu\)</span>. But this motivates a question: what exactly is a statistic?</p>
+<section id="sec-chap1stat" class="level3" data-number="1.12.1">
+<h3 data-number="1.12.1" class="anchored" data-anchor-id="sec-chap1stat"><span class="header-section-number">1.12.1</span> Statistics</h3>
+<p>A statistic is simply a function of the data we observe. It can be any function of the data<span class="math inline">\(-\)</span>e.g., <span class="math inline">\(X_1\)</span>, sin<span class="math inline">\((X_1) + \pi X_2\)</span>, etc.<span class="math inline">\(-\)</span>and it provides a useful means by which to summarize data (i.e., reduce <span class="math inline">\(n\)</span> numbers to a single number). But it should be intuitively obvious (we would hope!) that some statistics are going to be more informative than others: for instance, if we are trying to infer what <span class="math inline">\(\mu\)</span> might be, <span class="math inline">\(X_1\)</span> is probably going to be more useful to us than sin<span class="math inline">\((X_1) + \pi X_2\)</span>. But it may not (nay, will not) be the most useful quantity when the sample size <span class="math inline">\(n &gt; 1\)</span>. We could say that much of what we do as statisticians is to pick appropriate (and optimal!) statistics to perform inference. (Which would be true, if not for all the data pre-processing, exploratory data analysis, coding, and interpretation we also do as part of the job.)</p>
 <p>What are some common statistics?</p>
 <ol type="1">
 <li>The <em>sample mean</em>: <span class="math display">\[
@@ -2056,26 +2111,34 @@ S^2 = \frac{1}{n-1} \sum_{i=1}^n (X_1 - \bar{X})^2 \,.
 \]</span> As we might guess, this one helps us infer population variances, and thus helps us make sense of the “width” of the pmf or pdf from which the data are sampled. The square root of <span class="math inline">\(S^2\)</span> is the <em>sample standard deviation</em>. (One might ask: why <span class="math inline">\(n-1\)</span>? Metrics, again…we will return to this point below when we discuss point estimation.)</li>
 <li>The <em>sample range</em>: <span class="math display">\[
 R = X_{(n)} - X_{(1)} \,.
-\]</span> Here, we introduce a notational wrinkle: <span class="math inline">\(X_{(i)}\)</span> represents the <span class="math inline">\(i^{\rm th}\)</span> <em>smallest</em> datum. So <span class="math inline">\(X_{(1)}\)</span> is the observed datum with the smallest value (but not necessarily the first one to be recorded in our experiment), and <span class="math inline">\(X_{(n)}\)</span> is the one with the largest value. <span class="math inline">\(X_{(\cdot)}\)</span> is dubbed an <em>order statistic</em> and we will illustrate its use as we go on, beginning in Chapter 3.</li>
+\]</span> Here, we introduce a notational wrinkle: <span class="math inline">\(X_{(i)}\)</span> represents the <span class="math inline">\(i^{\rm th}\)</span> <em>smallest</em> datum. So <span class="math inline">\(X_{(1)}\)</span> is the observed datum with the smallest value (but not necessarily the first one to be recorded in our experiment), and <span class="math inline">\(X_{(n)}\)</span> is the one with the largest value. <span class="math inline">\(X_{(\cdot)}\)</span> is dubbed an <em>order statistic</em> and we will illustrate its use as we go on, beginning in <a href="03-binomial.html#sec-chap3order" class="quarto-xref"><span>Section 3.5</span></a>.</li>
 <li>There are a myriad of others: the interquartile range, the median, etc.</li>
 </ol>
-<p>We have stated what a statistic is: it is a function of the observed data. But what does this imply? <strong>It implies that statistics, which are functions of random variables, are themselves random variables, and thus are sampled from a pmf or pdf.</strong> It is convention to call the pmf or pdf associated with a given statistic the <em>sampling distribution</em>, but we are not necessarily fans of the term: it makes it sound like something new and different, when in reality a sampling distribution is just another pmf or pdf, with properties equivalent to those discussed earlier in the chapter (e.g., a sampling distribution has an expected value, a variance, etc.).</p>
+</section>
+<section id="sec-chap1sampdist" class="level3" data-number="1.12.2">
+<h3 data-number="1.12.2" class="anchored" data-anchor-id="sec-chap1sampdist"><span class="header-section-number">1.12.2</span> Sampling Distributions</h3>
+<p>We have stated what a statistic is: it is a function of the observed data. But what does this imply? <strong>It implies that statistics, which are functions of random variables, are themselves random variables, and thus are sampled from a pmf or pdf.</strong> It is convention to call the pmf or pdf associated with a given statistic the <em>sampling distribution</em>, but we are not necessarily fans of the term: it makes it sound like something new and different, when in reality a sampling distribution is just another pmf or pdf, with properties equivalent to those discussed earlier in the chapter (e.g., a sampling distribution has an expected value, a variance, etc.; see <a href="#sec-chap1density" class="quarto-xref"><span>Section 1.6</span></a> and <a href="#sec-chap1expected" class="quarto-xref"><span>Section 1.7</span></a>).</p>
 <p>As we will see in the first example below, if the statistic is a linear function of random variables (like the sample mean), we can derive its expected value, variance, and <em>standard error</em> now given the tools we already have at our disposal. The term standard error simply refers to the standard deviation of a sampling distribution, i.e., <span class="math display">\[
 se[Y] = \sqrt{V[Y]} \,,
 \]</span> where <span class="math inline">\(Y\)</span> is our statistic. Now, can we go beyond this and derive the mathematical form of a statistic’s pmf or pdf now? The short answer is no…we have not yet introduced methods for deriving the functional forms of sampling distributions.</p>
 <ul>
-<li>In Chapter 2, we will introduce moment-generating functions, which can help us derive sampling distributions for linear functions of random variables (an example of which is the sample mean).</li>
-<li>In Chapter 3, we will show how one can write down the pmf or pdf for order statistics (like the sample median); once the sampling distribution is known, then we can derive its expected value and variance.</li>
+<li>In <a href="02-normal.html#sec-chap2methodmgf" class="quarto-xref"><span>Section 2.3</span></a>, we will introduce moment-generating functions, which can help us derive sampling distributions for linear functions of random variables (an example of which is the sample mean).</li>
+<li>In <a href="03-binomial.html#sec-chap3order" class="quarto-xref"><span>Section 3.5</span></a>, we will show how one can write down the pmf or pdf for order statistics (like the sample median); once the sampling distribution is known, then we can derive its expected value and variance.</li>
 </ul>
 <p>(As an aside, we should mention here the <em>empirical rule</em>. While nominally about the normal distribution, we will think of it as stating that nearly all statistics should be observed as laying within three standard errors of their population means. For instance, as we show below in an example, <span class="math inline">\(E[\bar{X}] = \mu\)</span>, so virtually all values of <span class="math inline">\(\bar{X}\)</span>, as observed over repetitions of an experiment, should lie in the range <span class="math inline">\([\mu - 3 \cdot se(\bar{X}),\mu + 3 \cdot se(\bar{X})]\)</span>, a range that gets smaller and smaller as the sample size <span class="math inline">\(n\)</span> goes to infinity.)</p>
-<p>There are, however, two paths that one could follow that allow us to build up an empirical sampling distribution for a statistic. The first assumes that we know (or are willing to assume) the pmf or pdf for the individual data: we would repeatedly simulate data from the distribution and record the values for the statistic. This builds off of the material in the last section above. (See the example below, as well as the last section of this chapter.) The other is useful for situations where we do not know nor are willing to assume the form of the pmf or pdf for the individual data…this is the <em>bootstrap</em>. We discuss the bootstrap technique in Chapter 4.</p>
+<p>There are, however, two paths that one could follow that allow us to build up an empirical sampling distribution for a statistic. The first assumes that we know (or are willing to assume) the pmf or pdf for the individual data: we would repeatedly simulate data from the distribution and record the values for the statistic. This builds off of the material in <a href="#sec-chap1sampling" class="quarto-xref"><span>Section 1.11</span></a>. (See the example below.) The other is useful for situations where we do not know nor are willing to assume the form of the pmf or pdf for the individual data…this is the <em>bootstrap</em>. We discuss the bootstrap technique in <a href="04-poisson.html#sec-chap4bootstrap" class="quarto-xref"><span>Section 4.6.1</span></a>.</p>
 <hr>
-<p><strong>Many important results in statistical inference assume that we have collected a sample of <span class="math inline">\(n\)</span> iid random variables, so over the course of the rest of this chapter and for the next several, we will assume that when we have sampled two or more random variables, they will be iid random variables.</strong> (We will discuss concepts related to simultaneously sampling values for two or more <em>dependent</em> random variables in Chapter 6.)</p>
-<hr>
-<section id="expected-value-and-variance-of-the-sample-mean-for-all-distributions" class="level3" data-number="1.12.1">
-<h3 data-number="1.12.1" class="anchored" data-anchor-id="expected-value-and-variance-of-the-sample-mean-for-all-distributions"><span class="header-section-number">1.12.1</span> Expected Value and Variance of the Sample Mean (For All Distributions)</h3>
+<p><strong>Many important results in statistical inference assume that we have collected a sample of <span class="math inline">\(n\)</span> independent and identically distributed (or iid) random variables, so over the course of the rest of this chapter and for the next several, we will assume that when we have sampled two or more random variables, they will be iid random variables.</strong> (While the meaning of “identically distributed” should be intuitively clear to the reader, “independent” means that the value that we observe for one random variable will not affect the values we might observe for another random variable. We will discuss concepts related to simultaneously sampling values for two or more <em>dependent</em> random variables in <a href="06-multivariate.html" class="quarto-xref"><span>Chapter 6</span></a>.)</p>
+<div class="graybox">
+<p>For more on sampling distributions, go to <a href="02-normal.html#sec-chap2methodmgf" class="quarto-xref"><span>Section 2.3</span></a>.</p>
+</div>
+</section>
+<section id="examples-8" class="level3" data-number="1.12.3">
+<h3 data-number="1.12.3" class="anchored" data-anchor-id="examples-8"><span class="header-section-number">1.12.3</span> Examples</h3>
+<section id="expected-value-and-variance-of-the-sample-mean-for-all-distributions" class="level4" data-number="1.12.3.1">
+<h4 data-number="1.12.3.1" class="anchored" data-anchor-id="expected-value-and-variance-of-the-sample-mean-for-all-distributions"><span class="header-section-number">1.12.3.1</span> Expected Value and Variance of the Sample Mean (For All Distributions)</h4>
 <blockquote class="blockquote">
-<p>Given <span class="math inline">\(n\)</span> iid data from some distribution, we can use the results from earlier in this chapter to immediately show that <span class="math display">\[\begin{align*}
+<p>Given <span class="math inline">\(n\)</span> iid data from some distribution, we can use the results from <a href="#sec-chap1expected" class="quarto-xref"><span>Section 1.7</span></a> to immediately show that <span class="math display">\[\begin{align*}
 E[\bar{X}] &amp;= E\left[\frac{1}{n}\sum_{i=1}^n X_i\right] = \frac{1}{n}E\left[\sum_{i=1}^n X_i\right] = \frac{1}{n}\sum_{i=1}^n E[X_i]\\
 &amp;= \frac{1}{n}\sum_{i=1}^n \mu = \frac{1}{n} n \mu = \mu \,,
 \end{align*}\]</span> and <span class="math display">\[\begin{align*}
@@ -2083,10 +2146,9 @@ V[\bar{X}] &amp;= V\left[\frac{1}{n}\sum_{i=1}^n X_i\right] = \frac{1}{n^2} V\le
 &amp;= \frac{1}{n^2} n \sigma^2 = \frac{\sigma^2}{n} \,.
 \end{align*}\]</span> The standard error for the sample mean is thus <span class="math inline">\(\sqrt{\bar{X}} = \sigma/\sqrt{n}\)</span>. There are two important conclusions to take away from this simple example. First, <em>we never state the distribution from which we sample the initial data, so this is a general result that holds for all distributions</em>. Second, we see that the width of the sampling distribution for the sample mean decreases as we collect more and more data, as <span class="math inline">\(1/\sqrt{n}\)</span>, meaning that any inferences that we make about the population mean will become more and more accurate as the sample size increases.</p>
 </blockquote>
-<hr>
 </section>
-<section id="simulation-basic-algorithm" class="level3" data-number="1.12.2">
-<h3 data-number="1.12.2" class="anchored" data-anchor-id="simulation-basic-algorithm"><span class="header-section-number">1.12.2</span> Simulation: Basic Algorithm</h3>
+<section id="simulation-basic-algorithm" class="level4" data-number="1.12.3.2">
+<h4 data-number="1.12.3.2" class="anchored" data-anchor-id="simulation-basic-algorithm"><span class="header-section-number">1.12.3.2</span> Simulation: Basic Algorithm</h4>
 <blockquote class="blockquote">
 <p>As we will see throughout this course, there will be times when we can analytically derive the sampling distribution for a statistic…and times when we cannot. When we cannot, <em>but we know or can assume the distribution for each of the individual data</em>, we can fall back upon simulations.</p>
 </blockquote>
@@ -2115,8 +2177,8 @@ display result</code></pre>
 <p>We will apply the basic algorithm above in examples spread throughout the remainder of the book, starting immediately below.</p>
 </blockquote>
 </section>
-<section id="simulation-the-sampling-distribution-of-the-sample-mean" class="level3" data-number="1.12.3">
-<h3 data-number="1.12.3" class="anchored" data-anchor-id="simulation-the-sampling-distribution-of-the-sample-mean"><span class="header-section-number">1.12.3</span> Simulation: the Sampling Distribution of the Sample Mean</h3>
+<section id="simulation-the-sampling-distribution-of-the-sample-mean" class="level4" data-number="1.12.3.3">
+<h4 data-number="1.12.3.3" class="anchored" data-anchor-id="simulation-the-sampling-distribution-of-the-sample-mean"><span class="header-section-number">1.12.3.3</span> Simulation: the Sampling Distribution of the Sample Mean</h4>
 <blockquote class="blockquote">
 <p>In a previous example, we use inverse-transform sampling to sample data from the pdf <span class="math inline">\(f_X(x) = 2(1-x)\)</span> for <span class="math inline">\(x \in [0,1]\)</span>. Here, we extend the <code>R</code> code so as to visualize the distribution of the sample mean of <span class="math inline">\(n = 10\)</span> data drawn from this distribution.</p>
 </blockquote>
@@ -2128,7 +2190,7 @@ display result</code></pre>
 <img src="01-probability_files/figure-html/fig-sampmean-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="336">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sampmean-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.25: The empirical distribution of the sample mean of <span class="math inline">\(n = 10\)</span> data sampled from the distribution <span class="math inline">\(f_X(x) = 2(1-x)\)</span> for <span class="math inline">\(x \in [0,1]\)</span>. The red line indicates <span class="math inline">\(f_X(x)\)</span>, while the vertical and horizontal green lines indicate <span class="math inline">\(E[\bar{X}] = \mu = 1/3\)</span> and the range <span class="math inline">\([\mu-se(\bar{X}),\mu+se(\bar{X})] = [0.2588,0.4078]\)</span>. The shape of the empirical distribution is approaching that of a normal distribution, a result that foreshadows our discussion of the Central Limit Theorem in Chapter 2.
+Figure&nbsp;1.25: The empirical distribution of the sample mean of <span class="math inline">\(n = 10\)</span> data sampled from the distribution <span class="math inline">\(f_X(x) = 2(1-x)\)</span> for <span class="math inline">\(x \in [0,1]\)</span>. The red line indicates <span class="math inline">\(f_X(x)\)</span>, while the vertical and horizontal green lines indicate <span class="math inline">\(E[\bar{X}] = \mu = 1/3\)</span> and the range <span class="math inline">\([\mu-se(\bar{X}),\mu+se(\bar{X})] = [0.2588,0.4078]\)</span>. The shape of the empirical distribution is approaching that of a normal distribution, a result that foreshadows our discussion of the Central Limit Theorem in <a href="02-normal.html#sec-chap2clt" class="quarto-xref"><span>Section 2.6</span></a>.
 </figcaption>
 </figure>
 </div>
@@ -2150,12 +2212,11 @@ se(\bar{X}) = \sqrt{\frac{V[X]}{n}} = \sqrt{\frac{1}{180}} = 0.0745 \,.
 <blockquote class="blockquote">
 <p>We observe that the distribution of the sample mean values matches the expected mean and standard error well, and is <em>definitely different from</em> the distribution of the individual data values (which is shown as the red line in the figure). The pdf for the sampling distribution looks almost like that of a normal distribution. For now we will have to content ourselves with only knowing the mean and the standard error of the sampling distribution distribution, and not the mathematical form of its pdf.</p>
 </blockquote>
-<hr>
 </section>
-<section id="simulation-the-sampling-distribution-of-the-sample-median" class="level3" data-number="1.12.4">
-<h3 data-number="1.12.4" class="anchored" data-anchor-id="simulation-the-sampling-distribution-of-the-sample-median"><span class="header-section-number">1.12.4</span> Simulation: the Sampling Distribution of the Sample Median</h3>
+<section id="simulation-the-sampling-distribution-of-the-sample-median" class="level4" data-number="1.12.3.4">
+<h4 data-number="1.12.3.4" class="anchored" data-anchor-id="simulation-the-sampling-distribution-of-the-sample-median"><span class="header-section-number">1.12.3.4</span> Simulation: the Sampling Distribution of the Sample Median</h4>
 <blockquote class="blockquote">
-<p>The median of a data sample is defined as the middle value of the sorted data: if we have <span class="math inline">\(n=5\)</span> data, for instance, the median is <span class="math inline">\(x_{(3)}\)</span>. (Recall that the parentheses indicating that we are examining sorted data, with <span class="math inline">\(x_{(1)}\)</span> and <span class="math inline">\(x_{(n)}\)</span> being the smallest and largest observed values.) Here, we show how to simulate the distribution of a sample median. In Chapter 3, we show how we can attempt to derive distributions related to sorted data mathematically.</p>
+<p>The median of a data sample is defined as the middle value of the sorted data: if we have <span class="math inline">\(n=5\)</span> data, for instance, the median is <span class="math inline">\(x_{(3)}\)</span>. (Recall that the parentheses indicating that we are examining sorted data, with <span class="math inline">\(x_{(1)}\)</span> and <span class="math inline">\(x_{(n)}\)</span> being the smallest and largest observed values.) Here, we show how to simulate the distribution of a sample median. In <a href="03-binomial.html#sec-chap3order" class="quarto-xref"><span>Section 3.5</span></a>, we show how we can attempt to derive distributions related to sorted data mathematically.</p>
 </blockquote>
 <blockquote class="blockquote">
 <p>Let’s assume that we draw data according to the following distribution: <span class="math display">\[
@@ -2184,8 +2245,9 @@ Figure&nbsp;1.26: The empirical distribution of the sample median for the pdf <s
 </div>
 </section>
 </section>
-<section id="the-likelihood-function" class="level2" data-number="1.13">
-<h2 data-number="1.13" class="anchored" data-anchor-id="the-likelihood-function"><span class="header-section-number">1.13</span> The Likelihood Function</h2>
+</section>
+<section id="sec-chap1likelihood" class="level2" data-number="1.13">
+<h2 data-number="1.13" class="anchored" data-anchor-id="sec-chap1likelihood"><span class="header-section-number">1.13</span> The Likelihood Function</h2>
 <div class="graybox">
 <p>What to take away from this section:</p>
 <ul>
@@ -2210,7 +2272,7 @@ p_X(x \vert p) = \left\{ \begin{array}{cl} 2 &amp; p^2 \\ 1 &amp; 2p(1-p) \\ 0 &
 <div aria-describedby="fig-pmfs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-pmfs" style="flex-basis: 33.3%;justify-content: center;">
-<div id="fig-pmfs-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="192">
+<div id="fig-pmfs-1" class="quarto-float quarto-figure quarto-figure-center anchored" width="192" data-fig-align="center">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-pmfs-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="01-probability_files/figure-html/fig-pmfs-1.png" id="fig-pmfs-1" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-pmfs" width="192">
@@ -2222,7 +2284,7 @@ p_X(x \vert p) = \left\{ \begin{array}{cl} 2 &amp; p^2 \\ 1 &amp; 2p(1-p) \\ 0 &
 </div>
 </div>
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-pmfs" style="flex-basis: 33.3%;justify-content: center;">
-<div id="fig-pmfs-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="192">
+<div id="fig-pmfs-2" class="quarto-float quarto-figure quarto-figure-center anchored" width="192" data-fig-align="center">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-pmfs-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="01-probability_files/figure-html/fig-pmfs-2.png" id="fig-pmfs-2" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-pmfs" width="192">
@@ -2234,7 +2296,7 @@ p_X(x \vert p) = \left\{ \begin{array}{cl} 2 &amp; p^2 \\ 1 &amp; 2p(1-p) \\ 0 &
 </div>
 </div>
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-pmfs" style="flex-basis: 33.3%;justify-content: center;">
-<div id="fig-pmfs-3" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="192">
+<div id="fig-pmfs-3" class="quarto-float quarto-figure quarto-figure-center anchored" width="192" data-fig-align="center">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-pmfs-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="01-probability_files/figure-html/fig-pmfs-3.png" id="fig-pmfs-3" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-pmfs" width="192">
@@ -2257,7 +2319,7 @@ Figure&nbsp;1.27: From (a) to (c), the probability mass functions <span class="m
 <div aria-describedby="fig-likes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-likes" style="flex-basis: 33.3%;justify-content: center;">
-<div id="fig-likes-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="192">
+<div id="fig-likes-1" class="quarto-float quarto-figure quarto-figure-center anchored" width="192" data-fig-align="center">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-likes-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="01-probability_files/figure-html/fig-likes-1.png" id="fig-likes-1" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-likes" width="192">
@@ -2269,7 +2331,7 @@ Figure&nbsp;1.27: From (a) to (c), the probability mass functions <span class="m
 </div>
 </div>
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-likes" style="flex-basis: 33.3%;justify-content: center;">
-<div id="fig-likes-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="192">
+<div id="fig-likes-2" class="quarto-float quarto-figure quarto-figure-center anchored" width="192" data-fig-align="center">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-likes-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="01-probability_files/figure-html/fig-likes-2.png" id="fig-likes-2" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-likes" width="192">
@@ -2281,7 +2343,7 @@ Figure&nbsp;1.27: From (a) to (c), the probability mass functions <span class="m
 </div>
 </div>
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-likes" style="flex-basis: 33.3%;justify-content: center;">
-<div id="fig-likes-3" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="192">
+<div id="fig-likes-3" class="quarto-float quarto-figure quarto-figure-center anchored" width="192" data-fig-align="center">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-likes-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="01-probability_files/figure-html/fig-likes-3.png" id="fig-likes-3" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-likes" width="192">
@@ -2299,10 +2361,11 @@ Figure&nbsp;1.28: From (a) to (c), the likelihood function <span class="math inl
 </figcaption>
 </figure>
 </div>
-<p>One might question at this point why the likelihood function is important, as it is indeed not a pmf or pdf. We will see below that it is often used when trying to uncover the truth about a population: e.g., given a set of data, randomly sampled from some family of distributions parameterized by <span class="math inline">\(\theta\)</span>, we can utilize the likelihood to infer, or estimate, <span class="math inline">\(\theta\)</span>. Before we talk about estimation, however, we need to discuss how one might summarize a set of data so as to make it mathematically more easy to work with…in other words, we need to talk about statistics.</p>
-<hr>
-<section id="examples-of-likelihood-functions-for-iid-data" class="level3" data-number="1.13.1">
-<h3 data-number="1.13.1" class="anchored" data-anchor-id="examples-of-likelihood-functions-for-iid-data"><span class="header-section-number">1.13.1</span> Examples of Likelihood Functions for IID Data</h3>
+<p>One might question at this point why the likelihood function is important, as it is indeed not a pmf or pdf. We will see below that it is often used when trying to uncover the truth about a population: e.g., given a set of data, randomly sampled from some family of distributions parameterized by <span class="math inline">\(\theta\)</span>, we can utilize the likelihood to infer, or estimate, <span class="math inline">\(\theta\)</span>. This is because, ultimately, the likelihood is a function of observed data, and hence <em>the likelihood is a statistic</em>.</p>
+<section id="examples-9" class="level3" data-number="1.13.1">
+<h3 data-number="1.13.1" class="anchored" data-anchor-id="examples-9"><span class="header-section-number">1.13.1</span> Examples</h3>
+<section id="examples-of-likelihood-functions-for-iid-data" class="level4" data-number="1.13.1.1">
+<h4 data-number="1.13.1.1" class="anchored" data-anchor-id="examples-of-likelihood-functions-for-iid-data"><span class="header-section-number">1.13.1.1</span> Examples of Likelihood Functions for IID Data</h4>
 <blockquote class="blockquote">
 <ol type="1">
 <li>We are given <span class="math inline">\(n\)</span> iid samples from <span class="math display">\[
@@ -2336,10 +2399,9 @@ h_X(x \vert \theta) = \left\{ \begin{array}{cl} \frac{x}{\theta} &amp; x \in [0,
 \end{align*}\]</span></li>
 </ol>
 </blockquote>
-<hr>
 </section>
-<section id="coding-the-likelihood-function-in-r" class="level3" data-number="1.13.2">
-<h3 data-number="1.13.2" class="anchored" data-anchor-id="coding-the-likelihood-function-in-r"><span class="header-section-number">1.13.2</span> Coding the Likelihood Function in R</h3>
+<section id="coding-the-likelihood-function-in-r" class="level4" data-number="1.13.1.2">
+<h4 data-number="1.13.1.2" class="anchored" data-anchor-id="coding-the-likelihood-function-in-r"><span class="header-section-number">1.13.1.2</span> Coding the Likelihood Function in R</h4>
 <blockquote class="blockquote">
 <p>Let’s code and display the likelihood function for the mixed distribution we introduce immediately above. The first thing we will do, however, is generate data from this distribution using inverse transform sampling.</p>
 </blockquote>
@@ -2380,8 +2442,9 @@ Figure&nbsp;1.29: The log-likelihood function <span class="math inline">\(\ell(\
 </div>
 </section>
 </section>
-<section id="point-estimation" class="level2" data-number="1.14">
-<h2 data-number="1.14" class="anchored" data-anchor-id="point-estimation"><span class="header-section-number">1.14</span> Point Estimation</h2>
+</section>
+<section id="sec-chap1point" class="level2" data-number="1.14">
+<h2 data-number="1.14" class="anchored" data-anchor-id="sec-chap1point"><span class="header-section-number">1.14</span> Point Estimation</h2>
 <div class="graybox">
 <p>What to take away from this section:</p>
 <ul>
@@ -2400,6 +2463,8 @@ Figure&nbsp;1.29: The log-likelihood function <span class="math inline">\(\ell(\
 <p>Let’s suppose we are given a sample of iid data <span class="math inline">\(\{X_1,\ldots,X_n\}\)</span>, sampled from some distribution with mean <span class="math inline">\(E[X]\)</span> and finite variance <span class="math inline">\(V[X]\)</span>. As we started to discuss above, we can use functions of these data, or statistics, to make inferences about population properties: what are plausible values for the population mean <span class="math inline">\(\mu\)</span>? or the population variance <span class="math inline">\(\sigma^2\)</span>? or, more generally, any population parameter <span class="math inline">\(\theta\)</span>?</p>
 <p>In <em>point estimation</em>, the statistic that we choose is an <em>estimator</em> of <span class="math inline">\(\theta\)</span>. We dub the estimate <span class="math inline">\(\hat{\theta}\)</span>: this is a number that is our best guess for what the true value of <span class="math inline">\(\theta\)</span> is, given the data we have observed thus far.</p>
 <p>Now…how do we define an estimator? Well, to start, we can guess what might be good estimators, and compare their properties. For instance, here, let’s propose two estimators for <span class="math inline">\(\mu\)</span>: <span class="math inline">\(\hat{\mu} = X_1\)</span> and <span class="math inline">\(\hat{\mu} = \bar{X}\)</span>. Which is better? It may seem intuitively obvious that <span class="math inline">\(\bar{X}\)</span> is better, because it incorporates more data…but how do we quantify “better”?</p>
+<section id="sec-chap1mse" class="level3" data-number="1.14.1">
+<h3 data-number="1.14.1" class="anchored" data-anchor-id="sec-chap1mse"><span class="header-section-number">1.14.1</span> Estimator Bias, Variance, and Mean-Squared Error</h3>
 <p>In the last section, we indicated that we can assess the utility of a statistic used as an estimator by computing metrics, quantities that allow us to directly compare estimators. Here, we will highlight two of them, the <em>bias</em> and the <em>variance</em>; later, we will highlight others. (Recall that an estimator is a statistic, and thus it is a random variable that is drawn from a sampling distribution with some mean and some variance.)</p>
 <ol type="1">
 <li>Bias: does the estimator yield the true value, <em>on average</em>? In other words, is <span class="math inline">\(B[\hat{\theta}] = E[\hat{\theta}-\theta] = E[\hat{\theta}] - \theta =
@@ -2424,7 +2489,9 @@ Figure&nbsp;1.30: A graphical representation of the concepts of bias (how far on
 <p>Given a choice, we generally prefer unbiased estimators with smaller variances; however, it is theoretically possible that we might be better off with an estimator with a small bias if it has an even lower variance than the best unbiased one. We can start making sense of this statement now by stating that we can combine the information about bias and variance together into a single metric, the <em>mean-squared error</em> (or <em>MSE</em>). The MSE is defined as <span class="math display">\[
 MSE[\hat{\theta}] = B[\hat{\theta}]^2 + V[\hat{\theta}] \,,
 \]</span> and smaller values are better. For <span class="math inline">\(\hat{\theta} = X_1\)</span>, the MSE is <span class="math inline">\(0^2 + \sigma^2 = \sigma^2\)</span>, while for <span class="math inline">\(\hat{\theta} = \bar{X}\)</span>, the MSE is <span class="math inline">\(0^2 + \sigma^2/n = \sigma^2/n\)</span>; <span class="math inline">\(\bar{X}\)</span> is still the better estimator.</p>
-<hr>
+</section>
+<section id="sec-chap1mle" class="level3" data-number="1.14.2">
+<h3 data-number="1.14.2" class="anchored" data-anchor-id="sec-chap1mle"><span class="header-section-number">1.14.2</span> Maximum Likelihood Estimation</h3>
 <p>At this point, one might be thinking that guessing estimators would be a sub-optimal approach. And one would be correct. Over the remainder of the book, we introduce different algorithmic approaches for defining estimators with (presumably) good properties. Here we examine a first one: <em>maximum likelihood estimation</em> (or <em>MLE</em>).</p>
 <p>Above, in the section introducing the likelihood, we discussed how the likelihood function <span class="math inline">\(\mathcal{L}(\theta \vert \mathbf{x})\)</span> encapsulates the relative plausibilities of different values of <span class="math inline">\(\theta\)</span> given the data that are observed. Maximum likelihood estimation takes this idea to its natural conclusion: the most plausible value of <span class="math inline">\(\theta\)</span>, the one that maximizes the likelihood function, <em>is</em> indeed a good way to estimate the true value of <span class="math inline">\(\theta\)</span>. Assuming that the likelihood function achieves a maximum away from <span class="math inline">\(\theta_{\rm lo}\)</span> and <span class="math inline">\(\theta_{\rm hi}\)</span>, the parameter bounds, then the steps to find <span class="math inline">\(\hat{\theta}_{MLE}\)</span> involve straightforward calculus, albeit with a simplifying twist:</p>
 <ol type="1">
@@ -2435,9 +2502,14 @@ MSE[\hat{\theta}] = B[\hat{\theta}]^2 + V[\hat{\theta}] \,,
 <li>Solve for <span class="math inline">\(\theta\)</span>. The solution is <span class="math inline">\(\hat{\theta}_{MLE}\)</span>, assuming that the second derivative of <span class="math inline">\(\ell(\theta \vert \mathbf{x})\)</span> is negative (i.e., concave down); otherwise, we have actually found a local <em>minimum</em> of the likelihood function.</li>
 </ol>
 <p>Note that the “simplifying twist” is transforming the likelihood <span class="math inline">\(\mathcal{L}(\theta \vert \mathbf{x})\)</span> to the log-likelihood <span class="math inline">\(\ell(\theta \vert \mathbf{x})\)</span>; differentiating the latter is often, if not always, easier than differentiating the former. But even if we skip step 2 and compute the first derivative of <span class="math inline">\(\mathcal{L}(\theta \vert \mathbf{x})\)</span> directly, we will eventually get the same expression for <span class="math inline">\(\hat{\theta}_{MLE}\)</span>.</p>
-<hr>
-<section id="comparing-two-estimators" class="level3" data-number="1.14.1">
-<h3 data-number="1.14.1" class="anchored" data-anchor-id="comparing-two-estimators"><span class="header-section-number">1.14.1</span> Comparing Two Estimators</h3>
+<div class="graybox">
+<p>For more on point estimation, go to <a href="02-normal.html#sec-chap2point" class="quarto-xref"><span>Section 2.11</span></a>.</p>
+</div>
+</section>
+<section id="examples-10" class="level3" data-number="1.14.3">
+<h3 data-number="1.14.3" class="anchored" data-anchor-id="examples-10"><span class="header-section-number">1.14.3</span> Examples</h3>
+<section id="comparing-two-estimators" class="level4" data-number="1.14.3.1">
+<h4 data-number="1.14.3.1" class="anchored" data-anchor-id="comparing-two-estimators"><span class="header-section-number">1.14.3.1</span> Comparing Two Estimators</h4>
 <blockquote class="blockquote">
 <p>Let’s assume that we are given <span class="math inline">\(n\)</span> iid data sampled from the following pdf: <span class="math display">\[
 f_X(x) = \frac{1}{\theta}
@@ -2461,10 +2533,9 @@ MSE[\hat{\theta}] = V[X_1+X_2] = V[X_1] + V[X_2] = \frac{\theta^2}{12} + \frac{\
 <blockquote class="blockquote">
 <p>Compare the two MSE expressions, keeping in mind that the second one is meaningless if <span class="math inline">\(n=1\)</span>. For <span class="math inline">\(n=2\)</span> the MSEs are equivalent, which makes sense since the estimators themselves are equivalent. If <span class="math inline">\(n &gt; 2\)</span>, then the MSE for <span class="math inline">\(\hat{\theta} = 2\bar{X}\)</span>, is smaller, and it will continue getting smaller as <span class="math inline">\(n\)</span> increases, unlike the MSE for <span class="math inline">\(\hat{\theta} = X_1 + X_2\)</span>.</p>
 </blockquote>
-<hr>
 </section>
-<section id="maximum-likelihood-estimate-of-population-parameter" class="level3" data-number="1.14.2">
-<h3 data-number="1.14.2" class="anchored" data-anchor-id="maximum-likelihood-estimate-of-population-parameter"><span class="header-section-number">1.14.2</span> Maximum Likelihood Estimate of Population Parameter</h3>
+<section id="maximum-likelihood-estimate-of-population-parameter" class="level4" data-number="1.14.3.2">
+<h4 data-number="1.14.3.2" class="anchored" data-anchor-id="maximum-likelihood-estimate-of-population-parameter"><span class="header-section-number">1.14.3.2</span> Maximum Likelihood Estimate of Population Parameter</h4>
 <blockquote class="blockquote">
 <p>Let’s assume that we are given <span class="math inline">\(n\)</span> iid data sampled from the following pdf: <span class="math display">\[
 f_X(x) = \frac{1}{\theta}\exp({-x/\theta}) \,,
@@ -2489,7 +2560,7 @@ f_X(x) = \frac{1}{\theta}\exp({-x/\theta}) \,,
 </blockquote>
 <blockquote class="blockquote">
 <p>Now, is this estimate biased? We know from results shown above that <span class="math inline">\(E[\bar{X}] = \theta\)</span>, thus <span class="math inline">\(B[\hat{\theta}_{MLE}] = E[\hat{\theta}_{MLE}] - \theta
-= \theta - \theta = 0\)</span> and thus the estimator is unbiased. We also know that <span class="math inline">\(V[\bar{X}] = \sigma^2/n = \theta^2/n\)</span>. The question, to be answered in a future chapter, is whether we can possibly find an estimator with a lower variance via some other estimation approach…or if this indeed the best that we can do.</p>
+= \theta - \theta = 0\)</span> and thus the estimator is unbiased. We also know that <span class="math inline">\(V[\bar{X}] = \sigma^2/n = \theta^2/n\)</span>. The question, to be answered in <a href="02-normal.html#sec-chap2crlb" class="quarto-xref"><span>Section 2.11.2</span></a>, is whether we can possibly find an estimator with a lower variance via some other estimation approach…or if this indeed the best that we can do.</p>
 </blockquote>
 <blockquote class="blockquote">
 <p>Now, when we solve for, e.g., <span class="math inline">\(\hat{\theta}_{MLE}\)</span>, we can solve for other quantities as well…it is just algebra. Meaning, for instance, that if we want to estimate <span class="math inline">\(\hat{\theta}_{MLE}^2\)</span> for whatever reason, we can just square both sides in the solution above: <span class="math display">\[
@@ -2498,10 +2569,9 @@ f_X(x) = \frac{1}{\theta}\exp({-x/\theta}) \,,
 E[\bar{X}^2] = V[\bar{X}] + (E[\bar{X}])^2 = \frac{\sigma^2}{n} + \mu^2 = \frac{\theta^2}{n} + \theta^2 = \theta^2 \left( 1 + \frac{1}{n} \right) \neq \theta^2 \,.
 \]</span> This estimator <em>is</em> biased…but the bias goes away as the sample size <span class="math inline">\(n\)</span> increases. That means that we would call this estimator <em>asymptotically unbiased</em>, i.e., it is unbiased when the sample size is infinite. We note here that maximum likelihood estimates are always either unbiased or asymptotically unbiased.</p>
 </blockquote>
-<hr>
 </section>
-<section id="simulation-sampling-distribution-of-maximum-likelihood-estimates" class="level3" data-number="1.14.3">
-<h3 data-number="1.14.3" class="anchored" data-anchor-id="simulation-sampling-distribution-of-maximum-likelihood-estimates"><span class="header-section-number">1.14.3</span> Simulation: Sampling Distribution of Maximum Likelihood Estimates</h3>
+<section id="simulation-sampling-distribution-of-maximum-likelihood-estimates" class="level4" data-number="1.14.3.3">
+<h4 data-number="1.14.3.3" class="anchored" data-anchor-id="simulation-sampling-distribution-of-maximum-likelihood-estimates"><span class="header-section-number">1.14.3.3</span> Simulation: Sampling Distribution of Maximum Likelihood Estimates</h4>
 <blockquote class="blockquote">
 <p>To drive home the point that maximum likelihood estimates are random variables, we simulate the process of estimating <span class="math inline">\(\theta\)</span> for the pdf <span class="math inline">\(f_X(x) = \theta x^{\theta-1}\)</span>, where <span class="math inline">\(x \in [0,1]\)</span>.</p>
 </blockquote>
@@ -2513,7 +2583,7 @@ E[\bar{X}^2] = V[\bar{X}] + (E[\bar{X}])^2 = \frac{\sigma^2}{n} + \mu^2 = \frac{
 &amp;= n \log \theta + (\theta-1) \sum_{i=1}^n \log x_i \,,
 \end{align*}\]</span> and solve for the MLE: <span class="math display">\[
 \frac{d}{d\theta} \ell(\theta \vert \mathbf{x}) = \frac{n}{\theta} + \sum_{i=1}^n \log x_i ~ \Rightarrow ~ \hat{\theta}_{MLE} = -\frac{n}{\sum_{i=1}^n \log x_i} \,.
-\]</span> Given this expression, we can now determine the empirical distribution. See <a href="#fig-empmle" class="quarto-xref">Figure&nbsp;<span>1.31</span></a>. We observe immediately that the distribution is right-skewed. (As we will see in Chapter 2, as <span class="math inline">\(n \rightarrow \infty\)</span>, the empirical distribution will tend more and more to a bell-curve-like shape.)</p>
+\]</span> Given this expression, we can now determine the empirical distribution. See <a href="#fig-empmle" class="quarto-xref">Figure&nbsp;<span>1.31</span></a>. We observe immediately that the distribution is right-skewed. (As we will see in <a href="02-normal.html#sec-chap2mle" class="quarto-xref"><span>Section 2.11.3</span></a>, as <span class="math inline">\(n \rightarrow \infty\)</span>, the empirical distribution will tend more and more to a bell-curve-like shape.)</p>
 </blockquote>
 <div class="cell" data-layout-align="center">
 <div class="cell-output cell-output-stdout">
@@ -2537,8 +2607,9 @@ Figure&nbsp;1.31: The empirical distribution of maximum likelihood estimates for
 </div>
 </section>
 </section>
-<section id="statistical-inference-with-sampling-distributions" class="level2" data-number="1.15">
-<h2 data-number="1.15" class="anchored" data-anchor-id="statistical-inference-with-sampling-distributions"><span class="header-section-number">1.15</span> Statistical Inference with Sampling Distributions</h2>
+</section>
+<section id="statistical-inference-with-sampling-distributions-sec-chap1inference" class="level2" data-number="1.15">
+<h2 data-number="1.15" class="anchored" data-anchor-id="statistical-inference-with-sampling-distributions-sec-chap1inference"><span class="header-section-number">1.15</span> Statistical Inference with Sampling Distributions {sec-chap1inference}</h2>
 <div class="graybox">
 <p>What to take away from this section:</p>
 <ul>
@@ -2549,7 +2620,7 @@ Figure&nbsp;1.31: The empirical distribution of maximum likelihood estimates for
 <p>A fundamental issue with point estimation is that, e.g., it does not provide a notion of how uncertain the estimate is. By this, we do not mean the standard error of the sampling distribution for the statistic we use when making the estimate (which is a quantity that we can derive), but rather how large (or small) is the range of plausible values of <span class="math inline">\(\theta\)</span> given the observed value of the statistic? Point estimation also does not allow us to answer the question of “is a particular hypothesized value of <span class="math inline">\(\theta\)</span> plausible given what we observe?” We can resolve the first issue by computing a <em>confidence interval</em> for <span class="math inline">\(\theta\)</span>, and the second via <em>hypothesis testing</em>. We discuss each of these concepts in turn in the next two sections. Before doing so, however, we will show how the construction of confidence intervals and the performance of hypothesis tests both boil down to performing a root-finding exercise in which we work directly with a sampling distribution.</p>
 <p>Let’s posit a simple situation in which we sample a single datum according to the following probability density function: <span class="math display">\[
 f_X(x \vert \theta) = \frac{1}{2} ~~~ x \in [\theta-1,\theta+1]
-\]</span> Our statistic is thus <span class="math inline">\(Y = X\)</span>, and the sampling distribution <span class="math inline">\(f_Y(y \vert \theta)\)</span> is equivalent to <span class="math inline">\(f_X(x \vert \theta)\)</span>. (In future chapters, we will discuss how to derive sampling distributions for statistics computed from <span class="math inline">\(n\)</span> independent and identically distributed [iid] random variables, and begin to work with more typically seen statistics like <span class="math inline">\(\bar{X}\)</span>.) We can alter the shape and/or location of the sampling distribution by changing the value(s) of <span class="math inline">\(\theta\)</span>. In <a href="#fig-samppdf" class="quarto-xref">Figure&nbsp;<span>1.32</span></a>, we show how the pdf moves with <span class="math inline">\(\theta\)</span>; as <span class="math inline">\(\theta\)</span> changes from 2.8 to 5.2, the pdf shifts (smoothly) from the location indicated by the red lines to that indicated by the blue lines. Now, let’s assume that the green line in the figure, at value <span class="math inline">\(y_{\rm obs} = 3.4\)</span>, is the statistic value that we actually observe. What can we conclude right away, on the basis of this figure? We can conclude that this observed value is <em>plausible</em> if <span class="math inline">\(\theta = 2.8\)</span>, but <em>implausible</em> if <span class="math inline">\(\theta = 5.2\)</span>. In other words, 2.8 is an “acceptable” value for <span class="math inline">\(\theta\)</span>, but 5.2 is not.</p>
+\]</span> Our statistic is thus <span class="math inline">\(Y = X\)</span>, and the sampling distribution <span class="math inline">\(f_Y(y \vert \theta)\)</span> is equivalent to <span class="math inline">\(f_X(x \vert \theta)\)</span>. (Beginning in <a href="02-normal.html" class="quarto-xref"><span>Chapter 2</span></a>, we will discuss how to derive sampling distributions for statistics computed from <span class="math inline">\(n\)</span> independent and identically distributed [iid] random variables, and begin to work with more typically seen statistics like <span class="math inline">\(\bar{X}\)</span>.) We can alter the shape and/or location of the sampling distribution by changing the value(s) of <span class="math inline">\(\theta\)</span>. In <a href="#fig-samppdf" class="quarto-xref">Figure&nbsp;<span>1.32</span></a>, we show how the pdf moves with <span class="math inline">\(\theta\)</span>; as <span class="math inline">\(\theta\)</span> changes from 2.8 to 5.2, the pdf shifts (smoothly) from the location indicated by the red lines to that indicated by the blue lines. Now, let’s assume that the green line in the figure, at value <span class="math inline">\(y_{\rm obs} = 3.4\)</span>, is the statistic value that we actually observe. What can we conclude right away, on the basis of this figure? We can conclude that this observed value is <em>plausible</em> if <span class="math inline">\(\theta = 2.8\)</span>, but <em>implausible</em> if <span class="math inline">\(\theta = 5.2\)</span>. In other words, 2.8 is an “acceptable” value for <span class="math inline">\(\theta\)</span>, but 5.2 is not.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-samppdf" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
@@ -2579,7 +2650,7 @@ F_Y(y_{\rm obs} \vert \theta) - q = 0 \,,
 <div aria-describedby="fig-sampci-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-sampci" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-sampci-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="288">
+<div id="fig-sampci-1" class="quarto-float quarto-figure quarto-figure-center anchored" width="288" data-fig-align="center">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-sampci-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="01-probability_files/figure-html/fig-sampci-1.png" id="fig-sampci-1" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-sampci" width="288">
@@ -2591,7 +2662,7 @@ F_Y(y_{\rm obs} \vert \theta) - q = 0 \,,
 </div>
 </div>
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-sampci" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-sampci-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="288">
+<div id="fig-sampci-2" class="quarto-float quarto-figure quarto-figure-center anchored" width="288" data-fig-align="center">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-sampci-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="01-probability_files/figure-html/fig-sampci-2.png" id="fig-sampci-2" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-sampci" width="288">
@@ -2619,7 +2690,7 @@ F_Y(y_{\rm obs} \vert \theta) - \left(1-\frac{\alpha}{2}\right) = 0 \,.
 <div aria-describedby="fig-sampci2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-sampci2" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-sampci2-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="288">
+<div id="fig-sampci2-1" class="quarto-float quarto-figure quarto-figure-center anchored" width="288" data-fig-align="center">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-sampci2-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="01-probability_files/figure-html/fig-sampci2-1.png" id="fig-sampci2-1" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-sampci2" width="288">
@@ -2631,7 +2702,7 @@ F_Y(y_{\rm obs} \vert \theta) - \left(1-\frac{\alpha}{2}\right) = 0 \,.
 </div>
 </div>
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-sampci2" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-sampci2-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="288">
+<div id="fig-sampci2-2" class="quarto-float quarto-figure quarto-figure-center anchored" width="288" data-fig-align="center">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-sampci2-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="01-probability_files/figure-html/fig-sampci2-2.png" id="fig-sampci2-2" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-sampci2" width="288">
@@ -2656,8 +2727,8 @@ F_Y(y_{\rm RR,hi} \vert \theta_o) - \left(1-\frac{\alpha}{2}\right) &amp;= 0 ~~\
 <hr>
 <p>An important message to take away from this section is that confidences interval estimation and hypothesis testing both involve the same fundamental root-finding exercise: they only differ in what values are fixed and what values we are solving for!</p>
 </section>
-<section id="confidence-intervals" class="level2" data-number="1.16">
-<h2 data-number="1.16" class="anchored" data-anchor-id="confidence-intervals"><span class="header-section-number">1.16</span> Confidence Intervals</h2>
+<section id="sec-chap1confidence" class="level2" data-number="1.16">
+<h2 data-number="1.16" class="anchored" data-anchor-id="sec-chap1confidence"><span class="header-section-number">1.16</span> Confidence Intervals</h2>
 <div class="graybox">
 <p>What to take away from this section:</p>
 <ul>
@@ -2670,7 +2741,7 @@ F_Y(y_{\rm obs} \vert \theta) - q = 0 \,,
 <p><br></p>
 <p><em>Interval estimation</em> is a mechanism to determine a range of possible values for a distribution parameter <span class="math inline">\(\theta\)</span> that overlaps the true but unknown value with some stated probability. A two-sided interval estimate, or <em>confidence interval</em>, has the form <span class="math display">\[
 P\left( \hat{\theta}_L \leq \theta \leq \hat{\theta}_U \right) = 1 - \alpha \,,
-\]</span> where <span class="math inline">\(1 - \alpha\)</span> is the user-set <em>confidence coefficient</em>, which typically has the value 0.95 (or <span class="math inline">\(\alpha = 0.05\)</span>). (Technically, the confidence coefficient is the infimum (i.e., the minimum value) of the coverage probabilities for a particular interval estimator. This nuance is not important if we utilize the general root-finding algorithm laid out in the last section to determine interval bounds. We will return to this point in Chapter 5.) One can also define one-sided intervals: <span class="math display">\[
+\]</span> where <span class="math inline">\(1 - \alpha\)</span> is the user-set <em>confidence coefficient</em>, which typically has the value 0.95 (or <span class="math inline">\(\alpha = 0.05\)</span>). (Technically, the confidence coefficient is the infimum (i.e., the minimum value) of the coverage probabilities for a particular interval estimator. This nuance is not important if we utilize the general root-finding algorithm laid out in the last section to determine interval bounds. We will return to this point in an example in <a href="05-uniform.html#sec-chap5confidence" class="quarto-xref"><span>Section 5.4</span></a>.) One can also define one-sided intervals: <span class="math display">\[
 P\left( \hat{\theta}_L \leq \theta \right) = 1 - \alpha ~~\mbox{and}~~ P\left( \theta \leq \hat{\theta}_U \right) = 1 - \alpha \,.
 \]</span></p>
 <p>It is important for us to interpret an interval estimate correctly:</p>
@@ -2695,7 +2766,13 @@ Figure&nbsp;1.35: Schematic illustration of ten confidence intervals constructed
 </div>
 <p>As laid out in the last section above, to determine a confidence interval bound, one would determine the root of the following equation: <span class="math display">\[\begin{align*}
 F_Y(y_{\rm obs} \vert \theta) - q &amp;= 0 \,.
-\end{align*}\]</span> There is a very important nuance here, however, that we ignored in the last section, which is that it is not guaranteed that the value of the statistic <span class="math inline">\(Y\)</span> that we adopt to construct the interval increases as <span class="math inline">\(\theta\)</span> increases. What that means here is that if, e.g., <span class="math inline">\(q = \alpha/2\)</span>, then the root <span class="math inline">\(\hat{\theta}\)</span> might represent an upper bound on <span class="math inline">\(\theta\)</span>…but it might represent a lower bound instead. It all comes down to whether the expected value <span class="math inline">\(E[Y]\)</span> increases as <span class="math inline">\(\theta\)</span> increases, or decreases as <span class="math inline">\(\theta\)</span> increases, as we detail in the table below:</p>
+\end{align*}\]</span> There is a very important nuance here, however, that we ignored in the last section, which is that it is not guaranteed that the value of the statistic <span class="math inline">\(Y\)</span> that we adopt to construct the interval increases as <span class="math inline">\(\theta\)</span> increases. What that means here is that if, e.g., <span class="math inline">\(q = \alpha/2\)</span>, then the root <span class="math inline">\(\hat{\theta}\)</span> might represent an upper bound on <span class="math inline">\(\theta\)</span>…but it might represent a lower bound instead. It all comes down to whether the expected value <span class="math inline">\(E[Y]\)</span> increases as <span class="math inline">\(\theta\)</span> increases, or decreases as <span class="math inline">\(\theta\)</span> increases.</p>
+<hr>
+<p>Before we turn to examples, it is important to put the methodology we outline here for deriving interval bounds into historical context.</p>
+<p>In traditional calculus-based probability and statistical inference classes, the focus has been on introducing techniques for constructing confidence intervals <em>analytically</em>, but they are usually analytical only up to a point: we typically have to utilize statistical tables to derive final numerical answers. (This is the case when we work with, e.g., the normal distribution.) An example of such a technique is the <em>pivotal method</em>, which for illustrative purposes we discuss in an example in <a href="02-normal.html#sec-chap2confidence" class="quarto-xref"><span>Section 2.12</span></a>. However, the pivotal method is not generally applicable across all families of distributions, and thus other methods exist as well, methods that are <em>not</em> as commonly seen in introductory classes (see, e.g., Chapter 9 of <span class="citation" data-cites="casella2002">Casella and Berger (<a href="09-references.html#ref-casella2002" role="doc-biblioref">2002</a>)</span>). Our methodology is that described in section 9.2.3 of <span class="citation" data-cites="casella2002">Casella and Berger (<a href="09-references.html#ref-casella2002" role="doc-biblioref">2002</a>)</span>, entitled “Pivoting the CDF,” where it is noted that “even if [the equations <span class="math inline">\(F_Y(y_{\rm obs} \vert \theta_{1-\alpha/2}) = 1 - \alpha/2\)</span> and <span class="math inline">\(F_Y(y_{\rm obs} \vert \theta_{\alpha/2}) = \alpha/2\)</span>] cannot be solved analytically, we really only need to solve them numerically since the proof that we have a <span class="math inline">\(1-\alpha\)</span> confidence interval [does] not require an analytic solution.” This is key: we can use this technique to solve for intervals bounds by hand, or by <em>writing code</em> when we cannot solve for the bounds by hand (as we will observe beginning in <a href="02-normal.html#sec-chap2confidence" class="quarto-xref"><span>Section 2.12</span></a>). The methodology we present is thus generally applicable and is the only one that a student ultimately needs to learn in order to construct confidence intervals. (However, <em>knowing</em> about, e.g., the pivotal method is good, because it is still a commonly utilized technique and one should be able to recognize it when it is used by others.)</p>
+<section id="sec-chap1confref" class="level3" data-number="1.16.1">
+<h3 data-number="1.16.1" class="anchored" data-anchor-id="sec-chap1confref"><span class="header-section-number">1.16.1</span> Confidence Intervals: Reference Table</h3>
+<p>Below we summarize the information given above in tabular form.</p>
 <div style="max-width: 75%; margin: auto;">
 <table class="caption-top table">
 <colgroup>
@@ -2753,11 +2830,14 @@ F_Y(y_{\rm obs} \vert \theta) - q &amp;= 0 \,.
 </table>
 </div>
 <p>This is the confidence interval reference table that we will refer back to throughout the rest of book. To be clear: <em>this is not a table to memorize</em>!</p>
-<p>Before we turn to examples, it is important to put the methodology we outline here for deriving interval bounds into historical context.</p>
-<p>In traditional calculus-based probability and statistical inference classes, the focus has been on introducing techniques for constructing confidence intervals <em>analytically</em>, but they are usually analytical only up to a point: we typically have to utilize statistical tables to derive final numerical answers. (This is the case when we work with, e.g., the normal distribution.) An example of such a technique is the <em>pivotal method</em>, which for illustrative purposes we discuss in an example in Chapter 2. However, the pivotal method is not generally applicable across all families of distributions, and thus other methods exist as well, methods that are <em>not</em> as commonly seen in introductory classes (see, e.g., Chapter 9 of <span class="citation" data-cites="casella2002">Casella and Berger (<a href="09-references.html#ref-casella2002" role="doc-biblioref">2002</a>)</span>). Our methodology is that described in section 9.2.3 of <span class="citation" data-cites="casella2002">Casella and Berger (<a href="09-references.html#ref-casella2002" role="doc-biblioref">2002</a>)</span>, entitled “Pivoting the CDF,” where it is noted that “even if [the equations <span class="math inline">\(F_Y(y_{\rm obs} \vert \theta_{1-\alpha/2}) = 1 - \alpha/2\)</span> and <span class="math inline">\(F_Y(y_{\rm obs} \vert \theta_{\alpha/2}) = \alpha/2\)</span>] cannot be solved analytically, we really only need to solve them numerically since the proof that we have a <span class="math inline">\(1-\alpha\)</span> confidence interval [does] not require an analytic solution.” This is key: we can use this technique to solve for intervals bounds by hand, or by <em>writing code</em> when we cannot solve for the bounds by hand (as we will see beginning in Chapter 2). The methodology we present is thus generally applicable and is the only one that a student ultimately needs to learn.</p>
-<hr>
-<section id="confidence-interval-where-ey-increases-with-theta" class="level3" data-number="1.16.1">
-<h3 data-number="1.16.1" class="anchored" data-anchor-id="confidence-interval-where-ey-increases-with-theta"><span class="header-section-number">1.16.1</span> Confidence Interval Where <span class="math inline">\(E[Y]\)</span> Increases With <span class="math inline">\(\theta\)</span></h3>
+<div class="graybox">
+<p>For more on confidence intervals, go to <a href="02-normal.html#sec-chap2confidence" class="quarto-xref"><span>Section 2.12</span></a>.</p>
+</div>
+</section>
+<section id="examples-11" class="level3" data-number="1.16.2">
+<h3 data-number="1.16.2" class="anchored" data-anchor-id="examples-11"><span class="header-section-number">1.16.2</span> Examples</h3>
+<section id="confidence-interval-where-ey-increases-with-theta" class="level4" data-number="1.16.2.1">
+<h4 data-number="1.16.2.1" class="anchored" data-anchor-id="confidence-interval-where-ey-increases-with-theta"><span class="header-section-number">1.16.2.1</span> Confidence Interval Where <span class="math inline">\(E[Y]\)</span> Increases With <span class="math inline">\(\theta\)</span></h4>
 <blockquote class="blockquote">
 <p>We have conducted an experiment in which we sample <span class="math inline">\(n=1\)</span> datum from the following pdf: <span class="math display">\[
 f_X(x) = \theta x^{\theta-1} ~~~ x \in [0,1] \,.
@@ -2788,10 +2868,9 @@ y_{\rm obs}^{\hat{\theta}_L} &amp;= 1 - \frac{\alpha}{2} \\
 \hat{\theta}_L = \frac{\log (1 - \alpha)}{\log y_{\rm obs}} \,,
 \]</span> which in our example evaluates to <span class="math inline">\([0.10,\infty)\)</span>.</p>
 </blockquote>
-<hr>
 </section>
-<section id="confidence-interval-where-ey-decreases-with-theta" class="level3" data-number="1.16.2">
-<h3 data-number="1.16.2" class="anchored" data-anchor-id="confidence-interval-where-ey-decreases-with-theta"><span class="header-section-number">1.16.2</span> Confidence Interval Where <span class="math inline">\(E[Y]\)</span> Decreases With <span class="math inline">\(\theta\)</span></h3>
+<section id="confidence-interval-where-ey-decreases-with-theta" class="level4" data-number="1.16.2.2">
+<h4 data-number="1.16.2.2" class="anchored" data-anchor-id="confidence-interval-where-ey-decreases-with-theta"><span class="header-section-number">1.16.2.2</span> Confidence Interval Where <span class="math inline">\(E[Y]\)</span> Decreases With <span class="math inline">\(\theta\)</span></h4>
 <blockquote class="blockquote">
 <p>Let’s switch things up a bit from the previous example, and assume that instead of sampling a single datum from the pdf <span class="math inline">\(\theta x^{\theta-1}\)</span>, we instead sample one from the pdf <span class="math display">\[
 f_X(x) = \theta (1-x)^{\theta-1} \,,
@@ -2820,10 +2899,9 @@ E[Y] = \int_0^1 y f_Y(y) dy &amp;= \int_0^1 y \theta (1-y)^{\theta-1} dy \\
 <blockquote class="blockquote">
 <p>We can also construct one-sided intervals, as we do above. We leave the computation of these intervals to the reader, noting that the 95% upper bound is 3.27 and the 95% lower bound is 0.056.</p>
 </blockquote>
-<hr>
 </section>
-<section id="simulation-confidence-interval-coverage" class="level3" data-number="1.16.3">
-<h3 data-number="1.16.3" class="anchored" data-anchor-id="simulation-confidence-interval-coverage"><span class="header-section-number">1.16.3</span> Simulation: Confidence Interval Coverage</h3>
+<section id="simulation-confidence-interval-coverage" class="level4" data-number="1.16.2.3">
+<h4 data-number="1.16.2.3" class="anchored" data-anchor-id="simulation-confidence-interval-coverage"><span class="header-section-number">1.16.2.3</span> Simulation: Confidence Interval Coverage</h4>
 <blockquote class="blockquote">
 <p>In the first example above, where <span class="math display">\[
 f_X(x) = \theta x^{\theta-1} \,,
@@ -2832,7 +2910,7 @@ f_X(x) = \theta x^{\theta-1} \,,
 \]</span> where we assume a confidence coefficient of <span class="math inline">\(\alpha = 0.05\)</span>. A question that naturally arises is: does this confidence interval actually overlap, or cover, the true value <span class="math inline">\(\theta\)</span> 95% of the time? We can begin to determine the answer with a relatively simple simulation.</p>
 </blockquote>
 <blockquote class="blockquote">
-<p>Let’s assume that the true value of <span class="math inline">\(\theta\)</span> is 1. (Coverage simulations require that we specify a value for <span class="math inline">\(\theta\)</span>, so the results are always conditional on what we specify.) Let’s also state here that <span class="math inline">\(f_X(x)\)</span> is part of the <em>beta</em> family of distributions, which we officially introduce in Chapter 3. (This allows us to utilize the <code>R</code> random variable sampling function <code>rbeta()</code> rather than having to create our own inverse-transform data sampler.)</p>
+<p>Let’s assume that the true value of <span class="math inline">\(\theta\)</span> is 1. (Coverage simulations require that we specify a value for <span class="math inline">\(\theta\)</span>, so the results are always conditional on what we specify.) Let’s also state here that <span class="math inline">\(f_X(x)\)</span> is part of the <em>beta</em> family of distributions, which we officially introduce in <a href="03-binomial.html#sec-chap3beta" class="quarto-xref"><span>Section 3.3.4</span></a>. (This allows us to utilize the <code>R</code> random variable sampling function <code>rbeta()</code> rather than having to create our own inverse-transform data sampler.)</p>
 </blockquote>
 <div class="cell">
 <details class="code-fold">
@@ -2857,12 +2935,13 @@ f_X(x) = \theta x^{\theta-1} \,,
 <p>What is happening in the last line of code above? First of all, by surrounding this line with parentheses, we are telling <code>R</code> to not only assign a value to the variable <code>coverage</code>, but to print the value of <code>coverage</code> as well. As far as the argument passed to <code>sum()</code>: <code>theta &gt;= hat.theta.L</code> is a logical comparison, an implicit function call that returns <code>TRUE</code> if <span class="math inline">\(\theta \geq \hat{\theta}_L\)</span> and <code>FALSE</code> otherwise. The ampersand <code>&amp;</code> is the logical <code>AND</code> operator that combines the results of the comparison on the left and the one on the right: <code>TRUE &amp; TRUE</code> returns <code>TRUE</code>, otherwise <code>FALSE</code> is returned. (This stands in contrast to the logical <code>OR</code> operator, <code>|</code>, which only returns <code>FALSE</code> for <code>FALSE | FALSE</code>.) So the long argument passed to <code>sum()</code> turns into a logical vector of <code>TRUE</code>s (if the true value is inside the bounds) and <code>FALSE</code>s (if the true value is outside the bounds). What happens when we pass a logical vector to <code>sum()</code>? It treats <code>TRUE</code> as 1 and <code>FALSE</code> as 0…in other words, <code>sum()</code> returns the number of <code>TRUE</code> values.</p>
 </blockquote>
 <blockquote class="blockquote">
-<p>We find that 9,523 of the 10,000 intervals overlap <span class="math inline">\(\theta = 1\)</span>. Because we do not perform an infinite number of simulations, the coverage that we estimate is a random variable, and we do not expect the value to match 9500 exactly. What we observe is very strong evidence that our interval construction algorithm has the coverage that we defined it to have. (Once we introduce the binomial distribution in Chapter 3, we can turn “very strong evidence” into something more firmly quantitative!)</p>
+<p>We find that 9,523 of the 10,000 intervals overlap <span class="math inline">\(\theta = 1\)</span>. Because we do not perform an infinite number of simulations, the coverage that we estimate is a random variable, and we do not expect the value to match 9500 exactly. What we observe is very strong evidence that our interval construction algorithm has the coverage that we defined it to have. (Once we introduce the binomial distribution in <a href="03-binomial.html#sec-chap3pmf" class="quarto-xref"><span>Section 3.1</span></a>, we can turn “very strong evidence” into something more firmly quantitative!)</p>
 </blockquote>
 </section>
 </section>
-<section id="hypothesis-testing" class="level2" data-number="1.17">
-<h2 data-number="1.17" class="anchored" data-anchor-id="hypothesis-testing"><span class="header-section-number">1.17</span> Hypothesis Testing</h2>
+</section>
+<section id="sec-chap1hypothesis" class="level2" data-number="1.17">
+<h2 data-number="1.17" class="anchored" data-anchor-id="sec-chap1hypothesis"><span class="header-section-number">1.17</span> Hypothesis Testing</h2>
 <div class="graybox">
 <p>What to take away from this section:</p>
 <ul>
@@ -2888,17 +2967,24 @@ f_X(x) = \theta x^{\theta-1} \,,
 <li><em>Type I error</em>: this is the probability that we will decide to reject the null hypothesis when it is actually correct. We set this quantity…this is <span class="math inline">\(\alpha\)</span> (the level of the test). The conventional choice for <span class="math inline">\(\alpha\)</span> is 0.05: if the null is correct, we have a 1 in 20 chance of erroneously deciding to reject it. (This is because if the null hypothesis is correct, then the observed <span class="math inline">\(p\)</span>-value is sampled uniformly between 0 and 1. We demonstrate this in an example below.)</li>
 <li><em>Type II error</em>: this is the probability that we would fail to reject the null hypothesis given an <em>arbitrary</em> value of <span class="math inline">\(\theta\)</span>; this quantity is denoted <span class="math inline">\(\beta\)</span>, and it is a function of both <span class="math inline">\(\theta\)</span> and <span class="math inline">\(\alpha\)</span>.</li>
 </ul>
-<p>Now that we have laid out the basic framework and terminology, we need to illustrate how hypothesis testing works in practice. But we have the same issue here that we have when constructing confidence intervals in the last section: we do not yet have the tools to derive the sampling distribution for the test statistic. (We introduce these later, in Chapter 2.) So, for now, we illustrate hypothesis testing by assuming that we sample a single datum <span class="math inline">\(X\)</span> from a pdf (which is, by definition, the sampling distribution for our test statistic <span class="math inline">\(Y = X\)</span>).</p>
-<p>Let’s assume that we sample a single datum according to a distribution with probability density function <span class="math display">\[
+<p>Now that we have laid out the basic framework and terminology, we need to illustrate how hypothesis testing works in practice. But we have the same issue here that we have when constructing confidence intervals in the last section: we do not yet have the tools to derive the sampling distribution for the test statistic. (We introduce these later, in <a href="02-normal.html#sec-chap2method" class="quarto-xref"><span>Section 2.3.2</span></a>.) So, for now, we illustrate hypothesis testing by assuming that we sample a single datum <span class="math inline">\(X\)</span> from a pdf (which is, by definition, the sampling distribution for our test statistic <span class="math inline">\(Y = X\)</span>).</p>
+<section id="sec-chap1pvalue" class="level3" data-number="1.17.1">
+<h3 data-number="1.17.1" class="anchored" data-anchor-id="sec-chap1pvalue"><span class="header-section-number">1.17.1</span> Hypothesis Testing: p-Value</h3>
+<p>Above, we specified how we would use a <span class="math inline">\(p\)</span>-value in order to make a decision about the viability of a null hypothesis; for instance, if <span class="math inline">\(p \leq \alpha\)</span>, we would reject the null and conclude that the true value of the parameter of interest <span class="math inline">\(\theta\)</span> is different from <span class="math inline">\(\theta_o\)</span> (with how it is different being dictated by the form of the alternative hypothesis <span class="math inline">\(H_a\)</span>). What we did not specify is the definition of the <span class="math inline">\(p\)</span>-value, in words, and how we would compute it.</p>
+<p>In words: a <span class="math inline">\(p\)</span>-value is the probability of observing the statistic value we actually observe, or a <em>more extreme</em> value, when the null hypothesis is correct. For instance, when in the context of a lower-tail test we observe the value <span class="math inline">\(y_{\rm obs}\)</span>, and <span class="math inline">\(E[Y]\)</span> increases with <span class="math inline">\(\theta\)</span>, the <span class="math inline">\(p\)</span>-value would be the probability <span class="math inline">\(P(Y \leq y_{\rm obs})\)</span>. A reader might notice immediately that this particular probability is the cdf value <span class="math inline">\(F_Y(y_{\rm obs} \vert \theta_o)\)</span>. This means that <span class="math inline">\(p\)</span>-value calculations are simply cdf-based calculations, given a sampling distribution.</p>
+<p>Let’s illustrate this with an example. Assume that we sample a single datum according to a distribution with probability density function <span class="math display">\[
 f_X(x) = \frac{1}{\theta} \exp\left(-\frac{x}{\theta}\right) \,,
 \]</span> where <span class="math inline">\(\theta &gt; 0\)</span> and <span class="math inline">\(x \geq 0\)</span>. Let’s further assume that our null hypothesis is <span class="math inline">\(H_o : \theta_o = 2\)</span> and that we wish to conduct an upper-tail test at the level <span class="math inline">\(\alpha = 0.05\)</span>: <span class="math inline">\(H_a : \theta &gt; \theta_o\)</span>. We carry out our experiment and we observe <span class="math inline">\(x_{\rm obs} = 10\)</span>. What is the <span class="math inline">\(p\)</span>-value? What do we conclude?</p>
 <p>The cumulative distribution function for our statistic <span class="math inline">\(Y = X\)</span> will be <span class="math display">\[
 F_Y(y \vert \theta) = \int_0^y f_X(x) dx = 1 - \exp\left(-\frac{y}{\theta}\right)
-\]</span> If the null hypothesis is correct, then the observed statistic value <span class="math inline">\(y_{\rm obs}\)</span> should be consistent with a distribution whose shape is dictated by <span class="math inline">\(\theta_o\)</span>, i.e., <span class="math inline">\(F_Y(y_{\rm obs} \vert \theta)\)</span> should not have an extreme value. For our posited experiment, that value is <span class="math display">\[
+\]</span> If the null hypothesis is correct, then the observed statistic value <span class="math inline">\(y_{\rm obs}\)</span> should be consistent with a distribution whose shape is dictated by <span class="math inline">\(\theta_o\)</span>, i.e., <span class="math inline">\(F_Y(y_{\rm obs} \vert \theta)\)</span> should not have an extreme value (here, a value close to 1). For our posited experiment, the observed value is <span class="math display">\[
 1 - \exp\left(-\frac{y_{\rm obs}}{\theta_o}\right) = 1 - \exp\left(-\frac{10}{2}\right) = 1 - \exp(-5) = 0.993 \,.
-\]</span> This value appears to be extreme: there is only a 0.7% chance that we sample the value <span class="math inline">\(y_{\rm obs} = x_{\rm obs} = 10\)</span>, or a value even more extreme, when <span class="math inline">\(\theta = 2\)</span>. And indeed, for this upper-tail test, that <em>is</em> our <span class="math inline">\(p\)</span>-value: <span class="math inline">\(p = 0.007\)</span>. Since <span class="math inline">\(p \leq \alpha\)</span>, we reject the null hypothesis and conclude that we have sufficient statistical evidence to say that <span class="math inline">\(\theta &gt; 2\)</span>.</p>
-<p>So, in the end, the derivation of a <span class="math inline">\(p\)</span>-value involves working with the cdf of the sampling distribution of our chosen statistic. Below, we summarize how we derive <span class="math inline">\(p\)</span>-values for different testing situations. Note that as was the case with the confidence interval reference table, the contents of this reference table are not to be memorized.</p>
-<div style="max-width: 75%; margin: auto;">
+\]</span> This appears to be extreme: there is only a 0.7% chance that we would sample the value <span class="math inline">\(y_{\rm obs} = x_{\rm obs} = 10\)</span>, or a value even more extreme, when <span class="math inline">\(\theta = 2\)</span>. And indeed, for this upper-tail test, that <em>is</em> our <span class="math inline">\(p\)</span>-value: <span class="math inline">\(p = 0.007\)</span>. Since <span class="math inline">\(p \leq \alpha\)</span>, we reject the null hypothesis and conclude that we have sufficient statistical evidence to say that <span class="math inline">\(\theta &gt; 2\)</span>.</p>
+</section>
+<section id="sec-chap1hypref" class="level3" data-number="1.17.2">
+<h3 data-number="1.17.2" class="anchored" data-anchor-id="sec-chap1hypref"><span class="header-section-number">1.17.2</span> Hypothesis Testing: p-Value Reference Table</h3>
+<p>Below, we summarize how we derive <span class="math inline">\(p\)</span>-values using the cumulative distribution functions of sampling distributions, for different testing situations. Note that as was the case with the confidence interval reference table, the contents of this reference table are not to be memorized!</p>
+<div style="max-width: 87.5%; margin: auto;">
 <table class="caption-top table">
 <colgroup>
 <col style="width: 28%">
@@ -2946,9 +3032,14 @@ F_Y(y \vert \theta) = \int_0^y f_X(x) dx = 1 - \exp\left(-\frac{y}{\theta}\right
 <li>If we reject the null using a one-tail test, for a given dataset, it is not guaranteed that we would have rejected the null using a two-tail test.</li>
 <li>If we reject the null using a two-tail test, it is also not guaranteed that we would have rejected the null using a one-tail test: it would ultimately depend on which tail is being “tested.”</li>
 </ul>
-<hr>
-<section id="hypothesis-test-where-ey-increases-with-theta" class="level3" data-number="1.17.1">
-<h3 data-number="1.17.1" class="anchored" data-anchor-id="hypothesis-test-where-ey-increases-with-theta"><span class="header-section-number">1.17.1</span> Hypothesis Test Where <span class="math inline">\(E[Y]\)</span> Increases With <span class="math inline">\(\theta\)</span></h3>
+<div class="graybox">
+<p>For more on hypothesis testing, go to <a href="02-normal.html#sec-chap2hypothesis" class="quarto-xref"><span>Section 2.13</span></a>.</p>
+</div>
+</section>
+<section id="examples-12" class="level3" data-number="1.17.3">
+<h3 data-number="1.17.3" class="anchored" data-anchor-id="examples-12"><span class="header-section-number">1.17.3</span> Examples</h3>
+<section id="hypothesis-test-where-ey-increases-with-theta" class="level4" data-number="1.17.3.1">
+<h4 data-number="1.17.3.1" class="anchored" data-anchor-id="hypothesis-test-where-ey-increases-with-theta"><span class="header-section-number">1.17.3.1</span> Hypothesis Test Where <span class="math inline">\(E[Y]\)</span> Increases With <span class="math inline">\(\theta\)</span></h4>
 <blockquote class="blockquote">
 <p>We repeat the first example in the confidence interval section above, in which <span class="math inline">\(f_X(x) = \theta x^{\theta-1}\)</span> for <span class="math inline">\(x \in [0,1]\)</span>, and in which we sample a single datum (and thus assume that our test statistic is <span class="math inline">\(Y = X\)</span>, with sampling distribution given by <span class="math inline">\(f_X(x)\)</span>). Let’s assume our null hypothesis is <span class="math inline">\(H_o : \theta = \theta_o = 1\)</span>, and that we are testing this against the alternative <span class="math inline">\(H_a : \theta &lt; \theta_o\)</span>. If <span class="math inline">\(y_{\rm obs} = x_{\rm obs} = 0.08\)</span>, what is the <span class="math inline">\(p\)</span>-value for this test? Assuming <span class="math inline">\(\alpha = 0.05\)</span>, what do we conclude?</p>
 </blockquote>
@@ -2957,10 +3048,9 @@ F_Y(y \vert \theta) = \int_0^y f_X(x) dx = 1 - \exp\left(-\frac{y}{\theta}\right
 p = F_Y(y_{\rm obs} \vert \theta_o) = y_{\rm obs}^{\theta_o} = (0.08)^1 = 0.08 \,,
 \]</span> where we recall from before that the cdf is <span class="math inline">\(y^\theta\)</span>. Because <span class="math inline">\(p &gt; \alpha\)</span>, we fail to reject the null hypothesis, and conclude that we have insufficient data to rule out the possibility that the true value of <span class="math inline">\(\theta\)</span> is 1.</p>
 </blockquote>
-<hr>
 </section>
-<section id="hypothesis-test-where-ey-decreases-with-theta" class="level3" data-number="1.17.2">
-<h3 data-number="1.17.2" class="anchored" data-anchor-id="hypothesis-test-where-ey-decreases-with-theta"><span class="header-section-number">1.17.2</span> Hypothesis Test Where <span class="math inline">\(E[Y]\)</span> Decreases With <span class="math inline">\(\theta\)</span></h3>
+<section id="hypothesis-test-where-ey-decreases-with-theta" class="level4" data-number="1.17.3.2">
+<h4 data-number="1.17.3.2" class="anchored" data-anchor-id="hypothesis-test-where-ey-decreases-with-theta"><span class="header-section-number">1.17.3.2</span> Hypothesis Test Where <span class="math inline">\(E[Y]\)</span> Decreases With <span class="math inline">\(\theta\)</span></h4>
 <blockquote class="blockquote">
 <p>Here we repeat the second example in the confidence interval section above, in which <span class="math inline">\(f_X(x) = \theta (1-x)^{\theta - 1}\)</span> for <span class="math inline">\(x \in [0,1]\)</span>, and in which we again sample a single datum. Here, we assume the null hypothesis <span class="math inline">\(H_o : \theta = \theta_o = 2\)</span>, and will we test this against the alternative <span class="math inline">\(H_a : \theta &lt; \theta_o\)</span>. We observe <span class="math inline">\(y_{\rm obs} = x_{\rm obs} = 0.9\)</span>, and assume <span class="math inline">\(\alpha = 0.05\)</span>.</p>
 </blockquote>
@@ -2969,10 +3059,9 @@ p = F_Y(y_{\rm obs} \vert \theta_o) = y_{\rm obs}^{\theta_o} = (0.08)^1 = 0.08 \
 p = 1-F_Y(y_{\rm obs} \vert \theta_o) = 1 - [1-(1-y_{\rm obs})^{\theta_o}] = (1 - 0.9)^2 = 0.01 \,.
 \]</span> Here, we recall the cdf from the previous example: <span class="math inline">\(1 - (1-y)^\theta\)</span>. Since <span class="math inline">\(p &lt; \alpha\)</span>, we reject the null hypothesis and conclude that we have sufficient statistical evidence to state that <span class="math inline">\(\theta &lt; 2\)</span>.</p>
 </blockquote>
-<hr>
 </section>
-<section id="more-about-p-values" class="level3" data-number="1.17.3">
-<h3 data-number="1.17.3" class="anchored" data-anchor-id="more-about-p-values"><span class="header-section-number">1.17.3</span> More About p-Values</h3>
+<section id="more-about-p-values" class="level4" data-number="1.17.3.3">
+<h4 data-number="1.17.3.3" class="anchored" data-anchor-id="more-about-p-values"><span class="header-section-number">1.17.3.3</span> More About p-Values</h4>
 <blockquote class="blockquote">
 <p>As described above, the <span class="math inline">\(p\)</span>-value is the probability of observing a hypothesis test statistic value <span class="math inline">\(y_{\rm obs}\)</span> or a more extreme value, i.e., one further from the null value. In mathematical terms, for a continuous sampling distribution, a <span class="math inline">\(p\)</span>-value is <span class="math display">\[\begin{align*}     
 p = 2 \times \mbox{min}\left[ \int_{-\infty}^{y_{\rm obs}} f_Y(y \vert \theta_o) dy , \int_{y_{\rm obs}}^\infty f_Y(y \vert \theta_o) dy \right] ~~~&amp; \mbox{(two-tail)} \\
@@ -2995,7 +3084,7 @@ Figure&nbsp;1.36: The empirical distribution of <span class="math inline">\(p\)<
 </div>
 </div>
 <blockquote class="blockquote">
-<p>Because we are performing a simulation, the number of observations falling into each histogram bin is a random variable, and thus we observe some amount of “noise” in <a href="#fig-pval" class="quarto-xref">Figure&nbsp;<span>1.36</span></a> (i.e., some amount of variation around the dashed red line)…but nevertheless we can visually infer that the sampling distribution for <span class="math inline">\(p\)</span> is uniform (i.e., flat). (For completeness, the number of counts in each bin are collectively sampled from a multinomial distribution, where the probability of a count being recorded in any given bin being the reciprocal of the number of bins. We discuss the multinomial distribution in Chapter 3.)</p>
+<p>Because we are performing a simulation, the number of observations falling into each histogram bin is a random variable, and thus we observe some amount of “noise” in <a href="#fig-pval" class="quarto-xref">Figure&nbsp;<span>1.36</span></a> (i.e., some amount of variation around the dashed red line)…but nevertheless we can visually infer that the sampling distribution for <span class="math inline">\(p\)</span> is uniform (i.e., flat). (For completeness, the number of counts in each bin are collectively sampled from a multinomial distribution, where the probability of a count being recorded in any given bin being the reciprocal of the number of bins. We introduce the multinomial distribution in <a href="03-binomial.html#sec-chap3multi" class="quarto-xref"><span>Section 3.3.3</span></a>.)</p>
 </blockquote>
 <blockquote class="blockquote">
 <p>Now, what if the null hypothesis is not correct? What will happen to the distribution of <span class="math inline">\(p\)</span>-values? The answer depends on the circumstance: if we are performing an lower-tail test (with <span class="math inline">\(E[Y]\)</span> increasing with <span class="math inline">\(\theta\)</span>) and the true mean is <em>larger</em> than the hypothesized mean, then the <span class="math inline">\(p\)</span>-values will skew towards 1: we are less likely to reject the null when its value is closer to the tail of interest than the true value is. If the true mean is smaller than the hypothesized mean, the <span class="math inline">\(p\)</span>-values will skew towards 0. See <a href="#fig-pvalskew" class="quarto-xref">Figure&nbsp;<span>1.37</span></a> for a demonstration of the latter point.</p>
@@ -3018,7 +3107,7 @@ Figure&nbsp;1.37: The empirical distribution of <span class="math inline">\(p\)<
 </div>
 </div>
 <blockquote class="blockquote">
-<p>In <a href="#fig-pvalskew" class="quarto-xref">Figure&nbsp;<span>1.37</span></a>, 29.71% of the counts are observed as having value less than <span class="math inline">\(\alpha = 0.05\)</span>…so we are more likely to reject the null. And as the true mean gets smaller and smaller than <span class="math inline">\(\mu_o = 3\)</span>, the number of counts in the first bins will increase…meaning that null becomes more and more easily rejected. This example foreshadows the concept of <em>hypothesis test power</em>, which we introduce in the next chapter.</p>
+<p>In <a href="#fig-pvalskew" class="quarto-xref">Figure&nbsp;<span>1.37</span></a>, 29.71% of the counts are observed as having value less than <span class="math inline">\(\alpha = 0.05\)</span>…so we are more likely to reject the null. And as the true mean gets smaller and smaller than <span class="math inline">\(\mu_o = 3\)</span>, the number of counts in the first bins will increase…meaning that null becomes more and more easily rejected. This example foreshadows the concept of <em>hypothesis test power</em>, which we introduce in <a href="02-normal.html#sec-chap2power" class="quarto-xref"><span>Section 2.13.1</span></a>.</p>
 </blockquote>
 <blockquote class="blockquote">
 <p>We will make three important statements about <span class="math inline">\(p\)</span>-values here, ones that are good for all readers to remember.</p>
@@ -3035,18 +3124,17 @@ Figure&nbsp;1.37: The empirical distribution of <span class="math inline">\(p\)<
 </blockquote>
 <blockquote class="blockquote">
 <ol start="3" type="1">
-<li><strong>We cannot perform multiple hypothesis tests without correcting our result.</strong> Suppose that we perform 100 independent hypothesis tests, each with <span class="math inline">\(\alpha = 0.05\)</span>. Even if the null is true for every test, we will end up rejecting the null approximately five times. (Not necessarily exactly five times: the number of rejections we observe is a random variable with mean of five.) That we will reject an increasing number of null hypotheses with an increasing number of tests is inevitable: this is a feature of hypothesis testing, not a bug. When performing multiple tests, we need to apply a correction factor to each observed <span class="math inline">\(p\)</span>-value, such as a Bonferroni correction (e.g., if <span class="math inline">\(m\)</span> is the number of conducted tests, reset <span class="math inline">\(\alpha\)</span> to <span class="math inline">\(\alpha/m\)</span>) or the less conservative false-discovery rate (FDR) correction. Otherwise, we are engaging in <em>p-hacking</em> and <em>data dredging</em>. We discuss correction factors in more detail in Chapter 5.</li>
+<li><strong>We cannot perform multiple hypothesis tests without correcting our result.</strong> Suppose that we perform 100 independent hypothesis tests, each with <span class="math inline">\(\alpha = 0.05\)</span>. Even if the null is true for every test, we will end up rejecting the null approximately five times. (Not necessarily exactly five times: the number of rejections we observe is a random variable with mean of five.) That we will reject an increasing number of null hypotheses with an increasing number of tests is inevitable: this is a feature of hypothesis testing, not a bug. When performing multiple tests, we need to apply a correction factor to each observed <span class="math inline">\(p\)</span>-value, such as a Bonferroni correction (e.g., if <span class="math inline">\(m\)</span> is the number of conducted tests, reset <span class="math inline">\(\alpha\)</span> to <span class="math inline">\(\alpha/m\)</span>) or the less conservative false-discovery rate (FDR) correction. Otherwise, we are engaging in <em>p-hacking</em> and <em>data dredging</em>. We discuss correction factors in more detail in <a href="07-optional.html#sec-chap7multiple" class="quarto-xref"><span>Section 7.6</span></a>.</li>
 </ol>
 </blockquote>
-<hr>
 </section>
-<section id="simulation-estimating-a-p-value" class="level3" data-number="1.17.4">
-<h3 data-number="1.17.4" class="anchored" data-anchor-id="simulation-estimating-a-p-value"><span class="header-section-number">1.17.4</span> Simulation: Estimating a p-Value</h3>
+<section id="simulation-estimating-a-p-value" class="level4" data-number="1.17.3.4">
+<h4 data-number="1.17.3.4" class="anchored" data-anchor-id="simulation-estimating-a-p-value"><span class="header-section-number">1.17.3.4</span> Simulation: Estimating a p-Value</h4>
 <blockquote class="blockquote">
 <p>In the second example above, we determine that if we sample a statistic <span class="math inline">\(Y\)</span> from the distribution <span class="math inline">\(f_Y(y) = \theta (1-y)^{\theta-1}\)</span>, with <span class="math inline">\(y \in [0,1]\)</span>, and if <span class="math inline">\(\theta_o = 1\)</span> and <span class="math inline">\(y_{\rm obs} = 0.9\)</span>, then the <span class="math inline">\(p\)</span>-value is 0.01. Here, we show how we can compute a <span class="math inline">\(p\)</span>-value via simulations.</p>
 </blockquote>
 <blockquote class="blockquote">
-<p>As a reminder, we have identified <span class="math inline">\(f_Y(y)\)</span> as being part of the beta family of distributions, which we officially introduce in Chapter 3; thus we can utilize <code>rbeta()</code> like we do in the last example above.</p>
+<p>As a reminder, we have identified <span class="math inline">\(f_Y(y)\)</span> as being part of the beta family of distributions, which we officially introduce in <a href="03-binomial.html#sec-chap3beta" class="quarto-xref"><span>Section 3.3.4</span></a>; thus we can utilize <code>rbeta()</code> like we do in the last example above.</p>
 </blockquote>
 <div class="cell">
 <details class="code-fold">
@@ -3067,12 +3155,13 @@ Figure&nbsp;1.37: The empirical distribution of <span class="math inline">\(p\)<
 </div>
 </div>
 <blockquote class="blockquote">
-<p>Our estimated <span class="math inline">\(p\)</span>-value is 0.0108: in 108 of the 10000 simulated experiments, the observed statistic was equal to or greater than what we observed in our one actual experiment. Because we do not perform an infinite number of simulations, the estimated <span class="math inline">\(p\)</span>-value is a random variable, and we do not expect it to match the true value of 0.01 exactly. What we observe is very strong evidence that our simulated <span class="math inline">\(p\)</span>-value is both a precise and accurate estimate of the true value. In Chapter 3, we will learn how to turn this evidence into something more firmly quantitative.</p>
+<p>Our estimated <span class="math inline">\(p\)</span>-value is 0.0108: in 108 of the 10000 simulated experiments, the observed statistic was equal to or greater than what we observed in our one actual experiment. Because we do not perform an infinite number of simulations, the estimated <span class="math inline">\(p\)</span>-value is a random variable, and we do not expect it to match the true value of 0.01 exactly. What we observe is very strong evidence that our simulated <span class="math inline">\(p\)</span>-value is both a precise and accurate estimate of the true value. In <a href="03-binomial.html#sec-chap3confidence" class="quarto-xref"><span>Section 3.7</span></a>, we will learn how to turn this evidence into something more firmly quantitative.</p>
 </blockquote>
 </section>
 </section>
-<section id="exercises" class="level2" data-number="1.18">
-<h2 data-number="1.18" class="anchored" data-anchor-id="exercises"><span class="header-section-number">1.18</span> Exercises</h2>
+</section>
+<section id="sec-chap1exercises" class="level2" data-number="1.18">
+<h2 data-number="1.18" class="anchored" data-anchor-id="sec-chap1exercises"><span class="header-section-number">1.18</span> Exercises</h2>
 <ol type="1">
 <li><p>We are given that for the events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, <span class="math inline">\(P(A \vert B) = P(B \vert A)\)</span>. We are also given that <span class="math inline">\(P(\bar{A} \cap \bar{B}) = 0.2\)</span>. Express <span class="math inline">\(P(A \cap B)\)</span> as a function of <span class="math inline">\(P(A)\)</span>.</p></li>
 <li><p>We are given that <span class="math inline">\(A \subset B\)</span> and that <span class="math inline">\(P(A) &gt; 0\)</span> and <span class="math inline">\(0 &lt; P(B) &lt; 1\)</span>. Can the events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be independent events?</p></li>

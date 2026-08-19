@@ -220,7 +220,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./07-optional.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Further Conceptual Details (Optional)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Additional Concepts (Optional)</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -251,44 +251,62 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#independence-of-random-variables" id="toc-independence-of-random-variables" class="nav-link active" data-scroll-target="#independence-of-random-variables"><span class="header-section-number">6.1</span> Independence of Random Variables</a>
+  <li><a href="#sec-chap6independence" id="toc-sec-chap6independence" class="nav-link active" data-scroll-target="#sec-chap6independence"><span class="header-section-number">6.1</span> Independence of Random Variables</a>
+  <ul>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">6.1.1</span> Example</a>
   <ul class="collapse">
-  <li><a href="#determining-whether-two-random-variables-are-independent" id="toc-determining-whether-two-random-variables-are-independent" class="nav-link" data-scroll-target="#determining-whether-two-random-variables-are-independent"><span class="header-section-number">6.1.1</span> Determining Whether Two Random Variables are Independent</a></li>
+  <li><a href="#determining-whether-two-random-variables-are-independent" id="toc-determining-whether-two-random-variables-are-independent" class="nav-link" data-scroll-target="#determining-whether-two-random-variables-are-independent"><span class="header-section-number">6.1.1.1</span> Determining Whether Two Random Variables are Independent</a></li>
   </ul></li>
-  <li><a href="#properties-of-multivariate-distributions" id="toc-properties-of-multivariate-distributions" class="nav-link" data-scroll-target="#properties-of-multivariate-distributions"><span class="header-section-number">6.2</span> Properties of Multivariate Distributions</a>
+  </ul></li>
+  <li><a href="#sec-chap6properties" id="toc-sec-chap6properties" class="nav-link" data-scroll-target="#sec-chap6properties"><span class="header-section-number">6.2</span> Properties of Multivariate Distributions</a>
+  <ul>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">6.2.1</span> Examples</a>
   <ul class="collapse">
-  <li><a href="#characterizing-a-discrete-bivariate-distribution" id="toc-characterizing-a-discrete-bivariate-distribution" class="nav-link" data-scroll-target="#characterizing-a-discrete-bivariate-distribution"><span class="header-section-number">6.2.1</span> Characterizing a Discrete Bivariate Distribution</a></li>
-  <li><a href="#characterizing-a-continuous-bivariate-distribution" id="toc-characterizing-a-continuous-bivariate-distribution" class="nav-link" data-scroll-target="#characterizing-a-continuous-bivariate-distribution"><span class="header-section-number">6.2.2</span> Characterizing a Continuous Bivariate Distribution</a></li>
-  <li><a href="#using-numerical-integration-to-characterize-a-continuous-bivariate-distribution" id="toc-using-numerical-integration-to-characterize-a-continuous-bivariate-distribution" class="nav-link" data-scroll-target="#using-numerical-integration-to-characterize-a-continuous-bivariate-distribution"><span class="header-section-number">6.2.3</span> Using Numerical Integration to Characterize a Continuous Bivariate Distribution</a></li>
-  <li><a href="#the-bivariate-uniform-distribution" id="toc-the-bivariate-uniform-distribution" class="nav-link" data-scroll-target="#the-bivariate-uniform-distribution"><span class="header-section-number">6.2.4</span> The Bivariate Uniform Distribution</a></li>
+  <li><a href="#characterizing-a-discrete-bivariate-distribution" id="toc-characterizing-a-discrete-bivariate-distribution" class="nav-link" data-scroll-target="#characterizing-a-discrete-bivariate-distribution"><span class="header-section-number">6.2.1.1</span> Characterizing a Discrete Bivariate Distribution</a></li>
+  <li><a href="#characterizing-a-continuous-bivariate-distribution" id="toc-characterizing-a-continuous-bivariate-distribution" class="nav-link" data-scroll-target="#characterizing-a-continuous-bivariate-distribution"><span class="header-section-number">6.2.1.2</span> Characterizing a Continuous Bivariate Distribution</a></li>
+  <li><a href="#using-numerical-integration-to-characterize-a-continuous-bivariate-distribution" id="toc-using-numerical-integration-to-characterize-a-continuous-bivariate-distribution" class="nav-link" data-scroll-target="#using-numerical-integration-to-characterize-a-continuous-bivariate-distribution"><span class="header-section-number">6.2.1.3</span> Using Numerical Integration to Characterize a Continuous Bivariate Distribution</a></li>
+  <li><a href="#the-bivariate-uniform-distribution" id="toc-the-bivariate-uniform-distribution" class="nav-link" data-scroll-target="#the-bivariate-uniform-distribution"><span class="header-section-number">6.2.1.4</span> The Bivariate Uniform Distribution</a></li>
   </ul></li>
-  <li><a href="#covariance-and-correlation" id="toc-covariance-and-correlation" class="nav-link" data-scroll-target="#covariance-and-correlation"><span class="header-section-number">6.3</span> Covariance and Correlation</a>
+  </ul></li>
+  <li><a href="#sec-chap6covariance" id="toc-sec-chap6covariance" class="nav-link" data-scroll-target="#sec-chap6covariance"><span class="header-section-number">6.3</span> Covariance and Correlation</a>
+  <ul>
+  <li><a href="#examples-1" id="toc-examples-1" class="nav-link" data-scroll-target="#examples-1"><span class="header-section-number">6.3.1</span> Examples</a>
   <ul class="collapse">
-  <li><a href="#correlation-of-two-discrete-random-variables" id="toc-correlation-of-two-discrete-random-variables" class="nav-link" data-scroll-target="#correlation-of-two-discrete-random-variables"><span class="header-section-number">6.3.1</span> Correlation of Two Discrete Random Variables</a></li>
-  <li><a href="#correlation-of-the-sum-of-two-discrete-random-variables" id="toc-correlation-of-the-sum-of-two-discrete-random-variables" class="nav-link" data-scroll-target="#correlation-of-the-sum-of-two-discrete-random-variables"><span class="header-section-number">6.3.2</span> Correlation of the Sum of Two Discrete Random Variables</a></li>
-  <li><a href="#uncorrelated-is-not-the-same-as-independent-a-demonstration" id="toc-uncorrelated-is-not-the-same-as-independent-a-demonstration" class="nav-link" data-scroll-target="#uncorrelated-is-not-the-same-as-independent-a-demonstration"><span class="header-section-number">6.3.3</span> Uncorrelated is Not the Same as Independent: a Demonstration</a></li>
-  <li><a href="#covariance-of-multinomial-random-variables" id="toc-covariance-of-multinomial-random-variables" class="nav-link" data-scroll-target="#covariance-of-multinomial-random-variables"><span class="header-section-number">6.3.4</span> Covariance of Multinomial Random Variables</a></li>
-  <li><a href="#tying-covariance-back-to-simple-linear-regression" id="toc-tying-covariance-back-to-simple-linear-regression" class="nav-link" data-scroll-target="#tying-covariance-back-to-simple-linear-regression"><span class="header-section-number">6.3.5</span> Tying Covariance Back to Simple Linear Regression</a></li>
-  <li><a href="#tying-covariance-to-simple-logistic-regression" id="toc-tying-covariance-to-simple-logistic-regression" class="nav-link" data-scroll-target="#tying-covariance-to-simple-logistic-regression"><span class="header-section-number">6.3.6</span> Tying Covariance to Simple Logistic Regression</a></li>
+  <li><a href="#correlation-of-two-discrete-random-variables" id="toc-correlation-of-two-discrete-random-variables" class="nav-link" data-scroll-target="#correlation-of-two-discrete-random-variables"><span class="header-section-number">6.3.1.1</span> Correlation of Two Discrete Random Variables</a></li>
+  <li><a href="#correlation-of-the-sum-of-two-discrete-random-variables" id="toc-correlation-of-the-sum-of-two-discrete-random-variables" class="nav-link" data-scroll-target="#correlation-of-the-sum-of-two-discrete-random-variables"><span class="header-section-number">6.3.1.2</span> Correlation of the Sum of Two Discrete Random Variables</a></li>
+  <li><a href="#uncorrelated-is-not-the-same-as-independent-a-demonstration" id="toc-uncorrelated-is-not-the-same-as-independent-a-demonstration" class="nav-link" data-scroll-target="#uncorrelated-is-not-the-same-as-independent-a-demonstration"><span class="header-section-number">6.3.1.3</span> Uncorrelated is Not the Same as Independent: a Demonstration</a></li>
+  <li><a href="#covariance-of-multinomial-random-variables" id="toc-covariance-of-multinomial-random-variables" class="nav-link" data-scroll-target="#covariance-of-multinomial-random-variables"><span class="header-section-number">6.3.1.4</span> Covariance of Multinomial Random Variables</a></li>
+  <li><a href="#tying-covariance-back-to-simple-linear-regression" id="toc-tying-covariance-back-to-simple-linear-regression" class="nav-link" data-scroll-target="#tying-covariance-back-to-simple-linear-regression"><span class="header-section-number">6.3.1.5</span> Tying Covariance Back to Simple Linear Regression</a></li>
+  <li><a href="#tying-covariance-to-simple-logistic-regression" id="toc-tying-covariance-to-simple-logistic-regression" class="nav-link" data-scroll-target="#tying-covariance-to-simple-logistic-regression"><span class="header-section-number">6.3.1.6</span> Tying Covariance to Simple Logistic Regression</a></li>
   </ul></li>
-  <li><a href="#marginal-and-conditional-distributions" id="toc-marginal-and-conditional-distributions" class="nav-link" data-scroll-target="#marginal-and-conditional-distributions"><span class="header-section-number">6.4</span> Marginal and Conditional Distributions</a>
+  </ul></li>
+  <li><a href="#sec-chap6marginal" id="toc-sec-chap6marginal" class="nav-link" data-scroll-target="#sec-chap6marginal"><span class="header-section-number">6.4</span> Marginal and Conditional Distributions</a>
+  <ul>
+  <li><a href="#examples-2" id="toc-examples-2" class="nav-link" data-scroll-target="#examples-2"><span class="header-section-number">6.4.1</span> Examples</a>
   <ul class="collapse">
-  <li><a href="#marginal-and-conditional-distributions-for-a-bivariate-pmf" id="toc-marginal-and-conditional-distributions-for-a-bivariate-pmf" class="nav-link" data-scroll-target="#marginal-and-conditional-distributions-for-a-bivariate-pmf"><span class="header-section-number">6.4.1</span> Marginal and Conditional Distributions for a Bivariate PMF</a></li>
-  <li><a href="#marginal-and-conditional-distributions-for-a-bivariate-pdf" id="toc-marginal-and-conditional-distributions-for-a-bivariate-pdf" class="nav-link" data-scroll-target="#marginal-and-conditional-distributions-for-a-bivariate-pdf"><span class="header-section-number">6.4.2</span> Marginal and Conditional Distributions for a Bivariate PDF</a></li>
-  <li><a href="#mutual-information" id="toc-mutual-information" class="nav-link" data-scroll-target="#mutual-information"><span class="header-section-number">6.4.3</span> Mutual Information</a></li>
+  <li><a href="#marginal-and-conditional-distributions-for-a-bivariate-pmf" id="toc-marginal-and-conditional-distributions-for-a-bivariate-pmf" class="nav-link" data-scroll-target="#marginal-and-conditional-distributions-for-a-bivariate-pmf"><span class="header-section-number">6.4.1.1</span> Marginal and Conditional Distributions for a Bivariate PMF</a></li>
+  <li><a href="#marginal-and-conditional-distributions-for-a-bivariate-pdf" id="toc-marginal-and-conditional-distributions-for-a-bivariate-pdf" class="nav-link" data-scroll-target="#marginal-and-conditional-distributions-for-a-bivariate-pdf"><span class="header-section-number">6.4.1.2</span> Marginal and Conditional Distributions for a Bivariate PDF</a></li>
+  <li><a href="#mutual-information" id="toc-mutual-information" class="nav-link" data-scroll-target="#mutual-information"><span class="header-section-number">6.4.1.3</span> Mutual Information</a></li>
   </ul></li>
-  <li><a href="#conditional-expected-value-and-variance" id="toc-conditional-expected-value-and-variance" class="nav-link" data-scroll-target="#conditional-expected-value-and-variance"><span class="header-section-number">6.5</span> Conditional Expected Value and Variance</a>
+  </ul></li>
+  <li><a href="#sec-chap6conditional" id="toc-sec-chap6conditional" class="nav-link" data-scroll-target="#sec-chap6conditional"><span class="header-section-number">6.5</span> Conditional Expected Value and Variance</a>
+  <ul>
+  <li><a href="#examples-3" id="toc-examples-3" class="nav-link" data-scroll-target="#examples-3"><span class="header-section-number">6.5.1</span> Examples</a>
   <ul class="collapse">
-  <li><a href="#conditional-and-unconditional-expected-value-given-a-bivariate-distribution" id="toc-conditional-and-unconditional-expected-value-given-a-bivariate-distribution" class="nav-link" data-scroll-target="#conditional-and-unconditional-expected-value-given-a-bivariate-distribution"><span class="header-section-number">6.5.1</span> Conditional and Unconditional Expected Value Given a Bivariate Distribution</a></li>
-  <li><a href="#conditional-and-unconditional-expected-value-and-variance-given-two-univariate-distributions" id="toc-conditional-and-unconditional-expected-value-and-variance-given-two-univariate-distributions" class="nav-link" data-scroll-target="#conditional-and-unconditional-expected-value-and-variance-given-two-univariate-distributions"><span class="header-section-number">6.5.2</span> Conditional and Unconditional Expected Value and Variance Given Two Univariate Distributions</a></li>
+  <li><a href="#conditional-and-unconditional-expected-value-given-a-bivariate-distribution" id="toc-conditional-and-unconditional-expected-value-given-a-bivariate-distribution" class="nav-link" data-scroll-target="#conditional-and-unconditional-expected-value-given-a-bivariate-distribution"><span class="header-section-number">6.5.1.1</span> Conditional and Unconditional Expected Value Given a Bivariate Distribution</a></li>
+  <li><a href="#conditional-and-unconditional-expected-value-and-variance-given-two-univariate-distributions" id="toc-conditional-and-unconditional-expected-value-and-variance-given-two-univariate-distributions" class="nav-link" data-scroll-target="#conditional-and-unconditional-expected-value-and-variance-given-two-univariate-distributions"><span class="header-section-number">6.5.1.2</span> Conditional and Unconditional Expected Value and Variance Given Two Univariate Distributions</a></li>
   </ul></li>
-  <li><a href="#the-multivariate-normal-distribution" id="toc-the-multivariate-normal-distribution" class="nav-link" data-scroll-target="#the-multivariate-normal-distribution"><span class="header-section-number">6.6</span> The Multivariate Normal Distribution</a>
+  </ul></li>
+  <li><a href="#sec-chap6multnorm" id="toc-sec-chap6multnorm" class="nav-link" data-scroll-target="#sec-chap6multnorm"><span class="header-section-number">6.6</span> The Multivariate Normal Distribution</a>
+  <ul>
+  <li><a href="#examples-4" id="toc-examples-4" class="nav-link" data-scroll-target="#examples-4"><span class="header-section-number">6.6.1</span> Examples</a>
   <ul class="collapse">
-  <li><a href="#the-marginal-distribution-of-a-multivariate-normal-distribution" id="toc-the-marginal-distribution-of-a-multivariate-normal-distribution" class="nav-link" data-scroll-target="#the-marginal-distribution-of-a-multivariate-normal-distribution"><span class="header-section-number">6.6.1</span> The Marginal Distribution of a Multivariate Normal Distribution</a></li>
-  <li><a href="#the-conditional-distribution-of-a-multivariate-normal-distribution" id="toc-the-conditional-distribution-of-a-multivariate-normal-distribution" class="nav-link" data-scroll-target="#the-conditional-distribution-of-a-multivariate-normal-distribution"><span class="header-section-number">6.6.2</span> The Conditional Distribution of a Multivariate Normal Distribution</a></li>
-  <li><a href="#the-calculation-of-sample-covariance" id="toc-the-calculation-of-sample-covariance" class="nav-link" data-scroll-target="#the-calculation-of-sample-covariance"><span class="header-section-number">6.6.3</span> The Calculation of Sample Covariance</a></li>
+  <li><a href="#the-marginal-distribution-of-a-multivariate-normal-distribution" id="toc-the-marginal-distribution-of-a-multivariate-normal-distribution" class="nav-link" data-scroll-target="#the-marginal-distribution-of-a-multivariate-normal-distribution"><span class="header-section-number">6.6.1.1</span> The Marginal Distribution of a Multivariate Normal Distribution</a></li>
+  <li><a href="#the-conditional-distribution-of-a-multivariate-normal-distribution" id="toc-the-conditional-distribution-of-a-multivariate-normal-distribution" class="nav-link" data-scroll-target="#the-conditional-distribution-of-a-multivariate-normal-distribution"><span class="header-section-number">6.6.1.2</span> The Conditional Distribution of a Multivariate Normal Distribution</a></li>
+  <li><a href="#the-calculation-of-sample-covariance" id="toc-the-calculation-of-sample-covariance" class="nav-link" data-scroll-target="#the-calculation-of-sample-covariance"><span class="header-section-number">6.6.1.3</span> The Calculation of Sample Covariance</a></li>
   </ul></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">6.7</span> Exercises</a></li>
+  </ul></li>
+  <li><a href="#sec-chap6exercises" id="toc-sec-chap6exercises" class="nav-link" data-scroll-target="#sec-chap6exercises"><span class="header-section-number">6.7</span> Exercises</a></li>
   </ul>
 </nav>
     </div>
@@ -297,7 +315,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Multivariate Distributions</span></h1>
+<h1 class="title"><span id="sec-chap6" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Multivariate Distributions</span></span></h1>
 </div>
 
 
@@ -328,8 +346,8 @@ window.Quarto = {
 <li><em>Conditional Expectation and Variance</em>: these metrics represent the mean and “width” of conditional distributions.</li>
 </ul>
 <p>Note that throughout this chapter, we will illustrate concepts using bivariate distributions, as adding mathematical complexity by increasing dimensionality provides no additional benefit in terms of conceptual understanding. The one exception to this is in the last section, where we discuss the multivariate normal distribution.</p>
-<section id="independence-of-random-variables" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="independence-of-random-variables"><span class="header-section-number">6.1</span> Independence of Random Variables</h2>
+<section id="sec-chap6independence" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="sec-chap6independence"><span class="header-section-number">6.1</span> Independence of Random Variables</h2>
 <div class="graybox">
 <p>What to take away from this section:</p>
 <ul>
@@ -341,7 +359,7 @@ window.Quarto = {
 </ul>
 </div>
 <p><br></p>
-<p>In Chapter 1, we describe at a high level the concept of two or more random variables being independent of each other. In that chapter, we give the example of a <em>bivariate probability density function</em>, i.e., a function which outputs the probability density given <em>two</em> inputs, <span class="math inline">\(x_1\)</span> and <span class="math inline">\(x_2\)</span>: <span class="math inline">\(f_{X_1,X_2}(x_1,x_2)\)</span>. To test for independence, we need only inspect the functional form of <span class="math inline">\(f_{X_1,X_2}(x_1,x_2)\)</span> and its domain; <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> are independent if and only if</p>
+<p>At the end of <a href="01-probability.html#sec-chap1statistics" class="quarto-xref"><span>Section 1.12</span></a>, we describe at a high level the concept of two or more random variables being independent of each other. In that chapter, we give the example of a <em>bivariate probability density function</em>, i.e., a function which outputs the probability density given <em>two</em> inputs, <span class="math inline">\(x_1\)</span> and <span class="math inline">\(x_2\)</span>: <span class="math inline">\(f_{X_1,X_2}(x_1,x_2)\)</span>. To test for independence, we need only inspect the functional form of <span class="math inline">\(f_{X_1,X_2}(x_1,x_2)\)</span> and its domain; <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> are independent if and only if</p>
 <ul>
 <li>the boundaries of the domain depend on either <span class="math inline">\(x_1\)</span> or <span class="math inline">\(x_2\)</span> but not both at the same time (i.e., the domain is “rectangular”); and</li>
 <li><span class="math inline">\(f_{X_1,X_2}(x_1,x_2)\)</span> can be factored into the product of functions that only depend on <span class="math inline">\(x_1\)</span> and on <span class="math inline">\(x_2\)</span>, respectively: <span class="math inline">\(f_{X_1}(x_1) \times
@@ -349,9 +367,10 @@ f_{X_2}(x_2)\)</span>.</li>
 </ul>
 <p>(Furthermore, we state that if <span class="math inline">\(f_{X_1}(x_1) = f_{X_2}(x_2)\)</span>, then <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> are iid random variables.)</p>
 <p>If either condition given above does not hold, then we conclude that <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> are dependent random variables.</p>
-<hr>
-<section id="determining-whether-two-random-variables-are-independent" class="level3" data-number="6.1.1">
-<h3 data-number="6.1.1" class="anchored" data-anchor-id="determining-whether-two-random-variables-are-independent"><span class="header-section-number">6.1.1</span> Determining Whether Two Random Variables are Independent</h3>
+<section id="example" class="level3" data-number="6.1.1">
+<h3 data-number="6.1.1" class="anchored" data-anchor-id="example"><span class="header-section-number">6.1.1</span> Example</h3>
+<section id="determining-whether-two-random-variables-are-independent" class="level4" data-number="6.1.1.1">
+<h4 data-number="6.1.1.1" class="anchored" data-anchor-id="determining-whether-two-random-variables-are-independent"><span class="header-section-number">6.1.1.1</span> Determining Whether Two Random Variables are Independent</h4>
 <blockquote class="blockquote">
 <p>Let <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> have the following joint pdf: <span class="math display">\[
 f_{X_1,X_2}(x_1,x_2) = c(1-x_2)
@@ -384,8 +403,9 @@ f_{X_1,X_2}(x_1,x_2) = ce^{-x_1x_2} \,,
 </blockquote>
 </section>
 </section>
-<section id="properties-of-multivariate-distributions" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="properties-of-multivariate-distributions"><span class="header-section-number">6.2</span> Properties of Multivariate Distributions</h2>
+</section>
+<section id="sec-chap6properties" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="sec-chap6properties"><span class="header-section-number">6.2</span> Properties of Multivariate Distributions</h2>
 <div class="graybox">
 <p>What to take away from this section:</p>
 <ul>
@@ -393,7 +413,7 @@ f_{X_1,X_2}(x_1,x_2) = ce^{-x_1x_2} \,,
 </ul>
 </div>
 <p><br></p>
-<p>As stated in Chapter 1, a probability distribution is a mapping <span class="math inline">\(P : \Omega \rightarrow \mathbb{R}^n\)</span>, where <span class="math inline">\(\Omega\)</span> is the sample space for an experiment. This mapping describes how probabilities are distributed across the values of a random variable. In the first five chapters, <span class="math inline">\(n = 1\)</span>, meaning that we focus on univariate distributions. In this chapter, however, <span class="math inline">\(n &gt; 1\)</span>, with the bulk of our discussion focusing upon the case <span class="math inline">\(n = 2\)</span>. Nothing changes, fundamentally, when we work with multivariate distributions: (a) they are non-negative; and (b) they sum or integrate to 1. Assuming <span class="math inline">\(n = 2\)</span>, we can write that</p>
+<p>As stated in <a href="01-probability.html#sec-chap1random" class="quarto-xref"><span>Section 1.5</span></a>, a probability distribution is a mapping <span class="math inline">\(P : \Omega \rightarrow \mathbb{R}^n\)</span>, where <span class="math inline">\(\Omega\)</span> is the sample space for an experiment. This mapping describes how probabilities are distributed across the values of a random variable. In the first five chapters, <span class="math inline">\(n = 1\)</span>, meaning that we focus on univariate distributions. Here, however, <span class="math inline">\(n &gt; 1\)</span>, with the bulk of our discussion focusing upon the case <span class="math inline">\(n = 2\)</span>. Nothing changes, fundamentally, when we work with multivariate distributions: (a) they are non-negative; and (b) they sum or integrate to 1. Assuming <span class="math inline">\(n = 2\)</span>, we can write that</p>
 <div style="max-width: 80%; margin: auto;">
 <table class="caption-top table">
 <colgroup>
@@ -442,9 +462,10 @@ E[g_1(X_1)g_2(X_2)] &amp;= \int_{x_1} \int_{x_2} g_1(x_1) g_2(x_2) f_{X_1,X_2}(x
 &amp;= \left[ \int_{x_1} g_1(x_1) f_{X_1}(x_1) \right] \cdot \left[ \int_{x_2} g_2(x_2) f_{X_2}(x_2) \right] \\
 &amp;= E[g_1(X_1)] E[g_2(X_2)] \,.
 \end{align*}\]</span> So, for instance, <span class="math inline">\(E[X_1X_2] = E[X_1]E[X_2]\)</span> if <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> are independent, but not generally.</p>
-<hr>
-<section id="characterizing-a-discrete-bivariate-distribution" class="level3" data-number="6.2.1">
-<h3 data-number="6.2.1" class="anchored" data-anchor-id="characterizing-a-discrete-bivariate-distribution"><span class="header-section-number">6.2.1</span> Characterizing a Discrete Bivariate Distribution</h3>
+<section id="examples" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="examples"><span class="header-section-number">6.2.1</span> Examples</h3>
+<section id="characterizing-a-discrete-bivariate-distribution" class="level4" data-number="6.2.1.1">
+<h4 data-number="6.2.1.1" class="anchored" data-anchor-id="characterizing-a-discrete-bivariate-distribution"><span class="header-section-number">6.2.1.1</span> Characterizing a Discrete Bivariate Distribution</h4>
 <blockquote class="blockquote">
 <p>Let <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> have the following joint probability mass function <span class="math inline">\(p_{X_1,X_2}(x_1,x_2)\)</span>:</p>
 </blockquote>
@@ -491,17 +512,16 @@ P(X_1 \leq 3/2 \cap X_2 \leq 3/2) &amp;= P(X_1 = 1 \cap X_2 = 0) + P(X_1 = 1 \ca
 &amp;= 0.20 + 0.30 = 0.50 \,.
 \end{align*}\]</span></p>
 </blockquote>
-<hr>
 </section>
-<section id="characterizing-a-continuous-bivariate-distribution" class="level3" data-number="6.2.2">
-<h3 data-number="6.2.2" class="anchored" data-anchor-id="characterizing-a-continuous-bivariate-distribution"><span class="header-section-number">6.2.2</span> Characterizing a Continuous Bivariate Distribution</h3>
+<section id="characterizing-a-continuous-bivariate-distribution" class="level4" data-number="6.2.1.2">
+<h4 data-number="6.2.1.2" class="anchored" data-anchor-id="characterizing-a-continuous-bivariate-distribution"><span class="header-section-number">6.2.1.2</span> Characterizing a Continuous Bivariate Distribution</h4>
 <blockquote class="blockquote">
 <p>Let <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> have the following joint probability density function: <span class="math display">\[
 f_{X_1,X_2}(x_1,x_2) = c(1-x_2) \,,
 \]</span> with <span class="math inline">\(0 \leq x_1 \leq x_2 \leq 1\)</span>. In an example above, we determined that <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> are dependent random variables due to the domain of the pdf not being “rectangular” on the <span class="math inline">\(x_1\)</span>-<span class="math inline">\(x_2\)</span> plane (see Figures <a href="#fig-mulfig1" class="quarto-xref">Figure&nbsp;<span>6.1</span></a> and <a href="#fig-bivar1" class="quarto-xref">Figure&nbsp;<span>6.2</span></a>).</p>
 </blockquote>
 <blockquote class="blockquote">
-<p>Here, we will first determine the value of <span class="math inline">\(c\)</span> that makes this function a valid joint pdf. Carrying out this calculation will involve double integration; for a short review of double integration, see Chapter 8. We note here that we can integrate in either order (i.e., along the <span class="math inline">\(x_1\)</span> axis first, or the <span class="math inline">\(x_2\)</span> axis first), as the final result will be the same. Here, we will integrate along <span class="math inline">\(x_1\)</span> first, since the lower bound along this axis is zero (a choice which often simplifies the overall calculation) <em>and</em> because <span class="math inline">\(x_1\)</span> does not appear in the integrand: <span class="math display">\[\begin{align*}
+<p>Here, we will first determine the value of <span class="math inline">\(c\)</span> that makes this function a valid joint pdf. Carrying out this calculation will involve double integration. We note here that we can integrate in either order (i.e., along the <span class="math inline">\(x_1\)</span> axis first, or the <span class="math inline">\(x_2\)</span> axis first), as the final result will be the same. Here, we will integrate along <span class="math inline">\(x_1\)</span> first, since the lower bound along this axis is zero (a choice which often simplifies the overall calculation) <em>and</em> because <span class="math inline">\(x_1\)</span> does not appear in the integrand: <span class="math display">\[\begin{align*}
 \int_0^1 \left[ \int_0^{x_1 = x_2} c (1-x_2) dx_1 \right] dx_2 &amp;= c \int_0^1 (1-x_2) \left[ \int_0^{x_1 = x_2} dx_1 \right] dx_2 \\
 &amp;= c \int_0^1 (1-x_2) \left[ \left. x_1 \right|_0^{x^2} \right] dx_2 \\
 &amp;= c \int_0^1 x_2 (1-x_2) dx_2 \\
@@ -535,10 +555,9 @@ E[X_2^2] &amp;= 6 B(4,2) = 6 \times 3! \times 1! / 5! = 36/120 = 3/10 \\
 V[X_2] &amp;= E[X_2^2] - (E[X_2])^2 = 3/10 - 1/4 = 1/20 \,.
 \end{align*}\]</span></p>
 </blockquote>
-<hr>
 </section>
-<section id="using-numerical-integration-to-characterize-a-continuous-bivariate-distribution" class="level3" data-number="6.2.3">
-<h3 data-number="6.2.3" class="anchored" data-anchor-id="using-numerical-integration-to-characterize-a-continuous-bivariate-distribution"><span class="header-section-number">6.2.3</span> Using Numerical Integration to Characterize a Continuous Bivariate Distribution</h3>
+<section id="using-numerical-integration-to-characterize-a-continuous-bivariate-distribution" class="level4" data-number="6.2.1.3">
+<h4 data-number="6.2.1.3" class="anchored" data-anchor-id="using-numerical-integration-to-characterize-a-continuous-bivariate-distribution"><span class="header-section-number">6.2.1.3</span> Using Numerical Integration to Characterize a Continuous Bivariate Distribution</h4>
 <blockquote class="blockquote">
 <p>In the previous example, we assumed that the random variables <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> were distributed according to the joint probability density function <span class="math display">\[\begin{align*}
 f_{X_1,X_2}(x_1,x_2) = c(1-x_2) \,,
@@ -590,10 +609,9 @@ f_{X_1,X_2}(x_1,x_2) = c(1-x_2) \,,
 <pre><code>V[X2] = 0.05 </code></pre>
 </div>
 </div>
-<hr>
 </section>
-<section id="the-bivariate-uniform-distribution" class="level3" data-number="6.2.4">
-<h3 data-number="6.2.4" class="anchored" data-anchor-id="the-bivariate-uniform-distribution"><span class="header-section-number">6.2.4</span> The Bivariate Uniform Distribution</h3>
+<section id="the-bivariate-uniform-distribution" class="level4" data-number="6.2.1.4">
+<h4 data-number="6.2.1.4" class="anchored" data-anchor-id="the-bivariate-uniform-distribution"><span class="header-section-number">6.2.1.4</span> The Bivariate Uniform Distribution</h4>
 <blockquote class="blockquote">
 <p>The bivariate uniform distribution is defined as <span class="math display">\[
 f_{X_1,X_2}(x_1,x_2) = \frac{1}{A} \,,
@@ -621,8 +639,9 @@ Figure&nbsp;6.3: The probability density function <span class="math inline">\(6(
 </div>
 </section>
 </section>
-<section id="covariance-and-correlation" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="covariance-and-correlation"><span class="header-section-number">6.3</span> Covariance and Correlation</h2>
+</section>
+<section id="sec-chap6covariance" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="sec-chap6covariance"><span class="header-section-number">6.3</span> Covariance and Correlation</h2>
 <div class="graybox">
 <p>What to take away from this section:</p>
 <ul>
@@ -700,7 +719,7 @@ b^2 - 4ac &amp;= 4 (E[X_1X_2])^2 - 4 E[X_1^2] E[X_2^2] \leq 0 \\
 <p>Thus we conventionally turn to an alternate expression of linear dependence, the <em>correlation coefficient</em>: <span class="math display">\[
 \rho_{X_1,X_2} = \frac{{\rm Cov}(X_1,X_2)}{\sigma_1\sigma_2} \Rightarrow -1 \leq \rho \leq 1 \,.
 \]</span> If <span class="math inline">\(\rho_{X_1,X_2} &lt; 0\)</span>, then an increase in the sampled value of <span class="math inline">\(X_1\)</span> is associated with, <em>on average</em>, a smaller sampled value of <span class="math inline">\(X_2\)</span>, i.e., <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> are negatively correlated…whereas if <span class="math inline">\(\rho_{X_1,X_2} &gt; 0\)</span>, larger sampled values for <span class="math inline">\(X_1\)</span> are associated on average with larger sampled values of <span class="math inline">\(X_2\)</span>, i.e., <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> are positively correlated.</p>
-<p>(We note that we have actually seen <span class="math inline">\(\rho_{X_1,X_2}\)</span> before, in Chapter 2, when we introduced correlation as a metric of the strength of linear association as measured in simple linear regression. Recall that we estimate <span class="math inline">\(\rho_{X_1,X_2}\)</span> with, e.g., the Pearson correlation coefficient <span class="math inline">\(R\)</span>, and that we use coefficient of determination <span class="math inline">\(R^2\)</span> to quantify the usefulness of the linear regression model. See <a href="#fig-covplot2" class="quarto-xref">Figure&nbsp;<span>6.5</span></a>.)</p>
+<p>(We note that we have actually seen <span class="math inline">\(\rho_{X_1,X_2}\)</span> before, in <a href="02-normal.html#sec-chap2slr" class="quarto-xref"><span>Section 2.15</span></a>, when we introduced correlation as a metric of the strength of linear association as measured in simple linear regression. Recall that we estimate <span class="math inline">\(\rho_{X_1,X_2}\)</span> with, e.g., the Pearson correlation coefficient <span class="math inline">\(R\)</span>, and that we use coefficient of determination <span class="math inline">\(R^2\)</span> to quantify the usefulness of the linear regression model. See <a href="#fig-covplot2" class="quarto-xref">Figure&nbsp;<span>6.5</span></a>.)</p>
 <div id="fig-covplot2" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-covplot2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -752,7 +771,7 @@ Figure&nbsp;6.5: The same data as shown in <a href="#fig-covplot1" class="quarto
 <p>Let’s suppose we are given <span class="math inline">\(n\)</span> correlated random variables <span class="math inline">\(\{X_1,\ldots,X_n\}\)</span>, and we define the sum <span class="math inline">\(Y = \sum_{i=1}^n a_i X_i\)</span>. Furthermore, let’s assume we know the pdf/pmf, expected value, and variance of each of the <span class="math inline">\(X_i\)</span>’s. What do we know about the distribution of <span class="math inline">\(Y\)</span>? With work, we might be able to determine its pdf or pmf, but we would have to go beyond the method of moment-generating functions because that method requires the random variables to be independent of each other. We will not do that here. However, we <em>can</em> determine the expected value of <span class="math inline">\(Y\)</span>: <span class="math display">\[
 E[Y] = E\left[ \sum_{i=1}^n a_i X_i \right] = \sum_{i=1}^n a_i E[X_i] \,.
 \]</span> Dependencies between the <span class="math inline">\(X_i\)</span>’s does not affect this equality. As for the variance of <span class="math inline">\(Y\)</span>…</p>
-<p>We start by encapsulating the information about the covariances between each variable pair into a <em>covariance matrix</em>. (See Chapter 08 for a short introduction to matrices and their basic use.) For <span class="math inline">\(n\)</span> random variables, the <span class="math inline">\(n \times n\)</span> covariance matrix <span class="math inline">\(\boldsymbol{\Sigma}\)</span> is <span class="math display">\[
+<p>We start by encapsulating the information about the covariances between each variable pair into a <em>covariance matrix</em>. For <span class="math inline">\(n\)</span> random variables, the <span class="math inline">\(n \times n\)</span> covariance matrix <span class="math inline">\(\boldsymbol{\Sigma}\)</span> is <span class="math display">\[
 \boldsymbol{\Sigma} = \left[ \begin{array}{ccc} {\rm Cov}(X_1,X_1) &amp; \cdots &amp; {\rm Cov}(X_1,X_n) \\ \vdots &amp; \ddots &amp; \vdots \\ {\rm Cov}(X_n,X_1) &amp; \cdots &amp; {\rm Cov}(X_n,X_n) \end{array} \right] = \left[ \begin{array}{ccc} V[X_1] &amp; \cdots &amp; {\rm Cov}(X_1,X_n) \\ \vdots &amp; \ddots &amp; \vdots \\ {\rm Cov}(X_n,X_1) &amp; \cdots &amp; V[X_n] \end{array} \right] \,.
 \]</span> We note that the diagonal of this matrix (the elements from the upper left corner to the lower right corner) contains the individual variances, since Cov(<span class="math inline">\(X_i,X_i\)</span>) = <span class="math inline">\(V[X_i]\)</span>, and that because Cov(<span class="math inline">\(X_i,X_j\)</span>) = Cov(<span class="math inline">\(X_j,X_i\)</span>), the matrix is symmetric about the diagonal.</p>
 <p>Now, let <span class="math inline">\(a^T = [ a_1 ~ a_2 ~ \ldots a_n ]\)</span> be the <span class="math inline">\(1 \times n\)</span> matrix (or transposed vector) of coefficients. Then: <span class="math display">\[
@@ -775,9 +794,10 @@ V[Y] &amp;= E\left[ \left(\sum_{i=1}^n a_i(X_i - \mu_i) \right)^2 \right] \\
 &amp;= \sum_{i=1}^n a_i^2 E\left[(X_i-\mu_i)^2\right] + 2 \sum_{i=1}^{n-1} \sum_{j=i+1}^n a_i a_j E\left[(X_i - \mu_i) (X_j - \mu_2) \right] \\
 &amp;= \sum_{i=1}^n a_i^2 V[X_i] + 2 \sum_{i=1}^{n-1} \sum_{j=i+1}^n a_i a_j \mbox{Cov}(X_i,X_j) \,.
 \end{align*}\]</span></p>
-<hr>
-<section id="correlation-of-two-discrete-random-variables" class="level3" data-number="6.3.1">
-<h3 data-number="6.3.1" class="anchored" data-anchor-id="correlation-of-two-discrete-random-variables"><span class="header-section-number">6.3.1</span> Correlation of Two Discrete Random Variables</h3>
+<section id="examples-1" class="level3" data-number="6.3.1">
+<h3 data-number="6.3.1" class="anchored" data-anchor-id="examples-1"><span class="header-section-number">6.3.1</span> Examples</h3>
+<section id="correlation-of-two-discrete-random-variables" class="level4" data-number="6.3.1.1">
+<h4 data-number="6.3.1.1" class="anchored" data-anchor-id="correlation-of-two-discrete-random-variables"><span class="header-section-number">6.3.1.1</span> Correlation of Two Discrete Random Variables</h4>
 <blockquote class="blockquote">
 <p>Let <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> have the following joint probability mass function <span class="math inline">\(p_{X_1,X_2}(x_1,x_2)\)</span>:</p>
 </blockquote>
@@ -828,10 +848,9 @@ E[X_2^2] &amp;= \sum_{x_2} \sum_{x_2} x_2^2 p_{X_1,X_2}(x_1,x_2) \\
 \rho_{X_1,X_2} = \frac{\mbox{Cov}(X_1,X_2)}{\sqrt{V[X_1]V[X_2]}} = \frac{-0.05}{\sqrt{0.25 \cdot 0.45}} = -0.149 \,.
 \]</span> <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> are (relatively weakly) negatively correlated: increasing <span class="math inline">\(X_1\)</span> leads to slightly decreased values of <span class="math inline">\(X_2\)</span>, on average.</p>
 </blockquote>
-<hr>
 </section>
-<section id="correlation-of-the-sum-of-two-discrete-random-variables" class="level3" data-number="6.3.2">
-<h3 data-number="6.3.2" class="anchored" data-anchor-id="correlation-of-the-sum-of-two-discrete-random-variables"><span class="header-section-number">6.3.2</span> Correlation of the Sum of Two Discrete Random Variables</h3>
+<section id="correlation-of-the-sum-of-two-discrete-random-variables" class="level4" data-number="6.3.1.2">
+<h4 data-number="6.3.1.2" class="anchored" data-anchor-id="correlation-of-the-sum-of-two-discrete-random-variables"><span class="header-section-number">6.3.1.2</span> Correlation of the Sum of Two Discrete Random Variables</h4>
 <blockquote class="blockquote">
 <p>Let <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> be the random variables defined in the previous example, and let <span class="math inline">\(Y = X_1 - X_2\)</span>. What is <span class="math inline">\(V[Y]\)</span>?</p>
 </blockquote>
@@ -861,10 +880,9 @@ V[Y] &amp;= \sum_{i=1}^n a_i^2 V[X_i] + 2\sum_{i=1}^{n-1} \sum_{j=i+1}^n a_i a_j
 <blockquote class="blockquote">
 <p>Note that <code>a</code> is by default a column vector, and thus must be transposed via the <code>t()</code> function, and that <code>%*%</code> is the matrix multiplication operator.</p>
 </blockquote>
-<hr>
 </section>
-<section id="uncorrelated-is-not-the-same-as-independent-a-demonstration" class="level3" data-number="6.3.3">
-<h3 data-number="6.3.3" class="anchored" data-anchor-id="uncorrelated-is-not-the-same-as-independent-a-demonstration"><span class="header-section-number">6.3.3</span> Uncorrelated is Not the Same as Independent: a Demonstration</h3>
+<section id="uncorrelated-is-not-the-same-as-independent-a-demonstration" class="level4" data-number="6.3.1.3">
+<h4 data-number="6.3.1.3" class="anchored" data-anchor-id="uncorrelated-is-not-the-same-as-independent-a-demonstration"><span class="header-section-number">6.3.1.3</span> Uncorrelated is Not the Same as Independent: a Demonstration</h4>
 <blockquote class="blockquote">
 <p>Let the region shown in <a href="#fig-mulfig3" class="quarto-xref">Figure&nbsp;<span>6.6</span></a> be the domain of a bivariate uniform distribution. (The area of the domain is 1, hence the amplitude of the bivariate pdf is 1/1 = 1.) Let <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> be random variables drawn from this distribution. Because the domain is not “rectangular,” we can state that <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> are dependent random variables. What is the correlation between them?</p>
 </blockquote>
@@ -891,14 +909,13 @@ Figure&nbsp;6.6: The domain of the bivariate uniform distribution with bounds 0 
 </div>
 </div>
 </div>
-<hr>
 </section>
-<section id="covariance-of-multinomial-random-variables" class="level3" data-number="6.3.4">
-<h3 data-number="6.3.4" class="anchored" data-anchor-id="covariance-of-multinomial-random-variables"><span class="header-section-number">6.3.4</span> Covariance of Multinomial Random Variables</h3>
+<section id="covariance-of-multinomial-random-variables" class="level4" data-number="6.3.1.4">
+<h4 data-number="6.3.1.4" class="anchored" data-anchor-id="covariance-of-multinomial-random-variables"><span class="header-section-number">6.3.1.4</span> Covariance of Multinomial Random Variables</h4>
 <blockquote class="blockquote">
-<p>In Chapter 3, we introduce the multinomial distribution, which governs experiments in which we sample data that can <span class="math inline">\(m\)</span> different discrete values. The probability mass function is <span class="math display">\[
+<p>In <a href="03-binomial.html#sec-chap3multi" class="quarto-xref"><span>Section 3.3.3</span></a>, we introduce the multinomial distribution, which governs experiments in which we sample data that can <span class="math inline">\(m\)</span> different discrete values. The probability mass function is <span class="math display">\[
 p_{X_1,\ldots,X_m}(x_1,\ldots,x_m \vert p_1,\ldots,p_m) = \frac{k!}{x_1! \cdots x_m!}p_1^{x_1}\cdots p_m^{x_m} \,,
-\]</span> where <span class="math inline">\(x_i\)</span> represents the number of times outcome <span class="math inline">\(i\)</span> is observed in <span class="math inline">\(k\)</span> trials, and where <span class="math inline">\(p_i\)</span> is the probability of observing outcome <span class="math inline">\(i\)</span>. As stated in Chapter 3, the distribution for each random variable <span class="math inline">\(X_i\)</span> is Binomial(<span class="math inline">\(k,p_i\)</span>), but the <span class="math inline">\(X_i\)</span>’s are <em>not</em> independent; because <span class="math inline">\(\sum_{i=1}^m X_i = k\)</span>, increase the value of one of the random variables would lead the values of the others to decrease on average. Here we will derive the result that was quoted in Chapter 3, namely that Cov(<span class="math inline">\(X_i\)</span>,<span class="math inline">\(X_j\)</span>) = <span class="math inline">\(-kp_ip_j\)</span> for <span class="math inline">\(i \neq j\)</span>.</p>
+\]</span> where <span class="math inline">\(x_i\)</span> represents the number of times outcome <span class="math inline">\(i\)</span> is observed in <span class="math inline">\(k\)</span> trials, and where <span class="math inline">\(p_i\)</span> is the probability of observing outcome <span class="math inline">\(i\)</span>. As stated in <a href="03-binomial.html#sec-chap3multi" class="quarto-xref"><span>Section 3.3.3</span></a>, the distribution for each random variable <span class="math inline">\(X_i\)</span> is Binomial(<span class="math inline">\(k,p_i\)</span>), but the <span class="math inline">\(X_i\)</span>’s are <em>not</em> independent; because <span class="math inline">\(\sum_{i=1}^m X_i = k\)</span>, increase the value of one of the random variables would lead the values of the others to decrease on average. Here we will derive the result that was quoted in <a href="03-binomial.html#sec-chap3multi" class="quarto-xref"><span>Section 3.3.3</span></a>, namely that Cov(<span class="math inline">\(X_i\)</span>,<span class="math inline">\(X_j\)</span>) = <span class="math inline">\(-kp_ip_j\)</span> for <span class="math inline">\(i \neq j\)</span>.</p>
 </blockquote>
 <blockquote class="blockquote">
 <p>Because <span class="math inline">\(X_i\)</span> and <span class="math inline">\(X_j\)</span> are each binomially distributed random variables, we can view them as sums of Bernoulli distributed random variables, i.e., we can write <span class="math display">\[
@@ -919,15 +936,14 @@ E[U_1V_2] = E[U_1]E[V_2] = p_ip_j \,.
 \mbox{Cov}(X_i,X_j) = (k^2-k)p_ip_j - k^2p_ip_j = -kp_ip_j \,.
 \]</span></p>
 </blockquote>
-<hr>
 </section>
-<section id="tying-covariance-back-to-simple-linear-regression" class="level3" data-number="6.3.5">
-<h3 data-number="6.3.5" class="anchored" data-anchor-id="tying-covariance-back-to-simple-linear-regression"><span class="header-section-number">6.3.5</span> Tying Covariance Back to Simple Linear Regression</h3>
+<section id="tying-covariance-back-to-simple-linear-regression" class="level4" data-number="6.3.1.5">
+<h4 data-number="6.3.1.5" class="anchored" data-anchor-id="tying-covariance-back-to-simple-linear-regression"><span class="header-section-number">6.3.1.5</span> Tying Covariance Back to Simple Linear Regression</h4>
 <blockquote class="blockquote">
 <p>Above, we point out how <span class="math inline">\(R^2\)</span> is related to the correlation coefficient between the <span class="math inline">\(x_i\)</span>’s and <span class="math inline">\(Y_i\)</span>’s. Here, we extend that discussion to the determinination of the correlation coefficient between <span class="math inline">\(\hat{\beta}_0\)</span> and <span class="math inline">\(\hat{\beta}_1\)</span> in simple linear regression.</p>
 </blockquote>
 <blockquote class="blockquote">
-<p>When discussing simple linear regression in Chapter 2, we give formulae for the variances of both <span class="math inline">\(V[\hat{\beta}_0]\)</span> and <span class="math inline">\(V[\hat{\beta}_1]\)</span>. However, now that we know about the concept of covariance, we can ask a question that we did not ask then: are <span class="math inline">\(\hat{\beta}_0\)</span> and <span class="math inline">\(\hat{\beta}_1\)</span> independent random variables? The answer is: of course they are not; if we have a set of data that we are trying to draw a line through, it should be intuitively obvious that changing the intercept of the line will lead to its slope having to change as well in order to (re-)optimize the sum of squared errors. So: the covariance between <span class="math inline">\(\hat{\beta}_0\)</span> and <span class="math inline">\(\hat{\beta}_1\)</span> is non-zero…but how do we determine it?</p>
+<p>When discussing simple linear regression in <a href="02-normal.html#sec-chap2slr" class="quarto-xref"><span>Section 2.15</span></a>, we gave formulae for the variances of both <span class="math inline">\(V[\hat{\beta}_0]\)</span> and <span class="math inline">\(V[\hat{\beta}_1]\)</span>. However, now that we know about the concept of covariance, we can ask a question that we did not ask then: are <span class="math inline">\(\hat{\beta}_0\)</span> and <span class="math inline">\(\hat{\beta}_1\)</span> independent random variables? The answer is: of course they are not; if we have a set of data that we are trying to draw a line through, it should be intuitively obvious that changing the intercept of the line will lead to its slope having to change as well in order to (re-)optimize the sum of squared errors. So: the covariance between <span class="math inline">\(\hat{\beta}_0\)</span> and <span class="math inline">\(\hat{\beta}_1\)</span> is non-zero…but how do we determine it?</p>
 </blockquote>
 <blockquote class="blockquote">
 <p>The standard method of determining covariance involves the calculation of the so-called <em>variance-covariance matrix</em>. (To be clear, this is nomenclature that is specific to regression contexts.) Stated without derivation or proof, that matrix is given by the following: <span class="math display">\[
@@ -937,7 +953,7 @@ E[U_1V_2] = E[U_1]E[V_2] = p_ip_j \,.
 \]</span> the superscript <span class="math inline">\(T\)</span> denotes the matrix transpose, and where the superscript <span class="math inline">\(-1\)</span> denotes matrix inversion. The column of 1’s in the design matrix represents what we multiply <span class="math inline">\(\beta_0\)</span> by in the model, while the column of <span class="math inline">\(x_i\)</span>’s represents what we multiply <span class="math inline">\(\beta_1\)</span> by. As far as <span class="math inline">\(\sigma^2\)</span> is concerned…we generally never know this quantity, so we plug in <span class="math inline">\(\widehat{\sigma^2}\)</span> in place of <span class="math inline">\(\sigma^2\)</span> above.</p>
 </blockquote>
 <blockquote class="blockquote">
-<p>Let’s demonstrate how this works using the same data as we used to talk through the output from the <code>R</code> function <code>lm()</code> in Chapter 2.</p>
+<p>Let’s demonstrate how this works using the same data as we used to talk through the output from the <code>R</code> function <code>lm()</code> in <a href="02-normal.html#sec-chap2slr" class="quarto-xref"><span>Section 2.15</span></a>.</p>
 </blockquote>
 <div class="cell">
 <details class="code-fold">
@@ -1038,10 +1054,9 @@ x            -0.8765245  1.0000000</code></pre>
 <blockquote class="blockquote">
 <p>(We note that the difference between the correlation coefficient computed above and that output by <code>cov2cor()</code> is entirely due to round-off error.)</p>
 </blockquote>
-<hr>
 </section>
-<section id="tying-covariance-to-simple-logistic-regression" class="level3" data-number="6.3.6">
-<h3 data-number="6.3.6" class="anchored" data-anchor-id="tying-covariance-to-simple-logistic-regression"><span class="header-section-number">6.3.6</span> Tying Covariance to Simple Logistic Regression</h3>
+<section id="tying-covariance-to-simple-logistic-regression" class="level4" data-number="6.3.1.6">
+<h4 data-number="6.3.1.6" class="anchored" data-anchor-id="tying-covariance-to-simple-logistic-regression"><span class="header-section-number">6.3.1.6</span> Tying Covariance to Simple Logistic Regression</h4>
 <blockquote class="blockquote">
 <p>In the last example, we state that the variance-covariance matrix for simple linear regression is given by <span class="math display">\[
 \boldsymbol{\Sigma} = \sigma^2 (\mathbf{X}^T\mathbf{X})^{-1} \,.
@@ -1129,8 +1144,9 @@ Number of Fisher Scoring iterations: 4</code></pre>
 </blockquote>
 </section>
 </section>
-<section id="marginal-and-conditional-distributions" class="level2" data-number="6.4">
-<h2 data-number="6.4" class="anchored" data-anchor-id="marginal-and-conditional-distributions"><span class="header-section-number">6.4</span> Marginal and Conditional Distributions</h2>
+</section>
+<section id="sec-chap6marginal" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="sec-chap6marginal"><span class="header-section-number">6.4</span> Marginal and Conditional Distributions</h2>
 <div class="graybox">
 <p>What to take away from this section:</p>
 <ul>
@@ -1147,7 +1163,7 @@ p_{X_1}(x_1) = \sum_{x_2} p_{X_1,X_2}(x_1,x_2) \,.
 \]</span> (If we are interested in computing the marginal distribution for <span class="math inline">\(X_2\)</span>, we would simply swap the indices 1 and 2 above.) An important thing to keep in mind is that <em>a marginal pdf (or pmf) is a pdf (or pmf)</em>, meaning that it is like any other pdf (or pmf): it is non-negative and it integrates (or sums) to one, it has an expected value and a standard deviation, etc.</p>
 <p>A related, albeit narrower question to the one motivating the computation of marginals is: what is the distribution of <span class="math inline">\(X_1\)</span> when <span class="math inline">\(X_2 = x_2\)</span>? (It is narrower in the sense that for a marginal, we do not care about the sampled value of <span class="math inline">\(X_2\)</span>, while here, we do.) This distribution is dubbed a <em>conditional distribution</em>, and it is defined as follows: <span class="math display">\[
 f_{X_1 \vert X_2}(x_1 \vert x_2) = \frac{f_{X_1,X_2}(x_1,x_2)}{f_{X_2}(x_2)} \,.
-\]</span> For a bivariate pmf, the expression is similar. As was the case with a marginal distribution, <em>a conditional pdf (or pmf) is a pdf (or pmf)</em>. One might notice immediately the similarity between this expression and the one defining conditional probability in Chapter 1: <span class="math inline">\(p(A \vert B) = p(A \cap B)/p(B)\)</span>. This is not coincidental. For marginals, the analogous probability expression is <span class="math inline">\(p(A) = \sum_i p(A \vert B_i) p(B_i)\)</span>, i.e., the law of total probability! If this is not immediately evident, note that we can replace the <span class="math inline">\(f_{X_1,X_2}(x_1,x_2)\)</span> in the marginal integral with <span class="math inline">\(f_{X_1 \vert X_2}(x_1 \vert x_2) f_{X_2}(x_2)\)</span>. Then we can see how <span class="math inline">\(x_1\)</span> takes the place of <span class="math inline">\(A\)</span> and <span class="math inline">\(x_2\)</span> takes the places of <span class="math inline">\(B_i\)</span>.)</p>
+\]</span> For a bivariate pmf, the expression is similar. As was the case with a marginal distribution, <em>a conditional pdf (or pmf) is a pdf (or pmf)</em>. One might notice immediately the similarity between this expression and the one defining conditional probability in <a href="01-probability.html#sec-chap1conditional" class="quarto-xref"><span>Section 1.3</span></a>: <span class="math inline">\(p(A \vert B) = p(A \cap B)/p(B)\)</span>. This is not coincidental. For marginals, the analogous probability expression is <span class="math inline">\(p(A) = \sum_i p(A \vert B_i) p(B_i)\)</span>, i.e., the law of total probability! If this is not immediately evident, note that we can replace the <span class="math inline">\(f_{X_1,X_2}(x_1,x_2)\)</span> in the marginal integral with <span class="math inline">\(f_{X_1 \vert X_2}(x_1 \vert x_2) f_{X_2}(x_2)\)</span>. Then we can see how <span class="math inline">\(x_1\)</span> takes the place of <span class="math inline">\(A\)</span> and <span class="math inline">\(x_2\)</span> takes the places of <span class="math inline">\(B_i\)</span>.)</p>
 <p>Why do we divide by a marginal distribution when deriving a conditional distribution? The answer is simple: if we do not, then there is no guarantee that the conditional pdf or pmf will integrate or sum to one. Finding the conditional distribution is akin to chopping through the bivariate pdf at a particular value of <span class="math inline">\(x_1\)</span> or <span class="math inline">\(x_2\)</span>, and tracing the pdf along the chopped edge. This traced-out function will be non-negative, but it will not necessarily integrate to one. The division by the marginal acts to “normalize” the traced-out function, i.e., the division raises or lowers it such that it subsequently will integrate to one.</p>
 <p>As a final note, we will mention that if <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> are independent random variables, then, e.g.,</p>
 <ul>
@@ -1155,9 +1171,10 @@ f_{X_1 \vert X_2}(x_1 \vert x_2) = \frac{f_{X_1,X_2}(x_1,x_2)}{f_{X_2}(x_2)} \,.
 <li><span class="math inline">\(f_{X_1 \vert X_2}(x_1 \vert x_2) = f_{X_1}(x_1)\)</span> and <span class="math inline">\(f_{X_2 \vert X_1}(x_2 \vert x_1) = f_{X_2}(x_2)\)</span></li>
 </ul>
 <p>The first bullet point above shows the result that we look for when establishing the independence of two random variables mathematically: we compute the marginals for each variable, take the product of marginals, and see if it matches the original bivariate function. However, this conventional textbook approach to establishing independence is unnecessary, as it is sufficient to examine the domain of the bivariate function and to determine if we can factorize it into separate functions of <span class="math inline">\(x_1\)</span> and <span class="math inline">\(x_2\)</span>.</p>
-<hr>
-<section id="marginal-and-conditional-distributions-for-a-bivariate-pmf" class="level3" data-number="6.4.1">
-<h3 data-number="6.4.1" class="anchored" data-anchor-id="marginal-and-conditional-distributions-for-a-bivariate-pmf"><span class="header-section-number">6.4.1</span> Marginal and Conditional Distributions for a Bivariate PMF</h3>
+<section id="examples-2" class="level3" data-number="6.4.1">
+<h3 data-number="6.4.1" class="anchored" data-anchor-id="examples-2"><span class="header-section-number">6.4.1</span> Examples</h3>
+<section id="marginal-and-conditional-distributions-for-a-bivariate-pmf" class="level4" data-number="6.4.1.1">
+<h4 data-number="6.4.1.1" class="anchored" data-anchor-id="marginal-and-conditional-distributions-for-a-bivariate-pmf"><span class="header-section-number">6.4.1.1</span> Marginal and Conditional Distributions for a Bivariate PMF</h4>
 <blockquote class="blockquote">
 <p>Let <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> have the following joint probability mass function <span class="math inline">\(p_{X_1,X_2}(x_1,x_2)\)</span>:</p>
 </blockquote>
@@ -1244,10 +1261,9 @@ p_{X_1 \vert X_2}(x_1 \vert x_2) = \frac{p_{X_1,X_2}(x_1,x_2)}{p_{X_2}(x_2)} \,,
 <blockquote class="blockquote">
 <p>In such a table, the values in the individual columns all need to sum to one: given some value of <span class="math inline">\(x_2\)</span>, we will with probability 1 sample a value of <span class="math inline">\(x_1\)</span>. (As should be clear, if we condition on <span class="math inline">\(x_1\)</span> instead, we’d generate a table in which the values in each row would sum to 1.)</p>
 </blockquote>
-<hr>
 </section>
-<section id="marginal-and-conditional-distributions-for-a-bivariate-pdf" class="level3" data-number="6.4.2">
-<h3 data-number="6.4.2" class="anchored" data-anchor-id="marginal-and-conditional-distributions-for-a-bivariate-pdf"><span class="header-section-number">6.4.2</span> Marginal and Conditional Distributions for a Bivariate PDF</h3>
+<section id="marginal-and-conditional-distributions-for-a-bivariate-pdf" class="level4" data-number="6.4.1.2">
+<h4 data-number="6.4.1.2" class="anchored" data-anchor-id="marginal-and-conditional-distributions-for-a-bivariate-pdf"><span class="header-section-number">6.4.1.2</span> Marginal and Conditional Distributions for a Bivariate PDF</h4>
 <blockquote class="blockquote">
 <p>Let <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> have the following joint probability density function: <span class="math display">\[
 f_{X_1,X_2}(x_1,x_2) = 6(1-x_2) \,,
@@ -1304,10 +1320,9 @@ Figure&nbsp;6.7: The marginal distribution <span class="math inline">\(f_{X_1}(x
 </figcaption>
 </figure>
 </div>
-<hr>
 </section>
-<section id="mutual-information" class="level3" data-number="6.4.3">
-<h3 data-number="6.4.3" class="anchored" data-anchor-id="mutual-information"><span class="header-section-number">6.4.3</span> Mutual Information</h3>
+<section id="mutual-information" class="level4" data-number="6.4.1.3">
+<h4 data-number="6.4.1.3" class="anchored" data-anchor-id="mutual-information"><span class="header-section-number">6.4.1.3</span> Mutual Information</h4>
 <blockquote class="blockquote">
 <p>Covariance and correlation are measures of <em>linear</em> dependence. Is there a conventional method for quantifying dependence more generally?</p>
 </blockquote>
@@ -1347,8 +1362,9 @@ f_{X_2}(x_2) &amp;= 6x_2(1-x_2) \,.
 </blockquote>
 </section>
 </section>
-<section id="conditional-expected-value-and-variance" class="level2" data-number="6.5">
-<h2 data-number="6.5" class="anchored" data-anchor-id="conditional-expected-value-and-variance"><span class="header-section-number">6.5</span> Conditional Expected Value and Variance</h2>
+</section>
+<section id="sec-chap6conditional" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="sec-chap6conditional"><span class="header-section-number">6.5</span> Conditional Expected Value and Variance</h2>
 <div class="graybox">
 <p>What to take away from this section:</p>
 <ul>
@@ -1379,9 +1395,10 @@ E[X_1] = E[E[X_1 \vert X_2]] &amp;= \int_{x_2} f_{X_2}(x_2) E[X_1 \vert X_2] dx_
 V[X_1] = V[E[X_1 \vert X_2]] + E[V[X_1 \vert X_2]] \,.
 \]</span> The intuitive interpretation of this equation is that it reflects that <span class="math inline">\(X_1\)</span> can vary because the mean of <span class="math inline">\(X_1 \vert X_2\)</span> can shift as a function of <span class="math inline">\(X_2\)</span> (so we want to quantify how much <span class="math inline">\(E[X_1 \vert X_2]\)</span> varies…giving the first term on the right above), but it can also vary due to being randomly distributed about the mean (so we want to quantify how much, on average, is that random variation…which gives the second term above). As one might guess, writing out the above expression in terms of integrals or summations over bivariate functions is going to be messy and thus we forego doing this here. (This might lead one to ask “how will we solve unconditional variance problems if expressions with integrals or summations are not provided?” It turns out there is an entire class of problems that we can solve without integration or summation, and we provide an example of a problem from that class below.)</p>
 <p>Note that if <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> are independent, it follows that, e.g., <span class="math inline">\(E[X_1 \vert X_2] = E[X_1]\)</span> and <span class="math inline">\(V[X_1 \vert X_2] = V[X_1]\)</span>. Let’s look at the latter expression. Above, we wrote that <span class="math inline">\(V[X_1] = V[E[X_1 \vert X_2]] + E[V[X_1 \vert X_2]]\)</span>. If <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> are independent, then <span class="math inline">\(E[X_1 \vert X_2]\)</span> is a constant, and thus <span class="math inline">\(V[E[X_1 \vert X_2]] = 0\)</span> (because a constant does not vary). In addition, <span class="math inline">\(V[X_1 \vert X_2]\)</span> is a constant (it doesn’t vary as <span class="math inline">\(X_2\)</span> changes) and thus <span class="math inline">\(E[V[X_1 \vert X_2]] = V[X_1 \vert X_2]\)</span>. So in the end, <span class="math inline">\(V[X_1] = 0 + V[X_1 \vert X_2] = V[X_1 \vert X_2]\)</span>.</p>
-<hr>
-<section id="conditional-and-unconditional-expected-value-given-a-bivariate-distribution" class="level3" data-number="6.5.1">
-<h3 data-number="6.5.1" class="anchored" data-anchor-id="conditional-and-unconditional-expected-value-given-a-bivariate-distribution"><span class="header-section-number">6.5.1</span> Conditional and Unconditional Expected Value Given a Bivariate Distribution</h3>
+<section id="examples-3" class="level3" data-number="6.5.1">
+<h3 data-number="6.5.1" class="anchored" data-anchor-id="examples-3"><span class="header-section-number">6.5.1</span> Examples</h3>
+<section id="conditional-and-unconditional-expected-value-given-a-bivariate-distribution" class="level4" data-number="6.5.1.1">
+<h4 data-number="6.5.1.1" class="anchored" data-anchor-id="conditional-and-unconditional-expected-value-given-a-bivariate-distribution"><span class="header-section-number">6.5.1.1</span> Conditional and Unconditional Expected Value Given a Bivariate Distribution</h4>
 <blockquote class="blockquote">
 <p>Let <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> have the following joint probability density function: <span class="math display">\[
 f_{X_1,X_2}(x_1,x_2) = 6(1-x_2) \,,
@@ -1405,10 +1422,9 @@ E[X_1] &amp;= \int_0^1 f_{X_2}(x_2) E[X_1 \vert X_2] dx_2 \\
 &amp;= 3 B(3,2) = 3 \times 2! \times 1! / 4! = 1/4 \,.
 \end{align*}\]</span></p>
 </blockquote>
-<hr>
 </section>
-<section id="conditional-and-unconditional-expected-value-and-variance-given-two-univariate-distributions" class="level3" data-number="6.5.2">
-<h3 data-number="6.5.2" class="anchored" data-anchor-id="conditional-and-unconditional-expected-value-and-variance-given-two-univariate-distributions"><span class="header-section-number">6.5.2</span> Conditional and Unconditional Expected Value and Variance Given Two Univariate Distributions</h3>
+<section id="conditional-and-unconditional-expected-value-and-variance-given-two-univariate-distributions" class="level4" data-number="6.5.1.2">
+<h4 data-number="6.5.1.2" class="anchored" data-anchor-id="conditional-and-unconditional-expected-value-and-variance-given-two-univariate-distributions"><span class="header-section-number">6.5.1.2</span> Conditional and Unconditional Expected Value and Variance Given Two Univariate Distributions</h4>
 <blockquote class="blockquote">
 <p>Let’s look at the following problem: the number of homework assignments due in a given week, <span class="math inline">\(N\)</span>, varies from week to week and its value is sampled from a Poisson distribution with mean <span class="math inline">\(\lambda\)</span>. The time to complete any one homework assignment, <span class="math inline">\(X\)</span>, also varies, and its value is sampled from a Gamma distribution with parameter <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> (and is the form of the Gamma with expected value <span class="math inline">\(\alpha\beta\)</span> and variance <span class="math inline">\(\alpha\beta^2\)</span>). Let <span class="math inline">\(T \vert N = \sum_{i=1}^N X_i\)</span> be the total time spent completing <span class="math inline">\(N\)</span> homework assignments. (Assume all the <span class="math inline">\(X_i\)</span>’s are independent random variables.) What are <span class="math inline">\(E[T]\)</span> and <span class="math inline">\(V[T]\)</span>?</p>
 </blockquote>
@@ -1431,8 +1447,9 @@ V[T] &amp;= V[E[T \vert N]] + E[V[T \vert N]] \\
 </blockquote>
 </section>
 </section>
-<section id="the-multivariate-normal-distribution" class="level2" data-number="6.6">
-<h2 data-number="6.6" class="anchored" data-anchor-id="the-multivariate-normal-distribution"><span class="header-section-number">6.6</span> The Multivariate Normal Distribution</h2>
+</section>
+<section id="sec-chap6multnorm" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="sec-chap6multnorm"><span class="header-section-number">6.6</span> The Multivariate Normal Distribution</h2>
 <div class="graybox">
 <p>What to take away from this section:</p>
 <ul>
@@ -1446,7 +1463,7 @@ V[T] &amp;= V[E[T \vert N]] + E[V[T \vert N]] \\
 <p>The joint probability density function for the multivariate normal is given by <span class="math display">\[
 f_{\mathbf{X}}(\mathbf{x}) = \frac{1}{\sqrt{(2\pi)^p \vert \boldsymbol{\Sigma} \vert}} \exp\left(-\frac12 (\mathbf{x}-\boldsymbol{\mu})^T \boldsymbol{\Sigma}^{-1} (\mathbf{x}-\boldsymbol{\mu}) \right) \,.
 \]</span> Here, <span class="math inline">\(\mathbf{x} = \{x_1,\ldots,x_p\}\)</span>, and <span class="math inline">\(\boldsymbol{\mu} =
-\{\mu_1,\ldots,\mu_p\}\)</span> are the centroids of the normal along each of the <span class="math inline">\(p\)</span> coordinate axes. <span class="math inline">\(\boldsymbol{\Sigma}^{-1}\)</span> is the inverse of the covariance matrix <span class="math inline">\(\boldsymbol{\Sigma}\)</span>, while <span class="math inline">\(\vert \boldsymbol{\Sigma} \vert\)</span> is the determinant of <span class="math inline">\(\boldsymbol{\Sigma}\)</span>. (If the reader is unfamiliar with these terms, see the short description of matrices in Chapter 8.) We denote sampling from this distribution with the notation <span class="math display">\[
+\{\mu_1,\ldots,\mu_p\}\)</span> are the centroids of the normal along each of the <span class="math inline">\(p\)</span> coordinate axes. <span class="math inline">\(\boldsymbol{\Sigma}^{-1}\)</span> is the inverse of the covariance matrix <span class="math inline">\(\boldsymbol{\Sigma}\)</span>, while <span class="math inline">\(\vert \boldsymbol{\Sigma} \vert\)</span> is the determinant of <span class="math inline">\(\boldsymbol{\Sigma}\)</span>. We denote sampling from this distribution with the notation <span class="math display">\[
 \mathbf{X} \sim \mathcal{N}(\boldsymbol{\mu},\boldsymbol{\Sigma}) \,,
 \]</span> where <span class="math inline">\(\mathbf{X}\)</span> is a <span class="math inline">\(p\)</span>-dimensional vector.</p>
 <p><em>To be clear: the multivariate normal is not a distribution that we work with by hand!</em> We would conventionally use, e.g., <code>R</code> to do any and all calculations.</p>
@@ -1468,9 +1485,10 @@ f_{\mathbf{X}}(\mathbf{x}) = \frac{1}{\sqrt{(2\pi)^p \vert \boldsymbol{\Sigma} \
 \boldsymbol{\Sigma}_c &amp;= \boldsymbol{\Sigma}_{uu} - \boldsymbol{\Sigma}_{uv} \boldsymbol{\Sigma}_{vv}^{-1} \boldsymbol{\Sigma}_{vu} \,.
 \end{align*}\]</span></p></li>
 </ol>
-<hr>
-<section id="the-marginal-distribution-of-a-multivariate-normal-distribution" class="level3" data-number="6.6.1">
-<h3 data-number="6.6.1" class="anchored" data-anchor-id="the-marginal-distribution-of-a-multivariate-normal-distribution"><span class="header-section-number">6.6.1</span> The Marginal Distribution of a Multivariate Normal Distribution</h3>
+<section id="examples-4" class="level3" data-number="6.6.1">
+<h3 data-number="6.6.1" class="anchored" data-anchor-id="examples-4"><span class="header-section-number">6.6.1</span> Examples</h3>
+<section id="the-marginal-distribution-of-a-multivariate-normal-distribution" class="level4" data-number="6.6.1.1">
+<h4 data-number="6.6.1.1" class="anchored" data-anchor-id="the-marginal-distribution-of-a-multivariate-normal-distribution"><span class="header-section-number">6.6.1.1</span> The Marginal Distribution of a Multivariate Normal Distribution</h4>
 <blockquote class="blockquote">
 <p>Let’s suppose that we have a three-dimensional normal distribution with means <span class="math inline">\(\boldsymbol{\mu} = \{2,4,6\}\)</span> and covariance matrix <span class="math display">\[
 \boldsymbol{\Sigma} = \left( \begin{array}{ccc} 2 &amp; 0.5 &amp; 1.2 \\ 0.5 &amp; 2 &amp; 1 \\ 1.2 &amp; 1 &amp; 2 \end{array} \right) \,.
@@ -1518,10 +1536,9 @@ Figure&nbsp;6.8: Contour plot indicating the location and orientation of a bivar
 </div>
 </div>
 </div>
-<hr>
 </section>
-<section id="the-conditional-distribution-of-a-multivariate-normal-distribution" class="level3" data-number="6.6.2">
-<h3 data-number="6.6.2" class="anchored" data-anchor-id="the-conditional-distribution-of-a-multivariate-normal-distribution"><span class="header-section-number">6.6.2</span> The Conditional Distribution of a Multivariate Normal Distribution</h3>
+<section id="the-conditional-distribution-of-a-multivariate-normal-distribution" class="level4" data-number="6.6.1.2">
+<h4 data-number="6.6.1.2" class="anchored" data-anchor-id="the-conditional-distribution-of-a-multivariate-normal-distribution"><span class="header-section-number">6.6.1.2</span> The Conditional Distribution of a Multivariate Normal Distribution</h4>
 <blockquote class="blockquote">
 <p>Let’s assume the same setting as in the previous example. What is the conditional distribution of <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_3\)</span> given that <span class="math inline">\(X_2 = 5\)</span>?</p>
 </blockquote>
@@ -1547,10 +1564,9 @@ Figure&nbsp;6.9: Contour plot indicating the location and orientation of a bivar
 </div>
 </div>
 </div>
-<hr>
 </section>
-<section id="the-calculation-of-sample-covariance" class="level3" data-number="6.6.3">
-<h3 data-number="6.6.3" class="anchored" data-anchor-id="the-calculation-of-sample-covariance"><span class="header-section-number">6.6.3</span> The Calculation of Sample Covariance</h3>
+<section id="the-calculation-of-sample-covariance" class="level4" data-number="6.6.1.3">
+<h4 data-number="6.6.1.3" class="anchored" data-anchor-id="the-calculation-of-sample-covariance"><span class="header-section-number">6.6.1.3</span> The Calculation of Sample Covariance</h4>
 <blockquote class="blockquote">
 <p>Let’s assume that we observe <span class="math inline">\(n = 40\)</span> iid data drawn from a bivariate normal distribution with means <span class="math inline">\(\boldsymbol{\mu} = \{2,1\}\)</span> and covariance matrix <span class="math display">\[
 \boldsymbol{\Sigma} = \left( \begin{array}{cc} 1 &amp; 0.5 \\ 0.5 &amp; 2 \end{array} \right) \,.
@@ -1609,8 +1625,9 @@ C_{jk} = \frac{1}{n-1} \sum_{i=1}^n (X_{ji} - \bar{X}_j)(X_{ki} - \bar{X}_k) \,.
 </blockquote>
 </section>
 </section>
-<section id="exercises" class="level2" data-number="6.7">
-<h2 data-number="6.7" class="anchored" data-anchor-id="exercises"><span class="header-section-number">6.7</span> Exercises</h2>
+</section>
+<section id="sec-chap6exercises" class="level2" data-number="6.7">
+<h2 data-number="6.7" class="anchored" data-anchor-id="sec-chap6exercises"><span class="header-section-number">6.7</span> Exercises</h2>
 <ol type="1">
 <li><p>We are given the following bivariate pdf: <span class="math display">\[\begin{align*}
 f_{X_1,X_2}(x_1,x_2) = \left\{ \begin{array}{cc} k(x_1+x_2^2) &amp; 0 \leq x_1 \leq 1, 0 \leq x_2 \leq 1 \\ 0 &amp; \mbox{otherwise} \end{array} \right. \,.
@@ -2218,8 +2235,8 @@ f_{X_1,X_2}(x_1,x_2) = k x_1^2 \,,
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./07-optional.html" class="pagination-link" aria-label="Further Conceptual Details (Optional)">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Further Conceptual Details (Optional)</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./07-optional.html" class="pagination-link" aria-label="Additional Concepts (Optional)">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Additional Concepts (Optional)</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
