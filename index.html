@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,9 +11,6 @@
 
 <title>Modern Probability and Statistical Inference</title>
 <style>
-/* Default styles provided by pandoc.
-** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -42,10 +39,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-485d01fc63b59abcd3ee1bf1e8e2748d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -157,7 +154,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./07-optional.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Further Conceptual Details (Optional)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Additional Concepts (Optional)</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -189,7 +186,14 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a>
+  <ul>
+  <li><a href="#mathematical-prerequisites" id="toc-mathematical-prerequisites" class="nav-link" data-scroll-target="#mathematical-prerequisites">Mathematical Prerequisites</a></li>
+  <li><a href="#adapting-the-book-material" id="toc-adapting-the-book-material" class="nav-link" data-scroll-target="#adapting-the-book-material">Adapting the Book Material</a>
   <ul class="collapse">
+  <li><a href="#a-traditional-one-semester-probability-course" id="toc-a-traditional-one-semester-probability-course" class="nav-link" data-scroll-target="#a-traditional-one-semester-probability-course">A Traditional One-Semester Probability Course</a></li>
+  <li><a href="#a-traditional-one-semester-statistical-inference-course" id="toc-a-traditional-one-semester-statistical-inference-course" class="nav-link" data-scroll-target="#a-traditional-one-semester-statistical-inference-course">A Traditional One-Semester Statistical Inference Course</a></li>
+  <li><a href="#a-one-semester-probability-and-statistical-inference-course-for-data-scientists-or-engineers" id="toc-a-one-semester-probability-and-statistical-inference-course-for-data-scientists-or-engineers" class="nav-link" data-scroll-target="#a-one-semester-probability-and-statistical-inference-course-for-data-scientists-or-engineers">A One-Semester Probability and Statistical Inference Course (for Data Scientists or Engineers)</a></li>
+  </ul></li>
   <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements">Acknowledgements</a></li>
   </ul></li>
   </ul>
@@ -236,13 +240,56 @@ ul.task-list li input[type="checkbox"] {
 <p>My use of a spiral-learning framework is motivated by the observation that many students fixate on mathematics and coding and pay less attention to statistical concepts, with the details of concepts that are seen once often quickly forgotten. The spiral approach is meant to result in enhanced conceptual retention.</p>
 <p>To build the spiral structure, I have rather radically revised the order in which I cover topics, relative to the order one usually sees in a classic math-stat textbook. That textbook might have one chapter that illustrates the properties of discrete probability distributions using, e.g., the binomial, geometric, and Poisson distributions, then a second chapter that illustrates the properties of continuous distributions such as, e.g., the normal and gamma distributions, with neither chapter showing how these distributions are applied in statistical inference. Here, major distributions are broken out into their own chapters, and within each I revisit fundamental concepts: probability mass and density functions, cumulative distribution functions, statistics, sampling distibutions, point estimation, interval estimation, and hypothesis testing, etc. Then, as I move from chapter to chapter, I cover concepts at greater depth. As a concrete example: when discussing point estimation in Chapter 1, I introduce the concepts of bias, variance, and using the likelihood function to define estimators; when I return to point estimation in Chapter 2, I review these concepts (and derive the MLEs for normal distribution parameters), then add the concepts of consistency, Fisher information, the Cramer-Rao lower bound, and the asymptotic distribution of maximum likelihood estimates. Then in Chapter 3, I add in sufficient statistics and likelihood factorization, along with the minimum variance unbiased estimator. Etc.</p>
 <p>Another important difference between this textbook and older, more established math-stat textbooks is that I utilize <code>R</code> for coding visualizations, analyses, and simulations. It is expected that this will help students understand concepts more readily; it also allows me to broaden the “problem space” beyond typically used, analytically tractable distributions. (But I note that the newest generation of textbooks often employ enhanced computation…so it is really the spiral structure that makes this textbook fundamentally different.)</p>
-<p>If you are an instructor, feel free to utilize aspects of this book for your own class(es), but please do not share this document without my expressed consent. If you have comments or questions (or you want an updated version), please send email to the address given below.</p>
+<section id="mathematical-prerequisites" class="level3">
+<h3 class="anchored" data-anchor-id="mathematical-prerequisites">Mathematical Prerequisites</h3>
+<p>We expect students to be familiar with both pre-calculus concepts (specifically exponential functions and logarithms) as well as differential and integral calculus. In addition, students are expected to have basic familiarity with double integration and with matrices and matrix multiplication prior to engaging with the content on <a href="06-multivariate.html">multivariate distributions</a>, although experience has shown that instructors can cover these concepts themselves relatively quickly and as needed, as they are not utilized at depth.</p>
+</section>
+<section id="adapting-the-book-material" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="adapting-the-book-material">Adapting the Book Material</h3>
+<section id="a-traditional-one-semester-probability-course" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="a-traditional-one-semester-probability-course">A Traditional One-Semester Probability Course</h4>
+<ul>
+<li>Sections <a href="01-probability.html#sec-chap1data">1.1</a> - <a href="01-probability.html#sec-chap1cumulative">1.9</a> (introductory material through cumulative distribution functions), with the <code>R</code>-based sections <a href="01-probability.html#sec-chap1working">1.8</a> and <a href="01-probability.html#sec-chap1sampling">1.11</a> being optional</li>
+<li>Sections <a href="02-normal.html#sec-chap2pdf">2.1</a> - <a href="02-normal.html#sec-chap2cdf">2.2</a> (the normal distribution), with selected results as appropriate in sections <a href="02-normal.html#sec-chap2mgf">2.3</a> - <a href="02-normal.html#sec-chap2t">2.10</a></li>
+<li>Section <a href="02-normal.html#sec-chap2exponential">2.17</a> (the exponential family)</li>
+<li>Sections <a href="03-binomial.html#sec-chap3pmf">3.1</a> - <a href="03-binomial.html#sec-chap3related">3.2</a> (the binomial and related distributions)</li>
+<li>Sections <a href="04-poisson.html#sec-chap4pmf">4.1</a> - <a href="04-poisson.html#sec-chap4related">4.2</a> (the Poisson and related distributions)</li>
+<li>Section <a href="05-uniform.html#sec-chap5examples">5.1</a> (the uniform and Pareto distributions)</li>
+<li>Chapter <a href="06-multivariate.html">6</a> (multivariate distributions)</li>
+</ul>
+</section>
+<section id="a-traditional-one-semester-statistical-inference-course" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="a-traditional-one-semester-statistical-inference-course">A Traditional One-Semester Statistical Inference Course</h4>
+<ul>
+<li>Sections <a href="01-probability.html#sec-chap1stat">1.12</a> - <a href="01-probability.html#sec-chap1likelihood">1.13</a> (statistics and the likelihood function)</li>
+<li>Selected results as appropriate in sections <a href="02-normal.html#sec-chap2mgf">2.3</a> - <a href="02-normal.html#sec-chap2t">2.10</a>, plus sections <a href="03-binomial.html#sec-chap3linear">3.4</a> and <a href="04-poisson.html#sec-chap4linear">4.4</a> (derivation of sampling distributions, and sampling distributions related to the normal, binomial, and Poisson distributions)</li>
+<li>Section <a href="03-binomial.html#sec-chap3order">3.5</a> (order statistics)</li>
+<li>Sections <a href="01-probability.html#sec-chap1point">1.14</a>, <a href="02-normal.html#sec-chap2point">2.11</a>, <a href="03-binomial.html#sec-chap3point">3.6</a>, and <a href="04-poisson.html#sec-chap4point">4.5</a> (point estimation)</li>
+<li>Sections <a href="01-probability.html#sec-chap1inference">1.15</a> - <a href="01-probability.html#sec-chap1confidence">1.16</a>, <a href="02-normal.html#sec-chap2confidence">2.12</a>, <a href="03-binomial.html#sec-chap3confidence">3.7</a>, and <a href="04-poisson.html#sec-chap4confidence">4.6</a> (confidence interval estimation)</li>
+<li>Sections <a href="01-probability.html#sec-chap1hypothesis">1.17</a>, <a href="02-normal.html#sec-chap2hypothesis">2.13</a>, <a href="03-binomial.html#sec-chap3nplemma">3.8</a> - <a href="03-binomial.html#sec-chap3categorical">3.9</a>, and <a href="04-poisson.html#sec-chap4hypothesis">4.7</a> (hypothesis testing)</li>
+<li>Sections <a href="02-normal.html#sec-chap2slr">2.15</a> - <a href="02-normal.html#sec-chap2anova">2.16</a>, <a href="sec-chap3logistic">3.10</a> - <a href="03-binomial.html#sec-chap3naivebayes">3.11</a>,and <a href="04-poisson.html#sec-chap4poireg">4.8</a> (regression)</li>
+<li>Optional: sections <a href="05-uniform.html#sec-chap5linear">5.2</a> - <a href="05-uniform.html#sec-chap5hypothesis">5.5</a> (inference with domain-specifying parameters)</li>
+</ul>
+</section>
+<section id="a-one-semester-probability-and-statistical-inference-course-for-data-scientists-or-engineers" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="a-one-semester-probability-and-statistical-inference-course-for-data-scientists-or-engineers">A One-Semester Probability and Statistical Inference Course (for Data Scientists or Engineers)</h4>
+<ul>
+<li>Chapter <a href="01-probability.html">1</a></li>
+<li>Sections <a href="02-normal.html#sec-chap2pdf">2.1</a> - <a href="02-normal.html#sec-chap2cdf">2.2</a> (the normal distribution), with formulae drawn as appropriate in sections <a href="02-normal.html#sec-chap2standard">2.5</a> - <a href="02-normal.html#sec-chap2t">2.10</a></li>
+<li>Sections <a href="03-binomial.html#sec-chap3pmf">3.1</a> - <a href="03-binomial.html#sec-chap3related">3.2</a> (the binomial and related distributions)</li>
+<li>Sections <a href="04-poisson.html#sec-chap4pmf">4.1</a> - <a href="04-poisson.html#sec-chap4related">4.2</a> (the Poisson and related distributions)</li>
+<li>Optional: section <a href="05-uniform.html#sec-chap5examples">5.1</a> (the uniform and Pareto distributions) and chapter <a href="06-multivariate.html">6</a> (multivariate distributions)</li>
+</ul>
+<p>In addition, one may wish to address numerical methods such as, e.g., <a href="02-normal.html#sec-chap2confidence">root-finding for confidence interval estimation</a>, <a href="04-poisson.html#sec-chap4numopt">optimization for maximum-likelihood estimation</a>, <a href="04-poisson.html#sec-chap4bootstrap">simulations and the bootstrap</a>, etc.</p>
+</section>
+</section>
+<section id="acknowledgements" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="acknowledgements">Acknowledgements</h3>
+<p>I would like to thank Eileen Xiao, who converted the original base-<code>R</code> graphics in the book to <code>ggplot()</code>-based graphics during the summer of 2023.</p>
+<hr>
 <p>Peter Freeman</p>
 <p><code>pfreeman@cmu.edu</code></p>
 <p>August 2026</p>
-<section id="acknowledgements" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="acknowledgements">Acknowledgements</h2>
-<p>I would like to thank Eileen Xiao, who converted the original base-<code>R</code> graphics in the book to <code>ggplot()</code>-based graphics during the summer of 2023.</p>
 
 
 </section>
@@ -300,14 +347,13 @@ ul.task-list li input[type="checkbox"] {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
