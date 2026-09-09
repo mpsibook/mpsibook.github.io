@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,10 +11,16 @@
 
 <title>Modern Probability and Statistical Inference</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -22,7 +28,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -39,10 +64,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-485d01fc63b59abcd3ee1bf1e8e2748d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-d3f7f8e73c8d287b30bcf59c2b563615.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -236,10 +261,9 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="preface" class="level1 unnumbered">
 <h1 class="unnumbered">Preface</h1>
-<p>I have developed this textbook for a new mathematical statistics course sequence for statistics students at Carnegie Mellon University (numbered 36-235 and 36-236), first piloted in Fall 2022 and Spring 2023. <em>The primary difference between it and others that are commonly used in math-stat classes is that I explicitly implement a</em> <strong>spiral-learning</strong> <em>framework, with concepts that are usually covered in relative isolation elsewhere being repeatedly covered here (such as, e.g., point estimation).</em></p>
-<p>My use of a spiral-learning framework is motivated by the observation that many students fixate on mathematics and coding and pay less attention to statistical concepts, with the details of concepts that are seen once often quickly forgotten. The spiral approach is meant to result in enhanced conceptual retention.</p>
-<p>To build the spiral structure, I have rather radically revised the order in which I cover topics, relative to the order one usually sees in a classic math-stat textbook. That textbook might have one chapter that illustrates the properties of discrete probability distributions using, e.g., the binomial, geometric, and Poisson distributions, then a second chapter that illustrates the properties of continuous distributions such as, e.g., the normal and gamma distributions, with neither chapter showing how these distributions are applied in statistical inference. Here, major distributions are broken out into their own chapters, and within each I revisit fundamental concepts: probability mass and density functions, cumulative distribution functions, statistics, sampling distibutions, point estimation, interval estimation, and hypothesis testing, etc. Then, as I move from chapter to chapter, I cover concepts at greater depth. As a concrete example: when discussing point estimation in Chapter 1, I introduce the concepts of bias, variance, and using the likelihood function to define estimators; when I return to point estimation in Chapter 2, I review these concepts (and derive the MLEs for normal distribution parameters), then add the concepts of consistency, Fisher information, the Cramer-Rao lower bound, and the asymptotic distribution of maximum likelihood estimates. Then in Chapter 3, I add in sufficient statistics and likelihood factorization, along with the minimum variance unbiased estimator. Etc.</p>
-<p>Another important difference between this textbook and older, more established math-stat textbooks is that I utilize <code>R</code> for coding visualizations, analyses, and simulations. It is expected that this will help students understand concepts more readily; it also allows me to broaden the “problem space” beyond typically used, analytically tractable distributions. (But I note that the newest generation of textbooks often employ enhanced computation…so it is really the spiral structure that makes this textbook fundamentally different.)</p>
+<p><em>Modern Probability and Statistical Inference</em> has been developed to support the mathematical statistics course sequence for statistics students at Carnegie Mellon University (numbered 36-235 and 36-236). <em>The primary difference between this textbook and others that are commonly assigned in mathematical statistics classes is that this one utilizes a</em> <strong>spiral-learning</strong> <em>framework (see, e.g., <span class="citation" data-cites="bruner1976">Bruner (<a href="09-references.html#ref-bruner1976" role="doc-biblioref">1976</a>)</span>),</em> which simply means that concepts that might be covered just once elsewhere (such as point estimation) are repeatedly covered here. Our primary motivation in adopting a spiral-learning framework is the observation that many students fixate on equations and coding and pay less attention to statistical concepts, with details that are seen once often being quickly forgotten. But in addition to helping enhance conceptual retention, a spiral-learning format can also help students build up knowledge of particular concepts bit-by-bit as opposed to all at once, leading to reduced cognitive overload.</p>
+<p>We have rather radically revised the order in which we cover topics, relative to the order one usually sees in a classic mathematical statistics textbook. A classic textbook might have one chapter that illustrates the properties of discrete probability distributions and discusses the specifics of the binomial, geometric, and Poisson distributions, then a subsequent chapter that illustrates the properties of continuous distributions such as, e.g., the normal and gamma distributions…but with neither chapter actually showing how these distributions are applied in statistical inference. Here, major distributions are broken out into their own chapters (Chapters 1-5), and within each we revisit fundamental concepts: probability mass and density functions, cumulative distribution functions, statistics, sampling distibutions, point estimation, interval estimation, and hypothesis testing, etc. Then, as we move from chapter to chapter, we cover inferential concepts at greater depth. As a concrete example: when discussing point estimation in Chapter 1, we introduce the concepts of bias, variance, and using the likelihood function to define estimators; when we return to point estimation in Chapter 2, we review these concepts (and derive the MLEs for normal distribution parameters), then add the concepts of consistency, Fisher information, the Cramer-Rao lower bound, and the asymptotic distribution of maximum likelihood estimates. Then in Chapter 3, we add in sufficient statistics and likelihood factorization, along with the minimum variance unbiased estimator. Etc.</p>
+<p>Another important difference between this textbook and older, more established mathematical statistics textbooks is that we utilize <code>R</code> for coding visualizations, analyses, and simulations. It is expected that this will help students understand concepts more readily; it also allows me to broaden the “problem space” beyond typically used, analytically tractable distributions. (But we note that the newest generation of textbooks often employ enhanced computation…so it is really the spiral structure that makes this textbook fundamentally different.)</p>
 <section id="mathematical-prerequisites" class="level3">
 <h3 class="anchored" data-anchor-id="mathematical-prerequisites">Mathematical Prerequisites</h3>
 <p>We expect students to be familiar with both pre-calculus concepts (specifically exponential functions and logarithms) as well as differential and integral calculus. In addition, students are expected to have basic familiarity with double integration and with matrices and matrix multiplication prior to engaging with the content on <a href="06-multivariate.html">multivariate distributions</a>, although experience has shown that instructors can cover these concepts themselves relatively quickly and as needed, as they are not utilized at depth.</p>
@@ -292,6 +316,11 @@ ul.task-list li input[type="checkbox"] {
 <p>August 2026</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-bruner1976" class="csl-entry" role="listitem">
+Bruner, J. S. 1976. <em><span class="nocase">The Process of Education</span></em>. Harvard University Press, MA.
+</div>
+</div>
 </section>
 </section>
 
@@ -347,13 +376,14 @@ ul.task-list li input[type="checkbox"] {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
