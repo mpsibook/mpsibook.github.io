@@ -2,17 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>6&nbsp; Multivariate Distributions – Modern Probability and Statistical Inference</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -73,10 +79,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-485d01fc63b59abcd3ee1bf1e8e2748d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-d3f7f8e73c8d287b30bcf59c2b563615.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -106,7 +112,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -119,7 +125,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -563,7 +569,7 @@ f_{X_1,X_2}(x_1,x_2) = c(1-x_2) \,,
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pracma)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pracma)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the (finite) domain</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>x1min <span class="ot">&lt;-</span> <span class="dv">0</span></span>
@@ -576,31 +582,31 @@ f_{X_1,X_2}(x_1,x_2) = c(1-x_2) \,,
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="dv">1</span> <span class="sc">-</span> x2</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>I <span class="ot">&lt;-</span> <span class="fu">integral2</span>(f, x1min, x1max, x2min, x2max)<span class="sc">$</span>Q</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"The value of c is"</span>, <span class="dv">1</span> <span class="sc">/</span> I, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"The value of c is"</span>, <span class="dv">1</span> <span class="sc">/</span> I, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>The value of c is 6 </code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Determine E[X2]</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Determine E[X2]</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x1, x2) {</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="dv">6</span> <span class="sc">*</span> x2 <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> x2)</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>I <span class="ot">&lt;-</span> <span class="fu">integral2</span>(f, x1min, x1max, x2min, x2max)<span class="sc">$</span>Q</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"E[X2] ="</span>, I, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"E[X2] ="</span>, I, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>E[X2] = 0.5 </code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Determine E[X2^2], and the variance</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Determine E[X2^2], and the variance</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x1, x2) {</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="dv">6</span> <span class="sc">*</span> x2<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> x2)</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>J <span class="ot">&lt;-</span> <span class="fu">integral2</span>(f, x1min, x1max, x2min, x2max)<span class="sc">$</span>Q</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"V[X2] ="</span>, J <span class="sc">-</span> I<span class="sc">^</span><span class="dv">2</span>, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"V[X2] ="</span>, J <span class="sc">-</span> I<span class="sc">^</span><span class="dv">2</span>, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>V[X2] = 0.05 </code></pre>
@@ -649,9 +655,9 @@ Figure&nbsp;6.3: The probability density function <span class="math inline">\(6(
 </div>
 <p><br></p>
 <p>The <em>covariance</em> between two random variables <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> is a metric that quantifies the amount of <em>linear dependence</em> between them. (Other metrics of dependence, such as mutual information, are beyond the scope of this book.) It is defined as <span class="math display">\[
-{\rm Cov}(X_1,X_2) = E[(X_1-\mu_1)(X_2-\mu_2)] \,,
+{\mathrm{Cov}}(X_1,X_2) = E[(X_1-\mu_1)(X_2-\mu_2)] \,,
 \]</span> but one rarely uses this expression, as there is a shortcut formula: <span class="math display">\[\begin{align*}
-{\rm Cov}(X_1,X_2) &amp;= E[X_1X_2 - X_1\mu_2 - X_2\mu_1 + \mu_1\mu_2] \\
+{\mathrm{Cov}}(X_1,X_2) &amp;= E[X_1X_2 - X_1\mu_2 - X_2\mu_1 + \mu_1\mu_2] \\
 &amp;= E[X_1X_2] - \mu_2E[X_1] - \mu_1E[X_2] + \mu_1\mu_2 \\
 &amp;= E[X_1X_2] - E[X_2]E[X_1] - E[X_1]E[X_2] + E[X_1]E[X_2] \\
 &amp;= E[X_1X_2] - E[X_1]E[X_2] \,.
@@ -710,11 +716,11 @@ E[(tX_1-X_2)^2] &amp;= E[t^2X_1^2 - 2tX_1X_2 + X_2^2] \\
 \end{align*}\]</span> (Recall that expected values are constants, and not themselves random variables.) The key here is that if <span class="math inline">\(a t^2 + b t + c = 0\)</span>, there is one real root to this quadratic equation, while if <span class="math inline">\(a t^2 + b t + c &gt; 0\)</span>, there are no real roots. Thus the discriminant, <span class="math inline">\(b^2 - 4ac\)</span>, must be <span class="math inline">\(\leq 0\)</span>, and so <span class="math display">\[\begin{align*}
 b^2 - 4ac &amp;= 4 (E[X_1X_2])^2 - 4 E[X_1^2] E[X_2^2] \leq 0 \\
 \Rightarrow&amp; (E[X_1X_2])^2 \leq E[X_1^2] E[X_2^2] \,.
-\end{align*}\]</span> At this point, the reader might ask “well, what about this?” The expression to the left above, <span class="math inline">\((E[X_1X_2])^2\)</span>, is <span class="math inline">\([{\rm Cov}(X_1,X_2)]^2\)</span> when <span class="math inline">\(\mu_1 = \mu_2 = 0\)</span>, while the expression to the right, <span class="math inline">\(E[X_1^2] E[X_2^2]\)</span>, is <span class="math inline">\(V[X_1]V[X_2]\)</span> when <span class="math inline">\(\mu_1 = \mu_2 = 0\)</span>. Thus <span class="math display">\[
-\vert {\rm Cov}(X_1,X_2) \vert \leq \sqrt{V[X_1]V[X_2]} = \sigma_1 \sigma_2 \,,
-\]</span> or <span class="math inline">\(- \sigma_1 \sigma_2 \leq {\rm Cov}(X_1,X_2) \leq \sigma_1 \sigma_2\)</span>. The fact that we may not know immediately the value of <span class="math inline">\(\sigma_1 \sigma_2\)</span> is what makes any numerical value of <span class="math inline">\({\rm Cov}(X_1,X_2)\)</span> hard to interpret.</p>
+\end{align*}\]</span> At this point, the reader might ask “well, what about this?” The expression to the left above, <span class="math inline">\((E[X_1X_2])^2\)</span>, is <span class="math inline">\([{\mathrm{Cov}}(X_1,X_2)]^2\)</span> when <span class="math inline">\(\mu_1 = \mu_2 = 0\)</span>, while the expression to the right, <span class="math inline">\(E[X_1^2] E[X_2^2]\)</span>, is <span class="math inline">\(V[X_1]V[X_2]\)</span> when <span class="math inline">\(\mu_1 = \mu_2 = 0\)</span>. Thus <span class="math display">\[
+\vert {\mathrm{Cov}}(X_1,X_2) \vert \leq \sqrt{V[X_1]V[X_2]} = \sigma_1 \sigma_2 \,,
+\]</span> or <span class="math inline">\(- \sigma_1 \sigma_2 \leq {\mathrm{Cov}}(X_1,X_2) \leq \sigma_1 \sigma_2\)</span>. The fact that we may not know immediately the value of <span class="math inline">\(\sigma_1 \sigma_2\)</span> is what makes any numerical value of <span class="math inline">\({\mathrm{Cov}}(X_1,X_2)\)</span> hard to interpret.</p>
 <p>Thus we conventionally turn to an alternate expression of linear dependence, the <em>correlation coefficient</em>: <span class="math display">\[
-\rho_{X_1,X_2} = \frac{{\rm Cov}(X_1,X_2)}{\sigma_1\sigma_2} \Rightarrow -1 \leq \rho \leq 1 \,.
+\rho_{X_1,X_2} = \frac{{\mathrm{Cov}}(X_1,X_2)}{\sigma_1\sigma_2} \Rightarrow -1 \leq \rho \leq 1 \,.
 \]</span> If <span class="math inline">\(\rho_{X_1,X_2} &lt; 0\)</span>, then an increase in the sampled value of <span class="math inline">\(X_1\)</span> is associated with, <em>on average</em>, a smaller sampled value of <span class="math inline">\(X_2\)</span>, i.e., <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> are negatively correlated…whereas if <span class="math inline">\(\rho_{X_1,X_2} &gt; 0\)</span>, larger sampled values for <span class="math inline">\(X_1\)</span> are associated on average with larger sampled values of <span class="math inline">\(X_2\)</span>, i.e., <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> are positively correlated.</p>
 <p>(We note that we have actually seen <span class="math inline">\(\rho_{X_1,X_2}\)</span> before, in <a href="02-normal.html#sec-chap2slr" class="quarto-xref"><span>Section 2.15</span></a>, when we introduced correlation as a metric of the strength of linear association as measured in simple linear regression. Recall that we estimate <span class="math inline">\(\rho_{X_1,X_2}\)</span> with, e.g., the Pearson correlation coefficient <span class="math inline">\(R\)</span>, and that we use coefficient of determination <span class="math inline">\(R^2\)</span> to quantify the usefulness of the linear regression model. See <a href="#fig-covplot2" class="quarto-xref">Figure&nbsp;<span>6.5</span></a>.)</p>
 <div id="fig-covplot2" class="quarto-layout-panel">
@@ -769,13 +775,13 @@ Figure&nbsp;6.5: The same data as shown in <a href="#fig-covplot1" class="quarto
 E[Y] = E\left[ \sum_{i=1}^n a_i X_i \right] = \sum_{i=1}^n a_i E[X_i] \,.
 \]</span> Dependencies between the <span class="math inline">\(X_i\)</span>’s does not affect this equality. As for the variance of <span class="math inline">\(Y\)</span>…</p>
 <p>We start by encapsulating the information about the covariances between each variable pair into a <em>covariance matrix</em>. For <span class="math inline">\(n\)</span> random variables, the <span class="math inline">\(n \times n\)</span> covariance matrix <span class="math inline">\(\boldsymbol{\Sigma}\)</span> is <span class="math display">\[
-\boldsymbol{\Sigma} = \left[ \begin{array}{ccc} {\rm Cov}(X_1,X_1) &amp; \cdots &amp; {\rm Cov}(X_1,X_n) \\ \vdots &amp; \ddots &amp; \vdots \\ {\rm Cov}(X_n,X_1) &amp; \cdots &amp; {\rm Cov}(X_n,X_n) \end{array} \right] = \left[ \begin{array}{ccc} V[X_1] &amp; \cdots &amp; {\rm Cov}(X_1,X_n) \\ \vdots &amp; \ddots &amp; \vdots \\ {\rm Cov}(X_n,X_1) &amp; \cdots &amp; V[X_n] \end{array} \right] \,.
+\boldsymbol{\Sigma} = \left[ \begin{array}{ccc} {\mathrm{Cov}}(X_1,X_1) &amp; \cdots &amp; {\mathrm{Cov}}(X_1,X_n) \\ \vdots &amp; \ddots &amp; \vdots \\ {\mathrm{Cov}}(X_n,X_1) &amp; \cdots &amp; {\mathrm{Cov}}(X_n,X_n) \end{array} \right] = \left[ \begin{array}{ccc} V[X_1] &amp; \cdots &amp; {\mathrm{Cov}}(X_1,X_n) \\ \vdots &amp; \ddots &amp; \vdots \\ {\mathrm{Cov}}(X_n,X_1) &amp; \cdots &amp; V[X_n] \end{array} \right] \,.
 \]</span> We note that the diagonal of this matrix (the elements from the upper left corner to the lower right corner) contains the individual variances, since Cov(<span class="math inline">\(X_i,X_i\)</span>) = <span class="math inline">\(V[X_i]\)</span>, and that because Cov(<span class="math inline">\(X_i,X_j\)</span>) = Cov(<span class="math inline">\(X_j,X_i\)</span>), the matrix is symmetric about the diagonal.</p>
 <p>Now, let <span class="math inline">\(a^T = [ a_1 ~ a_2 ~ \ldots a_n ]\)</span> be the <span class="math inline">\(1 \times n\)</span> matrix (or transposed vector) of coefficients. Then: <span class="math display">\[
 V[Y] = a^T \boldsymbol{\Sigma} a \,.
 \]</span> Nice and compact! Let’s compare this to the equivalent expression that does not utilize matrices: <span class="math display">\[\begin{align*}
-V[Y] &amp;= \left[ a_1 ~ \ldots ~ a_n \right] \left[ \begin{array}{ccc} V[X_1] &amp; \cdots &amp; {\rm Cov}(X_1,X_n) \\ \vdots &amp; \ddots &amp; \vdots \\ {\rm Cov}(X_n,X_1) &amp; \cdots &amp; V[X_n] \end{array} \right] \left[ \begin{array}{c} a_1 \\ \vdots \\ a_n \end{array} \right] \\
-&amp;= \sum_{i=1}^n a_i^2 V[X_i] + 2\sum_{i=1}^{n-1} \sum_{j=i+1}^n a_i a_j {\rm Cov}(X_i,X_j) \,.
+V[Y] &amp;= \left[ a_1 ~ \ldots ~ a_n \right] \left[ \begin{array}{ccc} V[X_1] &amp; \cdots &amp; {\mathrm{Cov}}(X_1,X_n) \\ \vdots &amp; \ddots &amp; \vdots \\ {\mathrm{Cov}}(X_n,X_1) &amp; \cdots &amp; V[X_n] \end{array} \right] \left[ \begin{array}{c} a_1 \\ \vdots \\ a_n \end{array} \right] \\
+&amp;= \sum_{i=1}^n a_i^2 V[X_i] + 2\sum_{i=1}^{n-1} \sum_{j=i+1}^n a_i a_j {\mathrm{Cov}}(X_i,X_j) \,.
 \end{align*}\]</span> Note that we can derive this expression directly using the Law of the Unconscious Statistician: <span class="math display">\[\begin{align*}
 V[Y] = E[Y^2] - (E[Y])^2 = E[(Y - E[Y])^2] &amp;= E\left[ \left( \sum_{i=1}^n a_i X_i - \sum_{i=1}^n a_i \mu_i \right)^2 \right] \\
 &amp;= E\left[ \left(\sum_{i=1}^n a_i(X_i - \mu_i) \right)^2 \right] \,.
@@ -853,7 +859,7 @@ E[X_2^2] &amp;= \sum_{x_2} \sum_{x_2} x_2^2 p_{X_1,X_2}(x_1,x_2) \\
 </blockquote>
 <blockquote class="blockquote">
 <p>Because only two random variables are involved, we will first do the calculation using the summation form given at the end of the section: <span class="math display">\[\begin{align*}
-V[Y] &amp;= \sum_{i=1}^n a_i^2 V[X_i] + 2\sum_{i=1}^{n-1} \sum_{j=i+1}^n a_i a_j {\rm Cov}(X_i,X_j) \\
+V[Y] &amp;= \sum_{i=1}^n a_i^2 V[X_i] + 2\sum_{i=1}^{n-1} \sum_{j=i+1}^n a_i a_j {\mathrm{Cov}}(X_i,X_j) \\
 &amp;= 1^2 V[X_1] + (-1)^2 V[X_2] + 2 (1) (-1) \mbox{Cov}(X_1,X_2) \\
 &amp;= V[X_1] + V[X_2] - 2 \mbox{Cov}(X_1,X_2) \\
 &amp;= 0.25 + 0.45 - 2(-0.05) = 0.80 \,.
@@ -865,9 +871,9 @@ V[Y] &amp;= \sum_{i=1}^n a_i^2 V[X_i] + 2\sum_{i=1}^{n-1} \sum_{j=i+1}^n a_i a_j
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>a     <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="sc">-</span><span class="dv">1</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>a     <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="sc">-</span><span class="dv">1</span>)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>Sigma <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="fl">0.25</span>, <span class="sc">-</span><span class="fl">0.05</span>, <span class="sc">-</span><span class="fl">0.05</span>, <span class="fl">0.45</span>), <span class="at">nrow =</span> <span class="dv">2</span>) <span class="co"># fill column-by-column</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">t</span>(a) <span class="sc">%*%</span> Sigma <span class="sc">%*%</span> a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">t</span>(a) <span class="sc">%*%</span> Sigma <span class="sc">%*%</span> a</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>     [,1]
@@ -917,7 +923,7 @@ p_{X_1,\ldots,X_m}(x_1,\ldots,x_m \vert p_1,\ldots,p_m) = \frac{k!}{x_1! \cdots 
 <blockquote class="blockquote">
 <p>Because <span class="math inline">\(X_i\)</span> and <span class="math inline">\(X_j\)</span> are each binomially distributed random variables, we can view them as sums of Bernoulli distributed random variables, i.e., we can write <span class="math display">\[
 X_i = \sum_{l=1}^k U_l ~~\mbox{and}~~ X_j = \sum_{l=1}^k V_l \,,
-\]</span> where <span class="math inline">\(U_l \sim\)</span> Bernoulli(<span class="math inline">\(p_i\)</span>) and <span class="math inline">\(V_l \sim\)</span> Bernoulli(<span class="math inline">\(p_j\)</span>), and where <span class="math inline">\(l\)</span> is an index representing the <span class="math inline">\(l^{\rm th}\)</span> trial.</p>
+\]</span> where <span class="math inline">\(U_l \sim\)</span> Bernoulli(<span class="math inline">\(p_i\)</span>) and <span class="math inline">\(V_l \sim\)</span> Bernoulli(<span class="math inline">\(p_j\)</span>), and where <span class="math inline">\(l\)</span> is an index representing the <span class="math inline">\(l^{\mathrm{th}}\)</span> trial.</p>
 </blockquote>
 <blockquote class="blockquote">
 <p>The covariance of <span class="math inline">\(X_i\)</span> and <span class="math inline">\(X_j\)</span> is thus <span class="math display">\[\begin{align*}
@@ -955,11 +961,11 @@ E[U_1V_2] = E[U_1]E[V_2] = p_ip_j \,.
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">202</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">202</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>x      <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">40</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">10</span>)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>Y      <span class="ot">&lt;-</span> <span class="dv">4</span> <span class="sc">+</span> <span class="fl">0.5</span> <span class="sc">*</span> x <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">40</span>)</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>lm.out <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y <span class="sc">~</span> x)</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm.out)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm.out)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
@@ -988,8 +994,8 @@ F-statistic: 61.76 on 1 and 38 DF,  p-value: 1.749e-09</code></pre>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>hat.sigma  <span class="ot">&lt;-</span> <span class="fu">summary</span>(lm.out)<span class="sc">$</span>sigma</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>hat.sigma2 <span class="ot">&lt;-</span> hat.sigma<span class="sc">^</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>hat.sigma  <span class="ot">&lt;-</span> <span class="fu">summary</span>(lm.out)<span class="sc">$</span>sigma</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>hat.sigma2 <span class="ot">&lt;-</span> hat.sigma<span class="sc">^</span><span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <blockquote class="blockquote">
@@ -998,7 +1004,7 @@ F-statistic: 61.76 on 1 and 38 DF,  p-value: 1.749e-09</code></pre>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">40</span>), x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">40</span>), x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <blockquote class="blockquote">
@@ -1007,7 +1013,7 @@ F-statistic: 61.76 on 1 and 38 DF,  p-value: 1.749e-09</code></pre>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>hat.sigma2 <span class="sc">*</span> <span class="fu">solve</span>(<span class="fu">t</span>(X) <span class="sc">%*%</span> X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>hat.sigma2 <span class="sc">*</span> <span class="fu">solve</span>(<span class="fu">t</span>(X) <span class="sc">%*%</span> X)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>                        x
@@ -1031,7 +1037,7 @@ se(\hat{\beta}_0) = \sqrt{0.1034} = 0.3216 ~~~ \mbox{and} ~~~ se(\hat{\beta}_0) 
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>(Sigma <span class="ot">&lt;-</span> <span class="fu">vcov</span>(lm.out)) <span class="co"># compute the variance-covariance matrix</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>(Sigma <span class="ot">&lt;-</span> <span class="fu">vcov</span>(lm.out)) <span class="co"># compute the variance-covariance matrix</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>            (Intercept)           x
@@ -1040,7 +1046,7 @@ x           -0.01652116  0.00343436</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cov2cor</span>(Sigma)          <span class="co"># convert the covariance to correlation</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cov2cor</span>(Sigma)          <span class="co"># convert the covariance to correlation</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>            (Intercept)          x
@@ -1069,9 +1075,9 @@ x            -0.8765245  1.0000000</code></pre>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># run simple logistic regression on training dataset</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># run simple logistic regression on training dataset</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>log.out <span class="ot">&lt;-</span> <span class="fu">glm</span>(class <span class="sc">~</span> col.iz, <span class="at">data =</span> df.train, <span class="at">family =</span> binomial)</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(log.out)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(log.out)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
@@ -1095,12 +1101,12 @@ Number of Fisher Scoring iterations: 4</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>hat.beta0 <span class="ot">&lt;-</span> log.out<span class="sc">$</span>coefficients[<span class="dv">1</span>]</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>hat.beta0 <span class="ot">&lt;-</span> log.out<span class="sc">$</span>coefficients[<span class="dv">1</span>]</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>hat.beta1 <span class="ot">&lt;-</span> log.out<span class="sc">$</span>coefficients[<span class="dv">2</span>]</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>e         <span class="ot">&lt;-</span> <span class="fu">exp</span>(hat.beta0 <span class="sc">+</span> hat.beta1 <span class="sc">*</span> df.train<span class="sc">$</span>col.iz)</span>
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>W         <span class="ot">&lt;-</span> <span class="fu">diag</span>(e <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">+</span> e)<span class="sc">^</span><span class="dv">2</span>)</span>
 <span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>X         <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="fu">rep</span>(<span class="dv">1</span>, <span class="fu">nrow</span>(df.train)), df.train<span class="sc">$</span>col.iz)</span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>(Sigma    <span class="ot">&lt;-</span> <span class="fu">solve</span>(<span class="fu">t</span>(X) <span class="sc">%*%</span> W <span class="sc">%*%</span> X))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>(Sigma    <span class="ot">&lt;-</span> <span class="fu">solve</span>(<span class="fu">t</span>(X) <span class="sc">%*%</span> W <span class="sc">%*%</span> X))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>             [,1]        [,2]
@@ -1109,14 +1115,14 @@ Number of Fisher Scoring iterations: 4</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(Sigma[<span class="dv">1</span>, <span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(Sigma[<span class="dv">1</span>, <span class="dv">1</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.09265146</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(Sigma[<span class="dv">2</span>, <span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(Sigma[<span class="dv">2</span>, <span class="dv">2</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.3105144</code></pre>
@@ -1128,7 +1134,7 @@ Number of Fisher Scoring iterations: 4</code></pre>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cov2cor</span>(Sigma)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cov2cor</span>(Sigma)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>           [,1]       [,2]
@@ -1335,7 +1341,7 @@ f_{X_2}(x_2) &amp;= 6x_2(1-x_2) \,.
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pracma)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pracma)</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the (finite) domain</span></span>
 <span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>x1min <span class="ot">&lt;-</span> <span class="dv">0</span></span>
@@ -1348,7 +1354,7 @@ f_{X_2}(x_2) &amp;= 6x_2(1-x_2) \,.
 <span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span><span class="dv">6</span> <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> x2) <span class="sc">*</span> <span class="fu">log</span>(<span class="dv">3</span> <span class="sc">*</span> x2 <span class="sc">*</span> (<span class="dv">1</span><span class="sc">-</span>x1)<span class="sc">^</span><span class="dv">2</span>)</span>
 <span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>} </span>
 <span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>I <span class="ot">&lt;-</span> <span class="fu">integral2</span>(f, x1min, x1max, x2min, x2max)<span class="sc">$</span>Q</span>
-<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"The value of I(X1, X2) is"</span>, <span class="fu">round</span>(I, <span class="dv">3</span>), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"The value of I(X1, X2) is"</span>, <span class="fu">round</span>(I, <span class="dv">3</span>), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>The value of I(X1, X2) is 0.401 </code></pre>
@@ -1467,9 +1473,9 @@ f_{\mathbf{X}}(\mathbf{x}) = \frac{1}{\sqrt{(2\pi)^p \vert \boldsymbol{\Sigma} \
 <p>That said, there are two qualitative facts about the multivariate normal that are useful to know.</p>
 <ol type="1">
 <li><p>A marginal distribution of the multivariate normal is itself a univariate or multivariate normal (depending on <span class="math inline">\(p\)</span> and how many axes are being integrated over). To derive a marginal distribution, one simply needs to remove elements from the mean vector and from the covariance matrix. For instance, if <span class="math inline">\(p = 2\)</span> and we wish to derive the marginal distribution for <span class="math inline">\(X_1\)</span>, then <span class="math display">\[\begin{align*}
-\boldsymbol{\mu} &amp;= [ \mu_1 ~ \mu_2 ] ~~\rightarrow \mu_{\rm marg} = \mu_1 \\
-\boldsymbol{\Sigma} &amp;= \left( \begin{array}{cc} V[X_1] &amp; \mbox{Cov}(X_1,X_2) \\ \mbox{Cov}(X_2,X_1) &amp; V[X_2] \end{array} \right) ~~\rightarrow~~ \Sigma_{\rm marg} = V[X_1] \,.
-\end{align*}\]</span> Here, we removed the second element of <span class="math inline">\(\boldsymbol{\mu}\)</span> and the second row and second column of <span class="math inline">\(\boldsymbol{\Sigma}\)</span>. Note that <span class="math inline">\(\Sigma_{\rm marg}^{-1}\)</span> is trivially <span class="math inline">\(1/V[X_1] = 1/\sigma_1^2\)</span> and that the determinant of <span class="math inline">\(\Sigma_{\rm marg}\)</span> is trivially <span class="math inline">\(V[X_1] = \sigma_1^2\)</span>. Plugging in these values, we can see that the marginal distribution for <span class="math inline">\(X_1\)</span> has the form of a univariate normal pdf.</p></li>
+\boldsymbol{\mu} &amp;= [ \mu_1 ~ \mu_2 ] ~~\rightarrow \mu_{\mathrm{marg}} = \mu_1 \\
+\boldsymbol{\Sigma} &amp;= \left( \begin{array}{cc} V[X_1] &amp; \mbox{Cov}(X_1,X_2) \\ \mbox{Cov}(X_2,X_1) &amp; V[X_2] \end{array} \right) ~~\rightarrow~~ \Sigma_{\mathrm{marg}} = V[X_1] \,.
+\end{align*}\]</span> Here, we removed the second element of <span class="math inline">\(\boldsymbol{\mu}\)</span> and the second row and second column of <span class="math inline">\(\boldsymbol{\Sigma}\)</span>. Note that <span class="math inline">\(\Sigma_{\mathrm{marg}}^{-1}\)</span> is trivially <span class="math inline">\(1/V[X_1] = 1/\sigma_1^2\)</span> and that the determinant of <span class="math inline">\(\Sigma_{\mathrm{marg}}\)</span> is trivially <span class="math inline">\(V[X_1] = \sigma_1^2\)</span>. Plugging in these values, we can see that the marginal distribution for <span class="math inline">\(X_1\)</span> has the form of a univariate normal pdf.</p></li>
 <li><p>A conditional distribution of the multivariate normal is itself a univariate or multivariate normal (depending on <span class="math inline">\(p\)</span> and how many axes are being conditioned upon). To derive a conditional distribution, we first identify which axes are being conditioned upon. Call that set of axes <span class="math inline">\(v\)</span>; all others we dub <span class="math inline">\(u\)</span>. (For instance, perhaps we want to determine the joint pdf of <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_3\)</span> given that we have set <span class="math inline">\(X_2 = x_2\)</span> and <span class="math inline">\(X_4 = x_4\)</span>. Here, <span class="math inline">\(u = \{1,3\}\)</span> and <span class="math inline">\(v = \{2,4\}\)</span>.) We split the mean vector and the covariance matrix into pieces: <span class="math display">\[\begin{align*}
 \boldsymbol{\mu} &amp;\rightarrow [ \boldsymbol{\mu}_u ~ \boldsymbol{\mu}_v ] \\
 \boldsymbol{\Sigma} &amp;\rightarrow \left( \begin{array}{cc} \boldsymbol{\Sigma}_{uu} &amp; \boldsymbol{\Sigma}_{uv} \\ \boldsymbol{\Sigma}_{vu} &amp; \boldsymbol{\Sigma}_{vv} \end{array} \right) \,.
@@ -1597,7 +1603,7 @@ C_{jk} = \frac{1}{n-1} \sum_{i=1}^n (X_{ji} - \bar{X}_j)(X_{ki} - \bar{X}_k) \,.
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">1</span> <span class="sc">/</span> (n <span class="sc">-</span> <span class="dv">1</span>)) <span class="sc">*</span> <span class="fu">sum</span>((X[, <span class="dv">1</span>] <span class="sc">-</span> <span class="fu">mean</span>(X[, <span class="dv">1</span>])) <span class="sc">*</span> (X[, <span class="dv">2</span>] <span class="sc">-</span> <span class="fu">mean</span>(X[, <span class="dv">2</span>])))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">1</span> <span class="sc">/</span> (n <span class="sc">-</span> <span class="dv">1</span>)) <span class="sc">*</span> <span class="fu">sum</span>((X[, <span class="dv">1</span>] <span class="sc">-</span> <span class="fu">mean</span>(X[, <span class="dv">1</span>])) <span class="sc">*</span> (X[, <span class="dv">2</span>] <span class="sc">-</span> <span class="fu">mean</span>(X[, <span class="dv">2</span>])))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.389421</code></pre>
@@ -1609,7 +1615,7 @@ C_{jk} = \frac{1}{n-1} \sum_{i=1}^n (X_{ji} - \bar{X}_j)(X_{ki} - \bar{X}_k) \,.
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cov</span>(X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cov</span>(X)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>          [,1]     [,2]
@@ -1766,7 +1772,7 @@ f_{X_1,X_2}(x_1,x_2) = \left\{ \begin{array}{cc} 2 &amp; x_1 \geq 0~~x_2 \geq 0~
 <li><p>In an experiment, we sample a datum <span class="math inline">\(X\)</span> from a gamma distribution whose <span class="math inline">\(\beta\)</span> parameter is drawn from an exponential distribution with mean <span class="math inline">\(\gamma\)</span>. (a) What is the unconditional expected value of <span class="math inline">\(X\)</span>? (b) What is <span class="math inline">\(V[X]\)</span>?</p></li>
 <li><p>We are given a bivariate uniform probability density function that is non-zero for <span class="math inline">\(0 \leq x_1 \leq 1\)</span> and <span class="math inline">\(0 \leq x_2 \leq x_1\)</span>. (a) What is the amplitude of the pdf inside the region described above? (b) What is <span class="math inline">\(E[X_1]\)</span>? (c) What is the covariance between <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span>? (Note that <span class="math inline">\(E[X_2] = 1/3\)</span>.)</p></li>
 <li><p>We are given the following bivariate probability density function: <span class="math display">\[\begin{eqnarray*}
-f_{X_1,X_2}(x_1,x_2) = \left\{ \begin{array}{cc} k e^{-x_1/2} &amp; x_1 \geq 0 ~{\rm and}~ 0 \leq x_2 \leq 2 \\ 0 &amp; \mbox{otherwise} \end{array} \right. \,.
+f_{X_1,X_2}(x_1,x_2) = \left\{ \begin{array}{cc} k e^{-x_1/2} &amp; x_1 \geq 0 ~{\mathrm{and}}~ 0 \leq x_2 \leq 2 \\ 0 &amp; \mbox{otherwise} \end{array} \right. \,.
 \end{eqnarray*}\]</span> (a) Find the value of <span class="math inline">\(k\)</span> that makes <span class="math inline">\(f_{X_1,X_2}(x_1,x_2)\)</span> a valid pdf. (b) Compute <span class="math inline">\(E[X_1]\)</span>.</p></li>
 <li><p>We are given a bivariate uniform probability density function that is non-zero for <span class="math inline">\(x_2 \geq 0\)</span>, <span class="math inline">\(x_2 \leq x_1\)</span>, and <span class="math inline">\(x_2 \leq 2-x_1\)</span>. (a) Compute the marginal distribution for <span class="math inline">\(X_2\)</span>. (b) Compute the conditional distribution for <span class="math inline">\(X_1\)</span> given <span class="math inline">\(X_2\)</span>. (c) Compute <span class="math inline">\(P(X_1 + X_2 \leq 1)\)</span>.</p></li>
 <li><p>We sample a random variable <span class="math inline">\(X\)</span> from a normal distribution with mean <span class="math inline">\(\mu\)</span> and variance one, and you are given that <span class="math inline">\(\mu \sim N(0,1)\)</span>. Write down the variance of <span class="math inline">\(X\)</span>.</p></li>
@@ -1876,13 +1882,14 @@ f_{X_1,X_2}(x_1,x_2) = k x_1^2 \,,
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

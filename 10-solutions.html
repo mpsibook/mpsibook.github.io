@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -75,10 +78,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-d3f7f8e73c8d287b30bcf59c2b563615.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -108,7 +111,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -960,40 +963,40 @@ F_Y(y) = \int_0^y a(1+v)^{-a-1} dv \,.
 F_Y(y) &amp;= \int_0^y a(1+v)^{-a-1} dv = a \frac{1}{-a} \left. (1+v)^{-a}\right|_0^y = -\left((1+y)^{-a} - 1^{-a}\right) = 1 - (1+y)^{-a} \,.
 \end{align*}\]</span></p>
 <p>(b) <span class="math inline">\(E[Y]\)</span> <em>decreases</em> with <span class="math inline">\(a\)</span>; combining that fact with our desire to determine a lower bound, we focus on the fourth line of the confidence interval reference table and solve <span class="math display">\[\begin{align*}
-F_Y(y_{\rm obs} \vert a) - \alpha &amp;= 0 \\
-\Rightarrow ~~~ 1 - (1+y_{\rm obs})^{-a} - \alpha &amp;= 0 \\
-\Rightarrow ~~~ (1+y_{\rm obs})^{-a} &amp;= 1 - \alpha \\
-\Rightarrow ~~~ -a \log (1+y_{\rm obs}) &amp;= \log(1-\alpha) \\
-\Rightarrow ~~~ \hat{a}_L &amp;= -\frac{\log(1-\alpha)}{\log(1+y_{\rm obs})} \,.
+F_Y(y_{\mathrm{obs}} \vert a) - \alpha &amp;= 0 \\
+\Rightarrow ~~~ 1 - (1+y_{\mathrm{obs}})^{-a} - \alpha &amp;= 0 \\
+\Rightarrow ~~~ (1+y_{\mathrm{obs}})^{-a} &amp;= 1 - \alpha \\
+\Rightarrow ~~~ -a \log (1+y_{\mathrm{obs}}) &amp;= \log(1-\alpha) \\
+\Rightarrow ~~~ \hat{a}_L &amp;= -\frac{\log(1-\alpha)}{\log(1+y_{\mathrm{obs}})} \,.
 \end{align*}\]</span></p>
 <hr>
 <ul>
 <li>Problem 46</li>
 </ul>
 <p>(a) The fact that we wish to perform a lower-tail test, combined with the fact that <span class="math inline">\(E[Y]\)</span> increases with <span class="math inline">\(\mu\)</span>, means that we will focus on the third line of the hypothesis test reference table and solve for <span class="math display">\[\begin{align*}
-y_{\rm RR} = F_Y^{-1}(\alpha \vert \mu_o) \,.
+y_{\mathrm{RR}} = F_Y^{-1}(\alpha \vert \mu_o) \,.
 \end{align*}\]</span> We have that <span class="math display">\[\begin{align*}
-F_Y(y_{\rm RR} \vert \mu_o) - \alpha &amp;= 0 \\
-\Rightarrow ~~~ \frac{1}{1+\exp(-y_{\rm RR})} &amp;= \alpha \\
-\Rightarrow ~~~ 1+\exp(-y_{\rm RR}) &amp;= \frac{1}{\alpha} \\
-\Rightarrow ~~~ \exp(-y_{\rm RR}) &amp;= \frac{1}{\alpha}-1 \\
-\Rightarrow ~~~ y_{\rm RR} &amp;= -\log\left(\frac{1}{\alpha}-1\right) \,.
-\end{align*}\]</span> Since <span class="math inline">\(1/0.05 = 20\)</span>, we find that <span class="math inline">\(y_{\rm RR} = -\log(19)\)</span>.</p>
-<p>(b) As stated in the hypothesis test reference table, the rejection region is <span class="math inline">\(y_{\rm obs} &lt; y_{\rm RR}\)</span>. Thus if <span class="math inline">\(y_{\rm obs} \geq y_{\rm RR}\)</span>, we fail to reject the null hypothesis.</p>
-<p>(c) If we go from a lower-tail test (with <span class="math inline">\(E[Y]\)</span> increasing with <span class="math inline">\(\mu\)</span>) to a two-tail test, then the lower rejection region boundary will shift because we put <span class="math inline">\(\alpha/2 = 0.025\)</span> into the equation rather than <span class="math inline">\(\alpha = 0.05\)</span>. This moves the boundary further from <span class="math inline">\(\mu_o = 0\)</span>. (Specifically, <span class="math inline">\(1/\alpha\)</span> would now be 40, so the new <span class="math inline">\(y_{\rm RR} = -\log(39)\)</span>, which is further from 0 than <span class="math inline">\(-\log(19)\)</span>.)</p>
+F_Y(y_{\mathrm{RR}} \vert \mu_o) - \alpha &amp;= 0 \\
+\Rightarrow ~~~ \frac{1}{1+\exp(-y_{\mathrm{RR}})} &amp;= \alpha \\
+\Rightarrow ~~~ 1+\exp(-y_{\mathrm{RR}}) &amp;= \frac{1}{\alpha} \\
+\Rightarrow ~~~ \exp(-y_{\mathrm{RR}}) &amp;= \frac{1}{\alpha}-1 \\
+\Rightarrow ~~~ y_{\mathrm{RR}} &amp;= -\log\left(\frac{1}{\alpha}-1\right) \,.
+\end{align*}\]</span> Since <span class="math inline">\(1/0.05 = 20\)</span>, we find that <span class="math inline">\(y_{\mathrm{RR}} = -\log(19)\)</span>.</p>
+<p>(b) As stated in the hypothesis test reference table, the rejection region is <span class="math inline">\(y_{\mathrm{obs}} &lt; y_{\mathrm{RR}}\)</span>. Thus if <span class="math inline">\(y_{\mathrm{obs}} \geq y_{\mathrm{RR}}\)</span>, we fail to reject the null hypothesis.</p>
+<p>(c) If we go from a lower-tail test (with <span class="math inline">\(E[Y]\)</span> increasing with <span class="math inline">\(\mu\)</span>) to a two-tail test, then the lower rejection region boundary will shift because we put <span class="math inline">\(\alpha/2 = 0.025\)</span> into the equation rather than <span class="math inline">\(\alpha = 0.05\)</span>. This moves the boundary further from <span class="math inline">\(\mu_o = 0\)</span>. (Specifically, <span class="math inline">\(1/\alpha\)</span> would now be 40, so the new <span class="math inline">\(y_{\mathrm{RR}} = -\log(39)\)</span>, which is further from 0 than <span class="math inline">\(-\log(19)\)</span>.)</p>
 <hr>
 <ul>
 <li>Problem 47</li>
 </ul>
-<p>(a) The expected value of <span class="math inline">\(Y\)</span> increases with <span class="math inline">\(\theta\)</span>, putting us on the “yes” line of the reference table. Hence we want to solve <span class="math inline">\(F_Y(y_{\rm obs} \vert \theta) - \alpha = 0\)</span> for <span class="math inline">\(\theta\)</span>: <span class="math display">\[\begin{align*}
-e^{-e^{-(y_{\rm obs} - \theta)}} - \alpha &amp;= 0 \\
-\Rightarrow ~~~ -e^{-(y_{\rm obs} - \theta)} &amp;= \log(\alpha) \\
-\Rightarrow ~~~ e^{-(y_{\rm obs} - \theta)} &amp;= -\log(\alpha) \\
-\Rightarrow ~~~ -(y_{\rm obs} - \theta) &amp;= \log(-\log(\alpha)) \\
-\Rightarrow ~~~ \hat{\theta}_U &amp;= \log(-\log(\alpha)) + y_{\rm obs} \,.
+<p>(a) The expected value of <span class="math inline">\(Y\)</span> increases with <span class="math inline">\(\theta\)</span>, putting us on the “yes” line of the reference table. Hence we want to solve <span class="math inline">\(F_Y(y_{\mathrm{obs}} \vert \theta) - \alpha = 0\)</span> for <span class="math inline">\(\theta\)</span>: <span class="math display">\[\begin{align*}
+e^{-e^{-(y_{\mathrm{obs}} - \theta)}} - \alpha &amp;= 0 \\
+\Rightarrow ~~~ -e^{-(y_{\mathrm{obs}} - \theta)} &amp;= \log(\alpha) \\
+\Rightarrow ~~~ e^{-(y_{\mathrm{obs}} - \theta)} &amp;= -\log(\alpha) \\
+\Rightarrow ~~~ -(y_{\mathrm{obs}} - \theta) &amp;= \log(-\log(\alpha)) \\
+\Rightarrow ~~~ \hat{\theta}_U &amp;= \log(-\log(\alpha)) + y_{\mathrm{obs}} \,.
 \end{align*}\]</span></p>
 <p>(b) All we need to do here is switch out <span class="math inline">\(\alpha\)</span> for <span class="math inline">\(1 - \alpha/2\)</span> (with “<span class="math inline">\(1-\)</span>” for the lower bound, and “<span class="math inline">\(\alpha/2\)</span>” for the change from one-sided to two-sided: <span class="math display">\[\begin{align*}
-\hat{\theta}_L &amp;= \log(-\log(1-\alpha/2)) + y_{\rm obs} \,.
+\hat{\theta}_L &amp;= \log(-\log(1-\alpha/2)) + y_{\mathrm{obs}} \,.
 \end{align*}\]</span></p>
 <hr>
 <ul>
@@ -1004,11 +1007,11 @@ e^{-e^{-(y_{\rm obs} - \theta)}} - \alpha &amp;= 0 \\
 \Rightarrow ~~~ e^{-(y-2)} &amp;= \alpha \\
 \Rightarrow ~~~ -(y-2) &amp;= \log(\alpha) \\
 \Rightarrow ~~~ -y &amp;= \log(\alpha) - 2 \\
-\Rightarrow ~~~ y_{\rm RR} &amp;= 2 - \log(\alpha) \,.
+\Rightarrow ~~~ y_{\mathrm{RR}} &amp;= 2 - \log(\alpha) \,.
 \end{align*}\]</span></p>
-<p>(b) If <span class="math inline">\(y_{\rm obs} &lt; y_{\rm RR}\)</span> for an upper-tail test/“yes” line, then we <em>fail to reject</em> the null hypothesis (and conclude that we have insufficient data to rule out the idea that <span class="math inline">\(\theta = \theta_o = 1\)</span>).</p>
+<p>(b) If <span class="math inline">\(y_{\mathrm{obs}} &lt; y_{\mathrm{RR}}\)</span> for an upper-tail test/“yes” line, then we <em>fail to reject</em> the null hypothesis (and conclude that we have insufficient data to rule out the idea that <span class="math inline">\(\theta = \theta_o = 1\)</span>).</p>
 <p>(c) We simply replace <span class="math inline">\(\alpha\)</span> with <span class="math inline">\(1 - \alpha/2\)</span>: <span class="math display">\[\begin{align*}
-y_{\rm RR} &amp;= 2 - \log(1 - \alpha/2) \,.
+y_{\mathrm{RR}} &amp;= 2 - \log(1 - \alpha/2) \,.
 \end{align*}\]</span></p>
 </section>
 <section id="chapter-2" class="level2 unnumbered">
@@ -1452,8 +1455,8 @@ P\left(\bar{X} \geq \mu+1 \right) &amp;= 1 - P\left(\frac{\bar{X}-\mu}{S/\sqrt{n
 <li>Problem 36</li>
 </ul>
 <p>(a) For a confidence interval, we need to solve the equation <span class="math display">\[\begin{align*}
-F_Y(y_{\rm obs} \vert \theta) - q = 0
-\end{align*}\]</span> for <span class="math inline">\(\theta\)</span>, given <span class="math inline">\(q\)</span>. Here, we have the statistic <span class="math inline">\(w_{\rm obs} = (n-1)s_{\rm obs}^2/\sigma^2\)</span>, which is sampled from a chi-square distribution for <span class="math inline">\(n-1\)</span> degrees of freedom. Hence the function we will use is <code>pchisq()</code>.</p>
+F_Y(y_{\mathrm{obs}} \vert \theta) - q = 0
+\end{align*}\]</span> for <span class="math inline">\(\theta\)</span>, given <span class="math inline">\(q\)</span>. Here, we have the statistic <span class="math inline">\(w_{\mathrm{obs}} = (n-1)s_{\mathrm{obs}}^2/\sigma^2\)</span>, which is sampled from a chi-square distribution for <span class="math inline">\(n-1\)</span> degrees of freedom. Hence the function we will use is <code>pchisq()</code>.</p>
 <p>(b) We are calling <code>pchisq()</code>, and the first argument would be the observed statistic value <code>(n-1)*s2.obs/sigma2</code>.</p>
 <p>(c) We are solving for <span class="math inline">\(\sigma^2\)</span>, which has to be positive. So of the three choices, the only proper one is <code>c(0.001,1000)</code>.</p>
 <hr>
@@ -1476,19 +1479,19 @@ P\left(W &lt; c\frac{\sigma_o^2}{\sigma_a^2} \vert \sigma^2 = \sigma_a^2 \right)
 <ul>
 <li>Problem 38</li>
 </ul>
-<p>(a) The <span class="math inline">\(p\)</span>-value can be written down directly by plugging <span class="math inline">\(x_{\rm obs}\)</span> and <span class="math inline">\(a_o\)</span> into the given cdf, which, because we sample a single datum, is the cdf for the sampling distribution: <span class="math display">\[\begin{align*}                       
-p = 1 - \left(\frac{1}{x_{\rm obs}}\right)^{a_o} = 1 - \left(\frac{4}{5}\right)^2 = 1 - \frac{16}{25} = \frac{9}{25} = 0.36 \,.
+<p>(a) The <span class="math inline">\(p\)</span>-value can be written down directly by plugging <span class="math inline">\(x_{\mathrm{obs}}\)</span> and <span class="math inline">\(a_o\)</span> into the given cdf, which, because we sample a single datum, is the cdf for the sampling distribution: <span class="math display">\[\begin{align*}                       
+p = 1 - \left(\frac{1}{x_{\mathrm{obs}}}\right)^{a_o} = 1 - \left(\frac{4}{5}\right)^2 = 1 - \frac{16}{25} = \frac{9}{25} = 0.36 \,.
 \end{align*}\]</span></p>
 <p>(b) The <span class="math inline">\(p\)</span>-value is <span class="math inline">\(&gt; \alpha\)</span>, so we “fail to reject” the null hypothesis and conclude that we have insufficient data to rule out that <span class="math inline">\(a = 2\)</span>.<br>
 (c) We solve this via the inverse cdf, utilizing an appropriate row of the hypothesis test reference table: <span class="math display">\[\begin{align*}
-&amp;\alpha = 1 - \left(\frac{1}{x_{\rm RR}}\right)^{a_o} \\
-\Rightarrow ~~~ &amp;\left(\frac{1}{x_{\rm RR}}\right)^{a_o} = 1 - \alpha \\
-\Rightarrow ~~~ &amp;\frac{1}{x_{\rm RR}} = (1-\alpha)^{1/a_o} \\
-\Rightarrow ~~~ &amp;x_{\rm RR} = \frac{1}{(1-\alpha)^{1/a_o}} \\
-\Rightarrow ~~~ &amp;x_{\rm RR} = \frac{1}{(0.95)^{1/2}} = 1.026 \,.
+&amp;\alpha = 1 - \left(\frac{1}{x_{\mathrm{RR}}}\right)^{a_o} \\
+\Rightarrow ~~~ &amp;\left(\frac{1}{x_{\mathrm{RR}}}\right)^{a_o} = 1 - \alpha \\
+\Rightarrow ~~~ &amp;\frac{1}{x_{\mathrm{RR}}} = (1-\alpha)^{1/a_o} \\
+\Rightarrow ~~~ &amp;x_{\mathrm{RR}} = \frac{1}{(1-\alpha)^{1/a_o}} \\
+\Rightarrow ~~~ &amp;x_{\mathrm{RR}} = \frac{1}{(0.95)^{1/2}} = 1.026 \,.
 \end{align*}\]</span></p>
 <p>(d) The test power is <span class="math display">\[\begin{align*}
-power(a=4) = 1 - \left(\frac{1}{x_{\rm RR}}\right)^{a} = 1 - \left((0.95)^{1/2}\right)^4 = 1 - (0.95)^2 = 0.0975 \,.
+power(a=4) = 1 - \left(\frac{1}{x_{\mathrm{RR}}}\right)^{a} = 1 - \left((0.95)^{1/2}\right)^4 = 1 - (0.95)^2 = 0.0975 \,.
 \end{align*}\]</span> (The test power is low…you cannot easily reject a null with a single datum.)</p>
 <hr>
 <ul>
@@ -1761,11 +1764,11 @@ E[Y] = E\left[\sum_{i=1}^n X_i^2\right] = \sum_{i=1}^n E[X_i^2] = n E[X^2] = 3 n
 <p>We are constructing an upper-tail test where the test statistic is trivially <span class="math inline">\(Y = X\)</span>. (So the NP Lemma does not <em>really</em> come into play here, given the lack of choices for the test statistic.) The expected value of <span class="math inline">\(Y\)</span> is <span class="math display">\[\begin{align*}
 E[Y] = \int_0^2 y f_Y(y) dy = \int_0^2 \frac{\theta}{2^\theta} y^{\theta} dy = \left. \frac{\theta}{2^\theta} \frac{y^{\theta+1}}{\theta+1} \right|_0^2 = \frac{2\theta}{\theta+1} \,.
 \end{align*}\]</span> <span class="math inline">\(E[Y]\)</span> increases as <span class="math inline">\(\theta\)</span> increases, so we will be on the “yes” line of the hypothesis test reference table. Hence the rejection region will be of the form <span class="math display">\[\begin{align*}
-y_{\rm obs} &gt; F_Y^{-1}(1-\alpha \vert \theta_o) \,.
+y_{\mathrm{obs}} &gt; F_Y^{-1}(1-\alpha \vert \theta_o) \,.
 \end{align*}\]</span> The cdf <span class="math inline">\(F_Y(y)\)</span> is <span class="math display">\[\begin{align*}
 F_Y(y) = \int_0^y \frac{\theta}{2^\theta} u^{\theta-1} du = \left. \frac{u^\theta}{2^\theta}\right|_0^y = \left(\frac{y}{2}\right)^\theta \,,
 \end{align*}\]</span> and the inverse cdf <span class="math inline">\(F_Y^{-1}(q)\)</span> is <span class="math inline">\(y = 2q^{1/\theta}\)</span>. Hence the test we seek rejects the null hypothesis if <span class="math display">\[\begin{align*}
-y_{\rm obs} &gt; 2(1-\alpha)^{1/\theta_o} \,.
+y_{\mathrm{obs}} &gt; 2(1-\alpha)^{1/\theta_o} \,.
 \end{align*}\]</span> The rejection-region boundary does not depend on <span class="math inline">\(\theta_a\)</span>, so we know that the test is the most powerful one for all alternative values <span class="math inline">\(\theta_a &gt; \theta_o\)</span>…thus it is a uniformly most powerful test.</p>
 <hr>
 <ul>
@@ -1779,7 +1782,7 @@ m_X(t) = (1 - \theta t)^{-1} \,,
 \end{align*}\]</span> and hence the mgf for <span class="math inline">\(Y = \sum_{i=1}^n X_i\)</span> will be <span class="math display">\[\begin{align*}
 m_Y(t) = \prod_{i=1}^n (1 - \theta t)^{-1} = \left[ (1 - \theta t)^{-1} \right]^n = (1 - \theta t)^{-n} \,.
 \end{align*}\]</span> Following the hint given in the question, we find that <span class="math inline">\(Y\)</span> is a gamma-distributed random variable with “shape” parameter <span class="math inline">\(n\)</span> and “scale” parameter <span class="math inline">\(\theta\)</span>. (There are two common parameterizations of the gamma distribution<span class="math inline">\(-\)</span>shape/scale and shape/rate<span class="math inline">\(-\)</span>and it is imperative to determine the correct one! This will impact the answer to part (c).)</p>
-<p>(c) The statistic <span class="math inline">\(Y\)</span> has expected value <span class="math inline">\(E[Y] = n\theta\)</span>, which increases with <span class="math inline">\(\theta\)</span>. Hence we utilize the upper-tail/yes line of the hypothesis test reference table: <span class="math inline">\(y_{\rm RR} = F_Y^{-1}(1 - \alpha \vert \theta_o)\)</span>, or, in code,</p>
+<p>(c) The statistic <span class="math inline">\(Y\)</span> has expected value <span class="math inline">\(E[Y] = n\theta\)</span>, which increases with <span class="math inline">\(\theta\)</span>. Hence we utilize the upper-tail/yes line of the hypothesis test reference table: <span class="math inline">\(y_{\mathrm{RR}} = F_Y^{-1}(1 - \alpha \vert \theta_o)\)</span>, or, in code,</p>
 <pre><code>y.rr &lt;- qgamma(1-alpha,shape=n,scale=theta)</code></pre>
 <hr>
 <ul>
@@ -1795,16 +1798,16 @@ m_X(t) = E\left[e^{tX}\right] &amp;= \int_b^\infty e^{tx} \frac{1}{\theta} e^{-(
 m_Y(t) = \prod_{i=1}^n e^{bt} (1-t\theta)^{-1} = \left[ e^{bt} (1-t\theta)^{-1} \right]^n = e^{nbt} (1-t\theta)^{-n} \,.
 \end{align*}\]</span></p>
 <p>(c) Going back to our answer for (a) (and our answer for the previous problem), we recognize that the mgf for <span class="math inline">\(\sum_{i=1}^n U_i\)</span> is <span class="math inline">\((1-t\theta)^{-n}\)</span>, which is the mgf for a gamma distribution with shape parameter <span class="math inline">\(n\)</span> and scale parameter <span class="math inline">\(\theta\)</span>. Hence <span class="math inline">\(Y' = Y - nb \sim \text{Gamma}(n,\theta)\)</span>.</p>
-<p>(d) We are on the lower-tail/yes line of the hypothesis test reference table: <span class="math inline">\(y_{\rm RR}' = F_Y^{-1}(\alpha \vert \theta_o)\)</span>, or, in code,</p>
+<p>(d) We are on the lower-tail/yes line of the hypothesis test reference table: <span class="math inline">\(y_{\mathrm{RR}}' = F_Y^{-1}(\alpha \vert \theta_o)\)</span>, or, in code,</p>
 <pre><code>y.rr.prime &lt;- qgamma(alpha,shape=n,scale=theta)</code></pre>
-<p>We would reject the null hypothesis if <span class="math inline">\(y_{\rm obs} - nb &lt; y_{\rm RR}'\)</span>. Because this test is constructed using a sufficient statistic and because no value of the alternative hypothesis appears in the definition of the rejection region, we indeed have defined a uniformly most powerful test of <span class="math inline">\(H_o : \theta = \theta_o\)</span> versus <span class="math inline">\(H_a : \theta &lt; \theta_o\)</span>.</p>
+<p>We would reject the null hypothesis if <span class="math inline">\(y_{\mathrm{obs}} - nb &lt; y_{\mathrm{RR}}'\)</span>. Because this test is constructed using a sufficient statistic and because no value of the alternative hypothesis appears in the definition of the rejection region, we indeed have defined a uniformly most powerful test of <span class="math inline">\(H_o : \theta = \theta_o\)</span> versus <span class="math inline">\(H_a : \theta &lt; \theta_o\)</span>.</p>
 <hr>
 <ul>
 <li>Problem 21</li>
 </ul>
 <p>(a) Let’s first find a sufficient statistic: <span class="math display">\[\begin{align*}
 \mathcal{L}(\theta \vert \mathbf{x}) = \prod_{i=1}^n \theta e^{-\theta x_i} = \theta^n e^{-\theta \sum_{i=1}^n x_i} \,.
-\end{align*}\]</span> A sufficient statistic is <span class="math inline">\(Y = \sum_{i=1}^n X_i\)</span>. We are conducting a lower-tail test, and since <span class="math inline">\(E[X] = 1/\theta\)</span> decreases as <span class="math inline">\(\theta\)</span> increases, we are on the “no” line of the reference table. We reject the null if <span class="math inline">\(y_{\rm obs} = \sum_{i=1}^n x_i &gt; y_{\rm RR}\)</span>.</p>
+\end{align*}\]</span> A sufficient statistic is <span class="math inline">\(Y = \sum_{i=1}^n X_i\)</span>. We are conducting a lower-tail test, and since <span class="math inline">\(E[X] = 1/\theta\)</span> decreases as <span class="math inline">\(\theta\)</span> increases, we are on the “no” line of the reference table. We reject the null if <span class="math inline">\(y_{\mathrm{obs}} = \sum_{i=1}^n x_i &gt; y_{\mathrm{RR}}\)</span>.</p>
 <p>(b) <span class="math inline">\(\theta_o\)</span> is plugged in to compute the rejection-region boundary, but <span class="math inline">\(\theta_a\)</span> does not appear at all. Hence the defined test is uniformly most powerful, since it is most powerful for any value of <span class="math inline">\(\theta_a &lt; \theta_o\)</span>.</p>
 <hr>
 <ul>
@@ -1813,7 +1816,7 @@ m_Y(t) = \prod_{i=1}^n e^{bt} (1-t\theta)^{-1} = \left[ e^{bt} (1-t\theta)^{-1} 
 <p>(a) The sampling distribution is Binom(<span class="math inline">\(nk,p\)</span>). We can determine this using the method of moment-generating functions, if necessary.</p>
 <p>(b) <span class="math inline">\(E[Y] = nkp\)</span> increases with <span class="math inline">\(p\)</span>, so we are on the upper-tail/“yes” line of the hypothesis test reference tables. The rejection-region boundary is given by <span class="math inline">\(F_Y^{-1}(1-\alpha \vert \theta_o)\)</span>, or, in code, with <span class="math inline">\(p_o\)</span> in place of <span class="math inline">\(\theta_o\)</span>,</p>
 <pre><code>qbinom(1-alpha,n*k,p.o)</code></pre>
-<p>(c) For an upper-tail/yes test, the <span class="math inline">\(p\)</span>-value is <span class="math inline">\(1 - F_Y(y_{\rm obs} \vert \theta_o)\)</span>. In code, with <span class="math inline">\(p_o\)</span> in place of <span class="math inline">\(\theta_o\)</span>, the <span class="math inline">\(p\)</span>-value is</p>
+<p>(c) For an upper-tail/yes test, the <span class="math inline">\(p\)</span>-value is <span class="math inline">\(1 - F_Y(y_{\mathrm{obs}} \vert \theta_o)\)</span>. In code, with <span class="math inline">\(p_o\)</span> in place of <span class="math inline">\(\theta_o\)</span>, the <span class="math inline">\(p\)</span>-value is</p>
 <pre><code>1 - pbinom(y.obs,n*k,p.o)</code></pre>
 <p>However, we have to apply a discreteness correction, because otherwise we will not be summing over the correct range of <span class="math inline">\(y\)</span> values, i.e., our <span class="math inline">\(p\)</span>-value will be wrong. Here, that factor is <span class="math inline">\(-1\)</span>, applied to the input. So…</p>
 <pre><code>1 - pbinom(y.obs-1,n*k,p.o)</code></pre>
@@ -1830,7 +1833,7 @@ m_Y(t) = \prod_{i=1}^n e^{bt} (1-t\theta)^{-1} = \left[ e^{bt} (1-t\theta)^{-1} 
 <li>Problem 24</li>
 </ul>
 <p>(a) The degrees of freedom for the residual deviance is <span class="math inline">\(n-p\)</span>, where <span class="math inline">\(p\)</span> is the number of parameters (here, two: <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span>). Hence <span class="math inline">\(n = 32\)</span>.</p>
-<p>(b) <span class="math inline">\(\beta_1\)</span> is set to zero to compute the null deviance. So <span class="math inline">\(-2\log\mathcal{L}_{\rm max} = 43.230\)</span>.</p>
+<p>(b) <span class="math inline">\(\beta_1\)</span> is set to zero to compute the null deviance. So <span class="math inline">\(-2\log\mathcal{L}_{\mathrm{max}} = 43.230\)</span>.</p>
 <p>(c) The odds are <span class="math inline">\(O(x) = \exp(\hat{\beta}_0 + \hat{\beta}_1 x)\)</span> or just <span class="math inline">\(\exp(\hat{\beta}_0)\)</span> for <span class="math inline">\(x = 0\)</span>, meaning thet <span class="math inline">\(O(x=0) = \exp(12.040)\)</span>.</p>
 <p>(d) The estimated slope <span class="math inline">\(\hat{\beta}_1\)</span> is negative, and we know that <span class="math inline">\(O(x+1) = O(x) \exp(\hat{\beta}_1)\)</span>, so we know that <span class="math inline">\(O(x+1) &lt; O(x)\)</span>…the odds <em>decrease</em> as <span class="math inline">\(x\)</span> increases.</p>
 <hr>
@@ -1887,7 +1890,7 @@ V[C] = E[C^2] - (E[C])^2 = E[100X^2] - \frac{100}{9} = 100E[X^2] - \frac{100}{9}
 <li>Problem 28</li>
 </ul>
 <p>(a) <span class="math inline">\(f_X(x) = 12x - 24x^2 + 12x^3 = 12x(1-x)^2\)</span> for <span class="math inline">\(x \in [0,1]\)</span>…so this is a Beta(2,3) distribution.</p>
-<p>(b) <span class="math inline">\(X \sim {\rm Beta}(2,3) \Rightarrow E[X] = \alpha/(\alpha+\beta) = 2/(2+3) = 2/5 = 0.4\)</span> ,.</p>
+<p>(b) <span class="math inline">\(X \sim {\mathrm{Beta}}(2,3) \Rightarrow E[X] = \alpha/(\alpha+\beta) = 2/(2+3) = 2/5 = 0.4\)</span> ,.</p>
 <hr>
 <ul>
 <li>Problem 29</li>
@@ -1960,19 +1963,19 @@ W = \sum_{i=1}^n \frac{(X_i - kp_i)^2}{kp_i} = \frac{1}{7}[(10-7)^2+(5-7)^2+(6-7
 \int_2^\infty e^{-x} dx &amp;= 1 - 0.632 - 0.233 = 0.135 \,.
 \end{align*}\]</span> We can now carry out a chi-square goodness-of-fit test: <span class="math display">\[\begin{align*}
 W = \frac{(52-63.2)^2}{63.2} + \frac{(23-23.3)^2}{23.3} + \frac{(25-13.5)^2}{13.5} = 1.985 + 0.004 + 9.796 = 11.785 \,,
-\end{align*}\]</span> and <span class="math inline">\(W \sim \chi_2^2\)</span>. The rejection region is <span class="math inline">\(W &gt; w_{\rm RR} = 5.991\)</span> (i.e., <code>qchisq(0.95,2)</code>), and the <span class="math inline">\(p\)</span>-value is 0.0028 (i.e., <code>1-pchisq(11.785,2)</code>). We have sufficient evidence to reject the null hypothesis and conclude that the time elapsed between people walking through a particular door is <em>not</em> exponentially distributed with mean 1.</p>
+\end{align*}\]</span> and <span class="math inline">\(W \sim \chi_2^2\)</span>. The rejection region is <span class="math inline">\(W &gt; w_{\mathrm{RR}} = 5.991\)</span> (i.e., <code>qchisq(0.95,2)</code>), and the <span class="math inline">\(p\)</span>-value is 0.0028 (i.e., <code>1-pchisq(11.785,2)</code>). We have sufficient evidence to reject the null hypothesis and conclude that the time elapsed between people walking through a particular door is <em>not</em> exponentially distributed with mean 1.</p>
 <p>(c) If <span class="math inline">\(n = 10\)</span> and there are 3 bins, then there is no way that <span class="math inline">\(np_i \geq 5\)</span> for all bins. Thus the chi-square goodness-of-fit test should not be applied.</p>
 <hr>
 <ul>
 <li>Problem 35</li>
 </ul>
-<p>(a) We have that <span class="math inline">\(p_{\rm out} = 8/9\)</span> and <span class="math inline">\(p_{\rm in} = 1/9\)</span>, so <span class="math inline">\(kp_{\rm out} = 180 (8/9) = 160\)</span> and <span class="math inline">\(kp_{\rm in} = 180 (1/9)
+<p>(a) We have that <span class="math inline">\(p_{\mathrm{out}} = 8/9\)</span> and <span class="math inline">\(p_{\mathrm{in}} = 1/9\)</span>, so <span class="math inline">\(kp_{\mathrm{out}} = 180 (8/9) = 160\)</span> and <span class="math inline">\(kp_{\mathrm{in}} = 180 (1/9)
 = 20\)</span>.</p>
 <p>(b) We perform a chi-square goodness-of-fit test: <span class="math display">\[\begin{align*}
 W = \frac{(150-160)^2}{160} + \frac{(30-20)^2}{20} = \frac{100}{160} + \frac{100}{20} = \frac58 + 5 = 5.625~(\mbox{or}~5~5/8) \,.
 \end{align*}\]</span></p>
 <p>(c) <span class="math inline">\(W\)</span> is sampled from a chi-square distribution for <span class="math inline">\(2-1 = 1\)</span> degree of freedom.</p>
-<p>(d) The rejection region for a chi-square GoF test is <span class="math inline">\(W &gt; w_{\rm RR}\)</span>, so, since 5.625 is greater than 3.841, we would reject the null hypothesis.</p>
+<p>(d) The rejection region for a chi-square GoF test is <span class="math inline">\(W &gt; w_{\mathrm{RR}}\)</span>, so, since 5.625 is greater than 3.841, we would reject the null hypothesis.</p>
 <hr>
 <ul>
 <li>Problem 36</li>
@@ -2010,10 +2013,10 @@ E[Y^2] &amp;= \frac{d^2 m_{S_n}(t)}{dt^2}\bigg|_0 = p(a+1)^2 e^{(a+1)t} + (1-p)a
 <p>(a) The outcomes are discrete, we sample with replacement, there are two outcomes (either <span class="math inline">\(\leq 3\)</span> or <span class="math inline">\(&gt; 3\)</span>), and the number of trials is fixed…so we are dealing with the binomial distribution: <span class="math display">\[\begin{align*}
 P(Z &gt; 3) &amp;= 1 - P(Z \leq 3) = 1 - \Phi(3) = p \\
 \Rightarrow P(X = 1) &amp;= {100 \choose 1}(1 - \Phi(3))^1(1-1+\Phi(3))^{99} \\
-&amp;= 100(1-\Phi(3))\Phi(3)^{99} ~~{\rm or}~~ 100\Phi(-3)\Phi(3)^{99} \,.
+&amp;= 100(1-\Phi(3))\Phi(3)^{99} ~~{\mathrm{or}}~~ 100\Phi(-3)\Phi(3)^{99} \,.
 \end{align*}\]</span></p>
 <p>(b) We have that <span class="math display">\[\begin{align*}
-T \sim {\rm Geom}(p=1-\Phi(3)) ~~~ \Rightarrow ~~~ E[T] = 1/p = 1/(1-\Phi(3)) = 1/\Phi(-3) \,.
+T \sim {\mathrm{Geom}}(p=1-\Phi(3)) ~~~ \Rightarrow ~~~ E[T] = 1/p = 1/(1-\Phi(3)) = 1/\Phi(-3) \,.
 \end{align*}\]</span></p>
 <hr>
 <ul>
@@ -2174,18 +2177,18 @@ E[X] &amp;= \bar{X} \\
 \ell(\lambda \vert x) &amp;= x \log \lambda - \log x! - \lambda \\
 \Rightarrow ~~~ \ell'(\lambda \vert x) &amp;= \frac{x}{\lambda} - 1 = 0\\
 \Rightarrow ~~~ \hat{\lambda}_{MLE} &amp;= X \,.
-\end{align*}\]</span> which here takes on the value <span class="math inline">\(x_{\rm obs}\)</span>.</p>
+\end{align*}\]</span> which here takes on the value <span class="math inline">\(x_{\mathrm{obs}}\)</span>.</p>
 <p>(b) The likelihood-ratio test statistic is <span class="math display">\[\begin{align*}
 \frac{\mbox{sup}_{\theta \in \Theta_o}\mathcal{L}(\theta \vert \mathbf{x})}{\mbox{sup}_{\theta \in \Theta}\mathcal{L}(\theta \vert \mathbf{x})} \,.
 \end{align*}\]</span> Here, that means that for the numerator, we insert the Poisson pmf (remember: one datum) with <span class="math inline">\(\lambda_o\)</span> plugged in, i.e., <span class="math display">\[\begin{align*}
-\frac{\lambda_o^{x_{\rm obs}}}{x_{\rm obs}!} e^{-\lambda_o} \,,
+\frac{\lambda_o^{x_{\mathrm{obs}}}}{x_{\mathrm{obs}}!} e^{-\lambda_o} \,,
 \end{align*}\]</span> while for the denominator, we plug in the MLE for <span class="math inline">\(\lambda\)</span>, i.e., <span class="math display">\[\begin{align*}
-\frac{x_{\rm obs}^{x_{\rm obs}}}{x_{\rm obs}!} e^{-x_{\rm obs}} \,.
+\frac{x_{\mathrm{obs}}^{x_{\mathrm{obs}}}}{x_{\mathrm{obs}}!} e^{-x_{\mathrm{obs}}} \,.
 \end{align*}\]</span> So the ratio is <span class="math display">\[\begin{align*}
-\left( \frac{\lambda_o}{x_{\rm obs}} \right)^{x_{\rm obs}} e^{-(\lambda_o-x_{\rm obs})} \,.
+\left( \frac{\lambda_o}{x_{\mathrm{obs}}} \right)^{x_{\mathrm{obs}}} e^{-(\lambda_o-x_{\mathrm{obs}})} \,.
 \end{align*}\]</span></p>
 <p>(c) The expression is <span class="math display">\[\begin{align*}
-W = -2 \log \lambda_{LR} = -2 x_{\rm obs} \log \left( \frac{\lambda_o}{x_{\rm obs}} \right) + 2 (\lambda_o-x_{\rm obs}) \,.
+W = -2 \log \lambda_{LR} = -2 x_{\mathrm{obs}} \log \left( \frac{\lambda_o}{x_{\mathrm{obs}}} \right) + 2 (\lambda_o-x_{\mathrm{obs}}) \,.
 \end{align*}\]</span></p>
 <p>(d) <span class="math inline">\(W\)</span> is sampled from a chi-square distribution for 1 degree of freedom.</p>
 <hr>
@@ -2199,7 +2202,7 @@ W = -2 \log \lambda_{LR} = -2 x_{\rm obs} \log \left( \frac{\lambda_o}{x_{\rm ob
 m_Y(t) = \prod_{i=1}^n m_{X_i}(t) = \left[ m_{X_i}(t) \right]^n = \exp(n\lambda(e^t-1)) \,.
 \end{align*}\]</span> This is the mgf for a Poisson(<span class="math inline">\(n\lambda\)</span>) distribution.</p>
 <p>(c) Recall that in an LRT context, <span class="math inline">\(\Theta = \Theta_o \cup \Theta_a\)</span>; in other words, the null must contain <em>all</em> possible values of <span class="math inline">\(\theta\)</span> that are not in the alternative. Hence: <span class="math inline">\(H_o : \theta \geq \theta_o\)</span>. This inequality does not actually change how the test is constructed, but does change how we interpret it: the true <span class="math inline">\(\alpha\)</span> for this test will be less than or equal to the stated <span class="math inline">\(\alpha\)</span>.</p>
-<p>(d) We are performing a lower-tail test, and we are on the “yes” line (since <span class="math inline">\(E[Y] = n\lambda\)</span> increases with <span class="math inline">\(\lambda\)</span>). From the reference table, that means <span class="math inline">\(y_{\rm RR}\)</span> is equal to <span class="math inline">\(F_Y^{-1}(\alpha \vert n\lambda_o)\)</span>, which in code is <code>qpois(0.05,n*lambda.o)</code>. (Recall that there are no discreteness corrections in rejection-region boundary computations.)</p>
+<p>(d) We are performing a lower-tail test, and we are on the “yes” line (since <span class="math inline">\(E[Y] = n\lambda\)</span> increases with <span class="math inline">\(\lambda\)</span>). From the reference table, that means <span class="math inline">\(y_{\mathrm{RR}}\)</span> is equal to <span class="math inline">\(F_Y^{-1}(\alpha \vert n\lambda_o)\)</span>, which in code is <code>qpois(0.05,n*lambda.o)</code>. (Recall that there are no discreteness corrections in rejection-region boundary computations.)</p>
 <hr>
 <ul>
 <li>Problem 11</li>
@@ -2231,8 +2234,8 @@ m_Y(t) = \prod_{i=1}^n m_{X_i}(t) = \left[ m_{X_i}(t) \right]^n = \exp(n\lambda(
 <p>(d) The likelihood ratio test statistic is <span class="math display">\[\begin{align*}
 \lambda = \frac{\mathcal{L}(p_0 \vert x)}{\mathcal{L}(\hat{p}_{MLE} \vert x)} = \frac{\frac{1000!}{550!450!} 0.5^{550} (1-0.5)^{450} }{ \frac{1000!}{550!450!} 0.55^{550} (1-0.55)^{450}}  = \frac{0.5^{1000}}{0.55^{550} \cdot 0.45^{450}} = 0.00668 \,,
 \end{align*}\]</span> where we make use of the fact that <span class="math inline">\(\hat{p}_{MLE} = x/n = 0.55\)</span>.</p>
-<p>(e) We have that <span class="math inline">\(W_{\rm obs} = -2 \log(\lambda_{LR}) = 10.017\)</span>. According to Wilk’s theorem, the <span class="math inline">\(p\)</span>-value is <span class="math display">\[\begin{align*}
-\int_{W_{\rm obs}}^\infty f_W(w) dw \,,
+<p>(e) We have that <span class="math inline">\(W_{\mathrm{obs}} = -2 \log(\lambda_{LR}) = 10.017\)</span>. According to Wilk’s theorem, the <span class="math inline">\(p\)</span>-value is <span class="math display">\[\begin{align*}
+\int_{W_{\mathrm{obs}}}^\infty f_W(w) dw \,,
 \end{align*}\]</span> for 1 degree of freedom, or <code>1 - pchisq(10.017,1)</code> (= 0.00155).</p>
 <p>(f) We have sufficient evidence to reject the null hypothesis and thus to conclude that the coin is not a fair one.</p>
 <hr>
@@ -2342,7 +2345,8 @@ E[-\log p_X(x)] &amp;= E\left[-X \log \lambda + \lambda + \log X! \right] = - E[
 &amp;= \lambda (1 - \log \lambda) + E[\log X!] \,.
 \end{align*}\]</span></p>
 <p>(b) The probability-generating function is <span class="math display">\[\begin{align*}
-E[z^X] &amp;= \sum_{x=0}^\infty z^x \frac{\lambda^x}{x!} e^{-\lambda} = \sum_{x=0}^\infty \frac{(z\lambda)^x}{x!} e^{-\lambda} = \sum_{x=0}^\infty \frac{(z\lambda)^x}{x!} e^{-\lambda} \frac{e^{-z\lambda}}{e^{-z\lambda}} = \frac{e^{-\lambda}}{e^{-z\lambda}} \sum_{x=0}^\infty \frac{(z\lambda)^x}{x!} e^{-z\lambda} = \frac{e^{-\lambda}}{e^{-z\lambda}} = e^{(z-1)\lambda} \,.
+E[z^X] &amp;= \sum_{x=0}^\infty z^x \frac{\lambda^x}{x!} e^{-\lambda} = \sum_{x=0}^\infty \frac{(z\lambda)^x}{x!} e^{-\lambda} = \sum_{x=0}^\infty \frac{(z\lambda)^x}{x!} e^{-\lambda} \frac{e^{-z\lambda}}{e^{-z\lambda}} \\
+&amp;= \frac{e^{-\lambda}}{e^{-z\lambda}} \sum_{x=0}^\infty \frac{(z\lambda)^x}{x!} e^{-z\lambda} = \frac{e^{-\lambda}}{e^{-z\lambda}} = e^{(z-1)\lambda} \,.
 \end{align*}\]</span></p>
 <hr>
 <ul>
@@ -2381,11 +2385,11 @@ E[X^2] = V[X] + (E[X])^2 = \sigma^2\left(1-\frac{2}{\pi}\right) + \sigma^2\frac{
 \Rightarrow ~~~ \hat{\theta}_{MLE} &amp;= -\frac{1}{\log (X/3)} \,.
 \end{align*}\]</span></p>
 <p>(b) The likelihood-ratio test statistic is <span class="math display">\[\begin{align*}
-\lambda_{\rm LR} = \frac{ {\rm sup}_{\theta \in \Theta_o} \mathcal{L}(\theta \vert \mathbf{x}) }{ {\rm sup}_{\theta \in \Theta} \mathcal{L}(\theta \vert \mathbf{x}) } \,,
+\lambda_{\mathrm{LR}} = \frac{ {\mathrm{sup}}_{\theta \in \Theta_o} \mathcal{L}(\theta \vert \mathbf{x}) }{ {\mathrm{sup}}_{\theta \in \Theta} \mathcal{L}(\theta \vert \mathbf{x}) } \,,
 \end{align*}\]</span> where <span class="math inline">\(\Theta_o = \{ \theta : \theta = \theta_o \}\)</span> and <span class="math inline">\(\Theta = \{ \theta : \theta &gt; 0 \}\)</span>. Thus in the numerator we plug in <span class="math inline">\(\theta_o\)</span> and in the denominator we plug in <span class="math inline">\(\hat{\theta}_{MLE}\)</span>: <span class="math display">\[\begin{align*}
-\lambda_{\rm LR} &amp;= \frac{ (\theta_o/3^{\theta_o}) X^{\theta_o-1} }{ (\hat{\theta}_{MLE}/3^{\hat{\theta}_{MLE}}) X^{\hat{\theta}_{MLE}-1} } = \frac{\theta_o}{\hat{\theta}_{MLE}} \left(\frac{X}{3}\right)^{\theta_o-\hat{\theta}_{MLE}} \,.
+\lambda_{\mathrm{LR}} &amp;= \frac{ (\theta_o/3^{\theta_o}) X^{\theta_o-1} }{ (\hat{\theta}_{MLE}/3^{\hat{\theta}_{MLE}}) X^{\hat{\theta}_{MLE}-1} } = \frac{\theta_o}{\hat{\theta}_{MLE}} \left(\frac{X}{3}\right)^{\theta_o-\hat{\theta}_{MLE}} \,.
 \end{align*}\]</span></p>
-<p>(c) The test statistic is <span class="math inline">\(W = -2\log \lambda_{\rm LR}\)</span>: <span class="math display">\[\begin{align*}
+<p>(c) The test statistic is <span class="math inline">\(W = -2\log \lambda_{\mathrm{LR}}\)</span>: <span class="math display">\[\begin{align*}
 W &amp;= -2 \log \frac{\theta_o}{\hat{\theta}_{MLE}} \left(\frac{X}{3}\right)^{\theta_o-\hat{\theta}_{MLE}} = -2 \left[ \log \frac{\theta_o}{\hat{\theta}_{MLE}} + (\theta_o-\hat{\theta}_{MLE}) \log \frac{X}{3} \right] \,.
 \end{align*}\]</span></p>
 <p>(d) For the constrained model, <span class="math inline">\(r_o = 0\)</span>. (<span class="math inline">\(\theta\)</span> is fixed.) For the unconstrained model, <span class="math inline">\(r = 1\)</span>. Thus <span class="math inline">\(\Delta r = r - r_o = 1\)</span> is the number of degrees of freedom for the chi-square distribution that <code>stat</code> is sampled from under the null:</p>
@@ -2511,17 +2515,17 @@ P\left(X_2 &lt; X_1 \vert X_2 &lt; \frac12\right) = \frac{P(X_2 &lt; X_1 \cap X_
 <li>Problem 10</li>
 </ul>
 <p>(a) The expected value indicates that we are on the “yes” line of the confidence interval reference table, hence we want to solve <span class="math display">\[\begin{align*}
-1 - e^{-n(y_{\rm obs}-\theta)} - (1-\alpha) = 0
+1 - e^{-n(y_{\mathrm{obs}}-\theta)} - (1-\alpha) = 0
 \end{align*}\]</span> for <span class="math inline">\(\theta\)</span>: <span class="math display">\[\begin{align*}
-e^{-n(y_{\rm obs}-\theta)} &amp;= \alpha \\
-\Rightarrow ~~~ -n(y_{\rm obs}-\theta) &amp;= \log(\alpha) \\
-\Rightarrow ~~~ \theta - y_{\rm obs} &amp;= \frac{1}{n}\log(\alpha) \\
-\Rightarrow ~~~ \hat{\theta}_L &amp;= y_{\rm obs} + \frac{1}{n}\log(\alpha) \,.
+e^{-n(y_{\mathrm{obs}}-\theta)} &amp;= \alpha \\
+\Rightarrow ~~~ -n(y_{\mathrm{obs}}-\theta) &amp;= \log(\alpha) \\
+\Rightarrow ~~~ \theta - y_{\mathrm{obs}} &amp;= \frac{1}{n}\log(\alpha) \\
+\Rightarrow ~~~ \hat{\theta}_L &amp;= y_{\mathrm{obs}} + \frac{1}{n}\log(\alpha) \,.
 \end{align*}\]</span></p>
 <p>(b) Note that although this is a two-tailed test, it is impossible to sample a statistic value less than <span class="math inline">\(\theta\)</span>, so we derive the rejection region boundary as if we are performing an upper-tail test. We are on the “yes” line of the hypothesis test reference table, hence we want to solve <span class="math display">\[\begin{align*}
-1 - e^{-n(y_{\rm RR}-\theta_o)} - (1-\alpha) = 0
-\end{align*}\]</span> for <span class="math inline">\(y_{\rm RR}\)</span>: <span class="math display">\[\begin{align*}
-e^{-n(y_{\rm RR}-\theta_o)} &amp;= \alpha ~~~ \Rightarrow ~~~ -n(y_{\rm RR}-\theta_o) &amp;= \log(\alpha) ~~~ \Rightarrow ~~~ y_{\rm RR} - \theta_o = -\frac{1}{n}\log(\alpha) ~~~ \Rightarrow ~~~ y_{\rm RR} = \theta_o - \frac{1}{n}\log(\alpha) \,.
+1 - e^{-n(y_{\mathrm{RR}}-\theta_o)} - (1-\alpha) = 0
+\end{align*}\]</span> for <span class="math inline">\(y_{\mathrm{RR}}\)</span>: <span class="math display">\[\begin{align*}
+e^{-n(y_{\mathrm{RR}}-\theta_o)} = \alpha ~~~ &amp;\Rightarrow ~~~ -n(y_{\mathrm{RR}}-\theta_o) = \log(\alpha) \\ &amp;\Rightarrow ~~~ y_{\mathrm{RR}} - \theta_o = -\frac{1}{n}\log(\alpha) \\ &amp;\Rightarrow ~~~ y_{\mathrm{RR}} = \theta_o - \frac{1}{n}\log(\alpha) \,.
 \end{align*}\]</span></p>
 <hr>
 <ul>
@@ -2567,14 +2571,14 @@ E[U] = \int_0^1 u f_U(u) du = \frac{1}{2} \int_0^1 u^{1/2} du = \frac12 \frac23 
 f_X(x) = \frac{d}{dx} F_X(x) &amp;= \frac{d}{dx} c\left(1-e^{-x/\theta}\right) = -ce^{-x/\theta}\left(-\frac{1}{\theta}\right) = \frac{c}{\theta}e^{-x/\theta} \,.
 \end{align*}\]</span> This is a truncated exponential distribution.</p>
 <p>(b) We sample a single datum, so our statistic is <span class="math inline">\(X\)</span>. We are constructing an upper-tail test where <span class="math inline">\(E[X]\)</span> <em>decreases</em> with <span class="math inline">\(c\)</span> (as <span class="math inline">\(c \rightarrow \infty\)</span>, <span class="math inline">\(-\theta\log(1-1/c) \rightarrow 0\)</span>, from the right). So we are on the “no” line of the hypothesis test reference table: <span class="math inline">\(q = \alpha\)</span>. <span class="math display">\[\begin{align*}
-c_o\left(1-e^{-x_{\rm RR}/\theta}\right) - \alpha &amp;= 0 \\
-\Rightarrow ~~~ \left(1-e^{-x_{\rm RR}/\theta}\right) &amp;= \frac{\alpha}{c_o} \\
-\Rightarrow ~~~ e^{-x_{\rm RR}/\theta} &amp;= 1-\frac{\alpha}{c_o} \\
-\Rightarrow ~~~ -\frac{x_{\rm RR}}{\theta} &amp;= \log\left(1-\frac{\alpha}{c_o}\right) \\
-\Rightarrow ~~~ x_{\rm RR} &amp;= -\theta\log\left(1-\frac{\alpha}{c_o}\right) \,.
+c_o\left(1-e^{-x_{\mathrm{RR}}/\theta}\right) - \alpha &amp;= 0 \\
+\Rightarrow ~~~ \left(1-e^{-x_{\mathrm{RR}}/\theta}\right) &amp;= \frac{\alpha}{c_o} \\
+\Rightarrow ~~~ e^{-x_{\mathrm{RR}}/\theta} &amp;= 1-\frac{\alpha}{c_o} \\
+\Rightarrow ~~~ -\frac{x_{\mathrm{RR}}}{\theta} &amp;= \log\left(1-\frac{\alpha}{c_o}\right) \\
+\Rightarrow ~~~ x_{\mathrm{RR}} &amp;= -\theta\log\left(1-\frac{\alpha}{c_o}\right) \,.
 \end{align*}\]</span></p>
 <p>(c) The power can be (essentially) read directly off of the hypothesis test reference table: <span class="math display">\[\begin{align*}
-power(\theta) = F_Y(y_{\rm RR} \vert \theta) ~~~ \Rightarrow ~~~ power(c) = c\left(1 - e^{-x_{\rm RR}/\theta}\right) \,.
+power(\theta) = F_Y(y_{\mathrm{RR}} \vert \theta) ~~~ \Rightarrow ~~~ power(c) = c\left(1 - e^{-x_{\mathrm{RR}}/\theta}\right) \,.
 \end{align*}\]</span> There is no “trivial” rejection here; that could only arise if <span class="math inline">\(c &lt; c_o\)</span>.</p>
 <p>(d) If we observed a value of <span class="math inline">\(X\)</span> in the range <span class="math inline">\((-\theta\log(1-1/c_o),\infty)\)</span> (or <span class="math inline">\((x_c,\infty)\)</span>), we would trivially reject the null: it is impossible to sample a value of <span class="math inline">\(X\)</span> in this range if the null is correct.</p>
 <p>(e) <span class="math inline">\(x_c = -\theta \log(1-1/c)\)</span> must be larger than the datum with the largest value, so the sufficient statistic is <span class="math inline">\(X_{(n)}\)</span>.</p>
@@ -2589,8 +2593,8 @@ E[X] &amp;= \int_0^\theta x \frac{2}{\theta} \left( 1 - \frac{x}{\theta} \right)
 <p>(c) The bias is <span class="math inline">\(E[\hat{\theta}_{MLE}-\theta] = E[X] - \theta = -2\theta/3\)</span>.</p>
 <p>(d) Since <span class="math inline">\(E[X] = \theta/3\)</span>, <span class="math inline">\(E[3X] = \theta\)</span>…and thus <span class="math inline">\(\hat{\theta}_{MVUE} = 3X\)</span>.</p>
 <p>(e) One can compute this using the MLE result, or using the MVUE result: <span class="math display">\[\begin{align*}
-{\rm MLE}&amp;: (B[\hat{\theta}_{MLE}])^2 + V[\hat{\theta}_{MLE}] = \frac49\theta^2 + \frac{1}{18}\theta^2 = \frac12 \theta^2 \\
-{\rm MVUE}&amp;: (B[\hat{\theta}_{MVUE}])^2 + V[\hat{\theta}_{MVUE}] = 0 + V[3X] = 9V[X] = \frac{9}{18}\theta^2 = \frac12 \theta^2 \,.
+{\mathrm{MLE}}&amp;: (B[\hat{\theta}_{MLE}])^2 + V[\hat{\theta}_{MLE}] = \frac49\theta^2 + \frac{1}{18}\theta^2 = \frac12 \theta^2 \\
+{\mathrm{MVUE}}&amp;: (B[\hat{\theta}_{MVUE}])^2 + V[\hat{\theta}_{MVUE}] = 0 + V[3X] = 9V[X] = \frac{9}{18}\theta^2 = \frac12 \theta^2 \,.
 \end{align*}\]</span></p>
 </section>
 <section id="chapter-6" class="level2 unnumbered">
@@ -2626,7 +2630,7 @@ E[X_1 \vert X_2 = 0] &amp;= \sum_{x_1=0}^1 x_1 p(x_1 \vert x_2=0) = \sum_{x_1=0}
 V[X_2 \vert X_1=1] &amp;= E[X_2^2 \vert X_1=1] - (E[X_2\vert X_1=1])^2 \\
 &amp;= \sum_{x_2=0}^1 x_2^2 p(x_2 \vert x_1=1) - \left[\sum_{x_2=0}^1 x_2 p(x_2 \vert x_1=1)\right]^2 \\
 &amp;= \sum_{x_2=0}^1 x_2^2 \frac{p(x_1=1,x_2)}{p(p_1{x_1=1})} - \left[\sum_{x_2=0}^1 x_2 \frac{P(x_1=1,x_2)}{p(p_1{x_1=1})}\right]^2 \\
-&amp;= 1 \cdot \frac{p(x_1=1,x_2=1)}{p(x_1=1,x_2=0)+p(x_1=1,x_2=1)} -
+&amp;= 1 \cdot \frac{p(x_1=1,x_2=1)}{p(x_1=1,x_2=0)+p(x_1=1,x_2=1)} - \\
 &amp;~~~~~\left[1 \cdot \frac{p(x_1=1,x_2=1)}{p(x_1=1,x_2=0)+p(x_1=1,x_2=1)}\right]^2 \\
 &amp;= \frac{0.1}{0.5} - \left(\frac{0.1}{0.5}\right)^2 = 0.2 - 0.04 = 0.16 \,.
 \end{align*}\]</span> This answer could also be reasoned out by inspecting the table.</p>
@@ -2708,14 +2712,14 @@ E[Y^2] &amp;= \sum_x x^2 p_X(x) = 0^2 \cdot 0.4 + 1^2 \cdot 0.4 + 2^2 \cdot 0.2 
 <li>Problem 6</li>
 </ul>
 <p>The region of integration lies between the <span class="math inline">\(x\)</span> axis, the <span class="math inline">\(y\)</span> axis, and the line <span class="math inline">\(x_2 = 1-x_1\)</span>, in the first quadrant.</p>
-<p>(a) <span class="math inline">\({\rm Cov}(X_1,X_2) = E[X_1X_2] - E[X_1]E[X_2]\)</span>…so we need to compute <span class="math inline">\(E[X_1X_2]\)</span>: <span class="math display">\[\begin{align*}
+<p>(a) <span class="math inline">\({\mathrm{Cov}}(X_1,X_2) = E[X_1X_2] - E[X_1]E[X_2]\)</span>…so we need to compute <span class="math inline">\(E[X_1X_2]\)</span>: <span class="math display">\[\begin{align*}
 E[X_1X_2] &amp;= \int_0^1 \int_0^{1-x_1} x_1 x_2 60 x_1^2 x_2 dx_2 dx_1 = 60 \int_0^1 x_1^3 \int_0^{1-x_1} x_2^2 dx_2 dx_1 \\
 &amp;= 60 \int_0^1 x_1^3 \frac{(1-x_1)^3}{3} dx_1 = 20 B(4,4) = 20 \frac{3! 3!}{7!} = 1/7 \,.
 \end{align*}\]</span> Hence Cov(<span class="math inline">\(X_1,X_2\)</span>) = 1/7 - 1/2(1/3) = <span class="math inline">\(-1/42\)</span>.</p>
 <p>(b) We have that <span class="math display">\[\begin{align*}
-{\rm Corr}(X_1,X_2) = \frac{{\rm Cov}(X_1,X_2)}{\sigma_{X_1}\sigma_{X_2}} = \frac{-1/42}{\sqrt{2/7-1/4} \sqrt{1/7-1/9}} = \cdots = -1/\sqrt{2} \,.
+{\mathrm{Corr}}(X_1,X_2) = \frac{{\mathrm{Cov}}(X_1,X_2)}{\sigma_{X_1}\sigma_{X_2}} = \frac{-1/42}{\sqrt{2/7-1/4} \sqrt{1/7-1/9}} = \cdots = -1/\sqrt{2} \,.
 \end{align*}\]</span></p>
-<p>(c) <span class="math inline">\(V[X_1-2X_2] = V[X_1] + 4V[X_2] - 2 \cdot 2 \cdot {\rm Cov}(X_1,X_2) = 1/28 + 8/63 + 4/42 = \cdots = 65/252\)</span>.</p>
+<p>(c) <span class="math inline">\(V[X_1-2X_2] = V[X_1] + 4V[X_2] - 2 \cdot 2 \cdot {\mathrm{Cov}}(X_1,X_2) = 1/28 + 8/63 + 4/42 = \cdots = 65/252\)</span>.</p>
 <hr>
 <ul>
 <li>Problem 7</li>
@@ -2756,7 +2760,7 @@ E[X_1] =&amp; \int_0^1 \int_{x_1 = 0}^{x_1 = 2-x_2} x_1 k dx_1 dx_2 = k \int_0^1
 <ul>
 <li>Problem 10</li>
 </ul>
-<p>(a) <span class="math inline">\(p \sim {\rm Beta}(2,2)\)</span>, and <span class="math inline">\(X|p \sim {\rm Bin}(5,p)\)</span>, thus <span class="math display">\[\begin{align*}
+<p>(a) <span class="math inline">\(p \sim {\mathrm{Beta}}(2,2)\)</span>, and <span class="math inline">\(X|p \sim {\mathrm{Bin}}(5,p)\)</span>, thus <span class="math display">\[\begin{align*}
 E\left[ E\left[ X|p\right] \right]  = E[5p] = 5E[p] = 5\frac{\alpha}{\alpha + \beta} = 2.5 \,.
 \end{align*}\]</span></p>
 <p>(b) We have that <span class="math display">\[\begin{align*}
@@ -2774,7 +2778,7 @@ E[X_1 X_2] &amp;= \int_0^1 \left( \int_0^{x_1} x_1 x_2 (3 x_1) dx_2 \right) dx_1
 = \int_0^1 3x_1^2 \left( \int_0^{x_1} x_2 dx_2\right) dx_1 \\
 &amp;=  \int_0^1 3x_1^2 \frac{x_1^2}{2} dx_1 = \frac{3}{2} \int_0^1x_1^4 dx_1 = \frac{3}{10} x_1^5\bigg|_0^1 = \frac{3}{10} \,.
 \end{align*}\]</span> Therefore <span class="math display">\[\begin{align*}
-\rho = \frac{{\rm Cov}(X_1,X_2)}{\sqrt{V[X_1] V[X_2]}} = \frac{E[X_1X_2] - E[X_1] E[X_2]}{\sqrt{V[X_1] V[X_2]}}  = \frac{\frac{3}{10} - \frac{9}{32}}{\sqrt{\frac{3}{80}\frac{19}{320}}} = 0.397 \,.
+\rho = \frac{{\mathrm{Cov}}(X_1,X_2)}{\sqrt{V[X_1] V[X_2]}} = \frac{E[X_1X_2] - E[X_1] E[X_2]}{\sqrt{V[X_1] V[X_2]}}  = \frac{\frac{3}{10} - \frac{9}{32}}{\sqrt{\frac{3}{80}\frac{19}{320}}} = 0.397 \,.
 \end{align*}\]</span></p>
 <hr>
 <ul>
@@ -2961,8 +2965,8 @@ E[X_1X_2] &amp;= \int_0^1 \left[ \int_0^{x_1} 2 x_1 x_2 dx_2 \right] dx_1 = 2 \i
 <li>Problem 25</li>
 </ul>
 <p>(a) The long way to do this involves integration. The short way is to see by inspection that <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> are independent (the region of integration is “rectangular,” and <span class="math inline">\(x_2\)</span> doesn’t directly appear in <span class="math inline">\(f_{X_1,X_2}(x_1,x_2)\)</span>, so <span class="math inline">\(f_{X_1,X_2}(x_1,x_2)\)</span> can be trivially split into two functions <span class="math inline">\(g(x_1)h(x_2)\)</span>), and to see that <span class="math display">\[\begin{align*}
-X_1 \sim {\rm Exp}(\beta = 2) ~{\rm and}~ X_2 \sim {\rm Unif}(0,2) \,.
-\end{align*}\]</span> We know <span class="math inline">\(f_{X_1,X_2}(x_1,x_2) = f_{X_1}(x_1)f_{X_2}(x_2) = (1/\beta){\rm exp}(-x_1/2) \cdot (1/2)\)</span>, so <span class="math inline">\(k = 1/(2\beta) = 1/4\)</span>.</p>
+X_1 \sim {\mathrm{Exp}}(\beta = 2) ~{\mathrm{and}}~ X_2 \sim {\mathrm{Unif}}(0,2) \,.
+\end{align*}\]</span> We know <span class="math inline">\(f_{X_1,X_2}(x_1,x_2) = f_{X_1}(x_1)f_{X_2}(x_2) = (1/\beta){\mathrm{exp}}(-x_1/2) \cdot (1/2)\)</span>, so <span class="math inline">\(k = 1/(2\beta) = 1/4\)</span>.</p>
 <p>(b) The key here is to realize that since <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> are independent, <span class="math inline">\(E[X_1]\)</span> is just the expected value of <span class="math inline">\(f_{X_1}(x_1)\)</span>, i.e., it is the expected value of an exponential distribution with mean 2. So: <span class="math inline">\(E[X_1] = \beta = 2\)</span>.</p>
 <hr>
 <ul>

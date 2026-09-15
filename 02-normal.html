@@ -2,17 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>2&nbsp; The Normal (and Related) Distributions – Modern Probability and Statistical Inference</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -59,7 +65,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -93,10 +98,10 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-485d01fc63b59abcd3ee1bf1e8e2748d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-d3f7f8e73c8d287b30bcf59c2b563615.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -126,7 +131,7 @@ div.csl-indent {
 }</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -139,7 +144,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -594,10 +599,10 @@ Figure&nbsp;2.2: The probability <span class="math inline">\(P(8 \leq X \leq 13.
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>integrand <span class="ot">&lt;-</span> <span class="cf">function</span>(x,mu,sigma2) {</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>integrand <span class="ot">&lt;-</span> <span class="cf">function</span>(x,mu,sigma2) {</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">exp</span>(<span class="sc">-</span>(x<span class="sc">-</span>mu)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="dv">2</span><span class="sc">/</span>sigma2)<span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">2</span><span class="sc">*</span>pi<span class="sc">*</span>sigma2))</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">integrate</span>(integrand,<span class="dv">8</span>,<span class="fl">13.5</span>,<span class="at">mu=</span><span class="dv">10</span>,<span class="at">sigma2=</span><span class="dv">4</span>)<span class="sc">$</span>value</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">integrate</span>(integrand,<span class="dv">8</span>,<span class="fl">13.5</span>,<span class="at">mu=</span><span class="dv">10</span>,<span class="at">sigma2=</span><span class="dv">4</span>)<span class="sc">$</span>value</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.8012856</code></pre>
@@ -617,8 +622,8 @@ Figure&nbsp;2.2: The probability <span class="math inline">\(P(8 \leq X \leq 13.
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">integrate</span>(integrand,<span class="dv">8</span>,<span class="fl">13.5</span>,<span class="at">mu=</span><span class="dv">13</span>,<span class="at">sigma2=</span><span class="dv">5</span>)<span class="sc">$</span>value <span class="sc">/</span> </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">integrate</span>(integrand,<span class="sc">-</span><span class="cn">Inf</span>,<span class="dv">14</span>,<span class="at">mu=</span><span class="dv">13</span>,<span class="at">sigma2=</span><span class="dv">5</span>)<span class="sc">$</span>value</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">integrate</span>(integrand,<span class="dv">8</span>,<span class="fl">13.5</span>,<span class="at">mu=</span><span class="dv">13</span>,<span class="at">sigma2=</span><span class="dv">5</span>)<span class="sc">$</span>value <span class="sc">/</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">integrate</span>(integrand,<span class="sc">-</span><span class="cn">Inf</span>,<span class="dv">14</span>,<span class="at">mu=</span><span class="dv">13</span>,<span class="at">sigma2=</span><span class="dv">5</span>)<span class="sc">$</span>value</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.8560226</code></pre>
@@ -738,7 +743,7 @@ P(8 \leq X \leq 13.5) = P(X \leq 13.5) - P(X \leq 8) = F_X(13.5 \vert 10,4) - F_
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="fl">13.5</span>,<span class="at">mean=</span><span class="dv">10</span>,<span class="at">sd=</span><span class="fu">sqrt</span>(<span class="dv">4</span>)) <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="dv">8</span>,<span class="at">mean=</span><span class="dv">10</span>,<span class="at">sd=</span><span class="fu">sqrt</span>(<span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="fl">13.5</span>,<span class="at">mean=</span><span class="dv">10</span>,<span class="at">sd=</span><span class="fu">sqrt</span>(<span class="dv">4</span>)) <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="dv">8</span>,<span class="at">mean=</span><span class="dv">10</span>,<span class="at">sd=</span><span class="fu">sqrt</span>(<span class="dv">4</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.8012856</code></pre>
@@ -758,8 +763,8 @@ P(8 \leq X \leq 13.5) = P(X \leq 13.5) - P(X \leq 8) = F_X(13.5 \vert 10,4) - F_
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>(<span class="fu">pnorm</span>(<span class="fl">13.5</span>,<span class="at">mean=</span><span class="dv">13</span>,<span class="at">sd=</span><span class="fu">sqrt</span>(<span class="dv">5</span>)) <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="dv">8</span>,<span class="at">mean=</span><span class="dv">13</span>,<span class="at">sd=</span><span class="fu">sqrt</span>(<span class="dv">5</span>))) <span class="sc">/</span> </span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pnorm</span>(<span class="dv">14</span>,<span class="at">mean=</span><span class="dv">13</span>,<span class="at">sd=</span><span class="fu">sqrt</span>(<span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>(<span class="fu">pnorm</span>(<span class="fl">13.5</span>,<span class="at">mean=</span><span class="dv">13</span>,<span class="at">sd=</span><span class="fu">sqrt</span>(<span class="dv">5</span>)) <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="dv">8</span>,<span class="at">mean=</span><span class="dv">13</span>,<span class="at">sd=</span><span class="fu">sqrt</span>(<span class="dv">5</span>))) <span class="sc">/</span> </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pnorm</span>(<span class="dv">14</span>,<span class="at">mean=</span><span class="dv">13</span>,<span class="at">sd=</span><span class="fu">sqrt</span>(<span class="dv">5</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.8560226</code></pre>
@@ -797,7 +802,7 @@ a = 20 - F_X^{-1}(0.26 \vert 20,3) \,,
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">20</span> <span class="sc">-</span> <span class="fu">qnorm</span>(<span class="fl">0.26</span>,<span class="at">mean=</span><span class="dv">20</span>,<span class="at">sd=</span><span class="fu">sqrt</span>(<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">20</span> <span class="sc">-</span> <span class="fu">qnorm</span>(<span class="fl">0.26</span>,<span class="at">mean=</span><span class="dv">20</span>,<span class="at">sd=</span><span class="fu">sqrt</span>(<span class="dv">3</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <blockquote class="blockquote">
@@ -869,7 +874,7 @@ m_X(t) = E[e^{tX}] &amp;= \int_x e^{tX} f_X(x) \\
 <p>Moment-generating functions are called such because, as one might guess, they generate moments (via differentiation): <span class="math display">\[\begin{align*}
 \left.\frac{d^k m_X(t)}{dt^k}\right|_{t=0} &amp;= \frac{d^k}{dt^k} \left. \left[1 + t E[X] + \frac{t^2}{2!} E[X^2] + \cdots \right]\right|_{t=0}\\
 &amp;= \left. \left[E[X^k] + tE[X^{k+1}] + \cdots\right] \right|_{t=0} = E[X^k] \,.
-\end{align*}\]</span> The <span class="math inline">\(k^{\rm th}\)</span> derivative of an mgf, with <span class="math inline">\(t\)</span> set to zero, yields the <span class="math inline">\(k^{\rm th}\)</span> moment <span class="math inline">\(E[X^k]\)</span>.</p>
+\end{align*}\]</span> The <span class="math inline">\(k^{\mathrm{th}}\)</span> derivative of an mgf, with <span class="math inline">\(t\)</span> set to zero, yields the <span class="math inline">\(k^{\mathrm{th}}\)</span> moment <span class="math inline">\(E[X^k]\)</span>.</p>
 </section>
 <section id="sec-chap2method" class="level3" data-number="2.3.2">
 <h3 data-number="2.3.2" class="anchored" data-anchor-id="sec-chap2method"><span class="header-section-number">2.3.2</span> Sampling Distributions via the Method of Moment-Generating Functions</h3>
@@ -878,7 +883,7 @@ m_Y(t) = e^{bt} m_{X_1}(a_1 t) m_{X_2}(a_2 t) \cdots m_{X_n}(a_n t) = e^{bt} \pr
 \]</span> where <span class="math inline">\(m_{X_i}(\cdot)\)</span> is the moment-generating function for the random variable <span class="math inline">\(X_i\)</span>. An mgf is typically written as a function of <span class="math inline">\(t\)</span>; the notation <span class="math inline">\(m_{X_i}(a_it)\)</span> simply means that when we evaluate the above equation, wherever there is a <span class="math inline">\(t\)</span>, we plug in <span class="math inline">\(a_it\)</span>. Here’s the key point: <em>if we recognize the form of <span class="math inline">\(m_Y(t)\)</span> as matching that of the mgf for a given distribution, then we know the sampling distribution for <span class="math inline">\(Y\)</span></em>.</p>
 <p>Below, we show how the method of moment-generating functions allows us to derive sampling distributions for linearly transformed normal random variables.</p>
 <div class="graybox">
-<p>For more on how we derive sampling distributions in practice, go to <a href="#sec-chap2linear" class="quarto-xref"><span>Section 2.4</span></a>, <a href="#sec-chap2standard" class="quarto-xref"><span>Section 2.5</span></a>, <a href="03-binomial.html#sec-chap3linear" class="quarto-xref"><span>Section 3.4</span></a>, <a href="04-poisson.html#sec-chap4linear" class="quarto-xref"><span>Section 4.4</span></a>, and <a href="05-uniform.html#sec-chap5linear" class="quarto-xref"><span>Section 5.2</span></a>. What happens if we cannot derive a sampling distribution? We can simulate or utilize the bootstrap algorithm. See, e.g., <span class="quarto-unresolved-ref">?sec-sec-chap4bootstrap</span>.</p>
+<p>For more on how we derive sampling distributions in practice, go to <a href="#sec-chap2linear" class="quarto-xref"><span>Section 2.4</span></a>, <a href="#sec-chap2standard" class="quarto-xref"><span>Section 2.5</span></a>, <a href="03-binomial.html#sec-chap3linear" class="quarto-xref"><span>Section 3.4</span></a>, <a href="04-poisson.html#sec-chap4linear" class="quarto-xref"><span>Section 4.4</span></a>, and <a href="05-uniform.html#sec-chap5linear" class="quarto-xref"><span>Section 5.2</span></a>. What happens if we cannot derive a sampling distribution? We can simulate or utilize the bootstrap algorithm. See, e.g., <a href="04-poisson.html#sec-chap4bootstrap" class="quarto-xref"><span>Section 4.6.1</span></a>.</p>
 </div>
 </section>
 <section id="examples-2" class="level3" data-number="2.3.3">
@@ -1035,7 +1040,7 @@ P(0 \leq Y \leq 2) = P(Y \leq 2) - P(Y \leq 0) = F_Y(2) - F_Y(0) \,,
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">2</span>, <span class="at">mean =</span> <span class="dv">2</span>, <span class="at">sd =</span> <span class="fu">sqrt</span>(<span class="dv">20</span>)) <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="dv">0</span>, <span class="at">mean =</span> <span class="dv">2</span>, <span class="at">sd =</span> <span class="fu">sqrt</span>(<span class="dv">20</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">2</span>, <span class="at">mean =</span> <span class="dv">2</span>, <span class="at">sd =</span> <span class="fu">sqrt</span>(<span class="dv">20</span>)) <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="dv">0</span>, <span class="at">mean =</span> <span class="dv">2</span>, <span class="at">sd =</span> <span class="fu">sqrt</span>(<span class="dv">20</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.1726396</code></pre>
@@ -1136,7 +1141,7 @@ P(-1 \leq Z \leq 1.75) = \Phi(1.75) - \Phi(-1) \,.
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="fl">1.75</span>) <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="sc">-</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="fl">1.75</span>) <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="sc">-</span><span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.8012856</code></pre>
@@ -1154,7 +1159,7 @@ P(-1 \leq Z \leq 1.75) = \Phi(1.75) - \Phi(-1) \,.
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>(<span class="fu">pnorm</span>(<span class="fu">sqrt</span>(<span class="dv">5</span>) <span class="sc">/</span> <span class="dv">10</span>) <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="sc">-</span><span class="fu">sqrt</span>(<span class="dv">5</span>))) <span class="sc">/</span> <span class="fu">pnorm</span>(<span class="fu">sqrt</span>(<span class="dv">5</span>) <span class="sc">/</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>(<span class="fu">pnorm</span>(<span class="fu">sqrt</span>(<span class="dv">5</span>) <span class="sc">/</span> <span class="dv">10</span>) <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="sc">-</span><span class="fu">sqrt</span>(<span class="dv">5</span>))) <span class="sc">/</span> <span class="fu">pnorm</span>(<span class="fu">sqrt</span>(<span class="dv">5</span>) <span class="sc">/</span> <span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.8560226</code></pre>
@@ -1222,7 +1227,7 @@ P\left( \bar{X} &gt; 11 \right) &amp;= 1 - P\left( \bar{X} \leq 11 \right) \\
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="dv">8</span> <span class="sc">/</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="dv">8</span> <span class="sc">/</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.003830381</code></pre>
@@ -1256,7 +1261,7 @@ P\left( \bar{X} &gt; 11 \right) &amp;= 1 - P\left( \bar{X} \leq 11 \right) \\
 </ol>
 <p>Because we are assuming that <span class="math inline">\(U = g(X)\)</span> is a one-to-one function, the domain for <span class="math inline">\(U\)</span> is found by simply plugging the endpoints of <span class="math inline">\(X\)</span>’s domain into <span class="math inline">\(U = g(X)\)</span>.</p>
 <p>But…what if <span class="math inline">\(U = g(X)\)</span> is <em>not</em> a one-to-one function? (For example, perhaps <span class="math inline">\(U = X^2\)</span>, and the domain of <span class="math inline">\(X\)</span> is <span class="math inline">\([-1,1]\)</span>.) If this is the case, then in step (2) above, <span class="math inline">\(P(g(X) \leq u) \neq P(X \leq g^{-1}(u))\)</span>, and the domain cannot be determined by simply using the end-points of the domain of <span class="math inline">\(X\)</span>. In an example below, we show how we use the properties of <span class="math inline">\(U = g(X)\)</span> to amend the recipe above and get to the right distribution for <span class="math inline">\(U\)</span> in the end.</p>
-<p>We note for completeness that it is possible to make multivariate transformations in which <span class="math inline">\(U = g(X_1,\ldots,X_p)\)</span>, but showing how to perform these is beyond the scope of this book. (The interested reader should consult, e.g., <span class="citation" data-cites="hogg2019">Hogg, McKean, and Craig (<a href="09-references.html#ref-hogg2019" role="doc-biblioref">2019</a>)</span>.)</p>
+<p>We note for completeness that it is possible to make multivariate transformations in which <span class="math inline">\(U = g(X_1,\ldots,X_p)\)</span>, but showing how to perform these is beyond the scope of this book. (The interested reader should consult, e.g., <span class="citation" data-cites="hogg2019">Hogg et al. (<a href="09-references.html#ref-hogg2019" role="doc-biblioref">2019</a>)</span>.)</p>
 <section id="examples-4" class="level3" data-number="2.7.1">
 <h3 data-number="2.7.1" class="anchored" data-anchor-id="examples-4"><span class="header-section-number">2.7.1</span> Examples</h3>
 <section id="continuous-transformation-injective-function" class="level4" data-number="2.7.1.1">
@@ -1308,10 +1313,10 @@ f_U(u) = \frac{d}{du} \left(\log\frac{u}{2}\right)^3 = 3\left(\log\frac{u}{2}\ri
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>integrand <span class="ot">&lt;-</span> <span class="cf">function</span>(u) {</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>integrand <span class="ot">&lt;-</span> <span class="cf">function</span>(u) {</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="dv">3</span> <span class="sc">*</span> (<span class="fu">log</span>(u <span class="sc">/</span> <span class="dv">2</span>))<span class="sc">^</span><span class="dv">2</span> <span class="sc">/</span> u)</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="fu">integrate</span>(integrand, <span class="dv">2</span>, <span class="dv">2</span> <span class="sc">*</span> <span class="fu">exp</span>(<span class="dv">1</span>))<span class="sc">$</span>value</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="fu">integrate</span>(integrand, <span class="dv">2</span>, <span class="dv">2</span> <span class="sc">*</span> <span class="fu">exp</span>(<span class="dv">1</span>))<span class="sc">$</span>value</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1</code></pre>
@@ -1409,7 +1414,7 @@ f_W(x) = \frac{x^{\nu/2-1}}{2^{\nu/2} \Gamma(\nu/2)} \exp\left(-\frac{x}{2}\righ
 <div aria-describedby="fig-chi2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-chi2" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-chi2-1" class="quarto-float quarto-figure quarto-figure-center anchored" width="288" data-fig-align="center">
+<div id="fig-chi2-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="288">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-chi2-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="02-normal_files/figure-html/fig-chi2-1.png" id="fig-chi2-1" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-chi2" width="288">
@@ -1421,7 +1426,7 @@ f_W(x) = \frac{x^{\nu/2-1}}{2^{\nu/2} \Gamma(\nu/2)} \exp\left(-\frac{x}{2}\righ
 </div>
 </div>
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-chi2" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-chi2-2" class="quarto-float quarto-figure quarto-figure-center anchored" width="288" data-fig-align="center">
+<div id="fig-chi2-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="288">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-chi2-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="02-normal_files/figure-html/fig-chi2-2.png" id="fig-chi2-2" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-chi2" width="288">
@@ -1498,7 +1503,7 @@ P(Z^2 &gt; 1) = 1 - P(Z^2 \leq 1) = 1 - F_{W(1)}(1) \,.
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pchisq</span>(<span class="dv">1</span>, <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pchisq</span>(<span class="dv">1</span>, <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.3173105</code></pre>
@@ -1528,7 +1533,7 @@ F_{W(4)}^{-1} [F_{W(4)}(a)] = a = F_{W(4)}^{-1}(0.1) \,.
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>(<span class="at">a =</span> <span class="fu">qchisq</span>(<span class="fl">0.1</span>, <span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>(<span class="at">a =</span> <span class="fu">qchisq</span>(<span class="fl">0.1</span>, <span class="dv">4</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1.063623</code></pre>
@@ -1597,11 +1602,11 @@ S^2 \sim \mbox{Gamma}\left(\frac{n-1}{2},\frac{2\sigma^2}{n-1}\right) \,.
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>n      <span class="ot">&lt;-</span> <span class="dv">16</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>n      <span class="ot">&lt;-</span> <span class="dv">16</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>sigma2 <span class="ot">&lt;-</span> <span class="dv">10</span></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>a      <span class="ot">&lt;-</span> (n <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">/</span> <span class="dv">2</span></span>
 <span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>b      <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> sigma2<span class="sc">/</span> (n <span class="sc">-</span> <span class="dv">1</span>)</span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pgamma</span>(<span class="dv">12</span>, <span class="at">shape =</span> a, <span class="at">scale =</span> b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pgamma</span>(<span class="dv">12</span>, <span class="at">shape =</span> a, <span class="at">scale =</span> b)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.2626656</code></pre>
@@ -1712,7 +1717,7 @@ P\left( -\frac{\sqrt{n}}{S} \leq T \leq \frac{\sqrt{n}}{S}\right) = F_{T(7)}(\sq
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">pt</span>(<span class="fu">sqrt</span>(<span class="dv">8</span>), <span class="dv">7</span>) <span class="sc">-</span> <span class="fu">pt</span>(<span class="sc">-</span><span class="fu">sqrt</span>(<span class="dv">8</span>), <span class="dv">7</span>), <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">pt</span>(<span class="fu">sqrt</span>(<span class="dv">8</span>), <span class="dv">7</span>) <span class="sc">-</span> <span class="fu">pt</span>(<span class="sc">-</span><span class="fu">sqrt</span>(<span class="dv">8</span>), <span class="dv">7</span>), <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.975</code></pre>
@@ -1792,7 +1797,7 @@ I(\theta) = E\left[\left(\frac{\partial}{\partial \theta} \log f_X(x \vert \thet
 <div aria-describedby="fig-fisher-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-fisher" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-fisher-1" class="quarto-float quarto-figure quarto-figure-center anchored" width="288" data-fig-align="center">
+<div id="fig-fisher-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="288">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-fisher-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="02-normal_files/figure-html/fig-fisher-1.png" id="fig-fisher-1" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-fisher" width="288">
@@ -1804,7 +1809,7 @@ I(\theta) = E\left[\left(\frac{\partial}{\partial \theta} \log f_X(x \vert \thet
 </div>
 </div>
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-fisher" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-fisher-2" class="quarto-float quarto-figure quarto-figure-center anchored" width="288" data-fig-align="center">
+<div id="fig-fisher-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="288">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-fisher-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="02-normal_files/figure-html/fig-fisher-2.png" id="fig-fisher-2" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-fisher" width="288">
@@ -1887,20 +1892,20 @@ E\left[ \frac{1}{2(\sigma^2)^2} - \frac{(x-\mu)^2}{(\sigma^2)^3} \right] &amp;= 
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>n          <span class="ot">&lt;-</span> <span class="dv">15</span></span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>sigma2     <span class="ot">&lt;-</span> <span class="dv">4</span></span>
 <span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>k          <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
 <span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>X          <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">rnorm</span>(n <span class="sc">*</span> k, <span class="at">sd =</span> <span class="fu">sqrt</span>(sigma2)), <span class="at">nrow =</span> k)</span>
 <span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>sigma2.hat <span class="ot">&lt;-</span> (n <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">*</span> <span class="fu">apply</span>(X, <span class="dv">1</span>, var) <span class="sc">/</span> n</span>
-<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"The sample mean for sigma2.hat               = "</span>, <span class="fu">mean</span>(sigma2.hat), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"The sample mean for sigma2.hat               = "</span>, <span class="fu">mean</span>(sigma2.hat), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>The sample mean for sigma2.hat               =  3.679903 </code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"The sample standard deviation for sigma2.hat = "</span>, <span class="fu">sd</span>(sigma2.hat), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"The sample standard deviation for sigma2.hat = "</span>, <span class="fu">sd</span>(sigma2.hat), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>The sample standard deviation for sigma2.hat =  1.362853 </code></pre>
@@ -1946,8 +1951,8 @@ Figure&nbsp;2.11: The empirical pdf for <span class="math inline">\(\hat{\sigma^
 <p><strong>Recall:</strong> <em>a confidence interval is a random interval <span class="math inline">\([\hat{\theta}_L,\hat{\theta}_U]\)</span> that overlaps (or covers) the true value <span class="math inline">\(\theta\)</span> with probability</em> <span class="math display">\[
 P\left( \hat{\theta}_L \leq \theta \leq \hat{\theta}_U \right) = 1 - \alpha \,,
 \]</span> <em>where <span class="math inline">\(1 - \alpha\)</span> is the confidence coefficient. Note that this is a long-term probabilistic statement that is not to be applied to any one numerically evaluated interval: an evaluated interval either overlaps the true value, or it does not (and thus we cannot say there is a <span class="math inline">\(100(1-\alpha)\)</span>-percent chance that <span class="math inline">\(\theta\)</span> lies within the interval). We determine <span class="math inline">\(\hat{\theta}\)</span> by solving the following equation:</em> <span class="math display">\[
-F_Y(y_{\rm obs} \vert \theta) - q = 0 \,,
-\]</span> <em>where <span class="math inline">\(F_Y(\cdot)\)</span> is the cumulative distribution function for the statistic <span class="math inline">\(Y\)</span>, <span class="math inline">\(y_{\rm obs}\)</span> is the observed value of the statistic, and <span class="math inline">\(q\)</span> is an appropriate quantile value that is determined using the confidence interval reference table introduced in <a href="01-probability.html#sec-chap1confref" class="quarto-xref"><span>Section 1.16.1</span></a>.</em></p>
+F_Y(y_{\mathrm{obs}} \vert \theta) - q = 0 \,,
+\]</span> <em>where <span class="math inline">\(F_Y(\cdot)\)</span> is the cumulative distribution function for the statistic <span class="math inline">\(Y\)</span>, <span class="math inline">\(y_{\mathrm{obs}}\)</span> is the observed value of the statistic, and <span class="math inline">\(q\)</span> is an appropriate quantile value that is determined using the confidence interval reference table introduced in <a href="01-probability.html#sec-chap1confref" class="quarto-xref"><span>Section 1.16.1</span></a>.</em></p>
 </blockquote>
 <p>When we construct confidence intervals, we are allowed to utilize any arbitrarily chosen statistic <span class="math inline">\(Y\)</span>, so long as we know its sampling distribution and so long as <span class="math inline">\(Y\)</span> is “informative” about <span class="math inline">\(\theta\)</span>. (As an example of an uninformative statistic: given iid data sampled according to a normal distribution, <span class="math inline">\(Y = S^2\)</span> contains no information that allows us to infer the value of the population mean, <span class="math inline">\(\mu\)</span>.) However, in the context of the normal distribution, there are conventional choices:</p>
 <ol type="1">
@@ -1958,12 +1963,12 @@ F_Y(y_{\rm obs} \vert \theta) - q = 0 \,,
 <p>While these are conventional statistic choices, there are well-established reasons for using them based on the idea of <em>interval length</em>: if we examine the use of two separate statistics for constructing a confidence interval for <span class="math inline">\(\theta\)</span>, we generally want to use the one that generates <em>shorter confidence intervals</em> (i.e., the one that indicates the least amount of uncertainty about <span class="math inline">\(\theta\)</span>). And while we are not in a position to justify this statement now, we can say that for normally distributed iid data, <span class="math inline">\(\bar{X}\)</span>, <span class="math inline">\(T\)</span>, and <span class="math inline">\(S^2\)</span> are the statistics that will generate the shortest intervals. (Justification will come in <a href="03-binomial.html#sec-chap3nplemma" class="quarto-xref"><span>Section 3.8</span></a> and <a href="04-poisson.html#sec-chap4hypothesis" class="quarto-xref"><span>Section 4.7</span></a> when we discuss the Neyman-Pearson Lemma and the Likelihood Ratio Test.)</p>
 <section id="sec-chap2confnum" class="level3" data-number="2.12.1">
 <h3 data-number="2.12.1" class="anchored" data-anchor-id="sec-chap2confnum"><span class="header-section-number">2.12.1</span> Confidence Intervals: Numerical Estimation</h3>
-<p>For the three cases stated above, we are not able to solve the equation <span class="math inline">\(F_Y(y_{\rm obs} \vert \theta) - q = 0\)</span> for <span class="math inline">\(\theta\)</span> by hand. But we need not worry: given <span class="math inline">\(y_{\rm obs}\)</span> and that <span class="math inline">\(\theta\)</span> is continuously valued, there is a one-to-one relationship between <span class="math inline">\(\theta\)</span> and <span class="math inline">\(q\)</span> and thus the equation will have only one root. We can determine that root using a numerical root-finder such as <code>R</code>’s <code>uniroot()</code> function. Here we show how to find interval bounds for case 1; below, in examples, we provide similar code snippets that cover cases 2 and 3.</p>
+<p>For the three cases stated above, we are not able to solve the equation <span class="math inline">\(F_Y(y_{\mathrm{obs}} \vert \theta) - q = 0\)</span> for <span class="math inline">\(\theta\)</span> by hand. But we need not worry: given <span class="math inline">\(y_{\mathrm{obs}}\)</span> and that <span class="math inline">\(\theta\)</span> is continuously valued, there is a one-to-one relationship between <span class="math inline">\(\theta\)</span> and <span class="math inline">\(q\)</span> and thus the equation will have only one root. We can determine that root using a numerical root-finder such as <code>R</code>’s <code>uniroot()</code> function. Here we show how to find interval bounds for case 1; below, in examples, we provide similar code snippets that cover cases 2 and 3.</p>
 <p>Let’s assume that we sample <span class="math inline">\(n = 25\)</span> iid data according to a normal distribution with variance <span class="math inline">\(\sigma^2 = 1\)</span>, and that we wish to construct a 95% two-sided confidence interval for <span class="math inline">\(\mu\)</span>.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># generate data; typically, X would be provided</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># generate data; typically, X would be provided</span></span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>n      <span class="ot">&lt;-</span> <span class="dv">25</span></span>
 <span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>sigma2 <span class="ot">&lt;-</span> <span class="dv">1</span></span>
@@ -1979,28 +1984,28 @@ F_Y(y_{\rm obs} \vert \theta) - q = 0 \,,
 <span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a><span class="co"># lower bound: E[Y] = mu, so by table q = 1-alpha/2</span></span>
-<span id="cb33-17"><a href="#cb33-17" aria-hidden="true" tabindex="-1"></a><span class="fu">uniroot</span>(f, <span class="at">interval=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">10000</span>, <span class="dv">10000</span>), <span class="at">sigma2=</span>sigma2, <span class="at">n=</span>n, <span class="at">y.obs=</span>Y, <span class="dv">1</span><span class="sc">-</span>alpha<span class="sc">/</span><span class="dv">2</span>)<span class="sc">$</span>root</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb33-17"><a href="#cb33-17" aria-hidden="true" tabindex="-1"></a><span class="fu">uniroot</span>(f, <span class="at">interval=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">10000</span>, <span class="dv">10000</span>), <span class="at">sigma2=</span>sigma2, <span class="at">n=</span>n, <span class="at">y.obs=</span>Y, <span class="dv">1</span><span class="sc">-</span>alpha<span class="sc">/</span><span class="dv">2</span>)<span class="sc">$</span>root</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -0.4875493</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># upper bound: E[Y] = mu, so by table q = alpha/2</span></span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">uniroot</span>(f, <span class="at">interval=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">10000</span>, <span class="dv">10000</span>), <span class="at">sigma2=</span>sigma2, <span class="at">n=</span>n, <span class="at">y.obs=</span>Y, alpha<span class="sc">/</span><span class="dv">2</span>)<span class="sc">$</span>root</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># upper bound: E[Y] = mu, so by table q = alpha/2</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">uniroot</span>(f, <span class="at">interval=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">10000</span>, <span class="dv">10000</span>), <span class="at">sigma2=</span>sigma2, <span class="at">n=</span>n, <span class="at">y.obs=</span>Y, alpha<span class="sc">/</span><span class="dv">2</span>)<span class="sc">$</span>root</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.2964475</code></pre>
 </div>
 </div>
-<p>The user-defined <code>f()</code> function evaluates <span class="math inline">\(F_Y(y_{\rm obs} \vert \theta) - q\)</span>, given values for all three quantities <span class="math inline">\(\theta = \mu\)</span>, <span class="math inline">\(y_{\rm obs}\)</span>, and <span class="math inline">\(q\)</span>, while the function <code>uniroot()</code> varies <span class="math inline">\(\mu\)</span> until <code>f()</code> returns a value sufficiently close to zero. There are three aspects to this code to immediately note. First, <code>R</code> will see that <code>mu</code> is the only variable whose value is not fixed, and thus will automatically search for the one value of <code>mu</code> such that <span class="math inline">\(F_Y(y_{\rm obs} \vert \theta) - q = 0\)</span> is satisfied (within machine tolerance). Second, because <code>f()</code> requires other quantities like <code>sigma2</code>, we must explicitly specify their values in the calls to <code>uniroot()</code>. The third code aspect to note is the argument <code>interval</code> that is passed to <code>uniroot()</code>. This is the range of values of (in this case) <code>mu</code> over which <code>R</code> will search for the one root. Since <span class="math inline">\(\mu\)</span> can, in theory, take on any value, we specify the interval as being from a very large negative number to a very large positive number. Because <code>uniroot()</code>’s root-finding algorithm is very robust and efficient, making the search interval bounds inordinately large does not ultimately affect performance: the roots will be found, and they will be found very quickly. Here, we find that the interval is <span class="math inline">\([\hat{\theta}_L,\hat{\theta}_U] =
+<p>The user-defined <code>f()</code> function evaluates <span class="math inline">\(F_Y(y_{\mathrm{obs}} \vert \theta) - q\)</span>, given values for all three quantities <span class="math inline">\(\theta = \mu\)</span>, <span class="math inline">\(y_{\mathrm{obs}}\)</span>, and <span class="math inline">\(q\)</span>, while the function <code>uniroot()</code> varies <span class="math inline">\(\mu\)</span> until <code>f()</code> returns a value sufficiently close to zero. There are three aspects to this code to immediately note. First, <code>R</code> will see that <code>mu</code> is the only variable whose value is not fixed, and thus will automatically search for the one value of <code>mu</code> such that <span class="math inline">\(F_Y(y_{\mathrm{obs}} \vert \theta) - q = 0\)</span> is satisfied (within machine tolerance). Second, because <code>f()</code> requires other quantities like <code>sigma2</code>, we must explicitly specify their values in the calls to <code>uniroot()</code>. The third code aspect to note is the argument <code>interval</code> that is passed to <code>uniroot()</code>. This is the range of values of (in this case) <code>mu</code> over which <code>R</code> will search for the one root. Since <span class="math inline">\(\mu\)</span> can, in theory, take on any value, we specify the interval as being from a very large negative number to a very large positive number. Because <code>uniroot()</code>’s root-finding algorithm is very robust and efficient, making the search interval bounds inordinately large does not ultimately affect performance: the roots will be found, and they will be found very quickly. Here, we find that the interval is <span class="math inline">\([\hat{\theta}_L,\hat{\theta}_U] =
 [-0.488,0.296]\)</span>, which overlaps the true value. (See <a href="#fig-mukvarci" class="quarto-xref">Figure&nbsp;<span>2.12</span></a>.)</p>
 <div id="fig-mukvarci" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-mukvarci-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-mukvarci" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-mukvarci-1" class="quarto-float quarto-figure quarto-figure-center anchored" width="288" data-fig-align="center">
+<div id="fig-mukvarci-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="288">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-mukvarci-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="02-normal_files/figure-html/fig-mukvarci-1.png" id="fig-mukvarci-1" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-mukvarci" width="288">
@@ -2012,7 +2017,7 @@ F_Y(y_{\rm obs} \vert \theta) - q = 0 \,,
 </div>
 </div>
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-mukvarci" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-mukvarci-2" class="quarto-float quarto-figure quarto-figure-center anchored" width="288" data-fig-align="center">
+<div id="fig-mukvarci-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="288">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-mukvarci-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="02-normal_files/figure-html/fig-mukvarci-2.png" id="fig-mukvarci-2" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-mukvarci" width="288">
@@ -2026,7 +2031,7 @@ F_Y(y_{\rm obs} \vert \theta) - q = 0 \,,
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mukvarci-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.12: Sampling distributions for <span class="math inline">\(Y = \bar{X} = \sum_{i=1}^n X_i\)</span>, where <span class="math inline">\(n = 25\)</span> and <span class="math inline">\(X_i \sim \mathcal{N}(\mu,1)\)</span>, and where (a) <span class="math inline">\(\mu=-0.488\)</span> and (b) <span class="math inline">\(\mu=0.296\)</span>. We observe <span class="math inline">\(y_{\rm obs} = -0.0955\)</span> and we want to construct a 95% confidence interval. <span class="math inline">\(\mu=-0.488\)</span> is the smallest value of <span class="math inline">\(\mu\)</span> such that <span class="math inline">\(F_Y^{-1}(0.975) = -0.0955\)</span>, while <span class="math inline">\(\mu=0.296\)</span> is the largest value of <span class="math inline">\(\mu\)</span> such that <span class="math inline">\(F_Y^{-1}(0.025) = -0.0955\)</span>.
+Figure&nbsp;2.12: Sampling distributions for <span class="math inline">\(Y = \bar{X} = \sum_{i=1}^n X_i\)</span>, where <span class="math inline">\(n = 25\)</span> and <span class="math inline">\(X_i \sim \mathcal{N}(\mu,1)\)</span>, and where (a) <span class="math inline">\(\mu=-0.488\)</span> and (b) <span class="math inline">\(\mu=0.296\)</span>. We observe <span class="math inline">\(y_{\mathrm{obs}} = -0.0955\)</span> and we want to construct a 95% confidence interval. <span class="math inline">\(\mu=-0.488\)</span> is the smallest value of <span class="math inline">\(\mu\)</span> such that <span class="math inline">\(F_Y^{-1}(0.975) = -0.0955\)</span>, while <span class="math inline">\(\mu=0.296\)</span> is the largest value of <span class="math inline">\(\mu\)</span> such that <span class="math inline">\(F_Y^{-1}(0.025) = -0.0955\)</span>.
 </figcaption>
 </figure>
 </div>
@@ -2034,7 +2039,7 @@ Figure&nbsp;2.12: Sampling distributions for <span class="math inline">\(Y = \ba
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>num.sim <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>alpha   <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
 <span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>n       <span class="ot">&lt;-</span> <span class="dv">25</span></span>
@@ -2052,16 +2057,16 @@ Figure&nbsp;2.12: Sampling distributions for <span class="math inline">\(Y = \ba
 <span id="cb37-16"><a href="#cb37-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">uniroot</span>(f, <span class="at">interval =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">10000</span>, <span class="dv">10000</span>), <span class="at">sigma2 =</span> sigma2, <span class="at">n =</span> n, <span class="at">y.obs =</span> Y, <span class="dv">1</span> <span class="sc">-</span> alpha <span class="sc">/</span> <span class="dv">2</span>)<span class="sc">$</span>root</span>
 <span id="cb37-17"><a href="#cb37-17" aria-hidden="true" tabindex="-1"></a>  upper[ii] <span class="ot">&lt;-</span></span>
 <span id="cb37-18"><a href="#cb37-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">uniroot</span>(f, <span class="at">interval =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">10000</span>, <span class="dv">10000</span>), <span class="at">sigma2 =</span> sigma2, <span class="at">n =</span> n, <span class="at">y.obs =</span> Y, alpha <span class="sc">/</span> <span class="dv">2</span>)<span class="sc">$</span>root</span>
-<span id="cb37-19"><a href="#cb37-19" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb37-19"><a href="#cb37-19" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <p>We can then see how often the true value is within the bounds:</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>truth    <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>truth    <span class="ot">&lt;-</span> <span class="dv">0</span></span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>in.bound <span class="ot">&lt;-</span> (lower <span class="sc">&lt;=</span> truth) <span class="sc">&amp;</span> (upper <span class="sc">&gt;=</span> truth)</span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"The empirical coverage is"</span>, <span class="fu">sum</span>(in.bound) <span class="sc">/</span> num.sim, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"The empirical coverage is"</span>, <span class="fu">sum</span>(in.bound) <span class="sc">/</span> num.sim, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>The empirical coverage is 0.9518 </code></pre>
@@ -2088,7 +2093,7 @@ Figure&nbsp;2.12: Sampling distributions for <span class="math inline">\(Y = \ba
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># generate data</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># generate data</span></span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
 <span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>n     <span class="ot">&lt;-</span> <span class="dv">25</span></span>
@@ -2103,14 +2108,14 @@ Figure&nbsp;2.12: Sampling distributions for <span class="math inline">\(Y = \ba
 <span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pt</span>((y.obs <span class="sc">-</span> mu) <span class="sc">/</span> <span class="fu">sqrt</span>(S2 <span class="sc">/</span> n), n <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">-</span> q</span>
 <span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a><span class="fu">uniroot</span>(f, <span class="at">interval =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">10000</span>, <span class="dv">10000</span>), <span class="at">S2 =</span> S2, <span class="at">n =</span> n, <span class="at">y.obs =</span> Y, <span class="dv">1</span> <span class="sc">-</span> alpha <span class="sc">/</span> <span class="dv">2</span>)<span class="sc">$</span>root</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a><span class="fu">uniroot</span>(f, <span class="at">interval =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">10000</span>, <span class="dv">10000</span>), <span class="at">S2 =</span> S2, <span class="at">n =</span> n, <span class="at">y.obs =</span> Y, <span class="dv">1</span> <span class="sc">-</span> alpha <span class="sc">/</span> <span class="dv">2</span>)<span class="sc">$</span>root</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -0.4483553</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">uniroot</span>(f, <span class="at">interval =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">10000</span>, <span class="dv">10000</span>), <span class="at">S2 =</span> S2, <span class="at">n =</span> n, <span class="at">y.obs =</span> Y, alpha <span class="sc">/</span> <span class="dv">2</span>)<span class="sc">$</span>root</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">uniroot</span>(f, <span class="at">interval =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">10000</span>, <span class="dv">10000</span>), <span class="at">S2 =</span> S2, <span class="at">n =</span> n, <span class="at">y.obs =</span> Y, alpha <span class="sc">/</span> <span class="dv">2</span>)<span class="sc">$</span>root</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.257279</code></pre>
@@ -2125,7 +2130,7 @@ Figure&nbsp;2.12: Sampling distributions for <span class="math inline">\(Y = \ba
 <div aria-describedby="fig-muuvarci-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-muuvarci" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-muuvarci-1" class="quarto-float quarto-figure quarto-figure-center anchored" width="288" data-fig-align="center">
+<div id="fig-muuvarci-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="288">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-muuvarci-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="02-normal_files/figure-html/fig-muuvarci-1.png" id="fig-muuvarci-1" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-muuvarci" width="288">
@@ -2137,7 +2142,7 @@ Figure&nbsp;2.12: Sampling distributions for <span class="math inline">\(Y = \ba
 </div>
 </div>
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-muuvarci" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-muuvarci-2" class="quarto-float quarto-figure quarto-figure-center anchored" width="288" data-fig-align="center">
+<div id="fig-muuvarci-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="288">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-muuvarci-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="02-normal_files/figure-html/fig-muuvarci-2.png" id="fig-muuvarci-2" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-muuvarci" width="288">
@@ -2151,7 +2156,7 @@ Figure&nbsp;2.12: Sampling distributions for <span class="math inline">\(Y = \ba
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-muuvarci-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.13: Sampling distributions for <span class="math inline">\(Y = \bar{X}\)</span>, where <span class="math inline">\(n = 25\)</span> and <span class="math inline">\(X_i \sim \mathcal{N}(\mu,\sigma^2)\)</span>, and where (a) <span class="math inline">\(\mu=-0.448\)</span> and (b) <span class="math inline">\(\mu=0.257\)</span>. We observe <span class="math inline">\(y_{\rm obs} = -0.0955\)</span> and <span class="math inline">\(s_{\rm obs}^2 = 0.855\)</span> and we want to construct a 95% confidence interval. <span class="math inline">\(\mu=-0.448\)</span> is the smallest value of <span class="math inline">\(\mu\)</span> such that <span class="math inline">\(F_Y^{-1}(0.975) = -0.0955\)</span>, while <span class="math inline">\(\mu=0.257\)</span> is the largest value of <span class="math inline">\(\mu\)</span> such that <span class="math inline">\(F_Y^{-1}(0.025) = -0.0955\)</span>.
+Figure&nbsp;2.13: Sampling distributions for <span class="math inline">\(Y = \bar{X}\)</span>, where <span class="math inline">\(n = 25\)</span> and <span class="math inline">\(X_i \sim \mathcal{N}(\mu,\sigma^2)\)</span>, and where (a) <span class="math inline">\(\mu=-0.448\)</span> and (b) <span class="math inline">\(\mu=0.257\)</span>. We observe <span class="math inline">\(y_{\mathrm{obs}} = -0.0955\)</span> and <span class="math inline">\(s_{\mathrm{obs}}^2 = 0.855\)</span> and we want to construct a 95% confidence interval. <span class="math inline">\(\mu=-0.448\)</span> is the smallest value of <span class="math inline">\(\mu\)</span> such that <span class="math inline">\(F_Y^{-1}(0.975) = -0.0955\)</span>, while <span class="math inline">\(\mu=0.257\)</span> is the largest value of <span class="math inline">\(\mu\)</span> such that <span class="math inline">\(F_Y^{-1}(0.025) = -0.0955\)</span>.
 </figcaption>
 </figure>
 </div>
@@ -2164,7 +2169,7 @@ Figure&nbsp;2.13: Sampling distributions for <span class="math inline">\(Y = \ba
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># generate data</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># generate data</span></span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
 <span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>n     <span class="ot">&lt;-</span> <span class="dv">25</span></span>
@@ -2177,14 +2182,14 @@ Figure&nbsp;2.13: Sampling distributions for <span class="math inline">\(Y = \ba
 <span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a>{ </span>
 <span id="cb44-12"><a href="#cb44-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pgamma</span>(y.obs, <span class="at">shape =</span> (n <span class="sc">-</span> <span class="dv">1</span>)<span class="sc">/</span><span class="dv">2</span>, <span class="at">scale =</span> <span class="dv">2</span> <span class="sc">*</span> sigma2 <span class="sc">/</span> (n <span class="sc">-</span> <span class="dv">1</span>)) <span class="sc">-</span> q</span>
 <span id="cb44-13"><a href="#cb44-13" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb44-14"><a href="#cb44-14" aria-hidden="true" tabindex="-1"></a><span class="fu">uniroot</span>(f, <span class="at">interval =</span> <span class="fu">c</span>(<span class="dv">1</span>.e<span class="dv">-6</span>, <span class="dv">10000</span>), <span class="at">n =</span> n, <span class="at">y.obs =</span> <span class="fu">var</span>(X), <span class="dv">1</span> <span class="sc">-</span> alpha <span class="sc">/</span> <span class="dv">2</span>)<span class="sc">$</span>root</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb44-14"><a href="#cb44-14" aria-hidden="true" tabindex="-1"></a><span class="fu">uniroot</span>(f, <span class="at">interval =</span> <span class="fu">c</span>(<span class="dv">1</span>.e<span class="dv">-6</span>, <span class="dv">10000</span>), <span class="at">n =</span> n, <span class="at">y.obs =</span> <span class="fu">var</span>(X), <span class="dv">1</span> <span class="sc">-</span> alpha <span class="sc">/</span> <span class="dv">2</span>)<span class="sc">$</span>root</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.4454088</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">uniroot</span>(f, <span class="at">interval =</span> <span class="fu">c</span>(<span class="dv">1</span>.e<span class="dv">-6</span>, <span class="dv">10000</span>), <span class="at">n =</span> n, <span class="at">y.obs =</span> <span class="fu">var</span>(X), alpha <span class="sc">/</span> <span class="dv">2</span>)<span class="sc">$</span>root</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">uniroot</span>(f, <span class="at">interval =</span> <span class="fu">c</span>(<span class="dv">1</span>.e<span class="dv">-6</span>, <span class="dv">10000</span>), <span class="at">n =</span> n, <span class="at">y.obs =</span> <span class="fu">var</span>(X), alpha <span class="sc">/</span> <span class="dv">2</span>)<span class="sc">$</span>root</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1.413897</code></pre>
@@ -2199,7 +2204,7 @@ Figure&nbsp;2.13: Sampling distributions for <span class="math inline">\(Y = \ba
 <div aria-describedby="fig-sigma2ci-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-sigma2ci" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-sigma2ci-1" class="quarto-float quarto-figure quarto-figure-center anchored" width="288" data-fig-align="center">
+<div id="fig-sigma2ci-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="288">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-sigma2ci-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="02-normal_files/figure-html/fig-sigma2ci-1.png" id="fig-sigma2ci-1" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-sigma2ci" width="288">
@@ -2211,7 +2216,7 @@ Figure&nbsp;2.13: Sampling distributions for <span class="math inline">\(Y = \ba
 </div>
 </div>
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-sigma2ci" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-sigma2ci-2" class="quarto-float quarto-figure quarto-figure-center anchored" width="288" data-fig-align="center">
+<div id="fig-sigma2ci-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="288">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-sigma2ci-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="02-normal_files/figure-html/fig-sigma2ci-2.png" id="fig-sigma2ci-2" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-sigma2ci" width="288">
@@ -2225,7 +2230,7 @@ Figure&nbsp;2.13: Sampling distributions for <span class="math inline">\(Y = \ba
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sigma2ci-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.14: Sampling distributions for <span class="math inline">\(Y = S^2\)</span>, where <span class="math inline">\(n = 25\)</span> and <span class="math inline">\(X_i \sim \mathcal{N}(\mu,\sigma^2)\)</span>, and where (a) <span class="math inline">\(\sigma^2=0.445\)</span> and (b) <span class="math inline">\(\sigma^2=1.414\)</span>. We observe <span class="math inline">\(y_{\rm obs} = s_{\rm obs}^2 = 0.731\)</span> and we want to construct a 95% confidence interval. <span class="math inline">\(\sigma^2=0.445\)</span> is the smallest value of <span class="math inline">\(\sigma^2\)</span> such that <span class="math inline">\(F_Y^{-1}(0.975) = 0.731\)</span>, while <span class="math inline">\(\mu=1.414\)</span> is the largest value of <span class="math inline">\(\sigma^2\)</span> such that <span class="math inline">\(F_Y^{-1}(0.025) = 0.731\)</span>.
+Figure&nbsp;2.14: Sampling distributions for <span class="math inline">\(Y = S^2\)</span>, where <span class="math inline">\(n = 25\)</span> and <span class="math inline">\(X_i \sim \mathcal{N}(\mu,\sigma^2)\)</span>, and where (a) <span class="math inline">\(\sigma^2=0.445\)</span> and (b) <span class="math inline">\(\sigma^2=1.414\)</span>. We observe <span class="math inline">\(y_{\mathrm{obs}} = s_{\mathrm{obs}}^2 = 0.731\)</span> and we want to construct a 95% confidence interval. <span class="math inline">\(\sigma^2=0.445\)</span> is the smallest value of <span class="math inline">\(\sigma^2\)</span> such that <span class="math inline">\(F_Y^{-1}(0.975) = 0.731\)</span>, while <span class="math inline">\(\mu=1.414\)</span> is the largest value of <span class="math inline">\(\sigma^2\)</span> such that <span class="math inline">\(F_Y^{-1}(0.025) = 0.731\)</span>.
 </figcaption>
 </figure>
 </div>
@@ -2243,13 +2248,13 @@ m_X(t) = E[e^{tX}] = \theta \int_0^1 x^{\theta-1} e^{tx} dx \,.
 </blockquote>
 <blockquote class="blockquote">
 <p>If <span class="math inline">\(n \gtrsim 30\)</span>, we may write that <span class="math display">\[
-\bar{X} \overset{d}{\rightarrow} Y \sim \mathcal{N}(\mu,s_{\rm obs}^2/n) \,.
-\]</span> (Recall that the CLT assumes that we know <span class="math inline">\(\sigma^2\)</span>, but if we do not and use <span class="math inline">\(S^2\)</span> instead, the result will still hold as <span class="math inline">\(n \rightarrow \infty\)</span>.) Thus we would use the confidence interval approach that we describe in the first example above, while swapping in <span class="math inline">\(s_{\rm obs}^2\)</span> for <span class="math inline">\(\sigma^2\)</span>.</p>
+\bar{X} \overset{d}{\rightarrow} Y \sim \mathcal{N}(\mu,s_{\mathrm{obs}}^2/n) \,.
+\]</span> (Recall that the CLT assumes that we know <span class="math inline">\(\sigma^2\)</span>, but if we do not and use <span class="math inline">\(S^2\)</span> instead, the result will still hold as <span class="math inline">\(n \rightarrow \infty\)</span>.) Thus we would use the confidence interval approach that we describe in the first example above, while swapping in <span class="math inline">\(s_{\mathrm{obs}}^2\)</span> for <span class="math inline">\(\sigma^2\)</span>.</p>
 </blockquote>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># generate data</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># generate data</span></span>
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
 <span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
 <span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>n     <span class="ot">&lt;-</span> <span class="dv">25</span></span>
@@ -2265,14 +2270,14 @@ m_X(t) = E[e^{tX}] = \theta \int_0^1 x^{\theta-1} e^{tx} dx \,.
 <span id="cb48-14"><a href="#cb48-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pnorm</span>(y.obs, <span class="at">mean =</span> mu, <span class="at">sd =</span> <span class="fu">sqrt</span>(S2 <span class="sc">/</span> n)) <span class="sc">-</span> q</span>
 <span id="cb48-15"><a href="#cb48-15" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb48-16"><a href="#cb48-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb48-17"><a href="#cb48-17" aria-hidden="true" tabindex="-1"></a><span class="fu">uniroot</span>(f, <span class="at">interval =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">10000</span>, <span class="dv">10000</span>), <span class="at">y.obs =</span> Y, <span class="at">S2 =</span> S2, <span class="at">n =</span> n, <span class="dv">1</span> <span class="sc">-</span> alpha <span class="sc">/</span> <span class="dv">2</span>)<span class="sc">$</span>root</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb48-17"><a href="#cb48-17" aria-hidden="true" tabindex="-1"></a><span class="fu">uniroot</span>(f, <span class="at">interval =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">10000</span>, <span class="dv">10000</span>), <span class="at">y.obs =</span> Y, <span class="at">S2 =</span> S2, <span class="at">n =</span> n, <span class="dv">1</span> <span class="sc">-</span> alpha <span class="sc">/</span> <span class="dv">2</span>)<span class="sc">$</span>root</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.5888963</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">uniroot</span>(f, <span class="at">interval =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">10000</span>, <span class="dv">10000</span>), <span class="at">y.obs =</span> Y, <span class="at">S2 =</span> S2, <span class="at">n =</span> n, alpha <span class="sc">/</span> <span class="dv">2</span>)<span class="sc">$</span>root</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">uniroot</span>(f, <span class="at">interval =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">10000</span>, <span class="dv">10000</span>), <span class="at">y.obs =</span> Y, <span class="at">S2 =</span> S2, <span class="at">n =</span> n, alpha <span class="sc">/</span> <span class="dv">2</span>)<span class="sc">$</span>root</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.7532609</code></pre>
@@ -2284,7 +2289,7 @@ m_X(t) = E[e^{tX}] = \theta \int_0^1 x^{\theta-1} e^{tx} dx \,.
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
 <span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>alpha   <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
 <span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>num.sim <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
 <span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>n       <span class="ot">&lt;-</span> <span class="dv">25</span></span>
@@ -2307,7 +2312,7 @@ m_X(t) = E[e^{tX}] = \theta \int_0^1 x^{\theta-1} e^{tx} dx \,.
 <span id="cb52-21"><a href="#cb52-21" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb52-22"><a href="#cb52-22" aria-hidden="true" tabindex="-1"></a>truth    <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">/</span><span class="dv">3</span></span>
 <span id="cb52-23"><a href="#cb52-23" aria-hidden="true" tabindex="-1"></a>in.bound <span class="ot">&lt;-</span> (lower <span class="sc">&lt;=</span> truth) <span class="sc">&amp;</span> (upper <span class="sc">&gt;=</span> truth)</span>
-<span id="cb52-24"><a href="#cb52-24" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"The estimated coverage is "</span>, <span class="fu">sum</span>(in.bound) <span class="sc">/</span> num.sim, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb52-24"><a href="#cb52-24" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"The estimated coverage is "</span>, <span class="fu">sum</span>(in.bound) <span class="sc">/</span> num.sim, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>The estimated coverage is  0.9359 </code></pre>
@@ -2356,7 +2361,7 @@ b &amp;= \Phi^{-1}\left(1 - \frac{\alpha}{2}\right) = z_{1-\alpha/2} \\
 P\left(-z_{1-\alpha/2} \leq Y \leq z_{1-\alpha/2}\right) = P\left(-z_{1-\alpha/2} \leq \frac{\bar{X} - \mu}{\sigma/\sqrt{n}} \leq z_{1-\alpha/2}\right) &amp;= 1-\alpha \\
 \Rightarrow P\left(\bar{X} - z_{1-\alpha/2}\frac{\sigma}{\sqrt{n}} \leq \mu \leq \bar{X} + z_{1-\alpha/2}\frac{\sigma}{\sqrt{n}}\right) &amp;= 1-\alpha \,.
 \end{align*}\]</span> Thus our confidence interval is <span class="math display">\[
-\bar{x}_{\rm obs} \pm z_{1-\alpha/2}\frac{\sigma}{\sqrt{n}} \,.
+\bar{x}_{\mathrm{obs}} \pm z_{1-\alpha/2}\frac{\sigma}{\sqrt{n}} \,.
 \]</span></p>
 </blockquote>
 <blockquote class="blockquote">
@@ -2390,14 +2395,14 @@ Figure&nbsp;2.15: Workflows for generating confidence interval estimates using t
 <li><p>the normal population mean <span class="math inline">\(\mu\)</span>, if <span class="math inline">\(\sigma^2\)</span> is unknown (utilizing the <span class="math inline">\(t\)</span> distribution); and</p></li>
 <li><p>the normal population variance <span class="math inline">\(\sigma^2\)</span> (utilizing the gamma distribution).</p></li>
 </ul></li>
-<li><p>The <em>rejection region</em> associated with a hypothesis test is the set of values along the real-number line: if the observed hypothesis test statistic value <span class="math inline">\(y_{\rm obs}\)</span> lies in this set, then we <em>reject the null hypothesis</em>.</p></li>
+<li><p>The <em>rejection region</em> associated with a hypothesis test is the set of values along the real-number line: if the observed hypothesis test statistic value <span class="math inline">\(y_{\mathrm{obs}}\)</span> lies in this set, then we <em>reject the null hypothesis</em>.</p></li>
 <li><p>The <em>power</em> of a test is the probability that we would reject the null hypothesis given an arbitrary value for <span class="math inline">\(\theta\)</span>; if <span class="math inline">\(\theta = \theta_o\)</span>, the null hypothesis value, the test power is the test level <span class="math inline">\(\alpha\)</span> (e.g., 0.05) by definition.</p></li>
 </ul>
 <p>For previous material on hypothesis testing, see <a href="01-probability.html#sec-chap1hypothesis" class="quarto-xref"><span>Section 1.17</span></a>.</p>
 </div>
 <p><br></p>
 <blockquote class="blockquote">
-<p><strong>Recall</strong>: <em>a hypothesis test is a framework for deciding whether a specific value of a population parameter <span class="math inline">\(\theta\)</span> is plausible, given the data that we observe. The null hypothesis <span class="math inline">\(H_o\)</span> is <span class="math inline">\(\theta = \theta_o\)</span>, while possible alternatives <span class="math inline">\(H_a\)</span> are <span class="math inline">\(\theta \neq \theta_o\)</span> (two-tail test), <span class="math inline">\(\theta &gt; \theta_o\)</span> (upper-tail test), and <span class="math inline">\(\theta &lt; \theta_o\)</span> (lower-tail test). The <span class="math inline">\(p\)</span>-value is the probability of observing a statistic value <span class="math inline">\(y_{\rm obs}\)</span> or a more extreme value, relative to the null. We reject the null hypothesis if the <span class="math inline">\(p\)</span>-value is less than the stated test level <span class="math inline">\(\alpha\)</span>; otherwise, we fail to reject the null.</em></p>
+<p><strong>Recall</strong>: <em>a hypothesis test is a framework for deciding whether a specific value of a population parameter <span class="math inline">\(\theta\)</span> is plausible, given the data that we observe. The null hypothesis <span class="math inline">\(H_o\)</span> is <span class="math inline">\(\theta = \theta_o\)</span>, while possible alternatives <span class="math inline">\(H_a\)</span> are <span class="math inline">\(\theta \neq \theta_o\)</span> (two-tail test), <span class="math inline">\(\theta &gt; \theta_o\)</span> (upper-tail test), and <span class="math inline">\(\theta &lt; \theta_o\)</span> (lower-tail test). The <span class="math inline">\(p\)</span>-value is the probability of observing a statistic value <span class="math inline">\(y_{\mathrm{obs}}\)</span> or a more extreme value, relative to the null. We reject the null hypothesis if the <span class="math inline">\(p\)</span>-value is less than the stated test level <span class="math inline">\(\alpha\)</span>; otherwise, we fail to reject the null.</em></p>
 </blockquote>
 <p>Let’s assume we are given <span class="math inline">\(n\)</span> iid data <span class="math inline">\(\{X_1,\ldots,X_n\}\)</span> sampled according to a normal distribution. As was the case when constructing confidence intervals, there are conventional choices for the statistics we would use to infer the population mean <span class="math inline">\(\mu\)</span> and/or variance <span class="math inline">\(\sigma^2\)</span>:</p>
 <ol type="1">
@@ -2415,10 +2420,10 @@ Figure&nbsp;2.15: Workflows for generating confidence interval estimates using t
 </section>
 <section id="sec-chap2rr" class="level3" data-number="2.13.2">
 <h3 data-number="2.13.2" class="anchored" data-anchor-id="sec-chap2rr"><span class="header-section-number">2.13.2</span> Hypothesis Testing: Rejection Regions</h3>
-<p>Before we can compute test power, however, we need to first determine those values of <span class="math inline">\(Y\)</span> for which we would reject the null hypothesis, i.e., we need to determine the <em>rejection region</em> boundary or boundaries associated with the test. To show how we would do this, we will start with a statement: if our observed statistic value is equal to a rejection-region boundary value, i.e., if <span class="math inline">\(y_{\rm obs} = y_{\rm RR}\)</span>, then the observed <span class="math inline">\(p\)</span>-value will be exactly equal to <span class="math inline">\(\alpha\)</span> (assuming our sampling distribution is continuous…we will defer our discussion of what happens with discrete sampling distributions to <a href="03-binomial.html#sec-chap3hypdisc" class="quarto-xref"><span>Section 3.8.1</span></a>). Combining the above statement with the hypothesis test reference table given in <a href="01-probability.html#sec-chap1hypref" class="quarto-xref"><span>Section 1.17.2</span></a>, we can, e.g., write the following for a lower-tail/“yes”-line test: <span class="math display">\[
-p = F_Y(y_{\rm obs} \vert \theta_o) ~~~ \Rightarrow ~~~ \alpha = F_Y(y_{\rm RR} \vert \theta_o) ~~~ \Rightarrow ~~~ y_{\rm RR} = F_Y^{-1}(\alpha \vert \theta_o) \,.
+<p>Before we can compute test power, however, we need to first determine those values of <span class="math inline">\(Y\)</span> for which we would reject the null hypothesis, i.e., we need to determine the <em>rejection region</em> boundary or boundaries associated with the test. To show how we would do this, we will start with a statement: if our observed statistic value is equal to a rejection-region boundary value, i.e., if <span class="math inline">\(y_{\mathrm{obs}} = y_{\mathrm{RR}}\)</span>, then the observed <span class="math inline">\(p\)</span>-value will be exactly equal to <span class="math inline">\(\alpha\)</span> (assuming our sampling distribution is continuous…we will defer our discussion of what happens with discrete sampling distributions to <a href="03-binomial.html#sec-chap3hypdisc" class="quarto-xref"><span>Section 3.8.1</span></a>). Combining the above statement with the hypothesis test reference table given in <a href="01-probability.html#sec-chap1hypref" class="quarto-xref"><span>Section 1.17.2</span></a>, we can, e.g., write the following for a lower-tail/“yes”-line test: <span class="math display">\[
+p = F_Y(y_{\mathrm{obs}} \vert \theta_o) ~~~ \Rightarrow ~~~ \alpha = F_Y(y_{\mathrm{RR}} \vert \theta_o) ~~~ \Rightarrow ~~~ y_{\mathrm{RR}} = F_Y^{-1}(\alpha \vert \theta_o) \,.
 \]</span> In other words, the computation of a rejection-region boundary is a straightforward inverse cdf calculation, which we can perform analytically or by using a <code>R</code> code such as <code>qnorm()</code>.</p>
-<p>It is important to note that the computation of rejection region boundaries and test power do <em>not</em> depend on what we observe when we carry out an experiment, i.e., they do not depend on <span class="math inline">\(y_{\rm obs}\)</span>. This is important: for instance, given specified null and alternative hypotheses, we can determine the sample size we would need in order to achieve a stated power before data are ever collected! We show an example of such a sample-size calculation below.</p>
+<p>It is important to note that the computation of rejection region boundaries and test power do <em>not</em> depend on what we observe when we carry out an experiment, i.e., they do not depend on <span class="math inline">\(y_{\mathrm{obs}}\)</span>. This is important: for instance, given specified null and alternative hypotheses, we can determine the sample size we would need in order to achieve a stated power before data are ever collected! We show an example of such a sample-size calculation below.</p>
 </section>
 <section id="sec-chap2hypref" class="level3" data-number="2.13.3">
 <h3 data-number="2.13.3" class="anchored" data-anchor-id="sec-chap2hypref"><span class="header-section-number">2.13.3</span> Hypothesis Testing: Power and Rejection Region Reference Table</h3>
@@ -2443,38 +2448,38 @@ p = F_Y(y_{\rm obs} \vert \theta_o) ~~~ \Rightarrow ~~~ \alpha = F_Y(y_{\rm RR} 
 <tr class="odd">
 <td style="text-align: right;">two-tail</td>
 <td style="text-align: right;">N/A</td>
-<td style="text-align: center;"><span class="math inline">\(\{y_{\rm obs} : y_{\rm obs} &lt; y_{\rm RR,lo} = F_Y^{-1}(\alpha/2 \vert \theta_o)\}\)</span> and</td>
-<td style="text-align: center;"><span class="math inline">\(F_Y(y_{\rm RR,lo} \vert \theta) +\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\{y_{\mathrm{obs}} : y_{\mathrm{obs}} &lt; y_{\mathrm{RR,lo}} = F_Y^{-1}(\alpha/2 \vert \theta_o)\}\)</span> and</td>
+<td style="text-align: center;"><span class="math inline">\(F_Y(y_{\mathrm{RR,lo}} \vert \theta) +\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: right;"></td>
 <td style="text-align: right;"></td>
-<td style="text-align: center;"><span class="math inline">\(\{y_{\rm obs} : y_{\rm obs} &gt; y_{\rm RR,hi} = F_Y^{-1}(1-\alpha/2 \vert \theta_o)\}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(1 - F_Y(y_{\rm RR,hi} \vert \theta)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\{y_{\mathrm{obs}} : y_{\mathrm{obs}} &gt; y_{\mathrm{RR,hi}} = F_Y^{-1}(1-\alpha/2 \vert \theta_o)\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1 - F_Y(y_{\mathrm{RR,hi}} \vert \theta)\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">lower-tail</td>
 <td style="text-align: right;">yes</td>
-<td style="text-align: center;"><span class="math inline">\(\{y_{\rm obs} : y_{\rm obs} &lt; y_{\rm RR} = F_Y^{-1}(\alpha \vert \theta_o)\}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(F_Y(y_{\rm RR} \vert \theta)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\{y_{\mathrm{obs}} : y_{\mathrm{obs}} &lt; y_{\mathrm{RR}} = F_Y^{-1}(\alpha \vert \theta_o)\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(F_Y(y_{\mathrm{RR}} \vert \theta)\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: right;"></td>
 <td style="text-align: right;">no</td>
-<td style="text-align: center;"><span class="math inline">\(\{y_{\rm obs} : y_{\rm obs} &gt; y_{\rm RR} = F_Y^{-1}(1-\alpha \vert \theta_o)\}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(1-F_Y(y_{\rm RR} \vert \theta)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\{y_{\mathrm{obs}} : y_{\mathrm{obs}} &gt; y_{\mathrm{RR}} = F_Y^{-1}(1-\alpha \vert \theta_o)\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1-F_Y(y_{\mathrm{RR}} \vert \theta)\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">upper-tail</td>
 <td style="text-align: right;">yes</td>
-<td style="text-align: center;"><span class="math inline">\(\{y_{\rm obs} : y_{\rm obs} &lt; y_{\rm RR} = F_Y^{-1}(1-\alpha \vert \theta_o)\}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(1-F_Y(y_{\rm RR} \vert \theta)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\{y_{\mathrm{obs}} : y_{\mathrm{obs}} &lt; y_{\mathrm{RR}} = F_Y^{-1}(1-\alpha \vert \theta_o)\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1-F_Y(y_{\mathrm{RR}} \vert \theta)\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: right;"></td>
 <td style="text-align: right;">no</td>
-<td style="text-align: center;"><span class="math inline">\(\{y_{\rm obs} : y_{\rm obs} &gt; y_{\rm RR} = F_Y^{-1}(\alpha \vert \theta_o)\}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(F_Y(y_{\rm RR} \vert \theta)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\{y_{\mathrm{obs}} : y_{\mathrm{obs}} &gt; y_{\mathrm{RR}} = F_Y^{-1}(\alpha \vert \theta_o)\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(F_Y(y_{\mathrm{RR}} \vert \theta)\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -2489,7 +2494,7 @@ p = F_Y(y_{\rm obs} \vert \theta_o) ~~~ \Rightarrow ~~~ \alpha = F_Y(y_{\rm RR} 
 <section id="normal-mean-variance-known" class="level4" data-number="2.13.4.1">
 <h4 data-number="2.13.4.1" class="anchored" data-anchor-id="normal-mean-variance-known"><span class="header-section-number">2.13.4.1</span> Normal Mean: Variance Known</h4>
 <blockquote class="blockquote">
-<p>Let’s assume that we have sampled <span class="math inline">\(n = 25\)</span> iid data from a normal distribution whose variance is <span class="math inline">\(\sigma^2 = 1\)</span>. We wish to test the null hypothesis <span class="math inline">\(H_o : \mu = \mu_o = 2\)</span> versus the alternative <span class="math inline">\(H_a : \mu \neq \mu_o\)</span>. What is the <span class="math inline">\(p\)</span>-value if we observe <span class="math inline">\(\bar{x}_{\rm obs} = 1.404\)</span>? What is the power of this test for <span class="math inline">\(\mu = 1.8\)</span>? We assume the level of the test is <span class="math inline">\(\alpha = 0.05\)</span>.</p>
+<p>Let’s assume that we have sampled <span class="math inline">\(n = 25\)</span> iid data from a normal distribution whose variance is <span class="math inline">\(\sigma^2 = 1\)</span>. We wish to test the null hypothesis <span class="math inline">\(H_o : \mu = \mu_o = 2\)</span> versus the alternative <span class="math inline">\(H_a : \mu \neq \mu_o\)</span>. What is the <span class="math inline">\(p\)</span>-value if we observe <span class="math inline">\(\bar{x}_{\mathrm{obs}} = 1.404\)</span>? What is the power of this test for <span class="math inline">\(\mu = 1.8\)</span>? We assume the level of the test is <span class="math inline">\(\alpha = 0.05\)</span>.</p>
 </blockquote>
 <blockquote class="blockquote">
 <p>To answer each of these questions, we will refer to the hypothesis test reference tables given in <a href="01-probability.html#sec-chap1hypref" class="quarto-xref"><span>Section 1.17.2</span></a> and above.</p>
@@ -2500,12 +2505,12 @@ p = F_Y(y_{\rm obs} \vert \theta_o) ~~~ \Rightarrow ~~~ \alpha = F_Y(y_{\rm RR} 
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>n      <span class="ot">&lt;-</span> <span class="dv">25</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>n      <span class="ot">&lt;-</span> <span class="dv">25</span></span>
 <span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>y.obs  <span class="ot">&lt;-</span> <span class="fl">1.404</span></span>
 <span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>mu.o   <span class="ot">&lt;-</span> <span class="dv">2</span></span>
 <span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>sigma2 <span class="ot">&lt;-</span> <span class="dv">1</span></span>
 <span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">*</span> <span class="fu">min</span>(<span class="fu">c</span>(    <span class="fu">pnorm</span>(y.obs, <span class="at">mean =</span> mu.o, <span class="at">sd =</span> <span class="fu">sqrt</span>(sigma2 <span class="sc">/</span> n)),</span>
-<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a>          <span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(y.obs, <span class="at">mean =</span> mu.o, <span class="at">sd =</span> <span class="fu">sqrt</span>(sigma2 <span class="sc">/</span> n))))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a>          <span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(y.obs, <span class="at">mean =</span> mu.o, <span class="at">sd =</span> <span class="fu">sqrt</span>(sigma2 <span class="sc">/</span> n))))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.002882484</code></pre>
@@ -2516,42 +2521,42 @@ p = F_Y(y_{\rm obs} \vert \theta_o) ~~~ \Rightarrow ~~~ \alpha = F_Y(y_{\rm RR} 
 </blockquote>
 <blockquote class="blockquote">
 <p>To compute the test power, we start by determining the two rejection region boundaries: <span class="math display">\[
-y_{\rm RR,lo} = F_Y^{-1}\left(\frac{\alpha}{2} \vert \mu_o\right) ~~~ \mbox{and} ~~~ y_{\rm RR,hi} = F_Y^{-1}\left(1-\frac{\alpha}{2} \vert \mu_o\right) \,,
+y_{\mathrm{RR,lo}} = F_Y^{-1}\left(\frac{\alpha}{2} \vert \mu_o\right) ~~~ \mbox{and} ~~~ y_{\mathrm{RR,hi}} = F_Y^{-1}\left(1-\frac{\alpha}{2} \vert \mu_o\right) \,,
 \]</span> where <span class="math inline">\(Y = \bar{X}\)</span>. The <code>R</code> function calls are</p>
 </blockquote>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>n        <span class="ot">&lt;-</span> <span class="dv">25</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>n        <span class="ot">&lt;-</span> <span class="dv">25</span></span>
 <span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>alpha    <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
 <span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>mu.o     <span class="ot">&lt;-</span> <span class="dv">2</span></span>
 <span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>sigma2   <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>(y.rr.lo <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(    alpha<span class="sc">/</span><span class="dv">2</span>, <span class="at">mean =</span> mu.o, <span class="at">sd =</span> <span class="fu">sqrt</span>(sigma2 <span class="sc">/</span> n)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>(y.rr.lo <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(    alpha<span class="sc">/</span><span class="dv">2</span>, <span class="at">mean =</span> mu.o, <span class="at">sd =</span> <span class="fu">sqrt</span>(sigma2 <span class="sc">/</span> n)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1.608007</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>(y.rr.hi <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(<span class="dv">1</span> <span class="sc">-</span> alpha<span class="sc">/</span><span class="dv">2</span>, <span class="at">mean =</span> mu.o, <span class="at">sd =</span> <span class="fu">sqrt</span>(sigma2 <span class="sc">/</span> n)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>(y.rr.hi <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(<span class="dv">1</span> <span class="sc">-</span> alpha<span class="sc">/</span><span class="dv">2</span>, <span class="at">mean =</span> mu.o, <span class="at">sd =</span> <span class="fu">sqrt</span>(sigma2 <span class="sc">/</span> n)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 2.391993</code></pre>
 </div>
 </div>
 <blockquote class="blockquote">
-<p>In any experiment in which we sample 25 data from a normal distribution with mean <span class="math inline">\(\mu = 2\)</span> and variance <span class="math inline">\(\sigma^2 = 1\)</span>, we would reject the null hypothesis if <span class="math inline">\(y_{\rm obs}\)</span> (the sample mean) is less than 1.608 or greater than 2.392. See <a href="#fig-normex1" class="quarto-xref">Figure&nbsp;<span>2.16</span></a>, where the rejection regions are displayed in red. To compute the test power, we plug <span class="math inline">\(y_{\rm RR,lo}\)</span> and <span class="math inline">\(y_{\rm RR,hi}\)</span> into the formula given in the table above:</p>
+<p>In any experiment in which we sample 25 data from a normal distribution with mean <span class="math inline">\(\mu = 2\)</span> and variance <span class="math inline">\(\sigma^2 = 1\)</span>, we would reject the null hypothesis if <span class="math inline">\(y_{\mathrm{obs}}\)</span> (the sample mean) is less than 1.608 or greater than 2.392. See <a href="#fig-normex1" class="quarto-xref">Figure&nbsp;<span>2.16</span></a>, where the rejection regions are displayed in red. To compute the test power, we plug <span class="math inline">\(y_{\mathrm{RR,lo}}\)</span> and <span class="math inline">\(y_{\mathrm{RR,hi}}\)</span> into the formula given in the table above:</p>
 </blockquote>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>n      <span class="ot">&lt;-</span> <span class="dv">25</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>n      <span class="ot">&lt;-</span> <span class="dv">25</span></span>
 <span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>alpha  <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
 <span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>mu.o   <span class="ot">&lt;-</span> <span class="dv">2</span></span>
 <span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a>mu     <span class="ot">&lt;-</span> <span class="fl">1.8</span></span>
 <span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a>sigma2 <span class="ot">&lt;-</span> <span class="dv">1</span></span>
 <span id="cb60-6"><a href="#cb60-6" aria-hidden="true" tabindex="-1"></a>     <span class="fu">pnorm</span>(y.rr.lo, <span class="at">mean =</span> mu, <span class="at">sd =</span> <span class="fu">sqrt</span>(sigma2 <span class="sc">/</span> n)) <span class="sc">+</span> </span>
-<span id="cb60-7"><a href="#cb60-7" aria-hidden="true" tabindex="-1"></a>(<span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(y.rr.hi, <span class="at">mean =</span> mu, <span class="at">sd =</span> <span class="fu">sqrt</span>(sigma2 <span class="sc">/</span> n)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb60-7"><a href="#cb60-7" aria-hidden="true" tabindex="-1"></a>(<span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(y.rr.hi, <span class="at">mean =</span> mu, <span class="at">sd =</span> <span class="fu">sqrt</span>(sigma2 <span class="sc">/</span> n)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.170075</code></pre>
@@ -2568,7 +2573,7 @@ y_{\rm RR,lo} = F_Y^{-1}\left(\frac{\alpha}{2} \vert \mu_o\right) ~~~ \mbox{and}
 <img src="02-normal_files/figure-html/fig-normex1-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="336">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-normex1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.16: The sampling distribution <span class="math inline">\(f_Y(y \vert \mu)\)</span> (blue curve), rejection regions (red polygons), and observed statistic value <span class="math inline">\(y_{\rm obs}\)</span> (vertical green line) for <span class="math inline">\(Y = \bar{X}\)</span> given <span class="math inline">\(n = 25\)</span> iid data that are assumed to be sampled according to a <span class="math inline">\(\mathcal{N}(2,1)\)</span> distribution under the null hypothesis. We perform a two-tailed test, with <span class="math inline">\(\alpha = 0.05\)</span>, and the variance <span class="math inline">\(\sigma^2 = 1\)</span> is assumed known. The value we observe is in the rejection region, thus we reject the null hypothesis and conclude that <span class="math inline">\(\mu \neq 2\)</span>.
+Figure&nbsp;2.16: The sampling distribution <span class="math inline">\(f_Y(y \vert \mu)\)</span> (blue curve), rejection regions (red polygons), and observed statistic value <span class="math inline">\(y_{\mathrm{obs}}\)</span> (vertical green line) for <span class="math inline">\(Y = \bar{X}\)</span> given <span class="math inline">\(n = 25\)</span> iid data that are assumed to be sampled according to a <span class="math inline">\(\mathcal{N}(2,1)\)</span> distribution under the null hypothesis. We perform a two-tailed test, with <span class="math inline">\(\alpha = 0.05\)</span>, and the variance <span class="math inline">\(\sigma^2 = 1\)</span> is assumed known. The value we observe is in the rejection region, thus we reject the null hypothesis and conclude that <span class="math inline">\(\mu \neq 2\)</span>.
 </figcaption>
 </figure>
 </div>
@@ -2592,24 +2597,24 @@ Figure&nbsp;2.17: The power curve for the two-tail test <span class="math inline
 <section id="normal-mean-estimating-sample-size-with-variance-known" class="level4" data-number="2.13.4.2">
 <h4 data-number="2.13.4.2" class="anchored" data-anchor-id="normal-mean-estimating-sample-size-with-variance-known"><span class="header-section-number">2.13.4.2</span> Normal Mean: Estimating Sample Size with Variance Known</h4>
 <blockquote class="blockquote">
-<p>We can phrase a typical experimental design exercise as follows. “We will sample data according to a normal distribution with specified mean <span class="math inline">\(\mu\)</span> and specified variance <span class="math inline">\(\sigma^2\)</span>.” (Alternatively, it could be a specification of <span class="math inline">\(s_{\rm obs}^2\)</span>, motivating the use of <span class="math inline">\(t\)</span> distribution.) “How many data do we need to collect to achieve a test power of 0.8, assuming <span class="math inline">\(\alpha = 0.05\)</span> and assuming that the null hypothesis is <span class="math inline">\(H_o : \mu = \mu_o\)</span>, but the true value is <span class="math inline">\(\mu &gt; \mu_o\)</span>?”</p>
+<p>We can phrase a typical experimental design exercise as follows. “We will sample data according to a normal distribution with specified mean <span class="math inline">\(\mu\)</span> and specified variance <span class="math inline">\(\sigma^2\)</span>.” (Alternatively, it could be a specification of <span class="math inline">\(s_{\mathrm{obs}}^2\)</span>, motivating the use of <span class="math inline">\(t\)</span> distribution.) “How many data do we need to collect to achieve a test power of 0.8, assuming <span class="math inline">\(\alpha = 0.05\)</span> and assuming that the null hypothesis is <span class="math inline">\(H_o : \mu = \mu_o\)</span>, but the true value is <span class="math inline">\(\mu &gt; \mu_o\)</span>?”</p>
 </blockquote>
 <blockquote class="blockquote">
 <p>We will begin answering this question using math, and later we will transition to code.</p>
 </blockquote>
 <blockquote class="blockquote">
 <p>We refer back to the hypothesis test reference tables and note that for an upper-tail test where <span class="math inline">\(E[Y]\)</span> increases with <span class="math inline">\(\theta\)</span>, <span class="math display">\[
-\mbox{power}(\theta) = 1 - F_Y(y_{\rm RR} \vert \mu_o) \,.
+\mbox{power}(\theta) = 1 - F_Y(y_{\mathrm{RR}} \vert \mu_o) \,.
 \]</span> We substitute in our target power value and solve for <span class="math inline">\(n\)</span>: <span class="math display">\[\begin{align*}
-1 - F_Y(y_{\rm RR} \vert \mu_o) &amp;= 0.8 \\
-\Rightarrow ~~~ F_Y(y_{\rm RR} \vert \mu_o) &amp;= 0.2 \\
+1 - F_Y(y_{\mathrm{RR}} \vert \mu_o) &amp;= 0.8 \\
+\Rightarrow ~~~ F_Y(y_{\mathrm{RR}} \vert \mu_o) &amp;= 0.2 \\
 \Rightarrow ~~~ &amp;\mbox{...?} \,.
-\end{align*}\]</span> We transition here to code. We refer back to the hypothesis test reference tables and note that for an upper-tail/“yes”-line test, <span class="math inline">\(y_{\rm RR}\)</span> is</p>
+\end{align*}\]</span> We transition here to code. We refer back to the hypothesis test reference tables and note that for an upper-tail/“yes”-line test, <span class="math inline">\(y_{\mathrm{RR}}\)</span> is</p>
 </blockquote>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>y.rr <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(<span class="dv">1</span> <span class="sc">-</span> alpha <span class="sc">/</span> <span class="dv">2</span>, <span class="at">mean =</span> mu.o, <span class="at">sd =</span> <span class="fu">sqrt</span>(sigma2 <span class="sc">/</span> n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>y.rr <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(<span class="dv">1</span> <span class="sc">-</span> alpha <span class="sc">/</span> <span class="dv">2</span>, <span class="at">mean =</span> mu.o, <span class="at">sd =</span> <span class="fu">sqrt</span>(sigma2 <span class="sc">/</span> n))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <blockquote class="blockquote">
@@ -2618,7 +2623,7 @@ Figure&nbsp;2.17: The power curve for the two-tail test <span class="math inline
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(y.rr, <span class="at">mean =</span> mu, <span class="at">sd =</span> <span class="fu">sqrt</span>(sigma2 <span class="sc">/</span> n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(y.rr, <span class="at">mean =</span> mu, <span class="at">sd =</span> <span class="fu">sqrt</span>(sigma2 <span class="sc">/</span> n))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <blockquote class="blockquote">
@@ -2627,7 +2632,7 @@ Figure&nbsp;2.17: The power curve for the two-tail test <span class="math inline
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>alpha  <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>alpha  <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
 <span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>mu.o   <span class="ot">&lt;-</span> <span class="dv">8</span></span>
 <span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>mu     <span class="ot">&lt;-</span> <span class="dv">9</span></span>
 <span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a>sigma2 <span class="ot">&lt;-</span> <span class="dv">6</span></span>
@@ -2636,7 +2641,7 @@ Figure&nbsp;2.17: The power curve for the two-tail test <span class="math inline
 <span id="cb64-7"><a href="#cb64-7" aria-hidden="true" tabindex="-1"></a>  y.rr <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(<span class="dv">1</span> <span class="sc">-</span> alpha<span class="sc">/</span><span class="dv">2</span>, <span class="at">mean =</span> mu.o, <span class="at">sd =</span> <span class="fu">sqrt</span>(sigma2 <span class="sc">/</span> n))</span>
 <span id="cb64-8"><a href="#cb64-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pnorm</span>(y.rr, <span class="at">mean =</span> mu, <span class="at">sd =</span> <span class="fu">sqrt</span>(sigma2 <span class="sc">/</span> n)) <span class="sc">-</span> <span class="fl">0.2</span></span>
 <span id="cb64-9"><a href="#cb64-9" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb64-10"><a href="#cb64-10" aria-hidden="true" tabindex="-1"></a><span class="fu">ceiling</span>(<span class="fu">uniroot</span>(f, <span class="at">interval =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1000</span>))<span class="sc">$</span>root)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb64-10"><a href="#cb64-10" aria-hidden="true" tabindex="-1"></a><span class="fu">ceiling</span>(<span class="fu">uniroot</span>(f, <span class="at">interval =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1000</span>))<span class="sc">$</span>root)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 48</code></pre>
@@ -2649,7 +2654,7 @@ Figure&nbsp;2.17: The power curve for the two-tail test <span class="math inline
 <section id="normal-mean-variance-unknown-1" class="level4" data-number="2.13.4.3">
 <h4 data-number="2.13.4.3" class="anchored" data-anchor-id="normal-mean-variance-unknown-1"><span class="header-section-number">2.13.4.3</span> Normal Mean: Variance Unknown</h4>
 <blockquote class="blockquote">
-<p>Let’s assume that we have sampled <span class="math inline">\(n = 15\)</span> iid data from a normal distribution whose variance is unknown. We wish to test the null hypothesis <span class="math inline">\(H_o : \mu = \mu_o = 4\)</span> versus the alternative <span class="math inline">\(H_a : \mu &gt; \mu_o\)</span>. What is the <span class="math inline">\(p\)</span>-value if we observe <span class="math inline">\(\bar{x}_{\rm obs} = 4.5\)</span>? What is the power of this test for <span class="math inline">\(\mu = 4.5\)</span>? We assume the level of the test is <span class="math inline">\(\alpha = 0.05\)</span> and that the sample variance is <span class="math inline">\(s_{\rm obs}^2 = 3\)</span>.</p>
+<p>Let’s assume that we have sampled <span class="math inline">\(n = 15\)</span> iid data from a normal distribution whose variance is unknown. We wish to test the null hypothesis <span class="math inline">\(H_o : \mu = \mu_o = 4\)</span> versus the alternative <span class="math inline">\(H_a : \mu &gt; \mu_o\)</span>. What is the <span class="math inline">\(p\)</span>-value if we observe <span class="math inline">\(\bar{x}_{\mathrm{obs}} = 4.5\)</span>? What is the power of this test for <span class="math inline">\(\mu = 4.5\)</span>? We assume the level of the test is <span class="math inline">\(\alpha = 0.05\)</span> and that the sample variance is <span class="math inline">\(s_{\mathrm{obs}}^2 = 3\)</span>.</p>
 </blockquote>
 <blockquote class="blockquote">
 <p>To answer each of these questions, we will refer to the hypothesis test reference tables given in <a href="01-probability.html#sec-chap1hypref" class="quarto-xref"><span>Section 1.17.2</span></a> and above.</p>
@@ -2660,11 +2665,11 @@ Figure&nbsp;2.17: The power curve for the two-tail test <span class="math inline
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>n      <span class="ot">&lt;-</span> <span class="dv">15</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>n      <span class="ot">&lt;-</span> <span class="dv">15</span></span>
 <span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>mu.o   <span class="ot">&lt;-</span> <span class="dv">4</span></span>
 <span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a>s2.obs <span class="ot">&lt;-</span> <span class="dv">3</span></span>
 <span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a>y.obs  <span class="ot">&lt;-</span> (<span class="fl">4.5</span> <span class="sc">-</span> mu.o) <span class="sc">/</span> <span class="fu">sqrt</span>(s2.obs <span class="sc">/</span> n)</span>
-<span id="cb66-5"><a href="#cb66-5" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pt</span>(y.obs, n <span class="sc">-</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb66-5"><a href="#cb66-5" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pt</span>(y.obs, n <span class="sc">-</span> <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.1411855</code></pre>
@@ -2691,7 +2696,7 @@ S' = \frac{\Gamma((n-1)/2)}{\Gamma(n/2)} \sqrt{\frac{n-1}{2}} S \,,
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>n       <span class="ot">&lt;-</span> <span class="dv">15</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>n       <span class="ot">&lt;-</span> <span class="dv">15</span></span>
 <span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>mu.o    <span class="ot">&lt;-</span> <span class="dv">4</span></span>
 <span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a>mu      <span class="ot">&lt;-</span> <span class="fl">4.5</span></span>
 <span id="cb68-4"><a href="#cb68-4" aria-hidden="true" tabindex="-1"></a>s       <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="dv">3</span>)</span>
@@ -2699,14 +2704,14 @@ S' = \frac{\Gamma((n-1)/2)}{\Gamma(n/2)} \sqrt{\frac{n-1}{2}} S \,,
 <span id="cb68-6"><a href="#cb68-6" aria-hidden="true" tabindex="-1"></a>delta   <span class="ot">&lt;-</span> (mu <span class="sc">-</span> mu.o) <span class="sc">/</span> (s.prime <span class="sc">/</span> <span class="fu">sqrt</span>(n))</span>
 <span id="cb68-7"><a href="#cb68-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb68-8"><a href="#cb68-8" aria-hidden="true" tabindex="-1"></a>y.rr <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="dv">1</span> <span class="sc">-</span> alpha, n <span class="sc">-</span> <span class="dv">1</span>)</span>
-<span id="cb68-9"><a href="#cb68-9" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pt</span>(y.rr, n <span class="sc">-</span> <span class="dv">1</span>, delta)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb68-9"><a href="#cb68-9" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pt</span>(y.rr, n <span class="sc">-</span> <span class="dv">1</span>, delta)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.2744317</code></pre>
 </div>
 </div>
 <blockquote class="blockquote">
-<p>We estimate the test power to be 0.274: <em>if</em> <span class="math inline">\(\mu\)</span> is equal to 4.5, then approximately 27.4 percent of the time we would sample a value <span class="math inline">\(y_{\rm obs}\)</span> that lies in the rejection region. The farther <span class="math inline">\(\mu\)</span> is from <span class="math inline">\(\mu_o\)</span> (in the positive direction), the higher this percentage gets. See <a href="#fig-varpowcurve" class="quarto-xref">Figure&nbsp;<span>2.18</span></a>.</p>
+<p>We estimate the test power to be 0.274: <em>if</em> <span class="math inline">\(\mu\)</span> is equal to 4.5, then approximately 27.4 percent of the time we would sample a value <span class="math inline">\(y_{\mathrm{obs}}\)</span> that lies in the rejection region. The farther <span class="math inline">\(\mu\)</span> is from <span class="math inline">\(\mu_o\)</span> (in the positive direction), the higher this percentage gets. See <a href="#fig-varpowcurve" class="quarto-xref">Figure&nbsp;<span>2.18</span></a>.</p>
 </blockquote>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -2726,7 +2731,7 @@ Figure&nbsp;2.18: The power curve for the upper-tail test <span class="math inli
 <section id="normal-variance-1" class="level4" data-number="2.13.4.4">
 <h4 data-number="2.13.4.4" class="anchored" data-anchor-id="normal-variance-1"><span class="header-section-number">2.13.4.4</span> Normal Variance</h4>
 <blockquote class="blockquote">
-<p>Let’s assume that we have sampled <span class="math inline">\(n = 14\)</span> iid data from a normal distribution of unknown mean and variance. We wish to test the null hypothesis <span class="math inline">\(H_o : \sigma^2 = \sigma_o^2 = 4\)</span> versus the alternative <span class="math inline">\(H_a : \sigma^2 &gt; \sigma_o^2\)</span>. What is the <span class="math inline">\(p\)</span>-value if we observe <span class="math inline">\(s_{\rm obs}^2 = 5.5\)</span>? What is the power of this test if <span class="math inline">\(\sigma^2 = 8\)</span>? To answer each of these questions, we utilize the hypothesis test reference tables. We assume the level of the test is <span class="math inline">\(\alpha = 0.05\)</span>.</p>
+<p>Let’s assume that we have sampled <span class="math inline">\(n = 14\)</span> iid data from a normal distribution of unknown mean and variance. We wish to test the null hypothesis <span class="math inline">\(H_o : \sigma^2 = \sigma_o^2 = 4\)</span> versus the alternative <span class="math inline">\(H_a : \sigma^2 &gt; \sigma_o^2\)</span>. What is the <span class="math inline">\(p\)</span>-value if we observe <span class="math inline">\(s_{\mathrm{obs}}^2 = 5.5\)</span>? What is the power of this test if <span class="math inline">\(\sigma^2 = 8\)</span>? To answer each of these questions, we utilize the hypothesis test reference tables. We assume the level of the test is <span class="math inline">\(\alpha = 0.05\)</span>.</p>
 </blockquote>
 <blockquote class="blockquote">
 <p>The relevant code for the <span class="math inline">\(p\)</span>-value is</p>
@@ -2734,10 +2739,10 @@ Figure&nbsp;2.18: The power curve for the upper-tail test <span class="math inli
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>y.obs    <span class="ot">&lt;-</span> <span class="fl">5.5</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>y.obs    <span class="ot">&lt;-</span> <span class="fl">5.5</span></span>
 <span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>n        <span class="ot">&lt;-</span> <span class="dv">14</span></span>
 <span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a>sigma2.o <span class="ot">&lt;-</span> <span class="dv">4</span></span>
-<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pgamma</span>(y.obs, <span class="at">shape =</span> (n <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">/</span> <span class="dv">2</span>, <span class="at">scale =</span> <span class="dv">2</span> <span class="sc">*</span> sigma2.o <span class="sc">/</span> (n <span class="sc">-</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pgamma</span>(y.obs, <span class="at">shape =</span> (n <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">/</span> <span class="dv">2</span>, <span class="at">scale =</span> <span class="dv">2</span> <span class="sc">*</span> sigma2.o <span class="sc">/</span> (n <span class="sc">-</span> <span class="dv">1</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.1623236</code></pre>
@@ -2752,28 +2757,28 @@ Figure&nbsp;2.18: The power curve for the upper-tail test <span class="math inli
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
-<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>(y.rr <span class="ot">&lt;-</span> <span class="fu">qgamma</span>(<span class="dv">1</span> <span class="sc">-</span> alpha, <span class="at">shape =</span> (n <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">/</span> <span class="dv">2</span>, <span class="at">scale =</span> <span class="dv">2</span> <span class="sc">*</span> sigma2.o <span class="sc">/</span> (n <span class="sc">-</span> <span class="dv">1</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>(y.rr <span class="ot">&lt;-</span> <span class="fu">qgamma</span>(<span class="dv">1</span> <span class="sc">-</span> alpha, <span class="at">shape =</span> (n <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">/</span> <span class="dv">2</span>, <span class="at">scale =</span> <span class="dv">2</span> <span class="sc">*</span> sigma2.o <span class="sc">/</span> (n <span class="sc">-</span> <span class="dv">1</span>)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 6.880625</code></pre>
 </div>
 </div>
 <blockquote class="blockquote">
-<p>The boundary is <span class="math inline">\(y_{\rm RR} = 6.881\)</span>. With that number in hand, we can compute the power assuming <span class="math inline">\(\sigma^2 = 8\)</span>:</p>
+<p>The boundary is <span class="math inline">\(y_{\mathrm{RR}} = 6.881\)</span>. With that number in hand, we can compute the power assuming <span class="math inline">\(\sigma^2 = 8\)</span>:</p>
 </blockquote>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>sigma2 <span class="ot">&lt;-</span> <span class="dv">8</span></span>
-<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pgamma</span>(y.rr, <span class="at">shape =</span> (n <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">/</span> <span class="dv">2</span>, <span class="at">scale =</span> <span class="dv">2</span> <span class="sc">*</span> sigma2 <span class="sc">/</span> (n <span class="sc">-</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>sigma2 <span class="ot">&lt;-</span> <span class="dv">8</span></span>
+<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pgamma</span>(y.rr, <span class="at">shape =</span> (n <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">/</span> <span class="dv">2</span>, <span class="at">scale =</span> <span class="dv">2</span> <span class="sc">*</span> sigma2 <span class="sc">/</span> (n <span class="sc">-</span> <span class="dv">1</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.5956563</code></pre>
 </div>
 </div>
 <blockquote class="blockquote">
-<p>The power is 0.596: <em>if</em> <span class="math inline">\(\sigma^2\)</span> is equal to 8, then 59.6 percent of the time we would sample a value of <span class="math inline">\(y_{\rm obs}\)</span> that lies in the rejection region. This is not a particularly high value; if being able to differentiate between <span class="math inline">\(\sigma_o^2 = 4\)</span> and <span class="math inline">\(\sigma^2 = 8\)</span> is an important research goal, we would want to collect more data!</p>
+<p>The power is 0.596: <em>if</em> <span class="math inline">\(\sigma^2\)</span> is equal to 8, then 59.6 percent of the time we would sample a value of <span class="math inline">\(y_{\mathrm{obs}}\)</span> that lies in the rejection region. This is not a particularly high value; if being able to differentiate between <span class="math inline">\(\sigma_o^2 = 4\)</span> and <span class="math inline">\(\sigma^2 = 8\)</span> is an important research goal, we would want to collect more data!</p>
 </blockquote>
 <blockquote class="blockquote">
 <p>Below, we plot test power for this example versus sample size. Because we are not solving for <span class="math inline">\(n\)</span> given a particular power value, there is no need to utilize <code>uniroot()</code>; we simply need to loop over calls to <code>qgamma()</code> and <code>pgamma()</code>. (But note that we don’t actually “loop,” as <code>R</code>’s vectorization capabilities allow us to simply pass vectors of sample-size values into the function calls, with vectors of results being returned.) See <a href="#fig-varpow2" class="quarto-xref">Figure&nbsp;<span>2.19</span></a>.</p>
@@ -2781,12 +2786,12 @@ Figure&nbsp;2.18: The power curve for the upper-tail test <span class="math inli
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>alpha    <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>alpha    <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
 <span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a>sigma2.o <span class="ot">&lt;-</span> <span class="dv">4</span></span>
 <span id="cb76-3"><a href="#cb76-3" aria-hidden="true" tabindex="-1"></a>sigma2   <span class="ot">&lt;-</span> <span class="dv">8</span></span>
 <span id="cb76-4"><a href="#cb76-4" aria-hidden="true" tabindex="-1"></a>n        <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">100</span></span>
 <span id="cb76-5"><a href="#cb76-5" aria-hidden="true" tabindex="-1"></a>y.rr     <span class="ot">&lt;-</span> <span class="fu">qgamma</span>(<span class="dv">1</span> <span class="sc">-</span> alpha, <span class="at">shape =</span> (n <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">/</span> <span class="dv">2</span>, <span class="at">scale =</span> <span class="dv">2</span> <span class="sc">*</span> sigma2.o <span class="sc">/</span> (n <span class="sc">-</span> <span class="dv">1</span>))</span>
-<span id="cb76-6"><a href="#cb76-6" aria-hidden="true" tabindex="-1"></a>power    <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">pgamma</span>(y.rr, <span class="at">shape =</span> (n <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">/</span> <span class="dv">2</span>, <span class="at">scale =</span> <span class="dv">2</span> <span class="sc">*</span> sigma2 <span class="sc">/</span> (n <span class="sc">-</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb76-6"><a href="#cb76-6" aria-hidden="true" tabindex="-1"></a>power    <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">pgamma</span>(y.rr, <span class="at">shape =</span> (n <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">/</span> <span class="dv">2</span>, <span class="at">scale =</span> <span class="dv">2</span> <span class="sc">*</span> sigma2 <span class="sc">/</span> (n <span class="sc">-</span> <span class="dv">1</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <div class="cell" data-layout-align="center">
@@ -2812,17 +2817,17 @@ f_X(x) = \theta x^{\theta-1} ~~ x \in [0,1] \,,
 \]</span> with <span class="math inline">\(\theta &gt; 0\)</span>. For this distribution, <span class="math inline">\(E[X] = \mu = \theta/(\theta+1)\)</span>. We found that because we cannot express the sampling distribution of <span class="math inline">\(Y = \bar{X}\)</span> analytically, our only path to determining a confidence interval was by making use of the Central Limit Theorem.</p>
 </blockquote>
 <blockquote class="blockquote">
-<p>To determine <span class="math inline">\(p\)</span>-value and test power, we would utilize the codes shown for the “variance known” case above (i.e., the ones based on <code>pnorm()</code> and <code>qnorm()</code>). However, instead of plugging in <span class="math inline">\(\sigma^2\)</span> (i.e., <code>sigma2</code>), we would plug in the sample variance <span class="math inline">\(s_{\rm obs}^2\)</span> (i.e., <code>s2.obs</code>). For instance, if we assume that we have sampled <span class="math inline">\(n = 15\)</span> data according to the distribution above, with <span class="math inline">\(\bar{x}_{\rm obs} = 0.65\)</span> and <span class="math inline">\(s_{\rm obs}^2 = 0.01\)</span>, and we wish to test <span class="math inline">\(H_o : \mu = 0.6\)</span> versus <span class="math inline">\(H_a : \mu &gt; 0.6\)</span> at the level <span class="math inline">\(\alpha = 0.05\)</span>, the <span class="math inline">\(p\)</span>-value is given by</p>
+<p>To determine <span class="math inline">\(p\)</span>-value and test power, we would utilize the codes shown for the “variance known” case above (i.e., the ones based on <code>pnorm()</code> and <code>qnorm()</code>). However, instead of plugging in <span class="math inline">\(\sigma^2\)</span> (i.e., <code>sigma2</code>), we would plug in the sample variance <span class="math inline">\(s_{\mathrm{obs}}^2\)</span> (i.e., <code>s2.obs</code>). For instance, if we assume that we have sampled <span class="math inline">\(n = 15\)</span> data according to the distribution above, with <span class="math inline">\(\bar{x}_{\mathrm{obs}} = 0.65\)</span> and <span class="math inline">\(s_{\mathrm{obs}}^2 = 0.01\)</span>, and we wish to test <span class="math inline">\(H_o : \mu = 0.6\)</span> versus <span class="math inline">\(H_a : \mu &gt; 0.6\)</span> at the level <span class="math inline">\(\alpha = 0.05\)</span>, the <span class="math inline">\(p\)</span>-value is given by</p>
 </blockquote>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>n      <span class="ot">&lt;-</span> <span class="dv">15</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb77"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>n      <span class="ot">&lt;-</span> <span class="dv">15</span></span>
 <span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a>alpha  <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
 <span id="cb77-3"><a href="#cb77-3" aria-hidden="true" tabindex="-1"></a>mu.o   <span class="ot">&lt;-</span> <span class="fl">0.6</span></span>
 <span id="cb77-4"><a href="#cb77-4" aria-hidden="true" tabindex="-1"></a>s2.obs <span class="ot">&lt;-</span> <span class="fl">0.01</span></span>
 <span id="cb77-5"><a href="#cb77-5" aria-hidden="true" tabindex="-1"></a>y.obs  <span class="ot">&lt;-</span> <span class="fl">0.65</span></span>
-<span id="cb77-6"><a href="#cb77-6" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(y.obs, <span class="at">mean =</span> mu.o, <span class="at">sd =</span> <span class="fu">sqrt</span>(s2.obs <span class="sc">/</span> n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb77-6"><a href="#cb77-6" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(y.obs, <span class="at">mean =</span> mu.o, <span class="at">sd =</span> <span class="fu">sqrt</span>(s2.obs <span class="sc">/</span> n))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.02640376</code></pre>
@@ -2837,7 +2842,7 @@ f_X(x) = \theta x^{\theta-1} ~~ x \in [0,1] \,,
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
 <span id="cb79-2"><a href="#cb79-2" aria-hidden="true" tabindex="-1"></a>num.sim  <span class="ot">&lt;-</span> <span class="dv">10000</span>    <span class="co"># repeat the data-generating process 10,000 times</span></span>
 <span id="cb79-3"><a href="#cb79-3" aria-hidden="true" tabindex="-1"></a>n        <span class="ot">&lt;-</span> <span class="dv">15</span></span>
 <span id="cb79-4"><a href="#cb79-4" aria-hidden="true" tabindex="-1"></a>alpha    <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
@@ -2851,7 +2856,7 @@ f_X(x) = \theta x^{\theta-1} ~~ x \in [0,1] \,,
 <span id="cb79-12"><a href="#cb79-12" aria-hidden="true" tabindex="-1"></a>  y.rr.hi <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(<span class="dv">1</span><span class="sc">-</span>alpha <span class="sc">/</span> <span class="dv">2</span>, <span class="at">mean =</span> mu.o, <span class="at">sd =</span> <span class="fu">sqrt</span>(s2.obs <span class="sc">/</span> n))</span>
 <span id="cb79-13"><a href="#cb79-13" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> ( y.obs <span class="sc">&lt;=</span> y.rr.lo <span class="sc">||</span> y.obs <span class="sc">&gt;=</span> y.rr.hi ) typeIErr <span class="ot">=</span> typeIErr <span class="sc">+</span> <span class="dv">1</span></span>
 <span id="cb79-14"><a href="#cb79-14" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb79-15"><a href="#cb79-15" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"The observed proportion of Type I errors ="</span>, typeIErr <span class="sc">/</span> num.sim, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb79-15"><a href="#cb79-15" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"The observed proportion of Type I errors ="</span>, typeIErr <span class="sc">/</span> num.sim, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>The observed proportion of Type I errors = 0.0737 </code></pre>
@@ -2885,7 +2890,7 @@ F_Y(y) = P(Y \leq y) = P(S_{\Delta} T \leq y) = P\left(T \leq \frac{y}{S_{\Delta
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a>p     <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> <span class="fu">min</span>(<span class="fu">c</span>(<span class="fu">pt</span>(y.obs <span class="sc">/</span> S.Delta, nu), <span class="dv">1</span> <span class="sc">-</span> <span class="fu">pt</span>(y.obs <span class="sc">/</span> S.Delta, nu)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a>p     <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> <span class="fu">min</span>(<span class="fu">c</span>(<span class="fu">pt</span>(y.obs <span class="sc">/</span> S.Delta, nu), <span class="dv">1</span> <span class="sc">-</span> <span class="fu">pt</span>(y.obs <span class="sc">/</span> S.Delta, nu)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <blockquote class="blockquote">
@@ -2910,8 +2915,8 @@ S_U^2 \sim \mbox{Gamma}\left(\frac{n_U-1}{2},\frac{2\sigma_U^2}{n_U-1}\right) ~~
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> <span class="fu">min</span>(<span class="fu">c</span>(<span class="fu">pf</span>(sU2 <span class="sc">*</span> sigmaV2.o <span class="sc">/</span> (sV2 <span class="sc">*</span> sigmaU2.o), n.U <span class="sc">-</span> <span class="dv">1</span>, n.V <span class="sc">-</span> <span class="dv">1</span>),</span>
-<span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a>           <span class="dv">1</span> <span class="sc">-</span> <span class="fu">pf</span>(sU2 <span class="sc">*</span> sigmaV2.o <span class="sc">/</span> (sV2 <span class="sc">*</span> sigmaU2.o), n.U <span class="sc">-</span> <span class="dv">1</span>, n.V <span class="sc">-</span> <span class="dv">1</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> <span class="fu">min</span>(<span class="fu">c</span>(<span class="fu">pf</span>(sU2 <span class="sc">*</span> sigmaV2.o <span class="sc">/</span> (sV2 <span class="sc">*</span> sigmaU2.o), n.U <span class="sc">-</span> <span class="dv">1</span>, n.V <span class="sc">-</span> <span class="dv">1</span>),</span>
+<span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a>           <span class="dv">1</span> <span class="sc">-</span> <span class="fu">pf</span>(sU2 <span class="sc">*</span> sigmaV2.o <span class="sc">/</span> (sV2 <span class="sc">*</span> sigmaU2.o), n.U <span class="sc">-</span> <span class="dv">1</span>, n.V <span class="sc">-</span> <span class="dv">1</span>)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <blockquote class="blockquote">
@@ -2997,7 +3002,7 @@ Figure&nbsp;2.21: Empirical cumulative distribution function of our dataset with
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ks.test</span>(x, <span class="st">"pnorm"</span>, <span class="fl">100.6</span>, <span class="fl">29.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ks.test</span>(x, <span class="st">"pnorm"</span>, <span class="fl">100.6</span>, <span class="fl">29.8</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
@@ -3038,7 +3043,7 @@ alternative hypothesis: two-sided</code></pre>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
@@ -3056,7 +3061,7 @@ W = 0.9508, p-value = 0.1776</code></pre>
 <div aria-describedby="fig-distp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-distp" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-distp-1" class="quarto-float quarto-figure quarto-figure-center anchored" width="288" data-fig-align="center">
+<div id="fig-distp-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="288">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-distp-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="02-normal_files/figure-html/fig-distp-1.png" id="fig-distp-1" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-distp" width="288">
@@ -3068,7 +3073,7 @@ W = 0.9508, p-value = 0.1776</code></pre>
 </div>
 </div>
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-distp" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-distp-2" class="quarto-float quarto-figure quarto-figure-center anchored" width="288" data-fig-align="center">
+<div id="fig-distp-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="288">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-distp-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="02-normal_files/figure-html/fig-distp-2.png" id="fig-distp-2" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-distp" width="288">
@@ -3298,14 +3303,14 @@ E[SSE] = S_{xx} \beta_1^2 + (n-1)\sigma^2 - \sigma^2 - S_{xx} \beta_1^2 = (n-2)\
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="co"># lm(): "linear model"</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb88"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="co"># lm(): "linear model"</span></span>
 <span id="cb88-2"><a href="#cb88-2" aria-hidden="true" tabindex="-1"></a><span class="co"># y~x : this is a "model formula" that in words translates as</span></span>
 <span id="cb88-3"><a href="#cb88-3" aria-hidden="true" tabindex="-1"></a><span class="co">#       "regress the response data y upon the predictor data x"</span></span>
 <span id="cb88-4"><a href="#cb88-4" aria-hidden="true" tabindex="-1"></a><span class="co">#       or "estimate beta_0 and beta_1 for the model E[Y] = beta_0 + beta_1 x"</span></span>
 <span id="cb88-5"><a href="#cb88-5" aria-hidden="true" tabindex="-1"></a>lm.out <span class="ot">=</span> <span class="fu">lm</span>(y <span class="sc">~</span> x)</span>
 <span id="cb88-6"><a href="#cb88-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb88-7"><a href="#cb88-7" aria-hidden="true" tabindex="-1"></a><span class="co"># show a summary of the model</span></span>
-<span id="cb88-8"><a href="#cb88-8" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm.out)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb88-8"><a href="#cb88-8" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm.out)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
@@ -3330,7 +3335,7 @@ F-statistic: 61.76 on 1 and 38 DF,  p-value: 1.749e-09</code></pre>
 </div>
 <blockquote class="blockquote">
 <ol type="1">
-<li>The model residuals <span class="math inline">\(Y_i - \hat{Y}_i\)</span> are summarized via five numbers (minimum, maximum, and median, along with the 25<span class="math inline">\(^{\rm th}\)</span> and 75<span class="math inline">\(^{\rm th}\)</span> percentile values). If, e.g., the median is substantially different from zero, it is possible that the assumption that <span class="math inline">\(Y \vert x\)</span> is normally distributed is violated…and it is possible that the assumption <span class="math inline">\(E[\epsilon_i] = 0\)</span> is violated as well.</li>
+<li>The model residuals <span class="math inline">\(Y_i - \hat{Y}_i\)</span> are summarized via five numbers (minimum, maximum, and median, along with the 25<span class="math inline">\(^{\mathrm{th}}\)</span> and 75<span class="math inline">\(^{\mathrm{th}}\)</span> percentile values). If, e.g., the median is substantially different from zero, it is possible that the assumption that <span class="math inline">\(Y \vert x\)</span> is normally distributed is violated…and it is possible that the assumption <span class="math inline">\(E[\epsilon_i] = 0\)</span> is violated as well.</li>
 <li>Under <code>Coefficients</code>, there are four numerical columns. The first shows <span class="math inline">\(\hat{\beta}_0\)</span> (<code>(Intercept)</code>) and <span class="math inline">\(\hat{\beta}_1\)</span> (<code>x</code>), the second shows the estimated standard errors for these statistics, the third is simply the ratio of the values in the first and second columns, and the fourth is the <span class="math inline">\(p\)</span>-value. The third and fourth columns are distribution-specific: the hypothesis test being carried out has a null of zero, and the <code>t value</code> is assumed to be <span class="math inline">\(t\)</span>-distributed for <span class="math inline">\(n-2\)</span> degrees of freedom. The <span class="math inline">\(p\)</span>-values in the fourth column are <span class="math inline">\(\ll \alpha = 0.05\)</span>, which lead us to decide that both the intercept and the slope are truly non-zero. (In our simulation, they are: <span class="math inline">\(\beta_0 = 4\)</span> and <span class="math inline">\(\beta_1 = 0.5\)</span>.)</li>
 <li>The <code>Residual standard error</code> shows the value of <span class="math inline">\(\hat{\sigma} = \sqrt{SSE/(n-2)}\)</span>, while the “38 degrees of freedom” indicates that <span class="math inline">\(n = 40\)</span>. We note that in this simulation, <span class="math inline">\(\sigma^2 = 1\)</span>.</li>
 <li>The meanings behind the <code>R-squared</code> values are explained above in the correlation example. In words, approximately 60% of the variation exhibited by the data is accounted for with the linear model.</li>
@@ -3360,7 +3365,7 @@ E[Y_i \vert x_i = 1] &amp;= \beta_0 + \beta_1 \,.
 <div aria-describedby="fig-anova-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-anova" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-anova-1" class="quarto-float quarto-figure quarto-figure-center anchored" width="288" data-fig-align="center">
+<div id="fig-anova-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="288">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-anova-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="02-normal_files/figure-html/fig-anova-1.png" id="fig-anova-1" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-anova" width="288">
@@ -3372,7 +3377,7 @@ E[Y_i \vert x_i = 1] &amp;= \beta_0 + \beta_1 \,.
 </div>
 </div>
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-anova" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-anova-2" class="quarto-float quarto-figure quarto-figure-center anchored" width="288" data-fig-align="center">
+<div id="fig-anova-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="288">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-anova-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="02-normal_files/figure-html/fig-anova-2.png" id="fig-anova-2" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-anova" width="288">
@@ -3431,7 +3436,7 @@ V[\bar{Y}_{i\bullet}] &amp;= V\left[\frac{1}{n_i}\sum_{j=1}^{n_i} Y_{ij}\right] 
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm.out)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb90"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm.out)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
@@ -3466,7 +3471,7 @@ F-statistic: 61.76 on 1 and 38 DF,  p-value: 1.749e-09</code></pre>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(lm.out)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb92"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(lm.out)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Analysis of Variance Table
@@ -3637,19 +3642,19 @@ f_X(x) = p^x (1-p)^{1-x} \,,
 <li><p>We collect <span class="math inline">\(n\)</span> iid data that are distributed according to the following probability density function: <span class="math display">\[\begin{eqnarray*}
 f_X(x) = \frac{a}{x^{a+1}} \,,
 \end{eqnarray*}\]</span> where <span class="math inline">\(a &gt; 1\)</span> and <span class="math inline">\(x \geq 1\)</span>. (a) Derive the Fisher information <span class="math inline">\(I(a)\)</span> associated with a single datum drawn from this distribution. (b) Derive the Cramer-Rao Lower Bound on the variance of unbiased estimators for <span class="math inline">\(a\)</span>. (c) In the limit <span class="math inline">\(n \rightarrow \infty\)</span>, what is the distribution for <span class="math inline">\(\hat{a}_{MLE}\)</span>? Give both the name (or a symbol) for the distribution, and its paramater value(s).</p></li>
-<li><p>We inspect <span class="math inline">\(n\)</span> = 100 2-by-4’s in a lumber yard. Let <span class="math inline">\(X_i\)</span> be the length of the <span class="math inline">\(i^{\rm th}\)</span> 2-by-4, and assume all the <span class="math inline">\(X_i's\)</span> are independent and identically distributed. The population mean is <span class="math inline">\(\mu = 10\)</span> and the population standard deviation for the length is <span class="math inline">\(\sigma = 5\)</span>. (a) Write down an expression for the approximate probability that <span class="math inline">\(\bar{X}\)</span> is more than 1 unit away from <span class="math inline">\(\mu\)</span>. Leave the answer in terms of <span class="math inline">\(\Phi(\cdot)\)</span> and/or <span class="math inline">\(\Phi^{-1}(\cdot)\)</span>. (b) Let <span class="math inline">\(X_+\)</span> be the sums of the lengths of all 100 2-by-4’s. Specify the family of distributions is <span class="math inline">\(X_+\)</span> approximately sampled from, and evaluate and write down its parameter values.</p></li>
+<li><p>We inspect <span class="math inline">\(n\)</span> = 100 2-by-4’s in a lumber yard. Let <span class="math inline">\(X_i\)</span> be the length of the <span class="math inline">\(i^{\mathrm{th}}\)</span> 2-by-4, and assume all the <span class="math inline">\(X_i's\)</span> are independent and identically distributed. The population mean is <span class="math inline">\(\mu = 10\)</span> and the population standard deviation for the length is <span class="math inline">\(\sigma = 5\)</span>. (a) Write down an expression for the approximate probability that <span class="math inline">\(\bar{X}\)</span> is more than 1 unit away from <span class="math inline">\(\mu\)</span>. Leave the answer in terms of <span class="math inline">\(\Phi(\cdot)\)</span> and/or <span class="math inline">\(\Phi^{-1}(\cdot)\)</span>. (b) Let <span class="math inline">\(X_+\)</span> be the sums of the lengths of all 100 2-by-4’s. Specify the family of distributions is <span class="math inline">\(X_+\)</span> approximately sampled from, and evaluate and write down its parameter values.</p></li>
 <li><p>Workers A and B both perform a task. The time to accomplish this task is a random variable with <span class="math inline">\(\mu_A = 40\)</span> and <span class="math inline">\(\sigma_A = 6\)</span> for worker A, and <span class="math inline">\(\mu_B = 38\)</span> and <span class="math inline">\(\sigma_B = 6\)</span> for worker B. Both workers repeat the task <span class="math inline">\(n = 36\)</span> times. What is the probability that the average time to task completion for worker A is less than that for worker B? Leave the answer in terms of <span class="math inline">\(\Phi(\cdot)\)</span> and/or <span class="math inline">\(\Phi^{-1}(\cdot)\)</span>.</p></li>
 <li><p>We sample <span class="math inline">\(n = 64\)</span> data according to a probability density function with mean <span class="math inline">\(\mu = 10\)</span> and standard deviation <span class="math inline">\(\sigma = 4\)</span>. What is the (approximate) probability that <span class="math inline">\(\bar{X}\)</span> is greater than 9? Leave the answer in terms of <span class="math inline">\(\Phi(\cdot)\)</span> and/or <span class="math inline">\(\Phi^{-1}(\cdot)\)</span>.</p></li>
 <li><p>We sample <span class="math inline">\(n = 300\)</span> iid data according to a Uniform(0,6) distribution. Derive an approximate expression for <span class="math inline">\(P(2.8 \leq \bar{X} \leq 3.2)\)</span>; leave the answer in terms of <span class="math inline">\(\Phi(\cdot)\)</span> and/or <span class="math inline">\(\Phi^{-1}(\cdot)\)</span>.</p></li>
 <li><p>We sample <span class="math inline">\(n = 100\)</span> iid data according to an unknown distribution with mean <span class="math inline">\(\mu = 10\)</span> and variance <span class="math inline">\(\sigma^2 = 4\)</span>. Write down the (approximate) probability that the <em>sum</em> of the data is less than <span class="math inline">\((n+1)\mu\)</span>. Leave the answer in terms of an appropriate (inverse) cdf symbol. (Indicate the number of degrees of freedom if applicable.)</p></li>
 <li><p>We are given 100 iid data sampled according to a distribution with mean <span class="math inline">\(\mu = 10\)</span> and known variance <span class="math inline">\(\sigma^2 = 64\)</span>. (a) Estimate <span class="math inline">\(P(\bar{X} \leq \mu-\sigma/10)\)</span>. Employ standardization and leave the answer in terms of an appropriate (inverse) cdf function. (b) It turns out we didn’t know <span class="math inline">\(\sigma^2\)</span> after all. The sample variance is <span class="math inline">\(S^2 = 25\)</span>. We wish to determine <span class="math inline">\(P(\bar{X} \geq \mu+1)\)</span>. Update the calculation in part (a) to take these changes into account.</p></li>
-<li><p>We are given <span class="math inline">\(n\)</span> iid data sampled from a normal distribution with unknown mean <span class="math inline">\(\mu\)</span> and unknown variance <span class="math inline">\(\sigma^2\)</span>. The observed sample mean is <span class="math inline">\(\bar{x}_{\rm obs}\)</span> and the observed sample standard deviation is <span class="math inline">\(s_{\rm obs}^2\)</span>. We want to compute a two-sided 90 percent confidence interval for <span class="math inline">\(\sigma^2\)</span>, but we cannot do this by hand. (a) When writing out <code>R</code> code, what specific (inverse) cdf function would we use? (b) Assume we have the variables <code>mu</code>, <code>xbar.obs</code>, <code>sigma2</code>, <code>s2.obs</code>, <code>n</code>, and <code>q</code>. What is the first argument for the function you named in part (a)? (Use <code>*</code> for multiplication and <code>/</code> for division.) (c) In the call to <code>uniroot()</code>, should the <code>interval</code> argument be <code>c(-1000, 1000)</code>, <code>c(-1000, -0.001)</code>, or <code>c(0.001, 1000)</code>?</p></li>
+<li><p>We are given <span class="math inline">\(n\)</span> iid data sampled from a normal distribution with unknown mean <span class="math inline">\(\mu\)</span> and unknown variance <span class="math inline">\(\sigma^2\)</span>. The observed sample mean is <span class="math inline">\(\bar{x}_{\mathrm{obs}}\)</span> and the observed sample standard deviation is <span class="math inline">\(s_{\mathrm{obs}}^2\)</span>. We want to compute a two-sided 90 percent confidence interval for <span class="math inline">\(\sigma^2\)</span>, but we cannot do this by hand. (a) When writing out <code>R</code> code, what specific (inverse) cdf function would we use? (b) Assume we have the variables <code>mu</code>, <code>xbar.obs</code>, <code>sigma2</code>, <code>s2.obs</code>, <code>n</code>, and <code>q</code>. What is the first argument for the function you named in part (a)? (Use <code>*</code> for multiplication and <code>/</code> for division.) (c) In the call to <code>uniroot()</code>, should the <code>interval</code> argument be <code>c(-1000, 1000)</code>, <code>c(-1000, -0.001)</code>, or <code>c(0.001, 1000)</code>?</p></li>
 <li><p>We collect <span class="math inline">\(n\)</span> iid data sampled according to a normal distribution with mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>, and we wish to perform a hypothesis test for the population variance, with the null and alternative hypotheses being <span class="math inline">\(H_o: \sigma^2 = \sigma_o^2 = 10\)</span> and <span class="math inline">\(H_a: \sigma^2 &lt; \sigma_o^2\)</span>. The level of the test is <span class="math inline">\(\alpha\)</span>. (a) Define an appropriate test statistic <span class="math inline">\(Y\)</span> (under the null), give the name of its sampling distribution, and give the parameter value(s) for that distribution. (b) Write down the boundary of the rejection region as a function of <span class="math inline">\(\alpha\)</span>. Use a(n inverse) cdf symbol, and indicate the number of degrees of freedom if appropriate. (c) Derive an expression for the power of the test when <span class="math inline">\(\sigma^2 = \sigma_a^2\)</span>. Use a(n inverse) cdf symbol, and indicate the number of degrees of freedom if appropriate. (d) If <span class="math inline">\(\sigma_a^2 &gt; \sigma_o^2\)</span>, is the power of the test greater than, less than, or equal to <span class="math inline">\(\alpha\)</span>?</p></li>
 <li><p>We sample a single datum that is distributed according to the following probability density function: <span class="math display">\[\begin{eqnarray*}
 f_X(x) = \frac{a}{x^{a+1}} \,,
 \end{eqnarray*}\]</span> where <span class="math inline">\(a &gt; 1\)</span> and <span class="math inline">\(x \geq 1\)</span>. The expected value of <span class="math inline">\(X\)</span> and the cumulative distribution function for <span class="math inline">\(X\)</span> are <span class="math display">\[\begin{eqnarray*}
 E[X] = \frac{a}{a-1} ~~~\mbox{and}~~~F_X(x \vert a) = 1 - \left(\frac{1}{x}\right)^a \,.
-\end{eqnarray*}\]</span> We are to carry out the test <span class="math inline">\(H_o : a = a_o = 2\)</span> versus <span class="math inline">\(H_a : a &gt; a_o\)</span>, assuming <span class="math inline">\(\alpha = 0.05\)</span>. The datum we observe has the value <span class="math inline">\(x_{\rm obs} = 5/4\)</span>. (a) Write down an expression for the <span class="math inline">\(p\)</span>-value. Evaluate this to a single number, by hand. (b) State a conclusion: “reject” or “fail to reject.” (c) Write down an expression for the rejection-region boundary. (d) Write down an expression that shows the test power for <span class="math inline">\(a = 4\)</span>.</p></li>
+\end{eqnarray*}\]</span> We are to carry out the test <span class="math inline">\(H_o : a = a_o = 2\)</span> versus <span class="math inline">\(H_a : a &gt; a_o\)</span>, assuming <span class="math inline">\(\alpha = 0.05\)</span>. The datum we observe has the value <span class="math inline">\(x_{\mathrm{obs}} = 5/4\)</span>. (a) Write down an expression for the <span class="math inline">\(p\)</span>-value. Evaluate this to a single number, by hand. (b) State a conclusion: “reject” or “fail to reject.” (c) Write down an expression for the rejection-region boundary. (d) Write down an expression that shows the test power for <span class="math inline">\(a = 4\)</span>.</p></li>
 <li><p>We have collected <span class="math inline">\(n\)</span> data pairs <span class="math inline">\((x_i,Y_i)\)</span> and we have learned a simple linear regression model, with estimated slope <span class="math inline">\(\hat{\beta}_1\)</span>. We now transform all of the <span class="math inline">\(x_i\)</span>’s; the new predictors are <span class="math inline">\(x_i' = ax_i\)</span>, where <span class="math inline">\(a\)</span> is a numerical constant. We relearn the simple linear regression model; its slope is <span class="math inline">\(\hat{\beta}_1'\)</span>. (a) Write down the relationship between <span class="math inline">\(\hat{\beta}_1'\)</span> and <span class="math inline">\(\hat{\beta}_1\)</span>. (b) Write down the relationship between the variance of <span class="math inline">\(\hat{\beta}_1'\)</span> and the variance of <span class="math inline">\(\hat{\beta}_1\)</span>. (c) Write down the relationship between the test statistic <span class="math inline">\(T'\)</span> for <span class="math inline">\(H_o: \beta_1' = 0\)</span> versus <span class="math inline">\(H_a: \beta_1' \neq 0\)</span>, and the test statistic <span class="math inline">\(T\)</span> for <span class="math inline">\(H_o: \beta_1 = 0\)</span> versus <span class="math inline">\(H_a: \beta_1 \neq 0\)</span>.</p></li>
 <li><p>Let <span class="math inline">\(Y_i = \beta_0 + \beta_1 x_i + \epsilon_i\)</span>, for <span class="math inline">\(i=1,...,n\)</span>, with the <span class="math inline">\(x_i\)</span>’s fixed and with <span class="math inline">\(\epsilon_i \sim \mathcal{N}(0,\sigma^2)\)</span>. (a) Show that <span class="math inline">\(\hat\beta_1 = (\sum_{i=1}^n x_i Y_i - n \bar{x}\bar{Y})/(\sum_{i=1}^n x_i^2 - n \bar{x}^2)\)</span> is an unbiased estimator for <span class="math inline">\(\beta_1\)</span>. (b) Do we need the assumption that the regression noise is normally distributed for this derivation?</p></li>
 <li><p>We are given the partially redacted output from <code>R</code>’s <code>lm()</code> and <code>shapiro.test()</code> functions shown below. (a) Does the evidence suggest that the core assumptions of a linear model are violated here, or not violated? (b) What is the estimated slope? (c) What is the sample size <span class="math inline">\(n\)</span>? (d) What is the estimate of <span class="math inline">\(\sigma^2\)</span>? (e) What is the estimate of the correlation coefficient between <span class="math inline">\(x\)</span> and <span class="math inline">\(Y\)</span>?</p></li>
@@ -3673,9 +3678,9 @@ Residual standard error: 1.888 on 28 degrees of freedom
 W = 0.90706, p-value = 0.01256</code></pre>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
 <div id="ref-freeman2026" class="csl-entry" role="listitem">
-Freeman, P. E. 2026. <span>“Modernizing How Students Compute Interval Estimates in Mathematical Statistics Courses.”</span> <em>Journal of Statistics and Data Science Education</em>.
+Freeman, P. E. 2026. <span>“Modernizing How Students Compute Interval Estimates in Mathematical Statistics Courses.”</span> <em>Journal of Statistics and Data Science Education</em> 34: 450–63.
 </div>
 <div id="ref-hogg2019" class="csl-entry" role="listitem">
 Hogg, R. V, J. W. McKean, and A. T. Craig. 2019. <em>Introduction to Mathematical Statistics</em>. 8th ed. Pearson Boston, MA.
@@ -3735,13 +3740,14 @@ Hogg, R. V, J. W. McKean, and A. T. Craig. 2019. <em>Introduction to Mathematica
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

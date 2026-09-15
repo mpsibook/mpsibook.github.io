@@ -2,17 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>5&nbsp; Distributions with Domain-Specifying Parameters – Modern Probability and Statistical Inference</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -73,10 +79,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-485d01fc63b59abcd3ee1bf1e8e2748d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-d3f7f8e73c8d287b30bcf59c2b563615.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -106,7 +112,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -119,7 +125,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -456,9 +462,9 @@ f_{(j)}(x) = \frac{d}{dx}F_{(j)}(x) = \frac{n!}{(j-1)!(n-j)!} f_X(x) [F_X(x)]^{j
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">9</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">9</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>j <span class="ot">&lt;-</span> <span class="dv">4</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">pbeta</span>(<span class="fl">0.4</span>, <span class="at">shape1 =</span> j, <span class="at">shape2 =</span> n <span class="sc">-</span> j <span class="sc">+</span> <span class="dv">1</span>) <span class="sc">-</span> <span class="fu">pbeta</span>(<span class="fl">0.3</span>, <span class="at">shape1 =</span> j, <span class="at">shape2 =</span> n <span class="sc">-</span> j <span class="sc">+</span> <span class="dv">1</span>), <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">pbeta</span>(<span class="fl">0.4</span>, <span class="at">shape1 =</span> j, <span class="at">shape2 =</span> n <span class="sc">-</span> j <span class="sc">+</span> <span class="dv">1</span>) <span class="sc">-</span> <span class="fu">pbeta</span>(<span class="fl">0.3</span>, <span class="at">shape1 =</span> j, <span class="at">shape2 =</span> n <span class="sc">-</span> j <span class="sc">+</span> <span class="dv">1</span>), <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.247</code></pre>
@@ -500,13 +506,13 @@ F_X(x) = \frac{\lfloor x \rfloor - a + 1}{n} \,,
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ddiscunif <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">1</span>, <span class="at">step =</span> <span class="dv">1</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ddiscunif <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">1</span>, <span class="at">step =</span> <span class="dv">1</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>{</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">seq</span>(min, max, <span class="at">by =</span> step)</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> ( x <span class="sc">%in%</span> y ) <span class="fu">return</span>(<span class="dv">1</span> <span class="sc">/</span> <span class="fu">length</span>(y))</span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="dv">0</span>)</span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">ddiscunif</span>(<span class="dv">4</span>, <span class="at">min =</span> <span class="dv">1</span>, <span class="at">max =</span> <span class="dv">6</span>), <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">ddiscunif</span>(<span class="dv">4</span>, <span class="at">min =</span> <span class="dv">1</span>, <span class="at">max =</span> <span class="dv">6</span>), <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.167</code></pre>
@@ -518,14 +524,14 @@ F_X(x) = \frac{\lfloor x \rfloor - a + 1}{n} \,,
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>pdiscunif <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">1</span>, <span class="at">step =</span> <span class="dv">1</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>pdiscunif <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">1</span>, <span class="at">step =</span> <span class="dv">1</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>{</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">seq</span>(min, max, <span class="at">by =</span> step)</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  w <span class="ot">&lt;-</span> <span class="fu">which</span>(y <span class="sc">&lt;=</span> x)</span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> ( <span class="fu">length</span>(w) <span class="sc">==</span> <span class="dv">0</span> ) <span class="fu">return</span>(<span class="dv">0</span>)</span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">length</span>(w) <span class="sc">/</span> <span class="fu">length</span>(y))</span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">pdiscunif</span>(<span class="dv">4</span>, <span class="at">min =</span> <span class="dv">1</span>, <span class="at">max =</span> <span class="dv">6</span>), <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">pdiscunif</span>(<span class="dv">4</span>, <span class="at">min =</span> <span class="dv">1</span>, <span class="at">max =</span> <span class="dv">6</span>), <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.667</code></pre>
@@ -537,7 +543,7 @@ F_X(x) = \frac{\lfloor x \rfloor - a + 1}{n} \,,
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>qdiscunif <span class="ot">&lt;-</span> <span class="cf">function</span>(q, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">1</span>, <span class="at">step =</span> <span class="dv">1</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>qdiscunif <span class="ot">&lt;-</span> <span class="cf">function</span>(q, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">1</span>, <span class="at">step =</span> <span class="dv">1</span>)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>{</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  y   <span class="ot">&lt;-</span> <span class="fu">seq</span>(min, max, <span class="at">by =</span> step)</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> ( q <span class="sc">==</span> <span class="dv">0</span> ) <span class="fu">return</span>(<span class="fu">min</span>(y))</span>
@@ -547,7 +553,7 @@ F_X(x) = \frac{\lfloor x \rfloor - a + 1}{n} \,,
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> ( <span class="fu">length</span>(w) <span class="sc">==</span> <span class="dv">0</span> ) <span class="fu">return</span>(<span class="fu">max</span>(y))</span>
 <span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(y[<span class="fu">min</span>(w)])</span>
 <span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="fu">qdiscunif</span>(<span class="fl">0.55</span>, <span class="at">min =</span> <span class="dv">1</span>, <span class="at">max =</span> <span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="fu">qdiscunif</span>(<span class="fl">0.55</span>, <span class="at">min =</span> <span class="dv">1</span>, <span class="at">max =</span> <span class="dv">6</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 4</code></pre>
@@ -559,14 +565,14 @@ F_X(x) = \frac{\lfloor x \rfloor - a + 1}{n} \,,
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>rdiscunif <span class="ot">&lt;-</span> <span class="cf">function</span>(n, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">1</span>, <span class="at">step =</span> <span class="dv">1</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>rdiscunif <span class="ot">&lt;-</span> <span class="cf">function</span>(n, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">1</span>, <span class="at">step =</span> <span class="dv">1</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>{</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">seq</span>(min, max, <span class="at">by =</span> step)</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  s <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">length</span>(y), n, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(y[s])</span>
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">236</span>) <span class="co"># set to ensure consistent output</span></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="fu">rdiscunif</span>(<span class="dv">10</span>, <span class="at">min =</span> <span class="dv">1</span>, <span class="at">max =</span> <span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="fu">rdiscunif</span>(<span class="dv">10</span>, <span class="at">min =</span> <span class="dv">1</span>, <span class="at">max =</span> <span class="dv">6</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] 6 6 6 3 3 4 1 1 5 4</code></pre>
@@ -766,7 +772,7 @@ V[\hat{\theta}_{MVUE}] &amp;= \frac{(n+1)^2}{n^2} \left( \frac{n}{n+2} \theta^2 
 </blockquote>
 <blockquote class="blockquote">
 <p><strong>Recall</strong>: <em>the Cramer-Rao Lower Bound (or CRLB) is the lower bound on the variance of any unbiased estimator. If an unbiased estimator achieves the CRLB, it is the MVUE…but it can be the case that the MVUE does not achieve the CRLB. For a discrete distribution, the CRLB is given by</em> <span class="math display">\[
-V_{\rm CRLB}[\hat{\theta}] = -\left(nE\left[\frac{d^2}{d\theta^2} \log p_X(X \vert p) \right]\right)^{-1} = \frac{1}{nI(\theta)}
+V_{\mathrm{CRLB}}[\hat{\theta}] = -\left(nE\left[\frac{d^2}{d\theta^2} \log p_X(X \vert p) \right]\right)^{-1} = \frac{1}{nI(\theta)}
 \]</span> <em>where <span class="math inline">\(I(\theta)\)</span> is the Fisher information:</em> <span class="math display">\[
 I(\theta) = -E\left[ \frac{\partial^2}{\partial \theta^2} \log f_X(x \vert \theta) \right] \,.
 \]</span></p>
@@ -821,7 +827,7 @@ E[X_{(1)}] &amp;= \int_b^\infty n x \frac{a b^{na}}{x^{na+1}} = n a b^{na} \int_
 \end{align*}\]</span> Hence we see that <span class="math display">\[
 E\left[\frac{na-1}{na} X_{(1)}\right] = b
 \]</span> and that <span class="math display">\[
-\hat{b}_{\rm MVUE} = \frac{na-1}{na} X_{(1)} \,.
+\hat{b}_{\mathrm{MVUE}} = \frac{na-1}{na} X_{(1)} \,.
 \]</span></p>
 </blockquote>
 </section>
@@ -842,8 +848,8 @@ E\left[\frac{na-1}{na} X_{(1)}\right] = b
 <p><strong>Recall:</strong> <em>a confidence interval is a random interval <span class="math inline">\([\hat{\theta}_L,\hat{\theta}_U]\)</span> that overlaps (or covers) the true value <span class="math inline">\(\theta\)</span> with probability</em> <span class="math display">\[
 P\left( \hat{\theta}_L \leq \theta \leq \hat{\theta}_U \right) = 1 - \alpha \,,
 \]</span> <em>where <span class="math inline">\(1 - \alpha\)</span> is the confidence coefficient. Note that this is a long-term probabilistic statement that is not to be applied to any one numerically evaluated interval: an evaluated interval either overlaps the true value, or it does not (and thus we cannot say there is a <span class="math inline">\(100(1-\alpha)\)</span>-percent chance that <span class="math inline">\(\theta\)</span> lies within the interval). We determine <span class="math inline">\(\hat{\theta}\)</span> by solving the following equation:</em> <span class="math display">\[
-F_Y(y_{\rm obs} \vert \theta) - q = 0 \,,
-\]</span> <em>where <span class="math inline">\(F_Y(\cdot)\)</span> is the cumulative distribution function for the statistic <span class="math inline">\(Y\)</span>, <span class="math inline">\(y_{\rm obs}\)</span> is the observed value of the statistic, and <span class="math inline">\(q\)</span> is an appropriate quantile value that is determined using the confidence interval reference table introduced in <a href="01-probability.html#sec-chap1confref" class="quarto-xref"><span>Section 1.16.1</span></a>.</em></p>
+F_Y(y_{\mathrm{obs}} \vert \theta) - q = 0 \,,
+\]</span> <em>where <span class="math inline">\(F_Y(\cdot)\)</span> is the cumulative distribution function for the statistic <span class="math inline">\(Y\)</span>, <span class="math inline">\(y_{\mathrm{obs}}\)</span> is the observed value of the statistic, and <span class="math inline">\(q\)</span> is an appropriate quantile value that is determined using the confidence interval reference table introduced in <a href="01-probability.html#sec-chap1confref" class="quarto-xref"><span>Section 1.16.1</span></a>.</em></p>
 </blockquote>
 <p>Our coverage, so to speak, of confidence intervals in very nearly complete and there is little for us to add to the discussion now…<em>except</em>…</p>
 <p>In the first example below, we demonstrate that one of the quirks of statistical inference with domain-specifying parameters is that, regardless of any research questions we are trying to answer when we analyze data, constructing <span class="math inline">\(100(1-\alpha)\)</span>-percent one-sided intervals is superior to constructing <span class="math inline">\(100(1-\alpha)\)</span>-percent two-sided intervals. And in the second example, we circle back around to a point made back in <a href="01-probability.html#sec-chap1confidence" class="quarto-xref"><span>Section 1.16</span></a>: <span class="math inline">\(1-\alpha\)</span> is technically the infimum, or minimum value, of <span class="math inline">\(P\left( \hat{\theta}_L \leq \theta \leq \hat{\theta}_U \right)\)</span>, even though throughout the book we have treated it as a user-specified constant. How might we define confidence intervals such that their coverage is technically zero?</p>
@@ -891,22 +897,22 @@ Figure&nbsp;5.5: Ten 90 percent confidence intervals, generated using data from 
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(X, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(X, <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] 0.335 0.494 0.613 0.672 0.687 0.764 0.797 0.842 0.888 0.920</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"The maximum value is                      "</span>, <span class="fu">round</span>(<span class="fu">max</span>(X), <span class="dv">3</span>), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"The maximum value is                      "</span>, <span class="fu">round</span>(<span class="fu">max</span>(X), <span class="dv">3</span>), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>The maximum value is                       0.92 </code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"The two-sided 90% confidence interval is ["</span>, <span class="fu">round</span>(hat.theta.L, <span class="dv">3</span>), <span class="st">","</span>,</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>     <span class="fu">round</span>(hat.theta.U, <span class="dv">3</span>), <span class="st">"]</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"The two-sided 90% confidence interval is ["</span>, <span class="fu">round</span>(hat.theta.L, <span class="dv">3</span>), <span class="st">","</span>,</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>     <span class="fu">round</span>(hat.theta.U, <span class="dv">3</span>), <span class="st">"]</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>The two-sided 90% confidence interval is [ 0.925 , 1.242 ]</code></pre>
@@ -950,8 +956,8 @@ P(X_{(n)} + a \leq \theta \leq X_{(n)} + b) &amp;= P(\theta - b \leq X_{(n)} \le
 F_{(1)}(x) &amp;= \int_b^x \frac{n a b^{na}}{y^{na+1}} dy = n a b^{na} \int_b^x y^{-na-1} dy \\
 &amp;= n a b^{na} \frac{1}{-na} \left. y^{-na} \right|_b^x = - b^{na} \left( x^{-na} - b^{-na} \right) \\
 &amp;= 1 - \left(\frac{b}{x}\right)^{na} \,.
-\end{align*}\]</span> If we solve the general equation <span class="math inline">\(F_Y(y_{\rm obs} \vert \theta) - q = 0\)</span>, we find that <span class="math display">\[
-\hat{b}(q) = x_{(1),\rm obs} (1 - q)^{1/na} \,.
+\end{align*}\]</span> If we solve the general equation <span class="math inline">\(F_Y(y_{\mathrm{obs}} \vert \theta) - q = 0\)</span>, we find that <span class="math display">\[
+\hat{b}(q) = x_{(1),\mathrm{obs}} (1 - q)^{1/na} \,.
 \]</span></p>
 </blockquote>
 <blockquote class="blockquote">
@@ -960,7 +966,7 @@ F_{(1)}(x) &amp;= \int_b^x \frac{n a b^{na}}{y^{na+1}} dy = n a b^{na} \int_b^x 
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># generate data</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># generate data</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">236</span>)</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>num.sim <span class="ot">&lt;-</span> <span class="dv">100000</span></span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>n       <span class="ot">&lt;-</span> <span class="dv">8</span></span>
@@ -970,22 +976,22 @@ F_{(1)}(x) &amp;= \int_b^x \frac{n a b^{na}}{y^{na+1}} dy = n a b^{na} \int_b^x 
 <span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>y.obs   <span class="ot">&lt;-</span> <span class="fu">mean</span>(X.obs)</span>
 <span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>alpha   <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
 <span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(X.obs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(X.obs)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1.582117</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># the 95% lower bound given X_(1)</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">min</span>(X.obs) <span class="sc">*</span> alpha<span class="sc">^</span>(<span class="dv">1</span> <span class="sc">/</span> (n <span class="sc">*</span> a)), <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># the 95% lower bound given X_(1)</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">min</span>(X.obs) <span class="sc">*</span> alpha<span class="sc">^</span>(<span class="dv">1</span> <span class="sc">/</span> (n <span class="sc">*</span> a)), <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1.396</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># the 95% lower bound given X.bar</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># the 95% lower bound given X.bar</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(b, a, n, y.obs, q, <span class="at">num.sim =</span> <span class="dv">1000000</span>, <span class="at">seed =</span> <span class="dv">236</span>)</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>{</span>
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set.seed</span>(seed)</span>
@@ -993,7 +999,7 @@ F_{(1)}(x) &amp;= \int_b^x \frac{n a b^{na}}{y^{na+1}} dy = n a b^{na} \int_b^x 
 <span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>  Y <span class="ot">&lt;-</span> <span class="fu">rowMeans</span>(X)</span>
 <span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sum</span>(Y <span class="sc">&lt;=</span> y.obs) <span class="sc">/</span> num.sim <span class="sc">-</span> q</span>
 <span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">uniroot</span>(f, <span class="at">interval =</span> <span class="fu">c</span>(<span class="fl">0.001</span>, <span class="dv">1000</span>), <span class="at">a =</span> a, <span class="at">n =</span> n, <span class="at">y.obs =</span> y.obs, <span class="at">q =</span> <span class="dv">1</span> <span class="sc">-</span> alpha)<span class="sc">$</span>root, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">uniroot</span>(f, <span class="at">interval =</span> <span class="fu">c</span>(<span class="fl">0.001</span>, <span class="dv">1000</span>), <span class="at">a =</span> a, <span class="at">n =</span> n, <span class="at">y.obs =</span> y.obs, <span class="at">q =</span> <span class="dv">1</span> <span class="sc">-</span> alpha)<span class="sc">$</span>root, <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.989</code></pre>
@@ -1008,7 +1014,7 @@ F_{(1)}(x) &amp;= \int_b^x \frac{n a b^{na}}{y^{na+1}} dy = n a b^{na} \int_b^x 
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># the 95% upper bound given X.bar</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># the 95% upper bound given X.bar</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(b, a, n, y.obs, q, <span class="at">num.sim =</span> <span class="dv">1000000</span>, <span class="at">seed =</span> <span class="dv">236</span>)</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>{</span>
 <span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set.seed</span>(seed)</span>
@@ -1016,14 +1022,14 @@ F_{(1)}(x) &amp;= \int_b^x \frac{n a b^{na}}{y^{na+1}} dy = n a b^{na} \int_b^x 
 <span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>  Y <span class="ot">&lt;-</span> <span class="fu">rowMeans</span>(X)</span>
 <span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sum</span>(Y <span class="sc">&lt;=</span> y.obs) <span class="sc">/</span> num.sim <span class="sc">-</span> q</span>
 <span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">uniroot</span>(f, <span class="at">interval =</span> <span class="fu">c</span>(<span class="fl">0.001</span>, <span class="dv">1000</span>), <span class="at">a =</span> a, <span class="at">n =</span> n, <span class="at">y.obs =</span> y.obs, <span class="at">q =</span> alpha)<span class="sc">$</span>root, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">uniroot</span>(f, <span class="at">interval =</span> <span class="fu">c</span>(<span class="fl">0.001</span>, <span class="dv">1000</span>), <span class="at">a =</span> a, <span class="at">n =</span> n, <span class="at">y.obs =</span> y.obs, <span class="at">q =</span> alpha)<span class="sc">$</span>root, <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1.666</code></pre>
 </div>
 </div>
 <blockquote class="blockquote">
-<p>The upper bound is 1.666. We can immediately see that this is problematic since the smallest value among our eight data is <span class="math inline">\(x_{(1),{\rm obs}} = 1.582\)</span>: we should not infer an upper bound on <span class="math inline">\(b\)</span> that exceeds any of the data values we observe!</p>
+<p>The upper bound is 1.666. We can immediately see that this is problematic since the smallest value among our eight data is <span class="math inline">\(x_{(1),{\mathrm{obs}}} = 1.582\)</span>: we should not infer an upper bound on <span class="math inline">\(b\)</span> that exceeds any of the data values we observe!</p>
 </blockquote>
 </section>
 </section>
@@ -1040,40 +1046,40 @@ F_{(1)}(x) &amp;= \int_b^x \frac{n a b^{na}}{y^{na+1}} dy = n a b^{na} \int_b^x 
 </div>
 <p><br></p>
 <blockquote class="blockquote">
-<p><strong>Recall</strong>: <em>a hypothesis test is a framework to make an inference about the value of a population parameter <span class="math inline">\(\theta\)</span>. The null hypothesis <span class="math inline">\(H_o\)</span> is that <span class="math inline">\(\theta = \theta_o\)</span>, while possible alternatives <span class="math inline">\(H_a\)</span> are <span class="math inline">\(\theta \neq \theta_o\)</span> (two-tail test), <span class="math inline">\(\theta &gt; \theta_o\)</span> (upper-tail test), and <span class="math inline">\(\theta &lt; \theta_o\)</span> (lower-tail test). For, e.g., a one-tail test, we reject the null hypothesis if the observed test statistic <span class="math inline">\(y_{\rm obs}\)</span> falls outside the bound given by <span class="math inline">\(y_{RR}\)</span>, which is a solution to the equation</em> <span class="math display">\[
+<p><strong>Recall</strong>: <em>a hypothesis test is a framework to make an inference about the value of a population parameter <span class="math inline">\(\theta\)</span>. The null hypothesis <span class="math inline">\(H_o\)</span> is that <span class="math inline">\(\theta = \theta_o\)</span>, while possible alternatives <span class="math inline">\(H_a\)</span> are <span class="math inline">\(\theta \neq \theta_o\)</span> (two-tail test), <span class="math inline">\(\theta &gt; \theta_o\)</span> (upper-tail test), and <span class="math inline">\(\theta &lt; \theta_o\)</span> (lower-tail test). For, e.g., a one-tail test, we reject the null hypothesis if the observed test statistic <span class="math inline">\(y_{\mathrm{obs}}\)</span> falls outside the bound given by <span class="math inline">\(y_{RR}\)</span>, which is a solution to the equation</em> <span class="math display">\[
 F_Y(y_{RR} \vert \theta_o) - q = 0 \,,
-\]</span> <em>where <span class="math inline">\(F_Y(\cdot)\)</span> is the cumulative distribution function for the statistic <span class="math inline">\(Y\)</span> and <span class="math inline">\(q\)</span> is an appropriate quantile value that is determined using the hypothesis test reference table introduced in <a href="01-probability.html#sec-chap1hypref" class="quarto-xref"><span>Section 1.17.2</span></a>. Note that the hypothesis test framework only allows us to make a decision about a null hypothesis; nothing is proven.</em></p>
+\]</span> <em>where <span class="math inline">\(F_Y(\cdot)\)</span> is the cumulative distribution function for the statistic <span class="math inline">\(Y\)</span> and <span class="math inline">\(q\)</span> is an appropriate quantile value that is a function of the adopted Type I error rate <span class="math inline">\(\alpha\)</span>. Note that the hypothesis test framework only allows us to make a decision about a null hypothesis; nothing is proven.</em></p>
 </blockquote>
 <p>Let’s suppose that we sample <span class="math inline">\(n\)</span> iid data according to a Uniform(0,<span class="math inline">\(\theta\)</span>) and that we wish to construct a two-tail hypothesis test using the sufficient statistic <span class="math inline">\(Y = X_{(n)}\)</span>. From examples above, we know that <span class="math inline">\(F_Y(y) = (x/\theta)^n\)</span> and that we are working on the “yes” line of the reference table…so the rejection-region boundaries are given by <span class="math display">\[\begin{align*}
-F_{(n)}(x_{\rm RR,lo} \vert \theta_o) - \frac{\alpha}{2} = 0 ~~~ &amp;\Rightarrow ~~~ x_{\rm RR,lo} = \theta_o \left( \frac{\alpha}{2} \right)^{1/n} \\
-F_{(n)}(x_{\rm RR,hi} \vert \theta_o) - \left(1 - \frac{\alpha}{2}\right) = 0 ~~~ &amp;\Rightarrow ~~~ x_{\rm RR,hi} = \theta_o \left( 1 - \frac{\alpha}{2} \right)^{1/n} \,.
-\end{align*}\]</span> If <span class="math inline">\(\theta &gt; x_{\rm RR,hi}\)</span>, the power of the test is <span class="math display">\[\begin{align*}
-power(\theta) &amp;= F_{(n)}(x_{\rm RR,lo} \vert \theta) + \left[ 1 - F_{(n)}(x_{\rm RR,hi} \vert \theta) \right] \\
+F_{(n)}(x_{\mathrm{RR,lo}} \vert \theta_o) - \frac{\alpha}{2} = 0 ~~~ &amp;\Rightarrow ~~~ x_{\mathrm{RR,lo}} = \theta_o \left( \frac{\alpha}{2} \right)^{1/n} \\
+F_{(n)}(x_{\mathrm{RR,hi}} \vert \theta_o) - \left(1 - \frac{\alpha}{2}\right) = 0 ~~~ &amp;\Rightarrow ~~~ x_{\mathrm{RR,hi}} = \theta_o \left( 1 - \frac{\alpha}{2} \right)^{1/n} \,.
+\end{align*}\]</span> If <span class="math inline">\(\theta &gt; x_{\mathrm{RR,hi}}\)</span>, the power of the test is <span class="math display">\[\begin{align*}
+power(\theta) &amp;= F_{(n)}(x_{\mathrm{RR,lo}} \vert \theta) + \left[ 1 - F_{(n)}(x_{\mathrm{RR,hi}} \vert \theta) \right] \\
 \Rightarrow ~~~ power(\theta) &amp;= \left(\frac{\theta_o}{\theta}\right)^n \frac{\alpha}{2} + 1 - \left(\frac{\theta_o}{\theta}\right)^n \left(1-\frac{\alpha}{2}\right) = 1 - \left(\frac{\theta_o}{\theta}\right)^n(1-\alpha) \,.
 \end{align*}\]</span> So far, so good. But what would happen if we were to define a lower-tail test instead? The rejection-region boundary would be given by <span class="math display">\[\begin{align*}
-F_{(n)}(x_{\rm RR} \vert \theta_o) - \alpha = 0 ~~~ \Rightarrow ~~~ x_{\rm RR} = \theta_o \alpha^{1/n} \,.
+F_{(n)}(x_{\mathrm{RR}} \vert \theta_o) - \alpha = 0 ~~~ \Rightarrow ~~~ x_{\mathrm{RR}} = \theta_o \alpha^{1/n} \,.
 \end{align*}\]</span> Also so far, so good. But in a power calculation, we would need to take into account that if <span class="math inline">\(\theta &gt; \theta_o\)</span>, there are there are <em>two possible ways to reject the null</em>…by observing</p>
 <ol type="1">
-<li><span class="math inline">\(x_{(n),\rm obs} &lt; y_{\rm RR}\)</span> (“traditional rejection”), or</li>
-<li><span class="math inline">\(x_{(n),\rm obs} &gt; \theta_o\)</span> (“trivial rejection”).</li>
+<li><span class="math inline">\(x_{(n),\mathrm{obs}} &lt; y_{\mathrm{RR}}\)</span> (“traditional rejection”), or</li>
+<li><span class="math inline">\(x_{(n),\mathrm{obs}} &gt; \theta_o\)</span> (“trivial rejection”).</li>
 </ol>
 <p>We dub the second possibility “trivial rejection” since if the null is correct, it is impossible to sample a datum with a value larger than <span class="math inline">\(\theta_o\)</span>, and thus there is no need to computationally derive a boundary for this part of the rejection region.</p>
-<p>So, despite the fact that we are intending to define a one-tail test, we have, in the context of power calculations, effectively defined a two-tail test! The question then arises: from the point of view of test power, which of these defined tests is better for us to use? Let’s examine the difference in power between the one-tail and two-tail tests in three different regimes: <span class="math inline">\(\theta \leq x_{\rm RR,hi}\)</span>, <span class="math inline">\(x_{\rm RR,hi} &lt; \theta \leq \theta_o\)</span>, and <span class="math inline">\(\theta &gt; \theta_o\)</span>.</p>
+<p>So, despite the fact that we are intending to define a one-tail test, we have, in the context of power calculations, effectively defined a two-tail test! The question then arises: from the point of view of test power, which of these defined tests is better for us to use? Let’s examine the difference in power between the one-tail and two-tail tests in three different regimes: <span class="math inline">\(\theta \leq x_{\mathrm{RR,hi}}\)</span>, <span class="math inline">\(x_{\mathrm{RR,hi}} &lt; \theta \leq \theta_o\)</span>, and <span class="math inline">\(\theta &gt; \theta_o\)</span>.</p>
 <ol type="1">
-<li>If <span class="math inline">\(\theta \leq x_{\rm RR,hi}\)</span>, then the difference in power is <span class="math display">\[\begin{align*}
-power_1(\theta) - power_2(\theta) &amp;= F_{(n)}(x_{\rm RR} \vert \theta) - F_{(n)}(x_{\rm RR,lo} \vert \theta) \\
-&amp;= \left(\frac{x_{\rm RR}}{\theta}\right)^n - \left(\frac{x_{\rm RR,hi}}{\theta}\right)^n \\
+<li>If <span class="math inline">\(\theta \leq x_{\mathrm{RR,hi}}\)</span>, then the difference in power is <span class="math display">\[\begin{align*}
+power_1(\theta) - power_2(\theta) &amp;= F_{(n)}(x_{\mathrm{RR}} \vert \theta) - F_{(n)}(x_{\mathrm{RR,lo}} \vert \theta) \\
+&amp;= \left(\frac{x_{\mathrm{RR}}}{\theta}\right)^n - \left(\frac{x_{\mathrm{RR,hi}}}{\theta}\right)^n \\
 &amp;= \left(\frac{\theta_o}{\theta}\right)^n \left(\alpha - \frac{\alpha}{2}\right)\\
 &amp;= \frac{\alpha}{2}\left(\frac{\theta_o}{\theta}\right)^n &gt; 0 \,.
 \end{align*}\]</span> In this regime, the one-tail test is more powerful.</li>
-<li>If <span class="math inline">\(x_{\rm RR,hi} &lt; \theta \leq \theta_o\)</span>, then the difference in power is <span class="math display">\[\begin{align*}
-power_1(\theta) - power_2(\theta) &amp;= F_{(n)}(x_{\rm RR} \vert \theta) - \left[ F_{(n)}(x_{\rm RR,lo} \vert \theta) + 1 - F_{(n)}(x_{\rm RR,hi} \vert \theta) \right] \\
+<li>If <span class="math inline">\(x_{\mathrm{RR,hi}} &lt; \theta \leq \theta_o\)</span>, then the difference in power is <span class="math display">\[\begin{align*}
+power_1(\theta) - power_2(\theta) &amp;= F_{(n)}(x_{\mathrm{RR}} \vert \theta) - \left[ F_{(n)}(x_{\mathrm{RR,lo}} \vert \theta) + 1 - F_{(n)}(x_{\mathrm{RR,hi}} \vert \theta) \right] \\
 &amp;= \left(\frac{\theta_o}{\theta}\right)^n \alpha - \left[ \left(\frac{\theta_o}{\theta}\right)^n \frac{\alpha}{2} + 1 - \left(\frac{\theta_o}{\theta}\right)^n \left(1 - \frac{\alpha}{2}\right) \right] \\
 &amp;= \left(\frac{\theta_o}{\theta}\right)^n - 1 \geq 0 \,.
 \end{align*}\]</span> In this regime, the one-tail test is more powerful, unless <span class="math inline">\(\theta = \theta_o\)</span>, where both power values are <span class="math inline">\(\alpha\)</span>.</li>
 <li>If <span class="math inline">\(\theta &gt; \theta_o\)</span>, then the difference in power is <span class="math display">\[\begin{align*}
-power_1(\theta) - power_2(\theta) &amp;= \left[ F_{(n)}(x_{\rm RR} \vert \theta) + 1 - F_{(n)}(\theta_o \vert \theta) \right] - \left[ F_{(n)}(x_{\rm RR,lo} \vert \theta) + 1 - F_{(n)}(x_{\rm RR,hi} \vert \theta) \right] \\
-&amp;= \left[ F_{(n)}(x_{\rm RR} \vert \theta) - F_{(n)}(\theta_o \vert \theta) \right] - \left[ F_{(n)}(x_{\rm RR,lo} \vert \theta) - F_{(n)}(x_{\rm RR,hi} \vert \theta) \right] \\
+power_1(\theta) - power_2(\theta) &amp;= \left[ F_{(n)}(x_{\mathrm{RR}} \vert \theta) + 1 - F_{(n)}(\theta_o \vert \theta) \right] - \left[ F_{(n)}(x_{\mathrm{RR,lo}} \vert \theta) + 1 - F_{(n)}(x_{\mathrm{RR,hi}} \vert \theta) \right] \\
+&amp;= \left[ F_{(n)}(x_{\mathrm{RR}} \vert \theta) - F_{(n)}(\theta_o \vert \theta) \right] - \left[ F_{(n)}(x_{\mathrm{RR,lo}} \vert \theta) - F_{(n)}(x_{\mathrm{RR,hi}} \vert \theta) \right] \\
 &amp;= \left[ \left(\frac{\theta_o}{\theta}\right)^n \alpha - \left(\frac{\theta_o}{\theta}\right)^n \right] - \left[ \left(\frac{\theta_o}{\theta}\right)^n \frac{\alpha}{2} - \left(\frac{\theta_o}{\theta}\right)^n \left(1 - \frac{\alpha}{2}\right) \right] \\
 &amp;= 0 \,.
 \end{align*}\]</span> In this regime, the test power values are identical!</li>
@@ -1101,15 +1107,15 @@ Figure&nbsp;5.6: The power curves for tests of <span class="math inline">\(H_o :
 <p>We sample <span class="math inline">\(n\)</span> iid data according to a Pareto(<span class="math inline">\(a,b\)</span>) distribution, with <span class="math inline">\(a\)</span> fixed. We use these data to test <span class="math display">\[
 H_o: b = b_o ~~\mbox{versus}~~ H_a: b &gt; b_o \,.
 \]</span> The sufficient statistic is the minimum datum <span class="math inline">\(X_{(1)}\)</span>; we can appeal to reason to state that the expected value of this quantity must increase as <span class="math inline">\(b\)</span> increases, so we know that we are using the “yes” line of the hypothesis test reference tables and thus that <span class="math inline">\(q = 1 - \alpha\)</span>. Borrowing from a previous example, we know that <span class="math inline">\(F_{(1)}(x) = 1 - (b/x)^{na}\)</span>, hence <span class="math display">\[\begin{align*}
-F_Y(y \vert \theta) - q = 0 ~~~ &amp;\Rightarrow ~~~ F_{(1)}(x_{\rm RR} \vert b_o) - (1-\alpha) = 0 \\
-&amp;\Rightarrow ~~~ 1 - \left(\frac{b_o}{x_{\rm RR}}\right)^{na} - (1 - \alpha) = \alpha - \left(\frac{b_o}{x_{\rm RR}}\right)^{na} = 0 \,.
-\end{align*}\]</span> Solving for <span class="math inline">\(x_{\rm RR}\)</span>, we find that <span class="math display">\[
-x_{\rm RR} = b_o \alpha^{-1/na} \,.
+F_Y(y \vert \theta) - q = 0 ~~~ &amp;\Rightarrow ~~~ F_{(1)}(x_{\mathrm{RR}} \vert b_o) - (1-\alpha) = 0 \\
+&amp;\Rightarrow ~~~ 1 - \left(\frac{b_o}{x_{\mathrm{RR}}}\right)^{na} - (1 - \alpha) = \alpha - \left(\frac{b_o}{x_{\mathrm{RR}}}\right)^{na} = 0 \,.
+\end{align*}\]</span> Solving for <span class="math inline">\(x_{\mathrm{RR}}\)</span>, we find that <span class="math display">\[
+x_{\mathrm{RR}} = b_o \alpha^{-1/na} \,.
 \]</span></p>
 </blockquote>
 <blockquote class="blockquote">
 <p>The <span class="math inline">\(p\)</span>-value is straightforward to compute: according to the reference tables, it is <span class="math display">\[\begin{align*}
-1 - F_Y(y_{\rm obs} \vert \theta_o) ~~~ \Rightarrow ~~~ 1 - F_{(1)}(x_{(1),\rm obs} \vert b_o) ~~~ \Rightarrow ~~~ \left(\frac{b_o}{x_{(1),\rm obs}}\right)^{na} \,.
+1 - F_Y(y_{\mathrm{obs}} \vert \theta_o) ~~~ \Rightarrow ~~~ 1 - F_{(1)}(x_{(1),\mathrm{obs}} \vert b_o) ~~~ \Rightarrow ~~~ \left(\frac{b_o}{x_{(1),\mathrm{obs}}}\right)^{na} \,.
 \end{align*}\]</span></p>
 </blockquote>
 <blockquote class="blockquote">
@@ -1117,14 +1123,14 @@ x_{\rm RR} = b_o \alpha^{-1/na} \,.
 </blockquote>
 <blockquote class="blockquote">
 <p>If <span class="math inline">\(b &gt; b_o\)</span>, then we can utilize the reference tables directly to write that the power is <span class="math display">\[\begin{align*}
-1 - F_Y(y_{\rm RR} \vert \theta) ~~~ \Rightarrow ~~~ 1 - F_{(1)}(x_{\rm RR} \vert b) ~~~ \Rightarrow ~~~ \left(\frac{b}{x_{\rm RR}}\right)^{na} \,.
-\end{align*}\]</span> The power rises from <span class="math inline">\(\alpha\)</span> to 1 as <span class="math inline">\(b\)</span> decreases from <span class="math inline">\(b_o\)</span> to <span class="math inline">\(x_{\rm RR}\)</span>, and for larger values of <span class="math inline">\(b\)</span> it is 1 by definition (as it becomes impossible to sample a datum outside of the rejection region). (See the left-hand side of <a href="#fig-uhyppow" class="quarto-xref">Figure&nbsp;<span>5.7</span></a> and the left panel of <a href="#fig-uhyppow2" class="quarto-xref">Figure&nbsp;<span>5.8</span></a>.)</p>
+1 - F_Y(y_{\mathrm{RR}} \vert \theta) ~~~ \Rightarrow ~~~ 1 - F_{(1)}(x_{\mathrm{RR}} \vert b) ~~~ \Rightarrow ~~~ \left(\frac{b}{x_{\mathrm{RR}}}\right)^{na} \,.
+\end{align*}\]</span> The power rises from <span class="math inline">\(\alpha\)</span> to 1 as <span class="math inline">\(b\)</span> decreases from <span class="math inline">\(b_o\)</span> to <span class="math inline">\(x_{\mathrm{RR}}\)</span>, and for larger values of <span class="math inline">\(b\)</span> it is 1 by definition (as it becomes impossible to sample a datum outside of the rejection region). (See the left-hand side of <a href="#fig-uhyppow" class="quarto-xref">Figure&nbsp;<span>5.7</span></a> and the left panel of <a href="#fig-uhyppow2" class="quarto-xref">Figure&nbsp;<span>5.8</span></a>.)</p>
 </blockquote>
 <blockquote class="blockquote">
-<p>If <span class="math inline">\(b &lt; b_o\)</span>, then we would reject the null hypothesis if <span class="math inline">\(x_{(1),\rm obs} &gt; x_{\rm RR}\)</span> <em>or</em> <span class="math inline">\(x_{(1),\rm obs} &lt; b_o\)</span>. Thus <span class="math display">\[\begin{align*}
-P(\mbox{reject}~\mbox{null} \vert b) &amp;= P(X_{(1)} &gt; x_{\rm RR} \cup X_{(1)} &lt; b_o \vert b) \\
-&amp;= \left[ 1 - F_{(1)}(x_{\rm RR} \vert b)\right] + F_{(1)}(b_o \vert b)] \\
-&amp;= \left(\frac{b}{x_{\rm RR}}\right)^{na} + \left( 1 - \left(\frac{b}{b_o}\right)^{na} \right) \,.
+<p>If <span class="math inline">\(b &lt; b_o\)</span>, then we would reject the null hypothesis if <span class="math inline">\(x_{(1),\mathrm{obs}} &gt; x_{\mathrm{RR}}\)</span> <em>or</em> <span class="math inline">\(x_{(1),\mathrm{obs}} &lt; b_o\)</span>. Thus <span class="math display">\[\begin{align*}
+P(\mbox{reject}~\mbox{null} \vert b) &amp;= P(X_{(1)} &gt; x_{\mathrm{RR}} \cup X_{(1)} &lt; b_o \vert b) \\
+&amp;= \left[ 1 - F_{(1)}(x_{\mathrm{RR}} \vert b)\right] + F_{(1)}(b_o \vert b)] \\
+&amp;= \left(\frac{b}{x_{\mathrm{RR}}}\right)^{na} + \left( 1 - \left(\frac{b}{b_o}\right)^{na} \right) \,.
 \end{align*}\]</span> (See the right-hand side of <a href="#fig-uhyppow" class="quarto-xref">Figure&nbsp;<span>5.7</span></a> and the right panel of <a href="#fig-uhyppow2" class="quarto-xref">Figure&nbsp;<span>5.8</span></a>.)</p>
 </blockquote>
 <div class="cell" data-layout-align="center">
@@ -1146,7 +1152,7 @@ Figure&nbsp;5.7: The power curve for the test of <span class="math inline">\(H_o
 <div aria-describedby="fig-uhyppow2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-uhyppow2" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-uhyppow2-1" class="quarto-float quarto-figure quarto-figure-center anchored" width="288" data-fig-align="center">
+<div id="fig-uhyppow2-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="288">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-uhyppow2-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="05-uniform_files/figure-html/fig-uhyppow2-1.png" id="fig-uhyppow2-1" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-uhyppow2" width="288">
@@ -1158,7 +1164,7 @@ Figure&nbsp;5.7: The power curve for the test of <span class="math inline">\(H_o
 </div>
 </div>
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-uhyppow2" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-uhyppow2-2" class="quarto-float quarto-figure quarto-figure-center anchored" width="288" data-fig-align="center">
+<div id="fig-uhyppow2-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="288">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-uhyppow2-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="05-uniform_files/figure-html/fig-uhyppow2-2.png" id="fig-uhyppow2-2" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-uhyppow2" width="288">
@@ -1172,7 +1178,7 @@ Figure&nbsp;5.7: The power curve for the test of <span class="math inline">\(H_o
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-uhyppow2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.8: The rejection regions that inform the power curve calculation shown in <a href="#fig-uhyppow" class="quarto-xref">Figure&nbsp;<span>5.7</span></a>. (a) If <span class="math inline">\(b &gt; b_o\)</span>, then we reject the null hypothesis if <span class="math inline">\(x_{(1),\rm obs} &gt; x_{\rm RR}\)</span>. The power is thus the area under the curve shown in red. (b) If <span class="math inline">\(b &lt; b_o\)</span>, then we reject the null hypothesis if <span class="math inline">\(x_{(1),\rm obs} &gt; x_{\rm RR}\)</span> or if <span class="math inline">\(x_{(1),\rm obs} &lt; b_o = 1\)</span>. The power is thus the sum of the two areas under the curve shown in red.
+Figure&nbsp;5.8: The rejection regions that inform the power curve calculation shown in <a href="#fig-uhyppow" class="quarto-xref">Figure&nbsp;<span>5.7</span></a>. (a) If <span class="math inline">\(b &gt; b_o\)</span>, then we reject the null hypothesis if <span class="math inline">\(x_{(1),\mathrm{obs}} &gt; x_{\mathrm{RR}}\)</span>. The power is thus the area under the curve shown in red. (b) If <span class="math inline">\(b &lt; b_o\)</span>, then we reject the null hypothesis if <span class="math inline">\(x_{(1),\mathrm{obs}} &gt; x_{\mathrm{RR}}\)</span> or if <span class="math inline">\(x_{(1),\mathrm{obs}} &lt; b_o = 1\)</span>. The power is thus the sum of the two areas under the curve shown in red.
 </figcaption>
 </figure>
 </div>
@@ -1204,7 +1210,7 @@ F_X(x) = 1-e^{-(x-\theta)} \,.
 <li><p>We sample two iid data, <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span>, from a Uniform(0,1) distribution. (a) What is <span class="math inline">\(P(X_1 &gt; 1/2 \vert X_2 &lt; 1/2)\)</span>? (b) What is <span class="math inline">\(P(X_1 &gt; 1/2 \vert X_1 &lt; 3/4)\)</span>? (c) What is <span class="math inline">\(P(X_1 &lt; 3X_2)\)</span>? (Hint: draw this out in a 1 <span class="math inline">\(\times\)</span> 1 box. Do the same for (d).) (d) What is <span class="math inline">\(P(X_2 &lt; X_1 \vert X_2 &lt; 1/2)\)</span>?</p></li>
 <li><p>Let’s assume that we have sampled <span class="math inline">\(n\)</span> iid data from a particular distribution with domain <span class="math inline">\([\theta,\infty)\)</span>, and let the cdf of the sampling distribution of the appropriate statistic <span class="math inline">\(Y\)</span> to use to construct confidence intervals and perform hypothesis tests be <span class="math display">\[\begin{align*}
 F_Y(y) = 1 - e^{-n(y-\theta)} \,.
-\end{align*}\]</span> Assume the observed statistic value is <span class="math inline">\(y_{\rm obs}\)</span>, and that <span class="math inline">\(E[Y] = \theta + 1/n\)</span>. (Note that it is not necessary to know what <span class="math inline">\(Y\)</span> actually represents to answer the questions below.) (a) Determine a <span class="math inline">\(100(1-\alpha)\)</span>-percent lower bound on <span class="math inline">\(\theta\)</span>. (b) Assume we wish to test <span class="math inline">\(H_o : \theta = \theta_o\)</span> versus <span class="math inline">\(H_a : \theta \neq \theta_o\)</span>. Derive the rejection-region boundary (or boundaries) <span class="math inline">\(y_{\rm RR}\)</span> in terms of <span class="math inline">\(\theta_o\)</span>, the Type I error <span class="math inline">\(\alpha\)</span>, and <span class="math inline">\(n\)</span>.</p></li>
+\end{align*}\]</span> Assume the observed statistic value is <span class="math inline">\(y_{\mathrm{obs}}\)</span>, and that <span class="math inline">\(E[Y] = \theta + 1/n\)</span>. (Note that it is not necessary to know what <span class="math inline">\(Y\)</span> actually represents to answer the questions below.) (a) Determine a <span class="math inline">\(100(1-\alpha)\)</span>-percent lower bound on <span class="math inline">\(\theta\)</span>. (b) Assume we wish to test <span class="math inline">\(H_o : \theta = \theta_o\)</span> versus <span class="math inline">\(H_a : \theta \neq \theta_o\)</span>. Derive the rejection-region boundary (or boundaries) <span class="math inline">\(y_{\mathrm{RR}}\)</span> in terms of <span class="math inline">\(\theta_o\)</span>, the Type I error <span class="math inline">\(\alpha\)</span>, and <span class="math inline">\(n\)</span>.</p></li>
 <li><p>We are given the following probability mass function (which is an example of a discrete uniform distribution): <span class="math display">\[\begin{align*}
 p_X(x) = 1/2
 \end{align*}\]</span> for <span class="math inline">\(x \in \{1,2\}\)</span>. (a) Compute the moment-generating function for this distribution. (b) Using the mgf, compute the variance of <span class="math inline">\(X\)</span>. Do not compute <span class="math inline">\(V[X]\)</span> by any other method!</p></li>
@@ -1214,7 +1220,7 @@ f_X(x) = 1
 \end{eqnarray*}\]</span> for <span class="math inline">\(x \in [0,1]\)</span>. Now, let <span class="math inline">\(U = X^2\)</span>. (a) We will derive <span class="math inline">\(f_U(u)\)</span> in part (c). For now: what is the domain of this probability density function? (b) What is the functional form of <span class="math inline">\(F_U(u)\)</span> within the domain of <span class="math inline">\(f_U(u)\)</span>? (c) What is the functional form of <span class="math inline">\(f_U(u)\)</span> within its domain? (d) What is <span class="math inline">\(E[U]\)</span>?</p></li>
 <li><p>In an experiment, we sample <em>one datum</em> according to the cumulative distribution function <span class="math display">\[\begin{eqnarray*}
 F_X(x) = c\left( 1 - e^{-x/\theta} \right) \,,
-\end{eqnarray*}\]</span> where <span class="math inline">\(x \in [0,-\theta\log(1-1/c)]\)</span> (and where <span class="math inline">\(\theta\)</span> is a known positive constant). One may picture this as a distribution that is truncated at the coordinate <span class="math inline">\(x_c = -\theta\log(1-1/c)\)</span>, with the unknown parameter <span class="math inline">\(c &gt; 0\)</span> having a value such that the integral of <span class="math inline">\(f_X(x)\)</span> over the whole domain is 1. (a) What is the functional form of <span class="math inline">\(f_X(x)\)</span>? (b) We wish to test the hypothesis <span class="math inline">\(H_o : c = c_o\)</span> versus <span class="math inline">\(H_a : c &gt; c_o\)</span>. What is the rejection region boundary <span class="math inline">\(x_{\rm RR}\)</span> for this test? The answer should be in terms of <span class="math inline">\(\theta\)</span>, <span class="math inline">\(c_o\)</span>, and the level of the test <span class="math inline">\(\alpha\)</span>. (c) What is the power of the test given an arbitrary value <span class="math inline">\(c\)</span>, where <span class="math inline">\(c_o &lt; c &lt; c'\)</span> and where <span class="math inline">\(c'\)</span> is the value of <span class="math inline">\(c\)</span> where the power achieves the value 1? Leave the answer in terms of <span class="math inline">\(c\)</span> and <span class="math inline">\(x_{\rm RR}\)</span>. (d) Over what range of observed values of <span class="math inline">\(X\)</span> would we trivially reject the null hypothesis, since if the null is correct, it would be impossible to observe values in this range? (e) If instead of sampling one datum, we sample <span class="math inline">\(n\)</span> iid data, what would be a sufficient statistic for <span class="math inline">\(c\)</span>?</p></li>
+\end{eqnarray*}\]</span> where <span class="math inline">\(x \in [0,-\theta\log(1-1/c)]\)</span> (and where <span class="math inline">\(\theta\)</span> is a known positive constant). One may picture this as a distribution that is truncated at the coordinate <span class="math inline">\(x_c = -\theta\log(1-1/c)\)</span>, with the unknown parameter <span class="math inline">\(c &gt; 0\)</span> having a value such that the integral of <span class="math inline">\(f_X(x)\)</span> over the whole domain is 1. (a) What is the functional form of <span class="math inline">\(f_X(x)\)</span>? (b) We wish to test the hypothesis <span class="math inline">\(H_o : c = c_o\)</span> versus <span class="math inline">\(H_a : c &gt; c_o\)</span>. What is the rejection region boundary <span class="math inline">\(x_{\mathrm{RR}}\)</span> for this test? The answer should be in terms of <span class="math inline">\(\theta\)</span>, <span class="math inline">\(c_o\)</span>, and the level of the test <span class="math inline">\(\alpha\)</span>. (c) What is the power of the test given an arbitrary value <span class="math inline">\(c\)</span>, where <span class="math inline">\(c_o &lt; c &lt; c'\)</span> and where <span class="math inline">\(c'\)</span> is the value of <span class="math inline">\(c\)</span> where the power achieves the value 1? Leave the answer in terms of <span class="math inline">\(c\)</span> and <span class="math inline">\(x_{\mathrm{RR}}\)</span>. (d) Over what range of observed values of <span class="math inline">\(X\)</span> would we trivially reject the null hypothesis, since if the null is correct, it would be impossible to observe values in this range? (e) If instead of sampling one datum, we sample <span class="math inline">\(n\)</span> iid data, what would be a sufficient statistic for <span class="math inline">\(c\)</span>?</p></li>
 <li><p>In an experiment, we sample <em>one datum</em> <span class="math inline">\(X\)</span> according to the distribution <span class="math display">\[\begin{eqnarray*}
 f_X(x) = \frac{2}{\theta}\left(1-\frac{x}{\theta}\right) ~~~~~~ x \in [0,\theta] \,.
 \end{eqnarray*}\]</span> (a) What is the maximum likelihood estimate for <span class="math inline">\(\theta\)</span>? (b) What is the expected value <span class="math inline">\(E[X]\)</span>? (c) What is the bias of the MLE? (d) What is the minimum variance unbiased estimator for <span class="math inline">\(\theta\)</span>? (e) One can compute that <span class="math inline">\(V[X] = \theta^2/18\)</span>. It turns out that the mean-squared errors for the MLE and the MVUE are the same, as a function of <span class="math inline">\(\theta\)</span>. Write down an expression for the MSE.</p></li>
@@ -1275,13 +1281,14 @@ f_X(x) = \frac{2}{\theta}\left(1-\frac{x}{\theta}\right) ~~~~~~ x \in [0,\theta]
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
