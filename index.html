@@ -1,8 +1,738 @@
-<html xmlns="http://www.w3.org/1999/xhtml">    
-  <head>      
-    <title>Redirect to index.html</title>      
-    <meta http-equiv="refresh" content="0;URL='index.html'" />    
-  </head>    
-  <body> 
-  </body>  
-</html>     
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Peter Freeman">
+<meta name="dcterms.date" content="2026-09-09">
+
+<title>Modern Probability and Statistical Inference</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./01-probability.html" rel="next">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-485d01fc63b59abcd3ee1bf1e8e2748d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Preface</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Modern Probability and Statistical Inference</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-probability.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The Basics of Probability and Statistical Inference</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-normal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Normal (and Related) Distributions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-binomial.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Binomial (and Related) Distributions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-poisson.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The Poisson (and Related) Distributions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-uniform.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Distributions with Domain-Specifying Parameters</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-multivariate.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Multivariate Distributions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-optional.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Additional Concepts (Optional)</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-appendixA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Appendix: Table of Symbols</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bibliography</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Chapter Exercises: Solutions</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a>
+  <ul>
+  <li><a href="#mathematical-prerequisites" id="toc-mathematical-prerequisites" class="nav-link" data-scroll-target="#mathematical-prerequisites">Mathematical Prerequisites</a></li>
+  <li><a href="#adapting-the-book-material" id="toc-adapting-the-book-material" class="nav-link" data-scroll-target="#adapting-the-book-material">Adapting the Book Material</a>
+  <ul class="collapse">
+  <li><a href="#a-traditional-one-semester-probability-course" id="toc-a-traditional-one-semester-probability-course" class="nav-link" data-scroll-target="#a-traditional-one-semester-probability-course">A Traditional One-Semester Probability Course</a></li>
+  <li><a href="#a-traditional-one-semester-statistical-inference-course" id="toc-a-traditional-one-semester-statistical-inference-course" class="nav-link" data-scroll-target="#a-traditional-one-semester-statistical-inference-course">A Traditional One-Semester Statistical Inference Course</a></li>
+  <li><a href="#a-one-semester-probability-and-statistical-inference-course-for-data-scientists-or-engineers" id="toc-a-one-semester-probability-and-statistical-inference-course-for-data-scientists-or-engineers" class="nav-link" data-scroll-target="#a-one-semester-probability-and-statistical-inference-course-for-data-scientists-or-engineers">A One-Semester Probability and Statistical Inference Course (for Data Scientists or Engineers)</a></li>
+  </ul></li>
+  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements">Acknowledgements</a></li>
+  <li><a href="#about-the-author" id="toc-about-the-author" class="nav-link" data-scroll-target="#about-the-author">About the Author</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Modern Probability and Statistical Inference</h1>
+<p class="subtitle lead">Illustrated with R</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Peter Freeman </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 9, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="preface" class="level1 unnumbered">
+<h1 class="unnumbered">Preface</h1>
+<p><em>Modern Probability and Statistical Inference</em> has been developed to support the two-semester mathematical statistics course sequence for statistics students at Carnegie Mellon University (numbered 36-235 and 36-236). <em>The primary difference between this textbook and others that are commonly assigned in mathematical statistics classes is that this one utilizes a</em> <strong>spiral-learning</strong> <em>framework <span class="citation" data-cites="bruner1976">(see, e.g., <a href="09-references.html#ref-bruner1976" role="doc-biblioref">Bruner 1976</a>)</span>,</em> which simply means that concepts that might be covered just once elsewhere (such as point estimation) are repeatedly covered here. My primary motivation in adopting a spiral-learning framework is the observation that many students fixate on equations and coding and pay less attention to statistical concepts, with details that are seen once often being quickly forgotten. But in addition to helping enhance conceptual retention, a spiral-learning format can also help students build up knowledge of particular concepts bit-by-bit as opposed to all at once, leading to reduced cognitive overload.</p>
+<p>In this book, I have radically revised the order (and way) in which topics are covered, relative to what one might see in a traditional mathematical statistics textbook. Such a textbook might have one chapter that illustrates the properties of discrete probability distributions and discusses the specifics of the binomial, geometric, and Poisson distributions, and then a subsequent chapter that illustrates the properties of continuous distributions such as, e.g., the normal and gamma distributions, with neither chapter actually demonstrating how these distributions are applied to carry out statistical inference. Here, I break the major distributions out into their own chapters (Chapters 1-5), and within each I revisit fundamental probability and inference concepts: probability mass and density functions, cumulative distribution functions, statistics, sampling distibutions, point estimation, interval estimation, and hypothesis testing, etc. As I move from chapter to chapter, I cover inferential concepts at greater depth. A concrete example of this is that when I discuss point estimation in Chapter 1, I introduce the concepts of bias, variance, and using the likelihood function to define estimators; then, when I return to point estimation in Chapter 2, I review these concepts (and derive the MLEs for normal distribution parameters), then add details about the concepts of consistency, Fisher information, the Cramer-Rao lower bound, and the asymptotic distribution of maximum likelihood estimates. In Chapter 3, I add in sufficient statistics and likelihood factorization, along with the minimum variance unbiased estimator. Etc.</p>
+<p>Another important difference between this textbook and older, more established mathematical statistics textbooks is that I utilize <code>R</code> for coding visualizations, analyses, and simulations. It is expected that this will help students understand concepts more readily; it also allows me to broaden the “problem space” beyond typically used, analytically tractable distributions. (But I note that the newest generation of textbooks often employ enhanced computation…so it is really the spiral structure that makes this textbook fundamentally different.) Students are not expected to have experience with coding in <code>R</code> prior to working with it in my course; while a very short introduction to <code>R</code> coding is given in <a href="01-probability.html#sec-chap1working" class="quarto-xref"><span>Probability Distributions: Working with R</span></a>, instructors may also want to point students to a more fleshed-out introduction, such <a href="https://cmu-intro-r.github.io/">this one</a>.</p>
+<section id="mathematical-prerequisites" class="level3">
+<h3 class="anchored" data-anchor-id="mathematical-prerequisites">Mathematical Prerequisites</h3>
+<p>I expect students to be familiar with pre-calculus concepts (primarily exponential functions and logarithms, along with the use of the summation and product symbols) and with differential and integral calculus. In addition, students are expected to have basic familiarity with double integration and with matrices and matrix multiplication prior to engaging with the content on <a href="06-multivariate.html">multivariate distributions</a>, although experience has shown that instructors can cover these concepts themselves relatively quickly and as needed.</p>
+</section>
+<section id="adapting-the-book-material" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="adapting-the-book-material">Adapting the Book Material</h3>
+<p>Below are ways in which instructors can re-order the material of this book to align with other, more traditional course formats.</p>
+<section id="a-traditional-one-semester-probability-course" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="a-traditional-one-semester-probability-course">A Traditional One-Semester Probability Course</h4>
+<ul>
+<li>Sections <a href="01-probability.html#sec-chap1data">1.1</a> - <a href="01-probability.html#sec-chap1cumulative">1.9</a> (introductory material through cumulative distribution functions), with the <code>R</code>-based sections <a href="01-probability.html#sec-chap1working">1.8</a> and <a href="01-probability.html#sec-chap1sampling">1.11</a> being optional</li>
+<li>Sections <a href="02-normal.html#sec-chap2pdf">2.1</a> - <a href="02-normal.html#sec-chap2cdf">2.2</a> (the normal distribution), with selected results as appropriate in sections <a href="02-normal.html#sec-chap2mgf">2.3</a> - <a href="02-normal.html#sec-chap2t">2.10</a></li>
+<li>Section <a href="02-normal.html#sec-chap2exponential">2.17</a> (the exponential family)</li>
+<li>Sections <a href="03-binomial.html#sec-chap3pmf">3.1</a> - <a href="03-binomial.html#sec-chap3related">3.2</a> (the binomial and related distributions)</li>
+<li>Sections <a href="04-poisson.html#sec-chap4pmf">4.1</a> - <a href="04-poisson.html#sec-chap4related">4.2</a> (the Poisson and related distributions)</li>
+<li>Section <a href="05-uniform.html#sec-chap5examples">5.1</a> (the uniform and Pareto distributions)</li>
+<li>Chapter <a href="06-multivariate.html">6</a> (multivariate distributions)</li>
+</ul>
+</section>
+<section id="a-traditional-one-semester-statistical-inference-course" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="a-traditional-one-semester-statistical-inference-course">A Traditional One-Semester Statistical Inference Course</h4>
+<ul>
+<li>Sections <a href="01-probability.html#sec-chap1stat">1.12</a> - <a href="01-probability.html#sec-chap1likelihood">1.13</a> (statistics and the likelihood function)</li>
+<li>Selected results as appropriate in sections <a href="02-normal.html#sec-chap2mgf">2.3</a> - <a href="02-normal.html#sec-chap2t">2.10</a>, plus sections <a href="03-binomial.html#sec-chap3linear">3.4</a> and <a href="04-poisson.html#sec-chap4linear">4.4</a> (derivation of sampling distributions, and sampling distributions related to the normal, binomial, and Poisson distributions)</li>
+<li>Section <a href="03-binomial.html#sec-chap3order">3.5</a> (order statistics)</li>
+<li>Sections <a href="01-probability.html#sec-chap1point">1.14</a>, <a href="02-normal.html#sec-chap2point">2.11</a>, <a href="03-binomial.html#sec-chap3point">3.6</a>, and <a href="04-poisson.html#sec-chap4point">4.5</a> (point estimation)</li>
+<li>Sections <a href="01-probability.html#sec-chap1inference">1.15</a> - <a href="01-probability.html#sec-chap1confidence">1.16</a>, <a href="02-normal.html#sec-chap2confidence">2.12</a>, <a href="03-binomial.html#sec-chap3confidence">3.7</a>, and <a href="04-poisson.html#sec-chap4confidence">4.6</a> (confidence interval estimation)</li>
+<li>Sections <a href="01-probability.html#sec-chap1hypothesis">1.17</a>, <a href="02-normal.html#sec-chap2hypothesis">2.13</a>, <a href="03-binomial.html#sec-chap3nplemma">3.8</a> - <a href="03-binomial.html#sec-chap3categorical">3.9</a>, and <a href="04-poisson.html#sec-chap4hypothesis">4.7</a> (hypothesis testing)</li>
+<li>Sections <a href="02-normal.html#sec-chap2slr">2.15</a> - <a href="02-normal.html#sec-chap2anova">2.16</a>, <a href="sec-chap3logistic">3.10</a> - <a href="03-binomial.html#sec-chap3naivebayes">3.11</a>,and <a href="04-poisson.html#sec-chap4poireg">4.8</a> (regression)</li>
+<li>Optional: sections <a href="05-uniform.html#sec-chap5linear">5.2</a> - <a href="05-uniform.html#sec-chap5hypothesis">5.5</a> (inference with domain-specifying parameters)</li>
+</ul>
+</section>
+<section id="a-one-semester-probability-and-statistical-inference-course-for-data-scientists-or-engineers" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="a-one-semester-probability-and-statistical-inference-course-for-data-scientists-or-engineers">A One-Semester Probability and Statistical Inference Course (for Data Scientists or Engineers)</h4>
+<ul>
+<li>Chapter <a href="01-probability.html">1</a></li>
+<li>Sections <a href="02-normal.html#sec-chap2pdf">2.1</a> - <a href="02-normal.html#sec-chap2cdf">2.2</a> (the normal distribution), with formulae drawn as appropriate in sections <a href="02-normal.html#sec-chap2standard">2.5</a> - <a href="02-normal.html#sec-chap2t">2.10</a></li>
+<li>Sections <a href="03-binomial.html#sec-chap3pmf">3.1</a> - <a href="03-binomial.html#sec-chap3related">3.2</a> (the binomial and related distributions)</li>
+<li>Sections <a href="04-poisson.html#sec-chap4pmf">4.1</a> - <a href="04-poisson.html#sec-chap4related">4.2</a> (the Poisson and related distributions)</li>
+<li>Optional: section <a href="05-uniform.html#sec-chap5examples">5.1</a> (the uniform and Pareto distributions) and chapter <a href="06-multivariate.html">6</a> (multivariate distributions)</li>
+</ul>
+<p>In addition, one may wish to address numerical methods such as, e.g., <a href="02-normal.html#sec-chap2confidence">root-finding for confidence interval estimation</a>, <a href="04-poisson.html#sec-chap4numopt">optimization for maximum-likelihood estimation</a>, <a href="04-poisson.html#sec-chap4bootstrap">simulations and the bootstrap</a>, etc.</p>
+</section>
+</section>
+<section id="acknowledgements" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="acknowledgements">Acknowledgements</h3>
+<p>I would like to thank Rebecca Nugent, without whose support the new mathematical statistics course sequence (and, by extension, this textbook) would never have been been developed, as well as my family (Sarah, Hugh, and Susannah), whose support helped see me through to the finish line. I would also like to thank Eileen Xiao, who converted the original base-<code>R</code> graphics in the book to <code>ggplot()</code>-based graphics during the summer of 2023.</p>
+</section>
+<section id="about-the-author" class="level3">
+<h3 class="anchored" data-anchor-id="about-the-author">About the Author</h3>
+<p><strong>Peter Freeman</strong> is an associate teaching professor in, and the director of the undergraduate program of, Carnegie Mellon’s Department of Statistics &amp; Data Science. He received a B.S. in Physics from the University of California and a Ph.D.&nbsp;in Astronomy &amp; Astrophysics from the University of Chicago, and parlayed his training into a career in astrostatistics (or, as he later realized, a career in data science before “data science” was a thing). As a teaching professor, Dr.&nbsp;Freeman focuses on curriculum development as well as on determining best practices for teaching both mathematical statistics and statistical learning.</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-bruner1976" class="csl-entry" role="listitem">
+Bruner, J. S. 1976. <em><span class="nocase">The Process of Education</span></em>. Harvard University Press, MA.
+</div>
+</div>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./01-probability.html" class="pagination-link" aria-label="The Basics of Probability and Statistical Inference">
+        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The Basics of Probability and Statistical Inference</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
