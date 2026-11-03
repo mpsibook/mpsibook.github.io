@@ -2,17 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>6&nbsp; Multivariate Distributions – Modern Probability and Statistical Inference</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -73,10 +79,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-485d01fc63b59abcd3ee1bf1e8e2748d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-d3f7f8e73c8d287b30bcf59c2b563615.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -106,7 +112,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -119,7 +125,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -329,11 +335,6 @@ window.Quarto = {
 </header>
 
 
-<div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'dplyr' was built under R version 4.5.2</code></pre>
-</div>
-</div>
 <div class="bluebox">
 <p>In this chapter, we move away from independent and identically distributed data to examining the situation in which <span class="math inline">\(\{X_1,\ldots,X_p\}\)</span> are <span class="math inline">\(p\)</span> random variables that are <em>jointly</em> sampled according to some <em>multivariate distribution</em> <span class="math inline">\(P\)</span>. Our focus will not be on statistical inference, but on how one works with (specifically) bivariate probability distributions: assessing the independence of random variables, computing the covariance and correlation between them, deriving marginal and conditional distributions, and working with conditional expected value and variance. (While noting that any results that we write down for bivariate distributions can be generalized to higher-dimensional ones as well.)</p>
 </div>
@@ -568,44 +569,55 @@ f_{X_1,X_2}(x_1,x_2) = c(1-x_2) \,,
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pracma)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the (finite) domain</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>x1min <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>x1max <span class="ot">&lt;-</span> <span class="dv">1</span> </span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>x2min <span class="ot">&lt;-</span> <span class="cf">function</span>(x1) { x1 } <span class="co"># the lower bound for x2 is the line x2=x1</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>x2max <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Determine c</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x1,x2) {</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="dv">1</span> <span class="sc">-</span> x2</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>I <span class="ot">&lt;-</span> <span class="fu">integral2</span>(f, x1min, x1max, x2min, x2max)<span class="sc">$</span>Q</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"The value of c is"</span>, <span class="dv">1</span> <span class="sc">/</span> I, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pracma)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'pracma'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:purrr':
+
+    cross</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the (finite) domain</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>x1min <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>x1max <span class="ot">&lt;-</span> <span class="dv">1</span> </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>x2min <span class="ot">&lt;-</span> <span class="cf">function</span>(x1) { x1 } <span class="co"># the lower bound for x2 is the line x2=x1</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>x2max <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Determine c</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x1,x2) {</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="dv">1</span> <span class="sc">-</span> x2</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>I <span class="ot">&lt;-</span> <span class="fu">integral2</span>(f, x1min, x1max, x2min, x2max)<span class="sc">$</span>Q</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"The value of c is"</span>, <span class="dv">1</span> <span class="sc">/</span> I, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>The value of c is 6 </code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Determine E[X2]</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x1, x2) {</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="dv">6</span> <span class="sc">*</span> x2 <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> x2)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>I <span class="ot">&lt;-</span> <span class="fu">integral2</span>(f, x1min, x1max, x2min, x2max)<span class="sc">$</span>Q</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"E[X2] ="</span>, I, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Determine E[X2]</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x1, x2) {</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="dv">6</span> <span class="sc">*</span> x2 <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> x2)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>I <span class="ot">&lt;-</span> <span class="fu">integral2</span>(f, x1min, x1max, x2min, x2max)<span class="sc">$</span>Q</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"E[X2] ="</span>, I, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>E[X2] = 0.5 </code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Determine E[X2^2], and the variance</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x1, x2) {</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="dv">6</span> <span class="sc">*</span> x2<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> x2)</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>J <span class="ot">&lt;-</span> <span class="fu">integral2</span>(f, x1min, x1max, x2min, x2max)<span class="sc">$</span>Q</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"V[X2] ="</span>, J <span class="sc">-</span> I<span class="sc">^</span><span class="dv">2</span>, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Determine E[X2^2], and the variance</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x1, x2) {</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="dv">6</span> <span class="sc">*</span> x2<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> x2)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>J <span class="ot">&lt;-</span> <span class="fu">integral2</span>(f, x1min, x1max, x2min, x2max)<span class="sc">$</span>Q</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"V[X2] ="</span>, J <span class="sc">-</span> I<span class="sc">^</span><span class="dv">2</span>, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>V[X2] = 0.05 </code></pre>
@@ -633,7 +645,7 @@ f_{X_1,X_2}(x_1,x_2) = \frac{1}{A} \,,
 <img src="figures/multi_fig2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mulfig2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6.3: The probability density function <span class="math inline">\(6(1-x_2)\)</span> as a function of <span class="math inline">\(x_1\)</span> (axis pointing to upper right) and <span class="math inline">\(x_2\)</span> (axis pointing to upper left). The pdf peaks at <span class="math inline">\((x_1,x_2) = (0,0)\)</span> and falls off towards <span class="math inline">\(x_2 = 1\)</span> as a plane, with value greater than zero only within the domain <span class="math inline">\(0 \leq x_1 \leq x_2 \leq 1\)</span>; <a href="#fig-mulfig1" class="quarto-xref">Figure&nbsp;<span>6.1</span></a> shows that domain.
+Figure&nbsp;6.3: The geometric region corresponding to <span class="math inline">\(X_1 &gt; 2X_2\)</span> (in blue) embedded within the domain of a bivariate uniform distribution (in red). The probability that <span class="math inline">\(X_1 &gt; 2X_2\)</span> is simply the area of the blue region divided by that of the one bounded in red.
 </figcaption>
 </figure>
 </div>
@@ -666,10 +678,10 @@ Figure&nbsp;6.3: The probability density function <span class="math inline">\(6(
 <div aria-describedby="fig-covplot1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-covplot1" style="flex-basis: 33.3%;justify-content: center;">
-<div id="fig-covplot1-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="192">
+<div id="fig-covplot1-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="1200">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-covplot1-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="06-multivariate_files/figure-html/fig-covplot1-1.png" id="fig-covplot1-1" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-covplot1" width="192">
+<img src="06-multivariate_files/figure-html/fig-covplot1-1.png" id="fig-covplot1-1" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-covplot1" width="1200">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-covplot1-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (a)
@@ -678,10 +690,10 @@ Figure&nbsp;6.3: The probability density function <span class="math inline">\(6(
 </div>
 </div>
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-covplot1" style="flex-basis: 33.3%;justify-content: center;">
-<div id="fig-covplot1-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="192">
+<div id="fig-covplot1-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="1200">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-covplot1-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="06-multivariate_files/figure-html/fig-covplot1-2.png" id="fig-covplot1-2" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-covplot1" width="192">
+<img src="06-multivariate_files/figure-html/fig-covplot1-2.png" id="fig-covplot1-2" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-covplot1" width="1200">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-covplot1-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (b)
@@ -690,10 +702,10 @@ Figure&nbsp;6.3: The probability density function <span class="math inline">\(6(
 </div>
 </div>
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-covplot1" style="flex-basis: 33.3%;justify-content: center;">
-<div id="fig-covplot1-3" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="192">
+<div id="fig-covplot1-3" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="1200">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-covplot1-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="06-multivariate_files/figure-html/fig-covplot1-3.png" id="fig-covplot1-3" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-covplot1" width="192">
+<img src="06-multivariate_files/figure-html/fig-covplot1-3.png" id="fig-covplot1-3" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-covplot1" width="1200">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-covplot1-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (c)
@@ -727,10 +739,10 @@ b^2 - 4ac &amp;= 4 (E[X_1X_2])^2 - 4 E[X_1^2] E[X_2^2] \leq 0 \\
 <div aria-describedby="fig-covplot2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-covplot2" style="flex-basis: 33.3%;justify-content: center;">
-<div id="fig-covplot2-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="192">
+<div id="fig-covplot2-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="1200">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-covplot2-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="06-multivariate_files/figure-html/fig-covplot2-1.png" id="fig-covplot2-1" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-covplot2" width="192">
+<img src="06-multivariate_files/figure-html/fig-covplot2-1.png" id="fig-covplot2-1" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-covplot2" width="1200">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-covplot2-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (a)
@@ -739,10 +751,10 @@ b^2 - 4ac &amp;= 4 (E[X_1X_2])^2 - 4 E[X_1^2] E[X_2^2] \leq 0 \\
 </div>
 </div>
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-covplot2" style="flex-basis: 33.3%;justify-content: center;">
-<div id="fig-covplot2-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="192">
+<div id="fig-covplot2-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="1200">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-covplot2-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="06-multivariate_files/figure-html/fig-covplot2-2.png" id="fig-covplot2-2" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-covplot2" width="192">
+<img src="06-multivariate_files/figure-html/fig-covplot2-2.png" id="fig-covplot2-2" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-covplot2" width="1200">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-covplot2-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (b)
@@ -751,10 +763,10 @@ b^2 - 4ac &amp;= 4 (E[X_1X_2])^2 - 4 E[X_1^2] E[X_2^2] \leq 0 \\
 </div>
 </div>
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-covplot2" style="flex-basis: 33.3%;justify-content: center;">
-<div id="fig-covplot2-3" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="192">
+<div id="fig-covplot2-3" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="1200">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-covplot2-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="06-multivariate_files/figure-html/fig-covplot2-3.png" id="fig-covplot2-3" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-covplot2" width="192">
+<img src="06-multivariate_files/figure-html/fig-covplot2-3.png" id="fig-covplot2-3" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-covplot2" width="1200">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-covplot2-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (c)
@@ -870,9 +882,9 @@ V[Y] &amp;= \sum_{i=1}^n a_i^2 V[X_i] + 2\sum_{i=1}^{n-1} \sum_{j=i+1}^n a_i a_j
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>a     <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="sc">-</span><span class="dv">1</span>)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>Sigma <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="fl">0.25</span>, <span class="sc">-</span><span class="fl">0.05</span>, <span class="sc">-</span><span class="fl">0.05</span>, <span class="fl">0.45</span>), <span class="at">nrow =</span> <span class="dv">2</span>) <span class="co"># fill column-by-column</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">t</span>(a) <span class="sc">%*%</span> Sigma <span class="sc">%*%</span> a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>a     <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="sc">-</span><span class="dv">1</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>Sigma <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="fl">0.25</span>, <span class="sc">-</span><span class="fl">0.05</span>, <span class="sc">-</span><span class="fl">0.05</span>, <span class="fl">0.45</span>), <span class="at">nrow =</span> <span class="dv">2</span>) <span class="co"># fill column-by-column</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">t</span>(a) <span class="sc">%*%</span> Sigma <span class="sc">%*%</span> a</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>     [,1]
@@ -960,11 +972,11 @@ E[U_1V_2] = E[U_1]E[V_2] = p_ip_j \,.
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">202</span>)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>x      <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">40</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">10</span>)</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>Y      <span class="ot">&lt;-</span> <span class="dv">4</span> <span class="sc">+</span> <span class="fl">0.5</span> <span class="sc">*</span> x <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">40</span>)</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>lm.out <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y <span class="sc">~</span> x)</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm.out)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">202</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>x      <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">40</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">10</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>Y      <span class="ot">&lt;-</span> <span class="dv">4</span> <span class="sc">+</span> <span class="fl">0.5</span> <span class="sc">*</span> x <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">40</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>lm.out <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y <span class="sc">~</span> x)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm.out)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
@@ -993,8 +1005,8 @@ F-statistic: 61.76 on 1 and 38 DF,  p-value: 1.749e-09</code></pre>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>hat.sigma  <span class="ot">&lt;-</span> <span class="fu">summary</span>(lm.out)<span class="sc">$</span>sigma</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>hat.sigma2 <span class="ot">&lt;-</span> hat.sigma<span class="sc">^</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>hat.sigma  <span class="ot">&lt;-</span> <span class="fu">summary</span>(lm.out)<span class="sc">$</span>sigma</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>hat.sigma2 <span class="ot">&lt;-</span> hat.sigma<span class="sc">^</span><span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <blockquote class="blockquote">
@@ -1003,7 +1015,7 @@ F-statistic: 61.76 on 1 and 38 DF,  p-value: 1.749e-09</code></pre>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">40</span>), x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">40</span>), x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <blockquote class="blockquote">
@@ -1012,7 +1024,7 @@ F-statistic: 61.76 on 1 and 38 DF,  p-value: 1.749e-09</code></pre>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>hat.sigma2 <span class="sc">*</span> <span class="fu">solve</span>(<span class="fu">t</span>(X) <span class="sc">%*%</span> X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>hat.sigma2 <span class="sc">*</span> <span class="fu">solve</span>(<span class="fu">t</span>(X) <span class="sc">%*%</span> X)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>                        x
@@ -1036,7 +1048,7 @@ se(\hat{\beta}_0) = \sqrt{0.1034} = 0.3216 ~~~ \mbox{and} ~~~ se(\hat{\beta}_0) 
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>(Sigma <span class="ot">&lt;-</span> <span class="fu">vcov</span>(lm.out)) <span class="co"># compute the variance-covariance matrix</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>(Sigma <span class="ot">&lt;-</span> <span class="fu">vcov</span>(lm.out)) <span class="co"># compute the variance-covariance matrix</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>            (Intercept)           x
@@ -1045,7 +1057,7 @@ x           -0.01652116  0.00343436</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cov2cor</span>(Sigma)          <span class="co"># convert the covariance to correlation</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cov2cor</span>(Sigma)          <span class="co"># convert the covariance to correlation</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>            (Intercept)          x
@@ -1074,9 +1086,9 @@ x            -0.8765245  1.0000000</code></pre>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># run simple logistic regression on training dataset</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>log.out <span class="ot">&lt;-</span> <span class="fu">glm</span>(class <span class="sc">~</span> col.iz, <span class="at">data =</span> df.train, <span class="at">family =</span> binomial)</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(log.out)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># run simple logistic regression on training dataset</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>log.out <span class="ot">&lt;-</span> <span class="fu">glm</span>(class <span class="sc">~</span> col.iz, <span class="at">data =</span> df.train, <span class="at">family =</span> binomial)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(log.out)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
@@ -1100,12 +1112,12 @@ Number of Fisher Scoring iterations: 4</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>hat.beta0 <span class="ot">&lt;-</span> log.out<span class="sc">$</span>coefficients[<span class="dv">1</span>]</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>hat.beta1 <span class="ot">&lt;-</span> log.out<span class="sc">$</span>coefficients[<span class="dv">2</span>]</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>e         <span class="ot">&lt;-</span> <span class="fu">exp</span>(hat.beta0 <span class="sc">+</span> hat.beta1 <span class="sc">*</span> df.train<span class="sc">$</span>col.iz)</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>W         <span class="ot">&lt;-</span> <span class="fu">diag</span>(e <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">+</span> e)<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>X         <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="fu">rep</span>(<span class="dv">1</span>, <span class="fu">nrow</span>(df.train)), df.train<span class="sc">$</span>col.iz)</span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>(Sigma    <span class="ot">&lt;-</span> <span class="fu">solve</span>(<span class="fu">t</span>(X) <span class="sc">%*%</span> W <span class="sc">%*%</span> X))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>hat.beta0 <span class="ot">&lt;-</span> log.out<span class="sc">$</span>coefficients[<span class="dv">1</span>]</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>hat.beta1 <span class="ot">&lt;-</span> log.out<span class="sc">$</span>coefficients[<span class="dv">2</span>]</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>e         <span class="ot">&lt;-</span> <span class="fu">exp</span>(hat.beta0 <span class="sc">+</span> hat.beta1 <span class="sc">*</span> df.train<span class="sc">$</span>col.iz)</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>W         <span class="ot">&lt;-</span> <span class="fu">diag</span>(e <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">+</span> e)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>X         <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="fu">rep</span>(<span class="dv">1</span>, <span class="fu">nrow</span>(df.train)), df.train<span class="sc">$</span>col.iz)</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>(Sigma    <span class="ot">&lt;-</span> <span class="fu">solve</span>(<span class="fu">t</span>(X) <span class="sc">%*%</span> W <span class="sc">%*%</span> X))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>             [,1]        [,2]
@@ -1114,14 +1126,14 @@ Number of Fisher Scoring iterations: 4</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(Sigma[<span class="dv">1</span>, <span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(Sigma[<span class="dv">1</span>, <span class="dv">1</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.09265146</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(Sigma[<span class="dv">2</span>, <span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(Sigma[<span class="dv">2</span>, <span class="dv">2</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.3105144</code></pre>
@@ -1133,7 +1145,7 @@ Number of Fisher Scoring iterations: 4</code></pre>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cov2cor</span>(Sigma)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cov2cor</span>(Sigma)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>           [,1]       [,2]
@@ -1292,10 +1304,10 @@ f_{X_2 \vert X_1}(x_2 \vert x_1) = \frac{f_{X_1,X_2}(x_1,x_2)}{f_{X_1}(x_1)} = \
 <div aria-describedby="fig-marcond-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-marcond" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-marcond-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="288">
+<div id="fig-marcond-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="1800">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-marcond-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="06-multivariate_files/figure-html/fig-marcond-1.png" id="fig-marcond-1" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-marcond" width="288">
+<img src="06-multivariate_files/figure-html/fig-marcond-1.png" id="fig-marcond-1" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-marcond" width="1800">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-marcond-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (a)
@@ -1304,10 +1316,10 @@ f_{X_2 \vert X_1}(x_2 \vert x_1) = \frac{f_{X_1,X_2}(x_1,x_2)}{f_{X_1}(x_1)} = \
 </div>
 </div>
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-marcond" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-marcond-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="288">
+<div id="fig-marcond-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="1800">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-marcond-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="06-multivariate_files/figure-html/fig-marcond-2.png" id="fig-marcond-2" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-marcond" width="288">
+<img src="06-multivariate_files/figure-html/fig-marcond-2.png" id="fig-marcond-2" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-marcond" width="1800">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-marcond-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (b)
@@ -1340,20 +1352,20 @@ f_{X_2}(x_2) &amp;= 6x_2(1-x_2) \,.
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pracma)</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the (finite) domain</span></span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>x1min <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>x1max <span class="ot">&lt;-</span> <span class="dv">1</span> </span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>x2min <span class="ot">&lt;-</span> <span class="cf">function</span>(x1) { x1 } <span class="co"># the lower bound for x2 is the line x2=x1</span></span>
-<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>x2max <span class="ot">&lt;-</span> <span class="dv">1</span> </span>
-<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Determine I(X1, X2)</span></span>
-<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x1, x2) {</span>
-<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span><span class="dv">6</span> <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> x2) <span class="sc">*</span> <span class="fu">log</span>(<span class="dv">3</span> <span class="sc">*</span> x2 <span class="sc">*</span> (<span class="dv">1</span><span class="sc">-</span>x1)<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>} </span>
-<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>I <span class="ot">&lt;-</span> <span class="fu">integral2</span>(f, x1min, x1max, x2min, x2max)<span class="sc">$</span>Q</span>
-<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"The value of I(X1, X2) is"</span>, <span class="fu">round</span>(I, <span class="dv">3</span>), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pracma)</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the (finite) domain</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>x1min <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>x1max <span class="ot">&lt;-</span> <span class="dv">1</span> </span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>x2min <span class="ot">&lt;-</span> <span class="cf">function</span>(x1) { x1 } <span class="co"># the lower bound for x2 is the line x2=x1</span></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>x2max <span class="ot">&lt;-</span> <span class="dv">1</span> </span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Determine I(X1, X2)</span></span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x1, x2) {</span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span><span class="dv">6</span> <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> x2) <span class="sc">*</span> <span class="fu">log</span>(<span class="dv">3</span> <span class="sc">*</span> x2 <span class="sc">*</span> (<span class="dv">1</span><span class="sc">-</span>x1)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>} </span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>I <span class="ot">&lt;-</span> <span class="fu">integral2</span>(f, x1min, x1max, x2min, x2max)<span class="sc">$</span>Q</span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"The value of I(X1, X2) is"</span>, <span class="fu">round</span>(I, <span class="dv">3</span>), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>The value of I(X1, X2) is 0.401 </code></pre>
@@ -1499,37 +1511,14 @@ f_{\mathbf{X}}(\mathbf{x}) = \frac{1}{\sqrt{(2\pi)^p \vert \boldsymbol{\Sigma} \
 <blockquote class="blockquote">
 <p>To determine the marginal distribution, we simply remove the third element of <span class="math inline">\(\boldsymbol{\mu}\)</span> and the third row and column of <span class="math inline">\(\boldsymbol{\Sigma}\)</span>; the marginal distribution is a bivariate normal with means <span class="math inline">\(\boldsymbol{\mu} = \{2,4\}\)</span> and covariance matrix <span class="math display">\[
 \boldsymbol{\Sigma} = \left( \begin{array}{cc} 2 &amp; 0.5 \\ 0.5 &amp; 2 \end{array} \right) \,.
-\]</span></p>
-</blockquote>
-<blockquote class="blockquote">
-<p>In <code>R</code>, we might visualize the result using the following code:</p>
+\]</span> See <a href="#fig-mvmarg" class="quarto-xref">Figure&nbsp;<span>6.8</span></a>.</p>
 </blockquote>
 <div class="cell" data-layout-align="center">
-<div class="cell-output cell-output-stdout">
-<pre><code>     [,1] [,2] [,3]
-[1,]  2.0  0.5  1.2
-[2,]  0.5  2.0  1.0
-[3,]  1.2  1.0  2.0</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'metR'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following object is masked _by_ '.GlobalEnv':
-
-    f</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following object is masked from 'package:pracma':
-
-    cross</code></pre>
-</div>
 <div class="cell-output-display">
 <div id="fig-mvmarg" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-mvmarg-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="06-multivariate_files/figure-html/fig-mvmarg-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="336">
+<img src="06-multivariate_files/figure-html/fig-mvmarg-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="2100">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mvmarg-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;6.8: Contour plot indicating the location and orientation of a bivariate normal distribution with mean <span class="math inline">\(\boldsymbol{\mu} = \{2, 4\}\)</span> and covariance matrix as given in the example. The numbers along each contour indicate the amplitude of the pdf, whose maximum point is in the center.
@@ -1545,19 +1534,47 @@ Figure&nbsp;6.8: Contour plot indicating the location and orientation of a bivar
 <p>Let’s assume the same setting as in the previous example. What is the conditional distribution of <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_3\)</span> given that <span class="math inline">\(X_2 = 5\)</span>?</p>
 </blockquote>
 <blockquote class="blockquote">
-<p>Because of the complexity of the calculation, we will answer this question using <code>R</code> code only, following the mathematical prescription given in the text above.</p>
+<p>Because of the complexity of the calculation, we will answer this question using <code>R</code> code only, following the mathematical prescription given in the text above. For a visualization of the final result, see <a href="#fig-mvcond" class="quarto-xref">Figure&nbsp;<span>6.9</span></a>.</p>
 </blockquote>
-<div class="cell" data-layout-align="center">
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>mu    <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>)</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>Sigma <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">2</span>, <span class="fl">0.5</span>, <span class="fl">1.2</span>, <span class="fl">0.5</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="fl">1.2</span>, <span class="dv">1</span>, <span class="dv">2</span>), <span class="at">nrow =</span> <span class="dv">3</span>)</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>u        <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>)</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>v        <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>)</span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>v.coord  <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>)</span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>mu.u     <span class="ot">&lt;-</span> mu[u]</span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>mu.v     <span class="ot">&lt;-</span> mu[v]</span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>Sigma.uu <span class="ot">&lt;-</span> Sigma[u, u]</span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>Sigma.uv <span class="ot">&lt;-</span> Sigma[u, v]</span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>Sigma.vu <span class="ot">&lt;-</span> Sigma[v, u]</span>
+<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a>Sigma.vv <span class="ot">&lt;-</span> Sigma[v, v]</span>
+<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a>(mu.c    <span class="ot">&lt;-</span> mu.u <span class="sc">+</span> Sigma.uv <span class="sc">%*%</span> <span class="fu">solve</span>(Sigma.vv) <span class="sc">%*%</span> (v.coord <span class="sc">-</span> mu.v))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1]
+[1,] 2.25
+[2,] 6.50</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>(Sigma.c <span class="ot">&lt;-</span> Sigma.uu <span class="sc">-</span> Sigma.uv <span class="sc">%*%</span> <span class="fu">solve</span>(Sigma.vv) <span class="sc">%*%</span> Sigma.vu)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>      [,1] [,2]
 [1,] 1.875 0.95
 [2,] 0.950 1.50</code></pre>
 </div>
+</div>
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-mvcond" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-mvcond-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="06-multivariate_files/figure-html/fig-mvcond-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="336">
+<img src="06-multivariate_files/figure-html/fig-mvcond-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="2100">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mvcond-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;6.9: Contour plot indicating the location and orientation of a bivariate normal distribution with conditional mean <span class="math inline">\(\boldsymbol{\mu} = \{2.25, 6.50\}\)</span> and conditional covariance matrix as given in the example. The numbers along each contour indicate the amplitude of the pdf, whose maximum point is in the center.
@@ -1575,17 +1592,11 @@ Figure&nbsp;6.9: Contour plot indicating the location and orientation of a bivar
 \]</span> Furthermore, we assume that the covariance matrix is unknown to us. How would we estimate this matrix?</p>
 </blockquote>
 <div class="cell" data-layout-align="center">
-<div class="cell-output cell-output-stdout">
-<pre><code>      [,1]  [,2]
-[1,] 1.798 1.704
-[2,] 1.385 1.158
-[3,] 2.551 2.707</code></pre>
-</div>
 <div class="cell-output-display">
 <div id="fig-sampx" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-sampx-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="06-multivariate_files/figure-html/fig-sampx-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="336">
+<img src="06-multivariate_files/figure-html/fig-sampx-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="2100">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sampx-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;6.10: Sample of <span class="math inline">\(n = 40\)</span> iid data drawn from a bivariate normal distribution with means <span class="math inline">\(\boldsymbol{\mu} = \{2, 1\}\)</span> and covariance matrix <span class="math inline">\(\boldsymbol{\Sigma}\)</span> given in the main body of the text.
@@ -1602,7 +1613,7 @@ C_{jk} = \frac{1}{n-1} \sum_{i=1}^n (X_{ji} - \bar{X}_j)(X_{ki} - \bar{X}_k) \,.
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">1</span> <span class="sc">/</span> (n <span class="sc">-</span> <span class="dv">1</span>)) <span class="sc">*</span> <span class="fu">sum</span>((X[, <span class="dv">1</span>] <span class="sc">-</span> <span class="fu">mean</span>(X[, <span class="dv">1</span>])) <span class="sc">*</span> (X[, <span class="dv">2</span>] <span class="sc">-</span> <span class="fu">mean</span>(X[, <span class="dv">2</span>])))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">1</span> <span class="sc">/</span> (n <span class="sc">-</span> <span class="dv">1</span>)) <span class="sc">*</span> <span class="fu">sum</span>((X[, <span class="dv">1</span>] <span class="sc">-</span> <span class="fu">mean</span>(X[, <span class="dv">1</span>])) <span class="sc">*</span> (X[, <span class="dv">2</span>] <span class="sc">-</span> <span class="fu">mean</span>(X[, <span class="dv">2</span>])))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.389421</code></pre>
@@ -1614,7 +1625,7 @@ C_{jk} = \frac{1}{n-1} \sum_{i=1}^n (X_{ji} - \bar{X}_j)(X_{ki} - \bar{X}_k) \,.
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cov</span>(X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cov</span>(X)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>          [,1]     [,2]
@@ -1881,13 +1892,14 @@ f_{X_1,X_2}(x_1,x_2) = k x_1^2 \,,
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

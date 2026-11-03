@@ -2,17 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Chapter Exercises: Solutions – Modern Probability and Statistical Inference</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -72,10 +78,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-485d01fc63b59abcd3ee1bf1e8e2748d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-d3f7f8e73c8d287b30bcf59c2b563615.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -105,7 +111,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -118,7 +124,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -996,17 +1002,10 @@ e^{-e^{-(y_{\mathrm{obs}} - \theta)}} - \alpha &amp;= 0 \\
 <ul>
 <li>Problem 48</li>
 </ul>
-<p>(a) The expected value of <span class="math inline">\(Y\)</span> increases with <span class="math inline">\(\theta\)</span>, putting us on the “yes” line of the reference table. Hence we want to solve <span class="math inline">\(F_Y(y \vert \theta_o) - (1-\alpha) = 0\)</span> for <span class="math inline">\(y\)</span>: <span class="math display">\[\begin{align*}
-1 - e^{-(y-2)/\theta_o} - (1-\alpha) &amp;= 0 \\
-\Rightarrow ~~~ e^{-(y-2)} &amp;= \alpha \\
-\Rightarrow ~~~ -(y-2) &amp;= \log(\alpha) \\
-\Rightarrow ~~~ -y &amp;= \log(\alpha) - 2 \\
-\Rightarrow ~~~ y_{\mathrm{RR}} &amp;= 2 - \log(\alpha) \,.
+<p>(a) The expected value of <span class="math inline">\(Y\)</span> increases with <span class="math inline">\(\theta\)</span>, putting us on the “yes” line of the reference table. Hence we want to compute <span class="math inline">\(p = 1 - F_Y(y_{\mathrm{obs}} \vert \theta_o)\)</span>, where <span class="math inline">\(y_{\mathrm{obs}} = x_{\mathrm{obs}}\)</span>: <span class="math display">\[\begin{align*}
+p = 1 - \left( 1 - e^{-(x_{\mathrm{obs}} - 2)/\theta_o} \right) = e^{-(x_{\mathrm{obs}} - 2)/\theta_o} = e^{-3} = 0.0498 \,.
 \end{align*}\]</span></p>
-<p>(b) If <span class="math inline">\(y_{\mathrm{obs}} &lt; y_{\mathrm{RR}}\)</span> for an upper-tail test/“yes” line, then we <em>fail to reject</em> the null hypothesis (and conclude that we have insufficient data to rule out the idea that <span class="math inline">\(\theta = \theta_o = 1\)</span>).</p>
-<p>(c) We simply replace <span class="math inline">\(\alpha\)</span> with <span class="math inline">\(1 - \alpha/2\)</span>: <span class="math display">\[\begin{align*}
-y_{\mathrm{RR}} &amp;= 2 - \log(1 - \alpha/2) \,.
-\end{align*}\]</span></p>
+<p>(b) We (just) <em>reject</em> the null hypothesis (and conclude that we have sufficient data to rule out the idea that <span class="math inline">\(\theta = \theta_o = 1\)</span>).</p>
 </section>
 <section id="chapter-2" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="chapter-2">Chapter 2</h2>
@@ -1278,13 +1277,11 @@ P(U \geq 1) = 1 - P(U &lt; 1) = 1 - F_U(1) = 1 - \left(\frac12\right)^\theta \,.
 <ul>
 <li>Problem 23</li>
 </ul>
-<p>We do not know (or cannot easily work with) the sampling distribution for <span class="math inline">\(S^2\)</span>, so we algebraically transform the quantities within the probability expression: <span class="math display">\[\begin{align*}
-P(1 \leq S^2 \leq 2) = P\left( \frac{(n-1) \cdot 1}{\sigma^2} \leq \frac{(n-1)S^2}{\sigma^2} \leq \frac{(n-1) \cdot 2}{\sigma^2} \right) \,.
-\end{align*}\]</span> So <span class="math display">\[\begin{align*}
-X &amp;= \frac{(n-1)S^2}{\sigma^2} \sim \chi_{n-1}^2 = \chi_{10}^2 \\
-a &amp;= \frac{n-1}{\sigma^2} = 5 \\
-b &amp;= \frac{2(n-1)}{\sigma^2} = 10 \,.
-\end{align*}\]</span></p>
+<p>We have that <span class="math display">\[\begin{align*}
+P\left(1 \leq \frac{(n-1)S^2}{\sigma^2} \leq 2\right) &amp;= P\left( 1 \leq 5S^2 \leq 2\right) = P\left( \frac15 \leq S^2 \leq \frac25 \right) \,,
+\end{align*}\]</span> where <span class="math display">\[\begin{align*}
+S^2 \sim \text{Gamma}\left(\frac{n-1}{2},\frac{2\sigma^2}{n-1}\right) = \text{Gamma}\left( 5 , 4/10 \right) \,.
+\end{align*}\]</span> Here, we assume the shape-scale parameterization for the gamma distribution.</p>
 <hr>
 <ul>
 <li>Problem 24</li>
@@ -2051,7 +2048,7 @@ W = 2 \times \frac{(8-6)^2}{6} + \frac{(8-12)^2}{12} = \frac{4}{3} + \frac{4}{3}
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qchisq</span>(<span class="fl">0.95</span>, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qchisq</span>(<span class="fl">0.95</span>, <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 5.991465</code></pre>
@@ -2061,7 +2058,7 @@ W = 2 \times \frac{(8-6)^2}{6} + \frac{(8-12)^2}{12} = \frac{4}{3} + \frac{4}{3}
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pchisq</span>(<span class="dv">8</span> <span class="sc">/</span> <span class="dv">3</span>, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pchisq</span>(<span class="dv">8</span> <span class="sc">/</span> <span class="dv">3</span>, <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.2635971</code></pre>
@@ -2324,7 +2321,7 @@ P(\bar{X} \geq E[X]) = 1 - P(\bar{X} &lt; 1) = 1 - F_{\bar{X}}(1) \,,
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pgamma</span>(<span class="dv">1</span>, <span class="at">shape =</span> <span class="dv">100</span>, <span class="at">scale =</span> <span class="dv">1</span> <span class="sc">/</span> <span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pgamma</span>(<span class="dv">1</span>, <span class="at">shape =</span> <span class="dv">100</span>, <span class="at">scale =</span> <span class="dv">1</span> <span class="sc">/</span> <span class="dv">100</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.4867012</code></pre>
@@ -3093,13 +3090,14 @@ V[Y] &amp;= a_1^2 V[X_1] + a_2^2 V[X_2] + 2 a_1 a_2 \mbox{Cov}(X_1,X_2) \\
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

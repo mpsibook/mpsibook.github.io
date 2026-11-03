@@ -2,17 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>1&nbsp; The Basics of Probability and Statistical Inference – Modern Probability and Statistical Inference</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -59,7 +65,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -93,10 +98,10 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-485d01fc63b59abcd3ee1bf1e8e2748d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-d3f7f8e73c8d287b30bcf59c2b563615.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -126,7 +131,7 @@ div.csl-indent {
 }</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -139,7 +144,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -428,11 +433,6 @@ window.Quarto = {
 </header>
 
 
-<div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'dplyr' was built under R version 4.5.2</code></pre>
-</div>
-</div>
 <div class="bluebox">
 <p>In this chapter, we introduce the concept of <em>statistical inference</em>, in which we use functions of the data we observe (i.e., <em>statistics</em>) to infer the properties of the population from which they were drawn. However, we cannot work with statistics without adopting a “language” that “encodes” the random variation that is inherent in these data: that language is <em>probability</em>.</p>
 </div>
@@ -1028,7 +1028,7 @@ f_X(x) = \left\{ \begin{array}{cl} 2x &amp; 0 \leq x \leq 1 \\ 0 &amp; \mbox{oth
 <div id="fig-twox" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-twox-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="01-probability_files/figure-html/fig-twox-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="336">
+<img src="01-probability_files/figure-html/fig-twox-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="2100">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-twox-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1.10: The probability density function <span class="math inline">\(f_X(x) = 2x\)</span>, for <span class="math inline">\(0 \leq x \leq 1\)</span>.
@@ -1067,7 +1067,7 @@ f_X(x \vert \theta) = \left\{ \begin{array}{cl} \theta x^{\theta-1} &amp; 0 \leq
 <div id="fig-family" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-family-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="01-probability_files/figure-html/fig-family-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="336">
+<img src="01-probability_files/figure-html/fig-family-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="2100">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-family-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1.11: Examples of the family of pdfs <span class="math inline">\(f_X(x \vert \theta) = \theta x^{\theta-1}\)</span> for <span class="math inline">\(0 \leq x \leq 1\)</span>, with parameters <span class="math inline">\(\theta =\)</span> 1/2 (solid red line), 1 (dashed green line), and 2 (dotted blue line).
@@ -1167,10 +1167,10 @@ V[X] = \sigma^2 = E[(X-\mu)^2] = E[X^2] - (E[X])^2 \,.
 <div aria-describedby="fig-exvx-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-exvx" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-exvx-1" class="quarto-float quarto-figure quarto-figure-center anchored" width="288" data-fig-align="center">
+<div id="fig-exvx-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="1800">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-exvx-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="01-probability_files/figure-html/fig-exvx-1.png" id="fig-exvx-1" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-exvx" width="288">
+<img src="01-probability_files/figure-html/fig-exvx-1.png" id="fig-exvx-1" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-exvx" width="1800">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-exvx-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (a)
@@ -1179,10 +1179,10 @@ V[X] = \sigma^2 = E[(X-\mu)^2] = E[X^2] - (E[X])^2 \,.
 </div>
 </div>
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-exvx" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-exvx-2" class="quarto-float quarto-figure quarto-figure-center anchored" width="288" data-fig-align="center">
+<div id="fig-exvx-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="1800">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-exvx-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="01-probability_files/figure-html/fig-exvx-2.png" id="fig-exvx-2" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-exvx" width="288">
+<img src="01-probability_files/figure-html/fig-exvx-2.png" id="fig-exvx-2" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-exvx" width="1800">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-exvx-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (b)
@@ -1297,14 +1297,14 @@ V[X] = E[X^2] - (E[X])^2 = \frac{\theta}{\theta+2} - \frac{\theta^2}{(\theta+1)^
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Hello, world!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Hello, world!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <p>(The reader should feel free to open <code>R</code> and type in these lines at the <code>Console</code> prompt.) In this example, we define a vector of character strings which we name <code>x</code>; here, <code>x</code> has length 1:</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1</code></pre>
@@ -1314,15 +1314,15 @@ V[X] = E[X^2] - (E[X])^2 = \frac{\theta}{\theta+2} - \frac{\theta^2}{(\theta+1)^
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">8</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">8</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1 2 4 8</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 4</code></pre>
@@ -1332,9 +1332,9 @@ V[X] = E[X^2] - (E[X])^2 = \frac{\theta}{\theta+2} - \frac{\theta^2}{(\theta+1)^
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, pi, <span class="at">by =</span> <span class="fl">0.01</span>)  <span class="co"># 0, 0.01, 0.02, ..., 3.14 (but not 3.15)</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>                            <span class="co"># pi and Inf are built-in constants</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, pi, <span class="at">by =</span> <span class="fl">0.01</span>)  <span class="co"># 0, 0.01, 0.02, ..., 3.14 (but not 3.15)</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>                            <span class="co"># pi and Inf are built-in constants</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 315</code></pre>
@@ -1347,9 +1347,9 @@ f_X(x) = \left\{ \begin{array}{cl} c x \sin x &amp; 0 \leq x \leq \pi \\ 0 &amp;
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>x   <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, pi, <span class="at">by =</span> pi <span class="sc">/</span> <span class="dv">100</span>)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>f.x <span class="ot">&lt;-</span> x <span class="sc">*</span> <span class="fu">sin</span>(x)            </span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(f.x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>x   <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, pi, <span class="at">by =</span> pi <span class="sc">/</span> <span class="dv">100</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>f.x <span class="ot">&lt;-</span> x <span class="sc">*</span> <span class="fu">sin</span>(x)            </span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(f.x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0</code></pre>
@@ -1357,12 +1357,24 @@ f_X(x) = \left\{ \begin{array}{cl} c x \sin x &amp; 0 \leq x \leq \pi \\ 0 &amp;
 </div>
 <p>Note how we do not have to use a <code>for</code>-loop here, as one of the hallmarks of <code>R</code> is <em>vectorization</em>: if <code>R</code> sees that <code>x</code> is a vector, it will work with the vector directly and thus <code>f.x</code> will itself be a vector with the same length as <code>x</code> (and with the first element of <code>x</code> corresponding to the first element of <code>f.x</code>, etc.). We see that the minimum value is 0.</p>
 <p>If we want to go further, we can make a simple plot (see <a href="#fig-xsinx" class="quarto-xref">Figure&nbsp;<span>1.13</span></a>):</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>x   <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, pi, <span class="at">by =</span> pi <span class="sc">/</span> <span class="dv">100</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>f.x <span class="ot">&lt;-</span> x <span class="sc">*</span> <span class="fu">sin</span>(x)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>df  <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> x, <span class="at">f.x =</span> f.x)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> df, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> f.x)) <span class="sc">+</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">col =</span> <span class="st">"blue"</span>, <span class="at">lwd =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">lwd =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="fu">expression</span>(f[X] <span class="sc">*</span> <span class="st">"(x)"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-xsinx" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-xsinx-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="01-probability_files/figure-html/fig-xsinx-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="336">
+<img src="01-probability_files/figure-html/fig-xsinx-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="2100">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-xsinx-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1.13: The function <span class="math inline">\(x \sin x\)</span>.
@@ -1376,10 +1388,10 @@ Figure&nbsp;1.13: The function <span class="math inline">\(x \sin x\)</span>.
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(x <span class="sc">*</span> <span class="fu">sin</span>(x))</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">integrate</span>(f, <span class="dv">0</span>, pi) <span class="co"># integrate the function f between 0 and pi</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">integrate</span>(f, <span class="dv">0</span>, pi) <span class="co"># integrate the function f between 0 and pi</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>3.141593 with absolute error &lt; 3.5e-14</code></pre>
@@ -1394,10 +1406,10 @@ f_X(x) = \left\{ \begin{array}{cl} \frac{1}{\pi} x \sin x &amp; 0 \leq x \leq \p
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(x <span class="sc">*</span> <span class="fu">sin</span>(x) <span class="sc">/</span> pi)     <span class="co"># we now include the normalization constant</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="fu">integrate</span>(f, <span class="dv">1</span>, <span class="dv">2</span>) <span class="co"># integrate the function f between 1 and 2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="fu">integrate</span>(f, <span class="dv">1</span>, <span class="dv">2</span>) <span class="co"># integrate the function f between 1 and 2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>0.4585007 with absolute error &lt; 5.1e-15</code></pre>
@@ -1408,10 +1420,10 @@ f_X(x) = \left\{ \begin{array}{cl} \frac{1}{\pi} x \sin x &amp; 0 \leq x \leq \p
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(x<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> <span class="fu">sin</span>(x) <span class="sc">/</span> pi)     <span class="co"># add an additional x</span></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="fu">integrate</span>(f, <span class="dv">0</span>, pi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="fu">integrate</span>(f, <span class="dv">0</span>, pi)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>1.868353 with absolute error &lt; 2.1e-14</code></pre>
@@ -1430,10 +1442,10 @@ P(1 \leq X \leq 2 \vert X &gt; 0.5) = \frac{P(1 \leq X \leq 2 \cap X &gt; 0.5)}{
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(x <span class="sc">*</span> <span class="fu">sin</span>(x) <span class="sc">/</span> pi)</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="fu">integrate</span>(f, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">/</span> <span class="fu">integrate</span>(f, <span class="fl">0.5</span>, pi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="fu">integrate</span>(f, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">/</span> <span class="fu">integrate</span>(f, <span class="fl">0.5</span>, pi)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <blockquote class="blockquote">
@@ -1442,7 +1454,7 @@ P(1 \leq X \leq 2 \vert X &gt; 0.5) = \frac{P(1 \leq X \leq 2 \cap X &gt; 0.5)}{
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(<span class="fu">integrate</span>(f, <span class="dv">1</span>, <span class="dv">2</span>))  <span class="co"># return the names of each list element</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(<span class="fu">integrate</span>(f, <span class="dv">1</span>, <span class="dv">2</span>))  <span class="co"># return the names of each list element</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "value"        "abs.error"    "subdivisions" "message"      "call"        </code></pre>
@@ -1454,7 +1466,7 @@ P(1 \leq X \leq 2 \vert X &gt; 0.5) = \frac{P(1 \leq X \leq 2 \cap X &gt; 0.5)}{
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">integrate</span>(f, <span class="dv">1</span>, <span class="dv">2</span>)<span class="sc">$</span>value <span class="sc">/</span> <span class="fu">integrate</span>(f, <span class="fl">0.5</span>, pi)<span class="sc">$</span>value</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">integrate</span>(f, <span class="dv">1</span>, <span class="dv">2</span>)<span class="sc">$</span>value <span class="sc">/</span> <span class="fu">integrate</span>(f, <span class="fl">0.5</span>, pi)<span class="sc">$</span>value</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.3836833</code></pre>
@@ -1472,7 +1484,7 @@ P(1 \leq X \leq 2 \vert X &gt; 0.5) = \frac{P(1 \leq X \leq 2 \cap X &gt; 0.5)}{
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(x<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> <span class="fu">sin</span>(x) <span class="sc">/</span> pi)     <span class="co"># same code as above</span></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>E.X <span class="ot">&lt;-</span> <span class="fu">integrate</span>(f, <span class="dv">0</span>, pi)<span class="sc">$</span>value</span>
@@ -1481,14 +1493,14 @@ P(1 \leq X \leq 2 \vert X &gt; 0.5) = \frac{P(1 \leq X \leq 2 \cap X &gt; 0.5)}{
 <span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(x<span class="sc">^</span><span class="dv">3</span> <span class="sc">*</span> <span class="fu">sin</span>(x) <span class="sc">/</span> pi)     <span class="co"># add one more power of x</span></span>
 <span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>V.X <span class="ot">&lt;-</span> <span class="fu">integrate</span>(f, <span class="dv">0</span>, pi)<span class="sc">$</span>value <span class="sc">-</span> E.X<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>V.X </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>V.X </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.3788611</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(V.X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(V.X)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.6155169</code></pre>
@@ -1500,10 +1512,10 @@ P(1 \leq X \leq 2 \vert X &gt; 0.5) = \frac{P(1 \leq X \leq 2 \cap X &gt; 0.5)}{
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(x <span class="sc">*</span> <span class="fu">sin</span>(x) <span class="sc">/</span>pi)       <span class="co"># back to the original pdf</span></span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="fu">integrate</span>(f, E.X <span class="sc">-</span> <span class="fu">sqrt</span>(V.X), E.X <span class="sc">+</span> <span class="fu">sqrt</span>(V.X))<span class="sc">$</span>value</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="fu">integrate</span>(f, E.X <span class="sc">-</span> <span class="fu">sqrt</span>(V.X), E.X <span class="sc">+</span> <span class="fu">sqrt</span>(V.X))<span class="sc">$</span>value</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.642609</code></pre>
@@ -1535,10 +1547,10 @@ F_X(x) = \int_{y \leq x} f_Y(y) dy \,.
 <div aria-describedby="fig-pdfcdf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-pdfcdf" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-pdfcdf-1" class="quarto-float quarto-figure quarto-figure-center anchored" width="288" data-fig-align="center">
+<div id="fig-pdfcdf-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="1800">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-pdfcdf-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="01-probability_files/figure-html/fig-pdfcdf-1.png" id="fig-pdfcdf-1" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-pdfcdf" width="288">
+<img src="01-probability_files/figure-html/fig-pdfcdf-1.png" id="fig-pdfcdf-1" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-pdfcdf" width="1800">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-pdfcdf-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (a)
@@ -1547,10 +1559,10 @@ F_X(x) = \int_{y \leq x} f_Y(y) dy \,.
 </div>
 </div>
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-pdfcdf" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-pdfcdf-2" class="quarto-float quarto-figure quarto-figure-center anchored" width="288" data-fig-align="center">
+<div id="fig-pdfcdf-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="1800">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-pdfcdf-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="01-probability_files/figure-html/fig-pdfcdf-2.png" id="fig-pdfcdf-2" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-pdfcdf" width="288">
+<img src="01-probability_files/figure-html/fig-pdfcdf-2.png" id="fig-pdfcdf-2" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-pdfcdf" width="1800">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-pdfcdf-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (b)
@@ -1570,10 +1582,10 @@ Figure&nbsp;1.14: Illustration of the relationship between a probability mass fu
 <div aria-describedby="fig-cdfs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-cdfs" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-cdfs-1" class="quarto-float quarto-figure quarto-figure-center anchored" width="288" data-fig-align="center">
+<div id="fig-cdfs-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="1800">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-cdfs-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="01-probability_files/figure-html/fig-cdfs-1.png" id="fig-cdfs-1" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-cdfs" width="288">
+<img src="01-probability_files/figure-html/fig-cdfs-1.png" id="fig-cdfs-1" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-cdfs" width="1800">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-cdfs-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (a)
@@ -1582,10 +1594,10 @@ Figure&nbsp;1.14: Illustration of the relationship between a probability mass fu
 </div>
 </div>
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-cdfs" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-cdfs-2" class="quarto-float quarto-figure quarto-figure-center anchored" width="288" data-fig-align="center">
+<div id="fig-cdfs-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="1800">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-cdfs-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="01-probability_files/figure-html/fig-cdfs-2.png" id="fig-cdfs-2" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-cdfs" width="288">
+<img src="01-probability_files/figure-html/fig-cdfs-2.png" id="fig-cdfs-2" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-cdfs" width="1800">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-cdfs-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (b)
@@ -1612,7 +1624,7 @@ P(0 &lt; X &lt; 1) &amp;= \sum_{x \in (0,1)} p_X(x) = 0 \,.
 <div id="fig-pmfcdf" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-pmfcdf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="01-probability_files/figure-html/fig-pmfcdf-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="336">
+<img src="01-probability_files/figure-html/fig-pmfcdf-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="2100">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pmfcdf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1.16: An illustration of the relationship between a cdf and probability. The probability <span class="math inline">\(P(1 &lt; X &lt; 3)\)</span> is given by the distance between the two red lines (i.e., <span class="math inline">\(F_X(3)-F_X(1)\)</span>).
@@ -1673,7 +1685,7 @@ P\left(\frac{1}{4} \leq X \leq \frac{3}{4}\right) &amp;= F_X\left(\frac{3}{4} \v
 <div id="fig-cdfpoly" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-cdfpoly-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="01-probability_files/figure-html/fig-cdfpoly-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="336">
+<img src="01-probability_files/figure-html/fig-cdfpoly-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="2100">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cdfpoly-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1.17: The cdf for <span class="math inline">\(f_X(x) = 3x^2\)</span> at <span class="math inline">\(x = 0.6\)</span> is the area represented in green.
@@ -1693,7 +1705,7 @@ Figure&nbsp;1.17: The cdf for <span class="math inline">\(f_X(x) = 3x^2\)</span>
 <div id="fig-cdfcurve" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-cdfcurve-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="01-probability_files/figure-html/fig-cdfcurve-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="336">
+<img src="01-probability_files/figure-html/fig-cdfcurve-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="2100">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cdfcurve-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1.18: The cdf for <span class="math inline">\(f_X(x) = 3x^2\)</span>.
@@ -1715,7 +1727,7 @@ f_X(x \vert \theta) = \left\{ \begin{array}{cl} 1/2 &amp; 0 \leq x \leq 1 \\ 2-x
 <div id="fig-discon" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-discon-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="01-probability_files/figure-html/fig-discon-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="336">
+<img src="01-probability_files/figure-html/fig-discon-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="2100">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-discon-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1.19: A continuous probability density function that is mathematically discontinuous at <span class="math inline">\(x=1\)</span>.
@@ -1740,7 +1752,7 @@ F_X(x \vert x \geq 1) &amp;= \int_0^1 f_Y(y) dy + \int_1^x f_Y(y) dy = \left. \f
 <div id="fig-disconcdf" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-disconcdf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="01-probability_files/figure-html/fig-disconcdf-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="336">
+<img src="01-probability_files/figure-html/fig-disconcdf-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="2100">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-disconcdf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1.20: The cdf for our mathematically discontinuous pdf.
@@ -1976,11 +1988,11 @@ F_X(x) = \frac{1}{\pi}\left( \sin x - x \cos x \right) \,,
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x)</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>{</span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>  (<span class="fu">sin</span>(x) <span class="sc">+</span> x <span class="sc">*</span> <span class="fu">cos</span>(x)) <span class="sc">/</span> pi</span>
 <span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="fu">uniroot</span>(f, <span class="at">interval =</span> <span class="fu">c</span>(<span class="fl">0.01</span>, pi))<span class="sc">$</span>root</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="fu">uniroot</span>(f, <span class="at">interval =</span> <span class="fu">c</span>(<span class="fl">0.01</span>, pi))<span class="sc">$</span>root</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 2.028758</code></pre>
@@ -1989,12 +2001,33 @@ F_X(x) = \frac{1}{\pi}\left( \sin x - x \cos x \right) \,,
 <p>This looks for the root of the given function within the stated interval; since there is a root at 0, corresponding to a functional <em>minimum</em>, we exclude that point by setting the interval lower bound to 0.01. <code>uniroot()</code> is an extremely useful function and we <em>will</em> see it again throughout the rest of this book. The root is <span class="math inline">\(x_{max} = 2.0288\)</span> and <span class="math inline">\(f_X(x_{max}) = 0.5792\)</span>.) 3. We repeat the following steps until we reach our target sample size <span class="math inline">\(n\)</span>: (a) sample a random number <span class="math inline">\(u\)</span> assuming uniform weighting between <span class="math inline">\(x_{lo}\)</span> and <span class="math inline">\(x_{hi}\)</span>; (b) sample another random number <span class="math inline">\(v\)</span> assuming uniform weighting between 0 and <span class="math inline">\(f_X(x_{max})\)</span>; and (c) keep <span class="math inline">\(u\)</span> as part of our sample if <span class="math inline">\(v \leq f_X(u)\)</span>. (a) and (b) are summed up by the statement “draw a rectangle whose vertices are <span class="math inline">\((x_{lo},0)\)</span>, <span class="math inline">\((x_{hi},0)\)</span>, <span class="math inline">\(x_{hi},f_X(x_{max}))\)</span>, and <span class="math inline">\(x_{lo},f_X(x_{max}))\)</span> and pick a random point inside the rectangle,” while (c) is summed up by saying “keep the random point if it lies <em>below</em> <span class="math inline">\(f_X(x)\)</span>.” Note that we will assume that at the very least, we can use an <code>R</code> wrapper function to sample a numbers with uniform weighting; without this assumption, we would have to wade into the quagmire that is random number generation, which is well beyond the scope of this book!</p>
 <p>In a code chunk and in <a href="#fig-rejsamp" class="quarto-xref">Figure&nbsp;<span>1.21</span></a> we show how we sample <span class="math inline">\(n = 1000\)</span> data sampled from our distribution, and the final result. (We dub the observed distribution the <em>empirical distribution</em> of the data, where “empirical” simply means “what we actually observe.”) Rejection sampling seems quick and easy…should we always use it when we are not already provided a sampling function for our pmf or pdf? No, not necessarily, because as noted above it is computationally inefficient: we might have to sample <span class="math inline">\(m \gg n\)</span> points in order to populate a sample of size <span class="math inline">\(n\)</span>.</p>
 <p>(We will also note here that this is the first time that we are running across the <code>R</code> function <code>set.seed()</code>. This initializes the underlying random number generator such that we generate the same numerical results every time we run the subsequent code…which is useful when doing analyses that we want to be <em>reproducible</em>. If we leave out <code>set.seed()</code>, then every time we run the subsequent code, we get a different data sample. The number that we pass to <code>set.seed()</code> can be anything…we adopt 101 here, but it can any real number.)</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>n        <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>x.lo     <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>x.hi     <span class="ot">&lt;-</span> pi</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>f.x.hi   <span class="ot">&lt;-</span> <span class="fl">0.58</span> <span class="co"># rounding up is OK, it just decreases algorithm efficiency</span></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>X.sample <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, n)                <span class="co"># rejection sampling</span></span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>ii       <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> ( ii <span class="sc">&lt;</span> n ) {</span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>  u <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">1</span>, <span class="at">min =</span> x.lo, <span class="at">max =</span> x.hi)</span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>  v <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">1</span>, <span class="at">min =</span> <span class="dv">0</span>,    <span class="at">max =</span> f.x.hi)</span>
+<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> ( v <span class="sc">&lt;</span> u <span class="sc">*</span> <span class="fu">sin</span>(u) <span class="sc">/</span> pi ) {</span>
+<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a>    ii           <span class="ot">&lt;-</span> ii <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a>    X.sample[ii] <span class="ot">&lt;-</span> u</span>
+<span id="cb34-15"><a href="#cb34-15" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb34-16"><a href="#cb34-16" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-rejsamp" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-rejsamp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="01-probability_files/figure-html/fig-rejsamp-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="336">
+<img src="01-probability_files/figure-html/fig-rejsamp-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="2100">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rejsamp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1.21: <span class="math inline">\(n = 1000\)</span> data sampled from the distribution <span class="math inline">\(f_X(x) = (x \sin x)/\pi\)</span> via the rejection sampling algorithm. We observe that our empirical distribution follows the true distribution well.
@@ -2014,12 +2047,22 @@ f_X(x) = \theta x^{\theta-1} \,,
 <li>Transform the data <span class="math inline">\(q\)</span> to be <span class="math inline">\(x = F_X^{-1}(q)\)</span>.</li>
 </ol>
 <p>In a code chunk and in <a href="#fig-invsamp" class="quarto-xref">Figure&nbsp;<span>1.22</span></a> we display our inverse-transform sampling code as well as the empirical distribution of <span class="math inline">\(n = 1000\)</span> data sampled from our distribution (assuming <span class="math inline">\(\theta = 3\)</span>). We note that the code to generate our sample is <em>much</em> simpler than the code needed to perform rejection sampling!</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>theta    <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>n        <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>q        <span class="ot">&lt;-</span> <span class="fu">runif</span>(n, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">1</span>)</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>X.sample <span class="ot">&lt;-</span> q<span class="sc">^</span>(<span class="dv">1</span> <span class="sc">/</span> theta)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-invsamp" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-invsamp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="01-probability_files/figure-html/fig-invsamp-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="336">
+<img src="01-probability_files/figure-html/fig-invsamp-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="2100">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-invsamp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1.22: <span class="math inline">\(n = 1000\)</span> data sampled from the distribution <span class="math inline">\(f_X(x) = 3x^2\)</span> via the inverse transform sampling algorithm. We observe that our empirical distribution follows the true distribution well.
@@ -2050,7 +2093,7 @@ q &amp;= 1 - (1-x)^2 \\
 <div id="fig-invsamp2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-invsamp2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="01-probability_files/figure-html/fig-invsamp2-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="336">
+<img src="01-probability_files/figure-html/fig-invsamp2-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="2100">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-invsamp2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1.23: <span class="math inline">\(n = 1000\)</span> data sampled from the distribution <span class="math inline">\(f_X(x) = 2(1-x)\)</span> via the inverse transform sampling algorithm. We observe that our empirical distribution follows the true distribution well.
@@ -2185,12 +2228,30 @@ display result</code></pre>
 <blockquote class="blockquote">
 <p>In a previous example, we use inverse-transform sampling to sample data from the pdf <span class="math inline">\(f_X(x) = 2(1-x)\)</span> for <span class="math inline">\(x \in [0,1]\)</span>. Here, we extend the <code>R</code> code so as to visualize the distribution of the sample mean of <span class="math inline">\(n = 10\)</span> data drawn from this distribution.</p>
 </blockquote>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)     <span class="co"># set random number seed</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>n        <span class="ot">&lt;-</span> <span class="dv">10</span>    <span class="co"># set sample size and number of datasets</span></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>num.sim  <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>X.bar    <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, num.sim) <span class="co"># initialize vector for storing result</span></span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>                             <span class="co"># NA == Not Available - this is overwritten</span></span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ( ii <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>num.sim ) {                   <span class="co"># begin for-loop</span></span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>  q         <span class="ot">&lt;-</span> <span class="fu">runif</span>(n, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">1</span>)   <span class="co"># sample dataset</span></span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>  X.sample  <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">sqrt</span>(<span class="dv">1</span> <span class="sc">-</span> q)</span>
+<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a>  X.bar[ii] <span class="ot">&lt;-</span> <span class="fu">mean</span>(X.sample)         <span class="co"># compute and store result</span></span>
+<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a>}                                     <span class="co"># end for-loop</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-sampmean" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-sampmean-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="01-probability_files/figure-html/fig-sampmean-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="336">
+<img src="01-probability_files/figure-html/fig-sampmean-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="2100">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sampmean-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1.25: The empirical distribution of the sample mean of <span class="math inline">\(n = 10\)</span> data sampled from the distribution <span class="math inline">\(f_X(x) = 2(1-x)\)</span> for <span class="math inline">\(x \in [0,1]\)</span>. The red line indicates <span class="math inline">\(f_X(x)\)</span>, while the vertical and horizontal green lines indicate <span class="math inline">\(E[\bar{X}] = \mu = 1/3\)</span> and the range <span class="math inline">\([\mu-se(\bar{X}),\mu+se(\bar{X})] = [0.2588,0.4078]\)</span>. The shape of the empirical distribution is approaching that of a normal distribution, a result that foreshadows our discussion of the Central Limit Theorem in <a href="02-normal.html#sec-chap2clt" class="quarto-xref"><span>Section 2.6</span></a>.
@@ -2226,18 +2287,59 @@ se(\bar{X}) = \sqrt{\frac{V[X]}{n}} = \sqrt{\frac{1}{180}} = 0.0745 \,.
 f_X(x) = \left\{ \begin{array}{cl} \frac{1}{\pi} x \sin x &amp; 0 \leq x \leq \pi \\ 0 &amp; \mbox{otherwise} \end{array} \right. \,,
 \]</span> In the code chunk below, we display the estimated mean and standard error for the sampling distribution, while in <a href="#fig-sampmed" class="quarto-xref">Figure&nbsp;<span>1.26</span></a> we show the empirical distribution of the median values.</p>
 </blockquote>
-<div class="cell" data-layout-align="center">
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's put the rejection sampling code inside a function.</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>sample_data <span class="ot">&lt;-</span> <span class="cf">function</span>(n, x.lo, x.hi, f.x.hi)</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>  X   <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, n)</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>  ii  <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span> ( ii <span class="sc">&lt;</span> n ) {</span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>    u <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">1</span>, <span class="at">min =</span> x.lo, <span class="at">max=</span>x.hi)</span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>    v <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">1</span>, <span class="at">min =</span> <span class="dv">0</span>,    <span class="at">max=</span>f.x.hi)</span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> ( v <span class="sc">&lt;</span> u <span class="sc">*</span> <span class="fu">sin</span>(u) <span class="sc">/</span> pi ) {</span>
+<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a>      ii    <span class="ot">&lt;-</span> ii <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a>      X[ii] <span class="ot">&lt;-</span> u</span>
+<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(X)</span>
+<span id="cb38-15"><a href="#cb38-15" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb38-16"><a href="#cb38-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-17"><a href="#cb38-17" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
+<span id="cb38-18"><a href="#cb38-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-19"><a href="#cb38-19" aria-hidden="true" tabindex="-1"></a>n        <span class="ot">&lt;-</span> <span class="dv">11</span></span>
+<span id="cb38-20"><a href="#cb38-20" aria-hidden="true" tabindex="-1"></a>num.sim  <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
+<span id="cb38-21"><a href="#cb38-21" aria-hidden="true" tabindex="-1"></a>x.lo     <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb38-22"><a href="#cb38-22" aria-hidden="true" tabindex="-1"></a>x.hi     <span class="ot">&lt;-</span> pi</span>
+<span id="cb38-23"><a href="#cb38-23" aria-hidden="true" tabindex="-1"></a>f.x.hi   <span class="ot">&lt;-</span> <span class="fl">0.58</span></span>
+<span id="cb38-24"><a href="#cb38-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-25"><a href="#cb38-25" aria-hidden="true" tabindex="-1"></a>X.median <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, num.sim) <span class="co"># initialize vector to store result</span></span>
+<span id="cb38-26"><a href="#cb38-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-27"><a href="#cb38-27" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ( ii <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>num.sim ) {</span>
+<span id="cb38-28"><a href="#cb38-28" aria-hidden="true" tabindex="-1"></a>  X            <span class="ot">&lt;-</span> <span class="fu">sample_data</span>(n, x.lo, x.hi, f.x.hi)</span>
+<span id="cb38-29"><a href="#cb38-29" aria-hidden="true" tabindex="-1"></a>  X.median[ii] <span class="ot">&lt;-</span> <span class="fu">median</span>(X)</span>
+<span id="cb38-30"><a href="#cb38-30" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb38-31"><a href="#cb38-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-32"><a href="#cb38-32" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"The empirical mean is           "</span>, <span class="fu">round</span>(<span class="fu">mean</span>(X.median), <span class="dv">3</span>), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>The empirical mean is            1.907 </code></pre>
 </div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"The empirical standard error is "</span>, <span class="fu">round</span>(<span class="fu">sd</span>(X.median), <span class="dv">3</span>), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>The empirical standard error is  0.255 </code></pre>
 </div>
+</div>
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-sampmed" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-sampmed-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="01-probability_files/figure-html/fig-sampmed-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="336">
+<img src="01-probability_files/figure-html/fig-sampmed-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="2100">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sampmed-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1.26: The empirical distribution of the sample median for the pdf <span class="math inline">\(f_X(x) = (x \sin x)/\pi\)</span>, assuming a sample size of <span class="math inline">\(n = 11\)</span>.
@@ -2275,10 +2377,10 @@ p_X(x \vert p) = \left\{ \begin{array}{cl} 2 &amp; p^2 \\ 1 &amp; 2p(1-p) \\ 0 &
 <div aria-describedby="fig-pmfs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-pmfs" style="flex-basis: 33.3%;justify-content: center;">
-<div id="fig-pmfs-1" class="quarto-float quarto-figure quarto-figure-center anchored" width="192" data-fig-align="center">
+<div id="fig-pmfs-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="1200">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-pmfs-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="01-probability_files/figure-html/fig-pmfs-1.png" id="fig-pmfs-1" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-pmfs" width="192">
+<img src="01-probability_files/figure-html/fig-pmfs-1.png" id="fig-pmfs-1" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-pmfs" width="1200">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-pmfs-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (a)
@@ -2287,10 +2389,10 @@ p_X(x \vert p) = \left\{ \begin{array}{cl} 2 &amp; p^2 \\ 1 &amp; 2p(1-p) \\ 0 &
 </div>
 </div>
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-pmfs" style="flex-basis: 33.3%;justify-content: center;">
-<div id="fig-pmfs-2" class="quarto-float quarto-figure quarto-figure-center anchored" width="192" data-fig-align="center">
+<div id="fig-pmfs-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="1200">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-pmfs-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="01-probability_files/figure-html/fig-pmfs-2.png" id="fig-pmfs-2" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-pmfs" width="192">
+<img src="01-probability_files/figure-html/fig-pmfs-2.png" id="fig-pmfs-2" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-pmfs" width="1200">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-pmfs-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (b)
@@ -2299,10 +2401,10 @@ p_X(x \vert p) = \left\{ \begin{array}{cl} 2 &amp; p^2 \\ 1 &amp; 2p(1-p) \\ 0 &
 </div>
 </div>
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-pmfs" style="flex-basis: 33.3%;justify-content: center;">
-<div id="fig-pmfs-3" class="quarto-float quarto-figure quarto-figure-center anchored" width="192" data-fig-align="center">
+<div id="fig-pmfs-3" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="1200">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-pmfs-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="01-probability_files/figure-html/fig-pmfs-3.png" id="fig-pmfs-3" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-pmfs" width="192">
+<img src="01-probability_files/figure-html/fig-pmfs-3.png" id="fig-pmfs-3" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-pmfs" width="1200">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-pmfs-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (c)
@@ -2322,10 +2424,10 @@ Figure&nbsp;1.27: From (a) to (c), the probability mass functions <span class="m
 <div aria-describedby="fig-likes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-likes" style="flex-basis: 33.3%;justify-content: center;">
-<div id="fig-likes-1" class="quarto-float quarto-figure quarto-figure-center anchored" width="192" data-fig-align="center">
+<div id="fig-likes-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="1200">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-likes-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="01-probability_files/figure-html/fig-likes-1.png" id="fig-likes-1" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-likes" width="192">
+<img src="01-probability_files/figure-html/fig-likes-1.png" id="fig-likes-1" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-likes" width="1200">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-likes-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (a)
@@ -2334,10 +2436,10 @@ Figure&nbsp;1.27: From (a) to (c), the probability mass functions <span class="m
 </div>
 </div>
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-likes" style="flex-basis: 33.3%;justify-content: center;">
-<div id="fig-likes-2" class="quarto-float quarto-figure quarto-figure-center anchored" width="192" data-fig-align="center">
+<div id="fig-likes-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="1200">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-likes-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="01-probability_files/figure-html/fig-likes-2.png" id="fig-likes-2" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-likes" width="192">
+<img src="01-probability_files/figure-html/fig-likes-2.png" id="fig-likes-2" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-likes" width="1200">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-likes-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (b)
@@ -2346,10 +2448,10 @@ Figure&nbsp;1.27: From (a) to (c), the probability mass functions <span class="m
 </div>
 </div>
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-likes" style="flex-basis: 33.3%;justify-content: center;">
-<div id="fig-likes-3" class="quarto-float quarto-figure quarto-figure-center anchored" width="192" data-fig-align="center">
+<div id="fig-likes-3" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="1200">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-likes-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="01-probability_files/figure-html/fig-likes-3.png" id="fig-likes-3" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-likes" width="192">
+<img src="01-probability_files/figure-html/fig-likes-3.png" id="fig-likes-3" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-likes" width="1200">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-likes-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (c)
@@ -2416,13 +2518,13 @@ H_X(x \vert \theta) = \left\{ \begin{array}{cl} 0 &amp; x &lt; 0 \\ x^2/2\theta 
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>n           <span class="ot">&lt;-</span> <span class="dv">100</span></span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>theta       <span class="ot">&lt;-</span> <span class="fl">1.5</span></span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>q           <span class="ot">&lt;-</span> <span class="fu">runif</span>(n, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">1</span>)</span>
-<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>w           <span class="ot">&lt;-</span> <span class="fu">which</span>(q <span class="sc">&lt;</span> <span class="dv">1</span> <span class="sc">/</span> (<span class="dv">2</span> <span class="sc">*</span> theta))</span>
-<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>X.sample    <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">2</span>, n)</span>
-<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>X.sample[w] <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="dv">2</span> <span class="sc">*</span> theta <span class="sc">*</span> q[w])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>n           <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>theta       <span class="ot">&lt;-</span> <span class="fl">1.5</span></span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>q           <span class="ot">&lt;-</span> <span class="fu">runif</span>(n, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">1</span>)</span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>w           <span class="ot">&lt;-</span> <span class="fu">which</span>(q <span class="sc">&lt;</span> <span class="dv">1</span> <span class="sc">/</span> (<span class="dv">2</span> <span class="sc">*</span> theta))</span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>X.sample    <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">2</span>, n)</span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>X.sample[w] <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="dv">2</span> <span class="sc">*</span> theta <span class="sc">*</span> q[w])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <blockquote class="blockquote">
@@ -2434,7 +2536,7 @@ H_X(x \vert \theta) = \left\{ \begin{array}{cl} 0 &amp; x &lt; 0 \\ x^2/2\theta 
 <div id="fig-samplike" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-samplike-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="01-probability_files/figure-html/fig-samplike-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="336">
+<img src="01-probability_files/figure-html/fig-samplike-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="2100">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-samplike-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1.29: The log-likelihood function <span class="math inline">\(\ell(\theta \vert \mathbf{x})\)</span> for the pdf <span class="math inline">\(h_X(x \vert \theta)\)</span> defined in the text. The red line indicates the value of <span class="math inline">\(\theta\)</span> (1.56) for which <span class="math inline">\(\ell(\theta \vert \mathbf{x})\)</span> is maximized.
@@ -2589,18 +2691,55 @@ E[\bar{X}^2] = V[\bar{X}] + (E[\bar{X}])^2 = \frac{\sigma^2}{n} + \mu^2 = \frac{
 \frac{d}{d\theta} \ell(\theta \vert \mathbf{x}) = \frac{n}{\theta} + \sum_{i=1}^n \log x_i ~ \Rightarrow ~ \hat{\theta}_{MLE} = -\frac{n}{\sum_{i=1}^n \log x_i} \,.
 \]</span> Given this expression, we can now determine the empirical distribution. See <a href="#fig-empmle" class="quarto-xref">Figure&nbsp;<span>1.31</span></a>. We observe immediately that the distribution is right-skewed. (As we will see in <a href="02-normal.html#sec-chap2mle" class="quarto-xref"><span>Section 2.11.3</span></a>, as <span class="math inline">\(n \rightarrow \infty\)</span>, the empirical distribution will tend more and more to a bell-curve-like shape.)</p>
 </blockquote>
-<div class="cell" data-layout-align="center">
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>sample_data <span class="ot">&lt;-</span> <span class="cf">function</span>(n, theta)</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>  q <span class="ot">&lt;-</span> <span class="fu">runif</span>(n, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">1</span>)</span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>  X <span class="ot">&lt;-</span> q<span class="sc">^</span>(<span class="dv">1</span> <span class="sc">/</span> theta)</span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>n       <span class="ot">&lt;-</span> <span class="dv">40</span></span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a>num.sim <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a>theta   <span class="ot">&lt;-</span> <span class="fl">2.25</span></span>
+<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-13"><a href="#cb43-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Here we show how to replace a for-loop with use of the apply() function.</span></span>
+<span id="cb43-14"><a href="#cb43-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-15"><a href="#cb43-15" aria-hidden="true" tabindex="-1"></a><span class="co"># first: create one long vector of data, of length num.sim * n</span></span>
+<span id="cb43-16"><a href="#cb43-16" aria-hidden="true" tabindex="-1"></a>X.all   <span class="ot">&lt;-</span> <span class="fu">sample_data</span>(n <span class="sc">*</span> num.sim, theta)</span>
+<span id="cb43-17"><a href="#cb43-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-18"><a href="#cb43-18" aria-hidden="true" tabindex="-1"></a><span class="co"># second: "fold" the vector into a matrix with num.sim rows and n columns</span></span>
+<span id="cb43-19"><a href="#cb43-19" aria-hidden="true" tabindex="-1"></a><span class="co">#         every row of X is thus a separate independent dataset</span></span>
+<span id="cb43-20"><a href="#cb43-20" aria-hidden="true" tabindex="-1"></a>X       <span class="ot">&lt;-</span> <span class="fu">matrix</span>(X.all, <span class="at">nrow =</span> num.sim)</span>
+<span id="cb43-21"><a href="#cb43-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-22"><a href="#cb43-22" aria-hidden="true" tabindex="-1"></a><span class="co"># third: use R's apply() function to compute MLE for each row/dataset</span></span>
+<span id="cb43-23"><a href="#cb43-23" aria-hidden="true" tabindex="-1"></a><span class="co">#        the argument 1 means "apply the following function to each row"</span></span>
+<span id="cb43-24"><a href="#cb43-24" aria-hidden="true" tabindex="-1"></a><span class="co">#        x in the third argument is the data row; the function returns the mle</span></span>
+<span id="cb43-25"><a href="#cb43-25" aria-hidden="true" tabindex="-1"></a><span class="co">#        mle is thus a vector of maximum-likelihood estimates</span></span>
+<span id="cb43-26"><a href="#cb43-26" aria-hidden="true" tabindex="-1"></a>mle     <span class="ot">&lt;-</span> <span class="fu">apply</span>(X, <span class="dv">1</span>, <span class="cf">function</span>(x){<span class="sc">-</span>n <span class="sc">/</span> <span class="fu">sum</span>(<span class="fu">log</span>(x))})</span>
+<span id="cb43-27"><a href="#cb43-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-28"><a href="#cb43-28" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"The empirical mean is               "</span>,<span class="fu">round</span>(<span class="fu">mean</span>(mle), <span class="dv">3</span>),<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>The empirical mean is                2.317 </code></pre>
 </div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"The empirical standard deviation is "</span>,<span class="fu">round</span>(<span class="fu">sd</span>(mle), <span class="dv">3</span>),<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>The empirical standard deviation is  0.377 </code></pre>
 </div>
+</div>
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-empmle" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-empmle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="01-probability_files/figure-html/fig-empmle-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="336">
+<img src="01-probability_files/figure-html/fig-empmle-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="2100">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-empmle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1.31: The empirical distribution of maximum likelihood estimates for <span class="math inline">\(\theta\)</span> for the distribution <span class="math inline">\(f_X(x) = \theta x^{\theta-1}\)</span> (<span class="math inline">\(x \in [0,1]\)</span>) with <span class="math inline">\(\theta = 2.25\)</span> (red line) and <span class="math inline">\(n = 40\)</span>.
@@ -2630,7 +2769,7 @@ f_X(x \vert \theta) = \frac{1}{2} ~~~ x \in [\theta-1,\theta+1]
 <div id="fig-samppdf" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-samppdf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="01-probability_files/figure-html/fig-samppdf-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="336">
+<img src="01-probability_files/figure-html/fig-samppdf-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="2100">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-samppdf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1.32: An illustration of how a sampling distribution pdf can move as the distribution parameter is changed. Here, <span class="math inline">\(f_Y(y) = 1/2\)</span> for <span class="math inline">\(y \in [\theta-1,\theta+1]\)</span>; the red lines represent the pdf for <span class="math inline">\(\theta = 2.8\)</span> and the blue lines represents the pdf for <span class="math inline">\(\theta=5.2\)</span>. The green vertical line represents the observed value of the statistic <span class="math inline">\(Y\)</span>: <span class="math inline">\(y_{\mathrm{obs}} = 3.4\)</span>.
@@ -2654,10 +2793,10 @@ F_Y(y_{\mathrm{obs}} \vert \theta) - q = 0 \,,
 <div aria-describedby="fig-sampci-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-sampci" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-sampci-1" class="quarto-float quarto-figure quarto-figure-center anchored" width="288" data-fig-align="center">
+<div id="fig-sampci-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="1800">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-sampci-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="01-probability_files/figure-html/fig-sampci-1.png" id="fig-sampci-1" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-sampci" width="288">
+<img src="01-probability_files/figure-html/fig-sampci-1.png" id="fig-sampci-1" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-sampci" width="1800">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-sampci-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (a)
@@ -2666,10 +2805,10 @@ F_Y(y_{\mathrm{obs}} \vert \theta) - q = 0 \,,
 </div>
 </div>
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-sampci" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-sampci-2" class="quarto-float quarto-figure quarto-figure-center anchored" width="288" data-fig-align="center">
+<div id="fig-sampci-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="1800">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-sampci-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="01-probability_files/figure-html/fig-sampci-2.png" id="fig-sampci-2" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-sampci" width="288">
+<img src="01-probability_files/figure-html/fig-sampci-2.png" id="fig-sampci-2" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-sampci" width="1800">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-sampci-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (b)
@@ -2694,10 +2833,10 @@ F_Y(y_{\mathrm{obs}} \vert \theta) - \left(1-\frac{\alpha}{2}\right) = 0 \,.
 <div aria-describedby="fig-sampci2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-sampci2" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-sampci2-1" class="quarto-float quarto-figure quarto-figure-center anchored" width="288" data-fig-align="center">
+<div id="fig-sampci2-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="1800">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-sampci2-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="01-probability_files/figure-html/fig-sampci2-1.png" id="fig-sampci2-1" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-sampci2" width="288">
+<img src="01-probability_files/figure-html/fig-sampci2-1.png" id="fig-sampci2-1" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-sampci2" width="1800">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-sampci2-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (a)
@@ -2706,10 +2845,10 @@ F_Y(y_{\mathrm{obs}} \vert \theta) - \left(1-\frac{\alpha}{2}\right) = 0 \,.
 </div>
 </div>
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-sampci2" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-sampci2-2" class="quarto-float quarto-figure quarto-figure-center anchored" width="288" data-fig-align="center">
+<div id="fig-sampci2-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="1800">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-sampci2-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="01-probability_files/figure-html/fig-sampci2-2.png" id="fig-sampci2-2" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-sampci2" width="288">
+<img src="01-probability_files/figure-html/fig-sampci2-2.png" id="fig-sampci2-2" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" data-ref-parent="fig-sampci2" width="1800">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-sampci2-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (b)
@@ -2759,7 +2898,7 @@ P\left( \hat{\theta}_L \leq \theta \right) = 1 - \alpha ~~\mbox{and}~~ P\left( \
 <div id="fig-overlap" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-overlap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="01-probability_files/figure-html/fig-overlap-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="336">
+<img src="01-probability_files/figure-html/fig-overlap-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="2100">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-overlap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1.35: Schematic illustration of ten confidence intervals constructed given ten separate independent datasets sampled from the same underlying population. We indicate the true parameter value <span class="math inline">\(\theta\)</span> with the vertical dashed line. Counting from the bottom, we observe that the fourth and seventh intervals do not overlap the true value; if we were to claim that the probability that <span class="math inline">\(\theta\)</span> lies within each interval is, e.g., 0.95, then the probability that <span class="math inline">\(\theta\)</span> lies in either the fourth or seventh interval is 1.9…which is clearly wrong. Thus the proper interpretation would be that 95 percent of evaluated intervals overlap the true value.
@@ -2919,17 +3058,17 @@ f_X(x) = \theta x^{\theta-1} \,,
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>n           <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>num.sim     <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
-<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>theta       <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>y.obs       <span class="ot">&lt;-</span> <span class="fu">rbeta</span>(n <span class="sc">*</span> num.sim, theta, <span class="dv">1</span>)</span>
-<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>hat.theta.L <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fl">0.0253</span><span class="sc">/</span><span class="fu">log</span>(y.obs)</span>
-<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>hat.theta.U <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fl">3.689</span><span class="sc">/</span><span class="fu">log</span>(y.obs)</span>
-<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>(coverage   <span class="ot">&lt;-</span> <span class="fu">sum</span>(theta <span class="sc">&gt;=</span> hat.theta.L <span class="sc">&amp;</span> theta <span class="sc">&lt;=</span> hat.theta.U) <span class="sc">/</span> num.sim)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>n           <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>num.sim     <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>theta       <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>y.obs       <span class="ot">&lt;-</span> <span class="fu">rbeta</span>(n <span class="sc">*</span> num.sim, theta, <span class="dv">1</span>)</span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>hat.theta.L <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fl">0.0253</span><span class="sc">/</span><span class="fu">log</span>(y.obs)</span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a>hat.theta.U <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fl">3.689</span><span class="sc">/</span><span class="fu">log</span>(y.obs)</span>
+<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-11"><a href="#cb47-11" aria-hidden="true" tabindex="-1"></a>(coverage   <span class="ot">&lt;-</span> <span class="fu">sum</span>(theta <span class="sc">&gt;=</span> hat.theta.L <span class="sc">&amp;</span> theta <span class="sc">&lt;=</span> hat.theta.U) <span class="sc">/</span> num.sim)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.9523</code></pre>
@@ -3078,7 +3217,7 @@ p = \int_{y_{\mathrm{obs}}}^\infty f_Y(y \vert \theta_o) dy ~~~&amp; \mbox{(uppe
 <div id="fig-pval" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-pval-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="01-probability_files/figure-html/fig-pval-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="336">
+<img src="01-probability_files/figure-html/fig-pval-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="2100">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pval-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1.36: The empirical distribution of <span class="math inline">\(p\)</span>-values under the null hypothesis, for a lower-tail test with <span class="math inline">\(n = 20\)</span>, <span class="math inline">\(\mu_o = 3\)</span>, and <span class="math inline">\(\sigma^2 = 1\)</span>. We can see that the <span class="math inline">\(p\)</span>-values are uniformly distributed between 0 and 1 (with some random variation due to the fact that our simulation contains a finite sample of data). When the null is true, the probability of sampling a <span class="math inline">\(p\)</span>-value less than <span class="math inline">\(\alpha\)</span> is thus exactly <span class="math inline">\(\alpha\)</span>.
@@ -3101,7 +3240,7 @@ Figure&nbsp;1.36: The empirical distribution of <span class="math inline">\(p\)<
 <div id="fig-pvalskew" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-pvalskew-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="01-probability_files/figure-html/fig-pvalskew-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="336">
+<img src="01-probability_files/figure-html/fig-pvalskew-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="2100">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pvalskew-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1.37: The empirical distribution of <span class="math inline">\(p\)</span>-values when the stated alternative hypothesis is consistent with the truth. We can see that the <span class="math inline">\(p\)</span>-values skew towards 0, meaning that when the alternative hypothesis is true, the probability of sampling a <span class="math inline">\(p\)</span>-value less than <span class="math inline">\(\alpha\)</span> can be <span class="math inline">\(\gg \alpha\)</span>.
@@ -3143,16 +3282,16 @@ Figure&nbsp;1.37: The empirical distribution of <span class="math inline">\(p\)<
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>n        <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>num.sim  <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
-<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>theta.o  <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>y.obs    <span class="ot">&lt;-</span> <span class="fl">0.9</span></span>
-<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>Y        <span class="ot">&lt;-</span> <span class="fu">rbeta</span>(n <span class="sc">*</span> num.sim, <span class="dv">1</span>, theta.o)</span>
-<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a>(p       <span class="ot">&lt;-</span> <span class="fu">sum</span>(Y <span class="sc">&gt;=</span> y.obs) <span class="sc">/</span> num.sim)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>n        <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>num.sim  <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>theta.o  <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>y.obs    <span class="ot">&lt;-</span> <span class="fl">0.9</span></span>
+<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a>Y        <span class="ot">&lt;-</span> <span class="fu">rbeta</span>(n <span class="sc">*</span> num.sim, <span class="dv">1</span>, theta.o)</span>
+<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-10"><a href="#cb50-10" aria-hidden="true" tabindex="-1"></a>(p       <span class="ot">&lt;-</span> <span class="fu">sum</span>(Y <span class="sc">&gt;=</span> y.obs) <span class="sc">/</span> num.sim)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.0108</code></pre>
@@ -3255,7 +3394,7 @@ F_X(x) = \left\{ \begin{array}{cc} 0 &amp; x &lt; 0 \\ x^3 &amp; 0 \leq x \leq 1
 </div>
 <ol start="23" type="1">
 <li><p>We are given the following cumulative density function: <span class="math display">\[\begin{align*}
-F_X(x) = \left\{ \begin{array}{cc} cx^2 &amp; 0 \leq x \leq 1 \\ 0 &amp; \mbox{otherwise} \end{array} \right. \,.
+F_X(x) = \left\{ \begin{array}{cc} 0 &amp; x &lt; 0 \\ cx^2 &amp; 0 \leq x \leq 1 \\ 1 &amp; x &gt; 1 \end{array} \right. \,.
 \end{align*}\]</span> (a) What is the value of <span class="math inline">\(c\)</span>? (b) What is <span class="math inline">\(E[X]\)</span>? (c) What is <span class="math inline">\(\sigma\)</span>?</p></li>
 <li><p>We are given the following probability density function: <span class="math display">\[\begin{align*}
 f_X(x) = \left\{ \begin{array}{cc} a &amp; 0 \leq x &lt; 1 \\ bx &amp; 1 \leq x &lt; 2 \\ 0 &amp; \mbox{otherwise} \end{array} \right. \,,
@@ -3345,7 +3484,7 @@ p_X(x) = (1-p)^{x-1}p \,,
 \end{align*}\]</span> with <span class="math inline">\(0 &lt; p &lt; 1\)</span> and <span class="math inline">\(x = \{1,2,3,\ldots\}\)</span>. For this distribution, <span class="math inline">\(E[X] = 1/p\)</span> and <span class="math inline">\(V[X] = (1-p)/p^2\)</span>. (a) What is the maximum likelihood estimator for <span class="math inline">\(1/p\)</span>? (b) Write down <span class="math inline">\(V[\widehat{1/p}_{MLE}]\)</span>, i.e., the variance of the MLE for <span class="math inline">\(1/p\)</span>.</p></li>
 <li><p>We sample <span class="math inline">\(n\)</span> iid data according to the following probability density function: <span class="math display">\[\begin{align*}
 f_X(x) = 1 ~~~ x \in \left[ \theta - \frac12 , \theta + \frac12 \right]
-\end{align*}\]</span> For this distribution, <span class="math inline">\(E[X] = \theta\)</span> and <span class="math inline">\(V[X] = \theta^2/12\)</span>. A friend, who didn’t really think things through, suggested <span class="math inline">\(\hat{\theta} = (X_1 - X_2)/2\)</span> as an estimator for <span class="math inline">\(\theta\)</span>. It is up to us to characterize this estimator. (a) What is the bias of <span class="math inline">\(\hat{\theta}\)</span>? (b) What is the variance of <span class="math inline">\(\hat{\theta}\)</span>? (c) What is the mean-squared error for <span class="math inline">\(\hat{\theta}\)</span>? (d) One of us suggests changing the minus sign in the estimator to a plus sign: that at least makes the estimator unbiased. What is the mean-squared error for this new estimator?</p></li>
+\end{align*}\]</span> For this distribution, <span class="math inline">\(E[X] = \theta\)</span> and <span class="math inline">\(V[X] = 1/12\)</span>. A friend, who didn’t really think things through, suggested <span class="math inline">\(\hat{\theta} = (X_1 - X_2)/2\)</span> as an estimator for <span class="math inline">\(\theta\)</span>. It is up to us to characterize this estimator. (a) What is the bias of <span class="math inline">\(\hat{\theta}\)</span>? (b) What is the variance of <span class="math inline">\(\hat{\theta}\)</span>? (c) What is the mean-squared error for <span class="math inline">\(\hat{\theta}\)</span>? (d) One of us suggests changing the minus sign in the estimator to a plus sign: that at least makes the estimator unbiased. What is the mean-squared error for this new estimator?</p></li>
 <li><p>We sample <span class="math inline">\(n\)</span> iid data according to an exponential distribution: <span class="math display">\[\begin{align*}
 f_X(x) = \frac{1}{\theta} e^{-x/\theta} \,,
 \end{align*}\]</span> where <span class="math inline">\(x \geq 0\)</span> and <span class="math inline">\(\theta &gt; 0\)</span>. For this distribution, <span class="math inline">\(E[X] = \theta\)</span> and <span class="math inline">\(V[X] = \theta^2\)</span>. We propose the estimator <span class="math inline">\(\hat{\theta} = X_1 - X_2/n\)</span>. (a) What is the bias for this estimator? (b) What is the variance for this estimator?</p></li>
@@ -3365,11 +3504,11 @@ F_X(x) = e^{-e^{-(x-\theta)}} \,,
 \end{align*}\]</span> where <span class="math inline">\(x \in (-\infty,\infty)\)</span> and <span class="math inline">\(\theta \in (-\infty,\infty)\)</span>. The statistic is <span class="math inline">\(Y = X\)</span>; its observed value is <span class="math inline">\(y_{\mathrm{obs}} = x_{\mathrm{obs}}\)</span>. The expected value of the <span class="math inline">\(Y\)</span> is <span class="math inline">\(E[Y] = \theta + \gamma\)</span>, where <span class="math inline">\(\gamma\)</span> is a constant. (a) Write down a one-sided <span class="math inline">\(100(1-\alpha)\)</span>-percent upper bound for <span class="math inline">\(\theta\)</span>. (b) Write down the <em>lower</em> bound for a two-sided <span class="math inline">\(100(1-\alpha)\)</span>-percent confidence interval for <span class="math inline">\(\theta\)</span>. No explicit work need be shown for part (b), where it is possible to reason out the answer without math.</p></li>
 <li><p>In an experiment, you sample a single datum <span class="math inline">\(X\)</span> from a distribution whose cumulative distribution function is <span class="math display">\[\begin{align*}
 F_X(x) = 1 - e^{-(x-2)/\theta} \,,
-\end{align*}\]</span> for <span class="math inline">\(x \geq 2\)</span> and <span class="math inline">\(\theta &gt; 0\)</span>. The statistic is <span class="math inline">\(Y = X\)</span>; its observed value is <span class="math inline">\(y_{\mathrm{obs}} = x_{\mathrm{obs}}\)</span>. The expected value of <span class="math inline">\(X\)</span> is <span class="math inline">\(E[X] = \theta + 2\)</span>. (a) Write down the rejection-region boundary for the upper-tail test <span class="math inline">\(H_o : \theta = \theta_o = 1\)</span> versus <span class="math inline">\(H_a : \theta &gt; \theta_o\)</span>. Assume the Type I error is <span class="math inline">\(\alpha\)</span>. (b) If <span class="math inline">\(y_{\mathrm{obs}} &lt; y_{\mathrm{RR}}\)</span>, what conclusion do you reach: “reject” (the null) or “fail to reject”? (c) Write down the <em>lower</em> rejection-region boundary for the two-tail test <span class="math inline">\(H_o : \theta = \theta_o = 1\)</span> versus <span class="math inline">\(H_a : \theta \neq \theta_o\)</span>. No explicit work need be shown for part (c), where it is possible to reason out the answer without math.</p></li>
+\end{align*}\]</span> for <span class="math inline">\(x \geq 2\)</span> and <span class="math inline">\(\theta &gt; 0\)</span>. The statistic is <span class="math inline">\(Y = X\)</span>; its observed value is <span class="math inline">\(y_{\mathrm{obs}} = x_{\mathrm{obs}} = 5\)</span>. The expected value of <span class="math inline">\(X\)</span> is <span class="math inline">\(E[X] = \theta + 2\)</span>. (a) Write down the <span class="math inline">\(p\)</span>-value for the upper-tail test <span class="math inline">\(H_o : \theta = \theta_o = 1\)</span> versus <span class="math inline">\(H_a : \theta &gt; \theta_o\)</span>. (b) Assuming <span class="math inline">\(\alpha = 0.05\)</span>, what conclusion do you reach: “reject” (the null) or “fail to reject”?</p></li>
 </ol>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
 <div id="ref-casella2002" class="csl-entry" role="listitem">
 Casella, G., and R. L. Berger. 2002. <em>Statistical Inference</em>. 2nd ed. Duxbury Belmont, CA.
 </div>
@@ -3434,13 +3573,14 @@ Ross, S. 1988. <em>A First Course in Probability</em>. 3rd ed. Macmillan New Yor
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
